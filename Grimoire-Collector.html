@@ -1,0 +1,2117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grimoire — Collector</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Libre+Caslon+Text:wght@400;700&family=Cormorant+SC:wght@500;600;700&family=EB+Garamond:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--bg:#0c0c0c;--panel:#111111;--inset:#131313;--row:#161616;--raise:#1c1c1c;--line:#242424;--line2:#363636;--ink:#ece8e2;--ink2:#8f8b84;--ink3:#6e6a64;--accent:#8e3b3b;--on-accent:#f2e7e2;--accent-ink:#c67f7f;--danger:#e0714f;--ok:#4caf7d;--display:'Space Grotesk',sans-serif;--sans:'Space Mono',monospace;--mono:'IBM Plex Mono',monospace}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:100vh}
+  ::-webkit-scrollbar{width:6px;height:6px}
+  ::-webkit-scrollbar-track{background:var(--bg)}
+  ::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+  @keyframes ambPulse{0%{opacity:1}50%{opacity:.5}100%{opacity:1}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @keyframes pop{0%{transform:scale(.96);opacity:0}100%{transform:scale(1);opacity:1}}
+  input,select,textarea,button{font-family:inherit}
+  input:focus,select:focus,textarea:focus{outline:none}
+  .tile-overlay{opacity:0;transition:opacity .18s ease}
+  .tile-card:hover .tile-overlay{opacity:1}
+</style>
+</helmet>
+
+<div style="position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 600px 400px at 15% 15%,color-mix(in srgb,var(--accent-ink) 4%,transparent) 0%,transparent 70%),radial-gradient(ellipse 500px 500px at 85% 75%,color-mix(in srgb,var(--accent-ink) 3%,transparent) 0%,transparent 70%),radial-gradient(ellipse 400px 300px at 50% 95%,color-mix(in srgb,var(--accent-ink) 2%,transparent) 0%,transparent 70%);animation:ambPulse 18s ease-in-out infinite alternate"></div>
+
+<div style="position:relative;z-index:1;min-height:100vh">
+  <!-- HEADER -->
+  <header style="position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)">
+    <div style="max-width:1600px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:12px;margin-right:auto">
+        <div style="width:40px;height:40px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px color-mix(in srgb,var(--accent) 28%,transparent)">
+          <i class="fa-solid fa-book" style="color:var(--on-accent);font-size:18px"></i>
+        </div>
+        <div>
+          <div style="font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:.02em;line-height:1">Grimoire</div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--ink3);letter-spacing:.2em;text-transform:uppercase;margin-top:3px">{{ L.tagline }}</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:2px;background:var(--inset);border-radius:10px;padding:3px;border:1px solid var(--line)">
+        <button style="{{ collectorTabStyle }}"><i class="fa-solid fa-layer-group" style="margin-right:7px;font-size:11px"></i>{{ L.collector }}</button>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:7px;background:var(--inset);border:1px solid var(--line);border-radius:8px;padding:0 10px;height:38px" title="Theme">
+        <sc-for list="{{ themeOptions }}" as="th" hint-placeholder-count="3">
+          <button onClick="{{ th.onClick }}" title="{{ th.name }}" style="{{ th.style }}"></button>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{ isCollector }}" hint-placeholder-val="{{ false }}">
+        <select value="{{ collectorSystemId }}" onChange="{{ onSelectCollectorSystem }}" title="{{ L.collecting }}" style="background:var(--inset);border:1px solid var(--line);border-radius:8px;padding:0 10px;height:38px;color:var(--ink);font-size:13px;cursor:pointer;min-width:150px">
+          <sc-for list="{{ systemOptions }}" as="o" hint-placeholder-count="2"><option value="{{ o.id }}">{{ o.name }}</option></sc-for>
+        </select>
+        <select value="{{ globalCondition }}" onChange="{{ onSelectCondition }}" title="{{ L.condition }}" style="background:var(--inset);border:1px solid var(--line);border-radius:8px;padding:0 10px;height:38px;color:var(--ink);font-size:13px;cursor:pointer">
+          <sc-for list="{{ conditionOptions }}" as="c" hint-placeholder-count="4"><option value="{{ c }}">{{ c }}</option></sc-for>
+        </select>
+      </sc-if>
+
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="display:flex;align-items:center;gap:2px;background:var(--inset);border:1px solid var(--line);border-radius:8px;padding:3px" title="Language">
+          <sc-for list="{{ langOptions }}" as="lg" hint-placeholder-count="3">
+            <button onClick="{{ lg.onClick }}" style="{{ lg.style }}">{{ lg.label }}</button>
+          </sc-for>
+        </div>
+
+        <div style="display:flex;gap:8px">
+          <button onClick="{{ doExport }}" title="Export JSON" style="background:transparent;color:var(--ink2);border:1px solid var(--line);width:38px;height:38px;border-radius:8px;cursor:pointer;transition:all .2s" style-hover="border-color:var(--accent-ink);color:var(--accent-ink)"><i class="fa-solid fa-download"></i></button>
+          <button onClick="{{ triggerImport }}" title="Import JSON" style="background:transparent;color:var(--ink2);border:1px solid var(--line);width:38px;height:38px;border-radius:8px;cursor:pointer;transition:all .2s" style-hover="border-color:var(--accent-ink);color:var(--accent-ink)"><i class="fa-solid fa-upload"></i></button>
+          <input id="avImport" type="file" accept="application/json,.json" onChange="{{ doImport }}" style="display:none">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main style="max-width:100%;margin:0;padding:28px 16px 170px">
+
+    <!-- ================= COLLECTOR MODE ================= -->
+    <sc-if value="{{ isCollector }}" hint-placeholder-val="{{ false }}">
+    <div style="animation:fadeUp .4s ease">
+      <sc-if value="{{ noSystems }}" hint-placeholder-val="{{ false }}">
+        <div style="text-align:center;padding:90px 20px;border:1px dashed var(--line);border-radius:16px;background:var(--panel)">
+          <div style="width:64px;height:64px;border-radius:16px;background:var(--row);display:flex;align-items:center;justify-content:center;margin:0 auto 20px"><i class="fa-solid fa-box-open" style="color:var(--accent-ink);font-size:26px"></i></div>
+          <div style="font-family:var(--display);font-size:22px;font-weight:600;margin-bottom:8px">{{ L.nothingTitle }}</div>
+          <div style="color:var(--ink3);font-size:14px;max-width:400px;margin:0 auto">{{ L.nothingDesc }}</div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ hasSystems }}" hint-placeholder-val="{{ true }}">
+        <!-- expansion sidebar with progress -->
+        <div style="display:flex;gap:22px;align-items:flex-start">
+        <aside style="width:238px;flex-shrink:0;position:sticky;top:82px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px;max-height:calc(100vh - 106px);overflow-y:auto">
+          <button onClick="{{ goHome }}" style="{{ homeTabStyle }}"><i class="fa-solid fa-house" style="margin-right:8px;width:14px;text-align:center"></i>{{ L.homeTab }}</button>
+          <div style="height:8px"></div>
+          <sc-for list="{{ collectorGroups }}" as="g" hint-placeholder-count="2">
+            <sc-if value="{{ g.hasLabel }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:center;gap:2px;margin-top:6px">
+                <button onClick="{{ g.onToggle }}" style="{{ g.headerStyle }};flex:1;display:flex;align-items:center;gap:6px;background:transparent;border:none;cursor:pointer;padding:8px 6px 4px;text-align:left"><i class="{{ g.chevronIcon }}" style="font-size:8px;width:9px;flex-shrink:0"></i>{{ g.label }}</button>
+              </div>
+            </sc-if>
+            <sc-if value="{{ g.expanded }}" hint-placeholder-val="{{ true }}">
+              <sc-for list="{{ g.tabs }}" as="e" hint-placeholder-count="4">
+                <button onClick="{{ e.onClick }}" style="{{ e.style }}" title="{{ e.ip }}">
+                  <div style="display:flex;align-items:flex-start;gap:8px;width:100%">
+                    <span style="width:7px;height:7px;border-radius:50%;background:{{ e.ipColor }};flex-shrink:0;margin-top:5px"></span>
+                    <span style="font-family:var(--mono);font-size:10px;font-weight:700;color:var(--accent-ink);flex-shrink:0;width:36px;padding-top:1px">{{ e.abbr }}</span>
+                    <span style="flex:1;min-width:0;white-space:normal;word-break:break-word;line-height:1.35">{{ e.name }}</span>
+                    <span style="font-size:10px;opacity:.6;flex-shrink:0;padding-top:1px">{{ e.owned }}/{{ e.total }}</span>
+                  </div>
+                </button>
+              </sc-for>
+            </sc-if>
+          </sc-for>
+        </aside>
+        <div style="flex:1;min-width:0">
+
+        <!-- home page -->
+        <sc-if value="{{ collectorShowHome }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-bottom:16px">
+            <div style="font-family:var(--display);font-size:20px;font-weight:600;margin-bottom:4px">{{ homeSystemName }}</div>
+            <div style="color:var(--ink3);font-size:13px">{{ homeOwnedCount }} / {{ homeTotalCount }} ({{ homeOverallPct }}%) {{ L.totalCollected }}</div>
+          </div>
+          <sc-if value="{{ showHomeSectionPills }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px">
+              <sc-for list="{{ homeSectionPills }}" as="p" hint-placeholder-count="3">
+                <button onClick="{{ p.onClick }}" style="{{ p.style }}">{{ p.name }}</button>
+              </sc-for>
+            </div>
+          </sc-if>
+          <sc-if value="{{ homeNoSectionsSelected }}" hint-placeholder-val="{{ false }}">
+            <div style="text-align:center;padding:70px 20px;border:1px dashed var(--line);border-radius:16px;background:var(--panel)">
+              <div style="color:var(--ink3);font-size:13px">{{ L.homeNoSectionsMsg }}</div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ homeEmptyMsg }}" hint-placeholder-val="{{ false }}">
+            <div style="text-align:center;padding:70px 20px;border:1px dashed var(--line);border-radius:16px;background:var(--panel)">
+              <div style="width:56px;height:56px;border-radius:14px;background:var(--row);display:flex;align-items:center;justify-content:center;margin:0 auto 18px"><i class="fa-solid fa-star" style="color:var(--accent-ink);font-size:22px"></i></div>
+              <div style="font-family:var(--display);font-size:18px;font-weight:600;margin-bottom:6px">{{ L.homeEmptyTitle }}</div>
+              <div style="color:var(--ink3);font-size:13px;max-width:360px;margin:0 auto">{{ L.homeEmptyDesc }}</div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ hasRecentlyAdded }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-bottom:26px">
+              <div style="font-family:var(--display);font-size:14px;font-weight:600;margin-bottom:12px"><i class="fa-solid fa-clock-rotate-left" style="margin-right:8px;color:var(--accent-ink)"></i>{{ L.recentlyAddedTitle }}</div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:14px">
+                <sc-for list="{{ recentlyAdded }}" as="t" hint-placeholder-count="5">
+                  <div onClick="{{ t.onOpen }}" style="cursor:pointer">
+                    <div style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};overflow:hidden;transition:border-color .18s,box-shadow .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4)">
+                      {{ t.art }}
+                      <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 8px 8px;background:linear-gradient(180deg,transparent,rgba(8,6,10,.92) 60%)">
+                        <div style="font-weight:600;font-size:11px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.name }}</div>
+                        <div style="display:flex;align-items:center;gap:4px;margin-top:3px"><span style="width:6px;height:6px;border-radius:50%;background:{{ t.rarityColor }}"></span><span style="font-size:9px;color:rgba(255,255,255,.7)">{{ t.rarityName }}</span></div>
+                      </div>
+                    </div>
+                    <div style="font-size:10px;color:var(--ink3);margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.expName }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ hasRarestOwned }}" hint-placeholder-val="{{ false }}">
+            <div>
+              <div style="font-family:var(--display);font-size:14px;font-weight:600;margin-bottom:12px"><i class="fa-solid fa-gem" style="margin-right:8px;color:var(--accent-ink)"></i>{{ L.rarestOwnedTitle }}</div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:14px">
+                <sc-for list="{{ rarestOwned }}" as="t" hint-placeholder-count="5">
+                  <div onClick="{{ t.onOpen }}" style="cursor:pointer">
+                    <div style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};overflow:hidden;transition:border-color .18s,box-shadow .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4)">
+                      {{ t.art }}
+                      <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 8px 8px;background:linear-gradient(180deg,transparent,rgba(8,6,10,.92) 60%)">
+                        <div style="font-weight:600;font-size:11px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.name }}</div>
+                        <div style="display:flex;align-items:center;gap:4px;margin-top:3px"><span style="width:6px;height:6px;border-radius:50%;background:{{ t.rarityColor }}"></span><span style="font-size:9px;color:rgba(255,255,255,.7)">{{ t.rarityName }}</span></div>
+                      </div>
+                    </div>
+                    <div style="font-size:10px;color:var(--ink3);margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.expName }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+        </sc-if>
+
+        <!-- checklist grid -->
+        <sc-if value="{{ collectorHasExp }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px">
+            <span style="font-family:var(--display);font-size:15px;font-weight:600;color:var(--accent-ink)">{{ collectorExpName }}</span>
+            <sc-if value="{{ collectorExpHasIP }}" hint-placeholder-val="{{ true }}">
+              <span style="font-size:10px;font-weight:700;letter-spacing:.05em;color:{{ collectorExpIPColor }};background:color-mix(in srgb,{{ collectorExpIPColor }} 16%,transparent);padding:3px 9px;border-radius:5px;margin-right:4px">{{ collectorExpIP }}</span>
+            </sc-if>
+            <select value="{{ rarityFilterValue }}" onChange="{{ onRarityFilterChange }}" style="background:var(--inset);border:1px solid var(--line);border-radius:8px;padding:0 10px;height:34px;color:var(--ink);font-size:12.5px;font-weight:600;cursor:pointer">
+              <sc-for list="{{ rarityFilterOptions }}" as="f" hint-placeholder-count="6">
+                <option value="{{ f.id }}">{{ f.label }}</option>
+              </sc-for>
+            </select>
+            <sc-for list="{{ ownFilters }}" as="f" hint-placeholder-count="4">
+              <button onClick="{{ f.onClick }}" style="{{ f.style }}">{{ f.name }}<span style="opacity:.6;margin-left:6px">{{ f.count }}</span></button>
+            </sc-for>
+            <div style="margin-left:auto;display:flex;align-items:center;gap:8px" title="{{ L.cardSize }}">
+              <i class="fa-solid fa-up-right-and-down-left-from-center" style="font-size:11px;color:var(--ink2);opacity:.7"></i>
+              <input type="range" min="0" max="100" step="10" list="cardSizeTicks" value="{{ cardSizeValue }}" onChange="{{ onCardSizeChange }}" style="width:110px;accent-color:var(--accent);cursor:pointer">
+              <datalist id="cardSizeTicks">
+                <option value="0"></option><option value="10"></option><option value="20"></option><option value="30"></option><option value="40"></option><option value="50"></option><option value="60"></option><option value="70"></option><option value="80"></option><option value="90"></option><option value="100"></option>
+              </datalist>
+              <span style="font-size:12px;color:var(--ink3);font-weight:600;min-width:44px">{{ cardSizeLabel }}</span>
+            </div>
+            <sc-if value="{{ isBinder }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:3px">
+                <sc-for list="{{ pocketOptions }}" as="p" hint-placeholder-count="4">
+                  <button onClick="{{ p.onClick }}" style="{{ p.style }}">{{ p.label }}</button>
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{ isBinder }}" hint-placeholder-val="{{ false }}">
+              <button onClick="{{ toggleCoverView }}" title="{{ L.viewCover }}" style="{{ coverToggleStyle }}"><i class="fa-solid fa-bookmark"></i></button>
+            </sc-if>
+            <div style="display:flex;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:3px">
+              <button onClick="{{ setGridView }}" title="Grid view" style="{{ gridViewBtnStyle }}"><i class="fa-solid fa-table-cells-large"></i></button>
+              <button onClick="{{ setBinderView }}" title="Binder view" style="{{ binderViewBtnStyle }}"><i class="fa-solid fa-book-open"></i></button>
+            </div>
+          </div>
+          <sc-if value="{{ isBinder }}" hint-placeholder-val="{{ false }}">
+            <sc-if value="{{ showStackToggle }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;align-items:center;justify-content:flex-end;gap:9px;margin-bottom:16px">
+                <span style="font-size:12px;color:var(--ink2);font-weight:600">{{ L.stackVariants }}</span>
+                <div onClick="{{ toggleStackVariants }}" style="{{ stackToggleTrackStyle }}">
+                  <div style="{{ stackToggleKnobStyle }}"></div>
+                </div>
+              </div>
+            </sc-if>
+          </sc-if>
+          <sc-if value="{{ isGridMode }}" hint-placeholder-val="{{ true }}">
+            <div style="{{ pagePanelStyle }}">
+              <div style="display:grid;grid-template-columns:{{ gridCols }};gap:{{ gridGap }};align-items:start">
+                <sc-for list="{{ gridTiles }}" as="t" hint-placeholder-count="10">
+                  <sc-if value="{{ t.empty }}" hint-placeholder-val="{{ false }}">
+                    <div style="position:relative;aspect-ratio:5/7;border-radius:14px;border:1.5px dashed var(--line2);background:var(--inset);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:.5">
+                      <span style="font-size:10px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em">Slot</span>
+                      <span style="font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink3)">#{{ t.slotNum }}</span>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ t.real }}" hint-placeholder-val="{{ true }}">
+                    <div class="tile-card" style="display:flex;flex-direction:column;transition:transform .18s" style-hover="transform:translateY(-3px)">
+                      <div onClick="{{ t.onOpen }}" style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};opacity:{{ t.artOpacity }};display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;transition:border-color .18s,box-shadow .18s,opacity .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4);opacity:1">
+                        {{ t.art }}
+                        <sc-if value="{{ showTicks }}" hint-placeholder-val="{{ true }}">
+                          <div style="position:absolute;left:0;right:0;top:8px;display:flex;justify-content:center;gap:4px">
+                            <sc-for list="{{ t.variants }}" as="v" hint-placeholder-count="1">
+                              <div style="position:relative">
+                                <sc-if value="{{ v.showTip }}" hint-placeholder-val="{{ false }}">
+                                  <div style="position:absolute;top:32px;right:0;white-space:nowrap;display:flex;align-items:center;gap:6px;background:var(--row);border:1px solid {{ v.rarityColor }};color:var(--ink);font-size:11px;font-weight:600;padding:5px 10px;border-radius:7px;box-shadow:0 8px 20px rgba(0,0,0,.5);z-index:5;pointer-events:none">
+                                    <span style="width:8px;height:8px;border-radius:50%;background:{{ v.rarityColor }};flex-shrink:0"></span>{{ v.rarityName }}
+                                  </div>
+                                </sc-if>
+                                <div onClick="{{ v.onToggle }}" onMouseEnter="{{ v.onHoverStart }}" onMouseLeave="{{ v.onHoverEnd }}" style="{{ v.tickStyle }}"><i class="fa-solid fa-check" style="font-size:9px"></i></div>
+                              </div>
+                            </sc-for>
+                          </div>
+                        </sc-if>
+                        <div class="tile-overlay" style="position:absolute;left:0;right:0;bottom:0;padding:26px 12px 12px;background:linear-gradient(180deg,transparent,rgba(8,6,10,.92) 60%)">
+                          <div style="font-weight:600;font-size:13px;line-height:1.25;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px">{{ t.name }}</div>
+                          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+                            <span style="font-family:var(--display);font-size:11px;font-weight:700;color:rgba(255,255,255,.75)">{{ t.number }}</span>
+                            <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:{{ t.baseRarityColor }}"></span><span style="font-size:10px;color:rgba(255,255,255,.75)">{{ t.baseRarityName }}</span></span>
+                          </div>
+                          <sc-if value="{{ t.hasTypeChips }}" hint-placeholder-val="{{ false }}">
+                            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:7px">
+                              <sc-for list="{{ t.typeChips }}" as="tc" hint-placeholder-count="2">
+                                <span style="font-size:9px;font-weight:700;padding:3px 8px;border-radius:20px;background:color-mix(in srgb,{{ tc.color }} 18%,transparent);border:1px solid {{ tc.color }};color:var(--ink)">{{ tc.label }}</span>
+                              </sc-for>
+                            </div>
+                          </sc-if>
+                          <sc-if value="{{ t.owned }}" hint-placeholder-val="{{ false }}">
+                            <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.15);font-size:10px;color:var(--accent-ink);font-weight:600"><i class="fa-solid fa-chart-simple" style="margin-right:5px;opacity:.8"></i>{{ t.pullLabel }}</div>
+                          </sc-if>
+                          <sc-if value="{{ t.missing }}" hint-placeholder-val="{{ true }}">
+                            <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.15);font-size:10px;color:rgba(255,255,255,.6);font-weight:500"><i class="fa-solid fa-dice" style="margin-right:5px;opacity:.7"></i>{{ t.theoLabel }}</div>
+                          </sc-if>
+                        </div>
+                      </div>
+                    </div>
+                  </sc-if>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ isBinder }}" hint-placeholder-val="{{ false }}">
+            <div style="{{ binderFrameStyle }}">
+              <div style="{{ leftPanelStyle }}">
+                <sc-if value="{{ showCoverPages }}" hint-placeholder-val="{{ false }}">
+                  <div style="width:100%;height:100%;min-height:200px;border-radius:18px 6px 6px 18px;background:{{ coverInsideBg }}"></div>
+                </sc-if>
+                <sc-if value="{{ showDivider }}" hint-placeholder-val="{{ false }}">
+                  <div style="width:100%;height:100%;min-height:200px;border-radius:18px 6px 6px 18px;background:{{ dividerPage.bg }};display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;overflow:hidden">
+                    <div>
+                      <div style="font-family:var(--display);font-weight:700;font-size:26px;color:{{ dividerPage.textColor }};line-height:1.3">{{ dividerPage.title }}</div>
+                      <sc-if value="{{ dividerPage.hasSubtitle }}" hint-placeholder-val="{{ true }}">
+                        <div style="font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin-top:14px;color:{{ dividerPage.textColor }};opacity:.75">{{ dividerPage.subtitle }}</div>
+                      </sc-if>
+                    </div>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ hasLeftPage }}" hint-placeholder-val="{{ false }}">
+                  <div style="display:flex;gap:16px;align-items:stretch">
+                  <div style="display:grid;grid-template-columns:{{ gridCols }};gap:{{ gridGap }};align-items:start;flex:1;min-width:0">
+                    <sc-for list="{{ leftGridTiles }}" as="t" hint-placeholder-count="9">
+                      <sc-if value="{{ t.empty }}" hint-placeholder-val="{{ false }}">
+                        <div style="position:relative;aspect-ratio:5/7;border-radius:14px;border:1.5px dashed var(--line2);background:var(--inset);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:.5">
+                          <span style="font-size:10px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em">Slot</span>
+                          <span style="font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink3)">#{{ t.slotNum }}</span>
+                        </div>
+                      </sc-if>
+                      <sc-if value="{{ t.real }}" hint-placeholder-val="{{ true }}">
+                        <div class="tile-card" style="display:flex;flex-direction:column;transition:transform .18s" style-hover="transform:translateY(-3px)">
+                          <div onClick="{{ t.onOpen }}" style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};opacity:{{ t.artOpacity }};display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;transition:border-color .18s,box-shadow .18s,opacity .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4);opacity:1">
+                            {{ t.art }}
+                            <sc-if value="{{ showTicks }}" hint-placeholder-val="{{ true }}">
+                              <div style="position:absolute;left:0;right:0;top:8px;display:flex;justify-content:center;gap:4px">
+                                <sc-for list="{{ t.variants }}" as="v" hint-placeholder-count="1">
+                                  <div style="position:relative">
+                                    <sc-if value="{{ v.showTip }}" hint-placeholder-val="{{ false }}">
+                                      <div style="position:absolute;top:32px;right:0;white-space:nowrap;display:flex;align-items:center;gap:6px;background:var(--row);border:1px solid {{ v.rarityColor }};color:var(--ink);font-size:11px;font-weight:600;padding:5px 10px;border-radius:7px;box-shadow:0 8px 20px rgba(0,0,0,.5);z-index:5;pointer-events:none">
+                                        <span style="width:8px;height:8px;border-radius:50%;background:{{ v.rarityColor }};flex-shrink:0"></span>{{ v.rarityName }}
+                                      </div>
+                                    </sc-if>
+                                    <div onClick="{{ v.onToggle }}" onMouseEnter="{{ v.onHoverStart }}" onMouseLeave="{{ v.onHoverEnd }}" style="{{ v.tickStyle }}"><i class="fa-solid fa-check" style="font-size:9px"></i></div>
+                                  </div>
+                                </sc-for>
+                              </div>
+                            </sc-if>
+                            <div class="tile-overlay" style="position:absolute;left:0;right:0;bottom:0;padding:26px 12px 12px;background:linear-gradient(180deg,transparent,rgba(8,6,10,.92) 60%)">
+                              <div style="font-weight:600;font-size:13px;line-height:1.25;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px">{{ t.name }}</div>
+                              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+                                <span style="font-family:var(--display);font-size:11px;font-weight:700;color:rgba(255,255,255,.75)">{{ t.number }}</span>
+                                <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:{{ t.baseRarityColor }}"></span><span style="font-size:10px;color:rgba(255,255,255,.75)">{{ t.baseRarityName }}</span></span>
+                              </div>
+                              <sc-if value="{{ t.hasTypeChips }}" hint-placeholder-val="{{ false }}">
+                                <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:7px">
+                                  <sc-for list="{{ t.typeChips }}" as="tc" hint-placeholder-count="2">
+                                    <span style="font-size:9px;font-weight:700;padding:3px 8px;border-radius:20px;background:color-mix(in srgb,{{ tc.color }} 18%,transparent);border:1px solid {{ tc.color }};color:var(--ink)">{{ tc.label }}</span>
+                                  </sc-for>
+                                </div>
+                              </sc-if>
+                              <sc-if value="{{ t.owned }}" hint-placeholder-val="{{ false }}">
+                                <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.15);font-size:10px;color:var(--accent-ink);font-weight:600"><i class="fa-solid fa-chart-simple" style="margin-right:5px;opacity:.8"></i>{{ t.pullLabel }}</div>
+                              </sc-if>
+                              <sc-if value="{{ t.missing }}" hint-placeholder-val="{{ true }}">
+                                <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.15);font-size:10px;color:rgba(255,255,255,.6);font-weight:500"><i class="fa-solid fa-dice" style="margin-right:5px;opacity:.7"></i>{{ t.theoLabel }}</div>
+                              </sc-if>
+                            </div>
+                          </div>
+                        </div>
+                      </sc-if>
+                    </sc-for>
+                  </div>
+                  <div style="display:flex;flex-direction:column;justify-content:space-around;padding:20px 0;flex-shrink:0">
+                    <sc-for list="{{ binderRings }}" as="r" hint-placeholder-count="3">
+                      <div style="width:13px;height:13px;border-radius:50%;background:var(--bg);border:1px solid var(--line2);box-shadow:inset 0 2px 3px rgba(0,0,0,.6)"></div>
+                    </sc-for>
+                  </div>
+                  </div>
+                </sc-if>
+              </div>
+              <div style="{{ rightPanelStyle }}">
+                <sc-if value="{{ showCoverPages }}" hint-placeholder-val="{{ false }}">
+                  <div style="width:100%;height:100%;min-height:200px;border-radius:6px 18px 18px 6px;background:{{ coverPage.bg }};display:flex;align-items:center;justify-content:center;text-align:center;padding:40px;overflow:hidden">
+                    <div>
+                      <div style="font-family:var(--display);font-weight:700;font-size:34px;color:{{ coverPage.textColor }};line-height:1.3">{{ coverPage.title }}</div>
+                      <sc-if value="{{ coverPage.hasSubtitle }}" hint-placeholder-val="{{ true }}">
+                        <div style="font-family:var(--mono);font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-top:18px;color:{{ coverPage.textColor }};opacity:.8">{{ coverPage.subtitle }}</div>
+                      </sc-if>
+                    </div>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ hasRightPage }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:flex;gap:16px;align-items:stretch">
+                  <div style="display:flex;flex-direction:column;justify-content:space-around;padding:20px 0;flex-shrink:0">
+                    <sc-for list="{{ binderRings }}" as="r" hint-placeholder-count="3">
+                      <div style="width:13px;height:13px;border-radius:50%;background:var(--bg);border:1px solid var(--line2);box-shadow:inset 0 2px 3px rgba(0,0,0,.6)"></div>
+                    </sc-for>
+                  </div>
+                  <div style="display:grid;grid-template-columns:{{ gridCols }};gap:{{ gridGap }};align-items:start;flex:1;min-width:0">
+                    <sc-for list="{{ rightGridTiles }}" as="t" hint-placeholder-count="9">
+                      <sc-if value="{{ t.empty }}" hint-placeholder-val="{{ false }}">
+                        <div style="position:relative;aspect-ratio:5/7;border-radius:14px;border:1.5px dashed var(--line2);background:var(--inset);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:.5">
+                          <span style="font-size:10px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em">Slot</span>
+                          <span style="font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink3)">#{{ t.slotNum }}</span>
+                        </div>
+                      </sc-if>
+                      <sc-if value="{{ t.real }}" hint-placeholder-val="{{ true }}">
+                        <div class="tile-card" style="display:flex;flex-direction:column;transition:transform .18s" style-hover="transform:translateY(-3px)">
+                          <div onClick="{{ t.onOpen }}" style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};opacity:{{ t.artOpacity }};display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;transition:border-color .18s,box-shadow .18s,opacity .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4);opacity:1">
+                            {{ t.art }}
+                            <sc-if value="{{ showTicks }}" hint-placeholder-val="{{ true }}">
+                              <div style="position:absolute;left:0;right:0;top:8px;display:flex;justify-content:center;gap:4px">
+                                <sc-for list="{{ t.variants }}" as="v" hint-placeholder-count="1">
+                                  <div style="position:relative">
+                                    <sc-if value="{{ v.showTip }}" hint-placeholder-val="{{ false }}">
+                                      <div style="position:absolute;top:32px;right:0;white-space:nowrap;display:flex;align-items:center;gap:6px;background:var(--row);border:1px solid {{ v.rarityColor }};color:var(--ink);font-size:11px;font-weight:600;padding:5px 10px;border-radius:7px;box-shadow:0 8px 20px rgba(0,0,0,.5);z-index:5;pointer-events:none">
+                                        <span style="width:8px;height:8px;border-radius:50%;background:{{ v.rarityColor }};flex-shrink:0"></span>{{ v.rarityName }}
+                                      </div>
+                                    </sc-if>
+                                    <div onClick="{{ v.onToggle }}" onMouseEnter="{{ v.onHoverStart }}" onMouseLeave="{{ v.onHoverEnd }}" style="{{ v.tickStyle }}"><i class="fa-solid fa-check" style="font-size:9px"></i></div>
+                                  </div>
+                                </sc-for>
+                              </div>
+                            </sc-if>
+                            <div class="tile-overlay" style="position:absolute;left:0;right:0;bottom:0;padding:26px 12px 12px;background:linear-gradient(180deg,transparent,rgba(8,6,10,.92) 60%)">
+                              <div style="font-weight:600;font-size:13px;line-height:1.25;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px">{{ t.name }}</div>
+                              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+                                <span style="font-family:var(--display);font-size:11px;font-weight:700;color:rgba(255,255,255,.75)">{{ t.number }}</span>
+                                <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:{{ t.baseRarityColor }}"></span><span style="font-size:10px;color:rgba(255,255,255,.75)">{{ t.baseRarityName }}</span></span>
+                              </div>
+                              <sc-if value="{{ t.hasTypeChips }}" hint-placeholder-val="{{ false }}">
+                                <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:7px">
+                                  <sc-for list="{{ t.typeChips }}" as="tc" hint-placeholder-count="2">
+                                    <span style="font-size:9px;font-weight:700;padding:3px 8px;border-radius:20px;background:color-mix(in srgb,{{ tc.color }} 18%,transparent);border:1px solid {{ tc.color }};color:var(--ink)">{{ tc.label }}</span>
+                                  </sc-for>
+                                </div>
+                              </sc-if>
+                              <sc-if value="{{ t.owned }}" hint-placeholder-val="{{ false }}">
+                                <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.15);font-size:10px;color:var(--accent-ink);font-weight:600"><i class="fa-solid fa-chart-simple" style="margin-right:5px;opacity:.8"></i>{{ t.pullLabel }}</div>
+                              </sc-if>
+                              <sc-if value="{{ t.missing }}" hint-placeholder-val="{{ true }}">
+                                <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.15);font-size:10px;color:rgba(255,255,255,.6);font-weight:500"><i class="fa-solid fa-dice" style="margin-right:5px;opacity:.7"></i>{{ t.theoLabel }}</div>
+                              </sc-if>
+                            </div>
+                          </div>
+                        </div>
+                      </sc-if>
+                    </sc-for>
+                  </div>
+                  </div>
+                </sc-if>
+              </div>
+            </div>
+            <sc-if value="{{ showPagination }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:18px">
+                <div style="display:flex;align-items:center;justify-content:center;gap:14px">
+                  <button onClick="{{ binderPrev }}" style="{{ binderPrevStyle }}"><i class="fa-solid fa-arrow-left" style="margin-right:7px"></i>{{ L.prevW }}</button>
+                  <button onClick="{{ binderNext }}" style="{{ binderNextStyle }}">{{ L.nextW }}<i class="fa-solid fa-arrow-right" style="margin-left:7px"></i></button>
+                </div>
+                <span style="font-size:13px;color:var(--ink3);font-weight:600">{{ binderPageLabel }}</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ showCoverPages }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;justify-content:center;margin-top:18px">
+                <button onClick="{{ toggleCoverView }}" style="padding:10px 20px;border-radius:8px;border:none;background:var(--accent);color:var(--on-accent);font-size:13px;font-weight:600;cursor:pointer"><i class="fa-solid fa-book-open" style="margin-right:8px"></i>{{ L.openBinder }}</button>
+              </div>
+            </sc-if>
+          </sc-if>
+        </sc-if>
+        </div>
+        </div>
+        <sc-if value="{{ collectorHasExp }}" hint-placeholder-val="{{ true }}">
+          <div style="position:fixed;left:0;right:0;bottom:0;z-index:35;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(20px);border-top:1px solid var(--line);padding:10px 24px">
+            <div style="max-width:1240px;margin:0 auto">
+              <div style="display:flex;align-items:center;gap:16px">
+                <span style="font-family:var(--display);font-size:13px;font-weight:600;white-space:nowrap;flex-shrink:0">{{ collectorExpName }}</span>
+                <div style="flex:1;height:6px;background:var(--raise);border-radius:3px;overflow:hidden;min-width:60px;display:flex">
+                  <sc-for list="{{ rarityBarRows }}" as="rb" hint-placeholder-count="4">
+                    <div title="{{ rb.tooltip }}" style="height:100%;background:{{ rb.color }};width:{{ rb.widthPct }};flex-shrink:0;transition:width .6s ease"></div>
+                  </sc-for>
+                </div>
+                <span style="font-size:12px;color:var(--ink3);white-space:nowrap;flex-shrink:0">{{ stats.total }} {{ L.totalCards }}</span>
+                <span style="font-size:12px;color:var(--ok);white-space:nowrap;flex-shrink:0">{{ stats.owned }} {{ L.ownedW }}</span>
+                <span style="font-size:12px;color:var(--danger);white-space:nowrap;flex-shrink:0">{{ stats.missing }} {{ L.missingW }}</span>
+                <span style="font-size:12px;color:var(--accent-ink);white-space:nowrap;flex-shrink:0">{{ stats.dupes }} {{ L.dupes }}</span>
+                <button onClick="{{ editPullRates }}" title="{{ L.pullRateTitle }}" style="background:transparent;color:var(--ink3);border:1px solid var(--line);width:26px;height:26px;border-radius:6px;cursor:pointer;font-size:11px;flex-shrink:0" style-hover="color:var(--accent-ink);border-color:var(--accent-ink)"><i class="fa-solid fa-percent"></i></button>
+                <span style="font-size:13px;font-weight:700;font-family:var(--display);white-space:nowrap;flex-shrink:0">{{ stats.pct }}%</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:16px;margin-top:9px">
+                <span style="font-size:11px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;flex-shrink:0;white-space:nowrap">{{ L.uniqueDesigns }}</span>
+                <div style="flex:1;height:6px;background:var(--raise);border-radius:3px;overflow:hidden;min-width:60px;display:flex">
+                  <div title="{{ uniqueStats.baseTip }}" style="height:100%;background:var(--accent);width:{{ uniqueStats.baseWidth }};flex-shrink:0;transition:width .6s ease"></div>
+                  <div title="{{ uniqueStats.extraTip }}" style="height:100%;background:var(--accent-ink);width:{{ uniqueStats.extraWidth }};flex-shrink:0;transition:width .6s ease"></div>
+                </div>
+                <span style="font-size:12px;color:var(--ink3);white-space:nowrap;flex-shrink:0">{{ uniqueStats.owned }}/{{ uniqueStats.total }}</span>
+                <span style="font-size:13px;font-weight:700;font-family:var(--display);white-space:nowrap;flex-shrink:0">{{ uniqueStats.pct }}%</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:9px;padding-top:9px;border-top:1px solid var(--line)">
+                <span style="font-size:11px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;flex-shrink:0">{{ L.boosters }}</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;font-family:var(--display)" title="{{ L.calcFromCards }}"><i class="fa-solid fa-calculator" style="font-size:10px;color:var(--ink3)"></i>{{ boosterTracker.opened }}</span>
+                <span style="font-size:11px;color:var(--ink3)">{{ L.boostersOpenedW }}</span>
+                <span style="width:1px;height:16px;background:var(--line)"></span>
+                <span style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;font-family:var(--display)" title="{{ L.calcFromCards }}"><i class="fa-solid fa-calculator" style="font-size:10px;color:var(--ink3)"></i>{{ boosterTracker.boxes }}</span>
+                <span style="font-size:11px;color:var(--ink3)">{{ L.boxesOwned }}</span>
+                <sc-if value="{{ boosterTracker.hasBoosterRemainder }}" hint-placeholder-val="{{ false }}">
+                  <span style="font-size:11px;color:var(--accent-ink);font-weight:600">(+{{ boosterTracker.boosterRemainder }} {{ L.boostersOpenedW }})</span>
+                </sc-if>
+                <span style="font-size:11px;color:var(--ink3);margin-left:auto">{{ boosterTracker.fromCardsLabel }}</span>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+      </sc-if>
+    </div>
+    </sc-if>
+
+  </main>
+</div>
+
+<!-- ================= MODAL ================= -->
+<sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ closeModal }}" style="position:fixed;inset:0;z-index:60;background:rgba(4,4,8,.72);backdrop-filter:blur(6px);display:flex;align-items:flex-start;justify-content:center;padding:60px 20px;overflow-y:auto">
+  <div onClick="{{ stop }}" style="background:var(--inset);border:1px solid var(--line2);border-radius:16px;width:100%;max-width:{{ modalWidth }};box-shadow:0 24px 70px rgba(0,0,0,.6);animation:pop .22s ease">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--line)">
+      <div style="font-family:var(--display);font-size:17px;font-weight:600">{{ modalTitle }}</div>
+      <button onClick="{{ closeModal }}" style="background:transparent;border:none;color:var(--ink3);cursor:pointer;font-size:18px;width:30px;height:30px;border-radius:6px" style-hover="color:var(--ink);background:var(--raise)"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div style="padding:24px">{{ modalBody }}</div>
+  </div>
+</div>
+</sc-if>
+
+<!-- ================= TOAST ================= -->
+<sc-if value="{{ toastShow }}" hint-placeholder-val="{{ false }}">
+<div style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:80;background:var(--raise);border:1px solid var(--line2);border-left:3px solid {{ toastColor }};border-radius:10px;padding:13px 20px;box-shadow:0 12px 40px rgba(0,0,0,.5);display:flex;align-items:center;gap:11px;animation:fadeUp .3s ease;max-width:90vw">
+  <i class="{{ toastIcon }}" style="color:{{ toastColor }};font-size:15px"></i>
+  <span style="font-size:14px;font-weight:500">{{ toastMsg }}</span>
+</div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = this.buildInitial();
+
+  // ---------- static config ----------
+  // structural card types (Leader/Unit/Skill/Item) - kept separate from elemental
+  // affinity (Component.ELEMENT_*), which a card carries independently via card.element
+  static TYPES = [
+    {value:'Leader',color:'#dbb960',icon:'fa-solid fa-crown'},
+    {value:'Unit',color:'#e85d4a',icon:'fa-solid fa-user-shield'},
+    {value:'Skill',color:'#4a90d9',icon:'fa-solid fa-bolt'},
+    {value:'Item',color:'#5cb88a',icon:'fa-solid fa-flask'}
+  ];
+  static CONDITIONS = ['Mint','Near Mint','Good','Played'];
+  static PARALLEL_RARITIES = ['nv-sp','nv-spr','nv-spl','nv-sbr','nv-sbl','nv-ssl','nv-anl'];
+  static isParallelRarity(id){ return Component.PARALLEL_RARITIES.indexOf(id)>=0; }
+  static KEYWORD_I18N = {
+    '가디언':{en:'Guardian',de:'Wächter'},'디펜더':{en:'Defender',de:'Verteidiger'},
+    '레벨링크':{en:'Level Link',de:'Level-Link'},'믹스':{en:'Mix',de:'Mix'},
+    '버프':{en:'Buff',de:'Buff'},'스위치':{en:'Switch',de:'Wechsel'},
+    '암드':{en:'Armed',de:'Bewaffnet'},'액티브':{en:'Active',de:'Aktiv'},
+    '어태커':{en:'Attacker',de:'Angreifer'},'엑시트':{en:'Exit',de:'Exit'},
+    '엔트리':{en:'Entry',de:'Entry'},'이스케이프':{en:'Escape',de:'Escape'},
+    '전선구축':{en:'Frontline Formation',de:'Frontaufbau'},'체인':{en:'Chain',de:'Kette'},
+    '크레딧':{en:'Credit',de:'Credit'},'패시브':{en:'Passive',de:'Passiv'},
+    '포지션':{en:'Position',de:'Position'},'서약':{en:'Vow',de:'Gelübde'}
+  };
+  static KEYWORD_COLORS = {
+    '가디언':'#4fb8a0','디펜더':'#4f8fe0','레벨링크':'#9f7fe0','믹스':'#e07fc0',
+    '버프':'#4fcf6a','스위치':'#4fd0e0','암드':'#e0614f','액티브':'#e0a04f',
+    '어태커':'#d94f6e','엑시트':'#7f8fa0','엔트리':'#a0cf4f','이스케이프':'#e0c14f',
+    '전선구축':'#a97a4f','체인':'#6f7f9f','크레딧':'#c9a84c','패시브':'#8f8fa0',
+    '포지션':'#7f6fd0','서약':'#a04f6f'
+  };
+  static TYPE_I18N = {
+    Unit:{ko:'유닛',en:'Unit',de:'Einheit'},
+    Leader:{ko:'리더',en:'Leader',de:'Anführer'},
+    Skill:{ko:'스킬',en:'Skill',de:'Fähigkeit'},
+    Item:{ko:'아이템',en:'Item',de:'Gegenstand'}
+  };
+  // Fire/Storm/Earth/Lightning/Wave are Nivel Arena's real elements (from imported card
+  // data); Water/Wind/Light/Dark/Nature round the vocabulary out for generic/custom systems -
+  // both live in one list so any system's cards can use whichever fit.
+  static ELEMENT_I18N = {
+    Fire:{ko:'화염',en:'Fire',de:'Feuer'},
+    Water:{ko:'물',en:'Water',de:'Wasser'},
+    Storm:{ko:'폭풍',en:'Storm',de:'Sturm'},
+    Earth:{ko:'대지',en:'Earth',de:'Erde'},
+    Wind:{ko:'바람',en:'Wind',de:'Wind'},
+    Lightning:{ko:'번개',en:'Lightning',de:'Blitz'},
+    Wave:{ko:'파도',en:'Wave',de:'Welle'},
+    Light:{ko:'빛',en:'Light',de:'Licht'},
+    Dark:{ko:'어둠',en:'Dark',de:'Dunkelheit'},
+    Nature:{ko:'자연',en:'Nature',de:'Natur'}
+  };
+  static ELEMENT_COLORS = {
+    Fire:'#e85d4a', Water:'#4a90d9', Storm:'#5ec9b8', Earth:'#a8834a', Wind:'#5cb88a',
+    Lightning:'#e0c93a', Wave:'#4a90d9', Light:'#dbc35c', Dark:'#9b6bcf', Nature:'#6bbf59'
+  };
+  static ELEMENT_ICONS = {
+    Fire:'fa-solid fa-fire', Water:'fa-solid fa-droplet', Storm:'fa-solid fa-cloud-bolt',
+    Earth:'fa-solid fa-mountain', Wind:'fa-solid fa-wind', Lightning:'fa-solid fa-bolt',
+    Wave:'fa-solid fa-water', Light:'fa-solid fa-sun', Dark:'fa-solid fa-moon', Nature:'fa-solid fa-leaf'
+  };
+  static THEMES = {
+    ledger:{name:'Grimoire Ledger',vars:{'--bg':'#0c0c0c','--panel':'#111111','--inset':'#131313','--row':'#161616','--raise':'#1c1c1c','--line':'#242424','--line2':'#363636','--ink':'#ece8e2','--ink2':'#8f8b84','--ink3':'#6e6a64','--accent':'#8e3b3b','--on-accent':'#f2e7e2','--accent-ink':'#c67f7f','--danger':'#e0714f','--ok':'#4caf7d','--display':"'Space Grotesk',sans-serif",'--sans':"'Space Mono',monospace",'--mono':"'IBM Plex Mono',monospace"}},
+    reliquary:{name:'Gilt Reliquary',vars:{'--bg':'#0d0b08','--panel':'#12100b','--inset':'#14110b','--row':'#171410','--raise':'#1e1a13','--line':'#29241a','--line2':'#4a3f28','--ink':'#efe9dc','--ink2':'#9c937f','--ink3':'#7a6f57','--accent':'#b39a5a','--on-accent':'#0d0b08','--accent-ink':'#c8ac67','--danger':'#c0564a','--ok':'#4caf7d'}},
+    athenaeum:{name:'Moonlit Athenaeum',vars:{'--bg':'#0a0b10','--panel':'#0e1017','--inset':'#10121b','--row':'#141724','--raise':'#1a1d2a','--line':'#1f2230','--line2':'#333852','--ink':'#e9eaf0','--ink2':'#8b90a3','--ink3':'#5d6378','--accent':'#9a8fc4','--on-accent':'#0a0b10','--accent-ink':'#b3a9d6','--danger':'#c0564a','--ok':'#4caf7d'}},
+    black:{name:'Black',vars:{'--bg':'#000000','--panel':'#0a0a0a','--inset':'#0d0d0d','--row':'#101010','--raise':'#1a1a1a','--line':'#222222','--line2':'#363636','--ink':'#f0f0ee','--ink2':'#8f8f8c','--ink3':'#696966','--accent':'#e8e8e4','--on-accent':'#000000','--accent-ink':'#d6d6d0','--danger':'#e0714f','--ok':'#4caf7d'}},
+    light:{name:'Light',vars:{'--bg':'#f4f2ed','--panel':'#fbfaf7','--inset':'#eeece6','--row':'#f7f6f1','--raise':'#e8e5dd','--line':'#ddd8cd','--line2':'#c6c0b2','--ink':'#1d1a15','--ink2':'#5a554b','--ink3':'#8a8376','--accent':'#8e3b3b','--on-accent':'#f7efe9','--accent-ink':'#8e3b3b','--danger':'#b5432e','--ok':'#2e7d51'}}
+  };
+
+  static I18N = {
+    en:{tagline:'TCG Builder & Collector',builder:'TCG Builder',collector:'Collector',system:'System',newSystem:'New System',forgeTitle:'Forge your first TCG',forgeDesc:'Define a card game system — its rarities, expansions, and cards. Then switch to Collector mode to track what you own.',createSystem:'Create a System',systemSettings:'System Settings',addExpansion:'Expansion',booster:'Booster',starter:'Starter',special:'Special',promo:'Promo',expansions:'Expansions',totalCards:'Total Cards',rarities:'Rarities',rarityTiers:'Rarity Tiers',addRarity:'Add Rarity',pullRateWord:'Pull rate',cardLayout:'Card Layout',addField:'Add Field',layoutDesc:'Stat fields shown on every card in this system, plus the always-present name, number, type, rarity, image and effect text.',noFieldsMsg:'No stat fields — cards show just name, type and rarity. Add one like Cost or Power.',edit:'Edit',del:'Delete',addCard:'Add Card',noCardsTitle:'No cards in this expansion yet',autoNumber:'Cards are auto-numbered as you add them.',addFirstCard:'Add First Card',collecting:'Collecting',condition:'Condition',ownedW:'Owned',missingW:'Missing',dupes:'Duplicates',pullRateTitle:'Pull Rate',pullHint:"Add the cards you've pulled (set quantities on the cards below) and your observed pull rate per rarity appears here.",pullRatesDesc:'Set the expected pull rate (%) for each rarity in this system. Leave blank if unknown.',tPullRatesSaved:'Pull rates saved',all:'All',nothingTitle:'Nothing to collect yet',nothingDesc:'Build a TCG system first, then come back here to track your collection.',goBuilder:'Go to Builder',cardsN:'%d cards',cardN1:'%d card',unused:'unused',shownOnCard:'shown on card',hiddenW:'hidden',numberT:'Number',textT:'Text',longTextT:'Long Text',elementW:'Element',linkedTypeNote:'Automatically uses the card\'s real type and standard colors.',linkedElementNote:'Automatically uses the card\'s real element and standard colors.',linkedLongtextNote:'Long-form text — only shown in the card detail view, never on the tile.',sections:'Sections',addSection:'Add Section',sectionsDesc:'Group your expansions into collapsible sections, shown in the sidebar. Expansions are assigned a section from the expansion editor.',noSectionsMsg:'No sections yet — expansions show ungrouped. Add one like Booster or Starter.',mNewSection:'New Section',mEditSection:'Edit Section',lSectionName:'Section Name',lSection:'Section',ungrouped:'Ungrouped',tSectionAdded:'Section added',tSectionUpdated:'Section updated',tSectionRemoved:'Section removed',delSectionMsg:'Delete the “%s” section? Its expansions will become ungrouped.',expN1:'%d expansion',expsN:'%d expansions',emptySection:'empty',statsForX:'Stats for %s',statsNone:'Select an expansion to see its stats',noDate:'No date',copiesSummary:'%a copies pulled · %b unique',targetL:'target %s%',copiesW:'%d copies',expectedL:'~%s% expected',pulledL:'%s% · %d pulled',variants1:'+%d Variant',variantsN:'+%d Variants',setQty1:'Set the quantity you own',setQtyN:'%d versions · set the quantity you own of each',ownedX:'Owned ×%d',notOwned:'Not owned',ofPulls:'%s% of pulls',done:'Done',cancel:'Cancel',saveW:'Save',saveChanges:'Save Changes',createExpansion:'Create Expansion',mNewSystem:'New TCG System',mEditSystem:'Edit System',mNewRarity:'New Rarity',mEditRarity:'Edit Rarity',mNewExpansion:'New Expansion',mEditExpansion:'Edit Expansion',mNewCard:'New Card',mEditCard:'Edit Card',mNewField:'New Card Field',mEditField:'Edit Field',mConfirmDelete:'Confirm Deletion',lSystemName:'System Name',lDescription:'Description',lRarityName:'Rarity Name',lColor:'Color',lPullRatePct:'Pull rate (%)',lExpName:'Expansion Name',lAbbr:'Abbreviation',lRelease:'Release Date',lSeries:'Series',noSeries:'No Series',lImageBaseUrl:'Image Host URL',imageBaseUrlHint:'Optional. If set, card art loads from here first (e.g. GitHub Pages) and falls back to the original source URL if a file is missing.',lCardName:'Card Name',lCardNumber:'Card Number',lType:'Type',lElement:'Element',noElement:'No Element',lRarity:'Rarity',lImage:'Image URL (optional)',lFieldLabel:'Field Label',lValueType:'Value Type',lIcon:'Icon',lShowOnCard:'Show on card',lReassign:'Reassign those cards to',delSystemMsg:'Delete this entire system? All expansions, cards, and collection progress will be lost.',delExpMsg:'Delete “%s” and all its cards?',delRarityMsg:'Delete the “%s” rarity tier?',delRarityUse:'%d card(s) currently use it.',onlyRarity:'This is the only rarity — add another before deleting it.',sureMsg:'Are you sure?',tNameRequired:'Name is required',tLabelRequired:'Label is required',tSystemCreated:'System created',tSystemUpdated:'System updated',tSystemDeleted:'System deleted',tRarityAdded:'Rarity added',tRarityUpdated:'Rarity updated',tRarityRemoved:'Rarity removed',tFieldAdded:'Field added',tFieldUpdated:'Field updated',tFieldRemoved:'Field removed',tExpCreated:'Expansion created',tExpUpdated:'Expansion updated',tExpDeleted:'Expansion deleted',tCardAdded:'Card added',tCardUpdated:'Card updated',tCardDeleted:'Card deleted',tExported:'Collection exported',tImported:'Import successful',tInvalid:'Invalid file',tAddRarityFirst:'Add another rarity first',tCatalog:'Nivel Arena catalog loaded — %d cards added',pageOfN:'Page %d of %d',pagesRangeOfN:'Pages %d–%d of %d',stackVariants:'Stack Variants',cardSize:'Card Size',dynamicSize:'Dynamic',haveW:'Have',needW:'Need',dupesW:'Dupes',prevW:'Prev',nextW:'Next',imgNone:'No image URL yet',imgLoadFail:'Image failed to load',binderCover:'Binder Cover',binderCoverDesc:"Design a custom front cover for this system's binder — shown when you open the collection in Binder view.",editCover:'Edit Cover',editDivider:'Divider',viewCover:'Binder Cover',openBinder:'Back to Cards',mDesignCover:'Design Binder Cover',mEditCoverTitle:'Edit Binder Cover',mDesignDivider:'Design Divider',mEditDividerTitle:'Edit Divider',lTitle:'Title',lSubtitle:'Subtitle',lBackground:'Background',bgColor:'Solid',bgGradient:'Gradient',bgImage:'Image',lTextColor:'Text Color',lColor2:'Second Color',lImageUrl:'Image URL',resetDesign:'Reset to Default',tCoverSaved:'Cover saved',tDividerSaved:'Divider saved',tDesignReset:'Design reset',lCardsPerBooster:'Cards / Booster',lBoostersPerBox:'Boosters / Box',boosters:'Boosters',boostersOpenedW:'opened',boxesOwned:'Boxes',uniqueDesigns:'Unique Designs',totalCollected:'Total Collected',homeTab:'Home',recentlyAddedTitle:'Recently Added',rarestOwnedTitle:'Rarest Pulls',homeEmptyTitle:'Nothing collected yet',homeEmptyDesc:"Start marking cards as owned and they'll show up here.",homeNoSectionsMsg:'No sections selected — pick at least one above to see your cards.',fromCardsTracked:'from %d cards tracked',extraCards:'%d extra',calcFromCards:'Calculated from the cards you\'ve tracked, not entered manually',dragHint:'Drag cards to reorder',manualOrderBadge:'Manual Order',resetOrder:'Reset to numeric order',tOrderReset:'Card order reset',expImport:'Import Cards',expExport:'Export Cards',expImportTitle:'Import Expansion Cards',expExportTitle:'Export Expansion Cards',expImportDesc:'Load a card list JSON into this expansion. Existing cards in this expansion will be replaced, but your collection progress for other expansions is kept.',expExportDesc:'Download just this expansion\'s card list as a JSON file. Use it to back up or share this set.',imgScript:'Image Script',imgScriptTitle:'Download Image Fetcher',imgScriptDesc:'Your browser can\'t directly save images from nivelarena.co.kr due to security rules (CORS). Download this small Python script and run it to fetch all images for this expansion into a local folder.',downloadScript:'Download .py Script',},
+    ko:{tagline:'TCG 빌더 & 컬렉터',builder:'TCG 빌더',collector:'컬렉터',system:'시스템',newSystem:'새 시스템',forgeTitle:'첫 TCG를 만들어 보세요',forgeDesc:'카드 게임 시스템 — 레어도, 확장팩, 카드 — 를 정의한 뒤, 컬렉터 모드에서 소장 카드를 관리하세요.',createSystem:'시스템 만들기',systemSettings:'시스템 설정',addExpansion:'확장팩',booster:'부스터',starter:'스타터',special:'스페셜',promo:'프로모',expansions:'확장팩',totalCards:'전체 카드',rarities:'레어도',rarityTiers:'레어도 등급',addRarity:'레어도 추가',pullRateWord:'배출률',cardLayout:'카드 레이아웃',addField:'필드 추가',layoutDesc:'이 시스템의 모든 카드에 표시되는 스탯 필드입니다. 이름·번호·타입·레어도·이미지·효과 텍스트는 항상 표시됩니다.',noFieldsMsg:'스탯 필드가 없습니다 — 카드에는 이름·타입·레어도만 표시됩니다. 코스트나 파워 같은 필드를 추가해 보세요.',edit:'수정',del:'삭제',addCard:'카드 추가',noCardsTitle:'아직 이 확장팩에 카드가 없습니다',autoNumber:'카드는 추가하는 순서대로 자동 번호가 매겨집니다.',addFirstCard:'첫 카드 추가',collecting:'컬렉션',condition:'상태',ownedW:'보유',missingW:'미보유',dupes:'중복',pullRateTitle:'배출률',pullHint:'뽑은 카드의 수량을 아래 카드에 입력하면 레어도별 실제 배출률이 여기에 표시됩니다.',pullRatesDesc:'이 시스템의 각 레어도별 예상 배출률(%)을 설정하세요. 모르면 비워 두세요.',tPullRatesSaved:'배출률이 저장되었습니다',all:'전체',nothingTitle:'아직 수집할 것이 없습니다',nothingDesc:'먼저 빌더에서 TCG 시스템을 만든 뒤, 여기에서 컬렉션을 관리하세요.',goBuilder:'빌더로 이동',cardsN:'%d장',cardN1:'%d장',unused:'미사용',shownOnCard:'카드에 표시',hiddenW:'숨김',numberT:'숫자',textT:'텍스트',longTextT:'긴 텍스트',elementW:'속성',linkedTypeNote:'카드의 실제 타입과 기본 색상이 자동으로 사용됩니다.',linkedElementNote:'카드의 실제 속성과 기본 색상이 자동으로 사용됩니다.',linkedLongtextNote:'긴 텍스트 — 카드 상세보기에서만 표시되며 카드 앞면에는 표시되지 않습니다.',sections:'섹션',addSection:'섹션 추가',sectionsDesc:'확장팩을 접을 수 있는 섹션으로 묶어 사이드바에 표시합니다. 확장팩 편집 화면에서 섹션을 지정할 수 있습니다.',noSectionsMsg:'아직 섹션이 없습니다 — 확장팩이 그룹 없이 표시됩니다. 부스터나 스타터 같은 섹션을 추가해 보세요.',mNewSection:'새 섹션',mEditSection:'섹션 수정',lSectionName:'섹션 이름',lSection:'섹션',ungrouped:'미분류',tSectionAdded:'섹션 추가됨',tSectionUpdated:'섹션 수정됨',tSectionRemoved:'섹션 삭제됨',delSectionMsg:'“%s” 섹션을 삭제할까요? 포함된 확장팩은 미분류로 이동합니다.',expN1:'확장팩 %d개',expsN:'확장팩 %d개',emptySection:'비어 있음',statsForX:'%s 통계',statsNone:'통계를 보려면 확장팩을 선택하세요',noDate:'날짜 없음',copiesSummary:'총 %a장 개봉 · 고유 %b종',targetL:'목표 %s%',copiesW:'%d장',expectedL:'예상 ~%s%',pulledL:'%s% · %d장',variants1:'+%d 버전',variantsN:'+%d 버전',setQty1:'보유 수량을 설정하세요',setQtyN:'%d가지 버전 · 각각 보유 수량을 설정하세요',ownedX:'보유 ×%d',notOwned:'미보유',ofPulls:'전체 개봉의 %s%',done:'완료',cancel:'취소',saveW:'저장',saveChanges:'변경 사항 저장',createExpansion:'확장팩 만들기',mNewSystem:'새 TCG 시스템',mEditSystem:'시스템 수정',mNewRarity:'새 레어도',mEditRarity:'레어도 수정',mNewExpansion:'새 확장팩',mEditExpansion:'확장팩 수정',mNewCard:'새 카드',mEditCard:'카드 수정',mNewField:'새 카드 필드',mEditField:'필드 수정',mConfirmDelete:'삭제 확인',lSystemName:'시스템 이름',lDescription:'설명',lRarityName:'레어도 이름',lColor:'색상',lPullRatePct:'배출률 (%)',lExpName:'확장팩 이름',lAbbr:'약칭',lRelease:'출시일',lSeries:'시리즈',noSeries:'시리즈 없음',lImageBaseUrl:'이미지 호스팅 URL',imageBaseUrlHint:'선택 사항입니다. 설정하면 카드 이미지를 이곳에서 먼저 불러오고(예: GitHub Pages), 파일이 없으면 원본 출처 URL로 대체합니다.',lCardName:'카드 이름',lCardNumber:'카드 번호',lType:'타입',lElement:'속성',noElement:'속성 없음',lRarity:'레어도',lImage:'이미지 URL (선택)',lFieldLabel:'필드 이름',lValueType:'값 타입',lIcon:'아이콘',lShowOnCard:'카드에 표시',lReassign:'해당 카드를 다음 레어도로 이동',delSystemMsg:'이 시스템 전체를 삭제할까요? 모든 확장팩, 카드, 컬렉션 진행 상황이 사라집니다.',delExpMsg:'“%s”와(과) 모든 카드를 삭제할까요?',delRarityMsg:'“%s” 레어도 등급을 삭제할까요?',delRarityUse:'현재 %d장의 카드가 사용 중입니다.',onlyRarity:'유일한 레어도입니다 — 삭제 전에 다른 레어도를 추가하세요.',sureMsg:'정말 삭제할까요?',tNameRequired:'이름을 입력하세요',tLabelRequired:'이름을 입력하세요',tSystemCreated:'시스템 생성됨',tSystemUpdated:'시스템 수정됨',tSystemDeleted:'시스템 삭제됨',tRarityAdded:'레어도 추가됨',tRarityUpdated:'레어도 수정됨',tRarityRemoved:'레어도 삭제됨',tFieldAdded:'필드 추가됨',tFieldUpdated:'필드 수정됨',tFieldRemoved:'필드 삭제됨',tExpCreated:'확장팩 생성됨',tExpUpdated:'확장팩 수정됨',tExpDeleted:'확장팩 삭제됨',tCardAdded:'카드 추가됨',tCardUpdated:'카드 수정됨',tCardDeleted:'카드 삭제됨',tExported:'컬렉션 내보내기 완료',tImported:'가져오기 완료',tInvalid:'잘못된 파일',tAddRarityFirst:'먼저 다른 레어도를 추가하세요',tCatalog:'니벨아레나 카탈로그 불러옴 — %d장 추가',pageOfN:'%d / %d 페이지',pagesRangeOfN:'%d–%d / %d 페이지',stackVariants:'버전 묶어보기',cardSize:'카드 크기',dynamicSize:'자동',haveW:'보유',needW:'미보유',dupesW:'중복',prevW:'이전',nextW:'다음',imgNone:'이미지 URL이 없습니다',imgLoadFail:'이미지를 불러오지 못했습니다',binderCover:'바인더 표지',binderCoverDesc:'이 시스템의 바인더 앞표지를 디자인하세요 — 바인더 보기를 열면 표시됩니다.',editCover:'표지 편집',editDivider:'구분지',viewCover:'바인더 표지',openBinder:'카드로 돌아가기',mDesignCover:'바인더 표지 디자인',mEditCoverTitle:'바인더 표지 편집',mDesignDivider:'구분지 디자인',mEditDividerTitle:'구분지 편집',lTitle:'제목',lSubtitle:'부제목',lBackground:'배경',bgColor:'단색',bgGradient:'그라데이션',bgImage:'이미지',lTextColor:'텍스트 색상',lColor2:'두 번째 색상',lImageUrl:'이미지 URL',resetDesign:'기본값으로 재설정',tCoverSaved:'표지 저장됨',tDividerSaved:'구분지 저장됨',tDesignReset:'디자인 초기화됨',lCardsPerBooster:'부스터당 카드 수',lBoostersPerBox:'박스당 부스터 수',boosters:'부스터',boostersOpenedW:'개봉',boxesOwned:'박스',uniqueDesigns:'고유 카드',totalCollected:'전체 수집률',homeTab:'홈',recentlyAddedTitle:'최근 추가됨',rarestOwnedTitle:'가장 희귀한 카드',homeEmptyTitle:'아직 수집한 카드가 없습니다',homeEmptyDesc:'카드를 보유로 표시하면 여기에 표시됩니다.',homeNoSectionsMsg:'선택된 섹션이 없습니다 — 위에서 하나 이상 선택하세요.',fromCardsTracked:'기록된 카드 %d장 기준',extraCards:'%d장 남음',calcFromCards:'직접 입력하지 않고, 기록된 카드 수를 기준으로 자동 계산됩니다',dragHint:'카드를 드래그하여 순서를 바꿀 수 있습니다',manualOrderBadge:'수동 정렬',resetOrder:'번호순으로 초기화',tOrderReset:'카드 순서가 초기화되었습니다',expImport:'카드 가져오기',expExport:'카드 내보내기',expImportTitle:'확장팩 카드 가져오기',expExportTitle:'확장팩 카드 내보내기',expImportDesc:'카드 목록 JSON을 이 확장팩에 불러옵니다. 이 확장팩의 기존 카드는 교체되지만, 다른 확장팩의 컬렉션 진행 상황은 유지됩니다.',expExportDesc:'이 확장팩의 카드 목록만 JSON 파일로 다운로드합니다. 백업이나 공유에 사용하세요.',imgScript:'이미지 스크립트',imgScriptTitle:'이미지 다운로더 받기',imgScriptDesc:'브라우저 보안 규칙(CORS) 때문에 nivelarena.co.kr에서 이미지를 직접 저장할 수 없습니다. 이 작은 Python 스크립트를 다운로드해서 실행하면 이 확장팩의 모든 이미지를 로컬 폴더에 받을 수 있습니다.',downloadScript:'스크립트 다운로드',},
+    de:{tagline:'TCG-Builder & Sammlung',builder:'TCG-Builder',collector:'Sammlung',system:'System',newSystem:'Neues System',forgeTitle:'Erschaffe dein erstes TCG',forgeDesc:'Definiere ein Kartenspiel-System — Seltenheiten, Erweiterungen und Karten. Wechsle dann in den Sammlungsmodus, um deinen Bestand zu verwalten.',createSystem:'System erstellen',systemSettings:'Systemeinstellungen',addExpansion:'Erweiterung',booster:'Booster',starter:'Starter',special:'Spezial',promo:'Promo',expansions:'Erweiterungen',totalCards:'Karten gesamt',rarities:'Seltenheiten',rarityTiers:'Seltenheitsstufen',addRarity:'Seltenheit hinzufügen',pullRateWord:'Pull-Rate',cardLayout:'Kartenlayout',addField:'Feld hinzufügen',layoutDesc:'Stat-Felder, die auf jeder Karte dieses Systems erscheinen — zusätzlich zu Name, Nummer, Typ, Seltenheit, Bild und Effekttext.',noFieldsMsg:'Keine Stat-Felder — Karten zeigen nur Name, Typ und Seltenheit. Füge z. B. Kosten oder Power hinzu.',edit:'Bearbeiten',del:'Löschen',addCard:'Karte hinzufügen',noCardsTitle:'Noch keine Karten in dieser Erweiterung',autoNumber:'Karten werden beim Hinzufügen automatisch nummeriert.',addFirstCard:'Erste Karte hinzufügen',collecting:'Sammle',condition:'Zustand',ownedW:'Im Besitz',missingW:'Fehlend',dupes:'Duplikate',pullRateTitle:'Pull-Rate',pullHint:'Trage unten die gezogenen Karten ein (Mengen setzen), dann erscheint hier deine beobachtete Pull-Rate pro Seltenheit.',pullRatesDesc:'Lege die erwartete Pull-Rate (%) für jede Seltenheit in diesem System fest. Leer lassen, wenn unbekannt.',tPullRatesSaved:'Pull-Raten gespeichert',all:'Alle',nothingTitle:'Noch nichts zu sammeln',nothingDesc:'Erstelle zuerst ein TCG-System im Builder und verwalte danach hier deine Sammlung.',goBuilder:'Zum Builder',cardsN:'%d Karten',cardN1:'%d Karte',unused:'ungenutzt',shownOnCard:'auf Karte sichtbar',hiddenW:'ausgeblendet',numberT:'Zahl',textT:'Text',longTextT:'Langtext',elementW:'Element',linkedTypeNote:'Verwendet automatisch den echten Typ der Karte und Standardfarben.',linkedElementNote:'Verwendet automatisch das echte Element der Karte und Standardfarben.',linkedLongtextNote:'Langform-Text — wird nur in der Kartendetailansicht angezeigt, nie auf der Kachel.',sections:'Abschnitte',addSection:'Abschnitt hinzufügen',sectionsDesc:'Gruppiere deine Erweiterungen in einklappbare Abschnitte, die in der Seitenleiste angezeigt werden. Erweiterungen werden im Erweiterungs-Editor einem Abschnitt zugewiesen.',noSectionsMsg:'Noch keine Abschnitte — Erweiterungen werden ungruppiert angezeigt. Füge z. B. Booster oder Starter hinzu.',mNewSection:'Neuer Abschnitt',mEditSection:'Abschnitt bearbeiten',lSectionName:'Abschnittsname',lSection:'Abschnitt',ungrouped:'Ungruppiert',tSectionAdded:'Abschnitt hinzugefügt',tSectionUpdated:'Abschnitt aktualisiert',tSectionRemoved:'Abschnitt entfernt',delSectionMsg:'Den Abschnitt „%s“ löschen? Seine Erweiterungen werden ungruppiert.',expN1:'%d Erweiterung',expsN:'%d Erweiterungen',emptySection:'leer',statsForX:'Statistik für %s',statsNone:'Wähle eine Erweiterung, um ihre Statistik zu sehen',noDate:'Kein Datum',copiesSummary:'%a Karten gezogen · %b einzigartig',targetL:'Ziel %s%',copiesW:'%d Stück',expectedL:'~%s% erwartet',pulledL:'%s% · %d gezogen',variants1:'+%d Variante',variantsN:'+%d Varianten',setQty1:'Lege die Anzahl in deinem Besitz fest',setQtyN:'%d Versionen · lege die Anzahl je Version fest',ownedX:'Im Besitz ×%d',notOwned:'Nicht im Besitz',ofPulls:'%s% der Pulls',done:'Fertig',cancel:'Abbrechen',saveW:'Speichern',saveChanges:'Änderungen speichern',createExpansion:'Erweiterung erstellen',mNewSystem:'Neues TCG-System',mEditSystem:'System bearbeiten',mNewRarity:'Neue Seltenheit',mEditRarity:'Seltenheit bearbeiten',mNewExpansion:'Neue Erweiterung',mEditExpansion:'Erweiterung bearbeiten',mNewCard:'Neue Karte',mEditCard:'Karte bearbeiten',mNewField:'Neues Kartenfeld',mEditField:'Feld bearbeiten',mConfirmDelete:'Löschen bestätigen',lSystemName:'Systemname',lDescription:'Beschreibung',lRarityName:'Name der Seltenheit',lColor:'Farbe',lPullRatePct:'Pull-Rate (%)',lExpName:'Name der Erweiterung',lAbbr:'Kürzel',lRelease:'Erscheinungsdatum',lSeries:'Serie',noSeries:'Keine Serie',lImageBaseUrl:'Bild-Hosting-URL',imageBaseUrlHint:'Optional. Falls gesetzt, werden Kartenbilder zuerst von hier geladen (z. B. GitHub Pages) und bei fehlender Datei auf die ursprüngliche Quelle zurückgegriffen.',lCardName:'Kartenname',lCardNumber:'Kartennummer',lType:'Typ',lElement:'Element',noElement:'Kein Element',lRarity:'Seltenheit',lImage:'Bild-URL (optional)',lFieldLabel:'Feldname',lValueType:'Werttyp',lIcon:'Symbol',lShowOnCard:'Auf Karte anzeigen',lReassign:'Diese Karten zuordnen zu',delSystemMsg:'Dieses System komplett löschen? Alle Erweiterungen, Karten und Sammlungsfortschritte gehen verloren.',delExpMsg:'„%s“ und alle zugehörigen Karten löschen?',delRarityMsg:'Die Seltenheitsstufe „%s“ löschen?',delRarityUse:'%d Karte(n) verwenden sie derzeit.',onlyRarity:'Dies ist die einzige Seltenheit — füge zuerst eine andere hinzu.',sureMsg:'Bist du sicher?',tNameRequired:'Name ist erforderlich',tLabelRequired:'Bezeichnung ist erforderlich',tSystemCreated:'System erstellt',tSystemUpdated:'System aktualisiert',tSystemDeleted:'System gelöscht',tRarityAdded:'Seltenheit hinzugefügt',tRarityUpdated:'Seltenheit aktualisiert',tRarityRemoved:'Seltenheit entfernt',tFieldAdded:'Feld hinzugefügt',tFieldUpdated:'Feld aktualisiert',tFieldRemoved:'Feld entfernt',tExpCreated:'Erweiterung erstellt',tExpUpdated:'Erweiterung aktualisiert',tExpDeleted:'Erweiterung gelöscht',tCardAdded:'Karte hinzugefügt',tCardUpdated:'Karte aktualisiert',tCardDeleted:'Karte gelöscht',tExported:'Sammlung exportiert',tImported:'Import erfolgreich',tInvalid:'Ungültige Datei',tAddRarityFirst:'Füge zuerst eine andere Seltenheit hinzu',tCatalog:'Nivel-Arena-Katalog geladen — %d Karten hinzugefügt',pageOfN:'Seite %d von %d',pagesRangeOfN:'Seiten %d–%d von %d',stackVariants:'Varianten stapeln',cardSize:'Kartengröße',dynamicSize:'Dynamisch',haveW:'Vorhanden',needW:'Fehlend',dupesW:'Duplikate',prevW:'Zurück',nextW:'Weiter',imgNone:'Noch keine Bild-URL',imgLoadFail:'Bild konnte nicht geladen werden',binderCover:'Ordner-Cover',binderCoverDesc:'Gestalte ein eigenes Titelblatt für den Ordner dieses Systems — wird in der Ordneransicht angezeigt.',editCover:'Cover bearbeiten',editDivider:'Trennblatt',viewCover:'Ordner-Cover',openBinder:'Zurück zu den Karten',mDesignCover:'Ordner-Cover gestalten',mEditCoverTitle:'Ordner-Cover bearbeiten',mDesignDivider:'Trennblatt gestalten',mEditDividerTitle:'Trennblatt bearbeiten',lTitle:'Titel',lSubtitle:'Untertitel',lBackground:'Hintergrund',bgColor:'Farbe',bgGradient:'Verlauf',bgImage:'Bild',lTextColor:'Textfarbe',lColor2:'Zweite Farbe',lImageUrl:'Bild-URL',resetDesign:'Zurücksetzen',tCoverSaved:'Cover gespeichert',tDividerSaved:'Trennblatt gespeichert',tDesignReset:'Design zurückgesetzt',lCardsPerBooster:'Karten / Booster',lBoostersPerBox:'Booster / Box',boosters:'Booster',boostersOpenedW:'geöffnet',boxesOwned:'Boxen',uniqueDesigns:'Einzigartige Designs',totalCollected:'Gesamt gesammelt',homeTab:'Start',recentlyAddedTitle:'Kürzlich hinzugefügt',rarestOwnedTitle:'Seltenste Funde',homeEmptyTitle:'Noch nichts gesammelt',homeEmptyDesc:'Markiere Karten als im Besitz und sie erscheinen hier.',homeNoSectionsMsg:'Keine Abschnitte ausgewählt — wähle oben mindestens einen aus.',fromCardsTracked:'aus %d erfassten Karten',extraCards:'%d übrig',calcFromCards:'Berechnet aus den erfassten Karten, nicht manuell eingegeben',dragHint:'Karten per Drag & Drop neu anordnen',manualOrderBadge:'Manuelle Reihenfolge',resetOrder:'Auf Nummernreihenfolge zurücksetzen',tOrderReset:'Kartenreihenfolge zurückgesetzt',expImport:'Karten importieren',expExport:'Karten exportieren',expImportTitle:'Erweiterungskarten importieren',expExportTitle:'Erweiterungskarten exportieren',expImportDesc:'Lade eine Kartenlisten-JSON in diese Erweiterung. Bestehende Karten werden ersetzt, aber der Sammlungsfortschritt anderer Erweiterungen bleibt erhalten.',expExportDesc:'Lade nur die Kartenliste dieser Erweiterung als JSON herunter. Zum Sichern oder Teilen.',imgScript:'Bild-Skript',imgScriptTitle:'Bild-Downloader herunterladen',imgScriptDesc:'Der Browser kann Bilder von nivelarena.co.kr aus Sicherheitsgründen (CORS) nicht direkt speichern. Lade dieses kleine Python-Skript herunter und führe es aus, um alle Bilder dieser Erweiterung lokal zu speichern.',downloadScript:'Skript herunterladen',}
+  };
+
+
+  t(k){ const L=Component.I18N; const d=L[this.state.lang]||L.en; return d[k]!=null?d[k]:(L.en[k]!=null?L.en[k]:k); }
+  fmt(str){ const args=[].slice.call(arguments,1); let i=0; return String(str).replace(/%[sdab]/g,()=>String(args[i++] ?? '')); }
+  locale(){ return {en:'en-US',ko:'ko-KR',de:'de-DE'}[this.state.lang]||'en-US'; }
+  packName(e){ return e.name; }
+  packIP(e, sys){ if(!e.seriesId||!sys) return ''; const sr=(sys.series||[]).find(x=>x.id===e.seriesId); return sr?sr.name:''; }
+  packIPColor(e, sys){ if(e.seriesId&&sys){ const sr=(sys.series||[]).find(x=>x.id===e.seriesId); if(sr&&sr.color) return sr.color; }
+    const ip=this.packIP(e,sys); if(!ip) return 'var(--ink3)'; let h=0; for(let i=0;i<ip.length;i++){ h=(h*31+ip.charCodeAt(i))>>>0; } return `hsl(${h%360},55%,55%)`; }
+
+  // card content (name/description/keywords) is scraped in Korean; nameEn/nameDe/
+  // descriptionEn/descriptionDe are pre-translated onto the card by apply_translations.py
+  // (matched by content, not id, so they survive re-crawls). Falls back to Korean when
+  // a translation hasn't been filled in yet (e.g. still-untranslated descriptions).
+  cardName(c){ if(!c) return ''; const l=this.state.lang; if(l==='en'&&c.nameEn) return c.nameEn; if(l==='de'&&c.nameDe) return c.nameDe; return c.name; }
+  cardDesc(c){ if(!c) return ''; const l=this.state.lang; if(l==='en'&&c.descriptionEn) return c.descriptionEn; if(l==='de'&&c.descriptionDe) return c.descriptionDe; return c.description; }
+  keywordLabel(kw){ const m=Component.KEYWORD_I18N[kw]; if(!m) return kw; const l=this.state.lang; return l==='en'?m.en:(l==='de'?m.de:kw); }
+  typeLabel(v){ const m=Component.TYPE_I18N[v]; if(!m) return v||''; const l=this.state.lang; return l==='ko'?m.ko:(l==='de'?m.de:m.en); }
+  elementLabel(v){ const m=Component.ELEMENT_I18N[v]; if(!m) return v||''; const l=this.state.lang; return l==='ko'?m.ko:(l==='de'?m.de:m.en); }
+  setLang(id){ this.setState({lang:id}); this.postState({lang:id}); }
+
+  sideItem(active){ return `display:flex;align-items:center;gap:8px;width:100%;padding:9px 10px;border:none;border-radius:7px;cursor:pointer;font-size:12.5px;font-weight:500;font-family:var(--sans);text-align:left;background:${active?'var(--row)':'transparent'};color:${active?'var(--ink)':'var(--ink2)'};box-shadow:${active?'inset 2px 0 0 var(--accent-ink)':'none'};transition:background .15s`; }
+  groupTabs(sys, tabs){
+    if(!sys) return [];
+    const groups=sys.groups||[];
+    const hdr='font-family:var(--mono);font-size:10px;color:var(--ink3);letter-spacing:.14em;text-transform:uppercase';
+    const out=groups.map(g=>{
+      const collapsed=!!g.collapsed;
+      return {key:g.id,label:g.name,hasLabel:true,headerStyle:hdr,collapsed,expanded:!collapsed,
+        chevronIcon:collapsed?'fa-solid fa-chevron-right':'fa-solid fa-chevron-down',
+        tabs:tabs.filter(t=>t.groupId===g.id),
+        onToggle:()=>this.toggleGroupCollapse(sys.id,g.id),
+        onEdit:()=>this.openSectionModal(sys.id,true,g)};
+    });
+    const ungrouped=tabs.filter(t=>!groups.some(g=>g.id===t.groupId));
+    if(ungrouped.length){
+      // only label the fallback bucket once real sections exist to disambiguate against —
+      // with zero sections defined, everything is ungrouped and a header would be noise
+      const showLabel=groups.length>0;
+      out.push({key:'none',label:showLabel?this.t('ungrouped'):'',hasLabel:showLabel,headerStyle:hdr+';cursor:default',collapsed:false,expanded:true,chevronIcon:'',tabs:ungrouped,onToggle:()=>{},onEdit:()=>{}});
+    }
+    return out;
+  }
+  toggleGroupCollapse(sysId,gid){
+    const systems=this.state.systems.map(s=>{
+      if(s.id!==sysId) return s;
+      return {...s,groups:(s.groups||[]).map(g=>g.id===gid?{...g,collapsed:!g.collapsed}:g)};
+    });
+    this.commit({systems});
+  }
+
+  applyTheme(id){
+    const th=Component.THEMES[id]||Component.THEMES.ledger;
+    const rs=document.documentElement.style;
+    Object.keys(th.vars).forEach(k=>rs.setProperty(k,th.vars[k]));
+  }
+  setTheme(id){
+    this.setState({theme:id});
+    this.postState({theme:id});
+    this.applyTheme(id);
+  }
+  componentDidMount(){ this.applyTheme(this.state.theme); this.loadServerState(); }
+
+  // The server (grimoire.db, via server.py) is the source of truth when reachable.
+  // If it isn't - e.g. this page is served statically from GitHub Pages with no
+  // backend at all - we fall back to whatever's saved in this browser's localStorage,
+  // so data survives a refresh either way.
+  loadServerState(){
+    fetch('/api/state').then(r=>r.ok?r.json():null).then(data=>{
+      if(!data || !data.systems || !data.systems.length){
+        const local=this.readLocalState();
+        if(local && local.systems && local.systems.length) data=local;
+      }
+      this.applyLoadedData(data||{});
+    }).catch(()=>{
+      this.applyLoadedData(this.readLocalState()||{});
+    });
+  }
+  applyLoadedData(data){
+    let systems=(data.systems&&data.systems.length)?data.systems:this.state.systems;
+    const collector=data.collector||this.state.collector;
+    systems=this.migrateSystems(systems, data.lang||this.state.lang);
+    const first=systems[0]?systems[0].id:null;
+    const patch={systems,collector,selectedSystemId:first,collectorSystemId:first,collectorExpansionId:this.firstExpId(systems,first)};
+    if(data.theme) patch.theme=data.theme;
+    if(data.lang) patch.lang=data.lang;
+    if(data.condition) patch.globalCondition=data.condition;
+    this.setState(patch, ()=>{
+      if(patch.theme) this.applyTheme(patch.theme);
+      this.save(systems,collector); // keeps grimoire.db (if reachable) and localStorage both in sync with any migration touch-ups
+      this.loadNivelCatalog();
+    });
+  }
+  // non-destructive touch-ups for Nivel Arena systems created by older app versions
+  // (the full card list itself is kept in sync separately by loadNivelCatalog on every load)
+  migrateSystems(systems, lang){
+    systems=[...systems];
+    const dict=Component.I18N[lang]||Component.I18N.en;
+    const tt=(k)=>dict[k]!=null?dict[k]:Component.I18N.en[k];
+    // repair: convert old label-style pull rates to numeric % (legacy data fix, not seed content)
+    const legacyPR={'nv-c':'54.5','nv-r':'25','nv-sr':'11.4','nv-ur':'6.8','nv-l':'2.3','nv-sp':''};
+    systems=systems.map(s=>{
+      if(!s.rarities.some(r=>/[·]|alt/i.test(r.pullRate||''))) return s;
+      return {...s,rarities:s.rarities.map(r=>legacyPR[r.id]!==undefined?{...r,pullRate:legacyPR[r.id]}:r)};
+    });
+    // backfill a default card layout for any system that predates card layouts
+    systems=systems.map(s=>(!s.cardLayout||!s.cardLayout.length)?{...s,cardLayout:Component.DEFAULT_LAYOUT()}:s);
+    // backfill sections (sys.groups + expansion.groupId) for systems that predate them,
+    // deriving default sections from the same abbr-prefix buckets the sidebar used to
+    // compute on the fly, so nothing visually shifts on first load
+    systems=systems.map(s=>{
+      if(s.groups!==undefined) return s;
+      const labelMap={booster:tt('booster'),starter:tt('starter'),special:tt('special'),promo:tt('promo')};
+      const buckets={booster:[],starter:[],special:[],promo:[]};
+      s.expansions.forEach(e=>{
+        const a=String(e.abbreviation||'').toUpperCase();
+        const k=/^BT/.test(a)?'booster':(/^ST/.test(a)?'starter':(/^SB/.test(a)?'special':(/^(PR|NAPR)/.test(a)?'promo':null)));
+        if(k) buckets[k].push(e.id);
+      });
+      const groups=[]; const groupIdByExp={};
+      ['booster','starter','special','promo'].forEach(k=>{
+        if(!buckets[k].length) return;
+        const gid=this.uid('grp');
+        groups.push({id:gid,name:labelMap[k],collapsed:false});
+        buckets[k].forEach(eid=>{ groupIdByExp[eid]=gid; });
+      });
+      const expansions=s.expansions.map(e=>groupIdByExp[e.id]?{...e,groupId:groupIdByExp[e.id]}:e);
+      return {...s,groups,expansions};
+    });
+    // migrate the old free-text expansion.ip field into a proper Series entry + seriesId link,
+    // so nothing set previously (e.g. "NIKKE") disappears - it just becomes a real, manageable Series
+    systems=systems.map(s=>{
+      const ipsUsed=[...new Set(s.expansions.filter(e=>e.ip&&!e.seriesId).map(e=>e.ip))];
+      if(!ipsUsed.length) return s;
+      let series=[...(s.series||[])];
+      const idFor={};
+      ipsUsed.forEach(name=>{
+        let sr=series.find(x=>x.name===name);
+        if(!sr){ sr={id:this.uid('ser'),name}; series.push(sr); }
+        idFor[name]=sr.id;
+      });
+      const expansions=s.expansions.map(e=>(e.ip&&!e.seriesId)?{...e,seriesId:idFor[e.ip]}:e);
+      return {...s,series,expansions};
+    });
+    // backfill: older/demo card records stored an elemental value (Fire, Dark, Nature...) directly
+    // in `type`, from before type and element were split into separate fields - move any such
+    // value over to `element` and default `type` to Unit, so nothing renders with a broken/blank type
+    systems=systems.map(s=>({...s,expansions:s.expansions.map(e=>{
+      let touched=false;
+      const cards=e.cards.map(c=>{
+        if(c.type && !Component.TYPES.some(t=>t.value===c.type) && Component.ELEMENT_I18N[c.type]){
+          touched=true;
+          return {...c, element:c.element||c.type, type:'Unit'};
+        }
+        return c;
+      });
+      return touched?{...e,cards}:e;
+    })}));
+    return systems;
+  }
+
+  // Load the full Nivel Arena card catalog into the sys-nivel system: fill empty
+  // expansions, add missing packs, enrich cards (effect text + stats) without
+  // touching ids, images or collection ticks.
+  loadNivelCatalog(){
+    fetch('/api/catalog',{cache:'no-cache'}).then(r=>r.ok?r.json():null).then(data=>{
+      if(!data||!data.expansions) return;
+      const idx=this.state.systems.findIndex(s=>s.id==='sys-nivel'); if(idx<0) return;
+      const sys={...this.state.systems[idx]};
+      let changed=false, added=0;
+      const wantRarities=[
+        {id:'nv-p',name:'Promo',abbr:'P',color:'#e0885f',pullRate:''},
+        {id:'nv-spr',name:'Special Rare',abbr:'SPR',color:'#e0609a',pullRate:''},
+        {id:'nv-spl',name:'Special Leader',abbr:'SPL',color:'#c94f8a',pullRate:''},
+        {id:'nv-sbr',name:'Special Booster Rare',abbr:'SBR',color:'#d94f6e',pullRate:''},
+        {id:'nv-sbl',name:'Special Booster Leader',abbr:'SBL',color:'#b83f66',pullRate:''},
+        {id:'nv-ssl',name:'Special Store Leader',abbr:'SSL',color:'#9c3a7a',pullRate:''},
+        {id:'nv-anl',name:'Anniversary Leader',abbr:'ANL',color:'#e0a04f',pullRate:''}
+      ];
+      let rars=[...sys.rarities];
+      // backfill abbr on legacy rarity tiers that predate this field
+      const legacyAbbr={'nv-c':'C','nv-r':'R','nv-sr':'SR','nv-ur':'UR','nv-l':'L','nv-sp':'SP'};
+      rars=rars.map(r=> (!r.abbr && legacyAbbr[r.id]) ? {...r,abbr:legacyAbbr[r.id]} : r);
+      wantRarities.forEach(w=>{
+        if(!rars.some(r=>r.id===w.id)){ const spi=rars.findIndex(r=>r.id==='nv-sp'); rars.splice(spi<0?rars.length:spi,0,w); changed=true; }
+      });
+      if(rars!==sys.rarities){ sys.rarities=rars; changed=true; }
+      let expansions=[...sys.expansions];
+      data.expansions.forEach(pack=>{
+        const i=expansions.findIndex(e=>(e.abbreviation||'').toUpperCase()===pack.abbr);
+        if(i>=0){
+          if(!expansions[i].cards.length){ expansions[i]={...expansions[i],cards:pack.cards}; changed=true; added+=pack.cards.length; }
+          else {
+            // repair pass: match by stable id (not the display number, which can be stale/malformed),
+            // sync stats/effect text/number/image from the catalog, add brand-new cards, drop retired ones
+            const byId={}; pack.cards.forEach(c=>{ byId[c.id]=c; });
+            let touched=false;
+            // keep cards the user added by hand even if the catalog doesn't know about them,
+            // and never re-sync a card the user has manually edited in the builder
+            const kept=expansions[i].cards.filter(c=>byId[c.id]||c.custom).map(c=>{
+              if(c.edited) return c;
+              const s=byId[c.id]; if(!s) return c;
+              let dirty=false;
+              const st={...(c.stats||{})};
+              Object.keys(s.stats||{}).forEach(k=>{ if(st[k]!==s.stats[k]){ st[k]=s.stats[k]; dirty=true; } });
+              let desc=c.description;
+              if(s.description && desc!==s.description){ desc=s.description; dirty=true; }
+              let img=c.image;
+              if(s.image && s.image!==img){ img=s.image; dirty=true; }
+              let num=c.number;
+              if(s.number && s.number!==num){ num=s.number; dirty=true; }
+              let rarityId=c.rarityId;
+              if(s.rarityId && s.rarityId!==rarityId){ rarityId=s.rarityId; dirty=true; }
+              let type=c.type;
+              if(s.type && s.type!==type){ type=s.type; dirty=true; }
+              let element=c.element;
+              if(s.element && s.element!==element){ element=s.element; dirty=true; }
+              let keywords=c.keywords;
+              if(s.keywords && JSON.stringify(s.keywords)!==JSON.stringify(keywords||[])){ keywords=s.keywords; dirty=true; }
+              let nameEn=c.nameEn, nameDe=c.nameDe, descEn=c.descriptionEn, descDe=c.descriptionDe;
+              if(s.nameEn && s.nameEn!==nameEn){ nameEn=s.nameEn; dirty=true; }
+              if(s.nameDe && s.nameDe!==nameDe){ nameDe=s.nameDe; dirty=true; }
+              if(s.descriptionEn && s.descriptionEn!==descEn){ descEn=s.descriptionEn; dirty=true; }
+              if(s.descriptionDe && s.descriptionDe!==descDe){ descDe=s.descriptionDe; dirty=true; }
+              if(!dirty) return c;
+              touched=true;
+              return {...c,number:num,rarityId,type,element,description:desc,stats:st,image:img,keywords,nameEn,nameDe,descriptionEn:descEn,descriptionDe:descDe};
+            });
+            if(kept.length!==expansions[i].cards.length) touched=true;
+            const existingIds={}; kept.forEach(c=>{ existingIds[c.id]=true; });
+            const newCards=pack.cards.filter(s=>!existingIds[s.id]);
+            const finalCards=newCards.length?[...kept,...newCards]:kept;
+            if(newCards.length){ added+=newCards.length; }
+            if(touched||newCards.length){ expansions[i]={...expansions[i],cards:finalCards}; changed=true; }
+          }
+        } else {
+          expansions.push({id:'nv-'+pack.abbr.toLowerCase(),name:pack.name,abbreviation:pack.abbr,releaseDate:'',cards:pack.cards});
+          changed=true; added+=pack.cards.length;
+        }
+      });
+      if(!changed) return;
+      sys.expansions=expansions;
+      const systems=this.state.systems.map((s,j)=>j===idx?sys:s);
+      this.commit({systems});
+      if(added) this.toast(this.fmt(this.t('tCatalog'),added));
+    }).catch(()=>{});
+  }
+  typeInfo(t){ return Component.TYPES.find(x=>x.value===t) || {value:t||'',color:'var(--ink3)',icon:'fa-solid fa-question'}; }
+  cardNumber(c,i,len){ return c.number ? c.number : this.pad(i+1,len); }
+  cleanImageFilename(url){
+    if(!url) return '';
+    let fn=url.split('/').pop().split('?')[0].split('#')[0];
+    try{ fn=decodeURIComponent(fn); }catch(e){}
+    fn=fn.replace(/\d+_copy\d*_\d+_/gi,'');
+    fn=fn.replace(/_edit/gi,'');
+    return fn;
+  }
+  artNode(c,big,exp){ const ti=this.typeInfo(c.type);
+    if(c.image){
+      const hasHost=exp&&exp.imageBaseUrl;
+      const primary=hasHost?(exp.imageBaseUrl.replace(/\/+$/,'')+'/'+this.cleanImageFilename(c.image)):c.image;
+      const fallback=c.image;
+      return React.createElement('img',{src:primary,alt:this.cardName(c),loading:'lazy',
+        onError:(e)=>{ if(hasHost&&e.target.src!==fallback){ e.target.src=fallback; } else { e.target.style.display='none'; } },
+        style:{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover'}});
+    }
+    return React.createElement('i',{className:ti.icon,style:{fontSize:big?'44px':'18px',color:big?'rgba(255,255,255,.22)':'rgba(255,255,255,.35)'}});
+  }
+
+  // ---------- init / persistence ----------
+  // Starts empty; loadServerState() (called from componentDidMount) fetches
+  // everything from grimoire.db as soon as that request resolves - see
+  // loadServerState/migrateSystems below. No sample/demo data is bundled here -
+  // the server is the sole source of truth, including for first-run seeding.
+  buildInitial(){
+    const systems = [], collector = {};
+    const first = systems[0] ? systems[0].id : null;
+    return {
+      mode:'collector', systems, collector,
+      theme:'ledger', lang:'ko', globalCondition:'Near Mint',
+      selectedSystemId:first, builderTab:'system',
+      collectorSystemId:first, collectorExpansionId: this.firstExpId(systems, first), collectorRarity:'all',
+      modal:null, form:{}, toast:null
+    };
+  }
+  firstExpId(systems, sysId){ const s=(systems||[]).find(x=>x.id===sysId); return s&&s.expansions[0]?s.expansions[0].id:null; }
+
+  // persist a partial patch to localStorage (always, works with zero backend - e.g.
+  // GitHub Pages) and, best-effort, to the server's SQLite store when one is reachable.
+  // Local write happens first so data is never lost even if the fetch fails or hangs.
+  static LS_KEY = 'grimoire-state-v1';
+  readLocalState(){
+    try{ const raw=localStorage.getItem(Component.LS_KEY); return raw?JSON.parse(raw):{}; }catch(e){ return {}; }
+  }
+  writeLocalState(partial){
+    try{ const cur=this.readLocalState(); localStorage.setItem(Component.LS_KEY, JSON.stringify({...cur, ...partial})); }catch(e){ /* localStorage unavailable - server persistence (if any) still applies */ }
+  }
+  postState(partial){
+    this.writeLocalState(partial);
+    fetch('/api/state',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(partial)}).catch(()=>{});
+  }
+  save(systems, collector){
+    this.postState({systems: systems ?? this.state.systems, collector: collector ?? this.state.collector});
+  }
+  commit(patch){
+    this.setState(patch, ()=>this.save(this.state.systems, this.state.collector));
+  }
+
+  uid(p){ return (p||'id')+'-'+Date.now().toString(36)+Math.random().toString(36).slice(2,6); }
+
+  toast(msg, kind){ this.setState({toast:{msg,kind:kind||'success'}}); clearTimeout(this._tt); this._tt=setTimeout(()=>this.setState({toast:null}),2600); }
+
+  // ---------- getters ----------
+  sys(){ return this.state.systems.find(s=>s.id===this.state.collectorSystemId); }
+  csys(){ return this.state.systems.find(s=>s.id===this.state.collectorSystemId); }
+  rarityById(sys,id){ return (sys?sys.rarities:[]).find(r=>r.id===id); }
+
+  // ---------- mode ----------
+  setMode(m){ this.setState({mode:m}); }
+
+  // ---------- system CRUD ----------
+  openSystemModal(edit){
+    const s = edit ? this.sys() : null;
+    this.setState({ modal:{type:'system', edit:!!edit}, form:{ name:s?s.name:'', description:s?s.description:'' } });
+  }
+  saveSystem(){
+    const f=this.state.form; if(!f.name || !f.name.trim()) return this.toast(this.t('tNameRequired'),'error');
+    let systems=[...this.state.systems];
+    if(this.state.modal.edit){
+      systems=systems.map(s=>s.id===this.state.selectedSystemId?{...s,name:f.name.trim(),description:(f.description||'').trim()}:s);
+      this.commit({systems,modal:null}); this.toast(this.t('tSystemUpdated'));
+    }else{
+      const ns={id:this.uid('sys'),name:f.name.trim(),description:(f.description||'').trim(),rarities:this.defaultRarities(),cardLayout:Component.DEFAULT_LAYOUT(),groups:[],expansions:[]};
+      systems.push(ns);
+      this.commit({systems,modal:null,selectedSystemId:ns.id,builderTab:'system'}); this.toast(this.t('tSystemCreated'));
+    }
+  }
+  defaultRarities(){ return [
+    {id:this.uid('r'),name:'Common',color:'#9ca3af',pullRate:'60%'},
+    {id:this.uid('r'),name:'Rare',color:'#4a90d9',pullRate:'25%'},
+    {id:this.uid('r'),name:'Epic',color:'#9b6bcf',pullRate:'12%'},
+    {id:this.uid('r'),name:'Legendary',color:'#dbb960',pullRate:'3%'}
+  ]; }
+  removeSystem(){
+    const s=this.sys(); if(!s) return;
+    const systems=this.state.systems.filter(x=>x.id!==s.id);
+    const collector={...this.state.collector}; delete collector[s.id];
+    const first=systems[0]?systems[0].id:null;
+    this.commit({systems,collector,selectedSystemId:first,collectorSystemId:first,builderTab:'system',collectorExpansionId:this.firstExpId(systems,first),modal:null});
+    this.toast(this.t('tSystemDeleted'),'error');
+  }
+
+  // ---------- rarity CRUD ----------
+  openRarityModal(edit,r){
+    this.setState({ modal:{type:'rarity',edit:!!edit,rid:r?r.id:null}, form:{ name:r?r.name:'', abbr:r?(r.abbr||''):'', color:r?r.color:'#c9a84c', pullRate:r?r.pullRate:'' } });
+  }
+  saveRarity(){
+    const f=this.state.form; if(!f.name||!f.name.trim()) return this.toast(this.t('tNameRequired'),'error');
+    const systems=this.state.systems.map(s=>{
+      if(s.id!==this.state.selectedSystemId) return s;
+      let rarities=[...s.rarities];
+      if(this.state.modal.edit){ rarities=rarities.map(r=>r.id===this.state.modal.rid?{...r,name:f.name.trim(),abbr:(f.abbr||'').trim(),color:f.color,pullRate:(f.pullRate||'').trim()}:r); }
+      else{ rarities.push({id:this.uid('r'),name:f.name.trim(),abbr:(f.abbr||'').trim(),color:f.color,pullRate:(f.pullRate||'').trim()}); }
+      return {...s,rarities};
+    });
+    this.commit({systems,modal:null}); this.toast(this.state.modal.edit?this.t('tRarityUpdated'):this.t('tRarityAdded'));
+  }
+  moveRarity(rid,dir){
+    const systems=this.state.systems.map(s=>{
+      if(s.id!==this.state.selectedSystemId) return s;
+      const arr=[...s.rarities]; const i=arr.findIndex(r=>r.id===rid); const j=i+dir;
+      if(i<0||j<0||j>=arr.length) return s;
+      [arr[i],arr[j]]=[arr[j],arr[i]]; return {...s,rarities:arr};
+    });
+    this.commit({systems});
+  }
+  removeRarity(rid, reassignTo){
+    const s=this.sys();
+    let systems=this.state.systems.map(x=>{
+      if(x.id!==s.id) return x;
+      let expansions=x.expansions;
+      if(reassignTo){ expansions=x.expansions.map(e=>({...e,cards:e.cards.map(c=>c.rarityId===rid?{...c,rarityId:reassignTo}:c)})); }
+      return {...x,expansions,rarities:x.rarities.filter(r=>r.id!==rid)};
+    });
+    this.commit({systems,modal:null}); this.toast(this.t('tRarityRemoved'),'error');
+  }
+
+  // ---------- section CRUD ----------
+  openSectionModal(sysId,edit,g){
+    this.setState({ modal:{type:'section',edit:!!edit,sysId,gid:g?g.id:null}, form:{ name:g?g.name:'' } });
+  }
+  saveSection(){
+    const f=this.state.form; if(!f.name||!f.name.trim()) return this.toast(this.t('tNameRequired'),'error');
+    const sysId=this.state.modal.sysId;
+    const systems=this.state.systems.map(s=>{
+      if(s.id!==sysId) return s;
+      let groups=[...(s.groups||[])];
+      if(this.state.modal.edit){ groups=groups.map(g=>g.id===this.state.modal.gid?{...g,name:f.name.trim()}:g); }
+      else{ groups.push({id:this.uid('grp'),name:f.name.trim(),collapsed:false}); }
+      return {...s,groups};
+    });
+    this.commit({systems,modal:null}); this.toast(this.state.modal.edit?this.t('tSectionUpdated'):this.t('tSectionAdded'));
+  }
+  moveSection(sysId,gid,dir){
+    const systems=this.state.systems.map(s=>{
+      if(s.id!==sysId) return s;
+      const arr=[...(s.groups||[])]; const i=arr.findIndex(x=>x.id===gid); const j=i+dir;
+      if(i<0||j<0||j>=arr.length) return s; [arr[i],arr[j]]=[arr[j],arr[i]]; return {...s,groups:arr};
+    });
+    this.commit({systems});
+  }
+  removeSection(sysId,gid){
+    const systems=this.state.systems.map(s=>{
+      if(s.id!==sysId) return s;
+      const groups=(s.groups||[]).filter(g=>g.id!==gid);
+      const expansions=s.expansions.map(e=>e.groupId===gid?{...e,groupId:null}:e);
+      return {...s,groups,expansions};
+    });
+    this.commit({systems,modal:null}); this.toast(this.t('tSectionRemoved'),'error');
+  }
+
+  // ---------- card layout (custom fields) ----------
+  static DEFAULT_LAYOUT(){ return [
+    {id:'f-atk',label:'Attack',type:'number',icon:'fa-solid fa-khanda',color:'#e85d4a',showOnTile:true},
+    {id:'f-def',label:'Defense',type:'number',icon:'fa-solid fa-shield-halved',color:'#4a90d9',showOnTile:true}
+  ]; }
+  static FIELD_ICONS(){ return ['fa-solid fa-coins','fa-solid fa-bolt','fa-solid fa-burst','fa-solid fa-khanda','fa-solid fa-shield-halved','fa-solid fa-heart','fa-solid fa-star','fa-solid fa-fire','fa-solid fa-gauge-high','fa-solid fa-hand-fist','fa-solid fa-crosshairs','fa-solid fa-hashtag']; }
+  layoutOf(sys){ return (sys&&sys.cardLayout&&sys.cardLayout.length)?sys.cardLayout:Component.DEFAULT_LAYOUT(); }
+  cardStatVal(card,field){
+    if(field.type==='type') return card.type||'';
+    if(field.type==='element') return card.element||'';
+    if(field.type==='longtext') return this.cardDesc(card)||'';
+    if(card.stats && card.stats[field.id]!=null && card.stats[field.id]!=='') return card.stats[field.id];
+    if(field.id==='f-atk' && card.atk!=null) return card.atk;
+    if(field.id==='f-def' && card.def!=null) return card.def;
+    return field.type==='number'?0:'';
+  }
+  openFieldModal(edit,fld){
+    this.setState({ modal:{type:'field',edit:!!edit,fid:fld?fld.id:null}, form:{ label:fld?fld.label:'', type:fld?fld.type:'number', icon:fld?fld.icon:'fa-solid fa-bolt', color:fld?fld.color:'#c9a84c', showOnTile:fld?!!fld.showOnTile:true } });
+  }
+  saveField(){
+    const f=this.state.form; if(!f.label||!f.label.trim()) return this.toast(this.t('tLabelRequired'),'error');
+    const showOnTile=f.type==='longtext'?false:!!f.showOnTile;
+    const systems=this.state.systems.map(s=>{
+      if(s.id!==this.state.selectedSystemId) return s;
+      let layout=[...this.layoutOf(s)];
+      if(this.state.modal.edit){ layout=layout.map(x=>x.id===this.state.modal.fid?{...x,label:f.label.trim(),type:f.type,icon:f.icon,color:f.color,showOnTile}:x); }
+      else{ layout.push({id:this.uid('f'),label:f.label.trim(),type:f.type,icon:f.icon,color:f.color,showOnTile}); }
+      return {...s,cardLayout:layout};
+    });
+    this.commit({systems,modal:null}); this.toast(this.state.modal.edit?this.t('tFieldUpdated'):this.t('tFieldAdded'));
+  }
+  moveField(fid,dir){
+    const systems=this.state.systems.map(s=>{
+      if(s.id!==this.state.selectedSystemId) return s;
+      const arr=[...this.layoutOf(s)]; const i=arr.findIndex(x=>x.id===fid); const j=i+dir;
+      if(i<0||j<0||j>=arr.length) return s; [arr[i],arr[j]]=[arr[j],arr[i]]; return {...s,cardLayout:arr};
+    });
+    this.commit({systems});
+  }
+  removeField(fid){
+    const systems=this.state.systems.map(s=>{
+      if(s.id!==this.state.selectedSystemId) return s;
+      const layout=this.layoutOf(s).filter(x=>x.id!==fid);
+      return {...s,cardLayout:layout};
+    });
+    this.commit({systems,modal:null}); this.toast(this.t('tFieldRemoved'),'error');
+  }
+
+  // ---------- expansion CRUD ----------
+  openExpansionModal(edit){
+    let e=null; if(edit){ const s=this.sys(); e=s.expansions.find(x=>x.id===this.state.collectorExpansionId); }
+    this.setState({ modal:{type:'expansion',edit:!!edit}, form:{ name:e?e.name:'', abbreviation:e?e.abbreviation:'', releaseDate:e?e.releaseDate:'', groupId:e?(e.groupId||''):'', seriesId:e?(e.seriesId||''):'', imageBaseUrl:e?(e.imageBaseUrl||''):'',
+      cardsPerBooster:e&&e.cardsPerBooster?e.cardsPerBooster:6, boostersPerBox:e&&e.boostersPerBox?e.boostersPerBox:24 } });
+  }
+  saveExpansion(){
+    const f=this.state.form; if(!f.name||!f.name.trim()) return this.toast(this.t('tNameRequired'),'error');
+    let newId=null;
+    const cardsPerBooster=Math.max(1,parseInt(f.cardsPerBooster,10)||6), boostersPerBox=Math.max(1,parseInt(f.boostersPerBox,10)||24);
+    const systems=this.state.systems.map(s=>{
+      if(s.id!==this.state.collectorSystemId) return s;
+      let expansions=[...s.expansions];
+      if(this.state.modal.edit){ expansions=expansions.map(e=>e.id===this.state.collectorExpansionId?{...e,name:f.name.trim(),abbreviation:(f.abbreviation||'').trim().toUpperCase(),releaseDate:f.releaseDate,groupId:f.groupId||null,seriesId:f.seriesId||null,imageBaseUrl:(f.imageBaseUrl||'').trim(),cardsPerBooster,boostersPerBox}:e); }
+      else{ newId=this.uid('exp'); expansions.push({id:newId,name:f.name.trim(),abbreviation:(f.abbreviation||'SET').trim().toUpperCase(),releaseDate:f.releaseDate,groupId:f.groupId||null,seriesId:f.seriesId||null,imageBaseUrl:(f.imageBaseUrl||'').trim(),cardsPerBooster,boostersPerBox,cards:[]}); }
+      return {...s,expansions};
+    });
+    this.commit({systems,modal:null,collectorExpansionId:newId||this.state.collectorExpansionId}); this.toast(this.state.modal.edit?this.t('tExpUpdated'):this.t('tExpCreated'));
+  }
+  removeExpansion(){
+    const s=this.sys(); const eid=this.state.collectorExpansionId;
+    const systems=this.state.systems.map(x=>x.id!==s.id?x:{...x,expansions:x.expansions.filter(e=>e.id!==eid)});
+    this.commit({systems,builderTab:'system',modal:null}); this.toast(this.t('tExpDeleted'),'error');
+  }
+  // ---------- target pull rate % (editable here in Collector; Builder no longer sets this) ----------
+  openPullRatesModal(){
+    const s=this.sys(); if(!s) return;
+    const rates={}; s.rarities.forEach(r=>{ rates[r.id]=r.pullRate||''; });
+    this.setState({ modal:{type:'pullRates'}, form:{ rates } });
+  }
+  setPullRateField(rid, val){ const form={...this.state.form}; form.rates={...(form.rates||{}), [rid]:val}; this.setState({form}); }
+  savePullRates(){
+    const s=this.sys(); if(!s) return;
+    const rates=this.state.form.rates||{};
+    const systems=this.state.systems.map(sy=>sy.id!==s.id?sy:{...sy,rarities:sy.rarities.map(r=>({...r,pullRate:(rates[r.id]??r.pullRate)}))});
+    this.commit({systems,modal:null}); this.toast(this.t('tPullRatesSaved'));
+  }
+  // ---------- expansion-level import / export ----------
+  exportExpansion(){
+    const s=this.sys(); const eid=this.state.builderTab;
+    const exp=s.expansions.find(e=>e.id===eid); if(!exp) return;
+    const payload={version:1,exportedAt:new Date().toISOString(),systemId:s.id,expansionId:eid,abbreviation:exp.abbreviation,name:exp.name,cards:exp.cards};
+    const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+    const url=URL.createObjectURL(blob); const a=document.createElement('a');
+    a.href=url; a.download=(exp.abbreviation||'expansion')+'-cards.json'; a.click(); setTimeout(()=>URL.revokeObjectURL(url),1000);
+    this.toast(this.t('expExportTitle'));
+  }
+  openImportExpansionModal(){ this.setState({modal:{type:'import-expansion'}}); }
+  triggerImportExpansion(){ const el=document.getElementById('expImportInput'); if(el){ el.value=''; el.click(); } }
+  doImportExpansion(e){
+    const file=e.target.files&&e.target.files[0]; if(!file) return;
+    const r=new FileReader();
+    r.onload=()=>{ try{ const d=JSON.parse(r.result); if(!d.cards||!Array.isArray(d.cards)) throw 0;
+        const s=this.sys(); const eid=this.state.builderTab;
+        const systems=this.state.systems.map(sy=>{
+          if(sy.id!==s.id) return sy;
+          return {...sy,expansions:sy.expansions.map(e=>e.id===eid?{...e,cards:d.cards}:e)};
+        });
+        this.commit({systems}); this.toast(this.t('expImportTitle'));
+      }catch(err){ this.toast(this.t('tInvalid'),'error'); } };
+    r.readAsText(file);
+  }
+  downloadImageScript(){
+    const s=this.sys(); const eid=this.state.builderTab;
+    const exp=s.expansions.find(e=>e.id===eid); if(!exp) return;
+    const lines=["import urllib.request, os, json","from pathlib import Path","",
+      "# Load the expansion JSON exported from Grimoire",""];
+    lines.push("CARDS = " + JSON.stringify(exp.cards, null, 2));
+    lines.push("");
+    lines.push("out = Path('images-' + (CARDS[0]&&CARDS[0]['number']||'exp').split('-')[0].lower())");
+    lines.push("out.mkdir(exist_ok=True)");
+    lines.push("headers = {'User-Agent':'Mozilla/5.0','Referer':'http://nivelarena.co.kr/'}");
+    lines.push("for c in CARDS:");
+    lines.push("    url = c.get('image','')");
+    lines.push("    if not url: continue");
+    lines.push("    fn = out / (c['number'] + '-' + c['rarityId'].replace('nv-','').upper() + '.jpg')");
+    lines.push("    try:");
+    lines.push("        req = urllib.request.Request(url, headers=headers)");
+    lines.push("        with urllib.request.urlopen(req, timeout=30) as resp:");
+    lines.push("            with open(fn, 'wb') as f: f.write(resp.read())");
+    lines.push("        print('OK', fn.name)");
+    lines.push("    except Exception as e:");
+    lines.push("        print('FAIL', fn.name, e)");
+    lines.push("print('Done. Images saved to', out.resolve())");
+    const blob=new Blob([lines.join("\n")],{type:'text/x-python'});
+    const url=URL.createObjectURL(blob); const a=document.createElement('a');
+    a.href=url; a.download=(exp.abbreviation||'expansion')+'-download-images.py'; a.click(); setTimeout(()=>URL.revokeObjectURL(url),1000);
+    this.toast(this.t('imgScriptTitle'));
+  }
+
+
+  // ---------- expansion card ordering (shared by Builder AND Collector, so a manual reorder
+  // done in the Builder is what the Collector displays too) ----------
+  // default order is parsed from card.number, which drifts for expansions whose cards are
+  // reprints from OTHER sets (promos/specials) - once the user drags to reorder in the Builder,
+  // every card in the expansion gets an explicit sortIndex stamped, which then becomes the
+  // source of truth everywhere this expansion's cards are displayed.
+  sortExpansionCards(exp){
+    if(exp.cards.some(c=>c.sortIndex!=null)){
+      return [...exp.cards].sort((a,b)=>(a.sortIndex??Number.MAX_SAFE_INTEGER)-(b.sortIndex??Number.MAX_SAFE_INTEGER));
+    }
+    const bnum=(c,i)=>{ const m=(c.number||'').match(/[A-Z]+\d+-(\d+)/i); return m?parseInt(m[1],10):(i+1); };
+    const bpar=(c)=>Component.isParallelRarity(c.rarityId)||/·P/i.test(c.number||'');
+    const bpidx=(c)=>{ const m=(c.id||'').match(/-p(\d+)$/i)||(c.number||'').match(/·P(\d+)/i); return m?parseInt(m[1],10):(bpar(c)?1:0); };
+    const bcards=exp.cards.map((c,i)=>({c,i}));
+    bcards.sort((a,b)=>{ const na=bnum(a.c,a.i),nb=bnum(b.c,b.i); if(na!==nb)return na-nb;
+      const pa=bpar(a.c)?1:0, pb=bpar(b.c)?1:0; if(pa!==pb)return pa-pb;
+      const ia=bpidx(a.c), ib=bpidx(b.c); if(ia!==ib)return ia-ib; return a.i-b.i; });
+    return bcards.map(x=>x.c);
+  }
+  reorderCard(draggedId,targetId){
+    const s=this.sys(); const eid=this.state.builderTab; if(!s) return;
+    const exp=s.expansions.find(e=>e.id===eid); if(!exp) return;
+    const order=this.sortExpansionCards(exp);
+    const from=order.findIndex(c=>c.id===draggedId), to=order.findIndex(c=>c.id===targetId);
+    if(from<0||to<0||from===to) return;
+    const arr=[...order]; const [moved]=arr.splice(from,1); arr.splice(to,0,moved);
+    const withIndex=arr.map((c,i)=>({...c,sortIndex:i}));
+    const systems=this.state.systems.map(sy=>sy.id!==s.id?sy:{...sy,expansions:sy.expansions.map(e=>e.id!==eid?e:{...e,cards:withIndex})});
+    this.commit({systems});
+  }
+  resetCardOrder(){
+    const s=this.sys(); const eid=this.state.builderTab; if(!s) return;
+    const systems=this.state.systems.map(sy=>sy.id!==s.id?sy:{...sy,expansions:sy.expansions.map(e=>{
+      if(e.id!==eid) return e;
+      return {...e,cards:e.cards.map(c=>{ const {sortIndex,...rest}=c; return rest; })};
+    })});
+    this.commit({systems}); this.toast(this.t('tOrderReset'));
+  }
+
+  // ---------- binder cover / divider CRUD ----------
+  openCoverModal(kind){
+    const sys=this.sys(); if(!sys) return;
+    const existing = kind==='cover' ? sys.cover : (()=>{ const e=sys.expansions.find(x=>x.id===this.state.builderTab); return e?e.divider:null; })();
+    const d=existing||{};
+    this.setState({ modal:{type:'coverart',kind,hasExisting:!!existing}, form:{
+      bgType:d.bgType||'gradient', color1:d.color1||'#5a2632', color2:d.color2||'#161116',
+      image:d.image||'', title:d.title||'', subtitle:d.subtitle||'', textColor:d.textColor||'#f4ece7'
+    }});
+  }
+  saveCoverArt(){
+    const f=this.state.form; const kind=this.state.modal.kind;
+    const data={bgType:f.bgType||'gradient',color1:f.color1||'#5a2632',color2:f.color2||'#161116',
+      image:(f.image||'').trim(),title:(f.title||'').trim(),subtitle:(f.subtitle||'').trim(),textColor:f.textColor||'#f4ece7'};
+    const eid=this.state.builderTab;
+    const systems=this.state.systems.map(s=>{
+      if(s.id!==this.state.selectedSystemId) return s;
+      if(kind==='cover') return {...s,cover:data};
+      return {...s,expansions:s.expansions.map(e=>e.id===eid?{...e,divider:data}:e)};
+    });
+    this.commit({systems,modal:null}); this.toast(kind==='cover'?this.t('tCoverSaved'):this.t('tDividerSaved'));
+  }
+  resetCoverArt(){
+    const kind=this.state.modal.kind; const eid=this.state.builderTab;
+    const systems=this.state.systems.map(s=>{
+      if(s.id!==this.state.selectedSystemId) return s;
+      if(kind==='cover'){ const {cover,...rest}=s; return rest; }
+      return {...s,expansions:s.expansions.map(e=>{ if(e.id!==eid) return e; const {divider,...rest}=e; return rest; })};
+    });
+    this.commit({systems,modal:null}); this.toast(this.t('tDesignReset'),'error');
+  }
+
+  // ---------- card CRUD ----------
+  openCardModal(edit,card){
+    const s=this.sys();
+    const form={ name:card?card.name:'', type:card?card.type:'Unit', element:card?(card.element||''):'', rarityId:card?card.rarityId:(s.rarities[0]?s.rarities[0].id:''),
+      number:card&&card.number?card.number:'', description:card?card.description:'', image:card?card.image:'' };
+    this.layoutOf(s).filter(fld=>fld.type==='number'||fld.type==='text').forEach(fld=>{ form['stat_'+fld.id]= card?this.cardStatVal(card,fld):(fld.type==='number'?'':''); });
+    this.setState({ modal:{type:'card',edit:!!edit,cid:card?card.id:null}, form });
+  }
+  saveCard(){
+    const f=this.state.form; if(!f.name||!f.name.trim()) return this.toast(this.t('tNameRequired'),'error');
+    const eid=this.state.builderTab;
+    const systems=this.state.systems.map(s=>{
+      if(s.id!==this.state.selectedSystemId) return s;
+      const expansions=s.expansions.map(e=>{
+        if(e.id!==eid) return e;
+        let cards=[...e.cards];
+        const stats={}; this.layoutOf(s).filter(fld=>fld.type==='number'||fld.type==='text').forEach(fld=>{ const raw=f['stat_'+fld.id]; stats[fld.id]= fld.type==='number'?(raw===''||raw==null?0:Number(raw)):(raw||''); });
+        const data={name:f.name.trim(),type:f.type,element:f.element||'',rarityId:f.rarityId,number:(f.number||'').trim(),stats,description:(f.description||'').trim(),image:(f.image||'').trim()};
+        if(this.state.modal.edit){ cards=cards.map(c=>c.id===this.state.modal.cid?{...c,...data,edited:true}:c); }
+        else{ cards.push({id:this.uid('c'),custom:true,...data}); }
+        return {...e,cards};
+      });
+      return {...s,expansions};
+    });
+    this.commit({systems,modal:null}); this.toast(this.state.modal.edit?this.t('tCardUpdated'):this.t('tCardAdded'));
+  }
+  removeCard(){
+    const eid=this.state.builderTab, cid=this.state.modal.cid;
+    const systems=this.state.systems.map(s=>{
+      if(s.id!==this.state.selectedSystemId) return s;
+      return {...s,expansions:s.expansions.map(e=>e.id!==eid?e:{...e,cards:e.cards.filter(c=>c.id!==cid)})};
+    });
+    // also strip from collector
+    const collector={...this.state.collector};
+    if(collector[this.state.selectedSystemId]){ const cp={...collector[this.state.selectedSystemId]}; delete cp[cid]; collector[this.state.selectedSystemId]=cp; }
+    this.commit({systems,collector,modal:null}); this.toast(this.t('tCardDeleted'),'error');
+  }
+
+  // ---------- collector ----------
+  collectorEntry(sysId,cardId){ const b=this.state.collector[sysId]; return b?b[cardId]:null; }
+  baseKeyOf(c){ const m=(c.number||'').match(/[A-Z]+\d+-\d+/i); return m?m[0]:(c.number||c.id); }
+  openCollectorCard(base){
+    const cs=this.csys(); const cexp=cs?cs.expansions.find(e=>e.id===this.state.collectorExpansionId):null;
+    const key=this.baseKeyOf(base);
+    let variants=[base];
+    if(cexp){ variants=cexp.cards.filter(c=>this.baseKeyOf(c)===key); }
+    this.setState({ modal:{type:'collector',base,variants} });
+  }
+  quickToggle(card,ev){ if(ev&&ev.stopPropagation)ev.stopPropagation();
+    const sysId=this.state.collectorSystemId; const collector={...this.state.collector}; const b={...(collector[sysId]||{})};
+    const cur=b[card.id];
+    if(cur&&cur.owned){ delete b[card.id]; }
+    else{ b[card.id]={owned:true,qty:1,addedAt:(cur&&cur.addedAt)||Date.now()}; }
+    collector[sysId]=b; this.commit({collector});
+  }
+  // hovering a variant tick swaps the tile's art; hopping between adjacent ticks briefly
+  // crosses the gap between them, so delay reverting to the base card instead of switching
+  // instantly - only clear it if nothing gets re-hovered within that window.
+  hoverVariant(id){ clearTimeout(this._hoverLeaveTimer); this.setState({hoverVariantId:id}); }
+  unhoverVariant(){ clearTimeout(this._hoverLeaveTimer); this._hoverLeaveTimer=setTimeout(()=>this.setState({hoverVariantId:null}),180); }
+  setVariantQty(card,qty){
+    qty=Math.max(0,Math.floor(qty||0));
+    const sysId=this.state.collectorSystemId; const collector={...this.state.collector}; const b={...(collector[sysId]||{})};
+    const cur=b[card.id];
+    if(qty<=0){ delete b[card.id]; } else { b[card.id]={owned:true,qty,addedAt:(cur&&cur.addedAt)||Date.now()}; }
+    collector[sysId]=b; this.commit({collector});
+  }
+  setGlobalCondition(cond){ this.setState({globalCondition:cond}, ()=>this.postState({condition:cond})); }
+
+  // ---------- import / export ----------
+  doExport(){
+    const payload={version:1,exportedAt:new Date().toISOString(),systems:this.state.systems,collector:this.state.collector};
+    const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+    const url=URL.createObjectURL(blob); const a=document.createElement('a');
+    a.href=url; a.download='grimoire-export.json'; a.click(); setTimeout(()=>URL.revokeObjectURL(url),1000);
+    this.toast(this.t('tExported'));
+  }
+  triggerImport(){ const el=document.getElementById('avImport'); if(el){ el.value=''; el.click(); } }
+  doImport(e){
+    const file=e.target.files&&e.target.files[0]; if(!file) return;
+    const r=new FileReader();
+    r.onload=()=>{ try{ const d=JSON.parse(r.result); if(!d.systems) throw 0;
+        const first=d.systems[0]?d.systems[0].id:null;
+        this.commit({systems:d.systems,collector:d.collector||{},selectedSystemId:first,collectorSystemId:first,builderTab:'system',collectorExpansionId:this.firstExpId(d.systems,first)});
+        this.toast(this.t('tImported'));
+      }catch(err){ this.toast(this.t('tInvalid'),'error'); } };
+    r.readAsText(file);
+  }
+
+  // ---------- form ----------
+  onField(e){ const t=e.target; const v=t.type==='checkbox'?t.checked:t.value; this.setState({form:{...this.state.form,[t.dataset.field]:v}}); }
+
+  // ---------- render helpers ----------
+  fmtDate(d){ if(!d) return this.t('noDate'); try{ return new Date(d+'T00:00:00').toLocaleDateString(this.locale(),{year:'numeric',month:'short',day:'numeric'}); }catch(e){ return d; } }
+  pad(n,len){ return String(n).padStart(Math.max(2,String(len).length),'0'); }
+  artStyle(type){ const ti=this.typeInfo(type); return `linear-gradient(150deg,${ti.color}44,${ti.color}14 55%,var(--panel))`; }
+
+  // ---------- binder cover / divider art ----------
+  coverBg(o){ const d=o||{}; const type=d.bgType||'gradient';
+    if(type==='image'&&d.image) return `center/cover no-repeat url("${(d.image||'').replace(/"/g,'')}")`;
+    if(type==='color') return d.color1||'#5a2632';
+    return `linear-gradient(155deg,${d.color1||'#5a2632'},${d.color2||'#161116'})`;
+  }
+  coverPreviewOf(obj,fallbackTitle,fallbackSub){
+    const d=obj||{};
+    const title=(d.title||'').trim()||fallbackTitle||'';
+    const subtitle=(d.subtitle||'').trim()||fallbackSub||'';
+    return {bg:this.coverBg(d),title,subtitle,hasSubtitle:!!subtitle,textColor:d.textColor||'#f4ece7'};
+  }
+
+  tabBase(active){ return `padding:11px 16px;border:none;background:transparent;font-size:13px;font-weight:500;cursor:pointer;margin-bottom:-1px;white-space:nowrap;border-bottom:2px solid ${active?'var(--accent-ink)':'transparent'};color:${active?'var(--accent-ink)':'var(--ink3)'}`; }
+  modeBtn(active){ return `padding:8px 18px;border-radius:8px;border:none;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .2s;background:${active?'var(--accent)':'transparent'};color:${active?'var(--on-accent)':'var(--ink3)'};box-shadow:${active?'0 2px 12px color-mix(in srgb,var(--accent) 25%,transparent)':'none'}`; }
+
+  // ================= renderVals =================
+  renderVals(){
+    const S=this.state; const sys=this.sys();
+    const v={
+      isBuilder:S.mode==='builder', isCollector:S.mode==='collector',
+      setBuilder:()=>this.setMode('builder'), setCollector:()=>this.setMode('collector'),
+      builderTabStyle:this.modeBtn(S.mode==='builder'), collectorTabStyle:this.modeBtn(S.mode==='collector'),
+      doExport:()=>this.doExport(), triggerImport:()=>this.triggerImport(), doImport:(e)=>this.doImport(e),
+      hasSystems:S.systems.length>0, noSystems:S.systems.length===0,
+      systemOptions:S.systems.map(s=>({id:s.id,name:s.name})),
+      selectedSystemId:S.selectedSystemId, collectorSystemId:S.collectorSystemId,
+      newSystem:()=>this.openSystemModal(false), editSystem:()=>this.openSystemModal(true),
+      deleteSystem:()=>this.setState({modal:{type:'delete',kind:'system'}}),
+      onSelectSystem:(e)=>this.setState({selectedSystemId:e.target.value,builderTab:'system'}),
+      onSelectCollectorSystem:(e)=>this.setState({collectorSystemId:e.target.value,collectorExpansionId:this.firstExpId(S.systems,e.target.value),collectorRarity:'all'}),
+      globalCondition:S.globalCondition||'Near Mint', conditionOptions:Component.CONDITIONS,
+      onSelectCondition:(e)=>this.setGlobalCondition(e.target.value),
+      newExpansion:()=>this.openExpansionModal(false),
+      themeOptions:Object.keys(Component.THEMES).map(id=>{
+        const th=Component.THEMES[id]; const act=S.theme===id;
+        return {id,name:th.name,onClick:()=>this.setTheme(id),
+          style:`width:18px;height:18px;border-radius:50%;padding:0;cursor:pointer;background:linear-gradient(135deg,${th.vars['--bg']} 50%,${th.vars['--accent']} 50%);border:2px solid ${act?'var(--ink)':th.vars['--line2']};opacity:${act?1:.6};transition:all .2s`};
+      }),
+      L:Component.I18N[S.lang]||Component.I18N.en,
+      langOptions:['ko','en','de'].map(id=>{ const act=S.lang===id; return {id,label:id.toUpperCase(),onClick:()=>this.setLang(id),style:"padding:0 11px;height:30px;border-radius:6px;border:none;font-size:11px;font-weight:700;letter-spacing:.06em;cursor:pointer;font-family:var(--mono);background:"+(act?'var(--raise)':'transparent')+";color:"+(act?'var(--ink)':'var(--ink3)')}; }),
+      stop:(e)=>{ if(e&&e.stopPropagation)e.stopPropagation(); },
+      closeModal:()=>this.setState({modal:null}),
+    };
+
+    // ---- builder tabs ----
+    if(sys){
+      v.selectedSystem={name:sys.name};
+      v.systemDescOrDash=sys.description||'No description provided.';
+      v.systemTabStyle=this.sideItem(S.builderTab==='system');
+      v.goSystemTab=()=>this.setState({builderTab:'system'});
+      v.expansionTabs=sys.expansions.map(e=>({
+        id:e.id,name:this.packName(e),ip:this.packIP(e,sys),ipColor:this.packIPColor(e,sys),abbr:e.abbreviation,count:e.cards.length,groupId:e.groupId||null,
+        style:this.sideItem(S.builderTab===e.id),
+        onClick:()=>this.setState({builderTab:e.id})
+      }));
+      v.tabGroups=this.groupTabs(sys, v.expansionTabs);
+      v.showSystemPanel=S.builderTab==='system';
+      v.showExpansionPanel=S.builderTab!=='system' && sys.expansions.some(e=>e.id===S.builderTab);
+      v.stat_expansions=sys.expansions.length;
+      v.stat_totalCards=sys.expansions.reduce((a,e)=>a+e.cards.length,0);
+      v.stat_rarities=sys.rarities.length;
+
+      // rarities
+      v.newRarity=()=>this.openRarityModal(false);
+      v.rarities=sys.rarities.map((r,i)=>{
+        const usage=sys.expansions.reduce((a,e)=>a+e.cards.filter(c=>c.rarityId===r.id).length,0);
+        const dis='background:transparent;border:1px solid var(--line);width:30px;height:30px;border-radius:6px;cursor:pointer;font-size:10px;color:var(--line2)';
+        const en='background:transparent;border:1px solid var(--line);width:30px;height:30px;border-radius:6px;cursor:pointer;font-size:10px;color:var(--ink2)';
+        return {id:r.id,name:r.name,abbr:r.abbr||'',hasAbbr:!!r.abbr,color:r.color,pullRate:(r.pullRate===''||r.pullRate==null)?'—':(/^-?\d*\.?\d+$/.test(String(r.pullRate).trim())?String(r.pullRate).trim()+'%':r.pullRate),
+          usageLabel:usage?this.fmt(usage===1?this.t('cardN1'):this.t('cardsN'),usage):this.t('unused'),
+          upStyle:i===0?dis:en, downStyle:i===sys.rarities.length-1?dis:en,
+          onUp:()=>i>0&&this.moveRarity(r.id,-1), onDown:()=>i<sys.rarities.length-1&&this.moveRarity(r.id,1),
+          onEdit:()=>this.openRarityModal(true,r), onDelete:()=>this.setState({modal:{type:'delete',kind:'rarity',rid:r.id,name:r.name},form:{reassignTo:null}})
+        };
+      });
+
+      // sections
+      v.newSection=()=>this.openSectionModal(sys.id,false);
+      const groupsList=sys.groups||[];
+      v.noSections=groupsList.length===0;
+      v.sections=groupsList.map((g,i)=>{
+        const usage=sys.expansions.filter(e=>e.groupId===g.id).length;
+        const dis='background:transparent;border:1px solid var(--line);width:30px;height:30px;border-radius:6px;cursor:pointer;font-size:10px;color:var(--line2)';
+        const en='background:transparent;border:1px solid var(--line);width:30px;height:30px;border-radius:6px;cursor:pointer;font-size:10px;color:var(--ink2)';
+        return {id:g.id,name:g.name,
+          usageLabel:usage?this.fmt(usage===1?this.t('expN1'):this.t('expsN'),usage):this.t('emptySection'),
+          upStyle:i===0?dis:en, downStyle:i===groupsList.length-1?dis:en,
+          onUp:()=>i>0&&this.moveSection(sys.id,g.id,-1), onDown:()=>i<groupsList.length-1&&this.moveSection(sys.id,g.id,1),
+          onEdit:()=>this.openSectionModal(sys.id,true,g), onDelete:()=>this.setState({modal:{type:'delete',kind:'section',sysId:sys.id,gid:g.id,name:g.name}})
+        };
+      });
+
+      // card layout fields
+      v.newField=()=>this.openFieldModal(false);
+      const layout=this.layoutOf(sys);
+      v.noFields=layout.length===0;
+      v.cardFields=layout.map((fld,i)=>{
+        const dis='background:transparent;border:1px solid var(--line);width:30px;height:30px;border-radius:6px;cursor:pointer;font-size:10px;color:var(--line2)';
+        const en='background:transparent;border:1px solid var(--line);width:30px;height:30px;border-radius:6px;cursor:pointer;font-size:10px;color:var(--ink2)';
+        return {id:fld.id,label:fld.label,icon:fld.icon,color:fld.color,bgTint:fld.color+'22',
+          typeLabel:fld.type==='number'?this.t('numberT'):fld.type==='longtext'?this.t('longTextT'):fld.type==='type'?this.t('lType'):fld.type==='element'?this.t('elementW'):this.t('textT'),
+          tileLabel:fld.showOnTile?this.t('shownOnCard'):this.t('hiddenW'),
+          upStyle:i===0?dis:en, downStyle:i===layout.length-1?dis:en,
+          onUp:()=>i>0&&this.moveField(fld.id,-1), onDown:()=>i<layout.length-1&&this.moveField(fld.id,1),
+          onEdit:()=>this.openFieldModal(true,fld), onDelete:()=>this.removeField(fld.id)};
+      });
+
+      // binder cover
+      v.editCover=()=>this.openCoverModal('cover');
+      v.coverPreview=this.coverPreviewOf(sys.cover, sys.name, '');
+
+      // current expansion cards
+      const exp=sys.expansions.find(e=>e.id===S.builderTab);
+      if(exp){
+        v.currentExpansion={name:this.packName(exp),ip:this.packIP(exp,sys),ipColor:this.packIPColor(exp,sys),hasIP:!!this.packIP(exp,sys),abbreviation:exp.abbreviation,releaseLabel:this.fmtDate(exp.releaseDate),cardCountLabel:this.fmt(exp.cards.length===1?this.t('cardN1'):this.t('cardsN'),exp.cards.length)};
+        v.editExpansion=()=>this.openExpansionModal(true);
+        v.deleteExpansion=()=>this.setState({modal:{type:'delete',kind:'expansion',name:exp.name}});
+        v.editDivider=()=>this.openCoverModal('divider');
+        v.exportExpansion=()=>this.exportExpansion();
+        v.openImportExpansionModal=()=>this.openImportExpansionModal();
+        v.triggerImportExpansion=()=>this.triggerImportExpansion();
+        v.doImportExpansion=(e)=>this.doImportExpansion(e);
+        v.downloadImageScript=()=>this.downloadImageScript();
+        v.resetCardOrder=()=>this.resetCardOrder();
+        v.newCard=()=>this.openCardModal(false);
+        v.builderNoCards=exp.cards.length===0;
+        v.builderManualOrder=exp.cards.some(c=>c.sortIndex!=null);
+        const bpar=(c)=>Component.isParallelRarity(c.rarityId)||/·P/i.test(c.number||'');
+        const orderedCards=this.sortExpansionCards(exp);
+        const dragId=S.builderDragId;
+        v.builderCards=orderedCards.map((c,i)=>{ const rr=this.rarityById(sys,c.rarityId); const ti=this.typeInfo(c.type); const par=bpar(c);
+          const statChips=this.layoutOf(sys).filter(fld=>fld.showOnTile&&fld.type!=='longtext'&&fld.type!=='type'&&fld.type!=='element').slice(0,4).map(fld=>({key:fld.id,icon:fld.icon,color:fld.color,value:this.cardStatVal(c,fld)}));
+          const borderColor=par?(rr?rr.color:'#e0609a'):'var(--line)';
+          return {id:c.id,number:this.cardNumber(c,i,exp.cards.length),name:this.cardName(c),type:this.typeLabel(c.type),typeColor:ti.color,typeIcon:ti.icon,
+            hasElement:!!c.element,elementLabel:c.element?this.elementLabel(c.element):'',elementColor:c.element?(Component.ELEMENT_COLORS[c.element]||'var(--ink3)'):'',elementIcon:c.element?(Component.ELEMENT_ICONS[c.element]||'fa-solid fa-circle-question'):'',
+            hasImage:!!c.image,noImage:!c.image,imgSrc:c.image||'',art:this.artNode(c,true,exp),parallel:par,
+            cardBorder:borderColor,hasStats:statChips.length>0,statChips,
+            rarityName:rr?rr.name:'—',rarityColor:rr?rr.color:'var(--ink3)',rarityAbbr:rr?(rr.abbr||rr.name):'—',
+            artStyle:this.artStyle(c.type), onEdit:()=>this.openCardModal(true,c),
+            tileStyle:this.parseStyle(`background:var(--row);border:1px solid ${borderColor};border-radius:14px;overflow:hidden;cursor:grab;transition:transform .2s,border-color .2s,box-shadow .2s,opacity .2s;opacity:${dragId===c.id?'.35':'1'}`),
+            onDragStart:(e)=>{ e.dataTransfer.setData('text/plain',c.id); e.dataTransfer.effectAllowed='move'; this.setState({builderDragId:c.id}); },
+            onDragOver:(e)=>{ e.preventDefault(); e.dataTransfer.dropEffect='move'; },
+            onDrop:(e)=>{ e.preventDefault(); const draggedId=e.dataTransfer.getData('text/plain')||S.builderDragId; if(draggedId&&draggedId!==c.id) this.reorderCard(draggedId,c.id); this.setState({builderDragId:null}); },
+            onDragEnd:()=>this.setState({builderDragId:null})};
+        });
+      }
+    }
+
+    // ---- collector ----
+    if(S.mode==='collector'){
+      const cs=this.csys();
+      if(cs){
+        const bucket=S.collector[cs.id]||{};
+        const cexp=cs.expansions.find(e=>e.id===S.collectorExpansionId);
+
+        // per-expansion stats for the currently active expansion (not the whole system)
+        const statCards=cexp?cexp.cards:[];
+        let owned=0,dupes=0; statCards.forEach(c=>{ const en=bucket[c.id]; if(en&&en.owned){ owned++; dupes+=Math.max(0,(en.qty||1)-1); } });
+        const total=statCards.length; const pct=total?Math.round(owned/total*100):0;
+        v.stats={total,owned,missing:total-owned,pct,dupes,pctWidth:pct+'%'};
+
+        v.collectorExpansions=cs.expansions.map(e=>{
+          const o=e.cards.filter(c=>bucket[c.id]&&bucket[c.id].owned).length; const t=e.cards.length; const p=t?Math.round(o/t*100):0;
+          const active=S.collectorExpansionId===e.id && !S.collectorHome;
+          return {id:e.id,name:this.packName(e),ip:this.packIP(e,cs),ipColor:this.packIPColor(e,cs),abbr:e.abbreviation,owned:o,total:t,groupId:e.groupId||null,
+            style:this.sideItem(active),
+            onClick:()=>this.setState({collectorExpansionId:e.id,collectorHome:false,collectorRarity:'all',collectorSpread:0})};
+        });
+        v.collectorGroups=this.groupTabs(cs, v.collectorExpansions);
+        v.goHome=()=>this.setState({collectorHome:true});
+        v.homeTabStyle=this.sideItem(!!S.collectorHome);
+
+        // ---- Home page: recently added + rarest owned, filtered to whichever sections the
+        // user has toggled on (defaults to all sections when nothing's been customized yet) ----
+        v.collectorShowHome=!!S.collectorHome;
+        v.homeSystemName=cs.name;
+        const groupIdOf=(e)=>e.groupId||'__ungrouped__';
+        const availableGroupIds=[...new Set(cs.expansions.map(groupIdOf))];
+        const orderedGroupIds=[...cs.groups.map(g=>g.id).filter(id=>availableGroupIds.includes(id)),
+          ...(availableGroupIds.includes('__ungrouped__')?['__ungrouped__']:[])];
+        const selectedSections=S.collectorHomeSections||orderedGroupIds;
+        v.showHomeSectionPills=orderedGroupIds.length>1;
+        v.homeSectionPills=orderedGroupIds.map(gid=>{
+          const active=selectedSections.indexOf(gid)>=0;
+          const grp=cs.groups.find(g=>g.id===gid);
+          const name=gid==='__ungrouped__'?this.t('ungrouped'):(grp?grp.name:this.t('ungrouped'));
+          return {id:gid,name,
+            style:`display:inline-flex;align-items:center;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;font-family:var(--sans);background:${active?'var(--raise)':'transparent'};border:1px solid ${active?'var(--accent-ink)':'var(--line)'};color:${active?'var(--ink)':'var(--ink3)'}`,
+            onClick:()=>{ const cur=S.collectorHomeSections||orderedGroupIds;
+              const next=cur.indexOf(gid)>=0?cur.filter(x=>x!==gid):[...cur,gid];
+              this.setState({collectorHomeSections:next}); }};
+        });
+        const allCardsFlat=[]; cs.expansions.forEach(e=>{ if(selectedSections.indexOf(groupIdOf(e))<0) return; e.cards.forEach(c=>allCardsFlat.push({card:c,exp:e})); });
+        const ownedEntries=allCardsFlat.filter(x=>{ const en=bucket[x.card.id]; return en&&en.owned; });
+        v.homeOwnedCount=ownedEntries.length; v.homeTotalCount=allCardsFlat.length;
+        v.homeOverallPct=allCardsFlat.length?Math.round(ownedEntries.length/allCardsFlat.length*100):0;
+        const buildHomeTile=(x)=>{ const c=x.card,e=x.exp; const rr=this.rarityById(cs,c.rarityId);
+          return {id:c.id,artStyle:this.artStyle(c.type),art:this.artNode(c,true,e),
+            name:this.cardName(c),number:this.cardNumber(c,e.cards.indexOf(c),e.cards.length),
+            expName:this.packName(e),rarityName:rr?rr.name:'—',rarityColor:rr?rr.color:'var(--ink3)',
+            onOpen:()=>this.setState({collectorExpansionId:e.id,collectorHome:false,collectorRarity:'all',collectorSpread:0})}; };
+        const recent=[...ownedEntries].sort((a,b)=>(bucket[b.card.id].addedAt||0)-(bucket[a.card.id].addedAt||0)).slice(0,10);
+        v.recentlyAdded=recent.map(buildHomeTile);
+        v.hasRecentlyAdded=v.recentlyAdded.length>0;
+        // "rarest" ranks by pull rate % ascending (lower % = rarer); ties/unset fall back to
+        // each rarity's position in the system's rarity list, where later = rarer by convention
+        const rarityOrder=[...cs.rarities].sort((a,b)=>{
+          const pa=parseFloat(a.pullRate), pb=parseFloat(b.pullRate);
+          const va=isNaN(pa)?Infinity:pa, vb=isNaN(pb)?Infinity:pb;
+          if(va!==vb) return va-vb;
+          return cs.rarities.indexOf(b)-cs.rarities.indexOf(a);
+        });
+        const rankOf={}; rarityOrder.forEach((r,i)=>{ rankOf[r.id]=i; });
+        const rarest=[...ownedEntries].sort((a,b)=>{
+          const ra=rankOf[a.card.rarityId]??999, rb=rankOf[b.card.rarityId]??999;
+          if(ra!==rb) return ra-rb;
+          return (bucket[b.card.id].addedAt||0)-(bucket[a.card.id].addedAt||0);
+        }).slice(0,10);
+        v.rarestOwned=rarest.map(buildHomeTile);
+        v.hasRarestOwned=v.rarestOwned.length>0;
+        v.homeNoSectionsSelected=selectedSections.length===0;
+        v.homeEmptyMsg=ownedEntries.length===0 && !v.homeNoSectionsSelected;
+
+        v.collectorHasExp=!!cexp && !S.collectorHome;
+        if(cexp){
+          v.collectorExpName=this.packName(cexp);
+          v.collectorExpIP=this.packIP(cexp,cs);
+          v.collectorExpIPColor=this.packIPColor(cexp,cs);
+          v.collectorExpHasIP=!!v.collectorExpIP;
+          const len=cexp.cards.length;
+          const filter=S.collectorRarity||'all';
+          // ---- grid / binder view toggle ----
+          const viewMode=S.collectorViewMode||'grid';
+          v.isBinder=viewMode==='binder';
+          v.binderRings=Array.from({length:6},(_,i)=>({id:i}));
+          const viewToggleBtn=(active)=>`width:34px;height:30px;border-radius:6px;border:none;cursor:pointer;font-size:13px;background:${active?'var(--accent)':'transparent'};color:${active?'var(--on-accent)':'var(--ink3)'}`;
+          v.gridViewBtnStyle=viewToggleBtn(!v.isBinder);
+          v.binderViewBtnStyle=viewToggleBtn(v.isBinder);
+          v.setGridView=()=>this.setState({collectorViewMode:'grid',collectorShowCover:false});
+          v.setBinderView=()=>this.setState({collectorViewMode:'binder',collectorSpread:0});
+          // ---- binder cover: a dedicated front-cover spread, toggled on top of the normal pages ----
+          const showCover=v.isBinder&&!!S.collectorShowCover;
+          v.showCoverPages=showCover;
+          v.coverToggleStyle=this.parseStyle(`width:34px;height:30px;border-radius:6px;cursor:pointer;font-size:13px;background:${showCover?'var(--accent)':'transparent'};border:1px solid ${showCover?'var(--accent)':'var(--line)'};color:${showCover?'var(--on-accent)':'var(--ink3)'}`);
+          v.toggleCoverView=()=>this.setState({collectorShowCover:!showCover});
+          v.coverPage=this.coverPreviewOf(cs.cover, cs.name, '');
+          v.coverInsideBg=this.coverBg({bgType:'color',color1:(cs.cover&&cs.cover.color1)||'#5a2632'});
+          v.dividerPage=this.coverPreviewOf(cexp.divider, this.packName(cexp), cexp.abbreviation);
+          // ---- binder-only controls: pocket size + stack variants ----
+          const pocketSize=S.collectorPocketSize||9;
+          const pocketCols=pocketSize===4?2:pocketSize===12?3:pocketSize===16?4:3;
+          v.pocketOptions=[4,9,12,16].map(n=>{ const act=pocketSize===n;
+            return {id:n,label:n+'-Pocket',
+              style:`padding:9px 14px;border-radius:7px;border:none;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;background:${act?'var(--accent)':'transparent'};color:${act?'var(--on-accent)':'var(--ink3)'}`,
+              onClick:()=>this.setState({collectorPocketSize:n,collectorSpread:0})};
+          });
+          const stackOn=S.collectorStackVariants!==false;
+          v.stackToggleTrackStyle=this.parseStyle(`width:40px;height:22px;border-radius:11px;background:${stackOn?'var(--ok)':'var(--line2)'};position:relative;transition:all .2s;cursor:pointer;flex-shrink:0`);
+          v.stackToggleKnobStyle=this.parseStyle(`width:16px;height:16px;border-radius:50%;background:#fff;position:absolute;top:3px;left:${stackOn?'21px':'3px'};transition:all .2s`);
+          v.toggleStackVariants=()=>this.setState({collectorStackVariants:!stackOn,collectorSpread:0});
+          // ---- layout styles: cards target their native scan resolution, but scale down to fit the viewport ----
+          const NATIVE_CARD_W=370, PANEL_PAD=24, PANEL_GAP=18;
+          // ---- grid-only control: card size slider (0 = dynamic/responsive, 10-100 = fixed % of native scan width) ----
+          // defaults to a fixed 70% until the user explicitly picks a size (including Dynamic, which is 0 - so
+          // this can't use `||` since that would treat an explicit 0 as unset and snap back to 70)
+          const cardSizeVal=S.collectorCardSize!=null?S.collectorCardSize:70;
+          v.cardSizeValue=cardSizeVal;
+          v.cardSizeLabel=cardSizeVal<=0?this.t('dynamicSize'):cardSizeVal+'%';
+          v.onCardSizeChange=(e)=>this.setState({collectorCardSize:parseInt(e.target.value,10)});
+          const effectiveCardW=cardSizeVal>0?Math.round(NATIVE_CARD_W*cardSizeVal/100):NATIVE_CARD_W;
+          if(v.isBinder){
+            v.gridCols=cardSizeVal>0?`repeat(${pocketCols},${effectiveCardW}px)`:`repeat(${pocketCols},minmax(0,1fr))`;
+          } else if(cardSizeVal>0){
+            v.gridCols=`repeat(auto-fill,${effectiveCardW}px)`;
+          } else {
+            v.gridCols=`repeat(auto-fill,minmax(min(${NATIVE_CARD_W}px,100%),1fr))`;
+          }
+          v.gridGap=PANEL_GAP+'px';
+          v.binderFrameStyle=v.isBinder?'display:flex;align-items:stretch;justify-content:center;gap:4px;width:100%':'display:block';
+          const RING_COL_W=13, RING_GAP=16; // extra room so the ring-hole column never squeezes/overlaps the card grid
+          const pageWidthPx=pocketCols*effectiveCardW+(pocketCols-1)*PANEL_GAP+2*PANEL_PAD+RING_COL_W+RING_GAP;
+          // ---- pull-rate breakdown: based on total copies pulled (uniques + duplicates) ----
+          // totalPulled also feeds the "% of pulls" badge shown on owned card tiles further below
+          let totalPulled=0; cexp.cards.forEach(c=>{ const en=bucket[c.id]; if(en&&en.owned) totalPulled+=(en.qty||0); });
+          // ---- rarity-segmented completion bar: each rarity's share of the bar = its owned-unique
+          // count as a fraction of the WHOLE expansion, so the segments' combined width always equals
+          // stats.pct - this replaces the old flat single-color bar + separate pull-rate pill row ----
+          v.rarityBarRows=cs.rarities.filter(r=>cexp.cards.some(c=>c.rarityId===r.id)).map(r=>{
+            const cardsR=cexp.cards.filter(c=>c.rarityId===r.id);
+            let copies=0,uniq=0; cardsR.forEach(c=>{ const en=bucket[c.id]; if(en&&en.owned){ copies+=(en.qty||0); uniq++; } });
+            const tgt=(r.pullRate!==''&&r.pullRate!=null&&/^-?\d*\.?\d+$/.test(String(r.pullRate).trim()))?parseFloat(r.pullRate):null;
+            const copiesLabel=this.fmt(this.t('copiesW'),copies), targetLabel=tgt!=null?this.fmt(this.t('targetL'),tgt):'';
+            const widthPct=total?(uniq/total*100):0;
+            return {id:r.id,color:r.color,widthPct:widthPct+'%',
+              tooltip:`${r.name} — ${uniq}/${cardsR.length} ${this.t('ownedW')}${copies?' · '+copiesLabel:''}${targetLabel?' · '+targetLabel:''}`};
+          });
+          v.editPullRates=()=>this.openPullRatesModal();
+          // ---- booster tracker: fully calculated from the cards you've tracked (totalPulled,
+          // already computed above for the pull-rate breakdown) - no manual counters at all.
+          // cards -> boosters (cardRemainder = cards short of the next booster), then
+          // boosters -> boxes (boosterRemainder = opened boosters short of the next full box). ----
+          const perBooster=cexp.cardsPerBooster||6, perBox=cexp.boostersPerBox||24;
+          const opened=perBooster?Math.floor(totalPulled/perBooster):0;
+          const cardRemainder=perBooster?totalPulled%perBooster:0;
+          const boxes=perBox?Math.floor(opened/perBox):0;
+          const boosterRemainder=perBox?opened%perBox:0;
+          v.boosterTracker={
+            opened, boxes, boosterRemainder, perBooster, perBox,
+            hasBoosterRemainder:boosterRemainder>0,
+            fromCardsLabel:this.fmt(this.t('fromCardsTracked'),totalPulled)+(cardRemainder?` · ${this.fmt(this.t('extraCards'),cardRemainder)}`:'')
+          };
+          const baseKey=(c)=>{ const m=(c.number||'').match(/[A-Z]+\d+-\d+/i); return m?m[0]:(c.number||c.id); };
+          const isPar=(c)=>Component.isParallelRarity(c.rarityId) || /·P/i.test(c.number||'');
+          // same order the Builder shows - numeric by default, or the manually dragged order once
+          // the user has set one there (stamped as sortIndex on every card in the expansion)
+          const sortedCards=this.sortExpansionCards(cexp);
+          // rarity filter dropdown (only rarities actually present in this expansion) - counts
+          // reflect whichever ownership pip (All/Have/Need/Dupes) is currently selected, so picking
+          // "Need" shows how many of each rarity you're still missing, not the expansion's raw total.
+          // `counts` itself stays the TRUE per-rarity total (needed below for the odds-per-card math).
+          const counts={}; cexp.cards.forEach(c=>{ counts[c.rarityId]=(counts[c.rarityId]||0)+1; });
+          const ownFilter=S.collectorOwnFilter||'all';
+          const passesOwnFilter=(c)=>{ if(ownFilter==='all') return true;
+            const en=bucket[c.id]; const owned=!!(en&&en.owned);
+            if(ownFilter==='have') return owned;
+            if(ownFilter==='need') return !owned;
+            if(ownFilter==='dupes') return owned&&(en.qty||0)>1;
+            return true; };
+          const countScope=cexp.cards.filter(passesOwnFilter);
+          const filterCounts={}; countScope.forEach(c=>{ filterCounts[c.rarityId]=(filterCounts[c.rarityId]||0)+1; });
+          const filters=[{id:'all',name:this.t('all'),count:countScope.length}];
+          cs.rarities.forEach(r=>{ if(filterCounts[r.id]) filters.push({id:r.id,name:r.name,count:filterCounts[r.id]}); });
+          v.rarityFilterValue=filter;
+          v.rarityFilterOptions=filters.map(f=>({id:f.id,label:`${f.name} (${f.count})`}));
+          v.onRarityFilterChange=(e)=>this.setState({collectorRarity:e.target.value,collectorSpread:0});
+          // one tile per base number (stacked variants) or one tile per individual card (flat)
+          const order=[]; const groups={};
+          sortedCards.forEach((c,i)=>{ const k=baseKey(c); if(!groups[k]){groups[k]=[]; order.push(k);} groups[k].push({card:c,idx:i}); });
+
+          // ---- unique-design completion: "at least one card of each" - a base card counts as
+          // collected if you own ANY of its printings (base or parallel), unlike the main bar above
+          // which needs every individual printing owned separately. Always >= the main bar's %, so
+          // the second bar renders as an extension past the first bar's fill rather than a fresh one. ----
+          const uniqueTotal=order.length;
+          const uniqueOwned=order.filter(k=>groups[k].some(x=>{ const en=bucket[x.card.id]; return en&&en.owned; })).length;
+          const uniquePct=uniqueTotal?Math.round(uniqueOwned/uniqueTotal*100):0;
+          v.uniqueStats={owned:uniqueOwned,total:uniqueTotal,pct:uniquePct,
+            baseWidth:v.stats.pct+'%', extraWidth:Math.max(0,uniquePct-v.stats.pct)+'%',
+            baseTip:`${this.t('totalCollected')} — ${v.stats.pct}%`,
+            extraTip:`${this.t('uniqueDesigns')} — ${uniqueOwned}/${uniqueTotal} (${uniquePct}%)`};
+          const tileChipFields=this.layoutOf(cs).filter(f=>f.showOnTile&&(f.type==='type'||f.type==='element'));
+          const makeTile=(arr,key)=>{
+            // prefer the rarest variant as the default face of the stack (e.g. Special Rare over
+            // Super Rare) - rarity order is whatever's configured in Builder, later = rarer/more special
+            const rarityRank=(c)=>{ const i=cs.rarities.findIndex(r=>r.id===c.rarityId); return i<0?-1:i; };
+            const baseEntry=[...arr].sort((a,b)=>rarityRank(b.card)-rarityRank(a.card))[0]||arr[0];
+            const base=baseEntry.card; const brr=this.rarityById(cs,base.rarityId);
+            const parCount=arr.filter(x=>isPar(x.card)).length;
+            let groupCopies=0,dupeCopies=0; arr.forEach(x=>{ const en=bucket[x.card.id]; if(en&&en.owned){ groupCopies+=(en.qty||0); dupeCopies+=Math.max(0,(en.qty||1)-1); } });
+            const groupPct=(groupCopies&&totalPulled)?(groupCopies/totalPulled*100):0;
+            // theoretical per-card odds = rarity pull rate ÷ number of cards of that rarity
+            const brTgt=(brr && /^-?\d*\.?\d+$/.test(String(brr.pullRate).trim()))?parseFloat(brr.pullRate):null;
+            const brCnt=counts[base.rarityId]||0;
+            const theo=(brTgt!=null && brCnt)?(brTgt/brCnt):null;
+            // variant ticks: base first, then parallels
+            const ordered=[baseEntry,...arr.filter(x=>x!==baseEntry)];
+            let hoveredCard=null;
+            const variants=ordered.map(x=>{ const c=x.card; const rr=this.rarityById(cs,c.rarityId); const rc=rr?rr.color:'var(--ink3)';
+              const en=bucket[c.id]; const owned=!!(en&&en.owned); const q=owned?(en.qty||0):0;
+              const vpct=(owned&&totalPulled)?(q/totalPulled*100):0;
+              if(S.hoverVariantId===c.id) hoveredCard=c;
+              return {id:c.id,rarityId:c.rarityId,rarityName:rr?rr.name:'—',rarityAbbr:rr?(rr.abbr||rr.name):'—',rarityColor:rc,
+                title:`${this.cardNumber(c,x.idx,len)} · ${rr?rr.name:'—'}${owned?` — owned ×${q} (${vpct.toFixed(1)}% of pulls)`:''}`,
+                tickStyle:`width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;box-shadow:0 2px 6px rgba(0,0,0,.4);background:${owned?rc:'rgba(10,8,14,.72)'};border:1.5px solid ${rc};color:${owned?'#0a0a10':'transparent'}`,
+                showTip:S.hoverVariantId===c.id,
+                onToggle:(e)=>this.quickToggle(c,e),
+                onHoverStart:()=>this.hoverVariant(c.id),
+                onHoverEnd:()=>this.unhoverVariant()};
+            });
+            const displayCard=hoveredCard||base;
+            const typeChips=tileChipFields.map(fl=>{
+              if(fl.type==='type'){ const v=base.type; return {key:fl.id,label:this.typeLabel(v),color:this.typeInfo(v).color}; }
+              const v=base.element; return {key:fl.id,label:this.elementLabel(v),color:Component.ELEMENT_COLORS[v]||'var(--ink3)'};
+            }).filter(x=>x.label);
+            const owned=groupCopies>0;
+            return {key,real:true,empty:false,rarityIds:arr.map(x=>x.card.rarityId),
+              number:this.cardNumber(base,baseEntry.idx,len),name:this.cardName(base),
+              baseRarityName:brr?brr.name:'—',baseRarityAbbr:brr?(brr.abbr||brr.name):'—',baseRarityColor:brr?brr.color:'var(--ink3)',
+              owned,pullLabel:groupCopies?this.fmt(this.t('pulledL'),groupPct.toFixed(1),groupCopies):'',
+              missing:!owned,hasDupes:dupeCopies>0,theoLabel:theo!=null?this.fmt(this.t('expectedL'),theo.toFixed(theo<1?2:1)):'',
+              artStyle:this.artStyle(displayCard.type),art:this.artNode(displayCard,true,cexp),artOpacity:owned?'1':'0.4',
+              variants,typeChips,hasTypeChips:typeChips.length>0,
+              onOpen:()=>this.openCollectorCard(base)};
+          };
+          const groupedTiles=order.map(k=>makeTile(groups[k],k));
+          const flatTiles=sortedCards.map((c,i)=>makeTile([{card:c,idx:i}],c.id));
+          const isDupesFilter=ownFilter==='dupes';
+          // the Dupes filter shows one tile per physical copy you actually own of each
+          // duplicated card - not one tile per card, and not a stacked group - so a card
+          // you have 8 of renders as 8 separate tiles, matching real-life binder pockets
+          const dupeTiles=[];
+          if(isDupesFilter){
+            sortedCards.forEach((c,i)=>{
+              const en=bucket[c.id]; const qty=(en&&en.owned)?(en.qty||0):0;
+              if(qty<=1) return;
+              for(let n=0;n<qty;n++){ dupeTiles.push(makeTile([{card:c,idx:i}], c.id+'-copy'+n)); }
+            });
+          }
+          const allTiles=(isDupesFilter?dupeTiles:(stackOn?groupedTiles:flatTiles))
+            .filter(t=> filter==='all' || t.rarityIds.indexOf(filter)>=0)
+            .filter(t=> ownFilter==='all' || (ownFilter==='have'&&t.owned) || (ownFilter==='need'&&t.missing) || (ownFilter==='dupes'&&t.hasDupes));
+          v.collectorTiles=allTiles;
+          v.showTicks=!isDupesFilter;
+          v.showStackToggle=!isDupesFilter;
+          let ownAll=0,ownHave=0,ownNeed=0,ownDupes=0;
+          const rarityScopedCards=filter==='all'?cexp.cards:cexp.cards.filter(c=>c.rarityId===filter);
+          rarityScopedCards.forEach(c=>{ ownAll++; const en=bucket[c.id]; const isOwned=!!(en&&en.owned); if(isOwned){ ownHave++; if((en.qty||0)>1) ownDupes++; } else ownNeed++; });
+          v.ownFilters=[
+            {id:'all',name:this.t('all'),count:ownAll},
+            {id:'have',name:this.t('haveW'),count:ownHave},
+            {id:'need',name:this.t('needW'),count:ownNeed},
+            {id:'dupes',name:this.t('dupesW'),count:ownDupes}
+          ].map(f=>{ const act=ownFilter===f.id;
+            return {id:f.id,name:f.name,count:f.count,
+              style:`display:inline-flex;align-items:center;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;font-family:var(--sans);background:${act?'var(--raise)':'transparent'};border:1px solid ${act?'var(--accent-ink)':'var(--line)'};color:${act?'var(--ink)':'var(--ink3)'}`,
+              onClick:()=>this.setState({collectorOwnFilter:f.id,collectorSpread:0})};
+          });
+
+          // ---- binder pagination: two-page spreads, like flipping through a real binder ----
+          // spread 0 = [blank, page 1]; spread 1 = [page 2, page 3]; spread 2 = [page 4, page 5]; …
+          v.isGridMode=!v.isBinder;
+          if(v.isBinder){
+            const totalPages=Math.max(1,Math.ceil(allTiles.length/pocketSize));
+            const totalSpreads=totalPages<=1?1:(1+Math.ceil((totalPages-1)/2));
+            const spread=Math.min(S.collectorSpread||0,totalSpreads-1);
+            const leftPageIdx=spread===0?null:2*spread-1;
+            const rightPageIdx=spread===0?0:2*spread;
+            const buildPageTiles=(pageIdx)=>{
+              if(pageIdx==null||pageIdx>=totalPages) return null;
+              const startIdx=pageIdx*pocketSize;
+              const pageSlice=allTiles.slice(startIdx,startIdx+pocketSize);
+              const placeholders=[];
+              for(let i=pageSlice.length;i<pocketSize;i++){ placeholders.push({real:false,empty:true,slotNum:startIdx+i+1,key:'empty-'+(startIdx+i)}); }
+              return [...pageSlice,...placeholders];
+            };
+            const leftTiles=buildPageTiles(leftPageIdx), rightTiles=buildPageTiles(rightPageIdx);
+            v.hasLeftPage=!!leftTiles&&!showCover; v.hasRightPage=!!rightTiles&&!showCover;
+            v.showDivider=!showCover&&spread===0&&!leftTiles;
+            v.showPagination=!showCover;
+            v.leftGridTiles=leftTiles||[]; v.rightGridTiles=rightTiles||[];
+            const leftNum=leftPageIdx!=null?leftPageIdx+1:null, rightNum=v.hasRightPage?rightPageIdx+1:null;
+            v.binderPageLabel=(leftNum&&rightNum)?this.fmt(this.t('pagesRangeOfN'),leftNum,rightNum,totalPages):this.fmt(this.t('pageOfN'),rightNum||leftNum,totalPages);
+            const prevDisabled=spread<=0, nextDisabled=spread>=totalSpreads-1;
+            v.binderPrevStyle=this.parseStyle('padding:10px 18px;border-radius:8px;border:1px solid var(--line2);background:var(--row);color:var(--ink);font-size:13px;font-weight:600;cursor:pointer'+(prevDisabled?';opacity:.35;cursor:default':''));
+            v.binderNextStyle=this.parseStyle('padding:10px 18px;border-radius:8px;border:none;background:var(--accent);color:var(--on-accent);font-size:13px;font-weight:600;cursor:pointer'+(nextDisabled?';opacity:.35;cursor:default':''));
+            v.binderPrev=()=>{ if(!prevDisabled) this.setState({collectorSpread:spread-1}); };
+            v.binderNext=()=>{ if(!nextDisabled) this.setState({collectorSpread:spread+1}); };
+            v.leftPanelStyle=`flex:1 1 0;max-width:${pageWidthPx}px;min-width:0;background:${v.hasLeftPage?'linear-gradient(180deg,var(--panel),var(--row))':'var(--row)'};border:1px solid var(--line);border-radius:18px 6px 6px 18px;padding:${v.hasLeftPage?PANEL_PAD+'px':'0'};min-height:200px`;
+            v.rightPanelStyle=`flex:1 1 0;max-width:${pageWidthPx}px;min-width:0;background:${v.hasRightPage?'linear-gradient(180deg,var(--panel),var(--row))':'var(--row)'};border:1px solid var(--line);border-radius:6px 18px 18px 6px;padding:${v.hasRightPage?PANEL_PAD+'px':'0'};min-height:200px`;
+          } else {
+            v.gridTiles=allTiles;
+            v.pagePanelStyle='background:transparent;border:none;padding:0';
+          }
+        }
+      }
+    }
+
+    // ---- modal ----
+    const m=S.modal;
+    v.modalOpen=!!m;
+    if(m){
+      const f=S.form;
+      const inp='width:100%;background:var(--panel);border:1px solid var(--line2);border-radius:8px;padding:11px 13px;color:var(--ink);font-size:14px;margin-top:6px';
+      const lbl='font-size:12px;color:var(--ink2);font-weight:600;text-transform:uppercase;letter-spacing:.05em';
+      const R=React.createElement;
+      const field=(label,el)=>R('div',{style:{marginBottom:'16px'}},R('label',{style:this.parseStyle(lbl)},label),el);
+      const textInput=(key,ph,type)=>R('input',{type:type||'text','data-field':key,value:f[key]??'',placeholder:ph,onChange:(e)=>this.onField(e),style:this.parseStyle(inp)});
+      const primaryBtn=(txt,fn)=>R('button',{onClick:fn,style:this.parseStyle('flex:1;background:var(--accent);color:var(--on-accent);font-weight:600;padding:12px;border-radius:8px;border:none;cursor:pointer;font-size:14px')},txt);
+      const ghostBtn=(txt,fn)=>R('button',{onClick:fn,style:this.parseStyle('background:transparent;color:var(--ink2);border:1px solid var(--line2);padding:12px 20px;border-radius:8px;cursor:pointer;font-size:14px')},txt);
+      const footer=(submitTxt,submitFn,extra)=>R('div',{style:{display:'flex',gap:'10px',marginTop:'8px'}},extra||null,ghostBtn(this.t('cancel'),()=>this.setState({modal:null})),primaryBtn(submitTxt,submitFn));
+
+      if(m.type==='system'){
+        v.modalTitle=m.edit?this.t('mEditSystem'):this.t('mNewSystem'); v.modalWidth='480px';
+        v.modalBody=R('div',null,
+          field(this.t('lSystemName'),textInput('name','e.g. Arcane Legends')),
+          field(this.t('lDescription'),R('textarea',{'data-field':'description',value:f.description??'',placeholder:'A short description of this card game…',onChange:(e)=>this.onField(e),rows:3,style:this.parseStyle(inp+';resize:vertical;font-family:inherit')})),
+          footer(m.edit?this.t('saveChanges'):this.t('createSystem'),()=>this.saveSystem())
+        );
+      } else if(m.type==='rarity'){
+        v.modalTitle=m.edit?this.t('mEditRarity'):this.t('mNewRarity'); v.modalWidth='440px';
+        v.modalBody=R('div',null,
+          R('div',{style:{display:'flex',gap:'14px'}},
+            R('div',{style:{flex:1}},field(this.t('lRarityName'),textInput('name','e.g. Ultra Rare'))),
+            R('div',{style:{flex:'0 0 110px'}},field(this.t('lAbbr'),textInput('abbr','e.g. UR')))
+          ),
+          R('div',{style:{display:'flex',gap:'14px'}},
+            R('div',{style:{flex:'0 0 auto'}},field(this.t('lColor'),R('input',{type:'color','data-field':'color',value:f.color||'#c9a84c',onChange:(e)=>this.onField(e),style:this.parseStyle('width:56px;height:44px;padding:2px;background:var(--panel);border:1px solid var(--line2);border-radius:8px;cursor:pointer;margin-top:6px')}))),
+            R('div',{style:{flex:1}},field(this.t('lPullRatePct'),textInput('pullRate','e.g. 25','number')))
+          ),
+          footer(m.edit?this.t('saveW'):this.t('addRarity'),()=>this.saveRarity())
+        );
+      } else if(m.type==='section'){
+        v.modalTitle=m.edit?this.t('mEditSection'):this.t('mNewSection'); v.modalWidth='400px';
+        v.modalBody=R('div',null,
+          field(this.t('lSectionName'),textInput('name','e.g. Booster')),
+          footer(m.edit?this.t('saveW'):this.t('addSection'),()=>this.saveSection())
+        );
+      } else if(m.type==='expansion'){
+        v.modalTitle=m.edit?this.t('mEditExpansion'):this.t('mNewExpansion'); v.modalWidth='480px';
+        const expSelStyle=this.parseStyle(inp+';cursor:pointer');
+        const expGroups=(sys?sys.groups:[])||[];
+        v.modalBody=R('div',null,
+          field(this.t('lExpName'),textInput('name','e.g. Dawn of Flames')),
+          R('div',{style:{display:'flex',gap:'14px'}},
+            R('div',{style:{flex:'0 0 130px'}},field(this.t('lAbbr'),textInput('abbreviation','DOF'))),
+            R('div',{style:{flex:1}},field(this.t('lRelease'),textInput('releaseDate','','date')))
+          ),
+          R('div',{style:{display:'flex',gap:'14px'}},
+            R('div',{style:{flex:1}},field(this.t('lSection'),R('select',{'data-field':'groupId',value:f.groupId||'',onChange:(e)=>this.onField(e),style:expSelStyle},
+              [R('option',{key:'',value:''},this.t('ungrouped')),...expGroups.map(g=>R('option',{key:g.id,value:g.id},g.name))]))),
+            R('div',{style:{flex:1}},field(this.t('lSeries'),R('select',{'data-field':'seriesId',value:f.seriesId||'',onChange:(e)=>this.onField(e),style:expSelStyle},
+              [R('option',{key:'',value:''},this.t('noSeries')),...(sys?(sys.series||[]):[]).map(sr=>R('option',{key:sr.id,value:sr.id},sr.name))])))
+          ),
+          R('div',{style:{display:'flex',gap:'14px'}},
+            R('div',{style:{flex:1}},field(this.t('lCardsPerBooster'),textInput('cardsPerBooster','6','number'))),
+            R('div',{style:{flex:1}},field(this.t('lBoostersPerBox'),textInput('boostersPerBox','24','number')))
+          ),
+          field(this.t('lImageBaseUrl'),textInput('imageBaseUrl','https://username.github.io/repo/images/BT08')),
+          R('div',{style:{fontSize:'11px',color:'var(--ink3)',marginTop:'-10px',marginBottom:'16px'}}, this.t('imageBaseUrlHint')),
+          footer(m.edit?this.t('saveChanges'):this.t('createExpansion'),()=>this.saveExpansion())
+        );
+      } else if(m.type==='pullRates'){
+        v.modalTitle=this.t('pullRateTitle'); v.modalWidth='420px';
+        const numStyle=this.parseStyle(inp+';margin-top:0;flex:0 0 100px');
+        const rates=f.rates||{};
+        v.modalBody=R('div',null,
+          R('div',{style:{fontSize:'12px',color:'var(--ink3)',marginBottom:'16px'}}, this.t('pullRatesDesc')),
+          R('div',{style:{display:'flex',flexDirection:'column',gap:'10px',marginBottom:'20px'}},
+            (sys?sys.rarities:[]).map(r=>R('div',{key:r.id,style:{display:'flex',alignItems:'center',gap:'12px'}},
+              R('div',{style:{width:'10px',height:'10px',borderRadius:'50%',background:r.color,flexShrink:0}}),
+              R('div',{style:{flex:1,fontSize:'13px'}}, r.name),
+              R('input',{type:'number',placeholder:'e.g. 25',value:rates[r.id]??'',onChange:(e)=>this.setPullRateField(r.id,e.target.value),style:numStyle})
+            ))
+          ),
+          footer(this.t('saveW'),()=>this.savePullRates())
+        );
+      } else if(m.type==='card'){
+        v.modalTitle=m.edit?this.t('mEditCard'):this.t('mNewCard'); v.modalWidth='540px';
+        const selStyle=this.parseStyle(inp+';cursor:pointer');
+        v.modalBody=R('div',null,
+          R('div',{style:{display:'flex',gap:'14px'}},
+            R('div',{style:{flex:1}},field(this.t('lCardName'),textInput('name','e.g. Phoenix Ascendant'))),
+            R('div',{style:{flex:'0 0 150px'}},field(this.t('lCardNumber'),textInput('number','e.g. BT07-047')))
+          ),
+          R('div',{style:{display:'flex',gap:'14px'}},
+            R('div',{style:{flex:1}},field(this.t('lType'),R('select',{'data-field':'type',value:f.type,onChange:(e)=>this.onField(e),style:selStyle},Component.TYPES.map(t=>R('option',{key:t.value,value:t.value},this.typeLabel(t.value)))))),
+            R('div',{style:{flex:1}},field(this.t('lElement'),R('select',{'data-field':'element',value:f.element||'',onChange:(e)=>this.onField(e),style:selStyle},
+              [R('option',{key:'',value:''},this.t('noElement')),...Object.keys(Component.ELEMENT_I18N).map(k=>R('option',{key:k,value:k},this.elementLabel(k)))]))),
+            R('div',{style:{flex:1}},field(this.t('lRarity'),R('select',{'data-field':'rarityId',value:f.rarityId,onChange:(e)=>this.onField(e),style:selStyle},(sys?sys.rarities:[]).map(r=>R('option',{key:r.id,value:r.id},r.name)))))
+          ),
+          R('div',{style:{display:'flex',gap:'14px',flexWrap:'wrap'}},
+            (this.layoutOf(sys)).filter(fld=>fld.type==='number'||fld.type==='text').map(fld=>R('div',{key:fld.id,style:{flex:'1 1 120px'}},field(
+              R('span',null,R('i',{className:fld.icon,style:{color:fld.color,marginRight:'6px'}}),fld.label),
+              textInput('stat_'+fld.id, fld.type==='number'?'0':'', fld.type==='number'?'number':'text')
+            )))
+          ),
+          field(this.t('lImage'),textInput('image','https://…')),
+          R('div',{style:{display:'flex',justifyContent:'center',margin:'4px 0 18px'}},
+            R('div',{style:{position:'relative',width:'370px',maxWidth:'100%',aspectRatio:'370/515',maxHeight:'70vh',borderRadius:'12px',overflow:'hidden',background:this.artStyle(f.type||'Unit'),border:'1px solid var(--line2)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}},
+              R('span',{style:{fontSize:'12px',color:'var(--ink3)',textAlign:'center',padding:'0 14px'}}, f.image?this.t('imgLoadFail'):this.t('imgNone')),
+              f.image?R('img',{key:f.image,src:f.image,alt:'preview',style:{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'contain'},onError:(e)=>{e.target.style.display='none';}}):null
+            )
+          ),
+          field(this.t('lDescription'),R('textarea',{'data-field':'description',value:f.description??'',placeholder:'Flavor text or effect…',onChange:(e)=>this.onField(e),rows:2,style:this.parseStyle(inp+';resize:vertical;font-family:inherit')})),
+          footer(m.edit?this.t('saveChanges'):this.t('addCard'),()=>this.saveCard(), m.edit?R('button',{onClick:()=>this.removeCard(),style:this.parseStyle('background:transparent;color:var(--danger);border:1px solid color-mix(in srgb,var(--danger) 40%,transparent);padding:12px 16px;border-radius:8px;cursor:pointer;font-size:14px;margin-right:auto')},R('i',{className:'fa-solid fa-trash'})):null)
+        );
+      } else if(m.type==='field'){
+        v.modalTitle=m.edit?this.t('mEditField'):this.t('mNewField'); v.modalWidth='460px';
+        const selStyle=this.parseStyle(inp+';cursor:pointer');
+        const linkedField=f.type==='type'||f.type==='element'||f.type==='longtext';
+        v.modalBody=R('div',null,
+          R('div',{style:{display:'flex',gap:'14px'}},
+            R('div',{style:{flex:1}},field(this.t('lFieldLabel'),textInput('label','e.g. Power'))),
+            R('div',{style:{flex:'0 0 150px'}},field(this.t('lValueType'),R('select',{'data-field':'type',value:f.type,onChange:(e)=>this.onField(e),style:selStyle},[
+              R('option',{key:'number',value:'number'},this.t('numberT')),
+              R('option',{key:'text',value:'text'},this.t('textT')),
+              R('option',{key:'longtext',value:'longtext'},this.t('longTextT')),
+              R('option',{key:'type',value:'type'},this.t('lType')),
+              R('option',{key:'element',value:'element'},this.t('elementW'))
+            ])))
+          ),
+          linkedField
+            ? R('div',{style:{fontSize:'12px',color:'var(--ink3)',lineHeight:1.5,background:'var(--panel)',border:'1px solid var(--line)',borderRadius:'8px',padding:'10px 12px',marginBottom:'14px'}},
+                f.type==='type'?this.t('linkedTypeNote'):f.type==='element'?this.t('linkedElementNote'):this.t('linkedLongtextNote'))
+            : R('div',null,
+                field(this.t('lIcon'),R('div',{style:{display:'flex',flexWrap:'wrap',gap:'8px',marginTop:'6px'}},
+                  Component.FIELD_ICONS().map(ic=>R('button',{key:ic,onClick:()=>this.setState({form:{...f,icon:ic}}),
+                    style:{width:'40px',height:'40px',borderRadius:'8px',cursor:'pointer',background:f.icon===ic?f.color:'var(--panel)',border:'1px solid '+(f.icon===ic?f.color:'var(--line2)'),color:f.icon===ic?'#0a0a10':'var(--ink2)',fontSize:'15px'}},
+                    R('i',{className:ic}))))),
+                R('div',{style:{display:'flex',gap:'14px',alignItems:'flex-end'}},
+                  R('div',{style:{flex:'0 0 auto'}},field(this.t('lColor'),R('input',{type:'color','data-field':'color',value:f.color||'#c9a84c',onChange:(e)=>this.onField(e),style:this.parseStyle('width:56px;height:44px;padding:2px;background:var(--panel);border:1px solid var(--line2);border-radius:8px;cursor:pointer;margin-top:6px')})))
+                )
+              ),
+          f.type!=='longtext'?R('div',{style:{display:'flex',gap:'14px',alignItems:'flex-end'}},
+            R('div',{onClick:()=>this.setState({form:{...f,showOnTile:!f.showOnTile}}),style:{flex:1,display:'flex',alignItems:'center',justifyContent:'space-between',padding:'12px 14px',background:'var(--panel)',border:'1px solid var(--line2)',borderRadius:'8px',cursor:'pointer',marginBottom:'0'}},
+              R('span',{style:{fontSize:'13px',fontWeight:600}},this.t('lShowOnCard')),
+              R('div',{style:{width:'40px',height:'22px',borderRadius:'11px',background:f.showOnTile?'var(--ok)':'var(--line2)',position:'relative',transition:'all .2s',flexShrink:0}},
+                R('div',{style:{width:'16px',height:'16px',borderRadius:'50%',background:'#fff',position:'absolute',top:'3px',left:f.showOnTile?'21px':'3px',transition:'all .2s'}})))
+          ):null,
+          R('div',{style:{marginTop:'20px'}},footer(m.edit?this.t('saveChanges'):this.t('addField'),()=>this.saveField(), m.edit?R('button',{onClick:()=>this.removeField(m.fid),style:this.parseStyle('background:transparent;color:var(--danger);border:1px solid color-mix(in srgb,var(--danger) 40%,transparent);padding:12px 16px;border-radius:8px;cursor:pointer;font-size:14px;margin-right:auto')},R('i',{className:'fa-solid fa-trash'})):null))
+        );
+      } else if(m.type==='coverart'){
+        const kind=m.kind, isCover=kind==='cover';
+        const targetName = isCover ? (sys?sys.name:'') : (()=>{ const e=sys&&sys.expansions.find(x=>x.id===this.state.builderTab); return e?this.packName(e):''; })();
+        v.modalTitle = m.hasExisting ? (isCover?this.t('mEditCoverTitle'):this.t('mEditDividerTitle')) : (isCover?this.t('mDesignCover'):this.t('mDesignDivider'));
+        v.modalWidth='600px';
+        const bgType=f.bgType||'gradient';
+        const swatchBtn=(val,label)=>R('button',{key:val,onClick:()=>this.setState({form:{...f,bgType:val}}),
+          style:this.parseStyle(`padding:9px 14px;border-radius:7px;font-size:12.5px;font-weight:600;cursor:pointer;background:${bgType===val?'var(--accent)':'var(--panel)'};color:${bgType===val?'var(--on-accent)':'var(--ink3)'};border:1px solid ${bgType===val?'var(--accent)':'var(--line2)'}`)},label);
+        const colorInput=(key,def)=>R('input',{type:'color','data-field':key,value:f[key]||def,onChange:(e)=>this.onField(e),
+          style:this.parseStyle('width:56px;height:44px;padding:2px;background:var(--panel);border:1px solid var(--line2);border-radius:8px;cursor:pointer;margin-top:6px')});
+        const previewBg=this.coverBg(f);
+        const previewTitle=(f.title||'').trim()||targetName;
+        const previewSub=(f.subtitle||'').trim();
+        v.modalBody=R('div',null,
+          R('div',{style:{display:'flex',gap:'20px',flexWrap:'wrap'}},
+            R('div',{style:{flex:'0 0 190px'}},
+              R('div',{style:{width:'190px',aspectRatio:'5/7',borderRadius:'14px',overflow:'hidden',border:'1px solid var(--line2)',position:'relative',background:previewBg,display:'flex',alignItems:'center',justifyContent:'center',textAlign:'center',padding:'18px',boxShadow:'0 14px 30px rgba(0,0,0,.4)'}},
+                R('div',null,
+                  R('div',{style:{fontFamily:"var(--display)",fontWeight:700,fontSize:'17px',color:f.textColor||'#f4ece7',lineHeight:1.25}},previewTitle),
+                  previewSub?R('div',{style:{fontFamily:"var(--mono)",fontSize:'10px',letterSpacing:'.14em',textTransform:'uppercase',marginTop:'10px',color:f.textColor||'#f4ece7',opacity:.75}},previewSub):null
+                )
+              )
+            ),
+            R('div',{style:{flex:'1 1 260px',minWidth:'240px'}},
+              field(this.t('lTitle'),textInput('title',targetName)),
+              field(this.t('lSubtitle'),textInput('subtitle',isCover?'e.g. Trading Card Collection':'')),
+              field(this.t('lBackground'),R('div',{style:{display:'flex',gap:'8px',marginTop:'6px'}},swatchBtn('color',this.t('bgColor')),swatchBtn('gradient',this.t('bgGradient')),swatchBtn('image',this.t('bgImage')))),
+              R('div',{style:{display:'flex',gap:'14px',marginTop:'14px',flexWrap:'wrap'}},
+                R('div',{style:{flex:'0 0 auto'}},field(this.t('lColor'),colorInput('color1','#5a2632'))),
+                bgType==='gradient'?R('div',{style:{flex:'0 0 auto'}},field(this.t('lColor2'),colorInput('color2','#161116'))):null,
+                R('div',{style:{flex:'0 0 auto'}},field(this.t('lTextColor'),colorInput('textColor','#f4ece7')))
+              ),
+              bgType==='image'?field(this.t('lImageUrl'),textInput('image','https://…')):null
+            )
+          ),
+          footer(this.t('saveW'),()=>this.saveCoverArt(), m.hasExisting?R('button',{onClick:()=>this.resetCoverArt(),style:this.parseStyle('background:transparent;color:var(--danger);border:1px solid color-mix(in srgb,var(--danger) 40%,transparent);padding:12px 16px;border-radius:8px;cursor:pointer;font-size:13px;margin-right:auto')},this.t('resetDesign')):null)
+        );
+      } else if(m.type==='collector'){
+        const base=m.base; const cs=this.csys(); const sysId=S.collectorSystemId;
+        const bucket=S.collector[sysId]||{};
+        const cexpM=cs?cs.expansions.find(e=>e.id===S.collectorExpansionId):null;
+        let totalPulledM=0; if(cexpM){ cexpM.cards.forEach(c=>{ const en=bucket[c.id]; if(en&&en.owned) totalPulledM+=(en.qty||0); }); }
+        const rcnt={}; if(cexpM){ cexpM.cards.forEach(c=>{ rcnt[c.rarityId]=(rcnt[c.rarityId]||0)+1; }); }
+        const theoOf=(c)=>{ const rr=this.rarityById(cs,c.rarityId); if(!rr) return null; const t=(/^-?\d*\.?\d+$/.test(String(rr.pullRate).trim()))?parseFloat(rr.pullRate):null; const n=rcnt[c.rarityId]||0; return (t!=null&&n)?(t/n):null; };
+        v.modalTitle=this.cardName(base); v.modalWidth='760px';
+        const cond=S.globalCondition||'Near Mint';
+        const rowStyle='display:flex;align-items:center;gap:12px;padding:11px 12px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin-bottom:9px';
+        const stepBtn='width:30px;height:30px;border-radius:7px;border:1px solid var(--line2);background:var(--row);color:var(--ink);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0';
+        const rows=m.variants.map((c)=>{ const rr=this.rarityById(cs,c.rarityId); const rc=rr?rr.color:'var(--ink3)'; const ti=this.typeInfo(c.type);
+          const en=bucket[c.id]; const qty=en&&en.owned?en.qty:0; const owned=qty>0;
+          const pct=(owned&&totalPulledM)?(qty/totalPulledM*100):0;
+          return R('div',{key:c.id,style:this.parseStyle(rowStyle+(owned?';border-color:'+rc+'66':''))},
+            R('div',{style:{flex:1,minWidth:0}},
+              R('div',{style:{display:'flex',alignItems:'center',gap:'7px',marginBottom:'3px'}},
+                R('span',{style:{width:'9px',height:'9px',borderRadius:'50%',background:rc,flexShrink:0}}),
+                R('span',{style:{fontFamily:"var(--display)",fontSize:'11px',fontWeight:700,color:'var(--ink2)'}}, c.number||''),
+                R('span',{style:{fontSize:'11px',color:'var(--ink3)'}}, rr?rr.name:'—')
+              ),
+              R('div',{style:{fontSize:'12px',color:owned?'var(--ok)':'var(--ink3)'}}, owned?this.fmt(this.t('ownedX'),qty):this.t('notOwned'),
+                owned&&totalPulledM?R('span',{style:{color:'var(--accent-ink)',marginLeft:'7px',fontWeight:600}}, this.fmt(this.t('ofPulls'),pct.toFixed(1))):null,
+                (!owned&&theoOf(c)!=null)?R('span',{style:{color:'var(--ink3)',marginLeft:'7px'}}, `~${theoOf(c).toFixed(theoOf(c)<1?2:1)}% expected`):null)
+            ),
+            R('button',{onClick:()=>this.setVariantQty(c,qty-1),disabled:qty<=0,style:this.parseStyle(stepBtn+(qty<=0?';opacity:.35;cursor:default':''))},R('i',{className:'fa-solid fa-minus',style:{fontSize:'11px'}})),
+            R('span',{style:{minWidth:'22px',textAlign:'center',fontWeight:700,fontSize:'15px',fontFamily:"var(--display)"}}, String(qty)),
+            R('button',{onClick:()=>this.setVariantQty(c,qty+1),style:this.parseStyle(stepBtn.replace('var(--row)','var(--raise)'))},R('i',{className:'fa-solid fa-plus',style:{fontSize:'11px'}}))
+          );
+        });
+        const brr0=this.rarityById(cs,base.rarityId); const bti=this.typeInfo(base.type);
+        const statChipsM=this.layoutOf(cs).filter(fld=>fld.showOnTile&&fld.type!=='longtext'&&fld.type!=='type'&&fld.type!=='element').map(fld=>{
+          const val=this.cardStatVal(base,fld); if(val===''||val==null) return null;
+          return R('div',{key:fld.id,style:{display:'flex',alignItems:'center',gap:'6px',background:'var(--panel)',border:'1px solid var(--line)',borderRadius:'8px',padding:'6px 10px'}},
+            R('i',{className:fld.icon,style:{color:fld.color,fontSize:'12px'}}),
+            R('span',{style:{fontSize:'12px',fontWeight:600}}, String(val))
+          );
+        }).filter(Boolean);
+        const imgPanel=R('div',{style:{width:'240px',flexShrink:0}},
+          R('div',{style:{position:'relative',aspectRatio:'5/7',borderRadius:'14px',overflow:'hidden',background:this.artStyle(base.type),boxShadow:'0 20px 46px rgba(0,0,0,.5)',border:'1px solid var(--line2)'}}, this.artNode(base,true,cexpM))
+        );
+        const rightCol=R('div',{style:{flex:'1 1 300px',minWidth:'260px'}},
+          R('div',{style:{display:'flex',alignItems:'center',gap:'10px',flexWrap:'wrap',marginBottom:'12px'}},
+            R('span',{style:{fontFamily:"var(--display)",fontSize:'12px',fontWeight:700,color:'var(--ink2)',background:'var(--panel)',border:'1px solid var(--line)',borderRadius:'6px',padding:'4px 9px'}}, base.number||''),
+            R('span',{style:{display:'flex',alignItems:'center',gap:'6px',fontSize:'12px',color:'var(--ink3)'}}, R('span',{style:{width:'9px',height:'9px',borderRadius:'50%',background:brr0?brr0.color:'var(--ink3)'}}), brr0?`${brr0.abbr||''} · ${brr0.name}`:'—'),
+            R('span',{style:{display:'flex',alignItems:'center',gap:'6px',fontSize:'12px',color:bti.color}}, R('i',{className:bti.icon}), this.typeLabel(base.type)),
+            base.element?R('span',{style:{display:'flex',alignItems:'center',gap:'6px',fontSize:'12px',color:Component.ELEMENT_COLORS[base.element]||'var(--ink3)'}}, R('i',{className:'fa-solid fa-fire'}), this.elementLabel(base.element)):null
+          ),
+          statChipsM.length?R('div',{style:{display:'flex',gap:'8px',flexWrap:'wrap',marginBottom:'14px'}},statChipsM):null,
+          (base.keywords&&base.keywords.length)?R('div',{style:{display:'flex',gap:'6px',flexWrap:'wrap',marginBottom:'14px'}},
+            base.keywords.map((kw,ki)=>{ const label=this.keywordLabel(kw); const color=Component.KEYWORD_COLORS[kw]||'var(--ink3)';
+              return R('span',{key:ki,style:{fontSize:'11px',fontWeight:700,letterSpacing:'.02em',padding:'4px 10px',borderRadius:'20px',background:`color-mix(in srgb,${color} 16%,transparent)`,border:`1px solid ${color}`,color:'var(--ink)'}}, label);
+            })
+          ):null,
+          this.cardDesc(base)?R('div',{style:{fontSize:'12.5px',color:'var(--ink2)',lineHeight:1.5,whiteSpace:'pre-line',background:'var(--panel)',border:'1px solid var(--line)',borderRadius:'10px',padding:'12px 14px',marginBottom:'16px'}}, this.cardDesc(base)):null,
+          R('div',{style:{fontSize:'12px',color:'var(--ink3)',marginBottom:'10px'}}, m.variants.length>1?this.fmt(this.t('setQtyN'),m.variants.length):this.t('setQty1')),
+          R('div',null, rows)
+        );
+        v.modalBody=R('div',null,
+          R('div',{style:{display:'flex',gap:'24px',flexWrap:'wrap'}}, imgPanel, rightCol),
+          R('div',{style:{display:'flex',justifyContent:'flex-end',marginTop:'18px'}},
+            R('button',{onClick:()=>this.setState({modal:null}),style:this.parseStyle('background:var(--accent);color:var(--on-accent);font-weight:600;padding:11px 24px;border-radius:8px;border:none;cursor:pointer;font-size:14px')},this.t('done'))
+          )
+        );
+      } else if(m.type==='import-expansion'){
+        v.modalTitle=this.t('expImportTitle'); v.modalWidth='480px';
+        v.modalBody=R('div',null,
+          R('p',{style:{color:'var(--ink2)',fontSize:'14px',lineHeight:1.6,marginBottom:'20px'}},this.t('expImportDesc')),
+          R('div',{style:{display:'flex',gap:'10px'}},
+            R('button',{onClick:()=>this.setState({modal:null}),style:this.parseStyle('flex:1;background:transparent;color:var(--ink2);border:1px solid var(--line2);padding:12px;border-radius:8px;cursor:pointer;font-size:14px')},this.t('cancel')),
+            R('button',{onClick:()=>{ const el=document.getElementById('expImportInput'); if(el){ el.value=''; el.click(); } this.setState({modal:null}); },style:this.parseStyle('flex:1;background:var(--accent);color:var(--on-accent);font-weight:600;padding:12px;border-radius:8px;border:none;cursor:pointer;font-size:14px')},this.t('expImport'))
+          )
+        );
+      } else if(m.type==='image-script'){
+        v.modalTitle=this.t('imgScriptTitle'); v.modalWidth='520px';
+        v.modalBody=R('div',null,
+          R('p',{style:{color:'var(--ink2)',fontSize:'14px',lineHeight:1.6,marginBottom:'20px'}},this.t('imgScriptDesc')),
+          R('div',{style:{display:'flex',gap:'10px'}},
+            R('button',{onClick:()=>this.setState({modal:null}),style:this.parseStyle('flex:1;background:transparent;color:var(--ink2);border:1px solid var(--line2);padding:12px;border-radius:8px;cursor:pointer;font-size:14px')},this.t('cancel')),
+            R('button',{onClick:()=>{ this.downloadImageScript(); this.setState({modal:null}); },style:this.parseStyle('flex:1;background:var(--accent);color:var(--on-accent);font-weight:600;padding:12px;border-radius:8px;border:none;cursor:pointer;font-size:14px')},this.t('downloadScript'))
+          )
+        );
+      } else if(m.type==='delete'){
+        v.modalTitle=this.t('mConfirmDelete'); v.modalWidth='420px';
+        if(m.kind==='rarity'){
+          const usage=sys?sys.expansions.reduce((a,e)=>a+e.cards.filter(c=>c.rarityId===m.rid).length,0):0;
+          const others=(sys?sys.rarities:[]).filter(r=>r.id!==m.rid);
+          const isLast=others.length===0;
+          const target=(f.reassignTo && others.some(r=>r.id===f.reassignTo))?f.reassignTo:(others[0]?others[0].id:null);
+          v.modalBody=R('div',null,
+            R('p',{style:{color:'var(--ink2)',fontSize:'14px',lineHeight:1.6,marginBottom:usage?'16px':'20px'}},
+              this.fmt(this.t('delRarityMsg'),m.name),
+              usage?R('span',{style:{display:'block',marginTop:'8px',color:'var(--accent-ink)'}},this.fmt(this.t('delRarityUse'),usage)):null),
+            (usage&&!isLast)?R('div',{style:{marginBottom:'20px'}},
+              R('label',{style:this.parseStyle(lbl)},this.t('lReassign')),
+              R('select',{value:target,onChange:(e)=>this.setState({form:{...f,reassignTo:e.target.value}}),style:this.parseStyle(inp+';cursor:pointer')},
+                others.map(r=>R('option',{key:r.id,value:r.id},r.name)))
+            ):null,
+            (usage&&isLast)?R('p',{style:{color:'#e85d4a',fontSize:'13px',marginBottom:'20px'}},this.t('onlyRarity')):null,
+            R('div',{style:{display:'flex',gap:'10px'}},
+              R('button',{onClick:()=>this.setState({modal:null}),style:this.parseStyle('flex:1;background:transparent;color:var(--ink2);border:1px solid var(--line2);padding:12px;border-radius:8px;cursor:pointer;font-size:14px')},this.t('cancel')),
+              R('button',{onClick:()=>{ if(usage&&isLast) return this.toast(this.t('tAddRarityFirst'),'error'); this.removeRarity(m.rid, usage?target:null); },
+                style:this.parseStyle('flex:1;background:'+((usage&&isLast)?'#3a2320':'var(--danger)')+';color:#fff;font-weight:600;padding:12px;border-radius:8px;border:none;cursor:'+((usage&&isLast)?'default':'pointer')+';font-size:14px')},this.t('del'))
+            )
+          );
+        } else {
+        const msg = m.kind==='system'?this.t('delSystemMsg')
+          : m.kind==='expansion'?this.fmt(this.t('delExpMsg'),m.name)
+          : m.kind==='section'?this.fmt(this.t('delSectionMsg'),m.name):this.t('sureMsg');
+        const fn = m.kind==='system'?()=>this.removeSystem() : m.kind==='expansion'?()=>this.removeExpansion()
+          : m.kind==='section'?()=>this.removeSection(m.sysId,m.gid) : ()=>this.setState({modal:null});
+        v.modalBody=R('div',null,
+          R('p',{style:{color:'var(--ink2)',fontSize:'14px',lineHeight:1.6,marginBottom:'20px'}},msg),
+          R('div',{style:{display:'flex',gap:'10px'}},
+            R('button',{onClick:()=>this.setState({modal:null}),style:this.parseStyle('flex:1;background:transparent;color:var(--ink2);border:1px solid var(--line2);padding:12px;border-radius:8px;cursor:pointer;font-size:14px')},this.t('cancel')),
+            R('button',{onClick:fn,style:this.parseStyle('flex:1;background:var(--danger);color:#fff;font-weight:600;padding:12px;border-radius:8px;border:none;cursor:pointer;font-size:14px')},this.t('del'))
+          )
+        );
+        }
+      }
+    }
+
+    // ---- toast ----
+    const t=S.toast; v.toastShow=!!t;
+    if(t){ v.toastMsg=t.msg; v.toastColor=t.kind==='error'?'var(--danger)':'var(--ok)'; v.toastIcon=t.kind==='error'?'fa-solid fa-circle-exclamation':'fa-solid fa-circle-check'; }
+    return v;
+  }
+
+  parseStyle(str){ const o={}; str.split(';').forEach(p=>{ const i=p.indexOf(':'); if(i<0)return; const k=p.slice(0,i).trim(); const val=p.slice(i+1).trim(); if(!k)return; const ck=k.replace(/-([a-z])/g,(_,c)=>c.toUpperCase()); o[ck]=val; }); return o; }
+
+}
+</script>
+</body>
+</html>
