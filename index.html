@@ -672,7 +672,7 @@ class Component extends DCLogic {
   // backend at all - we fall back to whatever's saved in this browser's localStorage,
   // so data survives a refresh either way.
   loadServerState(){
-    fetch('/api/state').then(r=>r.ok?r.json():null).then(data=>{
+    fetch('./state.json').then(r=>r.ok?r.json():null).then(data=>{
       if(!data || !data.systems || !data.systems.length){
         const local=this.readLocalState();
         if(local && local.systems && local.systems.length) data=local;
@@ -769,7 +769,7 @@ class Component extends DCLogic {
   // expansions, add missing packs, enrich cards (effect text + stats) without
   // touching ids, images or collection ticks.
   loadNivelCatalog(){
-    fetch('/api/catalog',{cache:'no-cache'}).then(r=>r.ok?r.json():null).then(data=>{
+    fetch('./catalog.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).then(data=>{
       if(!data||!data.expansions) return;
       const idx=this.state.systems.findIndex(s=>s.id==='sys-nivel'); if(idx<0) return;
       const sys={...this.state.systems[idx]};
@@ -903,7 +903,7 @@ class Component extends DCLogic {
   }
   postState(partial){
     this.writeLocalState(partial);
-    fetch('/api/state',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(partial)}).catch(()=>{});
+    // no backend on GitHub Pages: persistence is localStorage-only
   }
   save(systems, collector){
     this.postState({systems: systems ?? this.state.systems, collector: collector ?? this.state.collector});
