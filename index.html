@@ -73,8 +73,8 @@
         </div>
 
         <div style="display:flex;gap:8px">
-          <button onClick="{{ doExport }}" title="Export JSON" style="background:transparent;color:var(--ink2);border:1px solid var(--line);width:38px;height:38px;border-radius:8px;cursor:pointer;transition:all .2s" style-hover="border-color:var(--accent-ink);color:var(--accent-ink)"><i class="fa-solid fa-download"></i></button>
-          <button onClick="{{ triggerImport }}" title="Import JSON" style="background:transparent;color:var(--ink2);border:1px solid var(--line);width:38px;height:38px;border-radius:8px;cursor:pointer;transition:all .2s" style-hover="border-color:var(--accent-ink);color:var(--accent-ink)"><i class="fa-solid fa-upload"></i></button>
+          <button onClick="{{ doExport }}" title="{{ L.exportProgressTitle }}" style="background:transparent;color:var(--ink2);border:1px solid var(--line);width:38px;height:38px;border-radius:8px;cursor:pointer;transition:all .2s" style-hover="border-color:var(--accent-ink);color:var(--accent-ink)"><i class="fa-solid fa-download"></i></button>
+          <button onClick="{{ triggerImport }}" title="{{ L.importProgressTitle }}" style="background:transparent;color:var(--ink2);border:1px solid var(--line);width:38px;height:38px;border-radius:8px;cursor:pointer;transition:all .2s" style-hover="border-color:var(--accent-ink);color:var(--accent-ink)"><i class="fa-solid fa-upload"></i></button>
           <input id="avImport" type="file" accept="application/json,.json" onChange="{{ doImport }}" style="display:none">
         </div>
       </div>
@@ -541,8 +541,9 @@ class Component extends DCLogic {
     {value:'Item',color:'#5cb88a',icon:'fa-solid fa-flask'}
   ];
   static CONDITIONS = ['Mint','Near Mint','Good','Played'];
-  static PARALLEL_RARITIES = ['nv-sp','nv-spr','nv-spl','nv-sbr','nv-sbl','nv-ssl','nv-anl'];
-  static isParallelRarity(id){ return Component.PARALLEL_RARITIES.indexOf(id)>=0; }
+  // whether a rarity is a parallel/alt-art variant tier is set per-rarity in Builder
+  // (see the rarity editor's checkbox) rather than hardcoded to any particular game's IDs
+  static isParallelRarity(rarityId, sys){ if(!sys) return false; const r=(sys.rarities||[]).find(x=>x.id===rarityId); return !!(r&&r.parallel); }
   static KEYWORD_I18N = {
     '가디언':{en:'Guardian',de:'Wächter'},'디펜더':{en:'Defender',de:'Verteidiger'},
     '레벨링크':{en:'Level Link',de:'Level-Link'},'믹스':{en:'Mix',de:'Mix'},
@@ -600,9 +601,9 @@ class Component extends DCLogic {
   };
 
   static I18N = {
-    en:{tagline:'TCG Builder & Collector',builder:'TCG Builder',collector:'Collector',system:'System',newSystem:'New System',forgeTitle:'Forge your first TCG',forgeDesc:'Define a card game system — its rarities, expansions, and cards. Then switch to Collector mode to track what you own.',createSystem:'Create a System',systemSettings:'System Settings',addExpansion:'Expansion',booster:'Booster',starter:'Starter',special:'Special',promo:'Promo',expansions:'Expansions',totalCards:'Total Cards',rarities:'Rarities',rarityTiers:'Rarity Tiers',addRarity:'Add Rarity',pullRateWord:'Pull rate',cardLayout:'Card Layout',addField:'Add Field',layoutDesc:'Stat fields shown on every card in this system, plus the always-present name, number, type, rarity, image and effect text.',noFieldsMsg:'No stat fields — cards show just name, type and rarity. Add one like Cost or Power.',edit:'Edit',del:'Delete',addCard:'Add Card',noCardsTitle:'No cards in this expansion yet',autoNumber:'Cards are auto-numbered as you add them.',addFirstCard:'Add First Card',collecting:'Collecting',condition:'Condition',ownedW:'Owned',missingW:'Missing',dupes:'Duplicates',pullRateTitle:'Pull Rate',pullHint:"Add the cards you've pulled (set quantities on the cards below) and your observed pull rate per rarity appears here.",pullRatesDesc:'Set the expected pull rate (%) for each rarity in this system. Leave blank if unknown.',tPullRatesSaved:'Pull rates saved',all:'All',nothingTitle:'Nothing to collect yet',nothingDesc:'Build a TCG system first, then come back here to track your collection.',goBuilder:'Go to Builder',cardsN:'%d cards',cardN1:'%d card',unused:'unused',shownOnCard:'shown on card',hiddenW:'hidden',numberT:'Number',textT:'Text',longTextT:'Long Text',elementW:'Element',linkedTypeNote:'Automatically uses the card\'s real type and standard colors.',linkedElementNote:'Automatically uses the card\'s real element and standard colors.',linkedLongtextNote:'Long-form text — only shown in the card detail view, never on the tile.',sections:'Sections',addSection:'Add Section',sectionsDesc:'Group your expansions into collapsible sections, shown in the sidebar. Expansions are assigned a section from the expansion editor.',noSectionsMsg:'No sections yet — expansions show ungrouped. Add one like Booster or Starter.',mNewSection:'New Section',mEditSection:'Edit Section',lSectionName:'Section Name',lSection:'Section',ungrouped:'Ungrouped',tSectionAdded:'Section added',tSectionUpdated:'Section updated',tSectionRemoved:'Section removed',delSectionMsg:'Delete the “%s” section? Its expansions will become ungrouped.',expN1:'%d expansion',expsN:'%d expansions',emptySection:'empty',statsForX:'Stats for %s',statsNone:'Select an expansion to see its stats',noDate:'No date',copiesSummary:'%a copies pulled · %b unique',targetL:'target %s%',copiesW:'%d copies',expectedL:'~%s% expected',pulledL:'%s% · %d pulled',variants1:'+%d Variant',variantsN:'+%d Variants',setQty1:'Set the quantity you own',setQtyN:'%d versions · set the quantity you own of each',ownedX:'Owned ×%d',notOwned:'Not owned',ofPulls:'%s% of pulls',done:'Done',cancel:'Cancel',saveW:'Save',saveChanges:'Save Changes',createExpansion:'Create Expansion',mNewSystem:'New TCG System',mEditSystem:'Edit System',mNewRarity:'New Rarity',mEditRarity:'Edit Rarity',mNewExpansion:'New Expansion',mEditExpansion:'Edit Expansion',mNewCard:'New Card',mEditCard:'Edit Card',mNewField:'New Card Field',mEditField:'Edit Field',mConfirmDelete:'Confirm Deletion',lSystemName:'System Name',lDescription:'Description',lRarityName:'Rarity Name',lColor:'Color',lPullRatePct:'Pull rate (%)',lExpName:'Expansion Name',lAbbr:'Abbreviation',lRelease:'Release Date',lSeries:'Series',noSeries:'No Series',lImageBaseUrl:'Image Host URL',imageBaseUrlHint:'Optional. If set, card art loads from here first (e.g. GitHub Pages) and falls back to the original source URL if a file is missing.',lCardName:'Card Name',lCardNumber:'Card Number',lType:'Type',lElement:'Element',noElement:'No Element',lRarity:'Rarity',lImage:'Image URL (optional)',lFieldLabel:'Field Label',lValueType:'Value Type',lIcon:'Icon',lShowOnCard:'Show on card',lReassign:'Reassign those cards to',delSystemMsg:'Delete this entire system? All expansions, cards, and collection progress will be lost.',delExpMsg:'Delete “%s” and all its cards?',delRarityMsg:'Delete the “%s” rarity tier?',delRarityUse:'%d card(s) currently use it.',onlyRarity:'This is the only rarity — add another before deleting it.',sureMsg:'Are you sure?',tNameRequired:'Name is required',tLabelRequired:'Label is required',tSystemCreated:'System created',tSystemUpdated:'System updated',tSystemDeleted:'System deleted',tRarityAdded:'Rarity added',tRarityUpdated:'Rarity updated',tRarityRemoved:'Rarity removed',tFieldAdded:'Field added',tFieldUpdated:'Field updated',tFieldRemoved:'Field removed',tExpCreated:'Expansion created',tExpUpdated:'Expansion updated',tExpDeleted:'Expansion deleted',tCardAdded:'Card added',tCardUpdated:'Card updated',tCardDeleted:'Card deleted',tExported:'Collection exported',tImported:'Import successful',tInvalid:'Invalid file',tAddRarityFirst:'Add another rarity first',tCatalog:'Nivel Arena catalog loaded — %d cards added',pageOfN:'Page %d of %d',pagesRangeOfN:'Pages %d–%d of %d',stackVariants:'Stack Variants',cardSize:'Card Size',dynamicSize:'Dynamic',haveW:'Have',needW:'Need',dupesW:'Dupes',prevW:'Prev',nextW:'Next',imgNone:'No image URL yet',imgLoadFail:'Image failed to load',binderCover:'Binder Cover',binderCoverDesc:"Design a custom front cover for this system's binder — shown when you open the collection in Binder view.",editCover:'Edit Cover',editDivider:'Divider',viewCover:'Binder Cover',openBinder:'Back to Cards',mDesignCover:'Design Binder Cover',mEditCoverTitle:'Edit Binder Cover',mDesignDivider:'Design Divider',mEditDividerTitle:'Edit Divider',lTitle:'Title',lSubtitle:'Subtitle',lBackground:'Background',bgColor:'Solid',bgGradient:'Gradient',bgImage:'Image',lTextColor:'Text Color',lColor2:'Second Color',lImageUrl:'Image URL',resetDesign:'Reset to Default',tCoverSaved:'Cover saved',tDividerSaved:'Divider saved',tDesignReset:'Design reset',lCardsPerBooster:'Cards / Booster',lBoostersPerBox:'Boosters / Box',boosters:'Boosters',boostersOpenedW:'opened',boxesOwned:'Boxes',uniqueDesigns:'Unique Designs',totalCollected:'Total Collected',homeTab:'Home',recentlyAddedTitle:'Recently Added',rarestOwnedTitle:'Rarest Pulls',homeEmptyTitle:'Nothing collected yet',homeEmptyDesc:"Start marking cards as owned and they'll show up here.",homeNoSectionsMsg:'No sections selected — pick at least one above to see your cards.',fromCardsTracked:'from %d cards tracked',extraCards:'%d extra',calcFromCards:'Calculated from the cards you\'ve tracked, not entered manually',dragHint:'Drag cards to reorder',manualOrderBadge:'Manual Order',resetOrder:'Reset to numeric order',tOrderReset:'Card order reset',expImport:'Import Cards',expExport:'Export Cards',expImportTitle:'Import Expansion Cards',expExportTitle:'Export Expansion Cards',expImportDesc:'Load a card list JSON into this expansion. Existing cards in this expansion will be replaced, but your collection progress for other expansions is kept.',expExportDesc:'Download just this expansion\'s card list as a JSON file. Use it to back up or share this set.',imgScript:'Image Script',imgScriptTitle:'Download Image Fetcher',imgScriptDesc:'Your browser can\'t directly save images from nivelarena.co.kr due to security rules (CORS). Download this small Python script and run it to fetch all images for this expansion into a local folder.',downloadScript:'Download .py Script',},
-    ko:{tagline:'TCG 빌더 & 컬렉터',builder:'TCG 빌더',collector:'컬렉터',system:'시스템',newSystem:'새 시스템',forgeTitle:'첫 TCG를 만들어 보세요',forgeDesc:'카드 게임 시스템 — 레어도, 확장팩, 카드 — 를 정의한 뒤, 컬렉터 모드에서 소장 카드를 관리하세요.',createSystem:'시스템 만들기',systemSettings:'시스템 설정',addExpansion:'확장팩',booster:'부스터',starter:'스타터',special:'스페셜',promo:'프로모',expansions:'확장팩',totalCards:'전체 카드',rarities:'레어도',rarityTiers:'레어도 등급',addRarity:'레어도 추가',pullRateWord:'배출률',cardLayout:'카드 레이아웃',addField:'필드 추가',layoutDesc:'이 시스템의 모든 카드에 표시되는 스탯 필드입니다. 이름·번호·타입·레어도·이미지·효과 텍스트는 항상 표시됩니다.',noFieldsMsg:'스탯 필드가 없습니다 — 카드에는 이름·타입·레어도만 표시됩니다. 코스트나 파워 같은 필드를 추가해 보세요.',edit:'수정',del:'삭제',addCard:'카드 추가',noCardsTitle:'아직 이 확장팩에 카드가 없습니다',autoNumber:'카드는 추가하는 순서대로 자동 번호가 매겨집니다.',addFirstCard:'첫 카드 추가',collecting:'컬렉션',condition:'상태',ownedW:'보유',missingW:'미보유',dupes:'중복',pullRateTitle:'배출률',pullHint:'뽑은 카드의 수량을 아래 카드에 입력하면 레어도별 실제 배출률이 여기에 표시됩니다.',pullRatesDesc:'이 시스템의 각 레어도별 예상 배출률(%)을 설정하세요. 모르면 비워 두세요.',tPullRatesSaved:'배출률이 저장되었습니다',all:'전체',nothingTitle:'아직 수집할 것이 없습니다',nothingDesc:'먼저 빌더에서 TCG 시스템을 만든 뒤, 여기에서 컬렉션을 관리하세요.',goBuilder:'빌더로 이동',cardsN:'%d장',cardN1:'%d장',unused:'미사용',shownOnCard:'카드에 표시',hiddenW:'숨김',numberT:'숫자',textT:'텍스트',longTextT:'긴 텍스트',elementW:'속성',linkedTypeNote:'카드의 실제 타입과 기본 색상이 자동으로 사용됩니다.',linkedElementNote:'카드의 실제 속성과 기본 색상이 자동으로 사용됩니다.',linkedLongtextNote:'긴 텍스트 — 카드 상세보기에서만 표시되며 카드 앞면에는 표시되지 않습니다.',sections:'섹션',addSection:'섹션 추가',sectionsDesc:'확장팩을 접을 수 있는 섹션으로 묶어 사이드바에 표시합니다. 확장팩 편집 화면에서 섹션을 지정할 수 있습니다.',noSectionsMsg:'아직 섹션이 없습니다 — 확장팩이 그룹 없이 표시됩니다. 부스터나 스타터 같은 섹션을 추가해 보세요.',mNewSection:'새 섹션',mEditSection:'섹션 수정',lSectionName:'섹션 이름',lSection:'섹션',ungrouped:'미분류',tSectionAdded:'섹션 추가됨',tSectionUpdated:'섹션 수정됨',tSectionRemoved:'섹션 삭제됨',delSectionMsg:'“%s” 섹션을 삭제할까요? 포함된 확장팩은 미분류로 이동합니다.',expN1:'확장팩 %d개',expsN:'확장팩 %d개',emptySection:'비어 있음',statsForX:'%s 통계',statsNone:'통계를 보려면 확장팩을 선택하세요',noDate:'날짜 없음',copiesSummary:'총 %a장 개봉 · 고유 %b종',targetL:'목표 %s%',copiesW:'%d장',expectedL:'예상 ~%s%',pulledL:'%s% · %d장',variants1:'+%d 버전',variantsN:'+%d 버전',setQty1:'보유 수량을 설정하세요',setQtyN:'%d가지 버전 · 각각 보유 수량을 설정하세요',ownedX:'보유 ×%d',notOwned:'미보유',ofPulls:'전체 개봉의 %s%',done:'완료',cancel:'취소',saveW:'저장',saveChanges:'변경 사항 저장',createExpansion:'확장팩 만들기',mNewSystem:'새 TCG 시스템',mEditSystem:'시스템 수정',mNewRarity:'새 레어도',mEditRarity:'레어도 수정',mNewExpansion:'새 확장팩',mEditExpansion:'확장팩 수정',mNewCard:'새 카드',mEditCard:'카드 수정',mNewField:'새 카드 필드',mEditField:'필드 수정',mConfirmDelete:'삭제 확인',lSystemName:'시스템 이름',lDescription:'설명',lRarityName:'레어도 이름',lColor:'색상',lPullRatePct:'배출률 (%)',lExpName:'확장팩 이름',lAbbr:'약칭',lRelease:'출시일',lSeries:'시리즈',noSeries:'시리즈 없음',lImageBaseUrl:'이미지 호스팅 URL',imageBaseUrlHint:'선택 사항입니다. 설정하면 카드 이미지를 이곳에서 먼저 불러오고(예: GitHub Pages), 파일이 없으면 원본 출처 URL로 대체합니다.',lCardName:'카드 이름',lCardNumber:'카드 번호',lType:'타입',lElement:'속성',noElement:'속성 없음',lRarity:'레어도',lImage:'이미지 URL (선택)',lFieldLabel:'필드 이름',lValueType:'값 타입',lIcon:'아이콘',lShowOnCard:'카드에 표시',lReassign:'해당 카드를 다음 레어도로 이동',delSystemMsg:'이 시스템 전체를 삭제할까요? 모든 확장팩, 카드, 컬렉션 진행 상황이 사라집니다.',delExpMsg:'“%s”와(과) 모든 카드를 삭제할까요?',delRarityMsg:'“%s” 레어도 등급을 삭제할까요?',delRarityUse:'현재 %d장의 카드가 사용 중입니다.',onlyRarity:'유일한 레어도입니다 — 삭제 전에 다른 레어도를 추가하세요.',sureMsg:'정말 삭제할까요?',tNameRequired:'이름을 입력하세요',tLabelRequired:'이름을 입력하세요',tSystemCreated:'시스템 생성됨',tSystemUpdated:'시스템 수정됨',tSystemDeleted:'시스템 삭제됨',tRarityAdded:'레어도 추가됨',tRarityUpdated:'레어도 수정됨',tRarityRemoved:'레어도 삭제됨',tFieldAdded:'필드 추가됨',tFieldUpdated:'필드 수정됨',tFieldRemoved:'필드 삭제됨',tExpCreated:'확장팩 생성됨',tExpUpdated:'확장팩 수정됨',tExpDeleted:'확장팩 삭제됨',tCardAdded:'카드 추가됨',tCardUpdated:'카드 수정됨',tCardDeleted:'카드 삭제됨',tExported:'컬렉션 내보내기 완료',tImported:'가져오기 완료',tInvalid:'잘못된 파일',tAddRarityFirst:'먼저 다른 레어도를 추가하세요',tCatalog:'니벨아레나 카탈로그 불러옴 — %d장 추가',pageOfN:'%d / %d 페이지',pagesRangeOfN:'%d–%d / %d 페이지',stackVariants:'버전 묶어보기',cardSize:'카드 크기',dynamicSize:'자동',haveW:'보유',needW:'미보유',dupesW:'중복',prevW:'이전',nextW:'다음',imgNone:'이미지 URL이 없습니다',imgLoadFail:'이미지를 불러오지 못했습니다',binderCover:'바인더 표지',binderCoverDesc:'이 시스템의 바인더 앞표지를 디자인하세요 — 바인더 보기를 열면 표시됩니다.',editCover:'표지 편집',editDivider:'구분지',viewCover:'바인더 표지',openBinder:'카드로 돌아가기',mDesignCover:'바인더 표지 디자인',mEditCoverTitle:'바인더 표지 편집',mDesignDivider:'구분지 디자인',mEditDividerTitle:'구분지 편집',lTitle:'제목',lSubtitle:'부제목',lBackground:'배경',bgColor:'단색',bgGradient:'그라데이션',bgImage:'이미지',lTextColor:'텍스트 색상',lColor2:'두 번째 색상',lImageUrl:'이미지 URL',resetDesign:'기본값으로 재설정',tCoverSaved:'표지 저장됨',tDividerSaved:'구분지 저장됨',tDesignReset:'디자인 초기화됨',lCardsPerBooster:'부스터당 카드 수',lBoostersPerBox:'박스당 부스터 수',boosters:'부스터',boostersOpenedW:'개봉',boxesOwned:'박스',uniqueDesigns:'고유 카드',totalCollected:'전체 수집률',homeTab:'홈',recentlyAddedTitle:'최근 추가됨',rarestOwnedTitle:'가장 희귀한 카드',homeEmptyTitle:'아직 수집한 카드가 없습니다',homeEmptyDesc:'카드를 보유로 표시하면 여기에 표시됩니다.',homeNoSectionsMsg:'선택된 섹션이 없습니다 — 위에서 하나 이상 선택하세요.',fromCardsTracked:'기록된 카드 %d장 기준',extraCards:'%d장 남음',calcFromCards:'직접 입력하지 않고, 기록된 카드 수를 기준으로 자동 계산됩니다',dragHint:'카드를 드래그하여 순서를 바꿀 수 있습니다',manualOrderBadge:'수동 정렬',resetOrder:'번호순으로 초기화',tOrderReset:'카드 순서가 초기화되었습니다',expImport:'카드 가져오기',expExport:'카드 내보내기',expImportTitle:'확장팩 카드 가져오기',expExportTitle:'확장팩 카드 내보내기',expImportDesc:'카드 목록 JSON을 이 확장팩에 불러옵니다. 이 확장팩의 기존 카드는 교체되지만, 다른 확장팩의 컬렉션 진행 상황은 유지됩니다.',expExportDesc:'이 확장팩의 카드 목록만 JSON 파일로 다운로드합니다. 백업이나 공유에 사용하세요.',imgScript:'이미지 스크립트',imgScriptTitle:'이미지 다운로더 받기',imgScriptDesc:'브라우저 보안 규칙(CORS) 때문에 nivelarena.co.kr에서 이미지를 직접 저장할 수 없습니다. 이 작은 Python 스크립트를 다운로드해서 실행하면 이 확장팩의 모든 이미지를 로컬 폴더에 받을 수 있습니다.',downloadScript:'스크립트 다운로드',},
-    de:{tagline:'TCG-Builder & Sammlung',builder:'TCG-Builder',collector:'Sammlung',system:'System',newSystem:'Neues System',forgeTitle:'Erschaffe dein erstes TCG',forgeDesc:'Definiere ein Kartenspiel-System — Seltenheiten, Erweiterungen und Karten. Wechsle dann in den Sammlungsmodus, um deinen Bestand zu verwalten.',createSystem:'System erstellen',systemSettings:'Systemeinstellungen',addExpansion:'Erweiterung',booster:'Booster',starter:'Starter',special:'Spezial',promo:'Promo',expansions:'Erweiterungen',totalCards:'Karten gesamt',rarities:'Seltenheiten',rarityTiers:'Seltenheitsstufen',addRarity:'Seltenheit hinzufügen',pullRateWord:'Pull-Rate',cardLayout:'Kartenlayout',addField:'Feld hinzufügen',layoutDesc:'Stat-Felder, die auf jeder Karte dieses Systems erscheinen — zusätzlich zu Name, Nummer, Typ, Seltenheit, Bild und Effekttext.',noFieldsMsg:'Keine Stat-Felder — Karten zeigen nur Name, Typ und Seltenheit. Füge z. B. Kosten oder Power hinzu.',edit:'Bearbeiten',del:'Löschen',addCard:'Karte hinzufügen',noCardsTitle:'Noch keine Karten in dieser Erweiterung',autoNumber:'Karten werden beim Hinzufügen automatisch nummeriert.',addFirstCard:'Erste Karte hinzufügen',collecting:'Sammle',condition:'Zustand',ownedW:'Im Besitz',missingW:'Fehlend',dupes:'Duplikate',pullRateTitle:'Pull-Rate',pullHint:'Trage unten die gezogenen Karten ein (Mengen setzen), dann erscheint hier deine beobachtete Pull-Rate pro Seltenheit.',pullRatesDesc:'Lege die erwartete Pull-Rate (%) für jede Seltenheit in diesem System fest. Leer lassen, wenn unbekannt.',tPullRatesSaved:'Pull-Raten gespeichert',all:'Alle',nothingTitle:'Noch nichts zu sammeln',nothingDesc:'Erstelle zuerst ein TCG-System im Builder und verwalte danach hier deine Sammlung.',goBuilder:'Zum Builder',cardsN:'%d Karten',cardN1:'%d Karte',unused:'ungenutzt',shownOnCard:'auf Karte sichtbar',hiddenW:'ausgeblendet',numberT:'Zahl',textT:'Text',longTextT:'Langtext',elementW:'Element',linkedTypeNote:'Verwendet automatisch den echten Typ der Karte und Standardfarben.',linkedElementNote:'Verwendet automatisch das echte Element der Karte und Standardfarben.',linkedLongtextNote:'Langform-Text — wird nur in der Kartendetailansicht angezeigt, nie auf der Kachel.',sections:'Abschnitte',addSection:'Abschnitt hinzufügen',sectionsDesc:'Gruppiere deine Erweiterungen in einklappbare Abschnitte, die in der Seitenleiste angezeigt werden. Erweiterungen werden im Erweiterungs-Editor einem Abschnitt zugewiesen.',noSectionsMsg:'Noch keine Abschnitte — Erweiterungen werden ungruppiert angezeigt. Füge z. B. Booster oder Starter hinzu.',mNewSection:'Neuer Abschnitt',mEditSection:'Abschnitt bearbeiten',lSectionName:'Abschnittsname',lSection:'Abschnitt',ungrouped:'Ungruppiert',tSectionAdded:'Abschnitt hinzugefügt',tSectionUpdated:'Abschnitt aktualisiert',tSectionRemoved:'Abschnitt entfernt',delSectionMsg:'Den Abschnitt „%s“ löschen? Seine Erweiterungen werden ungruppiert.',expN1:'%d Erweiterung',expsN:'%d Erweiterungen',emptySection:'leer',statsForX:'Statistik für %s',statsNone:'Wähle eine Erweiterung, um ihre Statistik zu sehen',noDate:'Kein Datum',copiesSummary:'%a Karten gezogen · %b einzigartig',targetL:'Ziel %s%',copiesW:'%d Stück',expectedL:'~%s% erwartet',pulledL:'%s% · %d gezogen',variants1:'+%d Variante',variantsN:'+%d Varianten',setQty1:'Lege die Anzahl in deinem Besitz fest',setQtyN:'%d Versionen · lege die Anzahl je Version fest',ownedX:'Im Besitz ×%d',notOwned:'Nicht im Besitz',ofPulls:'%s% der Pulls',done:'Fertig',cancel:'Abbrechen',saveW:'Speichern',saveChanges:'Änderungen speichern',createExpansion:'Erweiterung erstellen',mNewSystem:'Neues TCG-System',mEditSystem:'System bearbeiten',mNewRarity:'Neue Seltenheit',mEditRarity:'Seltenheit bearbeiten',mNewExpansion:'Neue Erweiterung',mEditExpansion:'Erweiterung bearbeiten',mNewCard:'Neue Karte',mEditCard:'Karte bearbeiten',mNewField:'Neues Kartenfeld',mEditField:'Feld bearbeiten',mConfirmDelete:'Löschen bestätigen',lSystemName:'Systemname',lDescription:'Beschreibung',lRarityName:'Name der Seltenheit',lColor:'Farbe',lPullRatePct:'Pull-Rate (%)',lExpName:'Name der Erweiterung',lAbbr:'Kürzel',lRelease:'Erscheinungsdatum',lSeries:'Serie',noSeries:'Keine Serie',lImageBaseUrl:'Bild-Hosting-URL',imageBaseUrlHint:'Optional. Falls gesetzt, werden Kartenbilder zuerst von hier geladen (z. B. GitHub Pages) und bei fehlender Datei auf die ursprüngliche Quelle zurückgegriffen.',lCardName:'Kartenname',lCardNumber:'Kartennummer',lType:'Typ',lElement:'Element',noElement:'Kein Element',lRarity:'Seltenheit',lImage:'Bild-URL (optional)',lFieldLabel:'Feldname',lValueType:'Werttyp',lIcon:'Symbol',lShowOnCard:'Auf Karte anzeigen',lReassign:'Diese Karten zuordnen zu',delSystemMsg:'Dieses System komplett löschen? Alle Erweiterungen, Karten und Sammlungsfortschritte gehen verloren.',delExpMsg:'„%s“ und alle zugehörigen Karten löschen?',delRarityMsg:'Die Seltenheitsstufe „%s“ löschen?',delRarityUse:'%d Karte(n) verwenden sie derzeit.',onlyRarity:'Dies ist die einzige Seltenheit — füge zuerst eine andere hinzu.',sureMsg:'Bist du sicher?',tNameRequired:'Name ist erforderlich',tLabelRequired:'Bezeichnung ist erforderlich',tSystemCreated:'System erstellt',tSystemUpdated:'System aktualisiert',tSystemDeleted:'System gelöscht',tRarityAdded:'Seltenheit hinzugefügt',tRarityUpdated:'Seltenheit aktualisiert',tRarityRemoved:'Seltenheit entfernt',tFieldAdded:'Feld hinzugefügt',tFieldUpdated:'Feld aktualisiert',tFieldRemoved:'Feld entfernt',tExpCreated:'Erweiterung erstellt',tExpUpdated:'Erweiterung aktualisiert',tExpDeleted:'Erweiterung gelöscht',tCardAdded:'Karte hinzugefügt',tCardUpdated:'Karte aktualisiert',tCardDeleted:'Karte gelöscht',tExported:'Sammlung exportiert',tImported:'Import erfolgreich',tInvalid:'Ungültige Datei',tAddRarityFirst:'Füge zuerst eine andere Seltenheit hinzu',tCatalog:'Nivel-Arena-Katalog geladen — %d Karten hinzugefügt',pageOfN:'Seite %d von %d',pagesRangeOfN:'Seiten %d–%d von %d',stackVariants:'Varianten stapeln',cardSize:'Kartengröße',dynamicSize:'Dynamisch',haveW:'Vorhanden',needW:'Fehlend',dupesW:'Duplikate',prevW:'Zurück',nextW:'Weiter',imgNone:'Noch keine Bild-URL',imgLoadFail:'Bild konnte nicht geladen werden',binderCover:'Ordner-Cover',binderCoverDesc:'Gestalte ein eigenes Titelblatt für den Ordner dieses Systems — wird in der Ordneransicht angezeigt.',editCover:'Cover bearbeiten',editDivider:'Trennblatt',viewCover:'Ordner-Cover',openBinder:'Zurück zu den Karten',mDesignCover:'Ordner-Cover gestalten',mEditCoverTitle:'Ordner-Cover bearbeiten',mDesignDivider:'Trennblatt gestalten',mEditDividerTitle:'Trennblatt bearbeiten',lTitle:'Titel',lSubtitle:'Untertitel',lBackground:'Hintergrund',bgColor:'Farbe',bgGradient:'Verlauf',bgImage:'Bild',lTextColor:'Textfarbe',lColor2:'Zweite Farbe',lImageUrl:'Bild-URL',resetDesign:'Zurücksetzen',tCoverSaved:'Cover gespeichert',tDividerSaved:'Trennblatt gespeichert',tDesignReset:'Design zurückgesetzt',lCardsPerBooster:'Karten / Booster',lBoostersPerBox:'Booster / Box',boosters:'Booster',boostersOpenedW:'geöffnet',boxesOwned:'Boxen',uniqueDesigns:'Einzigartige Designs',totalCollected:'Gesamt gesammelt',homeTab:'Start',recentlyAddedTitle:'Kürzlich hinzugefügt',rarestOwnedTitle:'Seltenste Funde',homeEmptyTitle:'Noch nichts gesammelt',homeEmptyDesc:'Markiere Karten als im Besitz und sie erscheinen hier.',homeNoSectionsMsg:'Keine Abschnitte ausgewählt — wähle oben mindestens einen aus.',fromCardsTracked:'aus %d erfassten Karten',extraCards:'%d übrig',calcFromCards:'Berechnet aus den erfassten Karten, nicht manuell eingegeben',dragHint:'Karten per Drag & Drop neu anordnen',manualOrderBadge:'Manuelle Reihenfolge',resetOrder:'Auf Nummernreihenfolge zurücksetzen',tOrderReset:'Kartenreihenfolge zurückgesetzt',expImport:'Karten importieren',expExport:'Karten exportieren',expImportTitle:'Erweiterungskarten importieren',expExportTitle:'Erweiterungskarten exportieren',expImportDesc:'Lade eine Kartenlisten-JSON in diese Erweiterung. Bestehende Karten werden ersetzt, aber der Sammlungsfortschritt anderer Erweiterungen bleibt erhalten.',expExportDesc:'Lade nur die Kartenliste dieser Erweiterung als JSON herunter. Zum Sichern oder Teilen.',imgScript:'Bild-Skript',imgScriptTitle:'Bild-Downloader herunterladen',imgScriptDesc:'Der Browser kann Bilder von nivelarena.co.kr aus Sicherheitsgründen (CORS) nicht direkt speichern. Lade dieses kleine Python-Skript herunter und führe es aus, um alle Bilder dieser Erweiterung lokal zu speichern.',downloadScript:'Skript herunterladen',}
+    en:{tagline:'TCG Builder & Collector',builder:'TCG Builder',collector:'Collector',system:'System',newSystem:'New System',forgeTitle:'Forge your first TCG',forgeDesc:'Define a card game system — its rarities, expansions, and cards. Then switch to Collector mode to track what you own.',createSystem:'Create a System',systemSettings:'System Settings',addExpansion:'Expansion',booster:'Booster',starter:'Starter',special:'Special',promo:'Promo',expansions:'Expansions',totalCards:'Total Cards',rarities:'Rarities',rarityTiers:'Rarity Tiers',addRarity:'Add Rarity',pullRateWord:'Pull rate',cardLayout:'Card Layout',addField:'Add Field',layoutDesc:'Stat fields shown on every card in this system, plus the always-present name, number, type, rarity, image and effect text.',noFieldsMsg:'No stat fields — cards show just name, type and rarity. Add one like Cost or Power.',edit:'Edit',del:'Delete',addCard:'Add Card',noCardsTitle:'No cards in this expansion yet',autoNumber:'Cards are auto-numbered as you add them.',addFirstCard:'Add First Card',collecting:'Collecting',condition:'Condition',ownedW:'Owned',missingW:'Missing',dupes:'Duplicates',pullRateTitle:'Pull Rate',pullHint:"Add the cards you've pulled (set quantities on the cards below) and your observed pull rate per rarity appears here.",pullRatesDesc:'Set the expected pull rate (%) for each rarity in this system. Leave blank if unknown.',tPullRatesSaved:'Pull rates saved',all:'All',nothingTitle:'Nothing to collect yet',nothingDesc:'Build a TCG system first, then come back here to track your collection.',goBuilder:'Go to Builder',cardsN:'%d cards',cardN1:'%d card',unused:'unused',shownOnCard:'shown on card',hiddenW:'hidden',numberT:'Number',textT:'Text',longTextT:'Long Text',elementW:'Element',linkedTypeNote:'Automatically uses the card\'s real type and standard colors.',linkedElementNote:'Automatically uses the card\'s real element and standard colors.',linkedLongtextNote:'Long-form text — only shown in the card detail view, never on the tile.',sections:'Sections',addSection:'Add Section',sectionsDesc:'Group your expansions into collapsible sections, shown in the sidebar. Expansions are assigned a section from the expansion editor.',noSectionsMsg:'No sections yet — expansions show ungrouped. Add one like Booster or Starter.',mNewSection:'New Section',mEditSection:'Edit Section',lSectionName:'Section Name',lSection:'Section',ungrouped:'Ungrouped',tSectionAdded:'Section added',tSectionUpdated:'Section updated',tSectionRemoved:'Section removed',delSectionMsg:'Delete the “%s” section? Its expansions will become ungrouped.',expN1:'%d expansion',expsN:'%d expansions',emptySection:'empty',statsForX:'Stats for %s',statsNone:'Select an expansion to see its stats',noDate:'No date',copiesSummary:'%a copies pulled · %b unique',targetL:'target %s%',copiesW:'%d copies',expectedL:'~%s% expected',pulledL:'%s% · %d pulled',variants1:'+%d Variant',variantsN:'+%d Variants',setQty1:'Set the quantity you own',setQtyN:'%d versions · set the quantity you own of each',ownedX:'Owned ×%d',notOwned:'Not owned',ofPulls:'%s% of pulls',done:'Done',cancel:'Cancel',saveW:'Save',saveChanges:'Save Changes',createExpansion:'Create Expansion',mNewSystem:'New TCG System',mEditSystem:'Edit System',mNewRarity:'New Rarity',mEditRarity:'Edit Rarity',mNewExpansion:'New Expansion',mEditExpansion:'Edit Expansion',mNewCard:'New Card',mEditCard:'Edit Card',mNewField:'New Card Field',mEditField:'Edit Field',mConfirmDelete:'Confirm Deletion',lSystemName:'System Name',lDescription:'Description',lRarityName:'Rarity Name',lColor:'Color',lPullRatePct:'Pull rate (%)',lExpName:'Expansion Name',lAbbr:'Abbreviation',lRelease:'Release Date',lSeries:'Series',noSeries:'No Series',lImageBaseUrl:'Image Host URL',imageBaseUrlHint:'Optional. If set, card art loads from here first (e.g. GitHub Pages) and falls back to the original source URL if a file is missing.',lCardName:'Card Name',lCardNumber:'Card Number',lType:'Type',lElement:'Element',noElement:'No Element',lRarity:'Rarity',lImage:'Image URL (optional)',lFieldLabel:'Field Label',lValueType:'Value Type',lIcon:'Icon',lShowOnCard:'Show on card',lReassign:'Reassign those cards to',delSystemMsg:'Delete this entire system? All expansions, cards, and collection progress will be lost.',delExpMsg:'Delete “%s” and all its cards?',delRarityMsg:'Delete the “%s” rarity tier?',delRarityUse:'%d card(s) currently use it.',onlyRarity:'This is the only rarity — add another before deleting it.',sureMsg:'Are you sure?',tNameRequired:'Name is required',tLabelRequired:'Label is required',tSystemCreated:'System created',tSystemUpdated:'System updated',tSystemDeleted:'System deleted',tRarityAdded:'Rarity added',tRarityUpdated:'Rarity updated',tRarityRemoved:'Rarity removed',tFieldAdded:'Field added',tFieldUpdated:'Field updated',tFieldRemoved:'Field removed',tExpCreated:'Expansion created',tExpUpdated:'Expansion updated',tExpDeleted:'Expansion deleted',tCardAdded:'Card added',tCardUpdated:'Card updated',tCardDeleted:'Card deleted',tExported:'Progress exported',tImported:'Import successful',tInvalid:'Invalid file',exportProgressTitle:'Export Progress',importProgressTitle:'Import Progress',tAddRarityFirst:'Add another rarity first',pageOfN:'Page %d of %d',pagesRangeOfN:'Pages %d–%d of %d',stackVariants:'Stack Variants',cardSize:'Card Size',dynamicSize:'Dynamic',haveW:'Have',needW:'Need',dupesW:'Dupes',prevW:'Prev',nextW:'Next',imgNone:'No image URL yet',imgLoadFail:'Image failed to load',binderCover:'Binder Cover',binderCoverDesc:"Design a custom front cover for this system's binder — shown when you open the collection in Binder view.",editCover:'Edit Cover',editDivider:'Divider',viewCover:'Binder Cover',openBinder:'Back to Cards',mDesignCover:'Design Binder Cover',mEditCoverTitle:'Edit Binder Cover',mDesignDivider:'Design Divider',mEditDividerTitle:'Edit Divider',lTitle:'Title',lSubtitle:'Subtitle',lBackground:'Background',bgColor:'Solid',bgGradient:'Gradient',bgImage:'Image',lTextColor:'Text Color',lColor2:'Second Color',lImageUrl:'Image URL',resetDesign:'Reset to Default',tCoverSaved:'Cover saved',tDividerSaved:'Divider saved',tDesignReset:'Design reset',lCardsPerBooster:'Cards / Booster',lBoostersPerBox:'Boosters / Box',boosters:'Boosters',boostersOpenedW:'opened',boxesOwned:'Boxes',uniqueDesigns:'Unique Designs',totalCollected:'Total Collected',homeTab:'Home',recentlyAddedTitle:'Recently Added',rarestOwnedTitle:'Rarest Pulls',homeEmptyTitle:'Nothing collected yet',homeEmptyDesc:"Start marking cards as owned and they'll show up here.",homeNoSectionsMsg:'No sections selected — pick at least one above to see your cards.',fromCardsTracked:'from %d cards tracked',extraCards:'%d extra',calcFromCards:'Calculated from the cards you\'ve tracked, not entered manually',dragHint:'Drag cards to reorder',manualOrderBadge:'Manual Order',resetOrder:'Reset to numeric order',tOrderReset:'Card order reset',expImport:'Import Cards',expExport:'Export Cards',expImportTitle:'Import Expansion Cards',expExportTitle:'Export Expansion Cards',expImportDesc:'Load a card list JSON into this expansion. Existing cards in this expansion will be replaced, but your collection progress for other expansions is kept.',expExportDesc:'Download just this expansion\'s card list as a JSON file. Use it to back up or share this set.',imgScript:'Image Script',imgScriptTitle:'Download Image Fetcher',imgScriptDesc:'Your browser can\'t directly save images from most card game sites due to security rules (CORS). Download this small Python script and run it to fetch all images for this expansion into a local folder.',downloadScript:'Download .py Script',},
+    ko:{tagline:'TCG 빌더 & 컬렉터',builder:'TCG 빌더',collector:'컬렉터',system:'시스템',newSystem:'새 시스템',forgeTitle:'첫 TCG를 만들어 보세요',forgeDesc:'카드 게임 시스템 — 레어도, 확장팩, 카드 — 를 정의한 뒤, 컬렉터 모드에서 소장 카드를 관리하세요.',createSystem:'시스템 만들기',systemSettings:'시스템 설정',addExpansion:'확장팩',booster:'부스터',starter:'스타터',special:'스페셜',promo:'프로모',expansions:'확장팩',totalCards:'전체 카드',rarities:'레어도',rarityTiers:'레어도 등급',addRarity:'레어도 추가',pullRateWord:'배출률',cardLayout:'카드 레이아웃',addField:'필드 추가',layoutDesc:'이 시스템의 모든 카드에 표시되는 스탯 필드입니다. 이름·번호·타입·레어도·이미지·효과 텍스트는 항상 표시됩니다.',noFieldsMsg:'스탯 필드가 없습니다 — 카드에는 이름·타입·레어도만 표시됩니다. 코스트나 파워 같은 필드를 추가해 보세요.',edit:'수정',del:'삭제',addCard:'카드 추가',noCardsTitle:'아직 이 확장팩에 카드가 없습니다',autoNumber:'카드는 추가하는 순서대로 자동 번호가 매겨집니다.',addFirstCard:'첫 카드 추가',collecting:'컬렉션',condition:'상태',ownedW:'보유',missingW:'미보유',dupes:'중복',pullRateTitle:'배출률',pullHint:'뽑은 카드의 수량을 아래 카드에 입력하면 레어도별 실제 배출률이 여기에 표시됩니다.',pullRatesDesc:'이 시스템의 각 레어도별 예상 배출률(%)을 설정하세요. 모르면 비워 두세요.',tPullRatesSaved:'배출률이 저장되었습니다',all:'전체',nothingTitle:'아직 수집할 것이 없습니다',nothingDesc:'먼저 빌더에서 TCG 시스템을 만든 뒤, 여기에서 컬렉션을 관리하세요.',goBuilder:'빌더로 이동',cardsN:'%d장',cardN1:'%d장',unused:'미사용',shownOnCard:'카드에 표시',hiddenW:'숨김',numberT:'숫자',textT:'텍스트',longTextT:'긴 텍스트',elementW:'속성',linkedTypeNote:'카드의 실제 타입과 기본 색상이 자동으로 사용됩니다.',linkedElementNote:'카드의 실제 속성과 기본 색상이 자동으로 사용됩니다.',linkedLongtextNote:'긴 텍스트 — 카드 상세보기에서만 표시되며 카드 앞면에는 표시되지 않습니다.',sections:'섹션',addSection:'섹션 추가',sectionsDesc:'확장팩을 접을 수 있는 섹션으로 묶어 사이드바에 표시합니다. 확장팩 편집 화면에서 섹션을 지정할 수 있습니다.',noSectionsMsg:'아직 섹션이 없습니다 — 확장팩이 그룹 없이 표시됩니다. 부스터나 스타터 같은 섹션을 추가해 보세요.',mNewSection:'새 섹션',mEditSection:'섹션 수정',lSectionName:'섹션 이름',lSection:'섹션',ungrouped:'미분류',tSectionAdded:'섹션 추가됨',tSectionUpdated:'섹션 수정됨',tSectionRemoved:'섹션 삭제됨',delSectionMsg:'“%s” 섹션을 삭제할까요? 포함된 확장팩은 미분류로 이동합니다.',expN1:'확장팩 %d개',expsN:'확장팩 %d개',emptySection:'비어 있음',statsForX:'%s 통계',statsNone:'통계를 보려면 확장팩을 선택하세요',noDate:'날짜 없음',copiesSummary:'총 %a장 개봉 · 고유 %b종',targetL:'목표 %s%',copiesW:'%d장',expectedL:'예상 ~%s%',pulledL:'%s% · %d장',variants1:'+%d 버전',variantsN:'+%d 버전',setQty1:'보유 수량을 설정하세요',setQtyN:'%d가지 버전 · 각각 보유 수량을 설정하세요',ownedX:'보유 ×%d',notOwned:'미보유',ofPulls:'전체 개봉의 %s%',done:'완료',cancel:'취소',saveW:'저장',saveChanges:'변경 사항 저장',createExpansion:'확장팩 만들기',mNewSystem:'새 TCG 시스템',mEditSystem:'시스템 수정',mNewRarity:'새 레어도',mEditRarity:'레어도 수정',mNewExpansion:'새 확장팩',mEditExpansion:'확장팩 수정',mNewCard:'새 카드',mEditCard:'카드 수정',mNewField:'새 카드 필드',mEditField:'필드 수정',mConfirmDelete:'삭제 확인',lSystemName:'시스템 이름',lDescription:'설명',lRarityName:'레어도 이름',lColor:'색상',lPullRatePct:'배출률 (%)',lExpName:'확장팩 이름',lAbbr:'약칭',lRelease:'출시일',lSeries:'시리즈',noSeries:'시리즈 없음',lImageBaseUrl:'이미지 호스팅 URL',imageBaseUrlHint:'선택 사항입니다. 설정하면 카드 이미지를 이곳에서 먼저 불러오고(예: GitHub Pages), 파일이 없으면 원본 출처 URL로 대체합니다.',lCardName:'카드 이름',lCardNumber:'카드 번호',lType:'타입',lElement:'속성',noElement:'속성 없음',lRarity:'레어도',lImage:'이미지 URL (선택)',lFieldLabel:'필드 이름',lValueType:'값 타입',lIcon:'아이콘',lShowOnCard:'카드에 표시',lReassign:'해당 카드를 다음 레어도로 이동',delSystemMsg:'이 시스템 전체를 삭제할까요? 모든 확장팩, 카드, 컬렉션 진행 상황이 사라집니다.',delExpMsg:'“%s”와(과) 모든 카드를 삭제할까요?',delRarityMsg:'“%s” 레어도 등급을 삭제할까요?',delRarityUse:'현재 %d장의 카드가 사용 중입니다.',onlyRarity:'유일한 레어도입니다 — 삭제 전에 다른 레어도를 추가하세요.',sureMsg:'정말 삭제할까요?',tNameRequired:'이름을 입력하세요',tLabelRequired:'이름을 입력하세요',tSystemCreated:'시스템 생성됨',tSystemUpdated:'시스템 수정됨',tSystemDeleted:'시스템 삭제됨',tRarityAdded:'레어도 추가됨',tRarityUpdated:'레어도 수정됨',tRarityRemoved:'레어도 삭제됨',tFieldAdded:'필드 추가됨',tFieldUpdated:'필드 수정됨',tFieldRemoved:'필드 삭제됨',tExpCreated:'확장팩 생성됨',tExpUpdated:'확장팩 수정됨',tExpDeleted:'확장팩 삭제됨',tCardAdded:'카드 추가됨',tCardUpdated:'카드 수정됨',tCardDeleted:'카드 삭제됨',tExported:'진행 상황 내보내기 완료',tImported:'가져오기 완료',tInvalid:'잘못된 파일',exportProgressTitle:'진행 상황 내보내기',importProgressTitle:'진행 상황 가져오기',tAddRarityFirst:'먼저 다른 레어도를 추가하세요',pageOfN:'%d / %d 페이지',pagesRangeOfN:'%d–%d / %d 페이지',stackVariants:'버전 묶어보기',cardSize:'카드 크기',dynamicSize:'자동',haveW:'보유',needW:'미보유',dupesW:'중복',prevW:'이전',nextW:'다음',imgNone:'이미지 URL이 없습니다',imgLoadFail:'이미지를 불러오지 못했습니다',binderCover:'바인더 표지',binderCoverDesc:'이 시스템의 바인더 앞표지를 디자인하세요 — 바인더 보기를 열면 표시됩니다.',editCover:'표지 편집',editDivider:'구분지',viewCover:'바인더 표지',openBinder:'카드로 돌아가기',mDesignCover:'바인더 표지 디자인',mEditCoverTitle:'바인더 표지 편집',mDesignDivider:'구분지 디자인',mEditDividerTitle:'구분지 편집',lTitle:'제목',lSubtitle:'부제목',lBackground:'배경',bgColor:'단색',bgGradient:'그라데이션',bgImage:'이미지',lTextColor:'텍스트 색상',lColor2:'두 번째 색상',lImageUrl:'이미지 URL',resetDesign:'기본값으로 재설정',tCoverSaved:'표지 저장됨',tDividerSaved:'구분지 저장됨',tDesignReset:'디자인 초기화됨',lCardsPerBooster:'부스터당 카드 수',lBoostersPerBox:'박스당 부스터 수',boosters:'부스터',boostersOpenedW:'개봉',boxesOwned:'박스',uniqueDesigns:'고유 카드',totalCollected:'전체 수집률',homeTab:'홈',recentlyAddedTitle:'최근 추가됨',rarestOwnedTitle:'가장 희귀한 카드',homeEmptyTitle:'아직 수집한 카드가 없습니다',homeEmptyDesc:'카드를 보유로 표시하면 여기에 표시됩니다.',homeNoSectionsMsg:'선택된 섹션이 없습니다 — 위에서 하나 이상 선택하세요.',fromCardsTracked:'기록된 카드 %d장 기준',extraCards:'%d장 남음',calcFromCards:'직접 입력하지 않고, 기록된 카드 수를 기준으로 자동 계산됩니다',dragHint:'카드를 드래그하여 순서를 바꿀 수 있습니다',manualOrderBadge:'수동 정렬',resetOrder:'번호순으로 초기화',tOrderReset:'카드 순서가 초기화되었습니다',expImport:'카드 가져오기',expExport:'카드 내보내기',expImportTitle:'확장팩 카드 가져오기',expExportTitle:'확장팩 카드 내보내기',expImportDesc:'카드 목록 JSON을 이 확장팩에 불러옵니다. 이 확장팩의 기존 카드는 교체되지만, 다른 확장팩의 컬렉션 진행 상황은 유지됩니다.',expExportDesc:'이 확장팩의 카드 목록만 JSON 파일로 다운로드합니다. 백업이나 공유에 사용하세요.',imgScript:'이미지 스크립트',imgScriptTitle:'이미지 다운로더 받기',imgScriptDesc:'브라우저 보안 규칙(CORS) 때문에 대부분의 카드 게임 사이트에서 이미지를 직접 저장할 수 없습니다. 이 작은 Python 스크립트를 다운로드해서 실행하면 이 확장팩의 모든 이미지를 로컬 폴더에 받을 수 있습니다.',downloadScript:'스크립트 다운로드',},
+    de:{tagline:'TCG-Builder & Sammlung',builder:'TCG-Builder',collector:'Sammlung',system:'System',newSystem:'Neues System',forgeTitle:'Erschaffe dein erstes TCG',forgeDesc:'Definiere ein Kartenspiel-System — Seltenheiten, Erweiterungen und Karten. Wechsle dann in den Sammlungsmodus, um deinen Bestand zu verwalten.',createSystem:'System erstellen',systemSettings:'Systemeinstellungen',addExpansion:'Erweiterung',booster:'Booster',starter:'Starter',special:'Spezial',promo:'Promo',expansions:'Erweiterungen',totalCards:'Karten gesamt',rarities:'Seltenheiten',rarityTiers:'Seltenheitsstufen',addRarity:'Seltenheit hinzufügen',pullRateWord:'Pull-Rate',cardLayout:'Kartenlayout',addField:'Feld hinzufügen',layoutDesc:'Stat-Felder, die auf jeder Karte dieses Systems erscheinen — zusätzlich zu Name, Nummer, Typ, Seltenheit, Bild und Effekttext.',noFieldsMsg:'Keine Stat-Felder — Karten zeigen nur Name, Typ und Seltenheit. Füge z. B. Kosten oder Power hinzu.',edit:'Bearbeiten',del:'Löschen',addCard:'Karte hinzufügen',noCardsTitle:'Noch keine Karten in dieser Erweiterung',autoNumber:'Karten werden beim Hinzufügen automatisch nummeriert.',addFirstCard:'Erste Karte hinzufügen',collecting:'Sammle',condition:'Zustand',ownedW:'Im Besitz',missingW:'Fehlend',dupes:'Duplikate',pullRateTitle:'Pull-Rate',pullHint:'Trage unten die gezogenen Karten ein (Mengen setzen), dann erscheint hier deine beobachtete Pull-Rate pro Seltenheit.',pullRatesDesc:'Lege die erwartete Pull-Rate (%) für jede Seltenheit in diesem System fest. Leer lassen, wenn unbekannt.',tPullRatesSaved:'Pull-Raten gespeichert',all:'Alle',nothingTitle:'Noch nichts zu sammeln',nothingDesc:'Erstelle zuerst ein TCG-System im Builder und verwalte danach hier deine Sammlung.',goBuilder:'Zum Builder',cardsN:'%d Karten',cardN1:'%d Karte',unused:'ungenutzt',shownOnCard:'auf Karte sichtbar',hiddenW:'ausgeblendet',numberT:'Zahl',textT:'Text',longTextT:'Langtext',elementW:'Element',linkedTypeNote:'Verwendet automatisch den echten Typ der Karte und Standardfarben.',linkedElementNote:'Verwendet automatisch das echte Element der Karte und Standardfarben.',linkedLongtextNote:'Langform-Text — wird nur in der Kartendetailansicht angezeigt, nie auf der Kachel.',sections:'Abschnitte',addSection:'Abschnitt hinzufügen',sectionsDesc:'Gruppiere deine Erweiterungen in einklappbare Abschnitte, die in der Seitenleiste angezeigt werden. Erweiterungen werden im Erweiterungs-Editor einem Abschnitt zugewiesen.',noSectionsMsg:'Noch keine Abschnitte — Erweiterungen werden ungruppiert angezeigt. Füge z. B. Booster oder Starter hinzu.',mNewSection:'Neuer Abschnitt',mEditSection:'Abschnitt bearbeiten',lSectionName:'Abschnittsname',lSection:'Abschnitt',ungrouped:'Ungruppiert',tSectionAdded:'Abschnitt hinzugefügt',tSectionUpdated:'Abschnitt aktualisiert',tSectionRemoved:'Abschnitt entfernt',delSectionMsg:'Den Abschnitt „%s“ löschen? Seine Erweiterungen werden ungruppiert.',expN1:'%d Erweiterung',expsN:'%d Erweiterungen',emptySection:'leer',statsForX:'Statistik für %s',statsNone:'Wähle eine Erweiterung, um ihre Statistik zu sehen',noDate:'Kein Datum',copiesSummary:'%a Karten gezogen · %b einzigartig',targetL:'Ziel %s%',copiesW:'%d Stück',expectedL:'~%s% erwartet',pulledL:'%s% · %d gezogen',variants1:'+%d Variante',variantsN:'+%d Varianten',setQty1:'Lege die Anzahl in deinem Besitz fest',setQtyN:'%d Versionen · lege die Anzahl je Version fest',ownedX:'Im Besitz ×%d',notOwned:'Nicht im Besitz',ofPulls:'%s% der Pulls',done:'Fertig',cancel:'Abbrechen',saveW:'Speichern',saveChanges:'Änderungen speichern',createExpansion:'Erweiterung erstellen',mNewSystem:'Neues TCG-System',mEditSystem:'System bearbeiten',mNewRarity:'Neue Seltenheit',mEditRarity:'Seltenheit bearbeiten',mNewExpansion:'Neue Erweiterung',mEditExpansion:'Erweiterung bearbeiten',mNewCard:'Neue Karte',mEditCard:'Karte bearbeiten',mNewField:'Neues Kartenfeld',mEditField:'Feld bearbeiten',mConfirmDelete:'Löschen bestätigen',lSystemName:'Systemname',lDescription:'Beschreibung',lRarityName:'Name der Seltenheit',lColor:'Farbe',lPullRatePct:'Pull-Rate (%)',lExpName:'Name der Erweiterung',lAbbr:'Kürzel',lRelease:'Erscheinungsdatum',lSeries:'Serie',noSeries:'Keine Serie',lImageBaseUrl:'Bild-Hosting-URL',imageBaseUrlHint:'Optional. Falls gesetzt, werden Kartenbilder zuerst von hier geladen (z. B. GitHub Pages) und bei fehlender Datei auf die ursprüngliche Quelle zurückgegriffen.',lCardName:'Kartenname',lCardNumber:'Kartennummer',lType:'Typ',lElement:'Element',noElement:'Kein Element',lRarity:'Seltenheit',lImage:'Bild-URL (optional)',lFieldLabel:'Feldname',lValueType:'Werttyp',lIcon:'Symbol',lShowOnCard:'Auf Karte anzeigen',lReassign:'Diese Karten zuordnen zu',delSystemMsg:'Dieses System komplett löschen? Alle Erweiterungen, Karten und Sammlungsfortschritte gehen verloren.',delExpMsg:'„%s“ und alle zugehörigen Karten löschen?',delRarityMsg:'Die Seltenheitsstufe „%s“ löschen?',delRarityUse:'%d Karte(n) verwenden sie derzeit.',onlyRarity:'Dies ist die einzige Seltenheit — füge zuerst eine andere hinzu.',sureMsg:'Bist du sicher?',tNameRequired:'Name ist erforderlich',tLabelRequired:'Bezeichnung ist erforderlich',tSystemCreated:'System erstellt',tSystemUpdated:'System aktualisiert',tSystemDeleted:'System gelöscht',tRarityAdded:'Seltenheit hinzugefügt',tRarityUpdated:'Seltenheit aktualisiert',tRarityRemoved:'Seltenheit entfernt',tFieldAdded:'Feld hinzugefügt',tFieldUpdated:'Feld aktualisiert',tFieldRemoved:'Feld entfernt',tExpCreated:'Erweiterung erstellt',tExpUpdated:'Erweiterung aktualisiert',tExpDeleted:'Erweiterung gelöscht',tCardAdded:'Karte hinzugefügt',tCardUpdated:'Karte aktualisiert',tCardDeleted:'Karte gelöscht',tExported:'Fortschritt exportiert',tImported:'Import erfolgreich',tInvalid:'Ungültige Datei',exportProgressTitle:'Fortschritt exportieren',importProgressTitle:'Fortschritt importieren',tAddRarityFirst:'Füge zuerst eine andere Seltenheit hinzu',pageOfN:'Seite %d von %d',pagesRangeOfN:'Seiten %d–%d von %d',stackVariants:'Varianten stapeln',cardSize:'Kartengröße',dynamicSize:'Dynamisch',haveW:'Vorhanden',needW:'Fehlend',dupesW:'Duplikate',prevW:'Zurück',nextW:'Weiter',imgNone:'Noch keine Bild-URL',imgLoadFail:'Bild konnte nicht geladen werden',binderCover:'Ordner-Cover',binderCoverDesc:'Gestalte ein eigenes Titelblatt für den Ordner dieses Systems — wird in der Ordneransicht angezeigt.',editCover:'Cover bearbeiten',editDivider:'Trennblatt',viewCover:'Ordner-Cover',openBinder:'Zurück zu den Karten',mDesignCover:'Ordner-Cover gestalten',mEditCoverTitle:'Ordner-Cover bearbeiten',mDesignDivider:'Trennblatt gestalten',mEditDividerTitle:'Trennblatt bearbeiten',lTitle:'Titel',lSubtitle:'Untertitel',lBackground:'Hintergrund',bgColor:'Farbe',bgGradient:'Verlauf',bgImage:'Bild',lTextColor:'Textfarbe',lColor2:'Zweite Farbe',lImageUrl:'Bild-URL',resetDesign:'Zurücksetzen',tCoverSaved:'Cover gespeichert',tDividerSaved:'Trennblatt gespeichert',tDesignReset:'Design zurückgesetzt',lCardsPerBooster:'Karten / Booster',lBoostersPerBox:'Booster / Box',boosters:'Booster',boostersOpenedW:'geöffnet',boxesOwned:'Boxen',uniqueDesigns:'Einzigartige Designs',totalCollected:'Gesamt gesammelt',homeTab:'Start',recentlyAddedTitle:'Kürzlich hinzugefügt',rarestOwnedTitle:'Seltenste Funde',homeEmptyTitle:'Noch nichts gesammelt',homeEmptyDesc:'Markiere Karten als im Besitz und sie erscheinen hier.',homeNoSectionsMsg:'Keine Abschnitte ausgewählt — wähle oben mindestens einen aus.',fromCardsTracked:'aus %d erfassten Karten',extraCards:'%d übrig',calcFromCards:'Berechnet aus den erfassten Karten, nicht manuell eingegeben',dragHint:'Karten per Drag & Drop neu anordnen',manualOrderBadge:'Manuelle Reihenfolge',resetOrder:'Auf Nummernreihenfolge zurücksetzen',tOrderReset:'Kartenreihenfolge zurückgesetzt',expImport:'Karten importieren',expExport:'Karten exportieren',expImportTitle:'Erweiterungskarten importieren',expExportTitle:'Erweiterungskarten exportieren',expImportDesc:'Lade eine Kartenlisten-JSON in diese Erweiterung. Bestehende Karten werden ersetzt, aber der Sammlungsfortschritt anderer Erweiterungen bleibt erhalten.',expExportDesc:'Lade nur die Kartenliste dieser Erweiterung als JSON herunter. Zum Sichern oder Teilen.',imgScript:'Bild-Skript',imgScriptTitle:'Bild-Downloader herunterladen',imgScriptDesc:'Der Browser kann Bilder von den meisten Kartenspiel-Websites aus Sicherheitsgründen (CORS) nicht direkt speichern. Lade dieses kleine Python-Skript herunter und führe es aus, um alle Bilder dieser Erweiterung lokal zu speichern.',downloadScript:'Skript herunterladen',}
   };
 
 
@@ -671,8 +672,24 @@ class Component extends DCLogic {
   // If it isn't - e.g. this page is served statically from GitHub Pages with no
   // backend at all - we fall back to whatever's saved in this browser's localStorage,
   // so data survives a refresh either way.
+  // The published database (Component.DATA_FILE, committed to your repo from Grimoire-Builder.html)
+  // is the primary source of the card data on a static host like GitHub Pages - it's fetched fresh
+  // on every load so pushing an updated file is all it takes to update what visitors see. Your own
+  // collection progress never lives in that file - it always comes from this browser's localStorage
+  // (or /api/state, for local/dev use with the Python server). If the database file isn't published
+  // yet, this falls back to whatever systems data is already in /api/state or localStorage.
   loadServerState(){
-    fetch('./state.json').then(r=>r.ok?r.json():null).then(data=>{
+    fetch(Component.DATA_FILE,{cache:'no-cache'}).then(r=>r.ok?r.json():null).then(staticData=>{
+      if(staticData && Array.isArray(staticData.systems) && staticData.systems.length){
+        const local=this.readLocalState()||{};
+        this.applyLoadedData({systems:staticData.systems, collector:local.collector, theme:local.theme, lang:local.lang, condition:local.condition});
+        return;
+      }
+      this.loadFallbackState();
+    }).catch(()=>{ this.loadFallbackState(); });
+  }
+  loadFallbackState(){
+    fetch('/api/state').then(r=>r.ok?r.json():null).then(data=>{
       if(!data || !data.systems || !data.systems.length){
         const local=this.readLocalState();
         if(local && local.systems && local.systems.length) data=local;
@@ -686,6 +703,15 @@ class Component extends DCLogic {
     let systems=(data.systems&&data.systems.length)?data.systems:this.state.systems;
     const collector=data.collector||this.state.collector;
     systems=this.migrateSystems(systems, data.lang||this.state.lang);
+    // re-apply any locally-saved pull rate targets (see savePullRates) - these are a personal
+    // annotation, not part of the published database, so they wouldn't otherwise survive a refresh
+    const localPullRates=(this.readLocalState()||{}).pullRates;
+    if(localPullRates){
+      systems=systems.map(sy=>{
+        const saved=localPullRates[sy.id]; if(!saved) return sy;
+        return {...sy,rarities:sy.rarities.map(r=>saved[r.id]!==undefined?{...r,pullRate:saved[r.id]}:r)};
+      });
+    }
     const first=systems[0]?systems[0].id:null;
     const patch={systems,collector,selectedSystemId:first,collectorSystemId:first,collectorExpansionId:this.firstExpId(systems,first)};
     if(data.theme) patch.theme=data.theme;
@@ -693,12 +719,13 @@ class Component extends DCLogic {
     if(data.condition) patch.globalCondition=data.condition;
     this.setState(patch, ()=>{
       if(patch.theme) this.applyTheme(patch.theme);
-      this.save(systems,collector); // keeps grimoire.db (if reachable) and localStorage both in sync with any migration touch-ups
-      this.loadNivelCatalog();
+      // only cache collector/prefs locally here - the systems database itself is never written
+      // back to localStorage or /api/state from Collector, since it's meant to be read-only here
+      this.writeLocalState({collector,theme:this.state.theme,lang:this.state.lang,condition:this.state.globalCondition});
     });
   }
-  // non-destructive touch-ups for Nivel Arena systems created by older app versions
-  // (the full card list itself is kept in sync separately by loadNivelCatalog on every load)
+  // non-destructive touch-ups for legacy Nivel Arena systems created by older app versions
+  // (repairs saved data shape only - no longer fetches or syncs any card catalog automatically)
   migrateSystems(systems, lang){
     systems=[...systems];
     const dict=Component.I18N[lang]||Component.I18N.en;
@@ -765,92 +792,6 @@ class Component extends DCLogic {
     return systems;
   }
 
-  // Load the full Nivel Arena card catalog into the sys-nivel system: fill empty
-  // expansions, add missing packs, enrich cards (effect text + stats) without
-  // touching ids, images or collection ticks.
-  loadNivelCatalog(){
-    fetch('./catalog.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).then(data=>{
-      if(!data||!data.expansions) return;
-      const idx=this.state.systems.findIndex(s=>s.id==='sys-nivel'); if(idx<0) return;
-      const sys={...this.state.systems[idx]};
-      let changed=false, added=0;
-      const wantRarities=[
-        {id:'nv-p',name:'Promo',abbr:'P',color:'#e0885f',pullRate:''},
-        {id:'nv-spr',name:'Special Rare',abbr:'SPR',color:'#e0609a',pullRate:''},
-        {id:'nv-spl',name:'Special Leader',abbr:'SPL',color:'#c94f8a',pullRate:''},
-        {id:'nv-sbr',name:'Special Booster Rare',abbr:'SBR',color:'#d94f6e',pullRate:''},
-        {id:'nv-sbl',name:'Special Booster Leader',abbr:'SBL',color:'#b83f66',pullRate:''},
-        {id:'nv-ssl',name:'Special Store Leader',abbr:'SSL',color:'#9c3a7a',pullRate:''},
-        {id:'nv-anl',name:'Anniversary Leader',abbr:'ANL',color:'#e0a04f',pullRate:''}
-      ];
-      let rars=[...sys.rarities];
-      // backfill abbr on legacy rarity tiers that predate this field
-      const legacyAbbr={'nv-c':'C','nv-r':'R','nv-sr':'SR','nv-ur':'UR','nv-l':'L','nv-sp':'SP'};
-      rars=rars.map(r=> (!r.abbr && legacyAbbr[r.id]) ? {...r,abbr:legacyAbbr[r.id]} : r);
-      wantRarities.forEach(w=>{
-        if(!rars.some(r=>r.id===w.id)){ const spi=rars.findIndex(r=>r.id==='nv-sp'); rars.splice(spi<0?rars.length:spi,0,w); changed=true; }
-      });
-      if(rars!==sys.rarities){ sys.rarities=rars; changed=true; }
-      let expansions=[...sys.expansions];
-      data.expansions.forEach(pack=>{
-        const i=expansions.findIndex(e=>(e.abbreviation||'').toUpperCase()===pack.abbr);
-        if(i>=0){
-          if(!expansions[i].cards.length){ expansions[i]={...expansions[i],cards:pack.cards}; changed=true; added+=pack.cards.length; }
-          else {
-            // repair pass: match by stable id (not the display number, which can be stale/malformed),
-            // sync stats/effect text/number/image from the catalog, add brand-new cards, drop retired ones
-            const byId={}; pack.cards.forEach(c=>{ byId[c.id]=c; });
-            let touched=false;
-            // keep cards the user added by hand even if the catalog doesn't know about them,
-            // and never re-sync a card the user has manually edited in the builder
-            const kept=expansions[i].cards.filter(c=>byId[c.id]||c.custom).map(c=>{
-              if(c.edited) return c;
-              const s=byId[c.id]; if(!s) return c;
-              let dirty=false;
-              const st={...(c.stats||{})};
-              Object.keys(s.stats||{}).forEach(k=>{ if(st[k]!==s.stats[k]){ st[k]=s.stats[k]; dirty=true; } });
-              let desc=c.description;
-              if(s.description && desc!==s.description){ desc=s.description; dirty=true; }
-              let img=c.image;
-              if(s.image && s.image!==img){ img=s.image; dirty=true; }
-              let num=c.number;
-              if(s.number && s.number!==num){ num=s.number; dirty=true; }
-              let rarityId=c.rarityId;
-              if(s.rarityId && s.rarityId!==rarityId){ rarityId=s.rarityId; dirty=true; }
-              let type=c.type;
-              if(s.type && s.type!==type){ type=s.type; dirty=true; }
-              let element=c.element;
-              if(s.element && s.element!==element){ element=s.element; dirty=true; }
-              let keywords=c.keywords;
-              if(s.keywords && JSON.stringify(s.keywords)!==JSON.stringify(keywords||[])){ keywords=s.keywords; dirty=true; }
-              let nameEn=c.nameEn, nameDe=c.nameDe, descEn=c.descriptionEn, descDe=c.descriptionDe;
-              if(s.nameEn && s.nameEn!==nameEn){ nameEn=s.nameEn; dirty=true; }
-              if(s.nameDe && s.nameDe!==nameDe){ nameDe=s.nameDe; dirty=true; }
-              if(s.descriptionEn && s.descriptionEn!==descEn){ descEn=s.descriptionEn; dirty=true; }
-              if(s.descriptionDe && s.descriptionDe!==descDe){ descDe=s.descriptionDe; dirty=true; }
-              if(!dirty) return c;
-              touched=true;
-              return {...c,number:num,rarityId,type,element,description:desc,stats:st,image:img,keywords,nameEn,nameDe,descriptionEn:descEn,descriptionDe:descDe};
-            });
-            if(kept.length!==expansions[i].cards.length) touched=true;
-            const existingIds={}; kept.forEach(c=>{ existingIds[c.id]=true; });
-            const newCards=pack.cards.filter(s=>!existingIds[s.id]);
-            const finalCards=newCards.length?[...kept,...newCards]:kept;
-            if(newCards.length){ added+=newCards.length; }
-            if(touched||newCards.length){ expansions[i]={...expansions[i],cards:finalCards}; changed=true; }
-          }
-        } else {
-          expansions.push({id:'nv-'+pack.abbr.toLowerCase(),name:pack.name,abbreviation:pack.abbr,releaseDate:'',cards:pack.cards});
-          changed=true; added+=pack.cards.length;
-        }
-      });
-      if(!changed) return;
-      sys.expansions=expansions;
-      const systems=this.state.systems.map((s,j)=>j===idx?sys:s);
-      this.commit({systems});
-      if(added) this.toast(this.fmt(this.t('tCatalog'),added));
-    }).catch(()=>{});
-  }
   typeInfo(t){ return Component.TYPES.find(x=>x.value===t) || {value:t||'',color:'var(--ink3)',icon:'fa-solid fa-question'}; }
   cardNumber(c,i,len){ return c.number ? c.number : this.pad(i+1,len); }
   cleanImageFilename(url){
@@ -895,6 +836,9 @@ class Component extends DCLogic {
   // GitHub Pages) and, best-effort, to the server's SQLite store when one is reachable.
   // Local write happens first so data is never lost even if the fetch fails or hangs.
   static LS_KEY = 'grimoire-state-v1';
+  // Filename this page fetches (from the same folder) to load the published card database -
+  // export this from Grimoire-Builder.html and commit it to your repo under this exact name.
+  static DATA_FILE = 'grimoire-data.json';
   readLocalState(){
     try{ const raw=localStorage.getItem(Component.LS_KEY); return raw?JSON.parse(raw):{}; }catch(e){ return {}; }
   }
@@ -903,7 +847,7 @@ class Component extends DCLogic {
   }
   postState(partial){
     this.writeLocalState(partial);
-    // no backend on GitHub Pages: persistence is localStorage-only
+    fetch('/api/state',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(partial)}).catch(()=>{});
   }
   save(systems, collector){
     this.postState({systems: systems ?? this.state.systems, collector: collector ?? this.state.collector});
@@ -958,15 +902,15 @@ class Component extends DCLogic {
 
   // ---------- rarity CRUD ----------
   openRarityModal(edit,r){
-    this.setState({ modal:{type:'rarity',edit:!!edit,rid:r?r.id:null}, form:{ name:r?r.name:'', abbr:r?(r.abbr||''):'', color:r?r.color:'#c9a84c', pullRate:r?r.pullRate:'' } });
+    this.setState({ modal:{type:'rarity',edit:!!edit,rid:r?r.id:null}, form:{ name:r?r.name:'', abbr:r?(r.abbr||''):'', color:r?r.color:'#c9a84c', pullRate:r?r.pullRate:'', parallel:r?!!r.parallel:false } });
   }
   saveRarity(){
     const f=this.state.form; if(!f.name||!f.name.trim()) return this.toast(this.t('tNameRequired'),'error');
     const systems=this.state.systems.map(s=>{
       if(s.id!==this.state.selectedSystemId) return s;
       let rarities=[...s.rarities];
-      if(this.state.modal.edit){ rarities=rarities.map(r=>r.id===this.state.modal.rid?{...r,name:f.name.trim(),abbr:(f.abbr||'').trim(),color:f.color,pullRate:(f.pullRate||'').trim()}:r); }
-      else{ rarities.push({id:this.uid('r'),name:f.name.trim(),abbr:(f.abbr||'').trim(),color:f.color,pullRate:(f.pullRate||'').trim()}); }
+      if(this.state.modal.edit){ rarities=rarities.map(r=>r.id===this.state.modal.rid?{...r,name:f.name.trim(),abbr:(f.abbr||'').trim(),color:f.color,pullRate:(f.pullRate||'').trim(),parallel:!!f.parallel}:r); }
+      else{ rarities.push({id:this.uid('r'),name:f.name.trim(),abbr:(f.abbr||'').trim(),color:f.color,pullRate:(f.pullRate||'').trim(),parallel:!!f.parallel}); }
       return {...s,rarities};
     });
     this.commit({systems,modal:null}); this.toast(this.state.modal.edit?this.t('tRarityUpdated'):this.t('tRarityAdded'));
@@ -1108,7 +1052,13 @@ class Component extends DCLogic {
     const s=this.sys(); if(!s) return;
     const rates=this.state.form.rates||{};
     const systems=this.state.systems.map(sy=>sy.id!==s.id?sy:{...sy,rarities:sy.rarities.map(r=>({...r,pullRate:(rates[r.id]??r.pullRate)}))});
-    this.commit({systems,modal:null}); this.toast(this.t('tPullRatesSaved'));
+    this.commit({systems,modal:null});
+    // pull rate targets are a personal Collector-side annotation, not part of the published
+    // database - save them separately so they survive a refresh even though `systems` itself
+    // gets re-fetched fresh from Component.DATA_FILE on every load (see applyLoadedData)
+    const local=this.readLocalState()||{};
+    this.writeLocalState({pullRates:{...(local.pullRates||{}), [s.id]:rates}});
+    this.toast(this.t('tPullRatesSaved'));
   }
   // ---------- expansion-level import / export ----------
   exportExpansion(){
@@ -1136,19 +1086,29 @@ class Component extends DCLogic {
     r.readAsText(file);
   }
   downloadImageScript(){
-    const s=this.sys(); const eid=this.state.builderTab;
+    const s=this.sys(); const eid=this.state.collectorExpansionId;
     const exp=s.expansions.find(e=>e.id===eid); if(!exp) return;
-    const lines=["import urllib.request, os, json","from pathlib import Path","",
-      "# Load the expansion JSON exported from Grimoire",""];
+    const lines=["import re, urllib.request, urllib.parse","from pathlib import Path","",
+      "# Card data exported from Grimoire for this expansion",""];
     lines.push("CARDS = " + JSON.stringify(exp.cards, null, 2));
     lines.push("");
-    lines.push("out = Path('images-' + (CARDS[0]&&CARDS[0]['number']||'exp').split('-')[0].lower())");
-    lines.push("out.mkdir(exist_ok=True)");
-    lines.push("headers = {'User-Agent':'Mozilla/5.0','Referer':'http://nivelarena.co.kr/'}");
+    lines.push("# Keeps each image's ORIGINAL source filename, only stripping known export-tool");
+    lines.push("# junk tags (e.g. '77_copy_138_', '98_copy2_179_', '_edit') - same cleanup Grimoire");
+    lines.push("# applies itself when it builds the Image Host URL for a card, so the filenames match.");
+    lines.push("def clean_filename(url):");
+    lines.push("    fn = urllib.parse.unquote(url.split('/')[-1].split('?')[0].split('#')[0])");
+    lines.push("    fn = re.sub(r'\\d+_copy\\d*_\\d+_', '', fn, flags=re.IGNORECASE)");
+    lines.push("    fn = re.sub(r'_edit', '', fn, flags=re.IGNORECASE)");
+    lines.push("    return fn");
+    lines.push("");
+    lines.push("out = Path('images') / " + JSON.stringify((exp.abbreviation||'exp')));
+    lines.push("out.mkdir(parents=True, exist_ok=True)");
     lines.push("for c in CARDS:");
     lines.push("    url = c.get('image','')");
     lines.push("    if not url: continue");
-    lines.push("    fn = out / (c['number'] + '-' + c['rarityId'].replace('nv-','').upper() + '.jpg')");
+    lines.push("    fn = out / clean_filename(url)");
+    lines.push("    origin = '%s://%s' % (urllib.parse.urlsplit(url).scheme, urllib.parse.urlsplit(url).netloc)");
+    lines.push("    headers = {'User-Agent':'Mozilla/5.0', 'Referer': origin + '/'}");
     lines.push("    try:");
     lines.push("        req = urllib.request.Request(url, headers=headers)");
     lines.push("        with urllib.request.urlopen(req, timeout=30) as resp:");
@@ -1157,6 +1117,9 @@ class Component extends DCLogic {
     lines.push("    except Exception as e:");
     lines.push("        print('FAIL', fn.name, e)");
     lines.push("print('Done. Images saved to', out.resolve())");
+    lines.push("print('Upload this folder to your GitHub Pages repo, then set this expansion\\'s");
+    lines.push("       Image Host URL (in the expansion editor) to wherever it ends up - e.g.");
+    lines.push("       https://username.github.io/repo/images/" + (exp.abbreviation||'exp') + "')");
     const blob=new Blob([lines.join("\n")],{type:'text/x-python'});
     const url=URL.createObjectURL(blob); const a=document.createElement('a');
     a.href=url; a.download=(exp.abbreviation||'expansion')+'-download-images.py'; a.click(); setTimeout(()=>URL.revokeObjectURL(url),1000);
@@ -1170,12 +1133,12 @@ class Component extends DCLogic {
   // reprints from OTHER sets (promos/specials) - once the user drags to reorder in the Builder,
   // every card in the expansion gets an explicit sortIndex stamped, which then becomes the
   // source of truth everywhere this expansion's cards are displayed.
-  sortExpansionCards(exp){
+  sortExpansionCards(exp,sys){
     if(exp.cards.some(c=>c.sortIndex!=null)){
       return [...exp.cards].sort((a,b)=>(a.sortIndex??Number.MAX_SAFE_INTEGER)-(b.sortIndex??Number.MAX_SAFE_INTEGER));
     }
     const bnum=(c,i)=>{ const m=(c.number||'').match(/[A-Z]+\d+-(\d+)/i); return m?parseInt(m[1],10):(i+1); };
-    const bpar=(c)=>Component.isParallelRarity(c.rarityId)||/·P/i.test(c.number||'');
+    const bpar=(c)=>Component.isParallelRarity(c.rarityId,sys);
     const bpidx=(c)=>{ const m=(c.id||'').match(/-p(\d+)$/i)||(c.number||'').match(/·P(\d+)/i); return m?parseInt(m[1],10):(bpar(c)?1:0); };
     const bcards=exp.cards.map((c,i)=>({c,i}));
     bcards.sort((a,b)=>{ const na=bnum(a.c,a.i),nb=bnum(b.c,b.i); if(na!==nb)return na-nb;
@@ -1186,7 +1149,7 @@ class Component extends DCLogic {
   reorderCard(draggedId,targetId){
     const s=this.sys(); const eid=this.state.builderTab; if(!s) return;
     const exp=s.expansions.find(e=>e.id===eid); if(!exp) return;
-    const order=this.sortExpansionCards(exp);
+    const order=this.sortExpansionCards(exp,s);
     const from=order.findIndex(c=>c.id===draggedId), to=order.findIndex(c=>c.id===targetId);
     if(from<0||to<0||from===to) return;
     const arr=[...order]; const [moved]=arr.splice(from,1); arr.splice(to,0,moved);
@@ -1305,20 +1268,21 @@ class Component extends DCLogic {
   setGlobalCondition(cond){ this.setState({globalCondition:cond}, ()=>this.postState({condition:cond})); }
 
   // ---------- import / export ----------
+  // Progress only (your personal collection tracking) - the systems database itself now comes
+  // from the published Component.DATA_FILE (see loadServerState below), never from here.
   doExport(){
-    const payload={version:1,exportedAt:new Date().toISOString(),systems:this.state.systems,collector:this.state.collector};
+    const payload={version:1,exportedAt:new Date().toISOString(),collector:this.state.collector};
     const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
     const url=URL.createObjectURL(blob); const a=document.createElement('a');
-    a.href=url; a.download='grimoire-export.json'; a.click(); setTimeout(()=>URL.revokeObjectURL(url),1000);
+    a.href=url; a.download='grimoire-progress.json'; a.click(); setTimeout(()=>URL.revokeObjectURL(url),1000);
     this.toast(this.t('tExported'));
   }
   triggerImport(){ const el=document.getElementById('avImport'); if(el){ el.value=''; el.click(); } }
   doImport(e){
     const file=e.target.files&&e.target.files[0]; if(!file) return;
     const r=new FileReader();
-    r.onload=()=>{ try{ const d=JSON.parse(r.result); if(!d.systems) throw 0;
-        const first=d.systems[0]?d.systems[0].id:null;
-        this.commit({systems:d.systems,collector:d.collector||{},selectedSystemId:first,collectorSystemId:first,builderTab:'system',collectorExpansionId:this.firstExpId(d.systems,first)});
+    r.onload=()=>{ try{ const d=JSON.parse(r.result); if(!d.collector) throw 0;
+        this.commit({collector:d.collector});
         this.toast(this.t('tImported'));
       }catch(err){ this.toast(this.t('tInvalid'),'error'); } };
     r.readAsText(file);
@@ -1460,8 +1424,8 @@ class Component extends DCLogic {
         v.newCard=()=>this.openCardModal(false);
         v.builderNoCards=exp.cards.length===0;
         v.builderManualOrder=exp.cards.some(c=>c.sortIndex!=null);
-        const bpar=(c)=>Component.isParallelRarity(c.rarityId)||/·P/i.test(c.number||'');
-        const orderedCards=this.sortExpansionCards(exp);
+        const bpar=(c)=>Component.isParallelRarity(c.rarityId,sys);
+        const orderedCards=this.sortExpansionCards(exp,sys);
         const dragId=S.builderDragId;
         v.builderCards=orderedCards.map((c,i)=>{ const rr=this.rarityById(sys,c.rarityId); const ti=this.typeInfo(c.type); const par=bpar(c);
           const statChips=this.layoutOf(sys).filter(fld=>fld.showOnTile&&fld.type!=='longtext'&&fld.type!=='type'&&fld.type!=='element').slice(0,4).map(fld=>({key:fld.id,icon:fld.icon,color:fld.color,value:this.cardStatVal(c,fld)}));
@@ -1645,10 +1609,10 @@ class Component extends DCLogic {
             fromCardsLabel:this.fmt(this.t('fromCardsTracked'),totalPulled)+(cardRemainder?` · ${this.fmt(this.t('extraCards'),cardRemainder)}`:'')
           };
           const baseKey=(c)=>{ const m=(c.number||'').match(/[A-Z]+\d+-\d+/i); return m?m[0]:(c.number||c.id); };
-          const isPar=(c)=>Component.isParallelRarity(c.rarityId) || /·P/i.test(c.number||'');
+          const isPar=(c)=>Component.isParallelRarity(c.rarityId,cs);
           // same order the Builder shows - numeric by default, or the manually dragged order once
           // the user has set one there (stamped as sortIndex on every card in the expansion)
-          const sortedCards=this.sortExpansionCards(cexp);
+          const sortedCards=this.sortExpansionCards(cexp,cs);
           // rarity filter dropdown (only rarities actually present in this expansion) - counts
           // reflect whichever ownership pip (All/Have/Need/Dupes) is currently selected, so picking
           // "Need" shows how many of each rarity you're still missing, not the expansion's raw total.
@@ -1860,7 +1824,7 @@ class Component extends DCLogic {
             R('div',{style:{flex:1}},field(this.t('lCardsPerBooster'),textInput('cardsPerBooster','6','number'))),
             R('div',{style:{flex:1}},field(this.t('lBoostersPerBox'),textInput('boostersPerBox','24','number')))
           ),
-          field(this.t('lImageBaseUrl'),textInput('imageBaseUrl','https://username.github.io/repo/images/BT08')),
+          field(this.t('lImageBaseUrl'),textInput('imageBaseUrl','https://username.github.io/repo/images/SET01')),
           R('div',{style:{fontSize:'11px',color:'var(--ink3)',marginTop:'-10px',marginBottom:'16px'}}, this.t('imageBaseUrlHint')),
           footer(m.edit?this.t('saveChanges'):this.t('createExpansion'),()=>this.saveExpansion())
         );
@@ -1885,7 +1849,7 @@ class Component extends DCLogic {
         v.modalBody=R('div',null,
           R('div',{style:{display:'flex',gap:'14px'}},
             R('div',{style:{flex:1}},field(this.t('lCardName'),textInput('name','e.g. Phoenix Ascendant'))),
-            R('div',{style:{flex:'0 0 150px'}},field(this.t('lCardNumber'),textInput('number','e.g. BT07-047')))
+            R('div',{style:{flex:'0 0 150px'}},field(this.t('lCardNumber'),textInput('number','e.g. SET01-047')))
           ),
           R('div',{style:{display:'flex',gap:'14px'}},
             R('div',{style:{flex:1}},field(this.t('lType'),R('select',{'data-field':'type',value:f.type,onChange:(e)=>this.onField(e),style:selStyle},Component.TYPES.map(t=>R('option',{key:t.value,value:t.value},this.typeLabel(t.value)))))),
