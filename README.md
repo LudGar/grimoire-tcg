@@ -1,18 +1,7 @@
-# Grimoire — TCG Builder & Collector
+# Grimoire — TCG Collector
 
-A single-page web app for building custom Trading Card Game (TCG) systems and tracking your physical card collection. 
+A single-page web app for tracking your Trading Card Game (TCG) physical card collection. 
 Designed for collectors who want full control over their game definitions, expansion checklists, and pull-rate analytics.
-
----
-
-## What it does
-
-**Grimoire** has two core modes:
-
-| Mode | Purpose |
-|------|---------|
-| **Builder** | Define a TCG system — rarities, card layouts, expansions, and individual cards. Only Accessable, locally by me, and not in this repo. To edit the Featured Systems.|
-| **Collector** | Track what you own across every expansion, with visual checklists, binder views, and pull-rate statistics. |
 
 ---
 
