@@ -1,534 +1,647 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Grimoire — Collector</title>
-<script src="./support.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Grimoire — Collector</title>
+    <script src="./support.js"></script>
 </head>
+
 <body>
-<x-dc>
-<helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Libre+Caslon+Text:wght@400;700&family=Cormorant+SC:wght@500;600;700&family=EB+Garamond:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  :root{--bg:#0c0c0c;--panel:#111111;--inset:#131313;--row:#161616;--raise:#1c1c1c;--line:#242424;--line2:#363636;--ink:#ece8e2;--ink2:#8f8b84;--ink3:#6e6a64;--accent:#8e3b3b;--on-accent:#f2e7e2;--accent-ink:#c67f7f;--danger:#e0714f;--ok:#4caf7d;--display:'Space Grotesk',sans-serif;--sans:'Space Mono',monospace;--mono:'IBM Plex Mono',monospace}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:100vh}
-  ::-webkit-scrollbar{width:6px;height:6px}
-  ::-webkit-scrollbar-track{background:var(--bg)}
-  ::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
-  @keyframes ambPulse{0%{opacity:1}50%{opacity:.5}100%{opacity:1}}
-  @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-  @keyframes pop{0%{transform:scale(.96);opacity:0}100%{transform:scale(1);opacity:1}}
-  input,select,textarea,button{font-family:inherit}
-  input:focus,select:focus,textarea:focus{outline:none}
-  .tile-overlay{opacity:0;transition:opacity .18s ease}
-  .tile-card:hover .tile-overlay{opacity:1}
-</style>
-</helmet>
+    <x-dc>
+        <helmet>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Libre+Caslon+Text:wght@400;700&family=Cormorant+SC:wght@500;600;700&family=EB+Garamond:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+            <style>
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box
+                }
 
-<div style="position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 600px 400px at 15% 15%,color-mix(in srgb,var(--accent-ink) 4%,transparent) 0%,transparent 70%),radial-gradient(ellipse 500px 500px at 85% 75%,color-mix(in srgb,var(--accent-ink) 3%,transparent) 0%,transparent 70%),radial-gradient(ellipse 400px 300px at 50% 95%,color-mix(in srgb,var(--accent-ink) 2%,transparent) 0%,transparent 70%);animation:ambPulse 18s ease-in-out infinite alternate"></div>
+                :root {
+                    --bg: #0c0c0c;
+                    --panel: #111111;
+                    --inset: #131313;
+                    --row: #161616;
+                    --raise: #1c1c1c;
+                    --line: #242424;
+                    --line2: #363636;
+                    --ink: #ece8e2;
+                    --ink2: #8f8b84;
+                    --ink3: #6e6a64;
+                    --accent: #8e3b3b;
+                    --on-accent: #f2e7e2;
+                    --accent-ink: #c67f7f;
+                    --danger: #e0714f;
+                    --ok: #4caf7d;
+                    --display: 'Space Grotesk', sans-serif;
+                    --sans: 'Space Mono', monospace;
+                    --mono: 'IBM Plex Mono', monospace
+                }
 
-<div style="position:relative;z-index:1;min-height:100vh">
-  <!-- HEADER -->
-  <header style="position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)">
-    <div style="max-width:1600px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
-      <div style="display:flex;align-items:center;gap:12px;margin-right:auto">
-        <div style="width:40px;height:40px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px color-mix(in srgb,var(--accent) 28%,transparent)">
-          <i class="fa-solid fa-book" style="color:var(--on-accent);font-size:18px"></i>
-        </div>
-        <div>
-          <div style="font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:.02em;line-height:1">Grimoire</div>
-          <div style="font-family:var(--mono);font-size:10px;color:var(--ink3);letter-spacing:.2em;text-transform:uppercase;margin-top:3px">{{ L.tagline }}</div>
-        </div>
-      </div>
+                html {
+                    scroll-behavior: smooth
+                }
 
-      <div style="display:flex;gap:2px;background:var(--inset);border-radius:10px;padding:3px;border:1px solid var(--line)">
-        <button style="{{ collectorTabStyle }}"><i class="fa-solid fa-layer-group" style="margin-right:7px;font-size:11px"></i>{{ L.collector }}</button>
-      </div>
+                body {
+                    font-family: var(--sans);
+                    background: var(--bg);
+                    color: var(--ink);
+                    min-height: 100vh
+                }
 
-      <div style="display:flex;align-items:center;gap:7px;background:var(--inset);border:1px solid var(--line);border-radius:8px;padding:0 10px;height:38px" title="Theme">
-        <sc-for list="{{ themeOptions }}" as="th" hint-placeholder-count="3">
-          <button onClick="{{ th.onClick }}" title="{{ th.name }}" style="{{ th.style }}"></button>
-        </sc-for>
-      </div>
+                ::-webkit-scrollbar {
+                    width: 6px;
+                    height: 6px
+                }
 
-      <sc-if value="{{ isCollector }}" hint-placeholder-val="{{ false }}">
-        <select value="{{ collectorSystemId }}" onChange="{{ onSelectCollectorSystem }}" title="{{ L.collecting }}" style="background:var(--inset);border:1px solid var(--line);border-radius:8px;padding:0 10px;height:38px;color:var(--ink);font-size:13px;cursor:pointer;min-width:150px">
-          <sc-for list="{{ systemOptions }}" as="o" hint-placeholder-count="2"><option value="{{ o.id }}">{{ o.name }}</option></sc-for>
-        </select>
-        <select value="{{ globalCondition }}" onChange="{{ onSelectCondition }}" title="{{ L.condition }}" style="background:var(--inset);border:1px solid var(--line);border-radius:8px;padding:0 10px;height:38px;color:var(--ink);font-size:13px;cursor:pointer">
-          <sc-for list="{{ conditionOptions }}" as="c" hint-placeholder-count="4"><option value="{{ c }}">{{ c }}</option></sc-for>
-        </select>
-      </sc-if>
+                ::-webkit-scrollbar-track {
+                    background: var(--bg)
+                }
 
-      <div style="display:flex;align-items:center;gap:10px">
-        <div style="display:flex;align-items:center;gap:2px;background:var(--inset);border:1px solid var(--line);border-radius:8px;padding:3px" title="Language">
-          <sc-for list="{{ langOptions }}" as="lg" hint-placeholder-count="3">
-            <button onClick="{{ lg.onClick }}" style="{{ lg.style }}">{{ lg.label }}</button>
-          </sc-for>
-        </div>
+                ::-webkit-scrollbar-thumb {
+                    background: var(--line);
+                    border-radius: 3px
+                }
 
-        <div style="display:flex;gap:8px">
-          <button onClick="{{ doExport }}" title="{{ L.exportProgressTitle }}" style="background:transparent;color:var(--ink2);border:1px solid var(--line);width:38px;height:38px;border-radius:8px;cursor:pointer;transition:all .2s" style-hover="border-color:var(--accent-ink);color:var(--accent-ink)"><i class="fa-solid fa-download"></i></button>
-          <button onClick="{{ triggerImport }}" title="{{ L.importProgressTitle }}" style="background:transparent;color:var(--ink2);border:1px solid var(--line);width:38px;height:38px;border-radius:8px;cursor:pointer;transition:all .2s" style-hover="border-color:var(--accent-ink);color:var(--accent-ink)"><i class="fa-solid fa-upload"></i></button>
-          <input id="avImport" type="file" accept="application/json,.json" onChange="{{ doImport }}" style="display:none">
-        </div>
-      </div>
-    </div>
-  </header>
+                @keyframes ambPulse {
+                    0% {
+                        opacity: 1
+                    }
 
-  <main style="max-width:100%;margin:0;padding:28px 16px 170px">
+                    50% {
+                        opacity: .5
+                    }
 
-    <!-- ================= COLLECTOR MODE ================= -->
-    <sc-if value="{{ isCollector }}" hint-placeholder-val="{{ false }}">
-    <div style="animation:fadeUp .4s ease">
-      <sc-if value="{{ noSystems }}" hint-placeholder-val="{{ false }}">
-        <div style="text-align:center;padding:90px 20px;border:1px dashed var(--line);border-radius:16px;background:var(--panel)">
-          <div style="width:64px;height:64px;border-radius:16px;background:var(--row);display:flex;align-items:center;justify-content:center;margin:0 auto 20px"><i class="fa-solid fa-box-open" style="color:var(--accent-ink);font-size:26px"></i></div>
-          <div style="font-family:var(--display);font-size:22px;font-weight:600;margin-bottom:8px">{{ L.nothingTitle }}</div>
-          <div style="color:var(--ink3);font-size:14px;max-width:400px;margin:0 auto">{{ L.nothingDesc }}</div>
-        </div>
-      </sc-if>
+                    100% {
+                        opacity: 1
+                    }
+                }
 
-      <sc-if value="{{ hasSystems }}" hint-placeholder-val="{{ true }}">
-        <!-- expansion sidebar with progress -->
-        <div style="display:flex;gap:22px;align-items:flex-start">
-        <aside style="width:238px;flex-shrink:0;position:sticky;top:82px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px;max-height:calc(100vh - 106px);overflow-y:auto">
-          <button onClick="{{ goHome }}" style="{{ homeTabStyle }}"><i class="fa-solid fa-house" style="margin-right:8px;width:14px;text-align:center"></i>{{ L.homeTab }}</button>
-          <div style="height:8px"></div>
-          <sc-for list="{{ collectorGroups }}" as="g" hint-placeholder-count="2">
-            <sc-if value="{{ g.hasLabel }}" hint-placeholder-val="{{ false }}">
-              <div style="display:flex;align-items:center;gap:2px;margin-top:6px">
-                <button onClick="{{ g.onToggle }}" style="{{ g.headerStyle }};flex:1;display:flex;align-items:center;gap:6px;background:transparent;border:none;cursor:pointer;padding:8px 6px 4px;text-align:left"><i class="{{ g.chevronIcon }}" style="font-size:8px;width:9px;flex-shrink:0"></i>{{ g.label }}</button>
-              </div>
-            </sc-if>
-            <sc-if value="{{ g.expanded }}" hint-placeholder-val="{{ true }}">
-              <sc-for list="{{ g.tabs }}" as="e" hint-placeholder-count="4">
-                <button onClick="{{ e.onClick }}" style="{{ e.style }}" title="{{ e.ip }}">
-                  <div style="display:flex;align-items:flex-start;gap:8px;width:100%">
-                    <span style="width:7px;height:7px;border-radius:50%;background:{{ e.ipColor }};flex-shrink:0;margin-top:5px"></span>
-                    <span style="font-family:var(--mono);font-size:10px;font-weight:700;color:var(--accent-ink);flex-shrink:0;width:36px;padding-top:1px">{{ e.abbr }}</span>
-                    <span style="flex:1;min-width:0;white-space:normal;word-break:break-word;line-height:1.35">{{ e.name }}</span>
-                    <span style="font-size:10px;opacity:.6;flex-shrink:0;padding-top:1px">{{ e.owned }}/{{ e.total }}</span>
-                  </div>
-                </button>
-              </sc-for>
-            </sc-if>
-          </sc-for>
-        </aside>
-        <div style="flex:1;min-width:0">
+                @keyframes fadeUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(10px)
+                    }
 
-        <!-- home page -->
-        <sc-if value="{{ collectorShowHome }}" hint-placeholder-val="{{ false }}">
-          <div style="margin-bottom:16px">
-            <div style="font-family:var(--display);font-size:20px;font-weight:600;margin-bottom:4px">{{ homeSystemName }}</div>
-            <div style="color:var(--ink3);font-size:13px">{{ homeOwnedCount }} / {{ homeTotalCount }} ({{ homeOverallPct }}%) {{ L.totalCollected }}</div>
-          </div>
-          <sc-if value="{{ showHomeSectionPills }}" hint-placeholder-val="{{ false }}">
-            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px">
-              <sc-for list="{{ homeSectionPills }}" as="p" hint-placeholder-count="3">
-                <button onClick="{{ p.onClick }}" style="{{ p.style }}">{{ p.name }}</button>
-              </sc-for>
-            </div>
-          </sc-if>
-          <sc-if value="{{ homeNoSectionsSelected }}" hint-placeholder-val="{{ false }}">
-            <div style="text-align:center;padding:70px 20px;border:1px dashed var(--line);border-radius:16px;background:var(--panel)">
-              <div style="color:var(--ink3);font-size:13px">{{ L.homeNoSectionsMsg }}</div>
-            </div>
-          </sc-if>
-          <sc-if value="{{ homeEmptyMsg }}" hint-placeholder-val="{{ false }}">
-            <div style="text-align:center;padding:70px 20px;border:1px dashed var(--line);border-radius:16px;background:var(--panel)">
-              <div style="width:56px;height:56px;border-radius:14px;background:var(--row);display:flex;align-items:center;justify-content:center;margin:0 auto 18px"><i class="fa-solid fa-star" style="color:var(--accent-ink);font-size:22px"></i></div>
-              <div style="font-family:var(--display);font-size:18px;font-weight:600;margin-bottom:6px">{{ L.homeEmptyTitle }}</div>
-              <div style="color:var(--ink3);font-size:13px;max-width:360px;margin:0 auto">{{ L.homeEmptyDesc }}</div>
-            </div>
-          </sc-if>
-          <sc-if value="{{ hasRecentlyAdded }}" hint-placeholder-val="{{ false }}">
-            <div style="margin-bottom:26px">
-              <div style="font-family:var(--display);font-size:14px;font-weight:600;margin-bottom:12px"><i class="fa-solid fa-clock-rotate-left" style="margin-right:8px;color:var(--accent-ink)"></i>{{ L.recentlyAddedTitle }}</div>
-              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:14px">
-                <sc-for list="{{ recentlyAdded }}" as="t" hint-placeholder-count="5">
-                  <div onClick="{{ t.onOpen }}" style="cursor:pointer">
-                    <div style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};overflow:hidden;transition:border-color .18s,box-shadow .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4)">
-                      {{ t.art }}
-                      <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 8px 8px;background:linear-gradient(180deg,transparent,rgba(8,6,10,.92) 60%)">
-                        <div style="font-weight:600;font-size:11px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.name }}</div>
-                        <div style="display:flex;align-items:center;gap:4px;margin-top:3px"><span style="width:6px;height:6px;border-radius:50%;background:{{ t.rarityColor }}"></span><span style="font-size:9px;color:rgba(255,255,255,.7)">{{ t.rarityName }}</span></div>
-                      </div>
+                    to {
+                        opacity: 1;
+                        transform: none
+                    }
+                }
+
+                @keyframes pop {
+                    0% {
+                        transform: scale(.96);
+                        opacity: 0
+                    }
+
+                    100% {
+                        transform: scale(1);
+                        opacity: 1
+                    }
+                }
+
+                input,
+                select,
+                textarea,
+                button {
+                    font-family: inherit
+                }
+
+                input:focus,
+                select:focus,
+                textarea:focus {
+                    outline: none
+                }
+
+                .tile-overlay {
+                    opacity: 0;
+                    transition: opacity .18s ease
+                }
+
+                .tile-card:hover .tile-overlay {
+                    opacity: 1
+                }
+            </style>
+        </helmet>
+
+        <div style="position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 600px 400px at 15% 15%,color-mix(in srgb,var(--accent-ink) 4%,transparent) 0%,transparent 70%),radial-gradient(ellipse 500px 500px at 85% 75%,color-mix(in srgb,var(--accent-ink) 3%,transparent) 0%,transparent 70%),radial-gradient(ellipse 400px 300px at 50% 95%,color-mix(in srgb,var(--accent-ink) 2%,transparent) 0%,transparent 70%);animation:ambPulse 18s ease-in-out infinite alternate"></div>
+
+        <div style="position:relative;z-index:1;min-height:100vh">
+            <!-- HEADER -->
+            <header style="position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)">
+                <div style="max-width:1600px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+                    <div style="display:flex;align-items:center;gap:12px;margin-right:auto">
+                        <div style="width:40px;height:40px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px color-mix(in srgb,var(--accent) 28%,transparent)">
+                            <i class="fa-solid fa-book" style="color:var(--on-accent);font-size:18px"></i>
+                        </div>
+                        <div>
+                            <div style="font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:.02em;line-height:1">Grimoire</div>
+                            <div style="font-family:var(--mono);font-size:10px;color:var(--ink3);letter-spacing:.2em;text-transform:uppercase;margin-top:3px">{{ L.tagline }}</div>
+                        </div>
                     </div>
-                    <div style="font-size:10px;color:var(--ink3);margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.expName }}</div>
-                  </div>
-                </sc-for>
-              </div>
-            </div>
-          </sc-if>
-          <sc-if value="{{ hasRarestOwned }}" hint-placeholder-val="{{ false }}">
-            <div>
-              <div style="font-family:var(--display);font-size:14px;font-weight:600;margin-bottom:12px"><i class="fa-solid fa-gem" style="margin-right:8px;color:var(--accent-ink)"></i>{{ L.rarestOwnedTitle }}</div>
-              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:14px">
-                <sc-for list="{{ rarestOwned }}" as="t" hint-placeholder-count="5">
-                  <div onClick="{{ t.onOpen }}" style="cursor:pointer">
-                    <div style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};overflow:hidden;transition:border-color .18s,box-shadow .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4)">
-                      {{ t.art }}
-                      <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 8px 8px;background:linear-gradient(180deg,transparent,rgba(8,6,10,.92) 60%)">
-                        <div style="font-weight:600;font-size:11px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.name }}</div>
-                        <div style="display:flex;align-items:center;gap:4px;margin-top:3px"><span style="width:6px;height:6px;border-radius:50%;background:{{ t.rarityColor }}"></span><span style="font-size:9px;color:rgba(255,255,255,.7)">{{ t.rarityName }}</span></div>
-                      </div>
-                    </div>
-                    <div style="font-size:10px;color:var(--ink3);margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.expName }}</div>
-                  </div>
-                </sc-for>
-              </div>
-            </div>
-          </sc-if>
-        </sc-if>
 
-        <!-- checklist grid -->
-        <sc-if value="{{ collectorHasExp }}" hint-placeholder-val="{{ true }}">
-          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px">
-            <span style="font-family:var(--display);font-size:15px;font-weight:600;color:var(--accent-ink)">{{ collectorExpName }}</span>
-            <sc-if value="{{ collectorExpHasIP }}" hint-placeholder-val="{{ true }}">
-              <span style="font-size:10px;font-weight:700;letter-spacing:.05em;color:{{ collectorExpIPColor }};background:color-mix(in srgb,{{ collectorExpIPColor }} 16%,transparent);padding:3px 9px;border-radius:5px;margin-right:4px">{{ collectorExpIP }}</span>
-            </sc-if>
-            <select value="{{ rarityFilterValue }}" onChange="{{ onRarityFilterChange }}" style="background:var(--inset);border:1px solid var(--line);border-radius:8px;padding:0 10px;height:34px;color:var(--ink);font-size:12.5px;font-weight:600;cursor:pointer">
-              <sc-for list="{{ rarityFilterOptions }}" as="f" hint-placeholder-count="6">
-                <option value="{{ f.id }}">{{ f.label }}</option>
-              </sc-for>
-            </select>
-            <sc-for list="{{ ownFilters }}" as="f" hint-placeholder-count="4">
-              <button onClick="{{ f.onClick }}" style="{{ f.style }}">{{ f.name }}<span style="opacity:.6;margin-left:6px">{{ f.count }}</span></button>
-            </sc-for>
-            <div style="margin-left:auto;display:flex;align-items:center;gap:8px" title="{{ L.cardSize }}">
-              <i class="fa-solid fa-up-right-and-down-left-from-center" style="font-size:11px;color:var(--ink2);opacity:.7"></i>
-              <input type="range" min="0" max="100" step="10" list="cardSizeTicks" value="{{ cardSizeValue }}" onChange="{{ onCardSizeChange }}" style="width:110px;accent-color:var(--accent);cursor:pointer">
-              <datalist id="cardSizeTicks">
-                <option value="0"></option><option value="10"></option><option value="20"></option><option value="30"></option><option value="40"></option><option value="50"></option><option value="60"></option><option value="70"></option><option value="80"></option><option value="90"></option><option value="100"></option>
-              </datalist>
-              <span style="font-size:12px;color:var(--ink3);font-weight:600;min-width:44px">{{ cardSizeLabel }}</span>
-            </div>
-            <sc-if value="{{ isBinder }}" hint-placeholder-val="{{ false }}">
-              <div style="display:flex;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:3px">
-                <sc-for list="{{ pocketOptions }}" as="p" hint-placeholder-count="4">
-                  <button onClick="{{ p.onClick }}" style="{{ p.style }}">{{ p.label }}</button>
-                </sc-for>
-              </div>
-            </sc-if>
-            <sc-if value="{{ isBinder }}" hint-placeholder-val="{{ false }}">
-              <button onClick="{{ toggleCoverView }}" title="{{ L.viewCover }}" style="{{ coverToggleStyle }}"><i class="fa-solid fa-bookmark"></i></button>
-            </sc-if>
-            <div style="display:flex;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:3px">
-              <button onClick="{{ setGridView }}" title="Grid view" style="{{ gridViewBtnStyle }}"><i class="fa-solid fa-table-cells-large"></i></button>
-              <button onClick="{{ setBinderView }}" title="Binder view" style="{{ binderViewBtnStyle }}"><i class="fa-solid fa-book-open"></i></button>
-            </div>
-          </div>
-          <sc-if value="{{ isBinder }}" hint-placeholder-val="{{ false }}">
-            <sc-if value="{{ showStackToggle }}" hint-placeholder-val="{{ true }}">
-              <div style="display:flex;align-items:center;justify-content:flex-end;gap:9px;margin-bottom:16px">
-                <span style="font-size:12px;color:var(--ink2);font-weight:600">{{ L.stackVariants }}</span>
-                <div onClick="{{ toggleStackVariants }}" style="{{ stackToggleTrackStyle }}">
-                  <div style="{{ stackToggleKnobStyle }}"></div>
-                </div>
-              </div>
-            </sc-if>
-          </sc-if>
-          <sc-if value="{{ isGridMode }}" hint-placeholder-val="{{ true }}">
-            <div style="{{ pagePanelStyle }}">
-              <div style="display:grid;grid-template-columns:{{ gridCols }};gap:{{ gridGap }};align-items:start">
-                <sc-for list="{{ gridTiles }}" as="t" hint-placeholder-count="10">
-                  <sc-if value="{{ t.empty }}" hint-placeholder-val="{{ false }}">
-                    <div style="position:relative;aspect-ratio:5/7;border-radius:14px;border:1.5px dashed var(--line2);background:var(--inset);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:.5">
-                      <span style="font-size:10px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em">Slot</span>
-                      <span style="font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink3)">#{{ t.slotNum }}</span>
+                    <div style="display:flex;gap:2px;background:var(--inset);border-radius:10px;padding:3px;border:1px solid var(--line)">
+                        <button style="{{ collectorTabStyle }}"><i class="fa-solid fa-layer-group" style="margin-right:7px;font-size:11px"></i>{{ L.collector }}</button>
                     </div>
-                  </sc-if>
-                  <sc-if value="{{ t.real }}" hint-placeholder-val="{{ true }}">
-                    <div class="tile-card" style="display:flex;flex-direction:column;transition:transform .18s" style-hover="transform:translateY(-3px)">
-                      <div onClick="{{ t.onOpen }}" style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};opacity:{{ t.artOpacity }};display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;transition:border-color .18s,box-shadow .18s,opacity .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4);opacity:1">
-                        {{ t.art }}
-                        <sc-if value="{{ showTicks }}" hint-placeholder-val="{{ true }}">
-                          <div style="position:absolute;left:0;right:0;top:8px;display:flex;justify-content:center;gap:4px">
-                            <sc-for list="{{ t.variants }}" as="v" hint-placeholder-count="1">
-                              <div style="position:relative">
-                                <sc-if value="{{ v.showTip }}" hint-placeholder-val="{{ false }}">
-                                  <div style="position:absolute;top:32px;right:0;white-space:nowrap;display:flex;align-items:center;gap:6px;background:var(--row);border:1px solid {{ v.rarityColor }};color:var(--ink);font-size:11px;font-weight:600;padding:5px 10px;border-radius:7px;box-shadow:0 8px 20px rgba(0,0,0,.5);z-index:5;pointer-events:none">
-                                    <span style="width:8px;height:8px;border-radius:50%;background:{{ v.rarityColor }};flex-shrink:0"></span>{{ v.rarityName }}
-                                  </div>
-                                </sc-if>
-                                <div onClick="{{ v.onToggle }}" onMouseEnter="{{ v.onHoverStart }}" onMouseLeave="{{ v.onHoverEnd }}" style="{{ v.tickStyle }}"><i class="fa-solid fa-check" style="font-size:9px"></i></div>
-                              </div>
+
+                    <div style="display:flex;align-items:center;gap:7px;background:var(--inset);border:1px solid var(--line);border-radius:8px;padding:0 10px;height:38px" title="Theme">
+                        <sc-for list="{{ themeOptions }}" as="th" hint-placeholder-count="3">
+                            <button onClick="{{ th.onClick }}" title="{{ th.name }}" style="{{ th.style }}"></button>
+                        </sc-for>
+                    </div>
+
+                    <sc-if value="{{ isCollector }}" hint-placeholder-val="{{ false }}">
+                        <select value="{{ collectorSystemId }}" onChange="{{ onSelectCollectorSystem }}" title="{{ L.collecting }}" style="background:var(--inset);border:1px solid var(--line);border-radius:8px;padding:0 10px;height:38px;color:var(--ink);font-size:13px;cursor:pointer;min-width:150px">
+                            <sc-for list="{{ systemOptions }}" as="o" hint-placeholder-count="2">
+                                <option value="{{ o.id }}">{{ o.name }}</option>
                             </sc-for>
-                          </div>
+                        </select>
+                        <select value="{{ globalCondition }}" onChange="{{ onSelectCondition }}" title="{{ L.condition }}" style="background:var(--inset);border:1px solid var(--line);border-radius:8px;padding:0 10px;height:38px;color:var(--ink);font-size:13px;cursor:pointer">
+                            <sc-for list="{{ conditionOptions }}" as="c" hint-placeholder-count="4">
+                                <option value="{{ c }}">{{ c }}</option>
+                            </sc-for>
+                        </select>
+                    </sc-if>
+
+                    <div style="display:flex;align-items:center;gap:10px">
+                        <div style="display:flex;align-items:center;gap:2px;background:var(--inset);border:1px solid var(--line);border-radius:8px;padding:3px" title="Language">
+                            <sc-for list="{{ langOptions }}" as="lg" hint-placeholder-count="3">
+                                <button onClick="{{ lg.onClick }}" style="{{ lg.style }}">{{ lg.label }}</button>
+                            </sc-for>
+                        </div>
+
+                        <div style="display:flex;gap:8px">
+                            <button onClick="{{ doExport }}" title="{{ L.exportProgressTitle }}" style="background:transparent;color:var(--ink2);border:1px solid var(--line);width:38px;height:38px;border-radius:8px;cursor:pointer;transition:all .2s" style-hover="border-color:var(--accent-ink);color:var(--accent-ink)"><i class="fa-solid fa-download"></i></button>
+                            <button onClick="{{ triggerImport }}" title="{{ L.importProgressTitle }}" style="background:transparent;color:var(--ink2);border:1px solid var(--line);width:38px;height:38px;border-radius:8px;cursor:pointer;transition:all .2s" style-hover="border-color:var(--accent-ink);color:var(--accent-ink)"><i class="fa-solid fa-upload"></i></button>
+                            <input id="avImport" type="file" accept="application/json,.json" onChange="{{ doImport }}" style="display:none">
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main style="max-width:100%;margin:0;padding:28px 16px 170px">
+
+                <!-- ================= COLLECTOR MODE ================= -->
+                <sc-if value="{{ isCollector }}" hint-placeholder-val="{{ false }}">
+                    <div style="animation:fadeUp .4s ease">
+                        <sc-if value="{{ noSystems }}" hint-placeholder-val="{{ false }}">
+                            <div style="text-align:center;padding:90px 20px;border:1px dashed var(--line);border-radius:16px;background:var(--panel)">
+                                <div style="width:64px;height:64px;border-radius:16px;background:var(--row);display:flex;align-items:center;justify-content:center;margin:0 auto 20px"><i class="fa-solid fa-box-open" style="color:var(--accent-ink);font-size:26px"></i></div>
+                                <div style="font-family:var(--display);font-size:22px;font-weight:600;margin-bottom:8px">{{ L.nothingTitle }}</div>
+                                <div style="color:var(--ink3);font-size:14px;max-width:400px;margin:0 auto">{{ L.nothingDesc }}</div>
+                            </div>
                         </sc-if>
-                        <div class="tile-overlay" style="position:absolute;left:0;right:0;bottom:0;padding:26px 12px 12px;background:linear-gradient(180deg,transparent,rgba(8,6,10,.92) 60%)">
-                          <div style="font-weight:600;font-size:13px;line-height:1.25;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px">{{ t.name }}</div>
-                          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-                            <span style="font-family:var(--display);font-size:11px;font-weight:700;color:rgba(255,255,255,.75)">{{ t.number }}</span>
-                            <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:{{ t.baseRarityColor }}"></span><span style="font-size:10px;color:rgba(255,255,255,.75)">{{ t.baseRarityName }}</span></span>
-                          </div>
-                          <sc-if value="{{ t.hasTypeChips }}" hint-placeholder-val="{{ false }}">
-                            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:7px">
-                              <sc-for list="{{ t.typeChips }}" as="tc" hint-placeholder-count="2">
-                                <span style="font-size:9px;font-weight:700;padding:3px 8px;border-radius:20px;background:color-mix(in srgb,{{ tc.color }} 18%,transparent);border:1px solid {{ tc.color }};color:var(--ink)">{{ tc.label }}</span>
-                              </sc-for>
-                            </div>
-                          </sc-if>
-                          <sc-if value="{{ t.owned }}" hint-placeholder-val="{{ false }}">
-                            <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.15);font-size:10px;color:var(--accent-ink);font-weight:600"><i class="fa-solid fa-chart-simple" style="margin-right:5px;opacity:.8"></i>{{ t.pullLabel }}</div>
-                          </sc-if>
-                          <sc-if value="{{ t.missing }}" hint-placeholder-val="{{ true }}">
-                            <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.15);font-size:10px;color:rgba(255,255,255,.6);font-weight:500"><i class="fa-solid fa-dice" style="margin-right:5px;opacity:.7"></i>{{ t.theoLabel }}</div>
-                          </sc-if>
-                        </div>
-                      </div>
-                    </div>
-                  </sc-if>
-                </sc-for>
-              </div>
-            </div>
-          </sc-if>
-          <sc-if value="{{ isBinder }}" hint-placeholder-val="{{ false }}">
-            <div style="{{ binderFrameStyle }}">
-              <div style="{{ leftPanelStyle }}">
-                <sc-if value="{{ showCoverPages }}" hint-placeholder-val="{{ false }}">
-                  <div style="width:100%;height:100%;min-height:200px;border-radius:18px 6px 6px 18px;background:{{ coverInsideBg }}"></div>
-                </sc-if>
-                <sc-if value="{{ showDivider }}" hint-placeholder-val="{{ false }}">
-                  <div style="width:100%;height:100%;min-height:200px;border-radius:18px 6px 6px 18px;background:{{ dividerPage.bg }};display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;overflow:hidden">
-                    <div>
-                      <div style="font-family:var(--display);font-weight:700;font-size:26px;color:{{ dividerPage.textColor }};line-height:1.3">{{ dividerPage.title }}</div>
-                      <sc-if value="{{ dividerPage.hasSubtitle }}" hint-placeholder-val="{{ true }}">
-                        <div style="font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin-top:14px;color:{{ dividerPage.textColor }};opacity:.75">{{ dividerPage.subtitle }}</div>
-                      </sc-if>
-                    </div>
-                  </div>
-                </sc-if>
-                <sc-if value="{{ hasLeftPage }}" hint-placeholder-val="{{ false }}">
-                  <div style="display:flex;gap:16px;align-items:stretch">
-                  <div style="display:grid;grid-template-columns:{{ gridCols }};gap:{{ gridGap }};align-items:start;flex:1;min-width:0">
-                    <sc-for list="{{ leftGridTiles }}" as="t" hint-placeholder-count="9">
-                      <sc-if value="{{ t.empty }}" hint-placeholder-val="{{ false }}">
-                        <div style="position:relative;aspect-ratio:5/7;border-radius:14px;border:1.5px dashed var(--line2);background:var(--inset);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:.5">
-                          <span style="font-size:10px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em">Slot</span>
-                          <span style="font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink3)">#{{ t.slotNum }}</span>
-                        </div>
-                      </sc-if>
-                      <sc-if value="{{ t.real }}" hint-placeholder-val="{{ true }}">
-                        <div class="tile-card" style="display:flex;flex-direction:column;transition:transform .18s" style-hover="transform:translateY(-3px)">
-                          <div onClick="{{ t.onOpen }}" style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};opacity:{{ t.artOpacity }};display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;transition:border-color .18s,box-shadow .18s,opacity .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4);opacity:1">
-                            {{ t.art }}
-                            <sc-if value="{{ showTicks }}" hint-placeholder-val="{{ true }}">
-                              <div style="position:absolute;left:0;right:0;top:8px;display:flex;justify-content:center;gap:4px">
-                                <sc-for list="{{ t.variants }}" as="v" hint-placeholder-count="1">
-                                  <div style="position:relative">
-                                    <sc-if value="{{ v.showTip }}" hint-placeholder-val="{{ false }}">
-                                      <div style="position:absolute;top:32px;right:0;white-space:nowrap;display:flex;align-items:center;gap:6px;background:var(--row);border:1px solid {{ v.rarityColor }};color:var(--ink);font-size:11px;font-weight:600;padding:5px 10px;border-radius:7px;box-shadow:0 8px 20px rgba(0,0,0,.5);z-index:5;pointer-events:none">
-                                        <span style="width:8px;height:8px;border-radius:50%;background:{{ v.rarityColor }};flex-shrink:0"></span>{{ v.rarityName }}
-                                      </div>
+
+                        <sc-if value="{{ hasSystems }}" hint-placeholder-val="{{ true }}">
+                            <!-- expansion sidebar with progress -->
+                            <div style="display:flex;gap:22px;align-items:flex-start">
+                                <aside style="width:238px;flex-shrink:0;position:sticky;top:82px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px;max-height:calc(100vh - 106px);overflow-y:auto">
+                                    <button onClick="{{ goHome }}" style="{{ homeTabStyle }}"><i class="fa-solid fa-house" style="margin-right:8px;width:14px;text-align:center"></i>{{ L.homeTab }}</button>
+                                    <div style="height:8px"></div>
+                                    <sc-for list="{{ collectorGroups }}" as="g" hint-placeholder-count="2">
+                                        <sc-if value="{{ g.hasLabel }}" hint-placeholder-val="{{ false }}">
+                                            <div style="display:flex;align-items:center;gap:2px;margin-top:6px">
+                                                <button onClick="{{ g.onToggle }}" style="{{ g.headerStyle }};flex:1;display:flex;align-items:center;gap:6px;background:transparent;border:none;cursor:pointer;padding:8px 6px 4px;text-align:left"><i class="{{ g.chevronIcon }}" style="font-size:8px;width:9px;flex-shrink:0"></i>{{ g.label }}</button>
+                                            </div>
+                                        </sc-if>
+                                        <sc-if value="{{ g.expanded }}" hint-placeholder-val="{{ true }}">
+                                            <sc-for list="{{ g.tabs }}" as="e" hint-placeholder-count="4">
+                                                <button onClick="{{ e.onClick }}" style="{{ e.style }}" title="{{ e.ip }}">
+                                                    <div style="display:flex;align-items:flex-start;gap:8px;width:100%">
+                                                        <span style="width:7px;height:7px;border-radius:50%;background:{{ e.ipColor }};flex-shrink:0;margin-top:5px"></span>
+                                                        <span style="font-family:var(--mono);font-size:10px;font-weight:700;color:var(--accent-ink);flex-shrink:0;width:36px;padding-top:1px">{{ e.abbr }}</span>
+                                                        <span style="flex:1;min-width:0;white-space:normal;word-break:break-word;line-height:1.35">{{ e.name }}</span>
+                                                        <span style="font-size:10px;opacity:.6;flex-shrink:0;padding-top:1px">{{ e.owned }}/{{ e.total }}</span>
+                                                    </div>
+                                                </button>
+                                            </sc-for>
+                                        </sc-if>
+                                    </sc-for>
+                                </aside>
+                                <div style="flex:1;min-width:0">
+
+                                    <!-- home page -->
+                                    <sc-if value="{{ collectorShowHome }}" hint-placeholder-val="{{ false }}">
+                                        <div style="margin-bottom:16px">
+                                            <div style="font-family:var(--display);font-size:20px;font-weight:600;margin-bottom:4px">{{ homeSystemName }}</div>
+                                            <div style="color:var(--ink3);font-size:13px">{{ homeOwnedCount }} / {{ homeTotalCount }} ({{ homeOverallPct }}%) {{ L.totalCollected }}</div>
+                                        </div>
+                                        <sc-if value="{{ showHomeSectionPills }}" hint-placeholder-val="{{ false }}">
+                                            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px">
+                                                <sc-for list="{{ homeSectionPills }}" as="p" hint-placeholder-count="3">
+                                                    <button onClick="{{ p.onClick }}" style="{{ p.style }}">{{ p.name }}</button>
+                                                </sc-for>
+                                            </div>
+                                        </sc-if>
+                                        <sc-if value="{{ homeNoSectionsSelected }}" hint-placeholder-val="{{ false }}">
+                                            <div style="text-align:center;padding:70px 20px;border:1px dashed var(--line);border-radius:16px;background:var(--panel)">
+                                                <div style="color:var(--ink3);font-size:13px">{{ L.homeNoSectionsMsg }}</div>
+                                            </div>
+                                        </sc-if>
+                                        <sc-if value="{{ homeEmptyMsg }}" hint-placeholder-val="{{ false }}">
+                                            <div style="text-align:center;padding:70px 20px;border:1px dashed var(--line);border-radius:16px;background:var(--panel)">
+                                                <div style="width:56px;height:56px;border-radius:14px;background:var(--row);display:flex;align-items:center;justify-content:center;margin:0 auto 18px"><i class="fa-solid fa-star" style="color:var(--accent-ink);font-size:22px"></i></div>
+                                                <div style="font-family:var(--display);font-size:18px;font-weight:600;margin-bottom:6px">{{ L.homeEmptyTitle }}</div>
+                                                <div style="color:var(--ink3);font-size:13px;max-width:360px;margin:0 auto">{{ L.homeEmptyDesc }}</div>
+                                            </div>
+                                        </sc-if>
+                                        <sc-if value="{{ hasRecentlyAdded }}" hint-placeholder-val="{{ false }}">
+                                            <div style="margin-bottom:26px">
+                                                <div style="font-family:var(--display);font-size:14px;font-weight:600;margin-bottom:12px"><i class="fa-solid fa-clock-rotate-left" style="margin-right:8px;color:var(--accent-ink)"></i>{{ L.recentlyAddedTitle }}</div>
+                                                <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:14px">
+                                                    <sc-for list="{{ recentlyAdded }}" as="t" hint-placeholder-count="5">
+                                                        <div onClick="{{ t.onOpen }}" style="cursor:pointer">
+                                                            <div style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};overflow:hidden;transition:border-color .18s,box-shadow .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4)">
+                                                                {{ t.art }}
+                                                                <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 8px 8px;background:linear-gradient(180deg,transparent,rgba(8,6,10,.92) 60%)">
+                                                                    <div style="font-weight:600;font-size:11px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.name }}</div>
+                                                                    <div style="display:flex;align-items:center;gap:4px;margin-top:3px"><span style="width:6px;height:6px;border-radius:50%;background:{{ t.rarityColor }}"></span><span style="font-size:9px;color:rgba(255,255,255,.7)">{{ t.rarityName }}</span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="font-size:10px;color:var(--ink3);margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.expName }}</div>
+                                                        </div>
+                                                    </sc-for>
+                                                </div>
+                                            </div>
+                                        </sc-if>
+                                        <sc-if value="{{ hasRarestOwned }}" hint-placeholder-val="{{ false }}">
+                                            <div>
+                                                <div style="font-family:var(--display);font-size:14px;font-weight:600;margin-bottom:12px"><i class="fa-solid fa-gem" style="margin-right:8px;color:var(--accent-ink)"></i>{{ L.rarestOwnedTitle }}</div>
+                                                <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:14px">
+                                                    <sc-for list="{{ rarestOwned }}" as="t" hint-placeholder-count="5">
+                                                        <div onClick="{{ t.onOpen }}" style="cursor:pointer">
+                                                            <div style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};overflow:hidden;transition:border-color .18s,box-shadow .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4)">
+                                                                {{ t.art }}
+                                                                <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 8px 8px;background:linear-gradient(180deg,transparent,rgba(8,6,10,.92) 60%)">
+                                                                    <div style="font-weight:600;font-size:11px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.name }}</div>
+                                                                    <div style="display:flex;align-items:center;gap:4px;margin-top:3px"><span style="width:6px;height:6px;border-radius:50%;background:{{ t.rarityColor }}"></span><span style="font-size:9px;color:rgba(255,255,255,.7)">{{ t.rarityName }}</span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="font-size:10px;color:var(--ink3);margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.expName }}</div>
+                                                        </div>
+                                                    </sc-for>
+                                                </div>
+                                            </div>
+                                        </sc-if>
                                     </sc-if>
-                                    <div onClick="{{ v.onToggle }}" onMouseEnter="{{ v.onHoverStart }}" onMouseLeave="{{ v.onHoverEnd }}" style="{{ v.tickStyle }}"><i class="fa-solid fa-check" style="font-size:9px"></i></div>
-                                  </div>
-                                </sc-for>
-                              </div>
-                            </sc-if>
-                            <div class="tile-overlay" style="position:absolute;left:0;right:0;bottom:0;padding:26px 12px 12px;background:linear-gradient(180deg,transparent,rgba(8,6,10,.92) 60%)">
-                              <div style="font-weight:600;font-size:13px;line-height:1.25;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px">{{ t.name }}</div>
-                              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-                                <span style="font-family:var(--display);font-size:11px;font-weight:700;color:rgba(255,255,255,.75)">{{ t.number }}</span>
-                                <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:{{ t.baseRarityColor }}"></span><span style="font-size:10px;color:rgba(255,255,255,.75)">{{ t.baseRarityName }}</span></span>
-                              </div>
-                              <sc-if value="{{ t.hasTypeChips }}" hint-placeholder-val="{{ false }}">
-                                <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:7px">
-                                  <sc-for list="{{ t.typeChips }}" as="tc" hint-placeholder-count="2">
-                                    <span style="font-size:9px;font-weight:700;padding:3px 8px;border-radius:20px;background:color-mix(in srgb,{{ tc.color }} 18%,transparent);border:1px solid {{ tc.color }};color:var(--ink)">{{ tc.label }}</span>
-                                  </sc-for>
-                                </div>
-                              </sc-if>
-                              <sc-if value="{{ t.owned }}" hint-placeholder-val="{{ false }}">
-                                <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.15);font-size:10px;color:var(--accent-ink);font-weight:600"><i class="fa-solid fa-chart-simple" style="margin-right:5px;opacity:.8"></i>{{ t.pullLabel }}</div>
-                              </sc-if>
-                              <sc-if value="{{ t.missing }}" hint-placeholder-val="{{ true }}">
-                                <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.15);font-size:10px;color:rgba(255,255,255,.6);font-weight:500"><i class="fa-solid fa-dice" style="margin-right:5px;opacity:.7"></i>{{ t.theoLabel }}</div>
-                              </sc-if>
-                            </div>
-                          </div>
-                        </div>
-                      </sc-if>
-                    </sc-for>
-                  </div>
-                  <div style="display:flex;flex-direction:column;justify-content:space-around;padding:20px 0;flex-shrink:0">
-                    <sc-for list="{{ binderRings }}" as="r" hint-placeholder-count="3">
-                      <div style="width:13px;height:13px;border-radius:50%;background:var(--bg);border:1px solid var(--line2);box-shadow:inset 0 2px 3px rgba(0,0,0,.6)"></div>
-                    </sc-for>
-                  </div>
-                  </div>
-                </sc-if>
-              </div>
-              <div style="{{ rightPanelStyle }}">
-                <sc-if value="{{ showCoverPages }}" hint-placeholder-val="{{ false }}">
-                  <div style="width:100%;height:100%;min-height:200px;border-radius:6px 18px 18px 6px;background:{{ coverPage.bg }};display:flex;align-items:center;justify-content:center;text-align:center;padding:40px;overflow:hidden">
-                    <div>
-                      <div style="font-family:var(--display);font-weight:700;font-size:34px;color:{{ coverPage.textColor }};line-height:1.3">{{ coverPage.title }}</div>
-                      <sc-if value="{{ coverPage.hasSubtitle }}" hint-placeholder-val="{{ true }}">
-                        <div style="font-family:var(--mono);font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-top:18px;color:{{ coverPage.textColor }};opacity:.8">{{ coverPage.subtitle }}</div>
-                      </sc-if>
-                    </div>
-                  </div>
-                </sc-if>
-                <sc-if value="{{ hasRightPage }}" hint-placeholder-val="{{ true }}">
-                  <div style="display:flex;gap:16px;align-items:stretch">
-                  <div style="display:flex;flex-direction:column;justify-content:space-around;padding:20px 0;flex-shrink:0">
-                    <sc-for list="{{ binderRings }}" as="r" hint-placeholder-count="3">
-                      <div style="width:13px;height:13px;border-radius:50%;background:var(--bg);border:1px solid var(--line2);box-shadow:inset 0 2px 3px rgba(0,0,0,.6)"></div>
-                    </sc-for>
-                  </div>
-                  <div style="display:grid;grid-template-columns:{{ gridCols }};gap:{{ gridGap }};align-items:start;flex:1;min-width:0">
-                    <sc-for list="{{ rightGridTiles }}" as="t" hint-placeholder-count="9">
-                      <sc-if value="{{ t.empty }}" hint-placeholder-val="{{ false }}">
-                        <div style="position:relative;aspect-ratio:5/7;border-radius:14px;border:1.5px dashed var(--line2);background:var(--inset);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:.5">
-                          <span style="font-size:10px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em">Slot</span>
-                          <span style="font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink3)">#{{ t.slotNum }}</span>
-                        </div>
-                      </sc-if>
-                      <sc-if value="{{ t.real }}" hint-placeholder-val="{{ true }}">
-                        <div class="tile-card" style="display:flex;flex-direction:column;transition:transform .18s" style-hover="transform:translateY(-3px)">
-                          <div onClick="{{ t.onOpen }}" style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};opacity:{{ t.artOpacity }};display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;transition:border-color .18s,box-shadow .18s,opacity .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4);opacity:1">
-                            {{ t.art }}
-                            <sc-if value="{{ showTicks }}" hint-placeholder-val="{{ true }}">
-                              <div style="position:absolute;left:0;right:0;top:8px;display:flex;justify-content:center;gap:4px">
-                                <sc-for list="{{ t.variants }}" as="v" hint-placeholder-count="1">
-                                  <div style="position:relative">
-                                    <sc-if value="{{ v.showTip }}" hint-placeholder-val="{{ false }}">
-                                      <div style="position:absolute;top:32px;right:0;white-space:nowrap;display:flex;align-items:center;gap:6px;background:var(--row);border:1px solid {{ v.rarityColor }};color:var(--ink);font-size:11px;font-weight:600;padding:5px 10px;border-radius:7px;box-shadow:0 8px 20px rgba(0,0,0,.5);z-index:5;pointer-events:none">
-                                        <span style="width:8px;height:8px;border-radius:50%;background:{{ v.rarityColor }};flex-shrink:0"></span>{{ v.rarityName }}
-                                      </div>
+
+                                    <!-- checklist grid -->
+                                    <sc-if value="{{ collectorHasExp }}" hint-placeholder-val="{{ true }}">
+                                        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px">
+                                            <span style="font-family:var(--display);font-size:15px;font-weight:600;color:var(--accent-ink)">{{ collectorExpName }}</span>
+                                            <sc-if value="{{ collectorExpHasIP }}" hint-placeholder-val="{{ true }}">
+                                                <span style="font-size:10px;font-weight:700;letter-spacing:.05em;color:{{ collectorExpIPColor }};background:color-mix(in srgb,{{ collectorExpIPColor }} 16%,transparent);padding:3px 9px;border-radius:5px;margin-right:4px">{{ collectorExpIP }}</span>
+                                            </sc-if>
+                                            <select value="{{ rarityFilterValue }}" onChange="{{ onRarityFilterChange }}" style="background:var(--inset);border:1px solid var(--line);border-radius:8px;padding:0 10px;height:34px;color:var(--ink);font-size:12.5px;font-weight:600;cursor:pointer">
+                                                <sc-for list="{{ rarityFilterOptions }}" as="f" hint-placeholder-count="6">
+                                                    <option value="{{ f.id }}">{{ f.label }}</option>
+                                                </sc-for>
+                                            </select>
+                                            <sc-for list="{{ ownFilters }}" as="f" hint-placeholder-count="4">
+                                                <button onClick="{{ f.onClick }}" style="{{ f.style }}">{{ f.name }}<span style="opacity:.6;margin-left:6px">{{ f.count }}</span></button>
+                                            </sc-for>
+                                            <div style="margin-left:auto;display:flex;align-items:center;gap:8px" title="{{ L.cardSize }}">
+                                                <i class="fa-solid fa-up-right-and-down-left-from-center" style="font-size:11px;color:var(--ink2);opacity:.7"></i>
+                                                <input type="range" min="0" max="100" step="10" list="cardSizeTicks" value="{{ cardSizeValue }}" onChange="{{ onCardSizeChange }}" style="width:110px;accent-color:var(--accent);cursor:pointer">
+                                                <datalist id="cardSizeTicks">
+                                                    <option value="0"></option>
+                                                    <option value="10"></option>
+                                                    <option value="20"></option>
+                                                    <option value="30"></option>
+                                                    <option value="40"></option>
+                                                    <option value="50"></option>
+                                                    <option value="60"></option>
+                                                    <option value="70"></option>
+                                                    <option value="80"></option>
+                                                    <option value="90"></option>
+                                                    <option value="100"></option>
+                                                </datalist>
+                                                <span style="font-size:12px;color:var(--ink3);font-weight:600;min-width:44px">{{ cardSizeLabel }}</span>
+                                            </div>
+                                            <sc-if value="{{ isBinder }}" hint-placeholder-val="{{ false }}">
+                                                <div style="display:flex;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:3px">
+                                                    <sc-for list="{{ pocketOptions }}" as="p" hint-placeholder-count="4">
+                                                        <button onClick="{{ p.onClick }}" style="{{ p.style }}">{{ p.label }}</button>
+                                                    </sc-for>
+                                                </div>
+                                            </sc-if>
+                                            <sc-if value="{{ isBinder }}" hint-placeholder-val="{{ false }}">
+                                                <button onClick="{{ toggleCoverView }}" title="{{ L.viewCover }}" style="{{ coverToggleStyle }}"><i class="fa-solid fa-bookmark"></i></button>
+                                            </sc-if>
+                                            <div style="display:flex;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:3px">
+                                                <button onClick="{{ setGridView }}" title="Grid view" style="{{ gridViewBtnStyle }}"><i class="fa-solid fa-table-cells-large"></i></button>
+                                                <button onClick="{{ setBinderView }}" title="Binder view" style="{{ binderViewBtnStyle }}"><i class="fa-solid fa-book-open"></i></button>
+                                            </div>
+                                        </div>
+                                        <sc-if value="{{ isBinder }}" hint-placeholder-val="{{ false }}">
+                                            <sc-if value="{{ showStackToggle }}" hint-placeholder-val="{{ true }}">
+                                                <div style="display:flex;align-items:center;justify-content:flex-end;gap:9px;margin-bottom:16px">
+                                                    <span style="font-size:12px;color:var(--ink2);font-weight:600">{{ L.stackVariants }}</span>
+                                                    <div onClick="{{ toggleStackVariants }}" style="{{ stackToggleTrackStyle }}">
+                                                        <div style="{{ stackToggleKnobStyle }}"></div>
+                                                    </div>
+                                                </div>
+                                            </sc-if>
+                                        </sc-if>
+                                        <sc-if value="{{ isGridMode }}" hint-placeholder-val="{{ true }}">
+                                            <div style="{{ pagePanelStyle }}">
+                                                <div style="display:grid;grid-template-columns:{{ gridCols }};gap:{{ gridGap }};align-items:start">
+                                                    <sc-for list="{{ gridTiles }}" as="t" hint-placeholder-count="10">
+                                                        <sc-if value="{{ t.empty }}" hint-placeholder-val="{{ false }}">
+                                                            <div style="position:relative;aspect-ratio:5/7;border-radius:14px;border:1.5px dashed var(--line2);background:var(--inset);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:.5">
+                                                                <span style="font-size:10px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em">Slot</span>
+                                                                <span style="font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink3)">#{{ t.slotNum }}</span>
+                                                            </div>
+                                                        </sc-if>
+                                                        <sc-if value="{{ t.real }}" hint-placeholder-val="{{ true }}">
+                                                            <div class="tile-card" style="display:flex;flex-direction:column;transition:transform .18s" style-hover="transform:translateY(-3px)">
+                                                                <div onClick="{{ t.onOpen }}" style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};opacity:{{ t.artOpacity }};display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;transition:border-color .18s,box-shadow .18s,opacity .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4);opacity:1">
+                                                                    {{ t.art }}
+                                                                    <sc-if value="{{ showTicks }}" hint-placeholder-val="{{ true }}">
+                                                                        <div style="position:absolute;left:0;right:0;top:8px;display:flex;justify-content:center;gap:4px">
+                                                                            <sc-for list="{{ t.variants }}" as="v" hint-placeholder-count="1">
+                                                                                <div style="position:relative">
+                                                                                    <sc-if value="{{ v.showTip }}" hint-placeholder-val="{{ false }}">
+                                                                                        <div style="position:absolute;top:32px;right:0;white-space:nowrap;display:flex;align-items:center;gap:6px;background:var(--row);border:1px solid {{ v.rarityColor }};color:var(--ink);font-size:11px;font-weight:600;padding:5px 10px;border-radius:7px;box-shadow:0 8px 20px rgba(0,0,0,.5);z-index:5;pointer-events:none">
+                                                                                            <span style="width:8px;height:8px;border-radius:50%;background:{{ v.rarityColor }};flex-shrink:0"></span>{{ v.rarityName }}
+                                                                                        </div>
+                                                                                    </sc-if>
+                                                                                    <div onClick="{{ v.onToggle }}" onMouseEnter="{{ v.onHoverStart }}" onMouseLeave="{{ v.onHoverEnd }}" style="{{ v.tickStyle }}"><i class="fa-solid fa-check" style="font-size:9px"></i></div>
+                                                                                </div>
+                                                                            </sc-for>
+                                                                        </div>
+                                                                    </sc-if>
+                                                                    <div class="tile-overlay" style="position:absolute;left:0;right:0;bottom:0;padding:26px 12px 12px;background:linear-gradient(180deg,transparent,rgba(8,6,10,.92) 60%)">
+                                                                        <div style="font-weight:600;font-size:13px;line-height:1.25;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px">{{ t.name }}</div>
+                                                                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+                                                                            <span style="font-family:var(--display);font-size:11px;font-weight:700;color:rgba(255,255,255,.75)">{{ t.number }}</span>
+                                                                            <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:{{ t.baseRarityColor }}"></span><span style="font-size:10px;color:rgba(255,255,255,.75)">{{ t.baseRarityName }}</span></span>
+                                                                        </div>
+                                                                        <sc-if value="{{ t.hasTypeChips }}" hint-placeholder-val="{{ false }}">
+                                                                            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:7px">
+                                                                                <sc-for list="{{ t.typeChips }}" as="tc" hint-placeholder-count="2">
+                                                                                    <span style="font-size:9px;font-weight:700;padding:3px 8px;border-radius:20px;background:color-mix(in srgb,{{ tc.color }} 18%,transparent);border:1px solid {{ tc.color }};color:var(--ink)">{{ tc.label }}</span>
+                                                                                </sc-for>
+                                                                            </div>
+                                                                        </sc-if>
+                                                                        <sc-if value="{{ t.owned }}" hint-placeholder-val="{{ false }}">
+                                                                            <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.15);font-size:10px;color:var(--accent-ink);font-weight:600"><i class="fa-solid fa-chart-simple" style="margin-right:5px;opacity:.8"></i>{{ t.pullLabel }}</div>
+                                                                        </sc-if>
+                                                                        <sc-if value="{{ t.missing }}" hint-placeholder-val="{{ true }}">
+                                                                            <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.15);font-size:10px;color:rgba(255,255,255,.6);font-weight:500"><i class="fa-solid fa-dice" style="margin-right:5px;opacity:.7"></i>{{ t.theoLabel }}</div>
+                                                                        </sc-if>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </sc-if>
+                                                    </sc-for>
+                                                </div>
+                                            </div>
+                                        </sc-if>
+                                        <sc-if value="{{ isBinder }}" hint-placeholder-val="{{ false }}">
+                                            <div style="{{ binderFrameStyle }}">
+                                                <div style="{{ leftPanelStyle }}">
+                                                    <sc-if value="{{ showCoverPages }}" hint-placeholder-val="{{ false }}">
+                                                        <div style="width:100%;height:100%;min-height:200px;border-radius:18px 6px 6px 18px;background:{{ coverInsideBg }}"></div>
+                                                    </sc-if>
+                                                    <sc-if value="{{ showDivider }}" hint-placeholder-val="{{ false }}">
+                                                        <div style="width:100%;height:100%;min-height:200px;border-radius:18px 6px 6px 18px;background:{{ dividerPage.bg }};display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;overflow:hidden">
+                                                            <div>
+                                                                <div style="font-family:var(--display);font-weight:700;font-size:26px;color:{{ dividerPage.textColor }};line-height:1.3">{{ dividerPage.title }}</div>
+                                                                <sc-if value="{{ dividerPage.hasSubtitle }}" hint-placeholder-val="{{ true }}">
+                                                                    <div style="font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin-top:14px;color:{{ dividerPage.textColor }};opacity:.75">{{ dividerPage.subtitle }}</div>
+                                                                </sc-if>
+                                                            </div>
+                                                        </div>
+                                                    </sc-if>
+                                                    <sc-if value="{{ hasLeftPage }}" hint-placeholder-val="{{ false }}">
+                                                        <div style="display:flex;gap:16px;align-items:stretch">
+                                                            <div style="display:grid;grid-template-columns:{{ gridCols }};gap:{{ gridGap }};align-items:start;flex:1;min-width:0">
+                                                                <sc-for list="{{ leftGridTiles }}" as="t" hint-placeholder-count="9">
+                                                                    <sc-if value="{{ t.empty }}" hint-placeholder-val="{{ false }}">
+                                                                        <div style="position:relative;aspect-ratio:5/7;border-radius:14px;border:1.5px dashed var(--line2);background:var(--inset);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:.5">
+                                                                            <span style="font-size:10px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em">Slot</span>
+                                                                            <span style="font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink3)">#{{ t.slotNum }}</span>
+                                                                        </div>
+                                                                    </sc-if>
+                                                                    <sc-if value="{{ t.real }}" hint-placeholder-val="{{ true }}">
+                                                                        <div class="tile-card" style="display:flex;flex-direction:column;transition:transform .18s" style-hover="transform:translateY(-3px)">
+                                                                            <div onClick="{{ t.onOpen }}" style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};opacity:{{ t.artOpacity }};display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;transition:border-color .18s,box-shadow .18s,opacity .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4);opacity:1">
+                                                                                {{ t.art }}
+                                                                                <sc-if value="{{ showTicks }}" hint-placeholder-val="{{ true }}">
+                                                                                    <div style="position:absolute;left:0;right:0;top:8px;display:flex;justify-content:center;gap:4px">
+                                                                                        <sc-for list="{{ t.variants }}" as="v" hint-placeholder-count="1">
+                                                                                            <div style="position:relative">
+                                                                                                <sc-if value="{{ v.showTip }}" hint-placeholder-val="{{ false }}">
+                                                                                                    <div style="position:absolute;top:32px;right:0;white-space:nowrap;display:flex;align-items:center;gap:6px;background:var(--row);border:1px solid {{ v.rarityColor }};color:var(--ink);font-size:11px;font-weight:600;padding:5px 10px;border-radius:7px;box-shadow:0 8px 20px rgba(0,0,0,.5);z-index:5;pointer-events:none">
+                                                                                                        <span style="width:8px;height:8px;border-radius:50%;background:{{ v.rarityColor }};flex-shrink:0"></span>{{ v.rarityName }}
+                                                                                                    </div>
+                                                                                                </sc-if>
+                                                                                                <div onClick="{{ v.onToggle }}" onMouseEnter="{{ v.onHoverStart }}" onMouseLeave="{{ v.onHoverEnd }}" style="{{ v.tickStyle }}"><i class="fa-solid fa-check" style="font-size:9px"></i></div>
+                                                                                            </div>
+                                                                                        </sc-for>
+                                                                                    </div>
+                                                                                </sc-if>
+                                                                                <div class="tile-overlay" style="position:absolute;left:0;right:0;bottom:0;padding:26px 12px 12px;background:linear-gradient(180deg,transparent,rgba(8,6,10,.92) 60%)">
+                                                                                    <div style="font-weight:600;font-size:13px;line-height:1.25;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px">{{ t.name }}</div>
+                                                                                    <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+                                                                                        <span style="font-family:var(--display);font-size:11px;font-weight:700;color:rgba(255,255,255,.75)">{{ t.number }}</span>
+                                                                                        <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:{{ t.baseRarityColor }}"></span><span style="font-size:10px;color:rgba(255,255,255,.75)">{{ t.baseRarityName }}</span></span>
+                                                                                    </div>
+                                                                                    <sc-if value="{{ t.hasTypeChips }}" hint-placeholder-val="{{ false }}">
+                                                                                        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:7px">
+                                                                                            <sc-for list="{{ t.typeChips }}" as="tc" hint-placeholder-count="2">
+                                                                                                <span style="font-size:9px;font-weight:700;padding:3px 8px;border-radius:20px;background:color-mix(in srgb,{{ tc.color }} 18%,transparent);border:1px solid {{ tc.color }};color:var(--ink)">{{ tc.label }}</span>
+                                                                                            </sc-for>
+                                                                                        </div>
+                                                                                    </sc-if>
+                                                                                    <sc-if value="{{ t.owned }}" hint-placeholder-val="{{ false }}">
+                                                                                        <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.15);font-size:10px;color:var(--accent-ink);font-weight:600"><i class="fa-solid fa-chart-simple" style="margin-right:5px;opacity:.8"></i>{{ t.pullLabel }}</div>
+                                                                                    </sc-if>
+                                                                                    <sc-if value="{{ t.missing }}" hint-placeholder-val="{{ true }}">
+                                                                                        <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.15);font-size:10px;color:rgba(255,255,255,.6);font-weight:500"><i class="fa-solid fa-dice" style="margin-right:5px;opacity:.7"></i>{{ t.theoLabel }}</div>
+                                                                                    </sc-if>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </sc-if>
+                                                                </sc-for>
+                                                            </div>
+                                                            <div style="display:flex;flex-direction:column;justify-content:space-around;padding:20px 0;flex-shrink:0">
+                                                                <sc-for list="{{ binderRings }}" as="r" hint-placeholder-count="3">
+                                                                    <div style="width:13px;height:13px;border-radius:50%;background:var(--bg);border:1px solid var(--line2);box-shadow:inset 0 2px 3px rgba(0,0,0,.6)"></div>
+                                                                </sc-for>
+                                                            </div>
+                                                        </div>
+                                                    </sc-if>
+                                                </div>
+                                                <div style="{{ rightPanelStyle }}">
+                                                    <sc-if value="{{ showCoverPages }}" hint-placeholder-val="{{ false }}">
+                                                        <div style="width:100%;height:100%;min-height:200px;border-radius:6px 18px 18px 6px;background:{{ coverPage.bg }};display:flex;align-items:center;justify-content:center;text-align:center;padding:40px;overflow:hidden">
+                                                            <div>
+                                                                <div style="font-family:var(--display);font-weight:700;font-size:34px;color:{{ coverPage.textColor }};line-height:1.3">{{ coverPage.title }}</div>
+                                                                <sc-if value="{{ coverPage.hasSubtitle }}" hint-placeholder-val="{{ true }}">
+                                                                    <div style="font-family:var(--mono);font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-top:18px;color:{{ coverPage.textColor }};opacity:.8">{{ coverPage.subtitle }}</div>
+                                                                </sc-if>
+                                                            </div>
+                                                        </div>
+                                                    </sc-if>
+                                                    <sc-if value="{{ hasRightPage }}" hint-placeholder-val="{{ true }}">
+                                                        <div style="display:flex;gap:16px;align-items:stretch">
+                                                            <div style="display:flex;flex-direction:column;justify-content:space-around;padding:20px 0;flex-shrink:0">
+                                                                <sc-for list="{{ binderRings }}" as="r" hint-placeholder-count="3">
+                                                                    <div style="width:13px;height:13px;border-radius:50%;background:var(--bg);border:1px solid var(--line2);box-shadow:inset 0 2px 3px rgba(0,0,0,.6)"></div>
+                                                                </sc-for>
+                                                            </div>
+                                                            <div style="display:grid;grid-template-columns:{{ gridCols }};gap:{{ gridGap }};align-items:start;flex:1;min-width:0">
+                                                                <sc-for list="{{ rightGridTiles }}" as="t" hint-placeholder-count="9">
+                                                                    <sc-if value="{{ t.empty }}" hint-placeholder-val="{{ false }}">
+                                                                        <div style="position:relative;aspect-ratio:5/7;border-radius:14px;border:1.5px dashed var(--line2);background:var(--inset);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:.5">
+                                                                            <span style="font-size:10px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em">Slot</span>
+                                                                            <span style="font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink3)">#{{ t.slotNum }}</span>
+                                                                        </div>
+                                                                    </sc-if>
+                                                                    <sc-if value="{{ t.real }}" hint-placeholder-val="{{ true }}">
+                                                                        <div class="tile-card" style="display:flex;flex-direction:column;transition:transform .18s" style-hover="transform:translateY(-3px)">
+                                                                            <div onClick="{{ t.onOpen }}" style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};opacity:{{ t.artOpacity }};display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;transition:border-color .18s,box-shadow .18s,opacity .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4);opacity:1">
+                                                                                {{ t.art }}
+                                                                                <sc-if value="{{ showTicks }}" hint-placeholder-val="{{ true }}">
+                                                                                    <div style="position:absolute;left:0;right:0;top:8px;display:flex;justify-content:center;gap:4px">
+                                                                                        <sc-for list="{{ t.variants }}" as="v" hint-placeholder-count="1">
+                                                                                            <div style="position:relative">
+                                                                                                <sc-if value="{{ v.showTip }}" hint-placeholder-val="{{ false }}">
+                                                                                                    <div style="position:absolute;top:32px;right:0;white-space:nowrap;display:flex;align-items:center;gap:6px;background:var(--row);border:1px solid {{ v.rarityColor }};color:var(--ink);font-size:11px;font-weight:600;padding:5px 10px;border-radius:7px;box-shadow:0 8px 20px rgba(0,0,0,.5);z-index:5;pointer-events:none">
+                                                                                                        <span style="width:8px;height:8px;border-radius:50%;background:{{ v.rarityColor }};flex-shrink:0"></span>{{ v.rarityName }}
+                                                                                                    </div>
+                                                                                                </sc-if>
+                                                                                                <div onClick="{{ v.onToggle }}" onMouseEnter="{{ v.onHoverStart }}" onMouseLeave="{{ v.onHoverEnd }}" style="{{ v.tickStyle }}"><i class="fa-solid fa-check" style="font-size:9px"></i></div>
+                                                                                            </div>
+                                                                                        </sc-for>
+                                                                                    </div>
+                                                                                </sc-if>
+                                                                                <div class="tile-overlay" style="position:absolute;left:0;right:0;bottom:0;padding:26px 12px 12px;background:linear-gradient(180deg,transparent,rgba(8,6,10,.92) 60%)">
+                                                                                    <div style="font-weight:600;font-size:13px;line-height:1.25;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px">{{ t.name }}</div>
+                                                                                    <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+                                                                                        <span style="font-family:var(--display);font-size:11px;font-weight:700;color:rgba(255,255,255,.75)">{{ t.number }}</span>
+                                                                                        <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:{{ t.baseRarityColor }}"></span><span style="font-size:10px;color:rgba(255,255,255,.75)">{{ t.baseRarityName }}</span></span>
+                                                                                    </div>
+                                                                                    <sc-if value="{{ t.hasTypeChips }}" hint-placeholder-val="{{ false }}">
+                                                                                        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:7px">
+                                                                                            <sc-for list="{{ t.typeChips }}" as="tc" hint-placeholder-count="2">
+                                                                                                <span style="font-size:9px;font-weight:700;padding:3px 8px;border-radius:20px;background:color-mix(in srgb,{{ tc.color }} 18%,transparent);border:1px solid {{ tc.color }};color:var(--ink)">{{ tc.label }}</span>
+                                                                                            </sc-for>
+                                                                                        </div>
+                                                                                    </sc-if>
+                                                                                    <sc-if value="{{ t.owned }}" hint-placeholder-val="{{ false }}">
+                                                                                        <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.15);font-size:10px;color:var(--accent-ink);font-weight:600"><i class="fa-solid fa-chart-simple" style="margin-right:5px;opacity:.8"></i>{{ t.pullLabel }}</div>
+                                                                                    </sc-if>
+                                                                                    <sc-if value="{{ t.missing }}" hint-placeholder-val="{{ true }}">
+                                                                                        <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.15);font-size:10px;color:rgba(255,255,255,.6);font-weight:500"><i class="fa-solid fa-dice" style="margin-right:5px;opacity:.7"></i>{{ t.theoLabel }}</div>
+                                                                                    </sc-if>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </sc-if>
+                                                                </sc-for>
+                                                            </div>
+                                                        </div>
+                                                    </sc-if>
+                                                </div>
+                                            </div>
+                                            <sc-if value="{{ showPagination }}" hint-placeholder-val="{{ true }}">
+                                                <div style="display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:18px">
+                                                    <div style="display:flex;align-items:center;justify-content:center;gap:14px">
+                                                        <button onClick="{{ binderPrev }}" style="{{ binderPrevStyle }}"><i class="fa-solid fa-arrow-left" style="margin-right:7px"></i>{{ L.prevW }}</button>
+                                                        <button onClick="{{ binderNext }}" style="{{ binderNextStyle }}">{{ L.nextW }}<i class="fa-solid fa-arrow-right" style="margin-left:7px"></i></button>
+                                                    </div>
+                                                    <span style="font-size:13px;color:var(--ink3);font-weight:600">{{ binderPageLabel }}</span>
+                                                </div>
+                                            </sc-if>
+                                            <sc-if value="{{ showCoverPages }}" hint-placeholder-val="{{ false }}">
+                                                <div style="display:flex;justify-content:center;margin-top:18px">
+                                                    <button onClick="{{ toggleCoverView }}" style="padding:10px 20px;border-radius:8px;border:none;background:var(--accent);color:var(--on-accent);font-size:13px;font-weight:600;cursor:pointer"><i class="fa-solid fa-book-open" style="margin-right:8px"></i>{{ L.openBinder }}</button>
+                                                </div>
+                                            </sc-if>
+                                        </sc-if>
                                     </sc-if>
-                                    <div onClick="{{ v.onToggle }}" onMouseEnter="{{ v.onHoverStart }}" onMouseLeave="{{ v.onHoverEnd }}" style="{{ v.tickStyle }}"><i class="fa-solid fa-check" style="font-size:9px"></i></div>
-                                  </div>
-                                </sc-for>
-                              </div>
-                            </sc-if>
-                            <div class="tile-overlay" style="position:absolute;left:0;right:0;bottom:0;padding:26px 12px 12px;background:linear-gradient(180deg,transparent,rgba(8,6,10,.92) 60%)">
-                              <div style="font-weight:600;font-size:13px;line-height:1.25;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px">{{ t.name }}</div>
-                              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-                                <span style="font-family:var(--display);font-size:11px;font-weight:700;color:rgba(255,255,255,.75)">{{ t.number }}</span>
-                                <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:{{ t.baseRarityColor }}"></span><span style="font-size:10px;color:rgba(255,255,255,.75)">{{ t.baseRarityName }}</span></span>
-                              </div>
-                              <sc-if value="{{ t.hasTypeChips }}" hint-placeholder-val="{{ false }}">
-                                <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:7px">
-                                  <sc-for list="{{ t.typeChips }}" as="tc" hint-placeholder-count="2">
-                                    <span style="font-size:9px;font-weight:700;padding:3px 8px;border-radius:20px;background:color-mix(in srgb,{{ tc.color }} 18%,transparent);border:1px solid {{ tc.color }};color:var(--ink)">{{ tc.label }}</span>
-                                  </sc-for>
                                 </div>
-                              </sc-if>
-                              <sc-if value="{{ t.owned }}" hint-placeholder-val="{{ false }}">
-                                <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.15);font-size:10px;color:var(--accent-ink);font-weight:600"><i class="fa-solid fa-chart-simple" style="margin-right:5px;opacity:.8"></i>{{ t.pullLabel }}</div>
-                              </sc-if>
-                              <sc-if value="{{ t.missing }}" hint-placeholder-val="{{ true }}">
-                                <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.15);font-size:10px;color:rgba(255,255,255,.6);font-weight:500"><i class="fa-solid fa-dice" style="margin-right:5px;opacity:.7"></i>{{ t.theoLabel }}</div>
-                              </sc-if>
                             </div>
-                          </div>
-                        </div>
-                      </sc-if>
-                    </sc-for>
-                  </div>
-                  </div>
+                            <sc-if value="{{ collectorHasExp }}" hint-placeholder-val="{{ true }}">
+                                <div style="position:fixed;left:0;right:0;bottom:0;z-index:35;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(20px);border-top:1px solid var(--line);padding:10px 24px">
+                                    <div style="max-width:1240px;margin:0 auto">
+                                        <div style="display:flex;align-items:center;gap:16px">
+                                            <span style="font-family:var(--display);font-size:13px;font-weight:600;white-space:nowrap;flex-shrink:0">{{ collectorExpName }}</span>
+                                            <div style="flex:1;height:6px;background:var(--raise);border-radius:3px;overflow:hidden;min-width:60px;display:flex">
+                                                <sc-for list="{{ rarityBarRows }}" as="rb" hint-placeholder-count="4">
+                                                    <div title="{{ rb.tooltip }}" style="height:100%;background:{{ rb.color }};width:{{ rb.widthPct }};flex-shrink:0;transition:width .6s ease"></div>
+                                                </sc-for>
+                                            </div>
+                                            <span style="font-size:12px;color:var(--ink3);white-space:nowrap;flex-shrink:0">{{ stats.total }} {{ L.totalCards }}</span>
+                                            <span style="font-size:12px;color:var(--ok);white-space:nowrap;flex-shrink:0">{{ stats.owned }} {{ L.ownedW }}</span>
+                                            <span style="font-size:12px;color:var(--danger);white-space:nowrap;flex-shrink:0">{{ stats.missing }} {{ L.missingW }}</span>
+                                            <span style="font-size:12px;color:var(--accent-ink);white-space:nowrap;flex-shrink:0">{{ stats.dupes }} {{ L.dupes }}</span>
+                                            <button onClick="{{ editPullRates }}" title="{{ L.pullRateTitle }}" style="background:transparent;color:var(--ink3);border:1px solid var(--line);width:26px;height:26px;border-radius:6px;cursor:pointer;font-size:11px;flex-shrink:0" style-hover="color:var(--accent-ink);border-color:var(--accent-ink)"><i class="fa-solid fa-percent"></i></button>
+                                            <span style="font-size:13px;font-weight:700;font-family:var(--display);white-space:nowrap;flex-shrink:0">{{ stats.pct }}%</span>
+                                        </div>
+                                        <div style="display:flex;align-items:center;gap:16px;margin-top:9px">
+                                            <span style="font-size:11px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;flex-shrink:0;white-space:nowrap">{{ L.uniqueDesigns }}</span>
+                                            <div style="flex:1;height:6px;background:var(--raise);border-radius:3px;overflow:hidden;min-width:60px;display:flex">
+                                                <div title="{{ uniqueStats.baseTip }}" style="height:100%;background:var(--accent);width:{{ uniqueStats.baseWidth }};flex-shrink:0;transition:width .6s ease"></div>
+                                                <div title="{{ uniqueStats.extraTip }}" style="height:100%;background:var(--accent-ink);width:{{ uniqueStats.extraWidth }};flex-shrink:0;transition:width .6s ease"></div>
+                                            </div>
+                                            <span style="font-size:12px;color:var(--ink3);white-space:nowrap;flex-shrink:0">{{ uniqueStats.owned }}/{{ uniqueStats.total }}</span>
+                                            <span style="font-size:13px;font-weight:700;font-family:var(--display);white-space:nowrap;flex-shrink:0">{{ uniqueStats.pct }}%</span>
+                                        </div>
+                                        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:9px;padding-top:9px;border-top:1px solid var(--line)">
+                                            <span style="font-size:11px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;flex-shrink:0">{{ L.boosters }}</span>
+                                            <span style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;font-family:var(--display)" title="{{ L.calcFromCards }}"><i class="fa-solid fa-calculator" style="font-size:10px;color:var(--ink3)"></i>{{ boosterTracker.opened }}</span>
+                                            <span style="font-size:11px;color:var(--ink3)">{{ L.boostersOpenedW }}</span>
+                                            <span style="width:1px;height:16px;background:var(--line)"></span>
+                                            <span style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;font-family:var(--display)" title="{{ L.calcFromCards }}"><i class="fa-solid fa-calculator" style="font-size:10px;color:var(--ink3)"></i>{{ boosterTracker.boxes }}</span>
+                                            <span style="font-size:11px;color:var(--ink3)">{{ L.boxesOwned }}</span>
+                                            <sc-if value="{{ boosterTracker.hasBoosterRemainder }}" hint-placeholder-val="{{ false }}">
+                                                <span style="font-size:11px;color:var(--accent-ink);font-weight:600">(+{{ boosterTracker.boosterRemainder }} {{ L.boostersOpenedW }})</span>
+                                            </sc-if>
+                                            <span style="font-size:11px;color:var(--ink3);margin-left:auto">{{ boosterTracker.fromCardsLabel }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </sc-if>
+                        </sc-if>
+                    </div>
                 </sc-if>
-              </div>
-            </div>
-            <sc-if value="{{ showPagination }}" hint-placeholder-val="{{ true }}">
-              <div style="display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:18px">
-                <div style="display:flex;align-items:center;justify-content:center;gap:14px">
-                  <button onClick="{{ binderPrev }}" style="{{ binderPrevStyle }}"><i class="fa-solid fa-arrow-left" style="margin-right:7px"></i>{{ L.prevW }}</button>
-                  <button onClick="{{ binderNext }}" style="{{ binderNextStyle }}">{{ L.nextW }}<i class="fa-solid fa-arrow-right" style="margin-left:7px"></i></button>
-                </div>
-                <span style="font-size:13px;color:var(--ink3);font-weight:600">{{ binderPageLabel }}</span>
-              </div>
-            </sc-if>
-            <sc-if value="{{ showCoverPages }}" hint-placeholder-val="{{ false }}">
-              <div style="display:flex;justify-content:center;margin-top:18px">
-                <button onClick="{{ toggleCoverView }}" style="padding:10px 20px;border-radius:8px;border:none;background:var(--accent);color:var(--on-accent);font-size:13px;font-weight:600;cursor:pointer"><i class="fa-solid fa-book-open" style="margin-right:8px"></i>{{ L.openBinder }}</button>
-              </div>
-            </sc-if>
-          </sc-if>
-        </sc-if>
+
+            </main>
         </div>
-        </div>
-        <sc-if value="{{ collectorHasExp }}" hint-placeholder-val="{{ true }}">
-          <div style="position:fixed;left:0;right:0;bottom:0;z-index:35;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(20px);border-top:1px solid var(--line);padding:10px 24px">
-            <div style="max-width:1240px;margin:0 auto">
-              <div style="display:flex;align-items:center;gap:16px">
-                <span style="font-family:var(--display);font-size:13px;font-weight:600;white-space:nowrap;flex-shrink:0">{{ collectorExpName }}</span>
-                <div style="flex:1;height:6px;background:var(--raise);border-radius:3px;overflow:hidden;min-width:60px;display:flex">
-                  <sc-for list="{{ rarityBarRows }}" as="rb" hint-placeholder-count="4">
-                    <div title="{{ rb.tooltip }}" style="height:100%;background:{{ rb.color }};width:{{ rb.widthPct }};flex-shrink:0;transition:width .6s ease"></div>
-                  </sc-for>
+
+        <!-- ================= MODAL ================= -->
+        <sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
+            <div onClick="{{ closeModal }}" style="position:fixed;inset:0;z-index:60;background:rgba(4,4,8,.72);backdrop-filter:blur(6px);display:flex;align-items:flex-start;justify-content:center;padding:60px 20px;overflow-y:auto">
+                <div onClick="{{ stop }}" style="background:var(--inset);border:1px solid var(--line2);border-radius:16px;width:100%;max-width:{{ modalWidth }};box-shadow:0 24px 70px rgba(0,0,0,.6);animation:pop .22s ease">
+                    <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--line)">
+                        <div style="font-family:var(--display);font-size:17px;font-weight:600">{{ modalTitle }}</div>
+                        <button onClick="{{ closeModal }}" style="background:transparent;border:none;color:var(--ink3);cursor:pointer;font-size:18px;width:30px;height:30px;border-radius:6px" style-hover="color:var(--ink);background:var(--raise)"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <div style="padding:24px">{{ modalBody }}</div>
                 </div>
-                <span style="font-size:12px;color:var(--ink3);white-space:nowrap;flex-shrink:0">{{ stats.total }} {{ L.totalCards }}</span>
-                <span style="font-size:12px;color:var(--ok);white-space:nowrap;flex-shrink:0">{{ stats.owned }} {{ L.ownedW }}</span>
-                <span style="font-size:12px;color:var(--danger);white-space:nowrap;flex-shrink:0">{{ stats.missing }} {{ L.missingW }}</span>
-                <span style="font-size:12px;color:var(--accent-ink);white-space:nowrap;flex-shrink:0">{{ stats.dupes }} {{ L.dupes }}</span>
-                <button onClick="{{ editPullRates }}" title="{{ L.pullRateTitle }}" style="background:transparent;color:var(--ink3);border:1px solid var(--line);width:26px;height:26px;border-radius:6px;cursor:pointer;font-size:11px;flex-shrink:0" style-hover="color:var(--accent-ink);border-color:var(--accent-ink)"><i class="fa-solid fa-percent"></i></button>
-                <span style="font-size:13px;font-weight:700;font-family:var(--display);white-space:nowrap;flex-shrink:0">{{ stats.pct }}%</span>
-              </div>
-              <div style="display:flex;align-items:center;gap:16px;margin-top:9px">
-                <span style="font-size:11px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;flex-shrink:0;white-space:nowrap">{{ L.uniqueDesigns }}</span>
-                <div style="flex:1;height:6px;background:var(--raise);border-radius:3px;overflow:hidden;min-width:60px;display:flex">
-                  <div title="{{ uniqueStats.baseTip }}" style="height:100%;background:var(--accent);width:{{ uniqueStats.baseWidth }};flex-shrink:0;transition:width .6s ease"></div>
-                  <div title="{{ uniqueStats.extraTip }}" style="height:100%;background:var(--accent-ink);width:{{ uniqueStats.extraWidth }};flex-shrink:0;transition:width .6s ease"></div>
-                </div>
-                <span style="font-size:12px;color:var(--ink3);white-space:nowrap;flex-shrink:0">{{ uniqueStats.owned }}/{{ uniqueStats.total }}</span>
-                <span style="font-size:13px;font-weight:700;font-family:var(--display);white-space:nowrap;flex-shrink:0">{{ uniqueStats.pct }}%</span>
-              </div>
-              <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:9px;padding-top:9px;border-top:1px solid var(--line)">
-                <span style="font-size:11px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;flex-shrink:0">{{ L.boosters }}</span>
-                <span style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;font-family:var(--display)" title="{{ L.calcFromCards }}"><i class="fa-solid fa-calculator" style="font-size:10px;color:var(--ink3)"></i>{{ boosterTracker.opened }}</span>
-                <span style="font-size:11px;color:var(--ink3)">{{ L.boostersOpenedW }}</span>
-                <span style="width:1px;height:16px;background:var(--line)"></span>
-                <span style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;font-family:var(--display)" title="{{ L.calcFromCards }}"><i class="fa-solid fa-calculator" style="font-size:10px;color:var(--ink3)"></i>{{ boosterTracker.boxes }}</span>
-                <span style="font-size:11px;color:var(--ink3)">{{ L.boxesOwned }}</span>
-                <sc-if value="{{ boosterTracker.hasBoosterRemainder }}" hint-placeholder-val="{{ false }}">
-                  <span style="font-size:11px;color:var(--accent-ink);font-weight:600">(+{{ boosterTracker.boosterRemainder }} {{ L.boostersOpenedW }})</span>
-                </sc-if>
-                <span style="font-size:11px;color:var(--ink3);margin-left:auto">{{ boosterTracker.fromCardsLabel }}</span>
-              </div>
             </div>
-          </div>
         </sc-if>
-      </sc-if>
-    </div>
-    </sc-if>
 
-  </main>
-</div>
-
-<!-- ================= MODAL ================= -->
-<sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
-<div onClick="{{ closeModal }}" style="position:fixed;inset:0;z-index:60;background:rgba(4,4,8,.72);backdrop-filter:blur(6px);display:flex;align-items:flex-start;justify-content:center;padding:60px 20px;overflow-y:auto">
-  <div onClick="{{ stop }}" style="background:var(--inset);border:1px solid var(--line2);border-radius:16px;width:100%;max-width:{{ modalWidth }};box-shadow:0 24px 70px rgba(0,0,0,.6);animation:pop .22s ease">
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--line)">
-      <div style="font-family:var(--display);font-size:17px;font-weight:600">{{ modalTitle }}</div>
-      <button onClick="{{ closeModal }}" style="background:transparent;border:none;color:var(--ink3);cursor:pointer;font-size:18px;width:30px;height:30px;border-radius:6px" style-hover="color:var(--ink);background:var(--raise)"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <div style="padding:24px">{{ modalBody }}</div>
-  </div>
-</div>
-</sc-if>
-
-<!-- ================= TOAST ================= -->
-<sc-if value="{{ toastShow }}" hint-placeholder-val="{{ false }}">
-<div style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:80;background:var(--raise);border:1px solid var(--line2);border-left:3px solid {{ toastColor }};border-radius:10px;padding:13px 20px;box-shadow:0 12px 40px rgba(0,0,0,.5);display:flex;align-items:center;gap:11px;animation:fadeUp .3s ease;max-width:90vw">
-  <i class="{{ toastIcon }}" style="color:{{ toastColor }};font-size:15px"></i>
-  <span style="font-size:14px;font-weight:500">{{ toastMsg }}</span>
-</div>
-</sc-if>
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
+        <!-- ================= TOAST ================= -->
+        <sc-if value="{{ toastShow }}" hint-placeholder-val="{{ false }}">
+            <div style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:80;background:var(--raise);border:1px solid var(--line2);border-left:3px solid {{ toastColor }};border-radius:10px;padding:13px 20px;box-shadow:0 12px 40px rgba(0,0,0,.5);display:flex;align-items:center;gap:11px;animation:fadeUp .3s ease;max-width:90vw">
+                <i class="{{ toastIcon }}" style="color:{{ toastColor }};font-size:15px"></i>
+                <span style="font-size:14px;font-weight:500">{{ toastMsg }}</span>
+            </div>
+        </sc-if>
+    </x-dc>
+    <script type="text/x-dc" data-dc-script>
+        class Component extends DCLogic {
   state = this.buildInitial();
 
   // ---------- static config ----------
@@ -2078,4 +2191,5 @@ class Component extends DCLogic {
 }
 </script>
 </body>
+
 </html>
