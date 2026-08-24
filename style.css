@@ -1,1 +1,111 @@
-td
+                * {
+                	margin: 0;
+                	padding: 0;
+                	box-sizing: border-box
+                }
+
+                :root {
+                	--bg: #0c0c0c;
+                	--panel: #111111;
+                	--inset: #131313;
+                	--row: #161616;
+                	--raise: #1c1c1c;
+                	--line: #242424;
+                	--line2: #363636;
+                	--ink: #ece8e2;
+                	--ink2: #8f8b84;
+                	--ink3: #6e6a64;
+                	--accent: #8e3b3b;
+                	--on-accent: #f2e7e2;
+                	--accent-ink: #c67f7f;
+                	--danger: #e0714f;
+                	--ok: #4caf7d;
+                	--display: 'Space Grotesk', sans-serif;
+                	--sans: 'Space Mono', monospace;
+                	--mono: 'IBM Plex Mono', monospace
+                }
+
+                html {
+                	scroll-behavior: smooth
+                }
+
+                body {
+                	font-family: var(--sans);
+                	background: var(--bg);
+                	color: var(--ink);
+                	min-height: 100vh
+                }
+
+                ::-webkit-scrollbar {
+                	width: 6px;
+                	height: 6px
+                }
+
+                ::-webkit-scrollbar-track {
+                	background: var(--bg)
+                }
+
+                ::-webkit-scrollbar-thumb {
+                	background: var(--line);
+                	border-radius: 3px
+                }
+
+                @keyframes ambPulse {
+                	0% {
+                		opacity: 1
+                	}
+
+                	50% {
+                		opacity: .5
+                	}
+
+                	100% {
+                		opacity: 1
+                	}
+                }
+
+                @keyframes fadeUp {
+                	from {
+                		opacity: 0;
+                		transform: translateY(10px)
+                	}
+
+                	to {
+                		opacity: 1;
+                		transform: none
+                	}
+                }
+
+                @keyframes pop {
+                	0% {
+                		transform: scale(.96);
+                		opacity: 0
+                	}
+
+                	100% {
+                		transform: scale(1);
+                		opacity: 1
+                	}
+                }
+
+                input,
+                select,
+                textarea,
+                button {
+                	font-family: inherit
+                }
+
+                input:focus,
+                select:focus,
+                textarea:focus {
+                	outline: none
+                }
+
+                .tile-overlay {
+                	opacity: 0;
+                	transition: opacity .18s ease
+                }
+
+                .tile-card:hover .tile-overlay {
+                	opacity: 1
+                }
