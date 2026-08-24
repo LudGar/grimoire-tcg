@@ -11,7 +11,7 @@ Designed for collectors who want full control over their game definitions, expan
 
 | Mode | Purpose |
 |------|---------|
-| **Builder** | Define a TCG system — rarities, card layouts, expansions, and individual cards. |
+| **Builder** | Define a TCG system — rarities, card layouts, expansions, and individual cards. Only Accessable, locally by me, and not in this repo. To edit the Featured Systems.|
 | **Collector** | Track what you own across every expansion, with visual checklists, binder views, and pull-rate statistics. |
 
 ---
