@@ -1,5 +1,4 @@
-<script type="text/x-dc" data-dc-script>
-	class Component extends DCLogic {
+class Component extends DCLogic {
 	state = this.buildInitial();
 	// ---------- static config ----------
 	// structural card types (Leader/Unit/Skill/Item) - kept separate from elemental
@@ -4614,4 +4613,3 @@
 		return o;
 	}
 }
-	</script>
