@@ -534,11 +534,23 @@ class Component extends DCLogic {
   // ---------- static config ----------
   // structural card types (Leader/Unit/Skill/Item) - kept separate from elemental
   // affinity (Component.ELEMENT_*), which a card carries independently via card.element
-  static TYPES = [
-    {value:'Leader',color:'#dbb960',icon:'fa-solid fa-crown'},
-    {value:'Unit',color:'#e85d4a',icon:'fa-solid fa-user-shield'},
-    {value:'Skill',color:'#4a90d9',icon:'fa-solid fa-bolt'},
-    {value:'Item',color:'#5cb88a',icon:'fa-solid fa-flask'}
+  static LEGACY_TYPES = [
+    {id:'Leader',name:'Leader',color:'#dbb960',icon:'fa-solid fa-crown'},
+    {id:'Unit',name:'Unit',color:'#e85d4a',icon:'fa-solid fa-user-shield'},
+    {id:'Skill',name:'Skill',color:'#4a90d9',icon:'fa-solid fa-bolt'},
+    {id:'Item',name:'Item',color:'#5cb88a',icon:'fa-solid fa-flask'}
+  ];
+  static LEGACY_ELEMENTS = [
+    {id:'Fire',name:'Fire',color:'#e85d4a',icon:'fa-solid fa-fire'},
+    {id:'Water',name:'Water',color:'#4a90d9',icon:'fa-solid fa-droplet'},
+    {id:'Storm',name:'Storm',color:'#5ec9b8',icon:'fa-solid fa-cloud-bolt'},
+    {id:'Earth',name:'Earth',color:'#a8834a',icon:'fa-solid fa-mountain'},
+    {id:'Wind',name:'Wind',color:'#5cb88a',icon:'fa-solid fa-wind'},
+    {id:'Lightning',name:'Lightning',color:'#e0c93a',icon:'fa-solid fa-bolt'},
+    {id:'Wave',name:'Wave',color:'#4a90d9',icon:'fa-solid fa-water'},
+    {id:'Light',name:'Light',color:'#dbc35c',icon:'fa-solid fa-sun'},
+    {id:'Dark',name:'Dark',color:'#9b6bcf',icon:'fa-solid fa-moon'},
+    {id:'Nature',name:'Nature',color:'#6bbf59',icon:'fa-solid fa-leaf'}
   ];
   static CONDITIONS = ['Mint','Near Mint','Good','Played'];
   // whether a rarity is a parallel/alt-art variant tier is set per-rarity in Builder
@@ -561,36 +573,6 @@ class Component extends DCLogic {
     '어태커':'#d94f6e','엑시트':'#7f8fa0','엔트리':'#a0cf4f','이스케이프':'#e0c14f',
     '전선구축':'#a97a4f','체인':'#6f7f9f','크레딧':'#c9a84c','패시브':'#8f8fa0',
     '포지션':'#7f6fd0','서약':'#a04f6f'
-  };
-  static TYPE_I18N = {
-    Unit:{ko:'유닛',en:'Unit',de:'Einheit'},
-    Leader:{ko:'리더',en:'Leader',de:'Anführer'},
-    Skill:{ko:'스킬',en:'Skill',de:'Fähigkeit'},
-    Item:{ko:'아이템',en:'Item',de:'Gegenstand'}
-  };
-  // Fire/Storm/Earth/Lightning/Wave are Nivel Arena's real elements (from imported card
-  // data); Water/Wind/Light/Dark/Nature round the vocabulary out for generic/custom systems -
-  // both live in one list so any system's cards can use whichever fit.
-  static ELEMENT_I18N = {
-    Fire:{ko:'화염',en:'Fire',de:'Feuer'},
-    Water:{ko:'물',en:'Water',de:'Wasser'},
-    Storm:{ko:'폭풍',en:'Storm',de:'Sturm'},
-    Earth:{ko:'대지',en:'Earth',de:'Erde'},
-    Wind:{ko:'바람',en:'Wind',de:'Wind'},
-    Lightning:{ko:'번개',en:'Lightning',de:'Blitz'},
-    Wave:{ko:'파도',en:'Wave',de:'Welle'},
-    Light:{ko:'빛',en:'Light',de:'Licht'},
-    Dark:{ko:'어둠',en:'Dark',de:'Dunkelheit'},
-    Nature:{ko:'자연',en:'Nature',de:'Natur'}
-  };
-  static ELEMENT_COLORS = {
-    Fire:'#e85d4a', Water:'#4a90d9', Storm:'#5ec9b8', Earth:'#a8834a', Wind:'#5cb88a',
-    Lightning:'#e0c93a', Wave:'#4a90d9', Light:'#dbc35c', Dark:'#9b6bcf', Nature:'#6bbf59'
-  };
-  static ELEMENT_ICONS = {
-    Fire:'fa-solid fa-fire', Water:'fa-solid fa-droplet', Storm:'fa-solid fa-cloud-bolt',
-    Earth:'fa-solid fa-mountain', Wind:'fa-solid fa-wind', Lightning:'fa-solid fa-bolt',
-    Wave:'fa-solid fa-water', Light:'fa-solid fa-sun', Dark:'fa-solid fa-moon', Nature:'fa-solid fa-leaf'
   };
   static THEMES = {
     ledger:{name:'Grimoire Ledger',vars:{'--bg':'#0c0c0c','--panel':'#111111','--inset':'#131313','--row':'#161616','--raise':'#1c1c1c','--line':'#242424','--line2':'#363636','--ink':'#ece8e2','--ink2':'#8f8b84','--ink3':'#6e6a64','--accent':'#8e3b3b','--on-accent':'#f2e7e2','--accent-ink':'#c67f7f','--danger':'#e0714f','--ok':'#4caf7d','--display':"'Space Grotesk',sans-serif",'--sans':"'Space Mono',monospace",'--mono':"'IBM Plex Mono',monospace"}},
@@ -622,8 +604,9 @@ class Component extends DCLogic {
   cardName(c){ if(!c) return ''; const l=this.state.lang; if(l==='en'&&c.nameEn) return c.nameEn; if(l==='de'&&c.nameDe) return c.nameDe; return c.name; }
   cardDesc(c){ if(!c) return ''; const l=this.state.lang; if(l==='en'&&c.descriptionEn) return c.descriptionEn; if(l==='de'&&c.descriptionDe) return c.descriptionDe; return c.description; }
   keywordLabel(kw){ const m=Component.KEYWORD_I18N[kw]; if(!m) return kw; const l=this.state.lang; return l==='en'?m.en:(l==='de'?m.de:kw); }
-  typeLabel(v){ const m=Component.TYPE_I18N[v]; if(!m) return v||''; const l=this.state.lang; return l==='ko'?m.ko:(l==='de'?m.de:m.en); }
-  elementLabel(v){ const m=Component.ELEMENT_I18N[v]; if(!m) return v||''; const l=this.state.lang; return l==='ko'?m.ko:(l==='de'?m.de:m.en); }
+  typeLabel(v, sys){ const list=(sys&&sys.cardTypes)||[]; const found=list.find(x=>x.id===v); return found?found.name:(v||''); }
+  elementLabel(v, sys){ const list=(sys&&sys.cardElements)||[]; const found=list.find(x=>x.id===v); return found?found.name:(v||''); }
+  elementInfo(v, sys){ const list=(sys&&sys.cardElements)||[]; const found=list.find(x=>x.id===v); return found?{color:found.color,icon:found.icon}:{color:'var(--ink3)',icon:'fa-solid fa-circle-question'}; }
   setLang(id){ this.setState({lang:id}); this.postState({lang:id}); }
 
   sideItem(active){ return `display:flex;align-items:center;gap:8px;width:100%;padding:9px 10px;border:none;border-radius:7px;cursor:pointer;font-size:12.5px;font-weight:500;font-family:var(--sans);text-align:left;background:${active?'var(--row)':'transparent'};color:${active?'var(--ink)':'var(--ink2)'};box-shadow:${active?'inset 2px 0 0 var(--accent-ink)':'none'};transition:background .15s`; }
@@ -781,7 +764,7 @@ class Component extends DCLogic {
     systems=systems.map(s=>({...s,expansions:s.expansions.map(e=>{
       let touched=false;
       const cards=e.cards.map(c=>{
-        if(c.type && !Component.TYPES.some(t=>t.value===c.type) && Component.ELEMENT_I18N[c.type]){
+        if(c.type && !Component.LEGACY_TYPES.some(t=>t.id===c.type) && Component.LEGACY_ELEMENTS.some(el=>el.id===c.type)){
           touched=true;
           return {...c, element:c.element||c.type, type:'Unit'};
         }
@@ -789,23 +772,35 @@ class Component extends DCLogic {
       });
       return touched?{...e,cards}:e;
     })}));
+    // seed sys.cardTypes / sys.cardElements for systems that predate per-system type/element
+    // vocab (previously a single fixed global list for every system) - preserves exactly what's
+    // already stored on cards (via the old English keys) plus anything else actually in use
+    systems=systems.map(s=>{
+      let cardTypes=s.cardTypes&&s.cardTypes.length?s.cardTypes:Component.LEGACY_TYPES.map(t=>({...t}));
+      let cardElements=s.cardElements&&s.cardElements.length?s.cardElements:Component.LEGACY_ELEMENTS.map(t=>({...t}));
+      const usedTypes=new Set(), usedElements=new Set();
+      s.expansions.forEach(e=>e.cards.forEach(c=>{ if(c.type) usedTypes.add(c.type); if(c.element) usedElements.add(c.element); }));
+      usedTypes.forEach(v=>{ if(!cardTypes.some(t=>t.id===v)) cardTypes=[...cardTypes,{id:v,name:v,color:'#8f8fa0',icon:'fa-solid fa-shield'}]; });
+      usedElements.forEach(v=>{ if(!cardElements.some(t=>t.id===v)) cardElements=[...cardElements,{id:v,name:v,color:'#8f8fa0',icon:'fa-solid fa-circle'}]; });
+      return {...s,cardTypes,cardElements};
+    });
     return systems;
   }
 
-  typeInfo(t){ return Component.TYPES.find(x=>x.value===t) || {value:t||'',color:'var(--ink3)',icon:'fa-solid fa-question'}; }
+  typeInfo(t, sys){ const list=(sys&&sys.cardTypes)||[]; const found=list.find(x=>x.id===t); return found?{value:t,color:found.color,icon:found.icon}:{value:t||'',color:'var(--ink3)',icon:'fa-solid fa-question'}; }
   cardNumber(c,i,len){ return c.number ? c.number : this.pad(i+1,len); }
   cleanImageFilename(url){
     if(!url) return '';
-    let fn=url.split('/').pop().split('?')[0].split('#')[0];
+    let fn=url.replace(/\\/g,'/').split('/').pop().split('?')[0].split('#')[0];
     try{ fn=decodeURIComponent(fn); }catch(e){}
     fn=fn.replace(/\d+_copy\d*_\d+_/gi,'');
     fn=fn.replace(/_edit/gi,'');
     return fn;
   }
-  artNode(c,big,exp){ const ti=this.typeInfo(c.type);
+  artNode(c,big,sys){ const ti=this.typeInfo(c.type,sys);
     if(c.image){
-      const hasHost=exp&&exp.imageBaseUrl;
-      const primary=hasHost?(exp.imageBaseUrl.replace(/\/+$/,'')+'/'+this.cleanImageFilename(c.image)):c.image;
+      const hasHost=sys&&sys.imageBaseUrl;
+      const primary=hasHost?(sys.imageBaseUrl.replace(/\/+$/,'')+'/'+this.cleanImageFilename(c.image)):c.image;
       const fallback=c.image;
       return React.createElement('img',{src:primary,alt:this.cardName(c),loading:'lazy',
         onError:(e)=>{ if(hasHost&&e.target.src!==fallback){ e.target.src=fallback; } else { e.target.style.display='none'; } },
@@ -871,16 +866,16 @@ class Component extends DCLogic {
   // ---------- system CRUD ----------
   openSystemModal(edit){
     const s = edit ? this.sys() : null;
-    this.setState({ modal:{type:'system', edit:!!edit}, form:{ name:s?s.name:'', description:s?s.description:'' } });
+    this.setState({ modal:{type:'system', edit:!!edit}, form:{ name:s?s.name:'', description:s?s.description:'', imageBaseUrl:s?(s.imageBaseUrl||''):'' } });
   }
   saveSystem(){
     const f=this.state.form; if(!f.name || !f.name.trim()) return this.toast(this.t('tNameRequired'),'error');
     let systems=[...this.state.systems];
     if(this.state.modal.edit){
-      systems=systems.map(s=>s.id===this.state.selectedSystemId?{...s,name:f.name.trim(),description:(f.description||'').trim()}:s);
+      systems=systems.map(s=>s.id===this.state.selectedSystemId?{...s,name:f.name.trim(),description:(f.description||'').trim(),imageBaseUrl:(f.imageBaseUrl||'').trim()}:s);
       this.commit({systems,modal:null}); this.toast(this.t('tSystemUpdated'));
     }else{
-      const ns={id:this.uid('sys'),name:f.name.trim(),description:(f.description||'').trim(),rarities:this.defaultRarities(),cardLayout:Component.DEFAULT_LAYOUT(),groups:[],expansions:[]};
+      const ns={id:this.uid('sys'),name:f.name.trim(),description:(f.description||'').trim(),imageBaseUrl:(f.imageBaseUrl||'').trim(),rarities:this.defaultRarities(),cardLayout:Component.DEFAULT_LAYOUT(),groups:[],series:[],expansions:[]};
       systems.push(ns);
       this.commit({systems,modal:null,selectedSystemId:ns.id,builderTab:'system'}); this.toast(this.t('tSystemCreated'));
     }
@@ -1020,7 +1015,7 @@ class Component extends DCLogic {
   // ---------- expansion CRUD ----------
   openExpansionModal(edit){
     let e=null; if(edit){ const s=this.sys(); e=s.expansions.find(x=>x.id===this.state.collectorExpansionId); }
-    this.setState({ modal:{type:'expansion',edit:!!edit}, form:{ name:e?e.name:'', abbreviation:e?e.abbreviation:'', releaseDate:e?e.releaseDate:'', groupId:e?(e.groupId||''):'', seriesId:e?(e.seriesId||''):'', imageBaseUrl:e?(e.imageBaseUrl||''):'',
+    this.setState({ modal:{type:'expansion',edit:!!edit}, form:{ name:e?e.name:'', abbreviation:e?e.abbreviation:'', releaseDate:e?e.releaseDate:'', groupId:e?(e.groupId||''):'', seriesId:e?(e.seriesId||''):'',
       cardsPerBooster:e&&e.cardsPerBooster?e.cardsPerBooster:6, boostersPerBox:e&&e.boostersPerBox?e.boostersPerBox:24 } });
   }
   saveExpansion(){
@@ -1030,8 +1025,8 @@ class Component extends DCLogic {
     const systems=this.state.systems.map(s=>{
       if(s.id!==this.state.collectorSystemId) return s;
       let expansions=[...s.expansions];
-      if(this.state.modal.edit){ expansions=expansions.map(e=>e.id===this.state.collectorExpansionId?{...e,name:f.name.trim(),abbreviation:(f.abbreviation||'').trim().toUpperCase(),releaseDate:f.releaseDate,groupId:f.groupId||null,seriesId:f.seriesId||null,imageBaseUrl:(f.imageBaseUrl||'').trim(),cardsPerBooster,boostersPerBox}:e); }
-      else{ newId=this.uid('exp'); expansions.push({id:newId,name:f.name.trim(),abbreviation:(f.abbreviation||'SET').trim().toUpperCase(),releaseDate:f.releaseDate,groupId:f.groupId||null,seriesId:f.seriesId||null,imageBaseUrl:(f.imageBaseUrl||'').trim(),cardsPerBooster,boostersPerBox,cards:[]}); }
+      if(this.state.modal.edit){ expansions=expansions.map(e=>e.id===this.state.collectorExpansionId?{...e,name:f.name.trim(),abbreviation:(f.abbreviation||'').trim().toUpperCase(),releaseDate:f.releaseDate,groupId:f.groupId||null,seriesId:f.seriesId||null,cardsPerBooster,boostersPerBox}:e); }
+      else{ newId=this.uid('exp'); expansions.push({id:newId,name:f.name.trim(),abbreviation:(f.abbreviation||'SET').trim().toUpperCase(),releaseDate:f.releaseDate,groupId:f.groupId||null,seriesId:f.seriesId||null,cardsPerBooster,boostersPerBox,cards:[]}); }
       return {...s,expansions};
     });
     this.commit({systems,modal:null,collectorExpansionId:newId||this.state.collectorExpansionId}); this.toast(this.state.modal.edit?this.t('tExpUpdated'):this.t('tExpCreated'));
@@ -1294,7 +1289,7 @@ class Component extends DCLogic {
   // ---------- render helpers ----------
   fmtDate(d){ if(!d) return this.t('noDate'); try{ return new Date(d+'T00:00:00').toLocaleDateString(this.locale(),{year:'numeric',month:'short',day:'numeric'}); }catch(e){ return d; } }
   pad(n,len){ return String(n).padStart(Math.max(2,String(len).length),'0'); }
-  artStyle(type){ const ti=this.typeInfo(type); return `linear-gradient(150deg,${ti.color}44,${ti.color}14 55%,var(--panel))`; }
+  artStyle(type, sys){ const ti=this.typeInfo(type, sys); return `linear-gradient(150deg,${ti.color}44,${ti.color}14 55%,var(--panel))`; }
 
   // ---------- binder cover / divider art ----------
   coverBg(o){ const d=o||{}; const type=d.bgType||'gradient';
@@ -1427,15 +1422,15 @@ class Component extends DCLogic {
         const bpar=(c)=>Component.isParallelRarity(c.rarityId,sys);
         const orderedCards=this.sortExpansionCards(exp,sys);
         const dragId=S.builderDragId;
-        v.builderCards=orderedCards.map((c,i)=>{ const rr=this.rarityById(sys,c.rarityId); const ti=this.typeInfo(c.type); const par=bpar(c);
+        v.builderCards=orderedCards.map((c,i)=>{ const rr=this.rarityById(sys,c.rarityId); const ti=this.typeInfo(c.type,sys); const ei=this.elementInfo(c.element,sys); const par=bpar(c);
           const statChips=this.layoutOf(sys).filter(fld=>fld.showOnTile&&fld.type!=='longtext'&&fld.type!=='type'&&fld.type!=='element').slice(0,4).map(fld=>({key:fld.id,icon:fld.icon,color:fld.color,value:this.cardStatVal(c,fld)}));
           const borderColor=par?(rr?rr.color:'#e0609a'):'var(--line)';
-          return {id:c.id,number:this.cardNumber(c,i,exp.cards.length),name:this.cardName(c),type:this.typeLabel(c.type),typeColor:ti.color,typeIcon:ti.icon,
-            hasElement:!!c.element,elementLabel:c.element?this.elementLabel(c.element):'',elementColor:c.element?(Component.ELEMENT_COLORS[c.element]||'var(--ink3)'):'',elementIcon:c.element?(Component.ELEMENT_ICONS[c.element]||'fa-solid fa-circle-question'):'',
-            hasImage:!!c.image,noImage:!c.image,imgSrc:c.image||'',art:this.artNode(c,true,exp),parallel:par,
+          return {id:c.id,number:this.cardNumber(c,i,exp.cards.length),name:this.cardName(c),type:this.typeLabel(c.type,sys),typeColor:ti.color,typeIcon:ti.icon,
+            hasElement:!!c.element,elementLabel:c.element?this.elementLabel(c.element,sys):'',elementColor:ei.color,elementIcon:ei.icon,
+            hasImage:!!c.image,noImage:!c.image,imgSrc:c.image||'',art:this.artNode(c,true,sys),parallel:par,
             cardBorder:borderColor,hasStats:statChips.length>0,statChips,
             rarityName:rr?rr.name:'—',rarityColor:rr?rr.color:'var(--ink3)',rarityAbbr:rr?(rr.abbr||rr.name):'—',
-            artStyle:this.artStyle(c.type), onEdit:()=>this.openCardModal(true,c),
+            artStyle:this.artStyle(c.type,sys), onEdit:()=>this.openCardModal(true,c),
             tileStyle:this.parseStyle(`background:var(--row);border:1px solid ${borderColor};border-radius:14px;overflow:hidden;cursor:grab;transition:transform .2s,border-color .2s,box-shadow .2s,opacity .2s;opacity:${dragId===c.id?'.35':'1'}`),
             onDragStart:(e)=>{ e.dataTransfer.setData('text/plain',c.id); e.dataTransfer.effectAllowed='move'; this.setState({builderDragId:c.id}); },
             onDragOver:(e)=>{ e.preventDefault(); e.dataTransfer.dropEffect='move'; },
@@ -1494,7 +1489,7 @@ class Component extends DCLogic {
         v.homeOwnedCount=ownedEntries.length; v.homeTotalCount=allCardsFlat.length;
         v.homeOverallPct=allCardsFlat.length?Math.round(ownedEntries.length/allCardsFlat.length*100):0;
         const buildHomeTile=(x)=>{ const c=x.card,e=x.exp; const rr=this.rarityById(cs,c.rarityId);
-          return {id:c.id,artStyle:this.artStyle(c.type),art:this.artNode(c,true,e),
+          return {id:c.id,artStyle:this.artStyle(c.type,cs),art:this.artNode(c,true,cs),
             name:this.cardName(c),number:this.cardNumber(c,e.cards.indexOf(c),e.cards.length),
             expName:this.packName(e),rarityName:rr?rr.name:'—',rarityColor:rr?rr.color:'var(--ink3)',
             onOpen:()=>this.setState({collectorExpansionId:e.id,collectorHome:false,collectorRarity:'all',collectorSpread:0})}; };
@@ -1649,10 +1644,14 @@ class Component extends DCLogic {
             extraTip:`${this.t('uniqueDesigns')} — ${uniqueOwned}/${uniqueTotal} (${uniquePct}%)`};
           const tileChipFields=this.layoutOf(cs).filter(f=>f.showOnTile&&(f.type==='type'||f.type==='element'));
           const makeTile=(arr,key)=>{
-            // prefer the rarest variant as the default face of the stack (e.g. Special Rare over
-            // Super Rare) - rarity order is whatever's configured in Builder, later = rarer/more special
+            // prefer the rarest OWNED variant as the default face of the stack (e.g. Special
+            // Rare over Super Rare, but only once you actually own that Special Rare copy) -
+            // falls back to the plain base/non-parallel printing when nothing here is owned yet
             const rarityRank=(c)=>{ const i=cs.rarities.findIndex(r=>r.id===c.rarityId); return i<0?-1:i; };
-            const baseEntry=[...arr].sort((a,b)=>rarityRank(b.card)-rarityRank(a.card))[0]||arr[0];
+            const ownedArr=arr.filter(x=>{ const en=bucket[x.card.id]; return en&&en.owned; });
+            const baseEntry=ownedArr.length
+              ? [...ownedArr].sort((a,b)=>rarityRank(b.card)-rarityRank(a.card))[0]
+              : (arr.find(x=>!isPar(x.card))||arr[0]);
             const base=baseEntry.card; const brr=this.rarityById(cs,base.rarityId);
             const parCount=arr.filter(x=>isPar(x.card)).length;
             let groupCopies=0,dupeCopies=0; arr.forEach(x=>{ const en=bucket[x.card.id]; if(en&&en.owned){ groupCopies+=(en.qty||0); dupeCopies+=Math.max(0,(en.qty||1)-1); } });
@@ -1678,8 +1677,8 @@ class Component extends DCLogic {
             });
             const displayCard=hoveredCard||base;
             const typeChips=tileChipFields.map(fl=>{
-              if(fl.type==='type'){ const v=base.type; return {key:fl.id,label:this.typeLabel(v),color:this.typeInfo(v).color}; }
-              const v=base.element; return {key:fl.id,label:this.elementLabel(v),color:Component.ELEMENT_COLORS[v]||'var(--ink3)'};
+              if(fl.type==='type'){ const v=base.type; return {key:fl.id,label:this.typeLabel(v,cs),color:this.typeInfo(v,cs).color}; }
+              const v=base.element; return {key:fl.id,label:this.elementLabel(v,cs),color:this.elementInfo(v,cs).color};
             }).filter(x=>x.label);
             const owned=groupCopies>0;
             return {key,real:true,empty:false,rarityIds:arr.map(x=>x.card.rarityId),
@@ -1687,7 +1686,7 @@ class Component extends DCLogic {
               baseRarityName:brr?brr.name:'—',baseRarityAbbr:brr?(brr.abbr||brr.name):'—',baseRarityColor:brr?brr.color:'var(--ink3)',
               owned,pullLabel:groupCopies?this.fmt(this.t('pulledL'),groupPct.toFixed(1),groupCopies):'',
               missing:!owned,hasDupes:dupeCopies>0,theoLabel:theo!=null?this.fmt(this.t('expectedL'),theo.toFixed(theo<1?2:1)):'',
-              artStyle:this.artStyle(displayCard.type),art:this.artNode(displayCard,true,cexp),artOpacity:owned?'1':'0.4',
+              artStyle:this.artStyle(displayCard.type,cs),art:this.artNode(displayCard,true,cs),artOpacity:owned?'1':'0.4',
               variants,typeChips,hasTypeChips:typeChips.length>0,
               onOpen:()=>this.openCollectorCard(base)};
           };
@@ -1783,6 +1782,8 @@ class Component extends DCLogic {
         v.modalBody=R('div',null,
           field(this.t('lSystemName'),textInput('name','e.g. Arcane Legends')),
           field(this.t('lDescription'),R('textarea',{'data-field':'description',value:f.description??'',placeholder:'A short description of this card game…',onChange:(e)=>this.onField(e),rows:3,style:this.parseStyle(inp+';resize:vertical;font-family:inherit')})),
+          field(this.t('lImageBaseUrl'),textInput('imageBaseUrl','https://username.github.io/repo/images')),
+          R('div',{style:{fontSize:'11px',color:'var(--ink3)',marginTop:'-10px',marginBottom:'16px'}}, this.t('imageBaseUrlHint')),
           footer(m.edit?this.t('saveChanges'):this.t('createSystem'),()=>this.saveSystem())
         );
       } else if(m.type==='rarity'){
@@ -1824,8 +1825,6 @@ class Component extends DCLogic {
             R('div',{style:{flex:1}},field(this.t('lCardsPerBooster'),textInput('cardsPerBooster','6','number'))),
             R('div',{style:{flex:1}},field(this.t('lBoostersPerBox'),textInput('boostersPerBox','24','number')))
           ),
-          field(this.t('lImageBaseUrl'),textInput('imageBaseUrl','https://username.github.io/repo/images/SET01')),
-          R('div',{style:{fontSize:'11px',color:'var(--ink3)',marginTop:'-10px',marginBottom:'16px'}}, this.t('imageBaseUrlHint')),
           footer(m.edit?this.t('saveChanges'):this.t('createExpansion'),()=>this.saveExpansion())
         );
       } else if(m.type==='pullRates'){
@@ -1852,9 +1851,9 @@ class Component extends DCLogic {
             R('div',{style:{flex:'0 0 150px'}},field(this.t('lCardNumber'),textInput('number','e.g. SET01-047')))
           ),
           R('div',{style:{display:'flex',gap:'14px'}},
-            R('div',{style:{flex:1}},field(this.t('lType'),R('select',{'data-field':'type',value:f.type,onChange:(e)=>this.onField(e),style:selStyle},Component.TYPES.map(t=>R('option',{key:t.value,value:t.value},this.typeLabel(t.value)))))),
+            R('div',{style:{flex:1}},field(this.t('lType'),R('select',{'data-field':'type',value:f.type,onChange:(e)=>this.onField(e),style:selStyle},(sys?sys.cardTypes:[]||[]).map(t=>R('option',{key:t.id,value:t.id},t.name))))),
             R('div',{style:{flex:1}},field(this.t('lElement'),R('select',{'data-field':'element',value:f.element||'',onChange:(e)=>this.onField(e),style:selStyle},
-              [R('option',{key:'',value:''},this.t('noElement')),...Object.keys(Component.ELEMENT_I18N).map(k=>R('option',{key:k,value:k},this.elementLabel(k)))]))),
+              [R('option',{key:'',value:''},this.t('noElement')),...(sys?sys.cardElements:[]||[]).map(el=>R('option',{key:el.id,value:el.id},el.name))]))),
             R('div',{style:{flex:1}},field(this.t('lRarity'),R('select',{'data-field':'rarityId',value:f.rarityId,onChange:(e)=>this.onField(e),style:selStyle},(sys?sys.rarities:[]).map(r=>R('option',{key:r.id,value:r.id},r.name)))))
           ),
           R('div',{style:{display:'flex',gap:'14px',flexWrap:'wrap'}},
@@ -1865,7 +1864,7 @@ class Component extends DCLogic {
           ),
           field(this.t('lImage'),textInput('image','https://…')),
           R('div',{style:{display:'flex',justifyContent:'center',margin:'4px 0 18px'}},
-            R('div',{style:{position:'relative',width:'370px',maxWidth:'100%',aspectRatio:'370/515',maxHeight:'70vh',borderRadius:'12px',overflow:'hidden',background:this.artStyle(f.type||'Unit'),border:'1px solid var(--line2)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}},
+            R('div',{style:{position:'relative',width:'370px',maxWidth:'100%',aspectRatio:'370/515',maxHeight:'70vh',borderRadius:'12px',overflow:'hidden',background:this.artStyle(f.type||'Unit',sys),border:'1px solid var(--line2)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}},
               R('span',{style:{fontSize:'12px',color:'var(--ink3)',textAlign:'center',padding:'0 14px'}}, f.image?this.t('imgLoadFail'):this.t('imgNone')),
               f.image?R('img',{key:f.image,src:f.image,alt:'preview',style:{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'contain'},onError:(e)=>{e.target.style.display='none';}}):null
             )
@@ -1956,7 +1955,7 @@ class Component extends DCLogic {
         const cond=S.globalCondition||'Near Mint';
         const rowStyle='display:flex;align-items:center;gap:12px;padding:11px 12px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin-bottom:9px';
         const stepBtn='width:30px;height:30px;border-radius:7px;border:1px solid var(--line2);background:var(--row);color:var(--ink);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0';
-        const rows=m.variants.map((c)=>{ const rr=this.rarityById(cs,c.rarityId); const rc=rr?rr.color:'var(--ink3)'; const ti=this.typeInfo(c.type);
+        const rows=m.variants.map((c)=>{ const rr=this.rarityById(cs,c.rarityId); const rc=rr?rr.color:'var(--ink3)'; const ti=this.typeInfo(c.type,cs);
           const en=bucket[c.id]; const qty=en&&en.owned?en.qty:0; const owned=qty>0;
           const pct=(owned&&totalPulledM)?(qty/totalPulledM*100):0;
           return R('div',{key:c.id,style:this.parseStyle(rowStyle+(owned?';border-color:'+rc+'66':''))},
@@ -1975,7 +1974,7 @@ class Component extends DCLogic {
             R('button',{onClick:()=>this.setVariantQty(c,qty+1),style:this.parseStyle(stepBtn.replace('var(--row)','var(--raise)'))},R('i',{className:'fa-solid fa-plus',style:{fontSize:'11px'}}))
           );
         });
-        const brr0=this.rarityById(cs,base.rarityId); const bti=this.typeInfo(base.type);
+        const brr0=this.rarityById(cs,base.rarityId); const bti=this.typeInfo(base.type,cs);
         const statChipsM=this.layoutOf(cs).filter(fld=>fld.showOnTile&&fld.type!=='longtext'&&fld.type!=='type'&&fld.type!=='element').map(fld=>{
           const val=this.cardStatVal(base,fld); if(val===''||val==null) return null;
           return R('div',{key:fld.id,style:{display:'flex',alignItems:'center',gap:'6px',background:'var(--panel)',border:'1px solid var(--line)',borderRadius:'8px',padding:'6px 10px'}},
@@ -1984,14 +1983,14 @@ class Component extends DCLogic {
           );
         }).filter(Boolean);
         const imgPanel=R('div',{style:{width:'240px',flexShrink:0}},
-          R('div',{style:{position:'relative',aspectRatio:'5/7',borderRadius:'14px',overflow:'hidden',background:this.artStyle(base.type),boxShadow:'0 20px 46px rgba(0,0,0,.5)',border:'1px solid var(--line2)'}}, this.artNode(base,true,cexpM))
+          R('div',{style:{position:'relative',aspectRatio:'5/7',borderRadius:'14px',overflow:'hidden',background:this.artStyle(base.type,cs),boxShadow:'0 20px 46px rgba(0,0,0,.5)',border:'1px solid var(--line2)'}}, this.artNode(base,true,cs))
         );
         const rightCol=R('div',{style:{flex:'1 1 300px',minWidth:'260px'}},
           R('div',{style:{display:'flex',alignItems:'center',gap:'10px',flexWrap:'wrap',marginBottom:'12px'}},
             R('span',{style:{fontFamily:"var(--display)",fontSize:'12px',fontWeight:700,color:'var(--ink2)',background:'var(--panel)',border:'1px solid var(--line)',borderRadius:'6px',padding:'4px 9px'}}, base.number||''),
             R('span',{style:{display:'flex',alignItems:'center',gap:'6px',fontSize:'12px',color:'var(--ink3)'}}, R('span',{style:{width:'9px',height:'9px',borderRadius:'50%',background:brr0?brr0.color:'var(--ink3)'}}), brr0?`${brr0.abbr||''} · ${brr0.name}`:'—'),
-            R('span',{style:{display:'flex',alignItems:'center',gap:'6px',fontSize:'12px',color:bti.color}}, R('i',{className:bti.icon}), this.typeLabel(base.type)),
-            base.element?R('span',{style:{display:'flex',alignItems:'center',gap:'6px',fontSize:'12px',color:Component.ELEMENT_COLORS[base.element]||'var(--ink3)'}}, R('i',{className:'fa-solid fa-fire'}), this.elementLabel(base.element)):null
+            R('span',{style:{display:'flex',alignItems:'center',gap:'6px',fontSize:'12px',color:bti.color}}, R('i',{className:bti.icon}), this.typeLabel(base.type,cs)),
+            base.element?R('span',{style:{display:'flex',alignItems:'center',gap:'6px',fontSize:'12px',color:this.elementInfo(base.element,cs).color}}, R('i',{className:this.elementInfo(base.element,cs).icon}), this.elementLabel(base.element,cs)):null
           ),
           statChipsM.length?R('div',{style:{display:'flex',gap:'8px',flexWrap:'wrap',marginBottom:'14px'}},statChipsM):null,
           (base.keywords&&base.keywords.length)?R('div',{style:{display:'flex',gap:'6px',flexWrap:'wrap',marginBottom:'14px'}},

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-08-24T17:06:30.356Z",
+  "exportedAt": "2026-08-25T11:09:27.495Z",
   "systems": [
     {
       "id": "sys-nivel",
@@ -54,42 +54,48 @@
           "name": "Special Rare",
           "abbr": "SPR",
           "color": "#e0609a",
-          "pullRate": ""
+          "pullRate": "",
+          "parallel": true
         },
         {
           "id": "nv-sbr",
           "name": "Special Booster Rare",
           "abbr": "SBR",
           "color": "#d94f6e",
-          "pullRate": ""
+          "pullRate": "",
+          "parallel": true
         },
         {
           "id": "nv-spl",
           "name": "Special Leader",
           "abbr": "SPL",
           "color": "#c94f8a",
-          "pullRate": ""
+          "pullRate": "",
+          "parallel": true
         },
         {
           "id": "nv-sbl",
           "name": "Special Booster Leader",
           "abbr": "SBL",
           "color": "#b83f66",
-          "pullRate": ""
+          "pullRate": "",
+          "parallel": true
         },
         {
           "id": "nv-ssl",
           "name": "Special Store Leader",
           "abbr": "SSL",
           "color": "#9c3a7a",
-          "pullRate": ""
+          "pullRate": "",
+          "parallel": true
         },
         {
           "id": "nv-anl",
           "name": "Anniversary Leader",
           "abbr": "ANL",
           "color": "#e0a04f",
-          "pullRate": ""
+          "pullRate": "",
+          "parallel": true
         }
       ],
       "cardLayout": [
@@ -190,13 +196,18 @@
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
-                "nv-hit": 0
+                "nv-hit": 0,
+                "nv-desc": "",
+                "f-mt6615clm3cd": "",
+                "f-mt661h660r08": "",
+                "f-mt660kcvlchc": 0,
+                "f-mt65zz4x67om": ""
               },
               "description": "기본면\n 자신의 덱에 카드만 넣을 수 있다.\n 자신의 리더 레벨이 6 이상이라면 이 카드를 뒤집는다.\n\n각성면\n 자신의 턴 동안 필드에 있는 를 가진 모든 자신 유닛의 파워+2000.",
               "keywords": [
                 "패시브"
               ],
-              "image": "",
+              "image": "NIVEL\\CARDS\\5abf82a892f0549c26939bd53be4bda8_liwsYf3A_9098b689e08f6c4ee0ea9d85dd2b66f5e930ada0.jpg",
               "nameEn": "Red Hood",
               "nameDe": "Rotkäppchen",
               "descriptionEn": "Base Side\n You may only put cards in your deck.\n If your Leader Level is 6 or higher, flip this card.\n\nAwakened Side\n All your units on the field with 【 】get Power+2000 during your turn.",
@@ -213,7 +224,12 @@
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
-                "nv-hit": 0
+                "nv-hit": 0,
+                "nv-desc": "",
+                "f-mt6615clm3cd": "",
+                "f-mt661h660r08": "",
+                "f-mt660kcvlchc": 0,
+                "f-mt65zz4x67om": ""
               },
               "description": "기본면\n 자신의 덱에 카드만 넣을 수 있다.\n 자신의 리더 레벨이 6 이상이라면 이 카드를 뒤집는다.\n\n각성면\n 자신의 턴 동안 필드에 있는 를 가진 모든 자신 유닛의 파워+2000.",
               "keywords": [
@@ -16444,7 +16460,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_N8t1XPCM_247066d0ad24a08b8ca49663800e79eab30b743d.jpg",
               "edited": true,
               "sortIndex": 17,
-              "element": "Nature"
+              "element": "Earth"
             },
             {
               "id": "sb01-001-p4",
@@ -16464,7 +16480,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_UTtyfVov_fa8938b7f25cec7e80318e93845d139fe9b2c451.jpg",
               "edited": true,
               "sortIndex": 18,
-              "element": "Nature"
+              "element": "Earth"
             },
             {
               "id": "sb01-005-p1",
@@ -16484,7 +16500,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_NVTJ3aoq_6cab0236cbfd71e730ece184f1c5ad46ae6b5ba6.jpg",
               "edited": true,
               "sortIndex": 19,
-              "element": "Nature"
+              "element": "Earth"
             },
             {
               "id": "sb01-009-p1",
@@ -16502,7 +16518,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_cL8qZVAl_65cbe9a16bb798f0a274a7fdbdb42aabd67bf19b.jpg",
               "edited": true,
               "sortIndex": 20,
-              "element": "Nature"
+              "element": "Earth"
             },
             {
               "id": "sb01-010-p3",
@@ -16522,7 +16538,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_MpNA8Pqs_63db47be2e9fc0ec1256588deec9bbca91a85d9f.jpg",
               "edited": true,
               "sortIndex": 21,
-              "element": "Nature"
+              "element": "Earth"
             },
             {
               "id": "sb01-010-p2",
@@ -16542,7 +16558,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_k5vNITDC_865b20eca52b814481f7fb649c93ebd7e5658205.jpg",
               "edited": true,
               "sortIndex": 22,
-              "element": "Nature"
+              "element": "Earth"
             },
             {
               "id": "sb01-011",
@@ -16562,7 +16578,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_26j90WDy_d47dea24a4d8675549612410f3c4458cb265d103.jpg",
               "edited": true,
               "sortIndex": 23,
-              "element": "Nature"
+              "element": "Earth"
             },
             {
               "id": "sb01-015-p3",
@@ -16580,7 +16596,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_Q8UJfIFd_4d9a529394ce1b80f3a15628f608cc40f3602372.jpg",
               "edited": true,
               "sortIndex": 24,
-              "element": "Nature"
+              "element": "Earth"
             },
             {
               "id": "sb01-043",
@@ -16598,7 +16614,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_SDwHLlXa_1c046acc882186fae56f59f2b011a814975696ec.jpg",
               "edited": true,
               "sortIndex": 25,
-              "element": "Nature"
+              "element": "Earth"
             },
             {
               "id": "sb01-006",
@@ -16618,7 +16634,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_cPWTlHMI_99c091788a8bf9de516f72f969332f5eec9dd9af.jpg",
               "edited": true,
               "sortIndex": 26,
-              "element": "Nature"
+              "element": "Earth"
             },
             {
               "id": "sb01-007-p1",
@@ -16640,7 +16656,7 @@
               "nameDe": "Tia - Süße Köchin",
               "descriptionEn": "You may reveal 1 card from the top of your deck. If you choose 1 card from your hand and trash it, you may choose the unit card among it and deploy it to an empty Unit Zone of yours. A unit deployed by this effect has Cost 0. Trash the rest.",
               "descriptionDe": "Du kannst 1 Karte von der Oberseite deines Decks aufdecken. Falls du 1 Karte aus deiner Hand wählst und trashst, kannst du die Einheitenkarte darunter wählen und in eine leere Einheitenzone von dir platzieren. Eine durch diesen Effekt platzierte Einheit hat Kosten 0. Trashe den Rest.",
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 27,
               "edited": true
             },
@@ -16664,7 +16680,7 @@
               "nameDe": "Tia - Süße Köchin",
               "descriptionEn": "You may reveal 1 card from the top of your deck. If you choose 1 card from your hand and trash it, you may choose the unit card among it and deploy it to an empty Unit Zone of yours. A unit deployed by this effect has Cost 0. Trash the rest.",
               "descriptionDe": "Du kannst 1 Karte von der Oberseite deines Decks aufdecken. Falls du 1 Karte aus deiner Hand wählst und trashst, kannst du die Einheitenkarte darunter wählen und in eine leere Einheitenzone von dir platzieren. Eine durch diesen Effekt platzierte Einheit hat Kosten 0. Trashe den Rest.",
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 28,
               "edited": true
             },
@@ -16686,7 +16702,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_kfto7jF1_837441825ae54884404408de07fab28383601e79.jpg",
               "edited": true,
               "sortIndex": 29,
-              "element": "Nature"
+              "element": "Earth"
             },
             {
               "id": "sb01-008-p1",
@@ -16708,7 +16724,7 @@
               "nameDe": "Crimson - Racer's High",
               "descriptionEn": "If all of your Unit Zones have a unit, Power+2000. All your units on the field with Cost 3 or less gain \"If trashed by an effect, you may choose 1 card from your hand and trash it. If you do, deploy this unit card to an empty Unit Zone of yours.\"",
               "descriptionDe": "Falls alle deine Einheitenzonen eine Einheit haben, Stärke+2000. Alle deine Einheiten auf dem Feld mit Kosten 3 oder weniger erhalten „Falls durch einen Effekt getrasht, kannst du 1 Karte aus deiner Hand wählen und trashen. Falls du das tust, platziere diese Einheitenkarte in eine leere Einheitenzone von dir.“",
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 30,
               "edited": true
             },
@@ -16730,7 +16746,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_FQWg6UJz_e41909fa2de6ba749b03a5107e76b7f662b71294.jpg",
               "edited": true,
               "sortIndex": 31,
-              "element": "Nature"
+              "element": "Earth"
             },
             {
               "id": "sb01-010-p5",
@@ -16753,7 +16769,7 @@
               "nameDe": "Nayuta",
               "descriptionEn": "If your Leader Level is 8 or higher, Hit+1.\n Until the end of this attack, if the opponent blocks with a unit with lower Hit than this unit, they must choose and trash cards from their hand equal to the difference.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Falls dein Anführer-Level 8 oder höher ist, Treffer+1.\n Bis zum Ende dieses Angriffs, falls der Gegner mit einer Einheit mit niedrigerem Treffer als dieser Einheit blockt, muss er Karten aus seiner Hand in Höhe der Differenz wählen und trashen.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 32,
               "edited": true
             },
@@ -16776,7 +16792,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_BbQlGLPM_a1e3b91c9c891a5586ff932c2afbc44f6e6080ac.jpg",
               "edited": true,
               "sortIndex": 33,
-              "element": "Nature"
+              "element": "Earth"
             },
             {
               "id": "sb01-001-p7",
@@ -16796,7 +16812,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_BJ1dSreA_97a3b57eb2231f45ddc978d74b6548c500c01dd3.jpg",
               "edited": true,
               "sortIndex": 34,
-              "element": "Dark"
+              "element": "Storm"
             },
             {
               "id": "sb01-001-p6",
@@ -16816,7 +16832,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_I43Djqyc_bd3dbeb37fdbc7888c7a70d0ba4301adf260c98f.jpg",
               "edited": true,
               "sortIndex": 35,
-              "element": "Dark"
+              "element": "Storm"
             },
             {
               "id": "sb01-003-p3",
@@ -16836,7 +16852,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_uEfmQTYS_7a898e81dc9927793d014882038ba3b6796771f7.jpg",
               "edited": true,
               "sortIndex": 36,
-              "element": "Dark"
+              "element": "Storm"
             },
             {
               "id": "sb01-003-p2",
@@ -16856,7 +16872,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_zo8JBSps_2b48333029b9d73ba3daaae6c5556cb96decab05.jpg",
               "edited": true,
               "sortIndex": 37,
-              "element": "Dark"
+              "element": "Storm"
             },
             {
               "id": "sb01-006-p1",
@@ -16876,7 +16892,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_VsDMAZal_2e27482d5805f8c25ad8befc1915a63ce5636fe3.jpg",
               "edited": true,
               "sortIndex": 38,
-              "element": "Dark"
+              "element": "Storm"
             },
             {
               "id": "sb01-011-p2",
@@ -16896,7 +16912,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_zSs2hDXP_6cec259a16216400448ccc957250dbb2c901728e.jpg",
               "edited": true,
               "sortIndex": 39,
-              "element": "Dark"
+              "element": "Storm"
             },
             {
               "id": "sb01-013",
@@ -16914,7 +16930,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_rqzmTQps_2673d0fa1f2c8c6578642a6f221579856520fc00.jpg",
               "edited": true,
               "sortIndex": 40,
-              "element": "Dark"
+              "element": "Storm"
             },
             {
               "id": "sb01-026",
@@ -16932,7 +16948,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_YvBStWwq_5d597e9b66280bf959d2a4498a1303ae596cb141.jpg",
               "edited": true,
               "sortIndex": 41,
-              "element": "Dark"
+              "element": "Storm"
             },
             {
               "id": "sb01-049",
@@ -16950,7 +16966,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_u2K9wj1h_b5b2e1b355788c870b8f3521a73498e3de0cd32e.jpg",
               "edited": true,
               "sortIndex": 42,
-              "element": "Dark"
+              "element": "Storm"
             },
             {
               "id": "sb01-011-p3",
@@ -16970,7 +16986,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_dTalVRsh_566b8a7bc7fa073f7f5c2dd340d7ad34c345c695.jpg",
               "edited": true,
               "sortIndex": 43,
-              "element": "Dark"
+              "element": "Storm"
             },
             {
               "id": "sb01-012-p1",
@@ -16990,7 +17006,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_96Iy0XOv_87c8a226942d86ac7ee35111b795c6fb489bbbe1.jpg",
               "edited": true,
               "sortIndex": 44,
-              "element": "Dark"
+              "element": "Storm"
             },
             {
               "id": "sb01-012",
@@ -17010,7 +17026,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_EMCe3G8A_05b6ce37c9230bef2fa4df7c7a7bc388bd43510e.jpg",
               "edited": true,
               "sortIndex": 45,
-              "element": "Dark"
+              "element": "Storm"
             },
             {
               "id": "sb01-013-p2",
@@ -17032,7 +17048,7 @@
               "nameDe": "Riverelio",
               "descriptionEn": "Until the end of this turn, whenever your 【 】effect would deal 1 damage to the opponent, deal 2 damage instead. You may trash this unit. If you do, you may choose 1 unit card with Cost 5 from your hand and deploy it to the Unit Zone this unit was in. A unit deployed by this effect has Cost 3 until the end of this turn.",
               "descriptionDe": "Bis zum Ende dieses Zuges, immer wenn dein 【 】-Effekt dem Gegner 1 Schaden zufügen würde, füge stattdessen 2 Schaden zu. Du kannst diese Einheit trashen. Falls du das tust, kannst du 1 Einheitenkarte mit Kosten 5 aus deiner Hand wählen und in die Einheitenzone platzieren, in der sich diese Einheit befand. Eine durch diesen Effekt platzierte Einheit hat bis zum Ende dieses Zuges Kosten 3.",
-              "element": "Dark",
+              "element": "Storm",
               "sortIndex": 46,
               "edited": true
             },
@@ -17054,7 +17070,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_ykUxlwTN_4f67949a7580340fcff4b26090907f16c3dcf124.jpg",
               "edited": true,
               "sortIndex": 47,
-              "element": "Dark"
+              "element": "Storm"
             },
             {
               "id": "sb01-014",
@@ -17072,7 +17088,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_5KgEbkih_1ada2004dd35f7398406f4e57c3627575bdd13cd.jpg",
               "edited": true,
               "sortIndex": 48,
-              "element": "Dark"
+              "element": "Storm"
             },
             {
               "id": "sb01-015-p5",
@@ -17090,7 +17106,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_YMKfqC7y_de5dc20dd3d045e15cb46f5eaee6be6b5834399a.jpg",
               "edited": true,
               "sortIndex": 49,
-              "element": "Dark"
+              "element": "Storm"
             },
             {
               "id": "sb01-015-p4",
@@ -17108,7 +17124,7 @@
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_NWr8ptRl_d55c62b966007f89c8f42b9ca9785e8e3759a54d.jpg",
               "edited": true,
               "sortIndex": 50,
-              "element": "Dark"
+              "element": "Storm"
             },
             {
               "id": "sb01-001-p9",
@@ -18245,7 +18261,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_RGuxL708_4f2b8363a80f372c66b47aa1483163b219054582.jpg",
               "edited": true,
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 19
             },
             {
@@ -18263,7 +18279,7 @@
               "keywords": [],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_yWMrj6Ts_f3b7130282f2f7439ef6411b3caf849c69821509.jpg",
               "edited": true,
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 20
             },
             {
@@ -18284,7 +18300,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_bJCVfTj2_05632de7a5fcb1a178a9c50309d66b9026e5ccd9.jpg",
               "edited": true,
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 21
             },
             {
@@ -18304,7 +18320,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_U1X5sJcQ_bb9c8a49f75792de8cc9dda91e1fa03063e68fe1.jpg",
               "edited": true,
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 22
             },
             {
@@ -18325,7 +18341,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_Jg0oImVX_1cb1917f96a87407eb5ef6af24bed768906bde36.jpg",
               "edited": true,
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 23
             },
             {
@@ -18346,7 +18362,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_i2FWtl5K_2e5523054a606a8260e99a09e7c4c842c7dd5185.jpg",
               "edited": true,
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 24
             },
             {
@@ -18366,7 +18382,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_e9U3wZHK_ec14e01a9fc47a97e9c2bc57af11b11a9276ecc4.jpg",
               "edited": true,
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 25
             },
             {
@@ -18389,7 +18405,7 @@
               "nameDe": "Austauschschülerin Charlotte",
               "descriptionEn": "Base Side\n You must put 【 】cards in your deck. All cards other than 【 】must share the same attribute.\n If your Leader Level is 6 or higher, flip this card. If your field has a card other than 【 】, the opponent may draw 1 card.\n\nAwakened Side\n Choose 1 of your units on the field with Cost 3 or less and without 【 】, and give it Hit+1 until the end of the opponent's turn. If your field has 3 or more units with Cost 3 or less, additionally Hit+1 until the end of the opponent's turn.",
               "descriptionDe": "Grundseite\n Du musst 【 】-Karten in dein Deck legen. Alle Karten außer 【 】müssen dasselbe Attribut haben.\n Falls dein Anführer-Level 6 oder höher ist, drehe diese Karte um. Falls dein Feld eine Karte außer 【 】hat, darf der Gegner 1 Karte ziehen.\n\nErwachte Seite\n Wähle 1 deiner Einheiten auf dem Feld mit Kosten 3 oder weniger und ohne 【 】, und gib ihr Treffer+1 bis zum Ende des gegnerischen Zuges. Falls dein Feld 3 oder mehr Einheiten mit Kosten 3 oder weniger hat, zusätzlich Treffer+1 bis zum Ende des gegnerischen Zuges.",
-              "element": "Nature",
+              "element": "Earth",
               "edited": true,
               "sortIndex": 26
             },
@@ -18410,7 +18426,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_5Woj6N7S_89f3ae356b307e5f7b5c267e9d34a46270f247a7.jpg",
               "edited": true,
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 27
             },
             {
@@ -18430,7 +18446,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_NxRr0Vf1_5b754a139f9508fddc8fc0f3fad874760babaa2b.jpg",
               "edited": true,
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 28
             },
             {
@@ -18450,7 +18466,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_k9suv0rC_21d9a5527e2452c38fb03bab5708dd9de595e5c8.jpg",
               "edited": true,
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 29
             },
             {
@@ -18470,7 +18486,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_VdDf9xqb_c16392e7f550e01b78fd8852db7b9decb05c9385.jpg",
               "edited": true,
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 30
             },
             {
@@ -18491,7 +18507,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_abfDhCiy_314f1f074365c91836eaa2d99f33aedf9b3de3b1.jpg",
               "edited": true,
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 31
             },
             {
@@ -18512,7 +18528,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_Eh9tzZdm_ce89fc56b6139b898eee801cb18d173490b8c1f9.jpg",
               "edited": true,
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 32
             },
             {
@@ -18533,7 +18549,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_dbRFHThu_9179363df7cfed4c8b589c365fc69b5e57c1fd27.jpg",
               "edited": true,
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 33
             },
             {
@@ -18553,7 +18569,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_QnUFtj16_8f47c9f6266c9a884ee83f9c31261e83cd3b0179.jpg",
               "edited": true,
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 34
             },
             {
@@ -18573,7 +18589,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_h2acW4Il_0b4a67a1a0f2be7c25da1b6cb4d982d27fb06392.jpg",
               "edited": true,
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 35
             },
             {
@@ -18591,7 +18607,7 @@
               "keywords": [],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_ewpjE8mc_f84ef63582863d8de3e8cbf59208ad1ef8c938c7.jpg",
               "edited": true,
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 36
             },
             {
@@ -18611,7 +18627,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_mWVjz4rT_4707cd98a1cf126c7e4170fa004f509134c1735a.jpg",
               "edited": true,
-              "element": "Nature",
+              "element": "Earth",
               "sortIndex": 37
             },
             {
@@ -18631,7 +18647,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_DqkbarFW_93e0ffce06730c22bd806eb18285681b690396d7.jpg",
               "edited": true,
-              "element": "Dark",
+              "element": "Storm",
               "sortIndex": 38
             },
             {
@@ -18651,7 +18667,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_foadMJ64_e474fd4327dc0f71b553ce9b4c03eca69d2f38b7.jpg",
               "edited": true,
-              "element": "Dark",
+              "element": "Storm",
               "sortIndex": 39
             },
             {
@@ -18672,7 +18688,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_ZVwk3Yq8_00a5e8b2d61ed295da2a20eb8afdc8c1c8b4df94.jpg",
               "edited": true,
-              "element": "Dark",
+              "element": "Storm",
               "sortIndex": 40
             },
             {
@@ -18693,7 +18709,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_NumWwIaf_054ba72782f63e9c8bcd12dcab8a4986d6db3be2.jpg",
               "edited": true,
-              "element": "Dark",
+              "element": "Storm",
               "sortIndex": 41
             },
             {
@@ -18715,7 +18731,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_M7Ig1WnS_653d107cb2c2e044facc5cf3a4b56625e6f5742d.jpg",
               "edited": true,
-              "element": "Dark",
+              "element": "Storm",
               "sortIndex": 42
             },
             {
@@ -18737,7 +18753,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_olJxh2a5_b149d63c6513d78bc9b654b2097a975aa5653e6c.jpg",
               "edited": true,
-              "element": "Dark",
+              "element": "Storm",
               "sortIndex": 43
             },
             {
@@ -18757,7 +18773,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_ULVNoMbQ_9c4927199c5372791185bfdc11a1e8927693190c.jpg",
               "edited": true,
-              "element": "Dark",
+              "element": "Storm",
               "sortIndex": 44
             },
             {
@@ -18780,7 +18796,7 @@
               "nameDe": "Noble Ass Bunny Heiz",
               "descriptionEn": "Base Side\n You must put 【 】cards in your deck. All cards other than 【 】must share the same attribute.\n If your Leader Level is 5 or higher, flip this card. If your field has a card other than 【 】, the opponent may draw 1 card.\n\nAwakened Side\n Trash 3 cards from the top of your deck. Then choose 1 card without 【 】from your Trash Zone and put it on the bottom of your deck.",
               "descriptionDe": "Grundseite\n Du musst 【 】-Karten in dein Deck legen. Alle Karten außer 【 】müssen dasselbe Attribut haben.\n Falls dein Anführer-Level 5 oder höher ist, drehe diese Karte um. Falls dein Feld eine Karte außer 【 】hat, darf der Gegner 1 Karte ziehen.\n\nErwachte Seite\n Trashe 3 Karten von der Oberseite deines Decks. Wähle dann 1 Karte ohne 【 】aus deiner Trash-Zone und lege sie unter dein Deck.",
-              "element": "Dark",
+              "element": "Storm",
               "edited": true,
               "sortIndex": 45
             },
@@ -18801,7 +18817,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_wSi6m4KN_5badf058895766a5aeacedbf0c537ba8ab58c2fc.jpg",
               "edited": true,
-              "element": "Dark",
+              "element": "Storm",
               "sortIndex": 46
             },
             {
@@ -18821,7 +18837,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_mQo6rKI2_af7c3e1ac7b9e65490821b71bd3ac6c7e9a66dde.jpg",
               "edited": true,
-              "element": "Dark",
+              "element": "Storm",
               "sortIndex": 47
             },
             {
@@ -18841,7 +18857,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_nmUsBiA0_97771c2c189b24661cbf01ffe81b3f5f59ebcdb9.jpg",
               "edited": true,
-              "element": "Dark",
+              "element": "Storm",
               "sortIndex": 48
             },
             {
@@ -18861,7 +18877,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_yrY4U1IT_46f79b4d8296cff59608ee17ae12ff79509ea63e.jpg",
               "edited": true,
-              "element": "Dark",
+              "element": "Storm",
               "sortIndex": 49
             },
             {
@@ -18881,7 +18897,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_dxzMbsiW_8baeaa1ba8f361e779a9a4cd8cdb5b0753e29767.jpg",
               "edited": true,
-              "element": "Dark",
+              "element": "Storm",
               "sortIndex": 50
             },
             {
@@ -18902,7 +18918,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_TdiXog4t_9cfd9ba1ffcad09b8df7c3b85bda2b1c0a42b0de.jpg",
               "edited": true,
-              "element": "Dark",
+              "element": "Storm",
               "sortIndex": 51
             },
             {
@@ -18923,7 +18939,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_UVk0hHam_0c7ef437056c8670f33b243c73035f16509863a7.jpg",
               "edited": true,
-              "element": "Dark",
+              "element": "Storm",
               "sortIndex": 52
             },
             {
@@ -18945,7 +18961,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_6drngS2q_3d844c839d2b86d530a6eb0bbab904169d22b2d9.jpg",
               "edited": true,
-              "element": "Dark",
+              "element": "Storm",
               "sortIndex": 53
             },
             {
@@ -18967,7 +18983,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_qAlX9J8I_ded8282da45e9451edd34553968b89f1ba9c307e.jpg",
               "edited": true,
-              "element": "Dark",
+              "element": "Storm",
               "sortIndex": 54
             },
             {
@@ -18985,7 +19001,7 @@
               "keywords": [],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_GTLHRQ2j_451885e0f6ba3668b8ef4f8bb2f294a9794eed06.jpg",
               "edited": true,
-              "element": "Dark",
+              "element": "Storm",
               "sortIndex": 55
             },
             {
@@ -19005,7 +19021,7 @@
               ],
               "image": "nivel/cards/cfbf01727a7e461ec5930f5d552f8bff_XPYdLSvD_a06d51003864161e9952d5bc94b4b20df7adbba1.jpg",
               "edited": true,
-              "element": "Dark",
+              "element": "Storm",
               "sortIndex": 56
             },
             {
@@ -25770,8 +25786,8 @@
               "id": "c-mt668uth78j1",
               "custom": true,
               "name": "아니스 : 스타 - 스타라이트",
-              "type": "리더",
-              "element": "화염",
+              "type": "Leader",
+              "element": "Fire",
               "rarityId": "nv-l",
               "number": "BT08-001",
               "description": "",
@@ -25787,8 +25803,8 @@
               "id": "c-mt668uthp98j",
               "custom": true,
               "name": "아니스 : 스타 - 스타라이트",
-              "type": "리더",
-              "element": "화염",
+              "type": "Leader",
+              "element": "Fire",
               "rarityId": "nv-spl",
               "number": "BT08-001",
               "description": "",
@@ -25804,8 +25820,8 @@
               "id": "c-mt668uthj9cq",
               "custom": true,
               "name": "아니스 : 스타 - 스타라이트",
-              "type": "리더",
-              "element": "화염",
+              "type": "Leader",
+              "element": "Fire",
               "rarityId": "nv-spl",
               "number": "BT08-001",
               "description": "",
@@ -25821,8 +25837,8 @@
               "id": "c-mt668uthu7kr",
               "custom": true,
               "name": "아니스 : 스타 - 스타라이트",
-              "type": "리더",
-              "element": "화염",
+              "type": "Leader",
+              "element": "Fire",
               "rarityId": "nv-ssl",
               "number": "BT08-001",
               "description": "",
@@ -25838,8 +25854,8 @@
               "id": "c-mt668uthj597",
               "custom": true,
               "name": "홍련 : 흑영 - 연화",
-              "type": "유닛",
-              "element": "화염",
+              "type": "Unit",
+              "element": "Fire",
               "rarityId": "nv-c",
               "number": "BT08-002",
               "description": "",
@@ -25855,8 +25871,8 @@
               "id": "c-mt668uth9xmy",
               "custom": true,
               "name": "민트",
-              "type": "유닛",
-              "element": "화염",
+              "type": "Unit",
+              "element": "Fire",
               "rarityId": "nv-r",
               "number": "BT08-003",
               "description": "",
@@ -25872,8 +25888,8 @@
               "id": "c-mt668uthp08v",
               "custom": true,
               "name": "누아르 - 흑묘",
-              "type": "유닛",
-              "element": "화염",
+              "type": "Unit",
+              "element": "Fire",
               "rarityId": "nv-c",
               "number": "BT08-004",
               "description": "",
@@ -25889,8 +25905,8 @@
               "id": "c-mt668uth5vdt",
               "custom": true,
               "name": "루주 - 언럭키 래빗",
-              "type": "유닛",
-              "element": "화염",
+              "type": "Unit",
+              "element": "Fire",
               "rarityId": "nv-c",
               "number": "BT08-005",
               "description": "",
@@ -25906,8 +25922,8 @@
               "id": "c-mt668uthsw4r",
               "custom": true,
               "name": "프리카",
-              "type": "유닛",
-              "element": "화염",
+              "type": "Unit",
+              "element": "Fire",
               "rarityId": "nv-r",
               "number": "BT08-006",
               "description": "",
@@ -25923,8 +25939,8 @@
               "id": "c-mt668uthi5k0",
               "custom": true,
               "name": "라피 : 레드 후드 - 샤인 라이트",
-              "type": "유닛",
-              "element": "화염",
+              "type": "Unit",
+              "element": "Fire",
               "rarityId": "nv-sr",
               "number": "BT08-007",
               "description": "",
@@ -25940,8 +25956,8 @@
               "id": "c-mt668utha993",
               "custom": true,
               "name": "라피 : 레드 후드 - 샤인 라이트",
-              "type": "유닛",
-              "element": "화염",
+              "type": "Unit",
+              "element": "Fire",
               "rarityId": "nv-spr",
               "number": "BT08-007",
               "description": "",
@@ -25957,8 +25973,8 @@
               "id": "c-mt668uth6y6i",
               "custom": true,
               "name": "바이퍼 - 톡신 래빗",
-              "type": "유닛",
-              "element": "화염",
+              "type": "Unit",
+              "element": "Fire",
               "rarityId": "nv-c",
               "number": "BT08-008",
               "description": "",
@@ -25974,8 +25990,8 @@
               "id": "c-mt668uthnqmk",
               "custom": true,
               "name": "네온 : 비전 아이",
-              "type": "유닛",
-              "element": "화염",
+              "type": "Unit",
+              "element": "Fire",
               "rarityId": "nv-r",
               "number": "BT08-009",
               "description": "",
@@ -25991,8 +26007,8 @@
               "id": "c-mt668uthrx9j",
               "custom": true,
               "name": "스노우 화이트 : 헤비암즈",
-              "type": "유닛",
-              "element": "화염",
+              "type": "Unit",
+              "element": "Fire",
               "rarityId": "nv-sr",
               "number": "BT08-010",
               "description": "",
@@ -26008,8 +26024,8 @@
               "id": "c-mt668uthfkb7",
               "custom": true,
               "name": "스노우 화이트 : 헤비암즈",
-              "type": "유닛",
-              "element": "화염",
+              "type": "Unit",
+              "element": "Fire",
               "rarityId": "nv-spr",
               "number": "BT08-010",
               "description": "",
@@ -26025,8 +26041,8 @@
               "id": "c-mt668uth8cm9",
               "custom": true,
               "name": "아니스 : 스타 - 스타라이트",
-              "type": "유닛",
-              "element": "화염",
+              "type": "Unit",
+              "element": "Fire",
               "rarityId": "nv-ur",
               "number": "BT08-011",
               "description": "",
@@ -26042,8 +26058,8 @@
               "id": "c-mt668uthb96e",
               "custom": true,
               "name": "아니스 : 스타 - 스타라이트",
-              "type": "유닛",
-              "element": "화염",
+              "type": "Unit",
+              "element": "Fire",
               "rarityId": "nv-spr",
               "number": "BT08-011",
               "description": "",
@@ -26059,8 +26075,8 @@
               "id": "c-mt668uthpw8s",
               "custom": true,
               "name": "초화력",
-              "type": "스킬",
-              "element": "화염",
+              "type": "Skill",
+              "element": "Fire",
               "rarityId": "nv-c",
               "number": "BT08-012",
               "description": "",
@@ -26076,8 +26092,8 @@
               "id": "c-mt668uth5t7j",
               "custom": true,
               "name": "스타 아니스",
-              "type": "스킬",
-              "element": "화염",
+              "type": "Skill",
+              "element": "Fire",
               "rarityId": "nv-c",
               "number": "BT08-013",
               "description": "",
@@ -26093,8 +26109,8 @@
               "id": "c-mt668uthwsdw",
               "custom": true,
               "name": "세븐스 드워프 풀 액티브",
-              "type": "스킬",
-              "element": "화염",
+              "type": "Skill",
+              "element": "Fire",
               "rarityId": "nv-c",
               "number": "BT08-014",
               "description": "",
@@ -26110,8 +26126,8 @@
               "id": "c-mt668uthn8mp",
               "custom": true,
               "name": "TRACING THE STARS",
-              "type": "스킬",
-              "element": "화염",
+              "type": "Skill",
+              "element": "Fire",
               "rarityId": "nv-r",
               "number": "BT08-015",
               "description": "",
@@ -26127,8 +26143,8 @@
               "id": "c-mt668uthsbyy",
               "custom": true,
               "name": "노른 코드 슈즈",
-              "type": "아이템",
-              "element": "화염",
+              "type": "Item",
+              "element": "Fire",
               "rarityId": "nv-c",
               "number": "BT08-016",
               "description": "",
@@ -26144,8 +26160,8 @@
               "id": "c-mt668utheqch",
               "custom": true,
               "name": "티탄 매터 암가드",
-              "type": "아이템",
-              "element": "화염",
+              "type": "Item",
+              "element": "Fire",
               "rarityId": "nv-c",
               "number": "BT08-017",
               "description": "",
@@ -26161,8 +26177,8 @@
               "id": "c-mt668utho36s",
               "custom": true,
               "name": "마르차나 : 마린 스터디",
-              "type": "리더",
-              "element": "대지",
+              "type": "Leader",
+              "element": "Earth",
               "rarityId": "nv-l",
               "number": "BT08-018",
               "description": "",
@@ -26178,8 +26194,8 @@
               "id": "c-mt668uthregk",
               "custom": true,
               "name": "마르차나 : 마린 스터디",
-              "type": "리더",
-              "element": "대지",
+              "type": "Leader",
+              "element": "Earth",
               "rarityId": "nv-spl",
               "number": "BT08-018",
               "description": "",
@@ -26195,8 +26211,8 @@
               "id": "c-mt668uthbp7g",
               "custom": true,
               "name": "마르차나 : 마린 스터디",
-              "type": "리더",
-              "element": "대지",
+              "type": "Leader",
+              "element": "Earth",
               "rarityId": "nv-spl",
               "number": "BT08-018",
               "description": "",
@@ -26212,8 +26228,8 @@
               "id": "c-mt668uth06l8",
               "custom": true,
               "name": "마르차나 : 마린 스터디",
-              "type": "리더",
-              "element": "대지",
+              "type": "Leader",
+              "element": "Earth",
               "rarityId": "nv-ssl",
               "number": "BT08-018",
               "description": "",
@@ -26229,8 +26245,8 @@
               "id": "c-mt668uthl86k",
               "custom": true,
               "name": "플로라",
-              "type": "유닛",
-              "element": "대지",
+              "type": "Unit",
+              "element": "Earth",
               "rarityId": "nv-c",
               "number": "BT08-019",
               "description": "",
@@ -26246,8 +26262,8 @@
               "id": "c-mt668uthi5aw",
               "custom": true,
               "name": "루피 - 럭셔리 래빗",
-              "type": "유닛",
-              "element": "대지",
+              "type": "Unit",
+              "element": "Earth",
               "rarityId": "nv-c",
               "number": "BT08-020",
               "description": "",
@@ -26263,8 +26279,8 @@
               "id": "c-mt668uthmvy8",
               "custom": true,
               "name": "퀀시 : 이스케이프 퀸",
-              "type": "유닛",
-              "element": "대지",
+              "type": "Unit",
+              "element": "Earth",
               "rarityId": "nv-c",
               "number": "BT08-021",
               "description": "",
@@ -26280,8 +26296,8 @@
               "id": "c-mt668uth7kjo",
               "custom": true,
               "name": "길티 - 디스빌리프 웨이브",
-              "type": "유닛",
-              "element": "대지",
+              "type": "Unit",
+              "element": "Earth",
               "rarityId": "nv-c",
               "number": "BT08-022",
               "description": "",
@@ -26297,8 +26313,8 @@
               "id": "c-mt668uth5587",
               "custom": true,
               "name": "트리나",
-              "type": "유닛",
-              "element": "대지",
+              "type": "Unit",
+              "element": "Earth",
               "rarityId": "nv-c",
               "number": "BT08-023",
               "description": "",
@@ -26314,8 +26330,8 @@
               "id": "c-mt668uth9ihn",
               "custom": true,
               "name": "브리드 : 사일런트 트랙",
-              "type": "유닛",
-              "element": "대지",
+              "type": "Unit",
+              "element": "Earth",
               "rarityId": "nv-r",
               "number": "BT08-024",
               "description": "",
@@ -26331,8 +26347,8 @@
               "id": "c-mt668uthad4u",
               "custom": true,
               "name": "소라 - 스프링 플라이트",
-              "type": "유닛",
-              "element": "대지",
+              "type": "Unit",
+              "element": "Earth",
               "rarityId": "nv-r",
               "number": "BT08-025",
               "description": "",
@@ -26348,8 +26364,8 @@
               "id": "c-mt668uthbmzz",
               "custom": true,
               "name": "티아 - 씨 리지",
-              "type": "유닛",
-              "element": "대지",
+              "type": "Unit",
+              "element": "Earth",
               "rarityId": "nv-r",
               "number": "BT08-026",
               "description": "",
@@ -26365,8 +26381,8 @@
               "id": "c-mt668uthliig",
               "custom": true,
               "name": "마르차나 : 마린 스터디",
-              "type": "유닛",
-              "element": "대지",
+              "type": "Unit",
+              "element": "Earth",
               "rarityId": "nv-ur",
               "number": "BT08-027",
               "description": "",
@@ -26382,8 +26398,8 @@
               "id": "c-mt668uthow4q",
               "custom": true,
               "name": "마르차나 : 마린 스터디",
-              "type": "유닛",
-              "element": "대지",
+              "type": "Unit",
+              "element": "Earth",
               "rarityId": "nv-spr",
               "number": "BT08-027",
               "description": "",
@@ -26399,8 +26415,8 @@
               "id": "c-mt668utht4lo",
               "custom": true,
               "name": "나가 - 링 앙상블",
-              "type": "유닛",
-              "element": "대지",
+              "type": "Unit",
+              "element": "Earth",
               "rarityId": "nv-sr",
               "number": "BT08-028",
               "description": "",
@@ -26416,8 +26432,8 @@
               "id": "c-mt668uthz4xb",
               "custom": true,
               "name": "나가 - 링 앙상블",
-              "type": "유닛",
-              "element": "대지",
+              "type": "Unit",
+              "element": "Earth",
               "rarityId": "nv-spr",
               "number": "BT08-028",
               "description": "",
@@ -26433,8 +26449,8 @@
               "id": "c-mt668uth77i7",
               "custom": true,
               "name": "나유타 - 무위",
-              "type": "유닛",
-              "element": "대지",
+              "type": "Unit",
+              "element": "Earth",
               "rarityId": "nv-sr",
               "number": "BT08-029",
               "description": "",
@@ -26450,8 +26466,8 @@
               "id": "c-mt668uthbiti",
               "custom": true,
               "name": "나유타 - 무위",
-              "type": "유닛",
-              "element": "대지",
+              "type": "Unit",
+              "element": "Earth",
               "rarityId": "nv-spr",
               "number": "BT08-029",
               "description": "",
@@ -26467,8 +26483,8 @@
               "id": "c-mt668uthh1b3",
               "custom": true,
               "name": "고행",
-              "type": "스킬",
-              "element": "대지",
+              "type": "Skill",
+              "element": "Earth",
               "rarityId": "nv-c",
               "number": "BT08-030",
               "description": "",
@@ -26484,8 +26500,8 @@
               "id": "c-mt668uth760c",
               "custom": true,
               "name": "졸업 여행",
-              "type": "스킬",
-              "element": "대지",
+              "type": "Skill",
+              "element": "Earth",
               "rarityId": "nv-c",
               "number": "BT08-031",
               "description": "",
@@ -26501,8 +26517,8 @@
               "id": "c-mt668uthmyhq",
               "custom": true,
               "name": "펭군 스파이럴",
-              "type": "스킬",
-              "element": "대지",
+              "type": "Skill",
+              "element": "Earth",
               "rarityId": "nv-r",
               "number": "BT08-032",
               "description": "",
@@ -26518,8 +26534,8 @@
               "id": "c-mt668uthnglb",
               "custom": true,
               "name": "레어 메탈 프로텍터",
-              "type": "아이템",
-              "element": "대지",
+              "type": "Item",
+              "element": "Earth",
               "rarityId": "nv-c",
               "number": "BT08-033",
               "description": "",
@@ -26535,8 +26551,8 @@
               "id": "c-mt668uthygcc",
               "custom": true,
               "name": "아틀라스 패턴 게이터",
-              "type": "아이템",
-              "element": "대지",
+              "type": "Item",
+              "element": "Earth",
               "rarityId": "nv-c",
               "number": "BT08-034",
               "description": "",
@@ -26552,8 +26568,8 @@
               "id": "c-mt668uthbypu",
               "custom": true,
               "name": "리버렐리오 - 드리밍 레이크",
-              "type": "리더",
-              "element": "폭풍",
+              "type": "Leader",
+              "element": "Storm",
               "rarityId": "nv-l",
               "number": "BT08-035",
               "description": "",
@@ -26569,8 +26585,8 @@
               "id": "c-mt668uthhd1o",
               "custom": true,
               "name": "리버렐리오 - 드리밍 레이크",
-              "type": "리더",
-              "element": "폭풍",
+              "type": "Leader",
+              "element": "Storm",
               "rarityId": "nv-spl",
               "number": "BT08-035",
               "description": "",
@@ -26586,8 +26602,8 @@
               "id": "c-mt668uthr6pd",
               "custom": true,
               "name": "리버렐리오 - 드리밍 레이크",
-              "type": "리더",
-              "element": "폭풍",
+              "type": "Leader",
+              "element": "Storm",
               "rarityId": "nv-spl",
               "number": "BT08-035",
               "description": "",
@@ -26603,8 +26619,8 @@
               "id": "c-mt668uthptki",
               "custom": true,
               "name": "리버렐리오 - 드리밍 레이크",
-              "type": "리더",
-              "element": "폭풍",
+              "type": "Leader",
+              "element": "Storm",
               "rarityId": "nv-ssl",
               "number": "BT08-035",
               "description": "",
@@ -26620,8 +26636,8 @@
               "id": "c-mt668uthjno5",
               "custom": true,
               "name": "아르카나 : 포츈 메이트",
-              "type": "유닛",
-              "element": "폭풍",
+              "type": "Unit",
+              "element": "Storm",
               "rarityId": "nv-r",
               "number": "BT08-036",
               "description": "",
@@ -26637,8 +26653,8 @@
               "id": "c-mt668uthmgr6",
               "custom": true,
               "name": "D : 킬러 와이프",
-              "type": "유닛",
-              "element": "폭풍",
+              "type": "Unit",
+              "element": "Storm",
               "rarityId": "nv-c",
               "number": "BT08-037",
               "description": "",
@@ -26654,8 +26670,8 @@
               "id": "c-mt668uthj2uq",
               "custom": true,
               "name": "사쿠라 : 블룸 인 서머",
-              "type": "유닛",
-              "element": "폭풍",
+              "type": "Unit",
+              "element": "Storm",
               "rarityId": "nv-c",
               "number": "BT08-038",
               "description": "",
@@ -26671,8 +26687,8 @@
               "id": "c-mt668uthcjgy",
               "custom": true,
               "name": "목단 - 화중지왕",
-              "type": "유닛",
-              "element": "폭풍",
+              "type": "Unit",
+              "element": "Storm",
               "rarityId": "nv-r",
               "number": "BT08-039",
               "description": "",
@@ -26688,8 +26704,8 @@
               "id": "c-mt668uth8xb2",
               "custom": true,
               "name": "리틀 머메이드 - 쉘 프린세스",
-              "type": "유닛",
-              "element": "폭풍",
+              "type": "Unit",
+              "element": "Storm",
               "rarityId": "nv-sr",
               "number": "BT08-040",
               "description": "",
@@ -26705,8 +26721,8 @@
               "id": "c-mt668uthbiyk",
               "custom": true,
               "name": "리틀 머메이드 - 쉘 프린세스",
-              "type": "유닛",
-              "element": "폭풍",
+              "type": "Unit",
+              "element": "Storm",
               "rarityId": "nv-spr",
               "number": "BT08-040",
               "description": "",
@@ -26722,8 +26738,8 @@
               "id": "c-mt668uthovdy",
               "custom": true,
               "name": "메이든 : 아이스 로즈",
-              "type": "유닛",
-              "element": "폭풍",
+              "type": "Unit",
+              "element": "Storm",
               "rarityId": "nv-c",
               "number": "BT08-041",
               "description": "",
@@ -26739,8 +26755,8 @@
               "id": "c-mt668uthuc5z",
               "custom": true,
               "name": "리버렐리오 - 드리밍 레이크",
-              "type": "유닛",
-              "element": "폭풍",
+              "type": "Unit",
+              "element": "Storm",
               "rarityId": "nv-ur",
               "number": "BT08-042",
               "description": "",
@@ -26756,8 +26772,8 @@
               "id": "c-mt668uth090j",
               "custom": true,
               "name": "리버렐리오 - 드리밍 레이크",
-              "type": "유닛",
-              "element": "폭풍",
+              "type": "Unit",
+              "element": "Storm",
               "rarityId": "nv-spr",
               "number": "BT08-042",
               "description": "",
@@ -26773,8 +26789,8 @@
               "id": "c-mt668uthxpzz",
               "custom": true,
               "name": "모더니아 - 퍼스트 어펙션",
-              "type": "유닛",
-              "element": "폭풍",
+              "type": "Unit",
+              "element": "Storm",
               "rarityId": "nv-c",
               "number": "BT08-043",
               "description": "",
@@ -26790,8 +26806,8 @@
               "id": "c-mt668uthjd0e",
               "custom": true,
               "name": "프리바티 - 샤프 레슨",
-              "type": "유닛",
-              "element": "폭풍",
+              "type": "Unit",
+              "element": "Storm",
               "rarityId": "nv-r",
               "number": "BT08-044",
               "description": "",
@@ -26807,8 +26823,8 @@
               "id": "c-mt668uth7rlx",
               "custom": true,
               "name": "신데렐라 : 크리스탈 웨이브",
-              "type": "유닛",
-              "element": "폭풍",
+              "type": "Unit",
+              "element": "Storm",
               "rarityId": "nv-sr",
               "number": "BT08-045",
               "description": "",
@@ -26824,8 +26840,8 @@
               "id": "c-mt668uth3prb",
               "custom": true,
               "name": "신데렐라 : 크리스탈 웨이브",
-              "type": "유닛",
-              "element": "폭풍",
+              "type": "Unit",
+              "element": "Storm",
               "rarityId": "nv-spr",
               "number": "BT08-045",
               "description": "",
@@ -26841,8 +26857,8 @@
               "id": "c-mt668uthd7ae",
               "custom": true,
               "name": "뷰티-풀",
-              "type": "스킬",
-              "element": "폭풍",
+              "type": "Skill",
+              "element": "Storm",
               "rarityId": "nv-c",
               "number": "BT08-046",
               "description": "",
@@ -26858,8 +26874,8 @@
               "id": "c-mt668uth0jwc",
               "custom": true,
               "name": "특별 수업",
-              "type": "스킬",
-              "element": "폭풍",
+              "type": "Skill",
+              "element": "Storm",
               "rarityId": "nv-c",
               "number": "BT08-047",
               "description": "",
@@ -26875,8 +26891,8 @@
               "id": "c-mt668uthdpu2",
               "custom": true,
               "name": "유리 구두 풀 컨텍트 W",
-              "type": "스킬",
-              "element": "폭풍",
+              "type": "Skill",
+              "element": "Storm",
               "rarityId": "nv-r",
               "number": "BT08-048",
               "description": "",
@@ -26892,8 +26908,8 @@
               "id": "c-mt668uthxwyq",
               "custom": true,
               "name": "칠흑여제",
-              "type": "스킬",
-              "element": "폭풍",
+              "type": "Skill",
+              "element": "Storm",
               "rarityId": "nv-c",
               "number": "BT08-049",
               "description": "",
@@ -26909,8 +26925,8 @@
               "id": "c-mt668uthry5e",
               "custom": true,
               "name": "레어 메탈 바이저",
-              "type": "아이템",
-              "element": "폭풍",
+              "type": "Item",
+              "element": "Storm",
               "rarityId": "nv-c",
               "number": "BT08-050",
               "description": "",
@@ -26926,8 +26942,8 @@
               "id": "c-mt668uthzues",
               "custom": true,
               "name": "매터 타입 : α 베스트",
-              "type": "아이템",
-              "element": "폭풍",
+              "type": "Item",
+              "element": "Storm",
               "rarityId": "nv-c",
               "number": "BT08-051",
               "description": "",
@@ -26943,8 +26959,8 @@
               "id": "c-mt668uthia1f",
               "custom": true,
               "name": "앨리스 - 메르헨 드림",
-              "type": "리더",
-              "element": "파도",
+              "type": "Leader",
+              "element": "Wave",
               "rarityId": "nv-l",
               "number": "BT08-052",
               "description": "",
@@ -26960,8 +26976,8 @@
               "id": "c-mt668uthu7ti",
               "custom": true,
               "name": "앨리스 - 메르헨 드림",
-              "type": "리더",
-              "element": "파도",
+              "type": "Leader",
+              "element": "Wave",
               "rarityId": "nv-spl",
               "number": "BT08-052",
               "description": "",
@@ -26977,8 +26993,8 @@
               "id": "c-mt668uthu141",
               "custom": true,
               "name": "앨리스 - 메르헨 드림",
-              "type": "리더",
-              "element": "파도",
+              "type": "Leader",
+              "element": "Wave",
               "rarityId": "nv-spl",
               "number": "BT08-052",
               "description": "",
@@ -26994,8 +27010,8 @@
               "id": "c-mt668uthiu6o",
               "custom": true,
               "name": "앨리스 - 메르헨 드림",
-              "type": "리더",
-              "element": "파도",
+              "type": "Leader",
+              "element": "Wave",
               "rarityId": "nv-ssl",
               "number": "BT08-052",
               "description": "",
@@ -27011,8 +27027,8 @@
               "id": "c-mt668uthlr8r",
               "custom": true,
               "name": "앵커 : 이노센트 메이드",
-              "type": "유닛",
-              "element": "파도",
+              "type": "Unit",
+              "element": "Wave",
               "rarityId": "nv-c",
               "number": "BT08-053",
               "description": "",
@@ -27028,8 +27044,8 @@
               "id": "c-mt668uth0t6o",
               "custom": true,
               "name": "폴크방 - 모이스트 래빗",
-              "type": "유닛",
-              "element": "파도",
+              "type": "Unit",
+              "element": "Wave",
               "rarityId": "nv-c",
               "number": "BT08-054",
               "description": "",
@@ -27045,8 +27061,8 @@
               "id": "c-mt668uthqbkj",
               "custom": true,
               "name": "아크레인저 블랙",
-              "type": "유닛",
-              "element": "파도",
+              "type": "Unit",
+              "element": "Wave",
               "rarityId": "nv-r",
               "number": "BT08-055",
               "description": "",
@@ -27062,8 +27078,8 @@
               "id": "c-mt668uthjky8",
               "custom": true,
               "name": "폴리 - 치얼 업 폴리스",
-              "type": "유닛",
-              "element": "파도",
+              "type": "Unit",
+              "element": "Wave",
               "rarityId": "nv-r",
               "number": "BT08-056",
               "description": "",
@@ -27079,8 +27095,8 @@
               "id": "c-mt668utheui8",
               "custom": true,
               "name": "이사벨 - 허니문 파티",
-              "type": "유닛",
-              "element": "파도",
+              "type": "Unit",
+              "element": "Wave",
               "rarityId": "nv-c",
               "number": "BT08-057",
               "description": "",
@@ -27096,8 +27112,8 @@
               "id": "c-mt668uthbglg",
               "custom": true,
               "name": "백학",
-              "type": "유닛",
-              "element": "파도",
+              "type": "Unit",
+              "element": "Wave",
               "rarityId": "nv-r",
               "number": "BT08-058",
               "description": "",
@@ -27113,8 +27129,8 @@
               "id": "c-mt668uthhms7",
               "custom": true,
               "name": "메어리 : 베이 갓데스",
-              "type": "유닛",
-              "element": "파도",
+              "type": "Unit",
+              "element": "Wave",
               "rarityId": "nv-c",
               "number": "BT08-059",
               "description": "",
@@ -27130,8 +27146,8 @@
               "id": "c-mt668utheu2i",
               "custom": true,
               "name": "메카미 시프티",
-              "type": "유닛",
-              "element": "파도",
+              "type": "Unit",
+              "element": "Wave",
               "rarityId": "nv-sr",
               "number": "BT08-060",
               "description": "",
@@ -27147,8 +27163,8 @@
               "id": "c-mt668uth954f",
               "custom": true,
               "name": "메카미 시프티",
-              "type": "유닛",
-              "element": "파도",
+              "type": "Unit",
+              "element": "Wave",
               "rarityId": "nv-spr",
               "number": "BT08-060",
               "description": "",
@@ -27164,8 +27180,8 @@
               "id": "c-mt668uthulla",
               "custom": true,
               "name": "마스트 : 로망틱 메이드 - 티 서비스",
-              "type": "유닛",
-              "element": "파도",
+              "type": "Unit",
+              "element": "Wave",
               "rarityId": "nv-sr",
               "number": "BT08-061",
               "description": "",
@@ -27181,8 +27197,8 @@
               "id": "c-mt668uthbz8k",
               "custom": true,
               "name": "마스트 : 로망틱 메이드 - 티 서비스",
-              "type": "유닛",
-              "element": "파도",
+              "type": "Unit",
+              "element": "Wave",
               "rarityId": "nv-spr",
               "number": "BT08-061",
               "description": "",
@@ -27198,8 +27214,8 @@
               "id": "c-mt668uthvi9e",
               "custom": true,
               "name": "앨리스 - 메르헨 드림",
-              "type": "유닛",
-              "element": "파도",
+              "type": "Unit",
+              "element": "Wave",
               "rarityId": "nv-ur",
               "number": "BT08-062",
               "description": "",
@@ -27215,8 +27231,8 @@
               "id": "c-mt668uth2hd0",
               "custom": true,
               "name": "앨리스 - 메르헨 드림",
-              "type": "유닛",
-              "element": "파도",
+              "type": "Unit",
+              "element": "Wave",
               "rarityId": "nv-spr",
               "number": "BT08-062",
               "description": "",
@@ -27232,8 +27248,8 @@
               "id": "c-mt668uthbkqp",
               "custom": true,
               "name": "궁극! 아크 블랙 메테오!",
-              "type": "스킬",
-              "element": "파도",
+              "type": "Skill",
+              "element": "Wave",
               "rarityId": "nv-c",
               "number": "BT08-063",
               "description": "",
@@ -27249,8 +27265,8 @@
               "id": "c-mt668uthqgs2",
               "custom": true,
               "name": "메뉴 준비됐수다!",
-              "type": "스킬",
-              "element": "파도",
+              "type": "Skill",
+              "element": "Wave",
               "rarityId": "nv-c",
               "number": "BT08-064",
               "description": "",
@@ -27266,8 +27282,8 @@
               "id": "c-mt668uthxk5z",
               "custom": true,
               "name": "특약 효력",
-              "type": "스킬",
-              "element": "파도",
+              "type": "Skill",
+              "element": "Wave",
               "rarityId": "nv-c",
               "number": "BT08-065",
               "description": "",
@@ -27283,8 +27299,8 @@
               "id": "c-mt668uthoj3v",
               "custom": true,
               "name": "아크레인저",
-              "type": "스킬",
-              "element": "파도",
+              "type": "Skill",
+              "element": "Wave",
               "rarityId": "nv-r",
               "number": "BT08-066",
               "description": "",
@@ -27300,8 +27316,8 @@
               "id": "c-mt668uthzldu",
               "custom": true,
               "name": "갓데시움 슈즈",
-              "type": "아이템",
-              "element": "파도",
+              "type": "Item",
+              "element": "Wave",
               "rarityId": "nv-c",
               "number": "BT08-067",
               "description": "",
@@ -27317,8 +27333,8 @@
               "id": "c-mt668uthml30",
               "custom": true,
               "name": "노른 코드 자켓",
-              "type": "아이템",
-              "element": "파도",
+              "type": "Item",
+              "element": "Wave",
               "rarityId": "nv-c",
               "number": "BT08-068",
               "description": "",
@@ -27334,8 +27350,8 @@
               "id": "c-mt668uthxzq0",
               "custom": true,
               "name": "지즈",
-              "type": "리더",
-              "element": "번개",
+              "type": "Leader",
+              "element": "Lightning",
               "rarityId": "nv-l",
               "number": "BT08-069",
               "description": "",
@@ -27351,8 +27367,8 @@
               "id": "c-mt668uthghme",
               "custom": true,
               "name": "지즈",
-              "type": "리더",
-              "element": "번개",
+              "type": "Leader",
+              "element": "Lightning",
               "rarityId": "nv-spl",
               "number": "BT08-069",
               "description": "",
@@ -27368,8 +27384,8 @@
               "id": "c-mt668uth9ff5",
               "custom": true,
               "name": "지즈",
-              "type": "리더",
-              "element": "번개",
+              "type": "Leader",
+              "element": "Lightning",
               "rarityId": "nv-spl",
               "number": "BT08-069",
               "description": "",
@@ -27385,8 +27401,8 @@
               "id": "c-mt668uth010a",
               "custom": true,
               "name": "지즈",
-              "type": "리더",
-              "element": "번개",
+              "type": "Leader",
+              "element": "Lightning",
               "rarityId": "nv-ssl",
               "number": "BT08-069",
               "description": "",
@@ -27402,8 +27418,8 @@
               "id": "c-mt668uthtlvh",
               "custom": true,
               "name": "네로",
-              "type": "유닛",
-              "element": "번개",
+              "type": "Unit",
+              "element": "Lightning",
               "rarityId": "nv-c",
               "number": "BT08-070",
               "description": "",
@@ -27419,8 +27435,8 @@
               "id": "c-mt668uth5cai",
               "custom": true,
               "name": "에이드 : 에이전트 바니",
-              "type": "유닛",
-              "element": "번개",
+              "type": "Unit",
+              "element": "Lightning",
               "rarityId": "nv-c",
               "number": "BT08-071",
               "description": "",
@@ -27436,8 +27452,8 @@
               "id": "c-mt668uthjulo",
               "custom": true,
               "name": "일레그 : 붐 앤 쇼크",
-              "type": "유닛",
-              "element": "번개",
+              "type": "Unit",
+              "element": "Lightning",
               "rarityId": "nv-c",
               "number": "BT08-072",
               "description": "",
@@ -27453,8 +27469,8 @@
               "id": "c-mt668uthzm4s",
               "custom": true,
               "name": "에이드 - 메이드 인 스프링",
-              "type": "유닛",
-              "element": "번개",
+              "type": "Unit",
+              "element": "Lightning",
               "rarityId": "nv-r",
               "number": "BT08-073",
               "description": "",
@@ -27470,8 +27486,8 @@
               "id": "c-mt668uthqkq3",
               "custom": true,
               "name": "차임",
-              "type": "유닛",
-              "element": "번개",
+              "type": "Unit",
+              "element": "Lightning",
               "rarityId": "nv-r",
               "number": "BT08-074",
               "description": "",
@@ -27487,8 +27503,8 @@
               "id": "c-mt668uthvtn8",
               "custom": true,
               "name": "크라운 - 영화",
-              "type": "유닛",
-              "element": "번개",
+              "type": "Unit",
+              "element": "Lightning",
               "rarityId": "nv-r",
               "number": "BT08-075",
               "description": "",
@@ -27504,8 +27520,8 @@
               "id": "c-mt668uthyp2p",
               "custom": true,
               "name": "벨벳 - 센슈얼 래빗",
-              "type": "유닛",
-              "element": "번개",
+              "type": "Unit",
+              "element": "Lightning",
               "rarityId": "nv-sr",
               "number": "BT08-076",
               "description": "",
@@ -27521,8 +27537,8 @@
               "id": "c-mt668uthai2b",
               "custom": true,
               "name": "벨벳 - 센슈얼 래빗",
-              "type": "유닛",
-              "element": "번개",
+              "type": "Unit",
+              "element": "Lightning",
               "rarityId": "nv-spr",
               "number": "BT08-076",
               "description": "",
@@ -27538,8 +27554,8 @@
               "id": "c-mt668uth4yeo",
               "custom": true,
               "name": "지즈",
-              "type": "유닛",
-              "element": "번개",
+              "type": "Unit",
+              "element": "Lightning",
               "rarityId": "nv-ur",
               "number": "BT08-077",
               "description": "",
@@ -27555,8 +27571,8 @@
               "id": "c-mt668uth8flg",
               "custom": true,
               "name": "지즈",
-              "type": "유닛",
-              "element": "번개",
+              "type": "Unit",
+              "element": "Lightning",
               "rarityId": "nv-spr",
               "number": "BT08-077",
               "description": "",
@@ -27572,8 +27588,8 @@
               "id": "c-mt668uth6vny",
               "custom": true,
               "name": "바하무트",
-              "type": "유닛",
-              "element": "번개",
+              "type": "Unit",
+              "element": "Lightning",
               "rarityId": "nv-sr",
               "number": "BT08-078",
               "description": "",
@@ -27589,8 +27605,8 @@
               "id": "c-mt668uth1687",
               "custom": true,
               "name": "바하무트",
-              "type": "유닛",
-              "element": "번개",
+              "type": "Unit",
+              "element": "Lightning",
               "rarityId": "nv-spr",
               "number": "BT08-078",
               "description": "",
@@ -27606,8 +27622,8 @@
               "id": "c-mt668uth0vlq",
               "custom": true,
               "name": "깔끔한 마무리",
-              "type": "스킬",
-              "element": "번개",
+              "type": "Skill",
+              "element": "Lightning",
               "rarityId": "nv-c",
               "number": "BT08-079",
               "description": "",
@@ -27623,8 +27639,8 @@
               "id": "c-mt668uthbbec",
               "custom": true,
               "name": "네이키드 리틀 킹",
-              "type": "스킬",
-              "element": "번개",
+              "type": "Skill",
+              "element": "Lightning",
               "rarityId": "nv-c",
               "number": "BT08-080",
               "description": "",
@@ -27640,8 +27656,8 @@
               "id": "c-mt668uthpg1l",
               "custom": true,
               "name": "안아··· 줘.",
-              "type": "스킬",
-              "element": "번개",
+              "type": "Skill",
+              "element": "Lightning",
               "rarityId": "nv-c",
               "number": "BT08-081",
               "description": "",
@@ -27657,8 +27673,8 @@
               "id": "c-mt668uth4s8z",
               "custom": true,
               "name": "잡아먹힐 거야아···!",
-              "type": "스킬",
-              "element": "번개",
+              "type": "Skill",
+              "element": "Lightning",
               "rarityId": "nv-r",
               "number": "BT08-082",
               "description": "",
@@ -27674,8 +27690,8 @@
               "id": "c-mt668uth91r2",
               "custom": true,
               "name": "패턴 시리즈 : 31 건틀렛",
-              "type": "아이템",
-              "element": "번개",
+              "type": "Item",
+              "element": "Lightning",
               "rarityId": "nv-c",
               "number": "BT08-083",
               "description": "",
@@ -27691,8 +27707,8 @@
               "id": "c-mt668uth2gxj",
               "custom": true,
               "name": "패턴 시리즈 : 31 프로텍터",
-              "type": "아이템",
-              "element": "번개",
+              "type": "Item",
+              "element": "Lightning",
               "rarityId": "nv-c",
               "number": "BT08-084",
               "description": "",
@@ -27708,8 +27724,8 @@
               "id": "c-mt668uthg7pb",
               "custom": true,
               "name": "패턴 시리즈 : 31 헬멧",
-              "type": "아이템",
-              "element": "번개",
+              "type": "Item",
+              "element": "Lightning",
               "rarityId": "nv-c",
               "number": "BT08-085",
               "description": "",
@@ -27867,7 +27883,65 @@
           "dest": "ignore",
           "parts": []
         }
-      }
+      },
+      "cardTypes": [
+        {
+          "id": "Leader",
+          "name": "Leader",
+          "color": "#dbb960",
+          "icon": "fa-solid fa-crown"
+        },
+        {
+          "id": "Unit",
+          "name": "Unit",
+          "color": "#e85d4a",
+          "icon": "fa-solid fa-user-shield"
+        },
+        {
+          "id": "Skill",
+          "name": "Skill",
+          "color": "#4a90d9",
+          "icon": "fa-solid fa-bolt"
+        },
+        {
+          "id": "Item",
+          "name": "Item",
+          "color": "#5cb88a",
+          "icon": "fa-solid fa-flask"
+        }
+      ],
+      "cardElements": [
+        {
+          "id": "Fire",
+          "name": "Flame",
+          "color": "#e85d4a",
+          "icon": "fa-solid fa-fire"
+        },
+        {
+          "id": "Storm",
+          "name": "Storm",
+          "color": "#8f5ec9",
+          "icon": "fa-solid fa-cloud-bolt"
+        },
+        {
+          "id": "Earth",
+          "name": "Earth",
+          "color": "#1dad00",
+          "icon": "fa-solid fa-mountain"
+        },
+        {
+          "id": "Lightning",
+          "name": "Lightning",
+          "color": "#f2d621",
+          "icon": "fa-solid fa-bolt"
+        },
+        {
+          "id": "Wave",
+          "name": "Wave",
+          "color": "#4a90d9",
+          "icon": "fa-solid fa-water"
+        }
+      ]
     }
   ]
 }
