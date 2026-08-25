@@ -25791,7 +25791,7 @@
               "rarityId": "nv-l",
               "number": "BT08-001",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_26893mce_b99d6b3a18daf3a8e1be7eb071a59755798dec17.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_26893mce_b99d6b3a18daf3a8e1be7eb071a59755798dec17.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -25808,7 +25808,7 @@
               "rarityId": "nv-spl",
               "number": "BT08-001",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_VXmi4fDT_347618051e6eaa27718c12646963f2409349fde4.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_VXmi4fDT_347618051e6eaa27718c12646963f2409349fde4.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -25825,7 +25825,7 @@
               "rarityId": "nv-spl",
               "number": "BT08-001",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_3dLp5h7e_aa4aa04cc088ddd469df80dee82297f99a3a408d.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_3dLp5h7e_aa4aa04cc088ddd469df80dee82297f99a3a408d.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -25842,7 +25842,7 @@
               "rarityId": "nv-ssl",
               "number": "BT08-001",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_tDvC32Tw_4e738a4c71559353a0a750ba2a2f91310962808d.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_tDvC32Tw_4e738a4c71559353a0a750ba2a2f91310962808d.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -25859,7 +25859,7 @@
               "rarityId": "nv-c",
               "number": "BT08-002",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_58Z7DORx_cb43db72de4be364eca08552d70f652470bc8420.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_58Z7DORx_cb43db72de4be364eca08552d70f652470bc8420.jpg",
               "stats": {
                 "nv-cost": 1,
                 "f-atk": 4000,
@@ -25876,7 +25876,7 @@
               "rarityId": "nv-r",
               "number": "BT08-003",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_Yled9QhJ_de47882a9889c0256a8c12d3e2f227890a91e4a8.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_Yled9QhJ_de47882a9889c0256a8c12d3e2f227890a91e4a8.jpg",
               "stats": {
                 "nv-cost": 1,
                 "f-atk": 2500,
@@ -25893,7 +25893,7 @@
               "rarityId": "nv-c",
               "number": "BT08-004",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_co3wbPU0_4ef29bce69d3c1dcdf6e7fcde85cf0e90593bac2.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_co3wbPU0_4ef29bce69d3c1dcdf6e7fcde85cf0e90593bac2.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 4000,
@@ -25910,7 +25910,7 @@
               "rarityId": "nv-c",
               "number": "BT08-005",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_ehSx7ztA_3d7817493f3a0b83225303322f4337367008e8c5.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_ehSx7ztA_3d7817493f3a0b83225303322f4337367008e8c5.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 5000,
@@ -25927,7 +25927,7 @@
               "rarityId": "nv-r",
               "number": "BT08-006",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_FwedTGh6_d63040aef5c99a9af9618a9b9d5b3ab47d357078.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_FwedTGh6_d63040aef5c99a9af9618a9b9d5b3ab47d357078.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 4000,
@@ -25944,7 +25944,7 @@
               "rarityId": "nv-sr",
               "number": "BT08-007",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_qVGeJy0t_66900777e11f155ccce4fd4bf6d45c45979dfb47.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_qVGeJy0t_66900777e11f155ccce4fd4bf6d45c45979dfb47.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 5000,
@@ -25961,7 +25961,7 @@
               "rarityId": "nv-spr",
               "number": "BT08-007",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_3hNsZuKp_4eaddc715fd6a00a67ffa82faf06f72fdff32438.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_3hNsZuKp_4eaddc715fd6a00a67ffa82faf06f72fdff32438.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 5000,
@@ -25978,7 +25978,7 @@
               "rarityId": "nv-c",
               "number": "BT08-008",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_1gRqCHYy_07c4546666afd709ca8d7f6ae5475a24ea9c485d.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_1gRqCHYy_07c4546666afd709ca8d7f6ae5475a24ea9c485d.jpg",
               "stats": {
                 "nv-cost": 3,
                 "f-atk": 5500,
@@ -25995,7 +25995,7 @@
               "rarityId": "nv-r",
               "number": "BT08-009",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_aR8YFlQB_7d54a938ae0f35b96953d4e0fb7d834390fff7a0.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_aR8YFlQB_7d54a938ae0f35b96953d4e0fb7d834390fff7a0.jpg",
               "stats": {
                 "nv-cost": 4,
                 "f-atk": 1000,
@@ -26012,7 +26012,7 @@
               "rarityId": "nv-sr",
               "number": "BT08-010",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_ONX7Ulvx_32ba2ae223fce24b18a69a0089ea5a23964a52ea.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_ONX7Ulvx_32ba2ae223fce24b18a69a0089ea5a23964a52ea.jpg",
               "stats": {
                 "nv-cost": 4,
                 "f-atk": 4000,
@@ -26029,7 +26029,7 @@
               "rarityId": "nv-spr",
               "number": "BT08-010",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_3ile0hj2_adb7af8bdfef34bc6d882b2cbe31382604b571e5.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_3ile0hj2_adb7af8bdfef34bc6d882b2cbe31382604b571e5.jpg",
               "stats": {
                 "nv-cost": 4,
                 "f-atk": 4000,
@@ -26046,7 +26046,7 @@
               "rarityId": "nv-ur",
               "number": "BT08-011",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_425ZzUEg_6ceec7fd6510ae15a6d0df079f7f982f2345061e.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_425ZzUEg_6ceec7fd6510ae15a6d0df079f7f982f2345061e.jpg",
               "stats": {
                 "nv-cost": 5,
                 "f-atk": 5500,
@@ -26063,7 +26063,7 @@
               "rarityId": "nv-spr",
               "number": "BT08-011",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_S2AIkGcN_7b14548302b2382476f891ba68d85def6ec73176.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_S2AIkGcN_7b14548302b2382476f891ba68d85def6ec73176.jpg",
               "stats": {
                 "nv-cost": 5,
                 "f-atk": 5500,
@@ -26080,7 +26080,7 @@
               "rarityId": "nv-c",
               "number": "BT08-012",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_o6iDbdC3_44a72a0961d8472e4992add00ff15ee0fd34c1be.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_o6iDbdC3_44a72a0961d8472e4992add00ff15ee0fd34c1be.jpg",
               "stats": {
                 "nv-cost": 1,
                 "f-atk": 0,
@@ -26097,7 +26097,7 @@
               "rarityId": "nv-c",
               "number": "BT08-013",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_ITfCZXct_05072ec1abcd8b24993dbd0eaa7d52f57e91d36c.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_ITfCZXct_05072ec1abcd8b24993dbd0eaa7d52f57e91d36c.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 0,
@@ -26114,7 +26114,7 @@
               "rarityId": "nv-c",
               "number": "BT08-014",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_fz89FHIk_ed14578805838d0b94f1bf4d33dba6448990ebdd.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_fz89FHIk_ed14578805838d0b94f1bf4d33dba6448990ebdd.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 0,
@@ -26131,7 +26131,7 @@
               "rarityId": "nv-r",
               "number": "BT08-015",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_7avKE0wX_99f11ae7508d9b92553f595bcdcdf5d6904e7bd9.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_7avKE0wX_99f11ae7508d9b92553f595bcdcdf5d6904e7bd9.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 0,
@@ -26148,7 +26148,7 @@
               "rarityId": "nv-c",
               "number": "BT08-016",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_WwVigFlS_9f9840d978b340a9e9fc8aa82d487663ff3a8b3c.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_WwVigFlS_9f9840d978b340a9e9fc8aa82d487663ff3a8b3c.jpg",
               "stats": {
                 "nv-cost": 1,
                 "f-atk": 0,
@@ -26165,7 +26165,7 @@
               "rarityId": "nv-c",
               "number": "BT08-017",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_XxeF9o4E_8d150b8ea7b3baf496ee8f868b291f7debe3bccc.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_XxeF9o4E_8d150b8ea7b3baf496ee8f868b291f7debe3bccc.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 0,
@@ -26182,7 +26182,7 @@
               "rarityId": "nv-l",
               "number": "BT08-018",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_XZNQcKLn_05afb9ad7fa698e7a6f18b7e0a64f4a88ef1a519.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_XZNQcKLn_05afb9ad7fa698e7a6f18b7e0a64f4a88ef1a519.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -26199,7 +26199,7 @@
               "rarityId": "nv-spl",
               "number": "BT08-018",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_GKnTiPJy_90b4b63f5189cb54d38d77cef35fa3a6d0baed96.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_GKnTiPJy_90b4b63f5189cb54d38d77cef35fa3a6d0baed96.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -26216,7 +26216,7 @@
               "rarityId": "nv-spl",
               "number": "BT08-018",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_05dEacjz_fb266bf4454b6c38aebbe642a4cdc4647867ca4a.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_05dEacjz_fb266bf4454b6c38aebbe642a4cdc4647867ca4a.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -26233,7 +26233,7 @@
               "rarityId": "nv-ssl",
               "number": "BT08-018",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_riTKpdSE_7f437d14166aa9be47166ea61fbfed4831965cd2.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_riTKpdSE_7f437d14166aa9be47166ea61fbfed4831965cd2.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -26250,7 +26250,7 @@
               "rarityId": "nv-c",
               "number": "BT08-019",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_3E8qyhbt_92712904b166d902c0b7ff61e8d5b9f1b9dd1c04.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_3E8qyhbt_92712904b166d902c0b7ff61e8d5b9f1b9dd1c04.jpg",
               "stats": {
                 "nv-cost": 1,
                 "f-atk": 2000,
@@ -26267,7 +26267,7 @@
               "rarityId": "nv-c",
               "number": "BT08-020",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_f9UEaiKG_b3cf2f1859b6012818b5e5e625d33553447f5544.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_f9UEaiKG_b3cf2f1859b6012818b5e5e625d33553447f5544.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 3000,
@@ -26284,7 +26284,7 @@
               "rarityId": "nv-c",
               "number": "BT08-021",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_lFPpHZyV_9e132fa9c32d784c6f8d08185cec7d59f20c41b7.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_lFPpHZyV_9e132fa9c32d784c6f8d08185cec7d59f20c41b7.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 4500,
@@ -26301,7 +26301,7 @@
               "rarityId": "nv-c",
               "number": "BT08-022",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_Vn8iY3T1_e99ca02735d2d2af17a6cf82b842ea3a02f0d0e5.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_Vn8iY3T1_e99ca02735d2d2af17a6cf82b842ea3a02f0d0e5.jpg",
               "stats": {
                 "nv-cost": 3,
                 "f-atk": 4000,
@@ -26318,7 +26318,7 @@
               "rarityId": "nv-c",
               "number": "BT08-023",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_OU7rMsKy_3c0a3c8d71a74891421bb803cc43ec99b3546078.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_OU7rMsKy_3c0a3c8d71a74891421bb803cc43ec99b3546078.jpg",
               "stats": {
                 "nv-cost": 3,
                 "f-atk": 4500,
@@ -26335,7 +26335,7 @@
               "rarityId": "nv-r",
               "number": "BT08-024",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_UT7YiwBh_ece812c497dd880afaa875cbaaa318b3e906778a.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_UT7YiwBh_ece812c497dd880afaa875cbaaa318b3e906778a.jpg",
               "stats": {
                 "nv-cost": 3,
                 "f-atk": 4500,
@@ -26352,7 +26352,7 @@
               "rarityId": "nv-r",
               "number": "BT08-025",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_WBidzku6_b71913eb7ae0ebace67180b653b9e4c9aba704ca.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_WBidzku6_b71913eb7ae0ebace67180b653b9e4c9aba704ca.jpg",
               "stats": {
                 "nv-cost": 3,
                 "f-atk": 4000,
@@ -26369,7 +26369,7 @@
               "rarityId": "nv-r",
               "number": "BT08-026",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_cKAS8HXT_0b4b9a47dec490fb07b9f9de266e20f4ab80873b.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_cKAS8HXT_0b4b9a47dec490fb07b9f9de266e20f4ab80873b.jpg",
               "stats": {
                 "nv-cost": 4,
                 "f-atk": 5500,
@@ -26386,7 +26386,7 @@
               "rarityId": "nv-ur",
               "number": "BT08-027",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_le3BKprS_5cdc5069e240037c2c06b0bfc54fbcd6b6eda3dd.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_le3BKprS_5cdc5069e240037c2c06b0bfc54fbcd6b6eda3dd.jpg",
               "stats": {
                 "nv-cost": 4,
                 "f-atk": 6000,
@@ -26403,7 +26403,7 @@
               "rarityId": "nv-spr",
               "number": "BT08-027",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_dY5cy9tX_4a4fd987c7f9b9839f68ddfce4a067a8294dbc1d.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_dY5cy9tX_4a4fd987c7f9b9839f68ddfce4a067a8294dbc1d.jpg",
               "stats": {
                 "nv-cost": 4,
                 "f-atk": 6000,
@@ -26420,7 +26420,7 @@
               "rarityId": "nv-sr",
               "number": "BT08-028",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_xf6iGSJh_6d263c681aec5a61d7b2851b06ca7aa791a8fa1c.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_xf6iGSJh_6d263c681aec5a61d7b2851b06ca7aa791a8fa1c.jpg",
               "stats": {
                 "nv-cost": 5,
                 "f-atk": 7500,
@@ -26437,7 +26437,7 @@
               "rarityId": "nv-spr",
               "number": "BT08-028",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_Wwf7ahGF_f7700af190b768c4251d40bd414df24e3e674298.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_Wwf7ahGF_f7700af190b768c4251d40bd414df24e3e674298.jpg",
               "stats": {
                 "nv-cost": 5,
                 "f-atk": 7500,
@@ -26454,7 +26454,7 @@
               "rarityId": "nv-sr",
               "number": "BT08-029",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_apQ39XNm_c500bd7561d6b9f396100c037b3b376a04a587cb.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_apQ39XNm_c500bd7561d6b9f396100c037b3b376a04a587cb.jpg",
               "stats": {
                 "nv-cost": 7,
                 "f-atk": 8500,
@@ -26471,7 +26471,7 @@
               "rarityId": "nv-spr",
               "number": "BT08-029",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_BFVCHqD8_1ae8d7cdd1246c72de2302087a924c2489baf6ce.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_BFVCHqD8_1ae8d7cdd1246c72de2302087a924c2489baf6ce.jpg",
               "stats": {
                 "nv-cost": 7,
                 "f-atk": 8500,
@@ -26488,7 +26488,7 @@
               "rarityId": "nv-c",
               "number": "BT08-030",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_fpjSlCZX_75be80a99d6bb2b3f04346cd7ba56f507a647058.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_fpjSlCZX_75be80a99d6bb2b3f04346cd7ba56f507a647058.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 0,
@@ -26505,7 +26505,7 @@
               "rarityId": "nv-c",
               "number": "BT08-031",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_it8mIHrq_7b8e8808d82b3f9fdb6a682fafbc0eef9b1c775c.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_it8mIHrq_7b8e8808d82b3f9fdb6a682fafbc0eef9b1c775c.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 0,
@@ -26522,7 +26522,7 @@
               "rarityId": "nv-r",
               "number": "BT08-032",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_qJyamL1R_6c239fabca8584230ac5b936108e79e1baeff33e.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_qJyamL1R_6c239fabca8584230ac5b936108e79e1baeff33e.jpg",
               "stats": {
                 "nv-cost": 3,
                 "f-atk": 0,
@@ -26539,7 +26539,7 @@
               "rarityId": "nv-c",
               "number": "BT08-033",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_oXV57IQH_614bc6b15af1a8b65b1fbe88925e234326a837d0.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_oXV57IQH_614bc6b15af1a8b65b1fbe88925e234326a837d0.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -26556,7 +26556,7 @@
               "rarityId": "nv-c",
               "number": "BT08-034",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_SaDjCeq7_15e6cfe5cdc33de43d5fe766b0a1bb31878aaef5.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_SaDjCeq7_15e6cfe5cdc33de43d5fe766b0a1bb31878aaef5.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 0,
@@ -26573,7 +26573,7 @@
               "rarityId": "nv-l",
               "number": "BT08-035",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_93H8MEhJ_5b8a46eda1d8f4955f1fa95c71834e1bbafc3f58.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_93H8MEhJ_5b8a46eda1d8f4955f1fa95c71834e1bbafc3f58.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -26590,7 +26590,7 @@
               "rarityId": "nv-spl",
               "number": "BT08-035",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_4fMFo90A_235e5cc420ddd499bfb2e92e8e99df86457a01b8.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_4fMFo90A_235e5cc420ddd499bfb2e92e8e99df86457a01b8.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -26607,7 +26607,7 @@
               "rarityId": "nv-spl",
               "number": "BT08-035",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_zbho5yLu_a6e4b66fc39db313c46858b5f4b810af882bcc95.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_zbho5yLu_a6e4b66fc39db313c46858b5f4b810af882bcc95.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -26624,7 +26624,7 @@
               "rarityId": "nv-ssl",
               "number": "BT08-035",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_fYop0lrB_3b430b871c608892c38ef57d008813119e15471f.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_fYop0lrB_3b430b871c608892c38ef57d008813119e15471f.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -26641,7 +26641,7 @@
               "rarityId": "nv-r",
               "number": "BT08-036",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_Ei6H1Ow0_7da7a065c2fc21785602dcf4535c2b68b7f4cead.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_Ei6H1Ow0_7da7a065c2fc21785602dcf4535c2b68b7f4cead.jpg",
               "stats": {
                 "nv-cost": 1,
                 "f-atk": 4500,
@@ -26658,7 +26658,7 @@
               "rarityId": "nv-c",
               "number": "BT08-037",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_PRzteZbs_1f2454bcd6d146a64b86e4318386ae9a0c3bef8d.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_PRzteZbs_1f2454bcd6d146a64b86e4318386ae9a0c3bef8d.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 4500,
@@ -26675,7 +26675,7 @@
               "rarityId": "nv-c",
               "number": "BT08-038",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_aAs0u4XF_40f2d4d1ada45e00bf0a2d3c20d160418eb13b38.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_aAs0u4XF_40f2d4d1ada45e00bf0a2d3c20d160418eb13b38.jpg",
               "stats": {
                 "nv-cost": 3,
                 "f-atk": 5500,
@@ -26692,7 +26692,7 @@
               "rarityId": "nv-r",
               "number": "BT08-039",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_BMboCNy9_66f337ee3e53f2575502698807334d3aaf1fe198.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_BMboCNy9_66f337ee3e53f2575502698807334d3aaf1fe198.jpg",
               "stats": {
                 "nv-cost": 3,
                 "f-atk": 4500,
@@ -26709,7 +26709,7 @@
               "rarityId": "nv-sr",
               "number": "BT08-040",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_wBp2IujT_724417fc67ea031f22f89d91dac0dc53f20729a1.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_wBp2IujT_724417fc67ea031f22f89d91dac0dc53f20729a1.jpg",
               "stats": {
                 "nv-cost": 3,
                 "f-atk": 3000,
@@ -26726,7 +26726,7 @@
               "rarityId": "nv-spr",
               "number": "BT08-040",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_EUiLRDxl_a7530c4b2a5b97002b0014db57fbc375d4ba083e.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_EUiLRDxl_a7530c4b2a5b97002b0014db57fbc375d4ba083e.jpg",
               "stats": {
                 "nv-cost": 3,
                 "f-atk": 3000,
@@ -26743,7 +26743,7 @@
               "rarityId": "nv-c",
               "number": "BT08-041",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_nfwuULdM_29ae1ba2fb0ab1fe0dee244e28eead67656a93da.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_nfwuULdM_29ae1ba2fb0ab1fe0dee244e28eead67656a93da.jpg",
               "stats": {
                 "nv-cost": 4,
                 "f-atk": 6500,
@@ -26760,7 +26760,7 @@
               "rarityId": "nv-ur",
               "number": "BT08-042",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_Mqt3DGno_54cc329ac8d24ad3b026e6d061d1426c6645d1df.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_Mqt3DGno_54cc329ac8d24ad3b026e6d061d1426c6645d1df.jpg",
               "stats": {
                 "nv-cost": 4,
                 "f-atk": 5000,
@@ -26777,7 +26777,7 @@
               "rarityId": "nv-spr",
               "number": "BT08-042",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_OLoEhPNv_07758eacd869a527ea5128272cc3995cc3f17088.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_OLoEhPNv_07758eacd869a527ea5128272cc3995cc3f17088.jpg",
               "stats": {
                 "nv-cost": 4,
                 "f-atk": 5000,
@@ -26794,7 +26794,7 @@
               "rarityId": "nv-c",
               "number": "BT08-043",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_wUzGEQiv_7ded5c560c167d45c55edeb0c35fce40f3dc360a.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_wUzGEQiv_7ded5c560c167d45c55edeb0c35fce40f3dc360a.jpg",
               "stats": {
                 "nv-cost": 5,
                 "f-atk": 6000,
@@ -26811,7 +26811,7 @@
               "rarityId": "nv-r",
               "number": "BT08-044",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_zvHbdK80_f75586fff5142ff1d1869a1cd213b12cba4b5c07.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_zvHbdK80_f75586fff5142ff1d1869a1cd213b12cba4b5c07.jpg",
               "stats": {
                 "nv-cost": 5,
                 "f-atk": 7000,
@@ -26828,7 +26828,7 @@
               "rarityId": "nv-sr",
               "number": "BT08-045",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_dF2UDgRH_35f1aa46772739f41acbb282cd3f8c5b85221faf.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_dF2UDgRH_35f1aa46772739f41acbb282cd3f8c5b85221faf.jpg",
               "stats": {
                 "nv-cost": 7,
                 "f-atk": 9500,
@@ -26845,7 +26845,7 @@
               "rarityId": "nv-spr",
               "number": "BT08-045",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_DhHASikJ_b37255be406c17a860927039f1e2a259f720effe.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_DhHASikJ_b37255be406c17a860927039f1e2a259f720effe.jpg",
               "stats": {
                 "nv-cost": 7,
                 "f-atk": 9500,
@@ -26862,7 +26862,7 @@
               "rarityId": "nv-c",
               "number": "BT08-046",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_DJGMCwTr_41c909b7ba28d58ef449b9a430c93fb4fc8d4466.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_DJGMCwTr_41c909b7ba28d58ef449b9a430c93fb4fc8d4466.jpg",
               "stats": {
                 "nv-cost": 1,
                 "f-atk": 0,
@@ -26879,7 +26879,7 @@
               "rarityId": "nv-c",
               "number": "BT08-047",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_pPESUngQ_6ab2ccf448826dd64fad297edfbfd508c0e65885.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_pPESUngQ_6ab2ccf448826dd64fad297edfbfd508c0e65885.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 0,
@@ -26896,7 +26896,7 @@
               "rarityId": "nv-r",
               "number": "BT08-048",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_o9BluS3Q_f04ab8002a0ef1f5e93487e94a87f9ffc05f1c82.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_o9BluS3Q_f04ab8002a0ef1f5e93487e94a87f9ffc05f1c82.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 0,
@@ -26913,7 +26913,7 @@
               "rarityId": "nv-c",
               "number": "BT08-049",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_kpgIO76X_c541865ca17ba5b8d58ceb299e052659bb7aba7c.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_kpgIO76X_c541865ca17ba5b8d58ceb299e052659bb7aba7c.jpg",
               "stats": {
                 "nv-cost": 3,
                 "f-atk": 0,
@@ -26930,7 +26930,7 @@
               "rarityId": "nv-c",
               "number": "BT08-050",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_pgEXI2cx_fb047f36c2af00e3922d09425e72965eaac07e40.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_pgEXI2cx_fb047f36c2af00e3922d09425e72965eaac07e40.jpg",
               "stats": {
                 "nv-cost": 1,
                 "f-atk": 0,
@@ -26947,7 +26947,7 @@
               "rarityId": "nv-c",
               "number": "BT08-051",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_gC46xErY_dbdf6a14e1b05ce9cf9f33a9776bb1696cd4c809.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_gC46xErY_dbdf6a14e1b05ce9cf9f33a9776bb1696cd4c809.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 0,
@@ -26964,7 +26964,7 @@
               "rarityId": "nv-l",
               "number": "BT08-052",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_Vhj4Z1Hc_e34af6cf3cbf825adf1ec96c3aea9d80ebdfdc9f.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_Vhj4Z1Hc_e34af6cf3cbf825adf1ec96c3aea9d80ebdfdc9f.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -26981,7 +26981,7 @@
               "rarityId": "nv-spl",
               "number": "BT08-052",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_uIi1lGq5_3827089e24d49f49e22a9533d0ba225eb88c0e85.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_uIi1lGq5_3827089e24d49f49e22a9533d0ba225eb88c0e85.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -26998,7 +26998,7 @@
               "rarityId": "nv-spl",
               "number": "BT08-052",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_SOKa3njx_de44dcdc8753a05fb160e6594142af0da2d78197.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_SOKa3njx_de44dcdc8753a05fb160e6594142af0da2d78197.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -27015,7 +27015,7 @@
               "rarityId": "nv-ssl",
               "number": "BT08-052",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_KoNkGu5t_4bca2b801c64c83347ed800cb53b53ef2fb887ad.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_KoNkGu5t_4bca2b801c64c83347ed800cb53b53ef2fb887ad.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -27032,7 +27032,7 @@
               "rarityId": "nv-c",
               "number": "BT08-053",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_FTMpiCR4_22c781a3cf0d26ed46824b0bfba3d1b339114562.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_FTMpiCR4_22c781a3cf0d26ed46824b0bfba3d1b339114562.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 2000,
@@ -27049,7 +27049,7 @@
               "rarityId": "nv-c",
               "number": "BT08-054",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_G8TkpKfH_ca9eb6b69418deeb6bfbf599d58e4319490bae5a.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_G8TkpKfH_ca9eb6b69418deeb6bfbf599d58e4319490bae5a.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 2000,
@@ -27066,7 +27066,7 @@
               "rarityId": "nv-r",
               "number": "BT08-055",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_uzNvgSDd_355e14128a587a8f3d2386dceee704b89b3358d9.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_uzNvgSDd_355e14128a587a8f3d2386dceee704b89b3358d9.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 2500,
@@ -27083,7 +27083,7 @@
               "rarityId": "nv-r",
               "number": "BT08-056",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_1R6lokxO_3584db11f9221149eb77c17c9f251db8fa18009b.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_1R6lokxO_3584db11f9221149eb77c17c9f251db8fa18009b.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 1000,
@@ -27100,7 +27100,7 @@
               "rarityId": "nv-c",
               "number": "BT08-057",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_xAqOdnID_3f04a066b1440b87314bd93693a2bb6a6698c033.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_xAqOdnID_3f04a066b1440b87314bd93693a2bb6a6698c033.jpg",
               "stats": {
                 "nv-cost": 3,
                 "f-atk": 2000,
@@ -27117,7 +27117,7 @@
               "rarityId": "nv-r",
               "number": "BT08-058",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_aB2dxKHj_81a03bd23f82d146e6a4d0474dc525823b26062e.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_aB2dxKHj_81a03bd23f82d146e6a4d0474dc525823b26062e.jpg",
               "stats": {
                 "nv-cost": 3,
                 "f-atk": 3000,
@@ -27134,7 +27134,7 @@
               "rarityId": "nv-c",
               "number": "BT08-059",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_5szNU2QD_1babaf81d134c8bdee5da8cbbb8b87bb5a205f53.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_5szNU2QD_1babaf81d134c8bdee5da8cbbb8b87bb5a205f53.jpg",
               "stats": {
                 "nv-cost": 4,
                 "f-atk": 2500,
@@ -27151,7 +27151,7 @@
               "rarityId": "nv-sr",
               "number": "BT08-060",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_GW9khovJ_147bb012bbb8078f7fa018f027cec6e179548aa4.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_GW9khovJ_147bb012bbb8078f7fa018f027cec6e179548aa4.jpg",
               "stats": {
                 "nv-cost": 4,
                 "f-atk": 2500,
@@ -27168,7 +27168,7 @@
               "rarityId": "nv-spr",
               "number": "BT08-060",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_cyYeNO52_d0c7b493097b699ffdb2c1b09adc80fa35173f0e.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_cyYeNO52_d0c7b493097b699ffdb2c1b09adc80fa35173f0e.jpg",
               "stats": {
                 "nv-cost": 4,
                 "f-atk": 2500,
@@ -27185,7 +27185,7 @@
               "rarityId": "nv-sr",
               "number": "BT08-061",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_aARDj3pe_52024e5aad4bbf3ee6ac3886ab5326eb725a5eb0.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_aARDj3pe_52024e5aad4bbf3ee6ac3886ab5326eb725a5eb0.jpg",
               "stats": {
                 "nv-cost": 5,
                 "f-atk": 4000,
@@ -27202,7 +27202,7 @@
               "rarityId": "nv-spr",
               "number": "BT08-061",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_j9FZCqxf_35d2ec7d7cf3e90390d1710b8ee08fb09246031a.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_j9FZCqxf_35d2ec7d7cf3e90390d1710b8ee08fb09246031a.jpg",
               "stats": {
                 "nv-cost": 5,
                 "f-atk": 4000,
@@ -27219,7 +27219,7 @@
               "rarityId": "nv-ur",
               "number": "BT08-062",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_WDpziXL4_7f6a4acba81805de0921bfdcfb34940ea23d67fb.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_WDpziXL4_7f6a4acba81805de0921bfdcfb34940ea23d67fb.jpg",
               "stats": {
                 "nv-cost": 5,
                 "f-atk": 4000,
@@ -27236,7 +27236,7 @@
               "rarityId": "nv-spr",
               "number": "BT08-062",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_h8ISPmd6_8237cc81ba165f72f0b6679319a22b5d31e486dc.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_h8ISPmd6_8237cc81ba165f72f0b6679319a22b5d31e486dc.jpg",
               "stats": {
                 "nv-cost": 5,
                 "f-atk": 4000,
@@ -27253,7 +27253,7 @@
               "rarityId": "nv-c",
               "number": "BT08-063",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_m4OxJs1u_5dd2d318acf1252018bd758b268662bdfbd72066.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_m4OxJs1u_5dd2d318acf1252018bd758b268662bdfbd72066.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -27270,7 +27270,7 @@
               "rarityId": "nv-c",
               "number": "BT08-064",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_MxJH4g7W_9bc9d37b2fd4664903ab96cf672a282af4dddc76.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_MxJH4g7W_9bc9d37b2fd4664903ab96cf672a282af4dddc76.jpg",
               "stats": {
                 "nv-cost": 1,
                 "f-atk": 0,
@@ -27287,7 +27287,7 @@
               "rarityId": "nv-c",
               "number": "BT08-065",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_gahUmLbT_63ab466e964c515fe5a2dab0987fd887f4f2724b.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_gahUmLbT_63ab466e964c515fe5a2dab0987fd887f4f2724b.jpg",
               "stats": {
                 "nv-cost": 1,
                 "f-atk": 0,
@@ -27304,7 +27304,7 @@
               "rarityId": "nv-r",
               "number": "BT08-066",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_4U8SfiKA_d3fef22615a6484e1d2997fa06343e448c602c49.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_4U8SfiKA_d3fef22615a6484e1d2997fa06343e448c602c49.jpg",
               "stats": {
                 "nv-cost": 1,
                 "f-atk": 0,
@@ -27321,7 +27321,7 @@
               "rarityId": "nv-c",
               "number": "BT08-067",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_Ju3npA9y_e72713b0c540e56de220d5260c3da38d162acbbe.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_Ju3npA9y_e72713b0c540e56de220d5260c3da38d162acbbe.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 0,
@@ -27338,7 +27338,7 @@
               "rarityId": "nv-c",
               "number": "BT08-068",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_SAt5Jiaz_d6511a0c97cf24980df34a76e80187e5ebf961c6.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_SAt5Jiaz_d6511a0c97cf24980df34a76e80187e5ebf961c6.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 0,
@@ -27355,7 +27355,7 @@
               "rarityId": "nv-l",
               "number": "BT08-069",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_z6tUGD9E_ea87c1f9782832e2c2918aae0f6b73879f19ae84.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_z6tUGD9E_ea87c1f9782832e2c2918aae0f6b73879f19ae84.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -27372,7 +27372,7 @@
               "rarityId": "nv-spl",
               "number": "BT08-069",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_DwxMIE8z_4220decc8d5683f76207af1eb7624440d3026e6c.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_DwxMIE8z_4220decc8d5683f76207af1eb7624440d3026e6c.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -27389,7 +27389,7 @@
               "rarityId": "nv-spl",
               "number": "BT08-069",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_KSypN6Gv_a55a742b2c8c119f73b178378b230f7a1fb95186.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_KSypN6Gv_a55a742b2c8c119f73b178378b230f7a1fb95186.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -27406,7 +27406,7 @@
               "rarityId": "nv-ssl",
               "number": "BT08-069",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_a53GBJpg_63e6996f9b766c3d471b2cd61d001654217f2de7.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_a53GBJpg_63e6996f9b766c3d471b2cd61d001654217f2de7.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -27423,7 +27423,7 @@
               "rarityId": "nv-c",
               "number": "BT08-070",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_3JOY1qsW_b60e876d8b8568afbb88aae58e41a24da5584d75.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_3JOY1qsW_b60e876d8b8568afbb88aae58e41a24da5584d75.jpg",
               "stats": {
                 "nv-cost": 1,
                 "f-atk": 2500,
@@ -27440,7 +27440,7 @@
               "rarityId": "nv-c",
               "number": "BT08-071",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_R3diGm5X_c5c748e062bfa20c8ae474c51b723546a5ededbd.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_R3diGm5X_c5c748e062bfa20c8ae474c51b723546a5ededbd.jpg",
               "stats": {
                 "nv-cost": 1,
                 "f-atk": 2500,
@@ -27457,7 +27457,7 @@
               "rarityId": "nv-c",
               "number": "BT08-072",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_DWrOFbQB_2ffef4c0d171ecc80de23085a83f4df40f618599.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_DWrOFbQB_2ffef4c0d171ecc80de23085a83f4df40f618599.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 3000,
@@ -27474,7 +27474,7 @@
               "rarityId": "nv-r",
               "number": "BT08-073",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_89QvmaUW_f9dadfbbccfecb461e1da75f41d0a124901b4657.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_89QvmaUW_f9dadfbbccfecb461e1da75f41d0a124901b4657.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 2500,
@@ -27491,7 +27491,7 @@
               "rarityId": "nv-r",
               "number": "BT08-074",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_qXWEfPaD_a2eee8daeb3390a233505d5cd790630e64910a85.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_qXWEfPaD_a2eee8daeb3390a233505d5cd790630e64910a85.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 3000,
@@ -27508,7 +27508,7 @@
               "rarityId": "nv-r",
               "number": "BT08-075",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_8T4RFnpe_6f5a153d12e737904e84e13b3cc6e57aed471432.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_8T4RFnpe_6f5a153d12e737904e84e13b3cc6e57aed471432.jpg",
               "stats": {
                 "nv-cost": 2,
                 "f-atk": 3000,
@@ -27525,7 +27525,7 @@
               "rarityId": "nv-sr",
               "number": "BT08-076",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_ytoFKUXI_bf5c6deaba773d6be763a7194875922210d3c148.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_ytoFKUXI_bf5c6deaba773d6be763a7194875922210d3c148.jpg",
               "stats": {
                 "nv-cost": 3,
                 "f-atk": 4000,
@@ -27542,7 +27542,7 @@
               "rarityId": "nv-spr",
               "number": "BT08-076",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_xiaXZt65_7661df19e755ad6ffe56d74dc34d807798d2dc60.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_xiaXZt65_7661df19e755ad6ffe56d74dc34d807798d2dc60.jpg",
               "stats": {
                 "nv-cost": 3,
                 "f-atk": 4000,
@@ -27559,7 +27559,7 @@
               "rarityId": "nv-ur",
               "number": "BT08-077",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_zK3PQC1n_5d86923ae76cff96142966da9e76a13d097ec073.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_zK3PQC1n_5d86923ae76cff96142966da9e76a13d097ec073.jpg",
               "stats": {
                 "nv-cost": 4,
                 "f-atk": 5000,
@@ -27576,7 +27576,7 @@
               "rarityId": "nv-spr",
               "number": "BT08-077",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_ikzTbLJj_a66df47a5fd643cf2a65d584afd324c5990f0e14.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_ikzTbLJj_a66df47a5fd643cf2a65d584afd324c5990f0e14.jpg",
               "stats": {
                 "nv-cost": 4,
                 "f-atk": 5000,
@@ -27593,7 +27593,7 @@
               "rarityId": "nv-sr",
               "number": "BT08-078",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_vSuYtKDk_391f71f43484da286f8ccef6d9d9144ad81a1344.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_vSuYtKDk_391f71f43484da286f8ccef6d9d9144ad81a1344.jpg",
               "stats": {
                 "nv-cost": 5,
                 "f-atk": 6000,
@@ -27610,7 +27610,7 @@
               "rarityId": "nv-spr",
               "number": "BT08-078",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_9Ub7Ze1I_80c91d681906aa8e951fc6607dc2d2b90af72cc3.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_9Ub7Ze1I_80c91d681906aa8e951fc6607dc2d2b90af72cc3.jpg",
               "stats": {
                 "nv-cost": 5,
                 "f-atk": 6000,
@@ -27627,7 +27627,7 @@
               "rarityId": "nv-c",
               "number": "BT08-079",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_h2LD6gG8_f934c113e0f085beb40b691f00ccbd7bd404343a.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_h2LD6gG8_f934c113e0f085beb40b691f00ccbd7bd404343a.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -27644,7 +27644,7 @@
               "rarityId": "nv-c",
               "number": "BT08-080",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_pMHtvm0r_e295aa7ef9d04513581e4bc544eddc32cc1d5eec.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_pMHtvm0r_e295aa7ef9d04513581e4bc544eddc32cc1d5eec.jpg",
               "stats": {
                 "nv-cost": 3,
                 "f-atk": 0,
@@ -27661,7 +27661,7 @@
               "rarityId": "nv-c",
               "number": "BT08-081",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_yiHVszMf_1afadea8ef8716591689f9304b4f8f913df50b29.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_yiHVszMf_1afadea8ef8716591689f9304b4f8f913df50b29.jpg",
               "stats": {
                 "nv-cost": 3,
                 "f-atk": 0,
@@ -27678,7 +27678,7 @@
               "rarityId": "nv-r",
               "number": "BT08-082",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_bzvcRweB_88175d099964daf3446aeb9f4cc0fd32d8052efc.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_bzvcRweB_88175d099964daf3446aeb9f4cc0fd32d8052efc.jpg",
               "stats": {
                 "nv-cost": 3,
                 "f-atk": 0,
@@ -27695,7 +27695,7 @@
               "rarityId": "nv-c",
               "number": "BT08-083",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_zaCgJ7v2_1534e4b65f75c07af5f87176e6c5d9d0a61e1d0c.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_zaCgJ7v2_1534e4b65f75c07af5f87176e6c5d9d0a61e1d0c.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -27712,7 +27712,7 @@
               "rarityId": "nv-c",
               "number": "BT08-084",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_HN5VIs7G_bab337e3b6271c2badf0eab061f5188c0caa2acf.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_HN5VIs7G_bab337e3b6271c2badf0eab061f5188c0caa2acf.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
@@ -27729,7 +27729,7 @@
               "rarityId": "nv-c",
               "number": "BT08-085",
               "description": "",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_NOpyvMVU_dbfd99867d5274128740d8fc6aa890f8f6dae666.jpg",
+              "image": "nivel/CARDS/cfbf01727a7e461ec5930f5d552f8bff_NOpyvMVU_dbfd99867d5274128740d8fc6aa890f8f6dae666.jpg",
               "stats": {
                 "nv-cost": 0,
                 "f-atk": 0,
