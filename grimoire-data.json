@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-08-26T22:44:42.118Z",
+  "exportedAt": "2026-08-26T22:54:54.597Z",
   "systems": [
     {
       "id": "sys-mtao4tlgaoua",
@@ -103,31 +103,31 @@
         {
           "id": "화염",
           "name": "화염",
-          "color": "hsl(192,55%,55%)",
+          "color": "#7c042a",
           "icon": "fa-solid fa-circle"
         },
         {
           "id": "대지",
           "name": "대지",
-          "color": "hsl(152,55%,55%)",
+          "color": "#296738",
           "icon": "fa-solid fa-circle"
         },
         {
           "id": "폭풍",
           "name": "폭풍",
-          "color": "hsl(336,55%,55%)",
+          "color": "#412d8c",
           "icon": "fa-solid fa-circle"
         },
         {
           "id": "파도",
           "name": "파도",
-          "color": "hsl(88,55%,55%)",
+          "color": "#274b91",
           "icon": "fa-solid fa-circle"
         },
         {
           "id": "번개",
           "name": "번개",
-          "color": "hsl(164,55%,55%)",
+          "color": "#ca6d33",
           "icon": "fa-solid fa-circle"
         }
       ],
@@ -185,34 +185,34 @@
         {
           "id": "grp-mtaof03q3uz6",
           "name": "BOOSTER",
-          "collapsed": true
+          "collapsed": false
         }
       ],
       "series": [
         {
           "id": "ser-mtaof4d86eev",
           "name": "NIKKE",
-          "color": "#c9a84c"
+          "color": "#8a8a8a"
         },
         {
           "id": "ser-mtaofajuqvvx",
           "name": "STELLAR BLADE",
-          "color": "#c9a84c"
+          "color": "#4a70c9"
         },
         {
           "id": "ser-mtaofh1bjndn",
           "name": "EPIC7SEVEN",
-          "color": "#c9a84c"
+          "color": "#c94ab2"
         },
         {
           "id": "ser-mtaofm5nruh2",
           "name": "ETERNAL RETURN",
-          "color": "#c9a84c"
+          "color": "#c97d4a"
         },
         {
           "id": "ser-mtaogbkmufbi",
           "name": "BROWN DUST II",
-          "color": "#c9a84c"
+          "color": "#704ac9"
         }
       ],
       "importMapping": {
