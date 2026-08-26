@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-08-26T17:27:38.824Z",
+  "exportedAt": "2026-08-26T17:38:25.962Z",
   "systems": [
     {
       "id": "sys-mtacsa9u5tqa",
@@ -55,25 +55,25 @@
         {
           "id": "리더",
           "name": "리더",
-          "color": "hsl(200,55%,55%)",
-          "icon": "fa-solid fa-shield"
+          "color": "#808080",
+          "icon": "fa-solid fa-fire"
         },
         {
           "id": "유닛",
           "name": "유닛",
-          "color": "hsl(283,55%,55%)",
+          "color": "#808080",
           "icon": "fa-solid fa-shield"
         },
         {
           "id": "스킬",
           "name": "스킬",
-          "color": "hsl(48,55%,55%)",
+          "color": "#c7c7c7",
           "icon": "fa-solid fa-shield"
         },
         {
           "id": "아이템",
           "name": "아이템",
-          "color": "hsl(236,55%,55%)",
+          "color": "#9e9e9e",
           "icon": "fa-solid fa-shield"
         }
       ],
@@ -81,31 +81,31 @@
         {
           "id": "화염",
           "name": "화염",
-          "color": "hsl(192,55%,55%)",
+          "color": "#d30909",
           "icon": "fa-solid fa-circle"
         },
         {
           "id": "대지",
           "name": "대지",
-          "color": "hsl(152,55%,55%)",
+          "color": "#09c86f",
           "icon": "fa-solid fa-circle"
         },
         {
           "id": "폭풍",
           "name": "폭풍",
-          "color": "hsl(336,55%,55%)",
+          "color": "#864dcb",
           "icon": "fa-solid fa-circle"
         },
         {
           "id": "파도",
           "name": "파도",
-          "color": "hsl(88,55%,55%)",
+          "color": "#1280c4",
           "icon": "fa-solid fa-circle"
         },
         {
           "id": "번개",
           "name": "번개",
-          "color": "hsl(164,55%,55%)",
+          "color": "#ffd500",
           "icon": "fa-solid fa-circle"
         }
       ],
@@ -159,8 +159,40 @@
           "showOnTile": true
         }
       ],
-      "groups": [],
-      "series": [],
+      "groups": [
+        {
+          "id": "grp-mtadbc947ywm",
+          "name": "BOOSTER",
+          "collapsed": false
+        }
+      ],
+      "series": [
+        {
+          "id": "ser-mtadbh1cg7k3",
+          "name": "Brown Dust II",
+          "color": "#bf92bb"
+        },
+        {
+          "id": "ser-mtadc6lba7kt",
+          "name": "NIKKE",
+          "color": "#858585"
+        },
+        {
+          "id": "ser-mtadcak9waew",
+          "name": "Stellar Blade",
+          "color": "#1c359c"
+        },
+        {
+          "id": "ser-mtadcm9y2s1q",
+          "name": "Eternal Return",
+          "color": "#4ac988"
+        },
+        {
+          "id": "ser-mtadctog165w",
+          "name": "Epic7Seven",
+          "color": "#bd37d7"
+        }
+      ],
       "importMapping": {
         "expansion": {
           "delimiter": "",
@@ -243,8 +275,8 @@
           "name": "<인카운터>",
           "abbreviation": "BT01",
           "releaseDate": "",
-          "groupId": null,
-          "seriesId": null,
+          "groupId": "grp-mtadbc947ywm",
+          "seriesId": "ser-mtadc6lba7kt",
           "cardsPerBooster": 6,
           "boostersPerBox": 24,
           "cards": [
@@ -2080,8 +2112,8 @@
           "name": "<더 킹덤>",
           "abbreviation": "BT02",
           "releaseDate": "",
-          "groupId": null,
-          "seriesId": null,
+          "groupId": "grp-mtadbc947ywm",
+          "seriesId": "ser-mtadc6lba7kt",
           "cardsPerBooster": 6,
           "boostersPerBox": 24,
           "cards": [
@@ -3935,8 +3967,8 @@
           "name": "<언브레이커블>",
           "abbreviation": "BT03",
           "releaseDate": "",
-          "groupId": null,
-          "seriesId": null,
+          "groupId": "grp-mtadbc947ywm",
+          "seriesId": "ser-mtadc6lba7kt",
           "cardsPerBooster": 6,
           "boostersPerBox": 24,
           "cards": [
@@ -5942,8 +5974,8 @@
           "name": "<혹한의 날들>",
           "abbreviation": "BT04",
           "releaseDate": "",
-          "groupId": null,
-          "seriesId": null,
+          "groupId": "grp-mtadbc947ywm",
+          "seriesId": "ser-mtadctog165w",
           "cardsPerBooster": 6,
           "boostersPerBox": 24,
           "cards": [
@@ -7930,8 +7962,8 @@
           "name": "<마츠리>",
           "abbreviation": "BT05",
           "releaseDate": "",
-          "groupId": null,
-          "seriesId": null,
+          "groupId": "grp-mtadbc947ywm",
+          "seriesId": "ser-mtadcm9y2s1q",
           "cardsPerBooster": 6,
           "boostersPerBox": 24,
           "cards": [
@@ -9937,8 +9969,8 @@
           "name": "<골든 타마고>",
           "abbreviation": "BT06",
           "releaseDate": "",
-          "groupId": null,
-          "seriesId": null,
+          "groupId": "grp-mtadbc947ywm",
+          "seriesId": "ser-mtadbh1cg7k3",
           "cardsPerBooster": 6,
           "boostersPerBox": 24,
           "cards": [
@@ -11963,8 +11995,8 @@
           "name": "<이브 프로토콜>",
           "abbreviation": "BT07",
           "releaseDate": "",
-          "groupId": null,
-          "seriesId": null,
+          "groupId": "grp-mtadbc947ywm",
+          "seriesId": "ser-mtadcak9waew",
           "cardsPerBooster": 6,
           "boostersPerBox": 24,
           "cards": [
@@ -14065,8 +14097,8 @@
           "name": "<웨이브 투 유>",
           "abbreviation": "BT08",
           "releaseDate": "",
-          "groupId": null,
-          "seriesId": null,
+          "groupId": "grp-mtadbc947ywm",
+          "seriesId": "ser-mtadcak9waew",
           "cardsPerBooster": 6,
           "boostersPerBox": 24,
           "cards": [
