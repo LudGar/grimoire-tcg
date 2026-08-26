@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-08-26T17:19:28.712Z",
+  "exportedAt": "2026-08-26T17:27:38.824Z",
   "systems": [
     {
       "id": "sys-mtacsa9u5tqa",
@@ -11969,7 +11969,7 @@
           "boostersPerBox": 24,
           "cards": [
             {
-              "id": "c-mtacx13rg9ia",
+              "id": "c-mtad9sbvpvdm",
               "custom": true,
               "name": "레이븐",
               "type": "리더",
@@ -11988,7 +11988,7 @@
               }
             },
             {
-              "id": "c-mtacx13rjnay",
+              "id": "c-mtad9sbv8sy4",
               "custom": true,
               "name": "레이븐",
               "type": "리더",
@@ -11996,7 +11996,7 @@
               "rarityId": "r-mtacsa9tt8d2",
               "number": "BT07-001",
               "description": "기본면\n 자신의 덱에  카드만 넣을 수 있다.\n 자신의 리더 레벨이 6 이상이라면 이 카드를 뒤집는다.\n\n각성면\n 필드에 있는 자신 유닛이 이동하면 이 턴이 끝날 때까지 그 유닛의 파워+2000.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_AP0HfDBu_2b485a4fd45f3ebd3552a0dba55d57414d853df9.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_AP0HfDBu_2b485a4fd45f3ebd3552a0dba55d57414d853df9.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 0,
                 "f-mtacsa9t3jul": 0,
@@ -12007,7 +12007,7 @@
               }
             },
             {
-              "id": "c-mtacx13rcdix",
+              "id": "c-mtad9sbvtsx9",
               "custom": true,
               "name": "레이븐",
               "type": "리더",
@@ -12015,7 +12015,7 @@
               "rarityId": "r-mtacsa9t5je1",
               "number": "BT07-001",
               "description": "기본면\n 자신의 덱에  카드만 넣을 수 있다.\n 자신의 리더 레벨이 6 이상이라면 이 카드를 뒤집는다.\n\n각성면\n 필드에 있는 자신 유닛이 이동하면 이 턴이 끝날 때까지 그 유닛의 파워+2000.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_k83DNH9f_e7019f45c1e1a8d4580edb9ec47bd854360eab31.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_k83DNH9f_e7019f45c1e1a8d4580edb9ec47bd854360eab31.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 0,
                 "f-mtacsa9t3jul": 0,
@@ -12026,7 +12026,7 @@
               }
             },
             {
-              "id": "c-mtacx13r9ggq",
+              "id": "c-mtad9sbv6j52",
               "custom": true,
               "name": "레이븐",
               "type": "리더",
@@ -12034,7 +12034,7 @@
               "rarityId": "r-mtacsa9t5je1",
               "number": "BT07-001",
               "description": "기본면\n 자신의 덱에  카드만 넣을 수 있다.\n 자신의 리더 레벨이 6 이상이라면 이 카드를 뒤집는다.\n\n각성면\n 필드에 있는 자신 유닛이 이동하면 이 턴이 끝날 때까지 그 유닛의 파워+2000.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_ejWlwUYr_43874e3ca456cb112a0d766a069362a3077befe6.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_ejWlwUYr_43874e3ca456cb112a0d766a069362a3077befe6.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 0,
                 "f-mtacsa9t3jul": 0,
@@ -12045,7 +12045,7 @@
               }
             },
             {
-              "id": "c-mtacx13rwm4y",
+              "id": "c-mtad9sbv3p7k",
               "custom": true,
               "name": "레이븐",
               "type": "리더",
@@ -12053,7 +12053,7 @@
               "rarityId": "r-mtacsa9tt8d2",
               "number": "BT07-001",
               "description": "기본면\n 자신의 덱에  카드만 넣을 수 있다.\n 자신의 리더 레벨이 6 이상이라면 이 카드를 뒤집는다.\n\n각성면\n 필드에 있는 자신 유닛이 이동하면 이 턴이 끝날 때까지 그 유닛의 파워+2000.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_yDcRUszM_67461e7122c3b6f2611160fdb2bf656a94000cd1.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_yDcRUszM_67461e7122c3b6f2611160fdb2bf656a94000cd1.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 0,
                 "f-mtacsa9t3jul": 0,
@@ -12064,7 +12064,7 @@
               }
             },
             {
-              "id": "c-mtacx13re9mj",
+              "id": "c-mtad9sbvbi5c",
               "custom": true,
               "name": "브루트",
               "type": "유닛",
@@ -12072,7 +12072,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-002",
               "description": "자신의 리더 레벨+1.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_Fi3Jn4Io_763bad380dd9c79a72398873c506633ff2eb8c8f.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_Fi3Jn4Io_763bad380dd9c79a72398873c506633ff2eb8c8f.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 1,
                 "f-mtacsa9t3jul": 1500,
@@ -12083,7 +12083,7 @@
               }
             },
             {
-              "id": "c-mtacx13rd0mc",
+              "id": "c-mtad9sbvgj5z",
               "custom": true,
               "name": "아바돈",
               "type": "유닛",
@@ -12091,7 +12091,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-003",
               "description": "필드에 있는 자신 유닛을 1장 골라, 이 턴이 끝날 때까지 파워+3000.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_wYEV17h4_a7d9616961fb124ee1855a4234a7975bcc01b602.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_wYEV17h4_a7d9616961fb124ee1855a4234a7975bcc01b602.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 1,
                 "f-mtacsa9t3jul": 2000,
@@ -12102,7 +12102,7 @@
               }
             },
             {
-              "id": "c-mtacx13rj2xs",
+              "id": "c-mtad9sbvfv3k",
               "custom": true,
               "name": "정체불명의 네이티브",
               "type": "유닛",
@@ -12110,7 +12110,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-004",
               "description": "필드에 있는 자신 유닛을 1장 골라 인접한 자신의 유닛 존으로 이동할 수 있다. 그러면 자신의 턴이 끝날 때까지 그 유닛의 히트+1.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_9YutrOCs_a62afa7a4cd2d47f9b8c05c29570626ba03930a7.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_9YutrOCs_a62afa7a4cd2d47f9b8c05c29570626ba03930a7.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 1,
                 "f-mtacsa9t3jul": 2500,
@@ -12121,7 +12121,7 @@
               }
             },
             {
-              "id": "c-mtacx13rhu81",
+              "id": "c-mtad9sbvtubq",
               "custom": true,
               "name": "엘더 네이티브",
               "type": "유닛",
@@ -12129,7 +12129,7 @@
               "rarityId": "r-mtacsa9twk5c",
               "number": "BT07-005",
               "description": "이 유닛이 이동하면 이 턴이 끝날 때까지 자신의 사이즈+1.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_c6nmYKdz_9d039582fcc7f5149412283b529fc02466371872.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_c6nmYKdz_9d039582fcc7f5149412283b529fc02466371872.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 1,
                 "f-mtacsa9t3jul": 2000,
@@ -12140,7 +12140,7 @@
               }
             },
             {
-              "id": "c-mtacx13rxjag",
+              "id": "c-mtad9sbvwle9",
               "custom": true,
               "name": "벨리알",
               "type": "유닛",
@@ -12148,7 +12148,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-006",
               "description": "자신의 턴마다 1번씩, 이 유닛이 이동하면 이 턴이 끝날 때까지 히트+1.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_OhlzRkWd_a22905e4b631a214b56625cea2d610582ed19605.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_OhlzRkWd_a22905e4b631a214b56625cea2d610582ed19605.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 2,
                 "f-mtacsa9t3jul": 4000,
@@ -12159,7 +12159,7 @@
               }
             },
             {
-              "id": "c-mtacx13rds9z",
+              "id": "c-mtad9sbvd8wp",
               "custom": true,
               "name": "레이븐-미드서머 앨리스",
               "type": "유닛",
@@ -12167,7 +12167,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-007",
               "description": "자신과 상대의 턴마다 1번씩, 이 유닛이 이동하면 자신의 리더 레벨+1.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_FVnkx1DC_52029b9ec2a03676e40aa570e264c7ebe69ffe35.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_FVnkx1DC_52029b9ec2a03676e40aa570e264c7ebe69ffe35.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 2,
                 "f-mtacsa9t3jul": 3000,
@@ -12178,7 +12178,7 @@
               }
             },
             {
-              "id": "c-mtacx13r1psz",
+              "id": "c-mtad9sbv3s9z",
               "custom": true,
               "name": "스토커",
               "type": "유닛",
@@ -12186,7 +12186,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-008",
               "description": "센터 유닛 존에 있다면 자신의 리더 레벨+1.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_13j8nOrU_635bbc64127c07431a299444d2f3c627af65cba1.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_13j8nOrU_635bbc64127c07431a299444d2f3c627af65cba1.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 2,
                 "f-mtacsa9t3jul": 2000,
@@ -12197,7 +12197,7 @@
               }
             },
             {
-              "id": "c-mtacx13r5puz",
+              "id": "c-mtad9sbv1wh0",
               "custom": true,
               "name": "엘더 네이티브",
               "type": "유닛",
@@ -12205,7 +12205,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-009",
               "description": "자신 유닛의 효과로 트래시됐다면 이 유닛을 트래시한 유닛의 히트+1. 그러면 자신의 패에서 4코스트 이하인 유닛 카드를 1장 골라 비어 있는 자신의 유닛 존에 사이즈를 무시하고 배치할 수 있다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_vMPXRQec_55c8315164183106ec9a1be4510bc8d69218c0b1.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_vMPXRQec_55c8315164183106ec9a1be4510bc8d69218c0b1.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 2,
                 "f-mtacsa9t3jul": 2000,
@@ -12216,7 +12216,7 @@
               }
             },
             {
-              "id": "c-mtacx13rsorg",
+              "id": "c-mtad9sbv6mgo",
               "custom": true,
               "name": "저거너트",
               "type": "유닛",
@@ -12224,7 +12224,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-010",
               "description": "자신의 덱 맨 위에서 카드를 2장 공개하고, 그중 유닛 카드를 1장 골라 패에 넣는다. 나머지는 모두 트래시한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_Dq14EKU7_dc28fa935585424ee3dd5c9ce6a2757526a8a42e.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_Dq14EKU7_dc28fa935585424ee3dd5c9ce6a2757526a8a42e.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 2,
                 "f-mtacsa9t3jul": 2000,
@@ -12235,7 +12235,7 @@
               }
             },
             {
-              "id": "c-mtacx13rd24o",
+              "id": "c-mtad9sbv7n67",
               "custom": true,
               "name": "타키",
               "type": "유닛",
@@ -12243,7 +12243,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-011",
               "description": "인접한 자신의 유닛 존으로 이동할 수 있다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_BoUSe1C0_8bffa38042ffd4143cfd824e98f47bd5dfa32d33.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_BoUSe1C0_8bffa38042ffd4143cfd824e98f47bd5dfa32d33.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 2,
                 "f-mtacsa9t3jul": 4000,
@@ -12254,7 +12254,7 @@
               }
             },
             {
-              "id": "c-mtacx13rw9f5",
+              "id": "c-mtad9sbv2ilc",
               "custom": true,
               "name": "기가스",
               "type": "유닛",
@@ -12262,7 +12262,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-012",
               "description": "필드에 있는 자신 유닛을 1장 고른다. 그 유닛은 자신의 턴이 끝날 때까지  관통[1](이 유닛이 공격하여 상대 유닛을 전투로 트래시했다면 상대에게 1대미지를 준다)을 얻는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_c36w0RJS_f76e039042b8a1b777dcd383ee44b270b819e5e5.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_c36w0RJS_f76e039042b8a1b777dcd383ee44b270b819e5e5.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 3,
                 "f-mtacsa9t3jul": 3500,
@@ -12273,7 +12273,7 @@
               }
             },
             {
-              "id": "c-mtacx13rc6rd",
+              "id": "c-mtad9sbvefrt",
               "custom": true,
               "name": "벨리알",
               "type": "유닛",
@@ -12281,7 +12281,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-013",
               "description": "자신의 리더 레벨+1.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_OA1y749b_ec8d39e1aa9b7afb1cbad5ddda39a3465679605c.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_OA1y749b_ec8d39e1aa9b7afb1cbad5ddda39a3465679605c.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 3,
                 "f-mtacsa9t3jul": 2500,
@@ -12292,7 +12292,7 @@
               }
             },
             {
-              "id": "c-mtacx13rv87z",
+              "id": "c-mtad9sbvfha9",
               "custom": true,
               "name": "아바돈",
               "type": "유닛",
@@ -12300,7 +12300,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-014",
               "description": "자신 유닛의 효과로 트래시됐다면 이 유닛을 트래시한 유닛의 히트+1. 그러면 자신의 패에서 5코스트 이하인 유닛 카드를 1장 골라 비어 있는 자신의 유닛 존에 사이즈를 무시하고 배치할 수 있다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_yZtPN5Qq_00fbc18d58dadbaef489f3fff21dc405f7cc0754.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_yZtPN5Qq_00fbc18d58dadbaef489f3fff21dc405f7cc0754.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 3,
                 "f-mtacsa9t3jul": 3000,
@@ -12311,7 +12311,7 @@
               }
             },
             {
-              "id": "c-mtacx13re5yv",
+              "id": "c-mtad9sbvhpl0",
               "custom": true,
               "name": "레이븐",
               "type": "유닛",
@@ -12319,7 +12319,7 @@
               "rarityId": "r-mtacsa9twk5c",
               "number": "BT07-015",
               "description": "인접한 자신의 유닛 존으로 이동할 수 있다.\n 자신과 상대의 턴마다 1번씩, 이 유닛이 이동하면 상대의 턴이 끝날 때까지 「 상대는 패에서 3코스트 이하인 유닛을 이 유닛이 있는 레인에 배치할 수 없다」를 얻는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_hc8DtXU7_2a2a0069ccfbe156fb62b431607cc03d43655f52.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_hc8DtXU7_2a2a0069ccfbe156fb62b431607cc03d43655f52.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 3,
                 "f-mtacsa9t3jul": 5000,
@@ -12330,7 +12330,7 @@
               }
             },
             {
-              "id": "c-mtacx13rsf7f",
+              "id": "c-mtad9sbvkkts",
               "custom": true,
               "name": "타키",
               "type": "유닛",
@@ -12338,7 +12338,7 @@
               "rarityId": "r-mtacsa9twk5c",
               "number": "BT07-016",
               "description": "인접한 자신의 유닛 존으로 이동할 수 있다.\n 자신과 상대의 턴마다 1번씩, 이 유닛이 이동하면 이 턴이 끝날 때까지 파워+2000, 히트+1.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_ObuHpNjT_d0e395af694aaeb98c3e44c6a3f3db13acec2d29.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_ObuHpNjT_d0e395af694aaeb98c3e44c6a3f3db13acec2d29.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 3,
                 "f-mtacsa9t3jul": 4000,
@@ -12349,7 +12349,7 @@
               }
             },
             {
-              "id": "c-mtacx13rqeyv",
+              "id": "c-mtad9sbvmd2b",
               "custom": true,
               "name": "데모고르곤",
               "type": "유닛",
@@ -12357,7 +12357,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-017",
               "description": "이 유닛은 이 턴이 끝날 때까지 공격할 수 없다.\n 자신의 리더 레벨이 5 이상이라면 히트+1.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_VYEdcI2b_4292a463c35019c69e6417739337c7c03fec7af5.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_VYEdcI2b_4292a463c35019c69e6417739337c7c03fec7af5.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 4,
                 "f-mtacsa9t3jul": 6500,
@@ -12368,7 +12368,7 @@
               }
             },
             {
-              "id": "c-mtacx13rewqq",
+              "id": "c-mtad9sbvwl04",
               "custom": true,
               "name": "브루트",
               "type": "유닛",
@@ -12376,7 +12376,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-018",
               "description": "자신의 턴 동안 이 유닛이 이동하면 상대의 턴이 끝날 때까지 파워+2000.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_LWtSZPah_a85dc2b6a2aa0137eb15de12082928b3e295d57c.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_LWtSZPah_a85dc2b6a2aa0137eb15de12082928b3e295d57c.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 4,
                 "f-mtacsa9t3jul": 5000,
@@ -12387,7 +12387,7 @@
               }
             },
             {
-              "id": "c-mtacx13rlgrv",
+              "id": "c-mtad9sbvj8go",
               "custom": true,
               "name": "정체불명의 네이티브",
               "type": "유닛",
@@ -12395,7 +12395,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-019",
               "description": "자신 유닛의 효과로 트래시됐다면 이 유닛을 트래시한 유닛의 히트+1. 그러면 자신의 패에서 6코스트 이하인 유닛 카드를 1장 골라 비어 있는 자신의 유닛 존에 사이즈를 무시하고 배치할 수 있다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_u4nsaCkX_45f276697ff1fbaeac7f1f5ad1997778cd62a6a1.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_u4nsaCkX_45f276697ff1fbaeac7f1f5ad1997778cd62a6a1.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 4,
                 "f-mtacsa9t3jul": 4000,
@@ -12406,7 +12406,7 @@
               }
             },
             {
-              "id": "c-mtacx13rpwew",
+              "id": "c-mtad9sbv9ae7",
               "custom": true,
               "name": "레이븐-미드서머 앨리스",
               "type": "유닛",
@@ -12414,7 +12414,7 @@
               "rarityId": "r-mtacsa9twk5c",
               "number": "BT07-020",
               "description": "인접한 자신의 유닛 존으로 이동할 수 있다.\n 센터 유닛 존에 있다면 이 턴이 끝날 때까지  관통[1](이 유닛이 공격하여 상대 유닛을 전투로 트래시했다면 상대에게 1대미지를 준다)을 얻는다. 이 턴 동안 이 유닛이 이동했다면 추가로 파워+2000.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_Kft01r8V_22addb1cbba4e8b259e473cad33b478f3523b762.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_Kft01r8V_22addb1cbba4e8b259e473cad33b478f3523b762.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 4,
                 "f-mtacsa9t3jul": 5500,
@@ -12425,7 +12425,7 @@
               }
             },
             {
-              "id": "c-mtacx13r76ga",
+              "id": "c-mtad9sbvy9nz",
               "custom": true,
               "name": "레이븐-사이버 트릭스터",
               "type": "유닛",
@@ -12433,7 +12433,7 @@
               "rarityId": "r-mtacsa9twk5c",
               "number": "BT07-021",
               "description": "인접한 레인에 있는 〈레이븐-사이버 트릭스터〉 이외의 자신 유닛을 1장 골라 트래시하고 그 유닛이 있던 유닛 존으로 이동한다.\n 이 턴 동안 이 유닛이 〈레이븐-사이버 트릭스터〉의 효과로 이동했고 이 유닛의 파워가 조우 유닛의 파워 이상이라면 조우 유닛을 트래시할 수 있다.\n\n\n트리거 / 이 카드를 트래시한다. 필드에 있는 자신 유닛을 1장 골라, 이 턴이 끝날 때까지 파워+2000. 그 유닛을 인접한 자신의 유닛 존으로 이동할 수 있다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_74awotRp_261e282143b1ea2f3a8e7b2033495e30cac1b990.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_74awotRp_261e282143b1ea2f3a8e7b2033495e30cac1b990.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 4,
                 "f-mtacsa9t3jul": 4000,
@@ -12444,7 +12444,7 @@
               }
             },
             {
-              "id": "c-mtacx13r636t",
+              "id": "c-mtad9sbvhyq3",
               "custom": true,
               "name": "타키",
               "type": "유닛",
@@ -12452,7 +12452,7 @@
               "rarityId": "r-mtacsa9twk5c",
               "number": "BT07-022",
               "description": "인접한 자신의 유닛 존으로 이동한다.\n 이 턴 동안 이 유닛이 이동한 횟수가 조우 유닛의 코스트 이상이라면 조우 유닛을 트래시한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_T0mnryRp_a85fa28ccc6ef5858aca6d31a25a4a99dd6c3a7b.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_T0mnryRp_a85fa28ccc6ef5858aca6d31a25a4a99dd6c3a7b.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 4,
                 "f-mtacsa9t3jul": 4000,
@@ -12463,7 +12463,7 @@
               }
             },
             {
-              "id": "c-mtacx13rspwe",
+              "id": "c-mtad9sbvtxf6",
               "custom": true,
               "name": "레이븐-미드서머 레드후드",
               "type": "유닛",
@@ -12471,7 +12471,7 @@
               "rarityId": "r-mtacsa9t99gq",
               "number": "BT07-023",
               "description": "인접한 자신의 유닛 존으로 이동할 수 있다.\n 자신과 상대의 턴마다 1번씩, 이 유닛이 이동할 때마다 자신의 패가 5장 이하라면 자신의 덱 맨 위에서 카드를 3장 공개하고, 그중 1장을 골라 패에 넣을 수 있다. 나머지는 모두 트래시한다.\n\n\n트리거 / 이 카드를 트래시한다. 자신의 리더 레벨+1.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_aDg5Zub6_1e57f3379839fc5a08722536c15826844addfbb6.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_aDg5Zub6_1e57f3379839fc5a08722536c15826844addfbb6.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 4,
                 "f-mtacsa9t3jul": 6000,
@@ -12482,7 +12482,7 @@
               }
             },
             {
-              "id": "c-mtacx13rjw57",
+              "id": "c-mtad9sbv6j1o",
               "custom": true,
               "name": "레이븐-미드서머 레드후드",
               "type": "유닛",
@@ -12490,7 +12490,7 @@
               "rarityId": "r-mtacsa9t8bv3",
               "number": "BT07-023",
               "description": "인접한 자신의 유닛 존으로 이동할 수 있다.\n 자신과 상대의 턴마다 1번씩, 이 유닛이 이동할 때마다 자신의 패가 5장 이하라면 자신의 덱 맨 위에서 카드를 3장 공개하고, 그중 1장을 골라 패에 넣을 수 있다. 나머지는 모두 트래시한다.\n\n\n트리거 / 이 카드를 트래시한다. 자신의 리더 레벨+1.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_2ENcRqHf_be7febeb8e446874209093c600fc17d46f0d58bc.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_2ENcRqHf_be7febeb8e446874209093c600fc17d46f0d58bc.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 4,
                 "f-mtacsa9t3jul": 6000,
@@ -12501,7 +12501,7 @@
               }
             },
             {
-              "id": "c-mtacx13rskhz",
+              "id": "c-mtad9sbvna8j",
               "custom": true,
               "name": "레이븐-수국",
               "type": "유닛",
@@ -12509,7 +12509,7 @@
               "rarityId": "r-mtacsa9t99gq",
               "number": "BT07-024",
               "description": "자신과 상대의 어택 페이즈가 시작할 때 인접한 자신의 유닛 존으로 이동할 수 있다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_K5cu8eov_da202b51ab203c6ebde5b73141be023674b3eced.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_K5cu8eov_da202b51ab203c6ebde5b73141be023674b3eced.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 4,
                 "f-mtacsa9t3jul": 4500,
@@ -12520,7 +12520,7 @@
               }
             },
             {
-              "id": "c-mtacx13r8wn0",
+              "id": "c-mtad9sbv9nxs",
               "custom": true,
               "name": "레이븐-수국",
               "type": "유닛",
@@ -12528,7 +12528,7 @@
               "rarityId": "r-mtacsa9t8bv3",
               "number": "BT07-024",
               "description": "자신과 상대의 어택 페이즈가 시작할 때 인접한 자신의 유닛 존으로 이동할 수 있다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_2NVbykjt_bf71c93468be00e638fa2621f13f632574e4f015.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_2NVbykjt_bf71c93468be00e638fa2621f13f632574e4f015.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 4,
                 "f-mtacsa9t3jul": 4500,
@@ -12539,7 +12539,7 @@
               }
             },
             {
-              "id": "c-mtacx13rexee",
+              "id": "c-mtad9sbvrjtc",
               "custom": true,
               "name": "레이븐-실버 쿠노이치",
               "type": "유닛",
@@ -12547,7 +12547,7 @@
               "rarityId": "r-mtacsa9t99gq",
               "number": "BT07-025",
               "description": "인접한 레인에 있는 〈레이븐-실버 쿠노이치〉 이외의 자신 유닛을 1장 골라 트래시하고 그 유닛이 있던 유닛 존으로 이동한다. 그러면 카드를 1장 드로우한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_4mk8guNB_0cb37ce0155e684727546b4a3ae4b371c965a6d6.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_4mk8guNB_0cb37ce0155e684727546b4a3ae4b371c965a6d6.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 4,
                 "f-mtacsa9t3jul": 6000,
@@ -12558,7 +12558,7 @@
               }
             },
             {
-              "id": "c-mtacx13rbe6x",
+              "id": "c-mtad9sbvcwgn",
               "custom": true,
               "name": "레이븐-실버 쿠노이치",
               "type": "유닛",
@@ -12566,7 +12566,7 @@
               "rarityId": "r-mtacsa9t8bv3",
               "number": "BT07-025",
               "description": "인접한 레인에 있는 〈레이븐-실버 쿠노이치〉 이외의 자신 유닛을 1장 골라 트래시하고 그 유닛이 있던 유닛 존으로 이동한다. 그러면 카드를 1장 드로우한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_phE6uqkX_05ae9adeaa79b71e433e6018d67523d8a0bb65fc.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_phE6uqkX_05ae9adeaa79b71e433e6018d67523d8a0bb65fc.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 4,
                 "f-mtacsa9t3jul": 6000,
@@ -12577,7 +12577,7 @@
               }
             },
             {
-              "id": "c-mtacx13szkg4",
+              "id": "c-mtad9sbvpixi",
               "custom": true,
               "name": "레이븐",
               "type": "유닛",
@@ -12585,7 +12585,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-026",
               "description": "인접한 자신의 유닛 존으로 이동할 수 있다.\n 자신의 리더 레벨이 7 이상이라면 파워+3000.\n 자신의 리더 레벨이 9 이상이라면 히트+1.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_eX3CJArH_8790fbac787c7e9e320c87e454ff5413688cb012.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_eX3CJArH_8790fbac787c7e9e320c87e454ff5413688cb012.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 5,
                 "f-mtacsa9t3jul": 5000,
@@ -12596,7 +12596,7 @@
               }
             },
             {
-              "id": "c-mtacx13sukle",
+              "id": "c-mtad9sbvhfn2",
               "custom": true,
               "name": "레이븐-플래닛 다이브 슈트",
               "type": "유닛",
@@ -12604,7 +12604,7 @@
               "rarityId": "r-mtacsa9twk5c",
               "number": "BT07-027",
               "description": "자신의 턴 동안 이 유닛이 이동하면 상대의 턴이 끝날 때까지 파워+2000.\n 자신의 리더 레벨이 7 이상이라면 히트+1.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_OUKt28AP_10b130079e7ed9fadce9780f3f2a54ee84c98ea3.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_OUKt28AP_10b130079e7ed9fadce9780f3f2a54ee84c98ea3.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 5,
                 "f-mtacsa9t3jul": 6000,
@@ -12615,7 +12615,7 @@
               }
             },
             {
-              "id": "c-mtacx13srnrr",
+              "id": "c-mtad9sbvu6nv",
               "custom": true,
               "name": "타키",
               "type": "유닛",
@@ -12623,7 +12623,7 @@
               "rarityId": "r-mtacsa9t99gq",
               "number": "BT07-028",
               "description": "자신의 리더 레벨 1마다 파워+500.\n 자신의 리더 레벨이 9 이상이라면 관통[1](이 유닛이 공격하여 상대 유닛을 전투로 트래시했다면 상대에게 1대미지를 준다)을 얻는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_q4GIxgER_b69813477f80829615568a8d8b45048d5994149a.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_q4GIxgER_b69813477f80829615568a8d8b45048d5994149a.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 5,
                 "f-mtacsa9t3jul": 5000,
@@ -12634,7 +12634,7 @@
               }
             },
             {
-              "id": "c-mtacx13s6d5m",
+              "id": "c-mtad9sbv60vt",
               "custom": true,
               "name": "타키",
               "type": "유닛",
@@ -12642,7 +12642,7 @@
               "rarityId": "r-mtacsa9t8bv3",
               "number": "BT07-028",
               "description": "자신의 리더 레벨 1마다 파워+500.\n 자신의 리더 레벨이 9 이상이라면 관통[1](이 유닛이 공격하여 상대 유닛을 전투로 트래시했다면 상대에게 1대미지를 준다)을 얻는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_nqvjlm1F_e9922cb5e8bb40ec6775548d1de2abded684901f.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_nqvjlm1F_e9922cb5e8bb40ec6775548d1de2abded684901f.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 5,
                 "f-mtacsa9t3jul": 5000,
@@ -12653,7 +12653,7 @@
               }
             },
             {
-              "id": "c-mtacx13spwin",
+              "id": "c-mtad9sbvdzu6",
               "custom": true,
               "name": "기가스",
               "type": "유닛",
@@ -12661,7 +12661,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-029",
               "description": "이 유닛은 이 턴이 끝날 때까지 공격할 수 없다.\n 자신의 리더 레벨이 5 이상이라면 히트+1.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_vZs48GXk_e970f121186d6dae62225b2886a047c2921190a3.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_vZs48GXk_e970f121186d6dae62225b2886a047c2921190a3.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 6,
                 "f-mtacsa9t3jul": 8500,
@@ -12672,7 +12672,7 @@
               }
             },
             {
-              "id": "c-mtacx13sr02z",
+              "id": "c-mtad9sbv926v",
               "custom": true,
               "name": "타키",
               "type": "유닛",
@@ -12680,7 +12680,7 @@
               "rarityId": "r-mtacsa9twk5c",
               "number": "BT07-030",
               "description": "센터 유닛 존에 있고 조우 유닛보다 파워가 3000 이상 높다면 관통[1](이 유닛이 공격하여 상대 유닛을 전투로 트래시했다면 상대에게 1대미지를 준다)을 얻는다.\n 사이드 유닛 존에 있고 조우 유닛보다 파워가 3000 이상 높다면 자신의 리더 레벨+1.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_fNjF13su_d5db6de00335e503646c67d7ed79ab08dab03ae9.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_fNjF13su_d5db6de00335e503646c67d7ed79ab08dab03ae9.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 6,
                 "f-mtacsa9t3jul": 5000,
@@ -12691,7 +12691,7 @@
               }
             },
             {
-              "id": "c-mtacx13stf1m",
+              "id": "c-mtad9sbvmvbs",
               "custom": true,
               "name": "레이븐-워 드레스",
               "type": "유닛",
@@ -12699,7 +12699,7 @@
               "rarityId": "r-mtacsa9tachv",
               "number": "BT07-031",
               "description": "인접한 자신의 유닛 존으로 이동한다.\n\n\n트리거 / 이 카드를 트래시한다. 필드에 있는 자신 유닛을 1장 골라, 이 턴이 끝날 때까지 파워+2000. 그 유닛을 인접한 자신의 유닛 존으로 이동할 수 있다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_cNjMaezX_ad437e25770bf97f29c58b9f69cf72e6f61b7fe7.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_cNjMaezX_ad437e25770bf97f29c58b9f69cf72e6f61b7fe7.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 6,
                 "f-mtacsa9t3jul": 5000,
@@ -12710,7 +12710,7 @@
               }
             },
             {
-              "id": "c-mtacx13s2iia",
+              "id": "c-mtad9sbv742a",
               "custom": true,
               "name": "레이븐-워 드레스",
               "type": "유닛",
@@ -12718,7 +12718,7 @@
               "rarityId": "r-mtacsa9t8bv3",
               "number": "BT07-031",
               "description": "인접한 자신의 유닛 존으로 이동한다.\n\n\n트리거 / 이 카드를 트래시한다. 필드에 있는 자신 유닛을 1장 골라, 이 턴이 끝날 때까지 파워+2000. 그 유닛을 인접한 자신의 유닛 존으로 이동할 수 있다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_Pe8xc2G5_e424da2742471fc4ca33c98a57143a7eaa92eb9e.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_Pe8xc2G5_e424da2742471fc4ca33c98a57143a7eaa92eb9e.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 6,
                 "f-mtacsa9t3jul": 5000,
@@ -12729,7 +12729,7 @@
               }
             },
             {
-              "id": "c-mtacx13sg2s7",
+              "id": "c-mtad9sbvx4e6",
               "custom": true,
               "name": "레이븐",
               "type": "유닛",
@@ -12737,7 +12737,7 @@
               "rarityId": "r-mtacsa9twk5c",
               "number": "BT07-032",
               "description": "자신의 리더 레벨 1마다 파워+1000.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_WQzs50Tj_38974537270bf9702c5d938defa2a072addc088f.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_WQzs50Tj_38974537270bf9702c5d938defa2a072addc088f.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 7,
                 "f-mtacsa9t3jul": 3000,
@@ -12748,7 +12748,7 @@
               }
             },
             {
-              "id": "c-mtacx13sn1hg",
+              "id": "c-mtad9sbvbtu4",
               "custom": true,
               "name": "레이븐-화이트 몬순",
               "type": "유닛",
@@ -12756,7 +12756,7 @@
               "rarityId": "r-mtacsa9t99gq",
               "number": "BT07-033",
               "description": "센터 유닛 존에 있다면 파워+5000.\n 사이드 유닛 존에 있다면 상대는 3코스트 이하인 유닛을 이 유닛이 있는 레인에 배치할 수 없다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_CE6V3npg_d2c080b9e25e8b55084dbd6664a56dd5fe6d2baa.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_CE6V3npg_d2c080b9e25e8b55084dbd6664a56dd5fe6d2baa.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 7,
                 "f-mtacsa9t3jul": 4000,
@@ -12767,7 +12767,7 @@
               }
             },
             {
-              "id": "c-mtacx13s8pvd",
+              "id": "c-mtad9sbvo9pt",
               "custom": true,
               "name": "레이븐-화이트 몬순",
               "type": "유닛",
@@ -12775,7 +12775,7 @@
               "rarityId": "r-mtacsa9t8bv3",
               "number": "BT07-033",
               "description": "센터 유닛 존에 있다면 파워+5000.\n 사이드 유닛 존에 있다면 상대는 3코스트 이하인 유닛을 이 유닛이 있는 레인에 배치할 수 없다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_yp5zIcfj_12b6089086902135b8ec8d9b9247aa8c2175a6a1.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_yp5zIcfj_12b6089086902135b8ec8d9b9247aa8c2175a6a1.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 7,
                 "f-mtacsa9t3jul": 4000,
@@ -12786,7 +12786,7 @@
               }
             },
             {
-              "id": "c-mtacx13sbprt",
+              "id": "c-mtad9sbvkp22",
               "custom": true,
               "name": "레이븐-적우",
               "type": "유닛",
@@ -12794,7 +12794,7 @@
               "rarityId": "r-mtacsa9tachv",
               "number": "BT07-034",
               "description": "인접한 레인에 있는 자신 유닛을 1장 골라 트래시하고 그 유닛이 있던 유닛 존으로 이동한다. 그 유닛의 히트에 따라 아래 효과를 모두 고른다.\n・1 이상: 카드를 1장 드로우한다. 이 턴이 끝날 때까지 자신의 사이즈+3.\n・2 이상: 자신의 트래시 존에서 이 효과로 트래시한 유닛보다 코스트가 낮은 〈레이븐-적우〉 이외의 유닛 카드를 1장 골라 비어 있는 자신의 유닛 존에 사이즈를 무시하고 배치한다.\n・3 이상: 필드에 있는 상대 유닛을 1장 골라 트래시한다.\n\n\n트리거 / 이 카드를 자신의 패에 넣는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_QaF1pPsI_23241afe43bd07d47154c0e7c4844eb7c3c1d9ef.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_QaF1pPsI_23241afe43bd07d47154c0e7c4844eb7c3c1d9ef.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 7,
                 "f-mtacsa9t3jul": 9000,
@@ -12805,7 +12805,7 @@
               }
             },
             {
-              "id": "c-mtacx13s38d8",
+              "id": "c-mtad9sbvwv95",
               "custom": true,
               "name": "레이븐-적우",
               "type": "유닛",
@@ -12813,7 +12813,7 @@
               "rarityId": "r-mtacsa9t8bv3",
               "number": "BT07-034",
               "description": "인접한 레인에 있는 자신 유닛을 1장 골라 트래시하고 그 유닛이 있던 유닛 존으로 이동한다. 그 유닛의 히트에 따라 아래 효과를 모두 고른다.\n・1 이상: 카드를 1장 드로우한다. 이 턴이 끝날 때까지 자신의 사이즈+3.\n・2 이상: 자신의 트래시 존에서 이 효과로 트래시한 유닛보다 코스트가 낮은 〈레이븐-적우〉 이외의 유닛 카드를 1장 골라 비어 있는 자신의 유닛 존에 사이즈를 무시하고 배치한다.\n・3 이상: 필드에 있는 상대 유닛을 1장 골라 트래시한다.\n\n\n트리거 / 이 카드를 자신의 패에 넣는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_N8CysRmY_668444c42b230eab3e47a139b7f8f9078205655e.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_N8CysRmY_668444c42b230eab3e47a139b7f8f9078205655e.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 7,
                 "f-mtacsa9t3jul": 9000,
@@ -12824,7 +12824,7 @@
               }
             },
             {
-              "id": "c-mtacx13svs8p",
+              "id": "c-mtad9sbvrsw9",
               "custom": true,
               "name": "레이븐-로얄 가드 슈트",
               "type": "유닛",
@@ -12832,7 +12832,7 @@
               "rarityId": "r-mtacsa9tachv",
               "number": "BT07-035",
               "description": "인접한 자신의 유닛 존으로 이동한다.  센터 유닛 존에 있다면 자신의 패를 1장 골라 트래시할 수 있다. 그러면 이 유닛의 파워 이하인 조우 유닛을 트래시한다.\n\n\n트리거 / 이 카드를 자신의 패에 넣는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_ihobO8Jc_86d65c9ff264198034e7b0224de5b91a466ddc7d.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_ihobO8Jc_86d65c9ff264198034e7b0224de5b91a466ddc7d.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 8,
                 "f-mtacsa9t3jul": 8000,
@@ -12843,7 +12843,7 @@
               }
             },
             {
-              "id": "c-mtacx13sms7n",
+              "id": "c-mtad9sbv37s2",
               "custom": true,
               "name": "레이븐-로얄 가드 슈트",
               "type": "유닛",
@@ -12851,7 +12851,7 @@
               "rarityId": "r-mtacsa9t8bv3",
               "number": "BT07-035",
               "description": "인접한 자신의 유닛 존으로 이동한다.  센터 유닛 존에 있다면 자신의 패를 1장 골라 트래시할 수 있다. 그러면 이 유닛의 파워 이하인 조우 유닛을 트래시한다.\n\n\n트리거 / 이 카드를 자신의 패에 넣는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_om3ifNsU_55567f84d09b53a5e7531024e8868ac720b0a094.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_om3ifNsU_55567f84d09b53a5e7531024e8868ac720b0a094.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 8,
                 "f-mtacsa9t3jul": 8000,
@@ -12862,7 +12862,7 @@
               }
             },
             {
-              "id": "c-mtacx13swrrx",
+              "id": "c-mtad9sbv9ig5",
               "custom": true,
               "name": "템페스트",
               "type": "스킬",
@@ -12881,7 +12881,7 @@
               }
             },
             {
-              "id": "c-mtacx13s5ta1",
+              "id": "c-mtad9sbvfpaf",
               "custom": true,
               "name": "공격 감지",
               "type": "스킬",
@@ -12900,7 +12900,7 @@
               }
             },
             {
-              "id": "c-mtacx13sahdt",
+              "id": "c-mtad9sbvt0he",
               "custom": true,
               "name": "쇼크웨이브",
               "type": "스킬",
@@ -12919,7 +12919,7 @@
               }
             },
             {
-              "id": "c-mtacx13sgrdx",
+              "id": "c-mtad9sbvy2qy",
               "custom": true,
               "name": "나는 들었다",
               "type": "스킬",
@@ -12938,7 +12938,7 @@
               }
             },
             {
-              "id": "c-mtacx13su0qd",
+              "id": "c-mtad9sbvjtnl",
               "custom": true,
               "name": "자이온 지하에 잠든 진실",
               "type": "스킬",
@@ -12957,7 +12957,7 @@
               }
             },
             {
-              "id": "c-mtacx13sov2u",
+              "id": "c-mtad9sbvw6q7",
               "custom": true,
               "name": "나는 보았다",
               "type": "스킬",
@@ -12976,7 +12976,7 @@
               }
             },
             {
-              "id": "c-mtacx13szdqu",
+              "id": "c-mtad9sbvk73w",
               "custom": true,
               "name": "푸른 칼날",
               "type": "스킬",
@@ -12995,7 +12995,7 @@
               }
             },
             {
-              "id": "c-mtacx13sf6gz",
+              "id": "c-mtad9sbvi1ha",
               "custom": true,
               "name": "그녀가 왔다",
               "type": "스킬",
@@ -13014,7 +13014,7 @@
               }
             },
             {
-              "id": "c-mtacx13sunhy",
+              "id": "c-mtad9sbv89p3",
               "custom": true,
               "name": "절망한 자의 애원",
               "type": "스킬",
@@ -13033,7 +13033,7 @@
               }
             },
             {
-              "id": "c-mtacx13sicbe",
+              "id": "c-mtad9sbv7nz2",
               "custom": true,
               "name": "이브",
               "type": "리더",
@@ -13041,7 +13041,7 @@
               "rarityId": "r-mtacsa9tt8d2",
               "number": "BT07-045",
               "description": "기본면\n 자신의 덱에  카드만 넣을 수 있다.\n 자신의 리더 레벨이 4 이상이라면 이 카드를 뒤집는다.\n 자신의 필드에 〈이브〉가 있다면 자신은 다른 유닛 존에 〈이브〉를 배치할 수 없다.\n\n각성면\n 자신의 필드에 〈이브〉가 있다면 자신은 다른 유닛 존에 〈이브〉를 배치할 수 없다. 자신은 필드에 있는 〈이브〉를 코스트가 그 유닛의 코스트 이하인 〈이브〉로 업그레이드할 수 있다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_4hwdVOn3_32306e859466769b9d653c309bc818b8cf9f1410.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_4hwdVOn3_32306e859466769b9d653c309bc818b8cf9f1410.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 0,
                 "f-mtacsa9t3jul": 0,
@@ -13052,7 +13052,7 @@
               }
             },
             {
-              "id": "c-mtacx13suj53",
+              "id": "c-mtad9sbvah7o",
               "custom": true,
               "name": "이브",
               "type": "리더",
@@ -13060,7 +13060,7 @@
               "rarityId": "r-mtacsa9t5je1",
               "number": "BT07-045",
               "description": "기본면\n 자신의 덱에  카드만 넣을 수 있다.\n 자신의 리더 레벨이 4 이상이라면 이 카드를 뒤집는다.\n 자신의 필드에 〈이브〉가 있다면 자신은 다른 유닛 존에 〈이브〉를 배치할 수 없다.\n\n각성면\n 자신의 필드에 〈이브〉가 있다면 자신은 다른 유닛 존에 〈이브〉를 배치할 수 없다. 자신은 필드에 있는 〈이브〉를 코스트가 그 유닛의 코스트 이하인 〈이브〉로 업그레이드할 수 있다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_9nDcLpG0_846feeb97131276803698ec4cdfbf97926e2fc41.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_9nDcLpG0_846feeb97131276803698ec4cdfbf97926e2fc41.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 0,
                 "f-mtacsa9t3jul": 0,
@@ -13071,7 +13071,7 @@
               }
             },
             {
-              "id": "c-mtacx13s7r1q",
+              "id": "c-mtad9sbvofjr",
               "custom": true,
               "name": "이브",
               "type": "리더",
@@ -13079,7 +13079,7 @@
               "rarityId": "r-mtacsa9t5je1",
               "number": "BT07-045",
               "description": "기본면\n 자신의 덱에  카드만 넣을 수 있다.\n 자신의 리더 레벨이 4 이상이라면 이 카드를 뒤집는다.\n 자신의 필드에 〈이브〉가 있다면 자신은 다른 유닛 존에 〈이브〉를 배치할 수 없다.\n\n각성면\n 자신의 필드에 〈이브〉가 있다면 자신은 다른 유닛 존에 〈이브〉를 배치할 수 없다. 자신은 필드에 있는 〈이브〉를 코스트가 그 유닛의 코스트 이하인 〈이브〉로 업그레이드할 수 있다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_L4wWry5l_8fcd897d7799d302dad2a39be223deda397cdb55.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_L4wWry5l_8fcd897d7799d302dad2a39be223deda397cdb55.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 0,
                 "f-mtacsa9t3jul": 0,
@@ -13090,7 +13090,7 @@
               }
             },
             {
-              "id": "c-mtacx13szzi8",
+              "id": "c-mtad9sbv74qm",
               "custom": true,
               "name": "이브",
               "type": "리더",
@@ -13098,7 +13098,7 @@
               "rarityId": "r-mtacsa9tt8d2",
               "number": "BT07-045",
               "description": "기본면\n 자신의 덱에  카드만 넣을 수 있다.\n 자신의 리더 레벨이 4 이상이라면 이 카드를 뒤집는다.\n 자신의 필드에 〈이브〉가 있다면 자신은 다른 유닛 존에 〈이브〉를 배치할 수 없다.\n\n각성면\n 자신의 필드에 〈이브〉가 있다면 자신은 다른 유닛 존에 〈이브〉를 배치할 수 없다. 자신은 필드에 있는 〈이브〉를 코스트가 그 유닛의 코스트 이하인 〈이브〉로 업그레이드할 수 있다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_RGY8F4Le_da34f3b8723b86100d586d33a49102a345c22c12.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_RGY8F4Le_da34f3b8723b86100d586d33a49102a345c22c12.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 0,
                 "f-mtacsa9t3jul": 0,
@@ -13109,7 +13109,7 @@
               }
             },
             {
-              "id": "c-mtacx13slbmi",
+              "id": "c-mtad9sbvqdky",
               "custom": true,
               "name": "엔야",
               "type": "유닛",
@@ -13117,7 +13117,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-046",
               "description": "사이드 유닛 존에 있다면 자신의 덱 맨 위에서 카드를 3장 트래시한다. 자신의 트래시 존에서 〈이브〉를 1장 골라 패에 넣는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_u2SUtrHX_8c012952142f4e88950805513c90af412fb92f4f.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_u2SUtrHX_8c012952142f4e88950805513c90af412fb92f4f.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 1,
                 "f-mtacsa9t3jul": 2000,
@@ -13128,7 +13128,7 @@
               }
             },
             {
-              "id": "c-mtacx13svx24",
+              "id": "c-mtad9sbvpx8c",
               "custom": true,
               "name": "이브-키홀 드레스",
               "type": "유닛",
@@ -13136,7 +13136,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-047",
               "description": "이 카드의 카드명은 〈이브〉로도 취급한다.\n 〈이브〉 이 유닛이 〈이브〉에서 업그레이드됐다면 자신의 트래시 존에서 아이템 카드를 2장까지 골라 패에 넣는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_QhotZT7B_e158e762d6cb9c43caf3b825b0045750fefffa9d.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_QhotZT7B_e158e762d6cb9c43caf3b825b0045750fefffa9d.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 1,
                 "f-mtacsa9t3jul": 6000,
@@ -13147,7 +13147,7 @@
               }
             },
             {
-              "id": "c-mtacx13s9wxs",
+              "id": "c-mtad9sbvomey",
               "custom": true,
               "name": "카야",
               "type": "유닛",
@@ -13155,7 +13155,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-048",
               "description": "사이드 유닛 존에 있고 이 턴 동안 자신이 〈이브〉를 배치했다면 카드를 2장 드로우한다. 그러면 자신의 패를 2장 골라 트래시한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_4gfTet2U_cc2e25ea86e96fc2c8ac18e97e807b415acefda4.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_4gfTet2U_cc2e25ea86e96fc2c8ac18e97e807b415acefda4.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 1,
                 "f-mtacsa9t3jul": 2000,
@@ -13166,7 +13166,7 @@
               }
             },
             {
-              "id": "c-mtacx13smgfg",
+              "id": "c-mtad9sbv077k",
               "custom": true,
               "name": "카야",
               "type": "유닛",
@@ -13174,7 +13174,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-049",
               "description": "사이드 유닛 존에 있다면 카드를 1장 드로우한다. 그러면 자신의 패를 1장 골라 트래시한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_A4NQ9Gl2_a0bbd1b1025c784267058ebe89de70ea5248ab37.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_A4NQ9Gl2_a0bbd1b1025c784267058ebe89de70ea5248ab37.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 1,
                 "f-mtacsa9t3jul": 2500,
@@ -13185,7 +13185,7 @@
               }
             },
             {
-              "id": "c-mtacx13sylma",
+              "id": "c-mtad9sbvuchx",
               "custom": true,
               "name": "이브-뉴로링크 슈트",
               "type": "유닛",
@@ -13193,7 +13193,7 @@
               "rarityId": "r-mtacsa9twk5c",
               "number": "BT07-050",
               "description": "이 카드의 카드명은 〈이브〉로도 취급한다.\n 조우 유닛이 2코스트 이상이라면 카드를 1장 드로우한다.\n 〈이브〉 이 유닛이 〈이브〉에서 업그레이드됐다면 자신의 트래시 존에서 아이템 카드를 2장까지 골라 패에 넣는다.\n\n\n트리거 / 비어 있는 자신의 유닛 존에 사이즈를 무시하고 이 카드를 배치하거나 자신의 유닛 존에 있는 〈이브〉를 사이즈와 코스트를 무시하고 이 카드로 업그레이드할 수 있다. 배치하지 않았다면 이 카드를 트래시한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_MDY4evRc_26b78ecc0926186dfe364d22ba71cb40f3dcff3c.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_MDY4evRc_26b78ecc0926186dfe364d22ba71cb40f3dcff3c.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 1,
                 "f-mtacsa9t3jul": 6000,
@@ -13204,7 +13204,7 @@
               }
             },
             {
-              "id": "c-mtacx13saq7b",
+              "id": "c-mtad9sbvzfi8",
               "custom": true,
               "name": "릴리",
               "type": "유닛",
@@ -13212,7 +13212,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-051",
               "description": "사이드 유닛 존에 있다면 자신의 덱 맨 위에서 카드를 3장 트래시한다. 이 효과로 트래시된 아이템 카드가 1장 이상이라면 카드를 1장 드로우한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_hgOIAGeF_0018e155e205ef2d43a9d513a996d511d3dcc622.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_hgOIAGeF_0018e155e205ef2d43a9d513a996d511d3dcc622.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 2,
                 "f-mtacsa9t3jul": 3500,
@@ -13223,7 +13223,7 @@
               }
             },
             {
-              "id": "c-mtacx13sfjkl",
+              "id": "c-mtad9sbvd74a",
               "custom": true,
               "name": "아담",
               "type": "유닛",
@@ -13231,7 +13231,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-052",
               "description": "자신의 덱 맨 위에서 카드를 3장 공개한다. 그중 3장까지 골라 트래시하고 나머지는 모두 다시 덱에 넣고 섞는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_v6NcK4dg_69ed73ad1c699f5c0b562a8f52b339d11be65565.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_v6NcK4dg_69ed73ad1c699f5c0b562a8f52b339d11be65565.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 2,
                 "f-mtacsa9t3jul": 3000,
@@ -13242,7 +13242,7 @@
               }
             },
             {
-              "id": "c-mtacx13skaxy",
+              "id": "c-mtad9sbvkcmg",
               "custom": true,
               "name": "엔야",
               "type": "유닛",
@@ -13250,7 +13250,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-053",
               "description": "사이드 유닛 존에 있다면 자신의 필드에 있는 〈이브〉를 1장 고른다. 이 턴이 끝날 때까지 이 유닛의 파워가 고른 유닛의 파워만큼 증가한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_Y6a2CTo4_5b62be97bf869cc43e71c2cf7d8bc0097441f1bb.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_Y6a2CTo4_5b62be97bf869cc43e71c2cf7d8bc0097441f1bb.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 2,
                 "f-mtacsa9t3jul": 3000,
@@ -13261,7 +13261,7 @@
               }
             },
             {
-              "id": "c-mtacx13slt07",
+              "id": "c-mtad9sbve60n",
               "custom": true,
               "name": "릴리-사이버네틱 본디지",
               "type": "유닛",
@@ -13269,7 +13269,7 @@
               "rarityId": "r-mtacsa9twk5c",
               "number": "BT07-054",
               "description": "사이드 유닛 존에 있다면 자신의 트래시 존에서 를 가지지 않은 카드를 5장 골라 덱 맨 아래에 원하는 순서대로 놓을 수 있다. 그러면 자신의 트래시 존에서 〈이브〉를 1장 골라 자신의 유닛 존에 있는 〈이브〉를 사이즈와 코스트를 무시하고 그 카드로 업그레이드한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_MeI7ahYw_08c9d523f93447b09470377c2460103ed54e4bfa.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_MeI7ahYw_08c9d523f93447b09470377c2460103ed54e4bfa.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 2,
                 "f-mtacsa9t3jul": 2500,
@@ -13280,7 +13280,7 @@
               }
             },
             {
-              "id": "c-mtacx13sxl9r",
+              "id": "c-mtad9sbvpinw",
               "custom": true,
               "name": "릴리",
               "type": "유닛",
@@ -13288,7 +13288,7 @@
               "rarityId": "r-mtacsa9twk5c",
               "number": "BT07-055",
               "description": "사이드 유닛 존에 있다면 자신의 필드에 있는 〈이브〉가 트래시되면 이 유닛을 트래시할 수 있다. 그러면 자신의 패에서 〈이브〉를 1장 골라 비어 있는 자신의 유닛 존에 사이즈를 무시하고 배치한다. 그 유닛은 〈이브〉에서 업그레이드된 것으로 취급한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_mlpQ2SML_b0cb6c9cf4264007d233309897358927daa68223.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_mlpQ2SML_b0cb6c9cf4264007d233309897358927daa68223.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 2,
                 "f-mtacsa9t3jul": 3000,
@@ -13299,7 +13299,7 @@
               }
             },
             {
-              "id": "c-mtacx13s0q2i",
+              "id": "c-mtad9sbvj1zy",
               "custom": true,
               "name": "이브",
               "type": "유닛",
@@ -13307,7 +13307,7 @@
               "rarityId": "r-mtacsa9twk5c",
               "number": "BT07-056",
               "description": "〈이브〉 이 유닛이 〈이브〉에서 업그레이드됐다면 자신의 트래시 존에서 아이템 카드를 2장까지 골라 패에 넣는다. 자신의 트래시 존에서 코스트가 자신의 리더 레벨 이하이고 를 가진 유닛 카드를 1장 골라 비어 있는 자신의 유닛 존에 사이즈를 무시하고 배치할 수 있다.\n\n\n트리거 / 비어 있는 자신의 유닛 존에 사이즈를 무시하고 이 카드를 배치하거나 자신의 유닛 존에 있는 〈이브〉를 사이즈와 코스트를 무시하고 이 카드로 업그레이드할 수 있다. 배치하지 않았다면 이 카드를 트래시한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_wCoQcqSZ_21c4e2e3075ef4ac40dc282882e0bcdda68890da.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_wCoQcqSZ_21c4e2e3075ef4ac40dc282882e0bcdda68890da.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 2,
                 "f-mtacsa9t3jul": 6500,
@@ -13318,7 +13318,7 @@
               }
             },
             {
-              "id": "c-mtacx13s1ew0",
+              "id": "c-mtad9sbvq3rv",
               "custom": true,
               "name": "타키",
               "type": "유닛",
@@ -13326,7 +13326,7 @@
               "rarityId": "r-mtacsa9twk5c",
               "number": "BT07-057",
               "description": "자신의 필드에 있는 〈이브〉를 1장 고를 수 있다. 그러면 그 유닛이 있는 유닛 존으로 이동하고, 이 턴이 끝날 때까지 이 효과로 이동한 모든 유닛의 파워+2000.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_CijToguG_7af0a3b290384f62376f22b9889684798a031db5.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_CijToguG_7af0a3b290384f62376f22b9889684798a031db5.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 2,
                 "f-mtacsa9t3jul": 2000,
@@ -13337,7 +13337,7 @@
               }
             },
             {
-              "id": "c-mtacx13s48jk",
+              "id": "c-mtad9sbveqd3",
               "custom": true,
               "name": "릴리-센세이트 스킨",
               "type": "유닛",
@@ -13345,7 +13345,7 @@
               "rarityId": "r-mtacsa9t99gq",
               "number": "BT07-058",
               "description": "자신의 필드에 〈이브〉가 있다면 자신의 덱 맨 위에서 카드를 5장 공개하고, 그중 아이템 카드를 모두 패에 넣는다. 나머지는 모두 트래시한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_dYe63HFN_65f4fff47733a498aaba5cc9772a69823fe41f2f.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_dYe63HFN_65f4fff47733a498aaba5cc9772a69823fe41f2f.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 2,
                 "f-mtacsa9t3jul": 2000,
@@ -13356,7 +13356,7 @@
               }
             },
             {
-              "id": "c-mtacx13sfmsc",
+              "id": "c-mtad9sbvuzb2",
               "custom": true,
               "name": "릴리-센세이트 스킨",
               "type": "유닛",
@@ -13364,7 +13364,7 @@
               "rarityId": "r-mtacsa9t8bv3",
               "number": "BT07-058",
               "description": "자신의 필드에 〈이브〉가 있다면 자신의 덱 맨 위에서 카드를 5장 공개하고, 그중 아이템 카드를 모두 패에 넣는다. 나머지는 모두 트래시한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_2wx3lCSN_938b17dee7a4643630355e4ce4c77c5c2e1dc192.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_2wx3lCSN_938b17dee7a4643630355e4ce4c77c5c2e1dc192.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 2,
                 "f-mtacsa9t3jul": 2000,
@@ -13375,7 +13375,7 @@
               }
             },
             {
-              "id": "c-mtacx13s5oc4",
+              "id": "c-mtad9sbvk3dx",
               "custom": true,
               "name": "릴리-센세이트 스킨",
               "type": "유닛",
@@ -13383,7 +13383,7 @@
               "rarityId": "r-mtacsa9t8bv3",
               "number": "BT07-058",
               "description": "자신의 필드에 〈이브〉가 있다면 자신의 덱 맨 위에서 카드를 5장 공개하고, 그중 아이템 카드를 모두 패에 넣는다. 나머지는 모두 트래시한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_FOZzchQd_8f550dc2cbe02ab5bbb5d227702f06364d57cf92.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_FOZzchQd_8f550dc2cbe02ab5bbb5d227702f06364d57cf92.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 2,
                 "f-mtacsa9t3jul": 2000,
@@ -13394,7 +13394,7 @@
               }
             },
             {
-              "id": "c-mtacx13s70pe",
+              "id": "c-mtad9sbvcdcs",
               "custom": true,
               "name": "릴리-센세이트 스킨",
               "type": "유닛",
@@ -13402,7 +13402,7 @@
               "rarityId": "r-mtacsa9t8bv3",
               "number": "BT07-058",
               "description": "자신의 필드에 〈이브〉가 있다면 자신의 덱 맨 위에서 카드를 5장 공개하고, 그중 아이템 카드를 모두 패에 넣는다. 나머지는 모두 트래시한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_yUgoRJu1_35f4e2d76e170154f8420d4e931fc7e2b6388703.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_yUgoRJu1_35f4e2d76e170154f8420d4e931fc7e2b6388703.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 2,
                 "f-mtacsa9t3jul": 2000,
@@ -13413,7 +13413,7 @@
               }
             },
             {
-              "id": "c-mtacx13szq56",
+              "id": "c-mtad9sbvvxh9",
               "custom": true,
               "name": "이브-작약",
               "type": "유닛",
@@ -13432,7 +13432,7 @@
               }
             },
             {
-              "id": "c-mtacx13sg1fc",
+              "id": "c-mtad9sbvwc1m",
               "custom": true,
               "name": "이브",
               "type": "유닛",
@@ -13440,7 +13440,7 @@
               "rarityId": "r-mtacsa9twk5c",
               "number": "BT07-061",
               "description": "조우 유닛이 4코스트 이상이라면 자신의 패를 1장 골라 트래시할 수 있다. 그러면 이 유닛에서 업그레이드된 〈이브〉는 이 턴이 끝날 때까지 「 이 유닛의 코스트가 자신의 리더 레벨 이하라면 이 턴의 어택 페이즈 중 1번 더 공격할 수 있다」를 얻는다.\n 〈이브〉 이 유닛이 〈이브〉에서 업그레이드됐다면 자신의 트래시 존에서 〈이브〉 1장과 아이템 카드 2장까지를 골라 패에 넣는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_TxW8YHzf_892fa245d2336b3894b8e91d0785c2cc51a2618d.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_TxW8YHzf_892fa245d2336b3894b8e91d0785c2cc51a2618d.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 3,
                 "f-mtacsa9t3jul": 7000,
@@ -13451,7 +13451,7 @@
               }
             },
             {
-              "id": "c-mtacx13sqsys",
+              "id": "c-mtad9sbv6udi",
               "custom": true,
               "name": "이브-블랙 펄",
               "type": "유닛",
@@ -13459,7 +13459,7 @@
               "rarityId": "r-mtacsa9tachv",
               "number": "BT07-062",
               "description": "이 카드의 카드명은 〈이브〉로도 취급한다.\n 〈이브〉 이 유닛이 〈이브〉에서 업그레이드됐다면 자신의 트래시 존에서 아이템 카드를 2장까지 골라 패에 넣는다. 코스트 합이 자신의 리더 레벨 이하가 되도록 자신의 트래시 존에서 를 가진 유닛 카드를 2장까지 골라 패에 넣는다.\n\n\n트리거 / 이 카드를 자신의 패에 넣는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_y7debcDo_cb9245f62460ebda1e6cdcce9af2bf6b1c8cf424.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_y7debcDo_cb9245f62460ebda1e6cdcce9af2bf6b1c8cf424.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 3,
                 "f-mtacsa9t3jul": 7000,
@@ -13470,7 +13470,7 @@
               }
             },
             {
-              "id": "c-mtacx13sss5w",
+              "id": "c-mtad9sbv80dw",
               "custom": true,
               "name": "이브-블랙 펄",
               "type": "유닛",
@@ -13478,7 +13478,7 @@
               "rarityId": "r-mtacsa9t8bv3",
               "number": "BT07-062",
               "description": "이 카드의 카드명은 〈이브〉로도 취급한다.\n 〈이브〉 이 유닛이 〈이브〉에서 업그레이드됐다면 자신의 트래시 존에서 아이템 카드를 2장까지 골라 패에 넣는다. 코스트 합이 자신의 리더 레벨 이하가 되도록 자신의 트래시 존에서 를 가진 유닛 카드를 2장까지 골라 패에 넣는다.\n\n\n트리거 / 이 카드를 자신의 패에 넣는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_N0KC35if_e7cf3b6cdb42270ae7514f6e42b688f39cfaef33.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_N0KC35if_e7cf3b6cdb42270ae7514f6e42b688f39cfaef33.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 3,
                 "f-mtacsa9t3jul": 7000,
@@ -13489,7 +13489,7 @@
               }
             },
             {
-              "id": "c-mtacx13sitos",
+              "id": "c-mtad9sbvnviv",
               "custom": true,
               "name": "이브",
               "type": "유닛",
@@ -13497,7 +13497,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-063",
               "description": "〈이브〉 이 유닛이 〈이브〉에서 업그레이드됐다면 자신의 트래시 존에서 아이템 카드를 2장까지 골라 패에 넣는다. 「 필드에 있는 를 가진 자신 유닛 1장마다 필드에 있는 다른 모든 자신 유닛의 파워+2000」을 얻는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_YbBLRxUy_e2b1111b7a501894aa7f20c1185153667edfc57e.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_YbBLRxUy_e2b1111b7a501894aa7f20c1185153667edfc57e.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 4,
                 "f-mtacsa9t3jul": 7500,
@@ -13508,7 +13508,7 @@
               }
             },
             {
-              "id": "c-mtacx13so8bg",
+              "id": "c-mtad9sbv1vqs",
               "custom": true,
               "name": "이브-뉴로서킷 본디지",
               "type": "유닛",
@@ -13516,7 +13516,7 @@
               "rarityId": "r-mtacsa9tachv",
               "number": "BT07-064",
               "description": "이 카드의 카드명은 〈이브〉로도 취급한다.\n 〈이브〉 이 유닛이 〈이브〉에서 업그레이드됐다면 자신의 트래시 존에서 아이템 카드를 2장까지 골라 패에 넣는다. 조우 유닛의 히트만큼 패에서 〈이브〉를 골라 트래시할 수 있다. 그러면 조우 유닛을 트래시한다.\n\n\n트리거 / 이 카드를 자신의 패에 넣는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_oIJ7kYlM_7bd2de39acd90aa56e2ecbb2f17b7d34e6a8f502.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_oIJ7kYlM_7bd2de39acd90aa56e2ecbb2f17b7d34e6a8f502.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 4,
                 "f-mtacsa9t3jul": 7500,
@@ -13527,7 +13527,7 @@
               }
             },
             {
-              "id": "c-mtacx13sbird",
+              "id": "c-mtad9sbvbzt7",
               "custom": true,
               "name": "이브-뉴로서킷 본디지",
               "type": "유닛",
@@ -13535,7 +13535,7 @@
               "rarityId": "r-mtacsa9t8bv3",
               "number": "BT07-064",
               "description": "이 카드의 카드명은 〈이브〉로도 취급한다.\n 〈이브〉 이 유닛이 〈이브〉에서 업그레이드됐다면 자신의 트래시 존에서 아이템 카드를 2장까지 골라 패에 넣는다. 조우 유닛의 히트만큼 패에서 〈이브〉를 골라 트래시할 수 있다. 그러면 조우 유닛을 트래시한다.\n\n\n트리거 / 이 카드를 자신의 패에 넣는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_XTS4Hf70_4f23c45b9927fb4bc8e85a8beb219b640ec28d72.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_XTS4Hf70_4f23c45b9927fb4bc8e85a8beb219b640ec28d72.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 4,
                 "f-mtacsa9t3jul": 7500,
@@ -13546,7 +13546,7 @@
               }
             },
             {
-              "id": "c-mtacx13snit5",
+              "id": "c-mtad9sbvicfj",
               "custom": true,
               "name": "이브-스킨 슈트",
               "type": "유닛",
@@ -13554,7 +13554,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-065",
               "description": "이 카드의 카드명은 〈이브〉로도 취급한다.\n 〈이브〉 이 유닛이 〈이브〉에서 업그레이드됐다면 자신의 트래시 존에서 아이템 카드를 2장까지 골라 패에 넣는다. 카드를 1장 드로우한다. 자신의 리더 레벨이 5 이상이라면 추가로 카드를 1장 드로우한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_kpVUK0jb_d5ed0597bc58f9816f499d354a3afde55967ab6b.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_kpVUK0jb_d5ed0597bc58f9816f499d354a3afde55967ab6b.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 5,
                 "f-mtacsa9t3jul": 8000,
@@ -13565,7 +13565,7 @@
               }
             },
             {
-              "id": "c-mtacx13sgxaf",
+              "id": "c-mtad9sbvma2e",
               "custom": true,
               "name": "타키-화이트 펄",
               "type": "유닛",
@@ -13573,7 +13573,7 @@
               "rarityId": "r-mtacsa9twk5c",
               "number": "BT07-066",
               "description": "사이드 유닛 존에 있고 코스트가 자신의 리더 레벨 이하인 〈이브〉가 자신의 필드에 있다면 필드에 있는 모든 자신 유닛은 이 턴이 끝날 때까지  관통[1](이 유닛이 공격하여 상대 유닛을 전투로 트래시했다면 상대에게 1대미지를 준다)을 얻는다.\n 사이드 유닛 존에 있다면 자신의 필드에 있는 〈이브〉가 장착한 아이템 1장마다 파워+2500.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_QKplVgZa_e18c4b90b72ec8fdcbe96b4045cd6272c4560443.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_QKplVgZa_e18c4b90b72ec8fdcbe96b4045cd6272c4560443.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 5,
                 "f-mtacsa9t3jul": 2500,
@@ -13584,7 +13584,7 @@
               }
             },
             {
-              "id": "c-mtacx13sphm0",
+              "id": "c-mtad9sbvv79a",
               "custom": true,
               "name": "이브-웨이브 오블리크 모노키니",
               "type": "유닛",
@@ -13592,7 +13592,7 @@
               "rarityId": "r-mtacsa9t99gq",
               "number": "BT07-067",
               "description": "이 카드의 카드명은 〈이브〉로도 취급한다.\n 〈이브〉 이 유닛이 〈이브〉에서 업그레이드됐다면 자신의 트래시 존에서 아이템 카드를 2장까지 골라 패에 넣는다.\n 센터 유닛 존에 있다면 자신의 패에서 4코스트 이하인 〈이브〉를 1장 골라 이 유닛을 그 카드로 업그레이드한다.\n\n\n트리거 / 이 카드를 자신의 패에 넣는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_7pJvCimn_e53492e735f89a8666618aca6a461a6315552f71.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_7pJvCimn_e53492e735f89a8666618aca6a461a6315552f71.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 5,
                 "f-mtacsa9t3jul": 8000,
@@ -13603,7 +13603,7 @@
               }
             },
             {
-              "id": "c-mtacx13sikvn",
+              "id": "c-mtad9sbv1oay",
               "custom": true,
               "name": "이브-웨이브 오블리크 모노키니",
               "type": "유닛",
@@ -13611,7 +13611,7 @@
               "rarityId": "r-mtacsa9t8bv3",
               "number": "BT07-067",
               "description": "이 카드의 카드명은 〈이브〉로도 취급한다.\n 〈이브〉 이 유닛이 〈이브〉에서 업그레이드됐다면 자신의 트래시 존에서 아이템 카드를 2장까지 골라 패에 넣는다.\n 센터 유닛 존에 있다면 자신의 패에서 4코스트 이하인 〈이브〉를 1장 골라 이 유닛을 그 카드로 업그레이드한다.\n\n\n트리거 / 이 카드를 자신의 패에 넣는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_8poWCTSV_e4fb1629863808b41824fa43ba1adb5d2d9f846d.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_8poWCTSV_e4fb1629863808b41824fa43ba1adb5d2d9f846d.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 5,
                 "f-mtacsa9t3jul": 8000,
@@ -13622,7 +13622,7 @@
               }
             },
             {
-              "id": "c-mtacx13szcy4",
+              "id": "c-mtad9sbv6see",
               "custom": true,
               "name": "이브-뉴로링크 슈트",
               "type": "유닛",
@@ -13630,7 +13630,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-068",
               "description": "이 카드의 카드명은 〈이브〉로도 취급한다.\n 〈이브〉 이 유닛이 〈이브〉에서 업그레이드됐다면 자신의 트래시 존에서 아이템 카드를 2장까지 골라 패에 넣는다. 이 턴이 끝날 때까지 파워+1500, 히트+1.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_MWTLwm3i_42e95a08d5f0f73e81430102e321d354a4db95a9.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_MWTLwm3i_42e95a08d5f0f73e81430102e321d354a4db95a9.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 6,
                 "f-mtacsa9t3jul": 8500,
@@ -13641,7 +13641,7 @@
               }
             },
             {
-              "id": "c-mtacx13swt2h",
+              "id": "c-mtad9sbv4y6v",
               "custom": true,
               "name": "이브-스킨 슈트",
               "type": "유닛",
@@ -13649,7 +13649,7 @@
               "rarityId": "r-mtacsa9twk5c",
               "number": "BT07-069",
               "description": "이 카드의 카드명은 〈이브〉로도 취급한다.\n 자신은 이 턴이 끝날 때까지 〈이브〉를 배치할 수 없다.\n 〈이브〉 이 유닛이 〈이브〉에서 업그레이드됐다면 자신의 트래시 존에서 아이템 카드를 2장까지 골라 패에 넣는다. 자신의 덱에서 1코스트 이하인 아이템 카드를 1장 골라 패에 넣을 수 있다. 그러면 덱을 섞는다.\n\n\n트리거 / 이 카드를 트래시한다. 카드를 2장 드로우한다. 그러면 자신의 패를 2장 골라 트래시한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_cUaSH5gA_1893fae5f3f54deb0741e831d0c4b1d0b8b1a53d.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_cUaSH5gA_1893fae5f3f54deb0741e831d0c4b1d0b8b1a53d.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 6,
                 "f-mtacsa9t3jul": 8500,
@@ -13660,7 +13660,7 @@
               }
             },
             {
-              "id": "c-mtacx13sn2ll",
+              "id": "c-mtad9sbvg668",
               "custom": true,
               "name": "이브-익스트림 버니",
               "type": "유닛",
@@ -13668,7 +13668,7 @@
               "rarityId": "r-mtacsa9t99gq",
               "number": "BT07-070",
               "description": "이 카드의 카드명은 〈이브〉로도 취급한다.\n 자신은 이 턴이 끝날 때까지 〈이브〉를 배치할 수 없다.\n 〈이브〉 이 유닛이 〈이브〉에서 업그레이드됐다면 자신의 트래시 존에서 아이템 카드를 2장까지 골라 패에 넣는다. 상대에게 1대미지를 준다. 자신의 리더 레벨이 7 이상이라면 추가로 1대미지를 준다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_tZfSsvdi_25e502e7810da1ad05322d075c845604f05db306.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_tZfSsvdi_25e502e7810da1ad05322d075c845604f05db306.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 7,
                 "f-mtacsa9t3jul": 9000,
@@ -13679,7 +13679,7 @@
               }
             },
             {
-              "id": "c-mtacx13sco8i",
+              "id": "c-mtad9sbvrjeq",
               "custom": true,
               "name": "이브-익스트림 버니",
               "type": "유닛",
@@ -13687,7 +13687,7 @@
               "rarityId": "r-mtacsa9t8bv3",
               "number": "BT07-070",
               "description": "이 카드의 카드명은 〈이브〉로도 취급한다.\n 자신은 이 턴이 끝날 때까지 〈이브〉를 배치할 수 없다.\n 〈이브〉 이 유닛이 〈이브〉에서 업그레이드됐다면 자신의 트래시 존에서 아이템 카드를 2장까지 골라 패에 넣는다. 상대에게 1대미지를 준다. 자신의 리더 레벨이 7 이상이라면 추가로 1대미지를 준다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_GZ5jIsyL_90dd015dcefccc5f5bbadcda0b3cecd29b5f6b77.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_GZ5jIsyL_90dd015dcefccc5f5bbadcda0b3cecd29b5f6b77.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 7,
                 "f-mtacsa9t3jul": 9000,
@@ -13698,7 +13698,7 @@
               }
             },
             {
-              "id": "c-mtacx13st7it",
+              "id": "c-mtad9sbvdk7d",
               "custom": true,
               "name": "타키-타이달 메이드",
               "type": "유닛",
@@ -13706,7 +13706,7 @@
               "rarityId": "r-mtacsa9t99gq",
               "number": "BT07-071",
               "description": "자신의 필드에 〈이브〉가 없거나 자신의 리더 레벨이 4 이하라면 이 유닛은 공격할 수 없다.\n 사이드 유닛 존에 있다면 관통[X: 자신의 필드에 있는 〈이브〉가 장착한 아이템의 수](이 유닛이 공격하여 상대 유닛을 전투로 트래시했다면 상대에게 X대미지를 준다)를 얻는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_XQN5Rt2L_5d96d34980e49da66434528b28a7d4c1fa910a53.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_XQN5Rt2L_5d96d34980e49da66434528b28a7d4c1fa910a53.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 7,
                 "f-mtacsa9t3jul": 10000,
@@ -13717,7 +13717,7 @@
               }
             },
             {
-              "id": "c-mtacx13s07j1",
+              "id": "c-mtad9sbvn1k9",
               "custom": true,
               "name": "타키-타이달 메이드",
               "type": "유닛",
@@ -13725,7 +13725,7 @@
               "rarityId": "r-mtacsa9t8bv3",
               "number": "BT07-071",
               "description": "자신의 필드에 〈이브〉가 없거나 자신의 리더 레벨이 4 이하라면 이 유닛은 공격할 수 없다.\n 사이드 유닛 존에 있다면 관통[X: 자신의 필드에 있는 〈이브〉가 장착한 아이템의 수](이 유닛이 공격하여 상대 유닛을 전투로 트래시했다면 상대에게 X대미지를 준다)를 얻는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_HUa7Xr68_1170dd0b78a200fe8f7688c205638707d89eed79.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_HUa7Xr68_1170dd0b78a200fe8f7688c205638707d89eed79.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 7,
                 "f-mtacsa9t3jul": 10000,
@@ -13736,7 +13736,7 @@
               }
             },
             {
-              "id": "c-mtacx13syska",
+              "id": "c-mtad9sbv652i",
               "custom": true,
               "name": "이브-오션 스트링",
               "type": "유닛",
@@ -13744,7 +13744,7 @@
               "rarityId": "r-mtacsa9tachv",
               "number": "BT07-072",
               "description": "이 카드의 카드명은 〈이브〉로도 취급한다.\n 〈이브〉 이 유닛이 〈이브〉에서 업그레이드됐다면 자신의 트래시 존에서 아이템 카드를 2장까지 골라 패에 넣는다. 이 턴이 끝날 때까지 「 필드에 있는 상대 유닛을 1장 골라, 이 턴이 끝날 때까지 파워-2500. 이 효과는 이 유닛이 장착한 아이템의 수만큼 추가로 처리한다」를 얻는다.\n\n\n트리거 / 이 카드를 트래시한다. 카드를 2장 드로우한다. 그러면 자신의 패를 2장 골라 트래시한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_T746LX1V_065e6c02f3fe80858ab3fde1e7247e5ec75736c4.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_T746LX1V_065e6c02f3fe80858ab3fde1e7247e5ec75736c4.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 8,
                 "f-mtacsa9t3jul": 9500,
@@ -13755,7 +13755,7 @@
               }
             },
             {
-              "id": "c-mtacx13sd1fn",
+              "id": "c-mtad9sbvivei",
               "custom": true,
               "name": "이브-오션 스트링",
               "type": "유닛",
@@ -13763,7 +13763,7 @@
               "rarityId": "r-mtacsa9t8bv3",
               "number": "BT07-072",
               "description": "이 카드의 카드명은 〈이브〉로도 취급한다.\n 〈이브〉 이 유닛이 〈이브〉에서 업그레이드됐다면 자신의 트래시 존에서 아이템 카드를 2장까지 골라 패에 넣는다. 이 턴이 끝날 때까지 「 필드에 있는 상대 유닛을 1장 골라, 이 턴이 끝날 때까지 파워-2500. 이 효과는 이 유닛이 장착한 아이템의 수만큼 추가로 처리한다」를 얻는다.\n\n\n트리거 / 이 카드를 트래시한다. 카드를 2장 드로우한다. 그러면 자신의 패를 2장 골라 트래시한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_KITNqhXt_8f3cbf9aef1843fd5260c9a31cc7620531f776d5.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_KITNqhXt_8f3cbf9aef1843fd5260c9a31cc7620531f776d5.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 8,
                 "f-mtacsa9t3jul": 9500,
@@ -13774,7 +13774,7 @@
               }
             },
             {
-              "id": "c-mtacx13sa9b0",
+              "id": "c-mtad9sbvlsft",
               "custom": true,
               "name": "이브-키홀 드레스",
               "type": "유닛",
@@ -13782,7 +13782,7 @@
               "rarityId": "r-mtacsa9twk5c",
               "number": "BT07-073",
               "description": "이 카드의 카드명은 〈이브〉로도 취급한다.\n 〈이브〉 이 유닛이 〈이브〉에서 업그레이드됐다면 자신의 트래시 존에서 아이템 카드를 2장까지 골라 패에 넣는다. 필드에 있는 4코스트 이하인 상대 유닛을 1장 골라 트래시할 수 있다. 그러면 자신의 트래시 존에서 이 효과로 트래시한 유닛보다 코스트가 낮은 카드를 1장 골라 패에 넣는다.\n\n\n트리거 / 이 카드를 자신의 패에 넣는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_g3haW90N_e3f9c753b1fce5942bb039b444299aa08ba635c4.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_g3haW90N_e3f9c753b1fce5942bb039b444299aa08ba635c4.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 9,
                 "f-mtacsa9t3jul": 10000,
@@ -13793,7 +13793,7 @@
               }
             },
             {
-              "id": "c-mtacx13suzqy",
+              "id": "c-mtad9sbvc6e7",
               "custom": true,
               "name": "카운터 체인",
               "type": "스킬",
@@ -13812,7 +13812,7 @@
               }
             },
             {
-              "id": "c-mtacx13s879w",
+              "id": "c-mtad9sbvjibq",
               "custom": true,
               "name": "지금! 몰아붙이자!",
               "type": "스킬",
@@ -13831,7 +13831,7 @@
               }
             },
             {
-              "id": "c-mtacx13scysj",
+              "id": "c-mtad9sbvd72i",
               "custom": true,
               "name": "천국으로의 티켓",
               "type": "스킬",
@@ -13850,7 +13850,7 @@
               }
             },
             {
-              "id": "c-mtacx13szrg0",
+              "id": "c-mtad9sbvwqsk",
               "custom": true,
               "name": "요람의 진실",
               "type": "스킬",
@@ -13858,7 +13858,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-077",
               "description": "자신의 패를 1장 골라 트래시한다. 그러면 자신의 필드에 있는 〈이브〉를 1장 고른다. 그 유닛은 이 턴이 끝날 때까지 「 코스트가 이 유닛이 장착한 아이템의 수 이하인 상대 유닛을 필드에서 1장 골라 트래시한다」를 얻고 히트+1.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_4zYOVhIb_ea8f03d0c5b477b471b12c32c50c177ebcb8612b.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_4zYOVhIb_ea8f03d0c5b477b471b12c32c50c177ebcb8612b.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 3,
                 "f-mtacsa9t3jul": 0,
@@ -13869,7 +13869,7 @@
               }
             },
             {
-              "id": "c-mtacx13sx5sk",
+              "id": "c-mtad9sbv6tc2",
               "custom": true,
               "name": "침묵의 거리",
               "type": "스킬",
@@ -13888,7 +13888,7 @@
               }
             },
             {
-              "id": "c-mtacx13s4rxp",
+              "id": "c-mtad9sbv6a4z",
               "custom": true,
               "name": "임팩트-타입 엑소스파인",
               "type": "스킬",
@@ -13907,7 +13907,7 @@
               }
             },
             {
-              "id": "c-mtacx13s666o",
+              "id": "c-mtad9sbvdcfm",
               "custom": true,
               "name": "크라이오 오리지널",
               "type": "아이템",
@@ -13915,7 +13915,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-080",
               "description": "센터 유닛 존에 있다면 파워+500.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_2pQP6dhL_895a998a47c6edc8a5930105ffb2a0e514157fb3.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_2pQP6dhL_895a998a47c6edc8a5930105ffb2a0e514157fb3.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 0,
                 "f-mtacsa9t3jul": 0,
@@ -13926,7 +13926,7 @@
               }
             },
             {
-              "id": "c-mtacx13s9f0t",
+              "id": "c-mtad9sbv4myl",
               "custom": true,
               "name": "베히모스 레드",
               "type": "아이템",
@@ -13934,7 +13934,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-081",
               "description": "파워+2000.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_JzS9O06Z_662f5f5696fb81baa06b48c16f8f1d12a0d02172.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_JzS9O06Z_662f5f5696fb81baa06b48c16f8f1d12a0d02172.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 1,
                 "f-mtacsa9t3jul": 0,
@@ -13945,7 +13945,7 @@
               }
             },
             {
-              "id": "c-mtacx13s4aj2",
+              "id": "c-mtad9sbvrvrx",
               "custom": true,
               "name": "스마트 마인",
               "type": "아이템",
@@ -13953,7 +13953,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-082",
               "description": "상쇄〈스마트 마인〉(인접한 레인에 있는 상대 유닛이 공격할 때 이 유닛이 장착한 〈스마트 마인〉을 1장 골라 트래시하면 그 유닛의 공격을 방어한다).",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_ZJGgSOwB_8f45d29a66e4be8032afa8dcde9ccf37d91f359a.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_ZJGgSOwB_8f45d29a66e4be8032afa8dcde9ccf37d91f359a.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 1,
                 "f-mtacsa9t3jul": 0,
@@ -13964,7 +13964,7 @@
               }
             },
             {
-              "id": "c-mtacx13s06ox",
+              "id": "c-mtad9sbvpsye",
               "custom": true,
               "name": "지속형 회복제",
               "type": "아이템",
@@ -13972,7 +13972,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-083",
               "description": "상대의 효과로 트래시될 때 이 유닛이 장착한 〈지속형 회복제〉를 1장 골라 트래시할 수 있다. 그러면 이 유닛은 트래시되지 않는다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_S63fUPaD_e7a2c316e091c9e603ff8535461c4fc5d7792554.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_S63fUPaD_e7a2c316e091c9e603ff8535461c4fc5d7792554.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 1,
                 "f-mtacsa9t3jul": 0,
@@ -13983,7 +13983,7 @@
               }
             },
             {
-              "id": "c-mtacx13spa6k",
+              "id": "c-mtad9sbv5raw",
               "custom": true,
               "name": "픽시",
               "type": "아이템",
@@ -13991,7 +13991,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-084",
               "description": "이 유닛이 장착한 아이템 1장마다 파워+1000.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_01pyfQuh_a4d86f0acd6f77291037d9c828772e0db0e7e2b2.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_01pyfQuh_a4d86f0acd6f77291037d9c828772e0db0e7e2b2.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 1,
                 "f-mtacsa9t3jul": 0,
@@ -14002,7 +14002,7 @@
               }
             },
             {
-              "id": "c-mtacx13sdew1",
+              "id": "c-mtad9sbv9vh5",
               "custom": true,
               "name": "산탄",
               "type": "아이템",
@@ -14010,7 +14010,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-085",
               "description": "자신의 패에서 아이템 카드를 1장 골라 트래시한다. 그러면 상대 유닛이 있는 인접한 레인을 하나 골라 공격한다. 상대는 그 유닛으로만 이 유닛의 공격을 방어할 수 있다. 이 효과로 공격했다면 이 유닛은 이 턴이 끝날 때까지 공격할 수 없다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_1xSMkUfB_273e6001ab5a4019fe5f074b1011356ca90697e2.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_1xSMkUfB_273e6001ab5a4019fe5f074b1011356ca90697e2.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 2,
                 "f-mtacsa9t3jul": 0,
@@ -14021,7 +14021,7 @@
               }
             },
             {
-              "id": "c-mtacx13sthqj",
+              "id": "c-mtad9sbvi560",
               "custom": true,
               "name": "스팅어 미사일",
               "type": "아이템",
@@ -14029,7 +14029,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-086",
               "description": "듀얼리스트(이 유닛의 조우 유닛은 가능하다면 반드시 방어해야 한다).",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_u45parKH_6a19ac2154a4510e4fd930fda9e25b08b8afd492.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_u45parKH_6a19ac2154a4510e4fd930fda9e25b08b8afd492.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 2,
                 "f-mtacsa9t3jul": 0,
@@ -14040,7 +14040,7 @@
               }
             },
             {
-              "id": "c-mtacx13st6nj",
+              "id": "c-mtad9sbvtqdf",
               "custom": true,
               "name": "음파 수류탄",
               "type": "아이템",
@@ -14048,7 +14048,7 @@
               "rarityId": "r-mtacsa9tw5el",
               "number": "BT07-087",
               "description": "자신의 트래시 존에서 를 가지지 않은 카드를 4장 골라 덱 맨 아래에 원하는 순서대로 놓을 수 있다. 그러면 카드를 2장 드로우한다.",
-              "image": "http://nivelarena.co.kr/data/file/cardlists/cfbf01727a7e461ec5930f5d552f8bff_ftnkU5lT_4b9308c272a6101849f74b4be4ce3004247109cf.jpg",
+              "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_ftnkU5lT_4b9308c272a6101849f74b4be4ce3004247109cf.jpg",
               "stats": {
                 "f-mtacsa9tz2cv": 2,
                 "f-mtacsa9t3jul": 0,
