@@ -45,11 +45,7 @@
           <div style="font-family:var(--mono);font-size:10px;color:var(--ink3);letter-spacing:.2em;text-transform:uppercase;margin-top:3px">{{ L.tagline }}</div>
         </div>
       </div>
-
-      <div style="display:flex;gap:2px;background:var(--inset);border-radius:10px;padding:3px;border:1px solid var(--line)">
-        <button style="{{ collectorTabStyle }}"><i class="fa-solid fa-layer-group" style="margin-right:7px;font-size:11px"></i>{{ L.collector }}</button>
-      </div>
-
+     
       <div style="display:flex;align-items:center;gap:7px;background:var(--inset);border:1px solid var(--line);border-radius:8px;padding:0 10px;height:38px" title="Theme">
         <sc-for list="{{ themeOptions }}" as="th" hint-placeholder-count="3">
           <button onClick="{{ th.onClick }}" title="{{ th.name }}" style="{{ th.style }}"></button>
@@ -59,9 +55,6 @@
       <sc-if value="{{ isCollector }}" hint-placeholder-val="{{ false }}">
         <select value="{{ collectorSystemId }}" onChange="{{ onSelectCollectorSystem }}" title="{{ L.collecting }}" style="background:var(--inset);border:1px solid var(--line);border-radius:8px;padding:0 10px;height:38px;color:var(--ink);font-size:13px;cursor:pointer;min-width:150px">
           <sc-for list="{{ systemOptions }}" as="o" hint-placeholder-count="2"><option value="{{ o.id }}">{{ o.name }}</option></sc-for>
-        </select>
-        <select value="{{ globalCondition }}" onChange="{{ onSelectCondition }}" title="{{ L.condition }}" style="background:var(--inset);border:1px solid var(--line);border-radius:8px;padding:0 10px;height:38px;color:var(--ink);font-size:13px;cursor:pointer">
-          <sc-for list="{{ conditionOptions }}" as="c" hint-placeholder-count="4"><option value="{{ c }}">{{ c }}</option></sc-for>
         </select>
       </sc-if>
 
