@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-08-26T22:54:54.597Z",
+  "exportedAt": "2026-09-09T22:04:05.379Z",
   "systems": [
     {
       "id": "sys-mtao4tlgaoua",
@@ -8,46 +8,6 @@
       "description": "",
       "imageBaseUrl": "",
       "rarities": [
-        {
-          "id": "r-mtao4tlf40st",
-          "name": "Common",
-          "color": "hsl(67,55%,55%)",
-          "pullRate": "",
-          "abbr": "C",
-          "parallel": false
-        },
-        {
-          "id": "r-mtao4tlfrv6h",
-          "name": "Rare",
-          "color": "hsl(82,55%,55%)",
-          "pullRate": "",
-          "abbr": "R",
-          "parallel": false
-        },
-        {
-          "id": "r-mtao4tlfasnp",
-          "name": "Super Rare",
-          "color": "hsl(135,55%,55%)",
-          "pullRate": "",
-          "abbr": "SR",
-          "parallel": false
-        },
-        {
-          "id": "r-mtao4tlf00ie",
-          "name": "Special Rare",
-          "color": "hsl(245,55%,55%)",
-          "pullRate": "",
-          "abbr": "SPR",
-          "parallel": true
-        },
-        {
-          "id": "r-mtao4tlfwo8n",
-          "name": "Ultra Rare",
-          "color": "hsl(197,55%,55%)",
-          "pullRate": "",
-          "abbr": "UR",
-          "parallel": true
-        },
         {
           "id": "r-mtao4tlf6p3l",
           "name": "Leader",
@@ -65,12 +25,84 @@
           "parallel": false
         },
         {
-          "id": "r-mtaocig6tnjb",
-          "name": "Super Rare Leader",
-          "abbr": "SRL",
+          "id": "r-mtun6t5hmqk9",
+          "name": "Special Booster Leader",
+          "abbr": "SBL",
           "color": "#c9a84c",
           "pullRate": "",
           "parallel": true
+        },
+        {
+          "id": "r-mtaocig6tnjb",
+          "name": "Special Signature Leader",
+          "abbr": "SSL",
+          "color": "#c9a84c",
+          "pullRate": "",
+          "parallel": true
+        },
+        {
+          "id": "r-mtun8gjt1w04",
+          "name": "Anniversary Leader",
+          "abbr": "ANL",
+          "color": "#c9a84c",
+          "pullRate": "",
+          "parallel": true
+        },
+        {
+          "id": "r-mtao4tlf40st",
+          "name": "Common",
+          "color": "#b0b0b0",
+          "pullRate": "",
+          "abbr": "C",
+          "parallel": false
+        },
+        {
+          "id": "r-mtao4tlfrv6h",
+          "name": "Rare",
+          "color": "#8ddc04",
+          "pullRate": "",
+          "abbr": "R",
+          "parallel": false
+        },
+        {
+          "id": "r-mtao4tlfasnp",
+          "name": "Super Rare",
+          "color": "hsl(135,55%,55%)",
+          "pullRate": "",
+          "abbr": "SR",
+          "parallel": false
+        },
+        {
+          "id": "r-mtao4tlfwo8n",
+          "name": "Ultra Rare",
+          "color": "hsl(197,55%,55%)",
+          "pullRate": "",
+          "abbr": "UR",
+          "parallel": true
+        },
+        {
+          "id": "r-mtao4tlf00ie",
+          "name": "Special Rare",
+          "color": "hsl(245,55%,55%)",
+          "pullRate": "",
+          "abbr": "SPR",
+          "parallel": true
+        },
+        {
+          "id": "r-mtun9jx4wdx8",
+          "name": "Special Booster Rare",
+          "abbr": "SBR",
+          "color": "#c9a84c",
+          "pullRate": "",
+          "parallel": true
+        },
+        {
+          "id": "r-mtun9tl3iwff",
+          "name": "Promo",
+          "abbr": "P",
+          "color": "#c9a84c",
+          "pullRate": "",
+          "parallel": false
         }
       ],
       "cardTypes": [
@@ -10054,7 +10086,7 @@
               "name": "와일드독 루벤시아",
               "type": "리더",
               "element": "화염",
-              "rarityId": "r-mtao4tlf6p3l",
+              "rarityId": "r-mtaocig6tnjb",
               "number": "BT06-001",
               "description": "기본면\n 자신의 덱에  카드만 넣을 수 있다.\n 자신의 리더 레벨이 6 이상이라면 이 카드를 뒤집는다.\n\n각성면\n 필드에 있는 을 가진 자신 유닛을 1장 골라, 그 유닛이 가진  효과를 하나 골라 발동한다.",
               "image": "nivel/CARDS/BT06/cfbf01727a7e461ec5930f5d552f8bff_JGfCvoV3_f16c9f18735b7d49e93fde6729fdba3a9e4d5293.jpg",
@@ -11061,7 +11093,7 @@
               "name": "꿈속의 신부 이클립스",
               "type": "리더",
               "element": "파도",
-              "rarityId": "r-mtao4tlf6p3l",
+              "rarityId": "r-mtaocig6tnjb",
               "number": "BT06-043",
               "description": "기본면\n 자신의 덱에  카드만 넣을 수 있다.\n 자신의 리더 레벨이 5 이상이라면 이 카드를 뒤집는다.\n\n각성면\n 자신의 덱 맨 위에서 카드를 1장 트래시한다. 이 효과로 트래시한 카드 중 스킬 카드를 1장 골라 효과를 발동할 수 있다.",
               "image": "nivel/CARDS/BT06/cfbf01727a7e461ec5930f5d552f8bff_yqeP76pC_28712898bb5ab4ee765555995cfa8db5deab1384.jpg",
@@ -12080,7 +12112,7 @@
               "name": "레이븐",
               "type": "리더",
               "element": "대지",
-              "rarityId": "r-mtao4tlf6p3l",
+              "rarityId": "r-mtaocig6tnjb",
               "number": "BT07-001",
               "description": "기본면\n 자신의 덱에  카드만 넣을 수 있다.\n 자신의 리더 레벨이 6 이상이라면 이 카드를 뒤집는다.\n\n각성면\n 필드에 있는 자신 유닛이 이동하면 이 턴이 끝날 때까지 그 유닛의 파워+2000.",
               "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_ejWlwUYr_43874e3ca456cb112a0d766a069362a3077befe6.jpg",
@@ -13125,7 +13157,7 @@
               "name": "이브",
               "type": "리더",
               "element": "번개",
-              "rarityId": "r-mtao4tlf6p3l",
+              "rarityId": "r-mtaocig6tnjb",
               "number": "BT07-045",
               "description": "기본면\n 자신의 덱에  카드만 넣을 수 있다.\n 자신의 리더 레벨이 4 이상이라면 이 카드를 뒤집는다.\n 자신의 필드에 〈이브〉가 있다면 자신은 다른 유닛 존에 〈이브〉를 배치할 수 없다.\n\n각성면\n 자신의 필드에 〈이브〉가 있다면 자신은 다른 유닛 존에 〈이브〉를 배치할 수 없다. 자신은 필드에 있는 〈이브〉를 코스트가 그 유닛의 코스트 이하인 〈이브〉로 업그레이드할 수 있다.",
               "image": "nivel/CARDS/BT07/cfbf01727a7e461ec5930f5d552f8bff_L4wWry5l_8fcd897d7799d302dad2a39be223deda397cdb55.jpg",
@@ -14182,7 +14214,7 @@
               "name": "아니스 : 스타 - 스타라이트",
               "type": "리더",
               "element": "화염",
-              "rarityId": "r-mtao4tlf6p3l",
+              "rarityId": "r-mtaocig6tnjb",
               "number": "BT08-001",
               "description": "기본면\n 자신의 덱에  카드만 넣을 수 있다.\n 자신의 리더 레벨이 5 이상이라면 이 카드를 뒤집는다.\n 자신은 를 가진 유닛을 배치할 수 없다.\n\n각성면\n 자신은 를 가진 유닛을 배치할 수 없다.\n 이 턴 동안 자신이 다음에 패에서 배치하는 광전사를 가진 유닛 1장은 이 턴이 끝날 때까지 「 조우 유닛이 있다면 자신의 패에서 2코스트 이하인 카드를 1장 골라 트래시한다. 그러면 이 유닛으로 공격한다」를 얻고 파워+2000.",
               "image": "nivel/CARDS/BT08/cfbf01727a7e461ec5930f5d552f8bff_tDvC32Tw_4e738a4c71559353a0a750ba2a2f91310962808d.jpg",
@@ -14619,7 +14651,7 @@
               "name": "마르차나 : 마린 스터디",
               "type": "리더",
               "element": "대지",
-              "rarityId": "r-mtao4tlf6p3l",
+              "rarityId": "r-mtaocig6tnjb",
               "number": "BT08-018",
               "description": "기본면\n 자신의 덱에  카드만 넣을 수 있다.\n 자신의 리더 레벨이 5 이상이라면 이 카드를 뒤집는다.\n 자신은 를 가진 유닛을 배치할 수 없다.\n\n각성면\n 자신은 를 가진 유닛을 배치할 수 없다.\n 필드에 있는 히트가 1 이하인 자신 유닛을 1장 골라 주인의 패로 되돌린다. 자신은 이 턴이 끝날 때까지 이 효과로 패로 되돌린 유닛의 원래 코스트와 같은 코스트이고 카드명이 같은 유닛을 배치할 수 없다.",
               "image": "nivel/CARDS/BT08/cfbf01727a7e461ec5930f5d552f8bff_riTKpdSE_7f437d14166aa9be47166ea61fbfed4831965cd2.jpg",
@@ -15056,7 +15088,7 @@
               "name": "리버렐리오 - 드리밍 레이크",
               "type": "리더",
               "element": "폭풍",
-              "rarityId": "r-mtao4tlf6p3l",
+              "rarityId": "r-mtaocig6tnjb",
               "number": "BT08-035",
               "description": "기본면\n 자신의 덱에  카드만 넣을 수 있다.\n 자신의 리더 레벨이 4 이상이라면 이 카드를 뒤집는다.\n 자신은 를 가진 유닛을 배치할 수 없다.\n\n각성면\n 자신은 를 가진 유닛을 배치할 수 없다. 자신과 상대의 턴마다 1번씩, 필드에 있는 자신 유닛이 효과로 트래시되면 자신의 패에서 코스트가 그 유닛의 코스트 이하이고  종결을 가진 유닛 카드를 1장 골라 비어 있는 자신의 유닛 존에 사이즈를 무시하고 배치할 수 있다. 그러면 카드를 1장 드로우한다.",
               "image": "nivel/CARDS/BT08/cfbf01727a7e461ec5930f5d552f8bff_fYop0lrB_3b430b871c608892c38ef57d008813119e15471f.jpg",
@@ -15493,7 +15525,7 @@
               "name": "앨리스 - 메르헨 드림",
               "type": "리더",
               "element": "파도",
-              "rarityId": "r-mtao4tlf6p3l",
+              "rarityId": "r-mtaocig6tnjb",
               "number": "BT08-052",
               "description": "기본면\n 자신의 덱에  카드만 넣을 수 있다.\n 자신의 리더 레벨이 4 이상이라면 이 카드를 뒤집는다.\n 자신은 를 가진 유닛을 배치할 수 없다.\n\n각성면\n 자신은 를 가진 유닛을 배치할 수 없다.\n 자신의 패를 1장 골라 트래시한다. 그러면 필드에 있는 상대 유닛을 1장 골라, 이 턴이 끝날 때까지 코스트+3.",
               "image": "nivel/CARDS/BT08/cfbf01727a7e461ec5930f5d552f8bff_KoNkGu5t_4bca2b801c64c83347ed800cb53b53ef2fb887ad.jpg",
@@ -15930,7 +15962,7 @@
               "name": "지즈",
               "type": "리더",
               "element": "번개",
-              "rarityId": "r-mtao4tlf6p3l",
+              "rarityId": "r-mtaocig6tnjb",
               "number": "BT08-069",
               "description": "기본면\n 자신의 덱에  카드만 넣을 수 있다.\n 자신의 리더 레벨이 5 이상이라면 이 카드를 뒤집는다.\n 자신은 를 가진 유닛을 배치할 수 없다.\n\n각성면\n 자신은 를 가진 유닛을 배치할 수 없다. 자신의 메인 페이즈가 끝날 때 자신의 트래시 존에서 0코스트인 아이템 카드를 1장 골라 패에 넣을 수 있다. 그러면 필드에 있는 그 카드와 카드명이 같은 아이템을 장착한 자신 유닛을 1장 골라, 이 턴이 끝날 때까지 히트+1.",
               "image": "nivel/CARDS/BT08/cfbf01727a7e461ec5930f5d552f8bff_a53GBJpg_63e6996f9b766c3d471b2cd61d001654217f2de7.jpg",
