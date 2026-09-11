@@ -45,19 +45,19 @@
     transform:translate(calc(var(--ryn,0) * -0.55%), calc(var(--rxn,0) * 0.55%)) scale(1.04);
   }
   .holo-layer-chrome{ background-size:100% 100%; background-repeat:no-repeat; }
-  .holo-layer-data{ font-family:'Space Mono','Consolas','Courier New',monospace; --cardText:#e0536e; }
+  .holo-layer-data{ font-family:'Space Mono','Consolas','Courier New',monospace; --cardText:#f6efe6; --cardTextShadow:rgba(0,0,0,.4); --cardTextTop:#f6efe6; --cardTextTopShadow:rgba(0,0,0,.4); }
   .holo-slot{ position:absolute; display:flex; overflow:hidden; }
-  .holo-slot-cost,.holo-slot-power,.holo-slot-hit{ align-items:center; justify-content:center; font-weight:800; color:var(--cardText); text-shadow:0 1px 2px rgba(0,0,0,.35); z-index:3; }
+  .holo-slot-cost,.holo-slot-power,.holo-slot-hit{ align-items:center; justify-content:center; font-weight:800; color:var(--cardTextTop); text-shadow:0 1px 2px var(--cardTextTopShadow); z-index:3; }
   .holo-slot-power{ justify-content:flex-start; padding-left:2%; }
   .holo-slot-sparkle{ pointer-events:none; z-index:2; }
   .holo-slot-sparkle svg{ width:100%; height:100%; display:block; filter:drop-shadow(0 1px 1px rgba(0,0,0,.4)); }
-  .holo-slot-name{ align-items:center; justify-content:center; font-weight:800; letter-spacing:.03em; color:var(--cardText); text-align:center; text-shadow:0 1px 2px rgba(0,0,0,.3); white-space:nowrap; }
+  .holo-slot-name{ align-items:center; justify-content:center; font-weight:800; letter-spacing:.03em; color:var(--cardText); text-align:center; text-shadow:0 1px 2px var(--cardTextShadow); white-space:nowrap; }
   .holo-slot-name span{ overflow:hidden; text-overflow:ellipsis; max-width:100%; }
-  .holo-slot-type{ align-items:center; justify-content:center; font-weight:700; letter-spacing:.05em; color:#fff; text-transform:uppercase; text-align:center; }
-  .holo-slot-affiliation{ align-items:center; justify-content:center; font-weight:600; letter-spacing:.04em; color:var(--cardText); text-align:center; }
-  .holo-slot-cardnumber{ align-items:center; justify-content:center; font-weight:700; color:var(--cardText); letter-spacing:.02em; text-align:center; }
+  .holo-slot-type{ align-items:center; justify-content:center; font-weight:700; letter-spacing:.05em; color:var(--cardText); text-shadow:0 1px 2px var(--cardTextShadow); text-transform:uppercase; text-align:center; }
+  .holo-slot-affiliation{ align-items:center; justify-content:center; font-weight:600; letter-spacing:.04em; color:var(--cardText); text-shadow:0 1px 2px var(--cardTextShadow); text-align:center; }
+  .holo-slot-cardnumber{ align-items:center; justify-content:center; font-weight:700; color:var(--cardText); text-shadow:0 1px 2px var(--cardTextShadow); letter-spacing:.02em; text-align:center; }
   .holo-slot-rarity{ align-items:center; justify-content:center; border-radius:22%/34%; font-weight:800; color:#fff; box-shadow:0 1px 3px rgba(0,0,0,.4); }
-  .holo-slot-copyright{ align-items:center; justify-content:center; font-weight:500; color:var(--cardText); opacity:.85; white-space:nowrap; }
+  .holo-slot-copyright{ align-items:center; justify-content:center; font-weight:500; color:var(--cardText); text-shadow:0 1px 2px var(--cardTextShadow); opacity:.85; white-space:nowrap; }
   .holo-slot-level{ align-items:center; justify-content:center; font-weight:800; letter-spacing:.08em; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.35); }
   .holo-slot-element svg{ width:100%; height:100%; display:block; filter:drop-shadow(0 2px 3px rgba(0,0,0,.4)); }
   .holo-slot-keywords{ align-items:center; gap:5px; flex-wrap:wrap; }
@@ -317,11 +317,8 @@
                   </sc-if>
                   <sc-if value="{{ t.real }}" hint-placeholder-val="{{ true }}">
                     <div class="tile-card" style="display:flex;flex-direction:column;transition:transform .18s" style-hover="transform:translateY(-3px)">
-                      <div onClick="{{ t.onOpen }}" onMouseEnter="{{ t.onHoloEnter }}" onMouseLeave="{{ t.onHoloLeave }}" style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};opacity:{{ t.artOpacity }};display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;transition:border-color .18s,box-shadow .18s,opacity .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4);opacity:1">
+                      <div onClick="{{ t.onOpen }}" style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};opacity:{{ t.artOpacity }};display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;transition:border-color .18s,box-shadow .18s,opacity .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4);opacity:1">
                         {{ t.art }}
-                        <sc-if value="{{ t.holoHover }}" hint-placeholder-val="{{ false }}">
-                          <div style="position:absolute;inset:0;z-index:6" onClick="{{ t.onOpen }}" ref="{{ t.holoRef }}"></div>
-                        </sc-if>
                         <sc-if value="{{ showTicks }}" hint-placeholder-val="{{ true }}">
                           <div style="position:absolute;left:0;right:0;top:8px;display:flex;justify-content:center;gap:4px">
                             <sc-for list="{{ t.variants }}" as="v" hint-placeholder-count="1">
@@ -391,11 +388,8 @@
                       </sc-if>
                       <sc-if value="{{ t.real }}" hint-placeholder-val="{{ true }}">
                         <div class="tile-card" style="display:flex;flex-direction:column;transition:transform .18s" style-hover="transform:translateY(-3px)">
-                          <div onClick="{{ t.onOpen }}" onMouseEnter="{{ t.onHoloEnter }}" onMouseLeave="{{ t.onHoloLeave }}" style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};opacity:{{ t.artOpacity }};display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;transition:border-color .18s,box-shadow .18s,opacity .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4);opacity:1">
+                          <div onClick="{{ t.onOpen }}" style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};opacity:{{ t.artOpacity }};display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;transition:border-color .18s,box-shadow .18s,opacity .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4);opacity:1">
                             {{ t.art }}
-                            <sc-if value="{{ t.holoHover }}" hint-placeholder-val="{{ false }}">
-                              <div style="position:absolute;inset:0;z-index:6" onClick="{{ t.onOpen }}" ref="{{ t.holoRef }}"></div>
-                            </sc-if>
                             <sc-if value="{{ showTicks }}" hint-placeholder-val="{{ true }}">
                               <div style="position:absolute;left:0;right:0;top:8px;display:flex;justify-content:center;gap:4px">
                                 <sc-for list="{{ t.variants }}" as="v" hint-placeholder-count="1">
@@ -471,11 +465,8 @@
                       </sc-if>
                       <sc-if value="{{ t.real }}" hint-placeholder-val="{{ true }}">
                         <div class="tile-card" style="display:flex;flex-direction:column;transition:transform .18s" style-hover="transform:translateY(-3px)">
-                          <div onClick="{{ t.onOpen }}" onMouseEnter="{{ t.onHoloEnter }}" onMouseLeave="{{ t.onHoloLeave }}" style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};opacity:{{ t.artOpacity }};display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;transition:border-color .18s,box-shadow .18s,opacity .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4);opacity:1">
+                          <div onClick="{{ t.onOpen }}" style="position:relative;aspect-ratio:5/7;border-radius:5.5%;border:1px solid var(--line);background:{{ t.artStyle }};opacity:{{ t.artOpacity }};display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;transition:border-color .18s,box-shadow .18s,opacity .18s" style-hover="border-color:var(--line2);box-shadow:0 14px 30px rgba(0,0,0,.4);opacity:1">
                             {{ t.art }}
-                            <sc-if value="{{ t.holoHover }}" hint-placeholder-val="{{ false }}">
-                              <div style="position:absolute;inset:0;z-index:6" onClick="{{ t.onOpen }}" ref="{{ t.holoRef }}"></div>
-                            </sc-if>
                             <sc-if value="{{ showTicks }}" hint-placeholder-val="{{ true }}">
                               <div style="position:absolute;left:0;right:0;top:8px;display:flex;justify-content:center;gap:4px">
                                 <sc-for list="{{ t.variants }}" as="v" hint-placeholder-count="1">
@@ -693,6 +684,44 @@ class HoloCard {
     img.src = HOLO_ASSET_BASE + 'keywords/' + key + '.webp';
     return img;
   }
+  // samples the actual chrome artwork under the name-bar and the top-corner (cost/power/hit)
+  // regions so the overlaid text color/shadow follows whatever's really printed there per
+  // rarity, instead of one fixed color that only happened to read on some chromes.
+  _sampleTextColors(chromeUrl){
+    const forS = this.S;
+    const img = new Image();
+    img.onload = ()=>{
+      if(this._destroyed || this.S!==forS) return;
+      try{
+        const cw=img.naturalWidth, ch=img.naturalHeight;
+        const canvas=document.createElement('canvas'); canvas.width=cw; canvas.height=ch;
+        const ctx=canvas.getContext('2d'); ctx.drawImage(img,0,0);
+        const lumOf=(rect)=>{
+          if(!rect) return null;
+          let x0,y0,x1,y1;
+          if(rect.cx!=null){ x0=(rect.cx-rect.w/2)/100*cw; x1=(rect.cx+rect.w/2)/100*cw; y0=(rect.cy-rect.h/2)/100*ch; y1=(rect.cy+rect.h/2)/100*ch; }
+          else { x0=rect.left/100*cw; x1=(rect.left+rect.width)/100*cw; y0=rect.top/100*ch; y1=(rect.top+rect.height)/100*ch; }
+          x0=Math.max(0,Math.floor(x0)); y0=Math.max(0,Math.floor(y0));
+          x1=Math.min(cw,Math.ceil(x1)); y1=Math.min(ch,Math.ceil(y1));
+          const w=Math.max(1,x1-x0), h=Math.max(1,y1-y0);
+          let data; try{ data=ctx.getImageData(x0,y0,w,h).data; }catch(e){ return null; }
+          let r=0,g=0,b=0,n=0;
+          for(let i=0;i<data.length;i+=4){ if(data[i+3]<40) continue; r+=data[i]; g+=data[i+1]; b+=data[i+2]; n++; }
+          if(!n) return null;
+          return (0.299*(r/n)+0.587*(g/n)+0.114*(b/n))/255;
+        };
+        const apply=(varBase, rect)=>{
+          const lum = lumOf(rect);
+          const bright = lum==null ? true : lum < 0.55;
+          this.cardEl.style.setProperty('--'+varBase, bright?'#f6efe6':'#1c1712');
+          this.cardEl.style.setProperty('--'+varBase+'Shadow', bright?'rgba(0,0,0,.4)':'rgba(255,255,255,.35)');
+        };
+        apply('cardText', forS.name);
+        apply('cardTextTop', forS.cost);
+      }catch(e){}
+    };
+    img.src = chromeUrl;
+  }
   _renderDescription(text){
     const elDesc = this.elDesc; elDesc.innerHTML = '';
     if(!text || text === '-'){ elDesc.textContent = '—'; return; }
@@ -711,13 +740,17 @@ class HoloCard {
       elDesc.appendChild(document.createTextNode(line.slice(last)));
     });
   }
-  _renderKeywordPills(value){
+  _renderKeywordPills(value, lang){
     const elKw = this.elKw; elKw.innerHTML = '';
     if(!value || value === '-') return;
     String(value).split(',').map(s=>s.trim()).filter(Boolean).forEach(term=>{
       const key = HOLO_DATA.keywordIconMap[term];
       if(key){ elKw.appendChild(this._iconImg(key, 'holo-kw-pill-img')); }
-      else { const span = document.createElement('span'); span.className='holo-kw-pill-text'; span.textContent=term; elKw.appendChild(span); }
+      else {
+        const i18n = Component.KEYWORD_I18N[term];
+        const label = i18n ? (lang==='en'?i18n.en:(lang==='de'?i18n.de:(lang==='jp'?i18n.jp:term))) : term;
+        const span = document.createElement('span'); span.className='holo-kw-pill-text'; span.textContent=label; elKw.appendChild(span);
+      }
     });
   }
   _renderElementBadge(elementId){
@@ -732,11 +765,13 @@ class HoloCard {
   // card: the Grimoire card object. rarity: {abbr,color,name}. fields: {cost,power,hit,
   // affiliation,keyword} field-id map for this system's cardLayout. artUrls: {primary,fallback}
   // resolved image URLs (same imageBaseUrl-then-original-source logic as the flat card view).
-  renderCard(card, rarity, fields, artUrls){
+  renderCard(card, rarity, fields, artUrls, lang){
     const meta = HOLO_DATA.rarityMeta[rarity&&rarity.abbr] || {family:'standard',holo:'full',assetKey:'SPR'};
     this._applySlotsForFamily(meta.family);
-    this.elLayerChrome.style.backgroundImage = 'url("'+HOLO_ASSET_BASE+'chrome/'+meta.assetKey+'-chrome.webp")';
+    const chromeUrl = HOLO_ASSET_BASE+'chrome/'+meta.assetKey+'-chrome.webp';
+    this.elLayerChrome.style.backgroundImage = 'url("'+chromeUrl+'")';
     this.cardEl.dataset.holo = meta.holo;
+    this._sampleTextColors(chromeUrl);
 
     if(artUrls && artUrls.primary){
       const test = new Image();
@@ -747,20 +782,25 @@ class HoloCard {
       this.elLayerBg.style.backgroundImage = '';
     }
 
+    const l = lang || 'ko';
+    const nameText = (l==='en'&&card.nameEn) ? card.nameEn : (l==='de'&&card.nameDe) ? card.nameDe : (l==='jp'&&card.nameJp) ? card.nameJp : card.name;
+    const descText = (l==='en'&&card.descriptionEn) ? card.descriptionEn : (l==='de'&&card.descriptionDe) ? card.descriptionDe : (l==='jp'&&card.descriptionJp) ? card.descriptionJp : card.description;
+
     const stats = card.stats || {};
     this.elCost.textContent = (fields.cost!=null && stats[fields.cost]!=null) ? stats[fields.cost] : '';
     this.elPower.textContent = (fields.power!=null && stats[fields.power]!=null) ? stats[fields.power] : '';
     this.elHit.textContent = (fields.hit!=null && stats[fields.hit]!=null) ? stats[fields.hit] : '';
-    this.elNameSpan.textContent = card.name || '';
-    this.elType.textContent = card.type || '';
+    this.elNameSpan.textContent = nameText || '';
+    const typeI18n = card.type!=null ? Component.CARDTYPE_I18N[card.type] : null;
+    this.elType.textContent = (typeI18n && typeI18n[l]) || card.type || '';
     const aff = fields.affiliation!=null ? stats[fields.affiliation] : null;
     this.elAff.textContent = (aff && aff !== '-') ? aff : '';
     this.elNum.textContent = card.number || '';
     this.elRarity.textContent = (rarity&&rarity.abbr) || '';
     this.elRarity.style.background = (rarity&&rarity.color) || '#888';
     this._renderElementBadge(card.element);
-    this._renderKeywordPills(fields.keyword!=null ? stats[fields.keyword] : null);
-    this._renderDescription(card.description);
+    this._renderKeywordPills(fields.keyword!=null ? stats[fields.keyword] : null, l);
+    this._renderDescription(descText);
     this._shrinkToFit(this.elDesc, this.S.description.fontSize, this.S.description.fontSize*0.6);
   }
   _bindTilt(){
@@ -877,6 +917,33 @@ class Component extends DCLogic {
     '전선구축':'#a97a4f','체인':'#6f7f9f','크레딧':'#c9a84c','패시브':'#8f8fa0',
     '포지션':'#7f6fd0','서약':'#a04f6f'
   };
+  // per-system cardTypes/cardElements are free text the user enters in Builder (see
+  // typeLabel/elementLabel), so - same as KEYWORD_I18N above - this is a lookup-by-source-text
+  // table rather than a fixed enum: covers the live NIVEL ARENA config, falls back to the raw
+  // stored name for anything not in here (a new system's own custom types/elements, etc).
+  static CARDTYPE_I18N = {
+    '리더':{en:'Leader',de:'Anführer',jp:'リーダー'},
+    '유닛':{en:'Unit',de:'Einheit',jp:'ユニット'},
+    '스킬':{en:'Skill',de:'Fähigkeit',jp:'スキル'},
+    '아이템':{en:'Item',de:'Gegenstand',jp:'アイテム'}
+  };
+  static CARDELEMENT_I18N = {
+    '화염':{en:'Fire',de:'Feuer',jp:'炎'},
+    '대지':{en:'Earth',de:'Erde',jp:'大地'},
+    '폭풍':{en:'Storm',de:'Sturm',jp:'嵐'},
+    '파도':{en:'Wave',de:'Welle',jp:'波'},
+    '번개':{en:'Lightning',de:'Blitz',jp:'雷'}
+  };
+  // cardLayout field labels are entered in English by convention (Cost/Power/...), so this one
+  // is keyed by the English source text instead, with 'en' simply absent (falls back to raw).
+  static FIELD_LABEL_I18N = {
+    'Cost':{ko:'코스트',de:'Kosten',jp:'コスト'},
+    'Power':{ko:'파워',de:'Stärke',jp:'パワー'},
+    'Hit':{ko:'히트',de:'Treffer',jp:'ヒット'},
+    'Keyword':{ko:'키워드',de:'Schlüsselwort',jp:'キーワード'},
+    'Affiliation':{ko:'소속',de:'Zugehörigkeit',jp:'所属'},
+    'Element':{ko:'속성',de:'Element',jp:'属性'}
+  };
   static THEMES = {
     ledger:{name:'Grimoire Ledger',vars:{'--bg':'#0c0c0c','--panel':'#111111','--inset':'#131313','--row':'#161616','--raise':'#1c1c1c','--line':'#242424','--line2':'#363636','--ink':'#ece8e2','--ink2':'#8f8b84','--ink3':'#6e6a64','--accent':'#8e3b3b','--on-accent':'#f2e7e2','--accent-ink':'#c67f7f','--danger':'#e0714f','--ok':'#4caf7d','--display':"'Space Grotesk',sans-serif",'--sans':"'Space Mono',monospace",'--mono':"'IBM Plex Mono',monospace"}},
     reliquary:{name:'Gilt Reliquary',vars:{'--bg':'#0d0b08','--panel':'#12100b','--inset':'#14110b','--row':'#171410','--raise':'#1e1a13','--line':'#29241a','--line2':'#4a3f28','--ink':'#efe9dc','--ink2':'#9c937f','--ink3':'#7a6f57','--accent':'#b39a5a','--on-accent':'#0d0b08','--accent-ink':'#c8ac67','--danger':'#c0564a','--ok':'#4caf7d'}},
@@ -908,8 +975,12 @@ class Component extends DCLogic {
   cardName(c){ if(!c) return ''; const l=this.state.lang; if(l==='en'&&c.nameEn) return c.nameEn; if(l==='de'&&c.nameDe) return c.nameDe; if(l==='jp'&&c.nameJp) return c.nameJp; return c.name; }
   cardDesc(c){ if(!c) return ''; const l=this.state.lang; if(l==='en'&&c.descriptionEn) return c.descriptionEn; if(l==='de'&&c.descriptionDe) return c.descriptionDe; if(l==='jp'&&c.descriptionJp) return c.descriptionJp; return c.description; }
   keywordLabel(kw){ const m=Component.KEYWORD_I18N[kw]; if(!m) return kw; const l=this.state.lang; return l==='en'?m.en:(l==='de'?m.de:(l==='jp'?m.jp:kw)); }
-  typeLabel(v, sys){ const list=(sys&&sys.cardTypes)||[]; const found=list.find(x=>x.id===v); return found?found.name:(v||''); }
-  elementLabel(v, sys){ const list=(sys&&sys.cardElements)||[]; const found=list.find(x=>x.id===v); return found?found.name:(v||''); }
+  // l: which side of the source-text dictionary to read - 'en'/'de'/'jp' translate, 'ko'
+  // (or anything else, incl. the source text not being in the table) falls back to raw.
+  localizedTerm(dict, raw){ const l=this.state.lang; const m=dict[raw]; return (m && m[l]) ? m[l] : raw; }
+  typeLabel(v, sys){ const list=(sys&&sys.cardTypes)||[]; const found=list.find(x=>x.id===v); if(!found) return v||''; return this.localizedTerm(Component.CARDTYPE_I18N, found.name); }
+  elementLabel(v, sys){ const list=(sys&&sys.cardElements)||[]; const found=list.find(x=>x.id===v); if(!found) return v||''; return this.localizedTerm(Component.CARDELEMENT_I18N, found.name); }
+  fieldLabel(label){ return this.localizedTerm(Component.FIELD_LABEL_I18N, label); }
   elementInfo(v, sys){ const list=(sys&&sys.cardElements)||[]; const found=list.find(x=>x.id===v); return found?{color:found.color,icon:found.icon}:{color:'var(--ink3)',icon:'fa-solid fa-circle-question'}; }
   setLang(id){ this.setState({lang:id}); this.postState({lang:id}); }
 
@@ -1557,11 +1628,6 @@ class Component extends DCLogic {
   // instantly - only clear it if nothing gets re-hovered within that window.
   hoverVariant(id){ clearTimeout(this._hoverLeaveTimer); this.setState({hoverVariantId:id}); }
   unhoverVariant(){ clearTimeout(this._hoverLeaveTimer); this._hoverLeaveTimer=setTimeout(()=>this.setState({hoverVariantId:null}),180); }
-  // hovering a Grid/Binder tile swaps its flat scan for a live HoloCard - same single-tracked-id
-  // + leave-delay pattern as hoverVariant above, and only ONE HoloCard instance ever exists at a
-  // time (this._gridHoloInstance), constructed/destroyed via the mount div's ref in the template.
-  hoverHoloTile(key){ clearTimeout(this._holoLeaveTimer); this.setState({holoHoverKey:key}); }
-  unhoverHoloTile(){ clearTimeout(this._holoLeaveTimer); this._holoLeaveTimer=setTimeout(()=>this.setState({holoHoverKey:null}),120); }
   setVariantQty(card,qty){
     qty=Math.max(0,Math.floor(qty||0));
     const sysId=this.state.collectorSystemId; const collector={...this.state.collector}; const b={...(collector[sysId]||{})};
@@ -1700,7 +1766,7 @@ class Component extends DCLogic {
       v.cardFields=layout.map((fld,i)=>{
         const dis='background:transparent;border:1px solid var(--line);width:30px;height:30px;border-radius:6px;cursor:pointer;font-size:10px;color:var(--line2)';
         const en='background:transparent;border:1px solid var(--line);width:30px;height:30px;border-radius:6px;cursor:pointer;font-size:10px;color:var(--ink2)';
-        return {id:fld.id,label:fld.label,icon:fld.icon,color:fld.color,bgTint:fld.color+'22',
+        return {id:fld.id,label:this.fieldLabel(fld.label),icon:fld.icon,color:fld.color,bgTint:fld.color+'22',
           typeLabel:fld.type==='number'?this.t('numberT'):fld.type==='longtext'?this.t('longTextT'):fld.type==='type'?this.t('lType'):fld.type==='element'?this.t('elementW'):this.t('textT'),
           tileLabel:fld.showOnTile?this.t('shownOnCard'):this.t('hiddenW'),
           upStyle:i===0?dis:en, downStyle:i===layout.length-1?dis:en,
@@ -1952,12 +2018,6 @@ class Component extends DCLogic {
             baseTip:`${this.t('totalCollected')} — ${v.stats.pct}%`,
             extraTip:`${this.t('uniqueDesigns')} — ${uniqueOwned}/${uniqueTotal} (${uniquePct}%)`};
           const tileChipFields=this.layoutOf(cs).filter(f=>f.showOnTile&&(f.type==='type'||f.type==='element'));
-          // holo hover: field-id map (by label, so it self-heals if fields ever regenerate) is
-          // the same one the card detail modal's holo view uses - computed once here since it's
-          // identical for every tile in this expansion.
-          const holoHoverKey=S.holoHoverKey;
-          const fieldIdByLabel=(label)=>{ const f=(this.layoutOf(cs)||[]).find(x=>(x.label||'').toLowerCase()===label.toLowerCase()); return f?f.id:null; };
-          const holoFields={ cost:fieldIdByLabel('Cost'), power:fieldIdByLabel('Power'), hit:fieldIdByLabel('Hit'), affiliation:fieldIdByLabel('Affiliation'), keyword:fieldIdByLabel('Keyword') };
           const makeTile=(arr,key)=>{
             // prefer the rarest OWNED variant as the default face of the stack (e.g. Special
             // Rare over Super Rare, but only once you actually own that Special Rare copy) -
@@ -1996,11 +2056,6 @@ class Component extends DCLogic {
               const v=base.element; return {key:fl.id,label:this.elementLabel(v,cs),color:this.elementInfo(v,cs).color};
             }).filter(x=>x.label);
             const owned=groupCopies>0;
-            let holoArtUrls=null;
-            if(base.image){
-              const hasHost=cs&&cs.imageBaseUrl;
-              holoArtUrls={ primary: hasHost?(cs.imageBaseUrl.replace(/\/+$/,'')+'/'+this.cleanImageFilename(base.image)):base.image, fallback: base.image };
-            }
             return {key,real:true,empty:false,rarityIds:arr.map(x=>x.card.rarityId),
               number:this.cardNumber(base,baseEntry.idx,len),name:this.cardName(base),
               baseRarityName:brr?brr.name:'—',baseRarityAbbr:brr?(brr.abbr||brr.name):'—',baseRarityColor:brr?brr.color:'var(--ink3)',
@@ -2008,18 +2063,7 @@ class Component extends DCLogic {
               missing:!owned,hasDupes:dupeCopies>0,theoLabel:theo!=null?this.fmt(this.t('expectedL'),theo.toFixed(theo<1?2:1)):'',
               artStyle:this.artStyle(displayCard.type,cs),art:this.artNode(displayCard,true,cs),artOpacity:owned?'1':'0.4',
               variants,typeChips,hasTypeChips:typeChips.length>0,
-              onOpen:()=>this.openCollectorCard(base),
-              holoHover:holoHoverKey===key,
-              onHoloEnter:()=>this.hoverHoloTile(key),
-              onHoloLeave:()=>this.unhoverHoloTile(),
-              holoRef:(el)=>{
-                if(el){
-                  if(!this._gridHoloInstance){ this._gridHoloInstance=new HoloCard(el); }
-                  this._gridHoloInstance.renderCard(base,brr,holoFields,holoArtUrls);
-                } else if(this._gridHoloInstance){
-                  this._gridHoloInstance.destroy(); this._gridHoloInstance=null;
-                }
-              }};
+              onOpen:()=>this.openCollectorCard(base)};
           };
           const groupedTiles=order.map(k=>makeTile(groups[k],k));
           const flatTiles=sortedCards.map((c,i)=>makeTile([{card:c,idx:i}],c.id));
@@ -2189,7 +2233,7 @@ class Component extends DCLogic {
           ),
           R('div',{style:{display:'flex',gap:'14px',flexWrap:'wrap'}},
             (this.layoutOf(sys)).filter(fld=>fld.type==='number'||fld.type==='text').map(fld=>R('div',{key:fld.id,style:{flex:'1 1 120px'}},field(
-              R('span',null,R('i',{className:fld.icon,style:{color:fld.color,marginRight:'6px'}}),fld.label),
+              R('span',null,R('i',{className:fld.icon,style:{color:fld.color,marginRight:'6px'}}),this.fieldLabel(fld.label)),
               textInput('stat_'+fld.id, fld.type==='number'?'0':'', fld.type==='number'?'number':'text')
             )))
           ),
@@ -2324,7 +2368,7 @@ class Component extends DCLogic {
           const hasHost=cs&&cs.imageBaseUrl;
           holoArtUrls={ primary: hasHost?(cs.imageBaseUrl.replace(/\/+$/,'')+'/'+this.cleanImageFilename(base.image)):base.image, fallback: base.image };
         }
-        if(holoOn && this._holoInstance){ this._holoInstance.renderCard(base, brr0, holoFields, holoArtUrls); }
+        if(holoOn && this._holoInstance){ this._holoInstance.renderCard(base, brr0, holoFields, holoArtUrls, S.lang); }
         const toggleBtnStyle=(active)=>`flex:1;padding:7px 0;border-radius:6px;border:none;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;background:${active?'var(--accent)':'transparent'};color:${active?'var(--on-accent)':'var(--ink3)'}`;
         const imgPanel=R('div',{style:{width:'240px',flexShrink:0}},
           R('div',{style:{display:'flex',gap:'3px',background:'var(--panel)',border:'1px solid var(--line)',borderRadius:'8px',padding:'3px',marginBottom:'9px'}},
@@ -2333,7 +2377,7 @@ class Component extends DCLogic {
           ),
           holoOn
             ? R('div',{key:'holo-'+base.id,style:{position:'relative'},ref:(el)=>{
-                if(el){ if(!this._holoInstance){ this._holoInstance=new HoloCard(el); this._holoInstance.renderCard(base,brr0,holoFields,holoArtUrls); } }
+                if(el){ if(!this._holoInstance){ this._holoInstance=new HoloCard(el); this._holoInstance.renderCard(base,brr0,holoFields,holoArtUrls,S.lang); } }
                 else if(this._holoInstance){ this._holoInstance.destroy(); this._holoInstance=null; }
               }})
             : R('div',{style:{position:'relative',aspectRatio:'5/7',borderRadius:'14px',overflow:'hidden',background:this.artStyle(base.type,cs),boxShadow:'0 20px 46px rgba(0,0,0,.5)',border:'1px solid var(--line2)'}}, this.artNode(base,true,cs))
