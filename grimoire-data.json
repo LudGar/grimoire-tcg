@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-20T20:23:07.983Z",
+  "exportedAt": "2026-09-22T12:44:53.276Z",
   "systems": [
     {
       "id": "sys-mtao4tlgaoua",
@@ -2172,7 +2172,17 @@
                 "f-mtao4tlggrhz": "승리의 여신: 니케"
               }
             }
-          ]
+          ],
+          "divider": {
+            "bgType": "gradient",
+            "color1": "#5a2632",
+            "color2": "#161116",
+            "image": "",
+            "title": "",
+            "subtitle": "",
+            "textColor": "#f4ece7",
+            "showCardList": true
+          }
         },
         {
           "id": "exp-mtao5g2nroyo",
@@ -4027,7 +4037,17 @@
                 "f-mtao4tlggrhz": "승리의 여신: 니케"
               }
             }
-          ]
+          ],
+          "divider": {
+            "bgType": "gradient",
+            "color1": "#5a2632",
+            "color2": "#161116",
+            "image": "",
+            "title": "",
+            "subtitle": "",
+            "textColor": "#f4ece7",
+            "showCardList": true
+          }
         },
         {
           "id": "exp-mtao869a7u9p",
@@ -6034,7 +6054,17 @@
                 "f-mtao4tlggrhz": "승리의 여신: 니케"
               }
             }
-          ]
+          ],
+          "divider": {
+            "bgType": "gradient",
+            "color1": "#5a2632",
+            "color2": "#161116",
+            "image": "",
+            "title": "",
+            "subtitle": "",
+            "textColor": "#f4ece7",
+            "showCardList": true
+          }
         },
         {
           "id": "exp-mtao8qcbp831",
@@ -8022,7 +8052,17 @@
                 "f-mtao4tlggrhz": "에픽세븐"
               }
             }
-          ]
+          ],
+          "divider": {
+            "bgType": "gradient",
+            "color1": "#5a2632",
+            "color2": "#161116",
+            "image": "",
+            "title": "",
+            "subtitle": "",
+            "textColor": "#f4ece7",
+            "showCardList": true
+          }
         },
         {
           "id": "exp-mtao99wlrttu",
@@ -10029,7 +10069,17 @@
                 "f-mtao4tlggrhz": "이터널 리턴"
               }
             }
-          ]
+          ],
+          "divider": {
+            "bgType": "gradient",
+            "color1": "#5a2632",
+            "color2": "#161116",
+            "image": "",
+            "title": "",
+            "subtitle": "",
+            "textColor": "#f4ece7",
+            "showCardList": true
+          }
         },
         {
           "id": "exp-mtao9s7p9985",
@@ -12055,7 +12105,17 @@
                 "f-mtao4tlggrhz": "브라운더스트2"
               }
             }
-          ]
+          ],
+          "divider": {
+            "bgType": "gradient",
+            "color1": "#5a2632",
+            "color2": "#161116",
+            "image": "",
+            "title": "",
+            "subtitle": "",
+            "textColor": "#f4ece7",
+            "showCardList": true
+          }
         },
         {
           "id": "exp-mtaoaehnl368",
@@ -14157,7 +14217,17 @@
                 "f-mtao4tlggrhz": "스텔라 블레이드"
               }
             }
-          ]
+          ],
+          "divider": {
+            "bgType": "gradient",
+            "color1": "#5a2632",
+            "color2": "#161116",
+            "image": "",
+            "title": "",
+            "subtitle": "",
+            "textColor": "#f4ece7",
+            "showCardList": true
+          }
         },
         {
           "id": "exp-mtaob75peu29",
@@ -16354,7 +16424,17 @@
                 "f-mtao4tlggrhz": "승리의 여신: 니케"
               }
             }
-          ]
+          ],
+          "divider": {
+            "bgType": "gradient",
+            "color1": "#5a2632",
+            "color2": "#161116",
+            "image": "",
+            "title": "",
+            "subtitle": "",
+            "textColor": "#f4ece7",
+            "showCardList": true
+          }
         },
         {
           "id": "exp-mtuohsv6eiw0",
@@ -17981,7 +18061,17 @@
                 "f-mtao4tlggrhz": "승리의 여신: 니케"
               }
             }
-          ]
+          ],
+          "divider": {
+            "bgType": "gradient",
+            "color1": "#5a2632",
+            "color2": "#161116",
+            "image": "",
+            "title": "",
+            "subtitle": "",
+            "textColor": "#f4ece7",
+            "showCardList": true
+          }
         },
         {
           "id": "exp-mtuopg0hl906",
@@ -19798,7 +19888,17 @@
                 "f-mtao4tlggrhz": "이터널 리턴"
               }
             }
-          ]
+          ],
+          "divider": {
+            "bgType": "gradient",
+            "color1": "#5a2632",
+            "color2": "#161116",
+            "image": "",
+            "title": "",
+            "subtitle": "",
+            "textColor": "#f4ece7",
+            "showCardList": true
+          }
         },
         {
           "id": "exp-mtuorwvso944",
@@ -22736,7 +22836,17 @@
                 "f-mtao4tlggrhz": "승리의 여신: 니케"
               }
             }
-          ]
+          ],
+          "divider": {
+            "bgType": "gradient",
+            "color1": "#5a2632",
+            "color2": "#161116",
+            "image": "",
+            "title": "",
+            "subtitle": "",
+            "textColor": "#f4ece7",
+            "showCardList": true
+          }
         }
       ],
       "cover": {
