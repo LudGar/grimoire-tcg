@@ -1652,8 +1652,9 @@ class Component extends DCLogic {
         ctx.fillText(subtitle.toUpperCase(), W/2, y); ctx.globalAlpha=1;
       }
       if(showList){
-        const cardList=exp.cards.map((c,i)=>({
-          number:this.cardNumber(c,i,exp.cards.length), name:this.cardName(c),
+        const uniqueCards=this.uniqueCardsOf(exp.cards,sys);
+        const cardList=uniqueCards.map((c,i)=>({
+          number:this.cardNumber(c,i,uniqueCards.length), name:this.cardName(c),
           barColor:this.elementInfo(c.element,sys).color, elId:c.element
         }));
         const [colA,colB]=this.splitCardListColumns(cardList);
@@ -1790,6 +1791,21 @@ class Component extends DCLogic {
     if(type==='color') return d.color1||'#5a2632';
     return `linear-gradient(155deg,${d.color1||'#5a2632'},${d.color2||'#161116'})`;
   }
+  // A checklist lists card SLOTS, not printings - parallel/foil variants share a base
+  // number (baseKeyOf) with the card they're a variant of, so collapse each group down to
+  // one representative, preferring the non-parallel base printing when one exists (same
+  // precedence the Grid/Binder tile stacking uses for its default face).
+  uniqueCardsOf(cards, sys){
+    const seen={}; const order=[];
+    (cards||[]).forEach(c=>{
+      const k=this.baseKeyOf(c);
+      const isPar=Component.isParallelRarity(c.rarityId,sys);
+      const ex=seen[k];
+      if(!ex){ seen[k]={card:c,isPar}; order.push(seen[k]); }
+      else if(ex.isPar && !isPar){ ex.card=c; ex.isPar=false; }
+    });
+    return order.map(x=>x.card);
+  }
   // Groups consecutive same-element cards into runs, then fills column A up to half the
   // total row count using whole runs - only the one run that straddles the halfway point
   // gets split - so each column stays a clean stack of intact element blocks wherever
@@ -1820,10 +1836,11 @@ class Component extends DCLogic {
     const title=(d.title||'').trim()||fallbackTitle||'';
     const subtitle=(d.subtitle||'').trim()||fallbackSub||'';
     const showList=!!d.showCardList && cards && cards.length;
-    const cardList=showList ? cards.map((c,i)=>({
-      id:c.id, number:this.cardNumber(c,i,cards.length), name:this.cardName(c),
+    const uniqueCards=showList ? this.uniqueCardsOf(cards,sys) : [];
+    const cardList=uniqueCards.map((c,i)=>({
+      id:c.id, number:this.cardNumber(c,i,uniqueCards.length), name:this.cardName(c),
       barColor:this.elementInfo(c.element,sys).color, elId:c.element
-    })) : [];
+    }));
     const hasCardList=cardList.length>0;
     const [colA,colB]=hasCardList?this.splitCardListColumns(cardList):[[],[]];
     return {bg:this.coverBg(d),title,subtitle,hasSubtitle:!!subtitle,textColor:d.textColor||'#f4ece7',
@@ -2449,10 +2466,11 @@ class Component extends DCLogic {
         const previewTitle=(f.title||'').trim()||targetName;
         const previewSub=(f.subtitle||'').trim();
         const showCardList = !isCover && !!f.showCardList;
-        const previewCardListFull = (showCardList && exp) ? exp.cards.map((c,i)=>({
-          id:c.id, number:this.cardNumber(c,i,exp.cards.length), name:this.cardName(c),
+        const previewUniqueCards = (showCardList && exp) ? this.uniqueCardsOf(exp.cards,sys) : [];
+        const previewCardListFull = previewUniqueCards.map((c,i)=>({
+          id:c.id, number:this.cardNumber(c,i,previewUniqueCards.length), name:this.cardName(c),
           barColor:this.elementInfo(c.element,sys).color, elId:c.element
-        })) : [];
+        }));
         const [previewColA,previewColB] = previewCardListFull.length ? this.splitCardListColumns(previewCardListFull) : [[],[]];
         const miniTable=(cols)=>R('div',{style:{flex:1,minWidth:0,borderRadius:'6px',overflow:'hidden'}},
           R('div',{style:{display:'flex',background:'rgba(0,0,0,.35)'}},
