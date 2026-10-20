@@ -205,7 +205,8 @@ def main():
                         cache[key] = None
                     time.sleep(args.delay)
                 if cache[key] is not None:
-                    cards_out[c['id']] = cache[key]
+                    if cache[key]['count']:
+                        cards_out[c['id']] = cache[key]  # only cards with listings are published
                 elif c['id'] in previous:
                     cards_out[c['id']] = previous[c['id']]  # keep the last good price on a failed lookup
 
@@ -220,8 +221,7 @@ def main():
         'cards': cards_out,
     }
     out_path.write_text(json.dumps(out, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
-    priced = sum(1 for v in cards_out.values() if v.get('count'))
-    print(f'Wrote {out_path.name}: {priced}/{len(cards_out)} cards with listings, {len(cache)} searches, {failures} failed.')
+    print(f'Wrote {out_path.name}: {len(cards_out)} cards with listings, {len(cache)} searches, {failures} failed.')
 
 
 if __name__ == '__main__':
