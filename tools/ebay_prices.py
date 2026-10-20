@@ -72,6 +72,11 @@ def search(token, query, marketplace, limit, category):
                 time.sleep(2 ** (attempt + 1))
                 continue
             raise
+        except (urllib.error.URLError, TimeoutError):
+            if attempt < 3:  # flaky TLS handshakes / dropped connections
+                time.sleep(2 ** (attempt + 1))
+                continue
+            raise
     return []
 
 
@@ -175,7 +180,8 @@ def main():
 
     out_path = Path(args.out)
     previous = json.loads(out_path.read_text(encoding='utf-8')).get('cards', {}) if out_path.exists() else {}
-    cards_out = {}
+    # a partial run (--expansions) only refreshes those sets and keeps everything else
+    cards_out = dict(previous) if wanted_exp else {}
     cache = {}  # same number + rarity (e.g. two SPL arts) -> one API call
     failures = 0
 
@@ -222,6 +228,8 @@ def main():
                 if cache[key] is not None:
                     if cache[key]['count']:
                         cards_out[c['id']] = cache[key]  # only cards with listings are published
+                    else:
+                        cards_out.pop(c['id'], None)  # listings gone since a previous run
                 elif c['id'] in previous:
                     cards_out[c['id']] = previous[c['id']]  # keep the last good price on a failed lookup
 
