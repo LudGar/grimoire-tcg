@@ -18,6 +18,7 @@ Designed for collectors who want full control over their game definitions, expan
 - **Multilingual** — Interface available in **English**, **Korean**, and **German** (card content can be scraped/translated too).
 - **Import / Export** — Export your collection progress as JSON, or import it on another device. Expansion card lists can also be exported/imported independently.
 - **Image Hosting** — Point expansions to a custom image base URL (e.g., GitHub Pages) with automatic fallback to original sources. Includes a Python helper script to batch-download card art.
+- **eBay Prices** — Card detail view shows the median asking price of active eBay listings for each variant (Leader and higher rarities; Common/Rare skipped). See [eBay Prices](#ebay-prices).
 - **Static-First** — Runs entirely in the browser with `localStorage` persistence. Optionally backed by a lightweight Python server (`server.py` + SQLite) for local development.
 
 ---
@@ -28,5 +29,14 @@ Designed for collectors who want full control over their game definitions, expan
 - **Styling:** Inline CSS via design tokens (CSS custom properties) — no build step required.
 - **State:** `localStorage` (primary on GitHub Pages) with optional `fetch` to `/api/state` for local server usage.
 - **Data:** Card database is loaded from `grimoire-data.json` (published from the Builder and committed to the repo).
+
+---
+
+## eBay Prices
+
+The card detail view shows the median asking price of active eBay Buy It Now listings for each
+variant (Leader and higher rarities; Common/Rare are skipped). Prices come from
+`grimoire-prices.json`, which is generated locally with the eBay API and committed as plain data -
+no API keys or fetch tooling live in this repo. Cards without matching listings show no price.
 
 ---
