@@ -34,23 +34,9 @@ Designed for collectors who want full control over their game definitions, expan
 
 ## eBay Prices
 
-The eBay API needs a client secret and blocks browser requests, so prices are fetched offline by
-`tools/ebay_prices.py` and published as `grimoire-prices.json`, which the page loads like the card database.
-The file is optional; without it, cards show no price.
-
-```bash
-export EBAY_CLIENT_ID=...       # App ID from developer.ebay.com (production keyset)
-export EBAY_CLIENT_SECRET=...   # Cert ID
-python3 tools/ebay_prices.py --dry-run          # list the searches it would run
-python3 tools/ebay_prices.py                    # fetch and write grimoire-prices.json
-python3 tools/ebay_prices.py --expansions BT08 --marketplace EBAY_DE
-```
-
-- Searches `Nivel Arena <number> <rarity>` (e.g. `Nivel Arena BT01-001 SPL`); change it with `--game` / `--template`.
-- Skips `C` and `R` by default (`--exclude C R`); add `P` to also skip promos.
-- Listings are filtered by title: they must contain the card number; parallel rarities (SPL, SPR, ...) and promos must name their rarity, and listings naming another variant of the same number (e.g. SPL or P for an L) are dropped. Lots, graded (PSA/BGS/CGC), signed and tournament-prize copies are dropped too.
-- Only cards with at least one matching listing are written to the file, and only those show a price on the page.
-- Uses the Browse API, so prices are current **Buy It Now asking prices**, not sold prices.
-- `.github/workflows/ebay-prices.yml` refreshes the file weekly (or on demand) once the `EBAY_CLIENT_ID` / `EBAY_CLIENT_SECRET` repository secrets are set.
+The card detail view shows the median asking price of active eBay Buy It Now listings for each
+variant (Leader and higher rarities; Common/Rare are skipped). Prices come from
+`grimoire-prices.json`, which is generated locally with the eBay API and committed as plain data -
+no API keys or fetch tooling live in this repo. Cards without matching listings show no price.
 
 ---
