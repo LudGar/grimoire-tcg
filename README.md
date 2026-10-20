@@ -18,7 +18,7 @@ Designed for collectors who want full control over their game definitions, expan
 - **Multilingual** — Interface available in **English**, **Korean**, and **German** (card content can be scraped/translated too).
 - **Import / Export** — Export your collection progress as JSON, or import it on another device. Expansion card lists can also be exported/imported independently.
 - **Image Hosting** — Point expansions to a custom image base URL (e.g., GitHub Pages) with automatic fallback to original sources. Includes a Python helper script to batch-download card art.
-- **eBay Prices** — Card detail view shows the median asking price of active eBay listings for each variant (Leader and higher rarities; Common/Rare skipped). See [eBay Prices](#ebay-prices).
+- **eBay Prices & Collection Value** — Card tiles and the detail view show the median asking price of active eBay listings for every printing; the stats bar shows what your copies of the current expansion are worth, and Home shows your total collection value, value per expansion and a value-over-time chart. See [eBay Prices](#ebay-prices).
 - **Static-First** — Runs entirely in the browser with `localStorage` persistence. Optionally backed by a lightweight Python server (`server.py` + SQLite) for local development.
 
 ---
@@ -34,9 +34,15 @@ Designed for collectors who want full control over their game definitions, expan
 
 ## eBay Prices
 
-The card detail view shows the median asking price of active eBay Buy It Now listings for each
-variant (Leader and higher rarities; Common/Rare are skipped). Prices come from
-`grimoire-prices.json`, which is generated locally with the eBay API and committed as plain data -
-no API keys or fetch tooling live in this repo. Cards without matching listings show no price.
+Card tiles (hover a variant tick or the card) and the card detail view show the median asking price
+of active eBay Buy It Now listings for each printing. Your collection's value - owned copies x that
+median, per expansion and in total - is shown in the expansion stats bar and on Home, along with a
+value-over-time chart.
+
+Prices come from `grimoire-prices.json`, which is generated locally with the eBay API and committed
+as plain data - no API keys or fetch tooling live in this repo. Every price update appends a dated
+point to each card's history (`h`), which is what the timeline is drawn from, so it grows with each
+refresh. Cards without matching listings show no price and are counted as "without listings" rather
+than valued at zero. Your owned cards never leave your browser; values are computed on the page.
 
 ---
