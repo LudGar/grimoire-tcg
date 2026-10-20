@@ -39,6 +39,9 @@ SEARCH_URL = 'https://api.ebay.com/buy/browse/v1/item_summary/search'
 SCOPE = 'https://api.ebay.com/oauth/api_scope'
 # Words in a listing title that mean it isn't a single copy of one card.
 BUNDLE_WORDS = re.compile(r'\b(lot|bundle|set of|complete set|booster box|sealed|display|proxy|custom|playmat|sleeve)\b', re.I)
+# One-off copies (graded, signed, tournament prizes) sell for many times a normal copy and would
+# swamp the median for the few cards that have them.
+ONE_OFF_WORDS = re.compile(r'\b(psa|bgs|cgc|graded|gem mint|signed|autograph(ed)?|sign card|champion|qualifier|gym league|prize|kcs)\b', re.I)
 
 
 def get_token(client_id, client_secret):
@@ -81,19 +84,29 @@ def number_regex(number):
     return re.compile(rf'\b{prefix}0*{setno}[\s\-_]*0*{cardno}\b', re.I)
 
 
-def title_matches(title, number_re, abbr, parallel, other_abbrs):
+def rarity_tags(r):
+    """Title words that identify a tagged rarity: parallels (SPL, SPR, SSL, ...) by their
+    abbreviation, promos also by the word PROMO. Base rarities (L, SR, UR) aren't tagged -
+    sellers rarely write them - so they get None."""
+    abbr = (r.get('abbr') or '').upper()
+    if 'promo' in (r.get('name') or '').lower():
+        return {abbr, 'PROMO'}
+    return {abbr} if r.get('parallel') else None
+
+
+def title_matches(title, number_re, own_tags, other_tags):
     """Keep listings that name this card number and, as far as a title can tell, this rarity.
 
-    A parallel rarity (SPL, SPR, SSL, ...) must appear in the title as its own word. A base
-    rarity (L, SR, UR) rarely does, so instead reject titles that name one of its parallels -
-    otherwise a BT01-001 L would get priced with the much pricier BT01-001 SPL listings.
+    A tagged rarity must name one of its tags as its own word. Any rarity rejects titles naming
+    another tagged rarity printed under the same number - otherwise a BT01-001 L would get
+    priced with the much pricier BT01-001 SPL listings, or an SPL with its promo version.
     """
-    if not number_re.search(title) or BUNDLE_WORDS.search(title):
+    if not number_re.search(title) or BUNDLE_WORDS.search(title) or ONE_OFF_WORDS.search(title):
         return False
     words = set(re.findall(r'[A-Za-z]+', title.upper()))
-    if parallel:
-        return abbr.upper() in words
-    return not any(o.upper() in words for o in other_abbrs)
+    if words & other_tags:
+        return False
+    return bool(words & own_tags) if own_tags else True
 
 
 def summarize(items, query, marketplace):
@@ -168,16 +181,17 @@ def main():
 
     for sysd in data.get('systems', []):
         rarities = {r['id']: r for r in sysd.get('rarities', [])}
-        parallel_abbrs = {r.get('abbr', '') for r in rarities.values() if r.get('parallel')}
+        # tagged rarities each card number is printed in, across all expansions (promos of a
+        # BT01 card live in the promo expansion), so a base rarity can reject their listings
+        tags_by_number = {}
+        for exp in sysd.get('expansions', []):
+            for c in exp.get('cards', []):
+                r = rarities.get(c.get('rarityId'))
+                if r and rarity_tags(r):
+                    tags_by_number.setdefault(c.get('number'), set()).update(rarity_tags(r))
         for exp in sysd.get('expansions', []):
             if wanted_exp and (exp.get('abbreviation') or '').upper() not in wanted_exp:
                 continue
-            # rarities each card number appears in, so a base rarity can reject its parallels' listings
-            abbrs_by_number = {}
-            for c in exp.get('cards', []):
-                r = rarities.get(c.get('rarityId'))
-                if r:
-                    abbrs_by_number.setdefault(c.get('number'), set()).add(r.get('abbr', ''))
             for c in exp.get('cards', []):
                 r = rarities.get(c.get('rarityId'))
                 abbr = (r or {}).get('abbr', '')
@@ -192,9 +206,10 @@ def main():
                 if key not in cache:
                     try:
                         items = search(token, query, args.marketplace, args.limit, args.category)
-                        parallel_others = (abbrs_by_number.get(c['number'], set()) - {abbr}) & parallel_abbrs
+                        own = rarity_tags(r)
+                        others = tags_by_number.get(c['number'], set()) - (own or set())
                         nre = number_regex(c['number'])
-                        items = [it for it in items if title_matches(it.get('title', ''), nre, abbr, r.get('parallel'), parallel_others)]
+                        items = [it for it in items if title_matches(it.get('title', ''), nre, own, others)]
                         cache[key] = summarize(items, query, args.marketplace)
                         s = cache[key]
                         print(f'{c["number"]:9} {abbr:4} {s["count"]:3} listings'

@@ -48,7 +48,8 @@ python3 tools/ebay_prices.py --expansions BT08 --marketplace EBAY_DE
 
 - Searches `Nivel Arena <number> <rarity>` (e.g. `Nivel Arena BT01-001 SPL`); change it with `--game` / `--template`.
 - Skips `C` and `R` by default (`--exclude C R`); add `P` to also skip promos.
-- Listings are filtered by title: they must contain the card number; parallel rarities (SPL, SPR, ...) must name their rarity, and base rarities drop listings naming one of their parallels. Lots/bundles are dropped.
+- Listings are filtered by title: they must contain the card number; parallel rarities (SPL, SPR, ...) and promos must name their rarity, and listings naming another variant of the same number (e.g. SPL or P for an L) are dropped. Lots, graded (PSA/BGS/CGC), signed and tournament-prize copies are dropped too.
+- Only cards with at least one matching listing are written to the file, and only those show a price on the page.
 - Uses the Browse API, so prices are current **Buy It Now asking prices**, not sold prices.
 - `.github/workflows/ebay-prices.yml` refreshes the file weekly (or on demand) once the `EBAY_CLIENT_ID` / `EBAY_CLIENT_SECRET` repository secrets are set.
 
