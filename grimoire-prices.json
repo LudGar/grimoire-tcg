@@ -1,8 +1,9 @@
 {
  "version": 1,
- "fetchedAt": "2026-10-20T14:35:19+00:00",
+ "fetchedAt": "2026-10-29T22:14:54+00:00",
  "snapshots": [
-  "2026-10-20"
+  "2026-10-20",
+  "2026-10-29"
  ],
  "cards": {
   "c-mtao4tlg85ph": {
@@ -14,6 +15,10 @@
    "h": [
     [
      "2026-10-20",
+     16.99
+    ],
+    [
+     "2026-10-29",
      16.99
     ]
    ]
@@ -28,6 +33,10 @@
     [
      "2026-10-20",
      308.5
+    ],
+    [
+     "2026-10-29",
+     308.5
     ]
    ]
   },
@@ -40,6 +49,10 @@
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -54,18 +67,26 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
   "c-mtao4tlgwhyc": {
    "count": 3,
    "currency": "USD",
-   "min": 2.25,
+   "min": 2.5,
    "median": 2.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-004+R",
    "h": [
     [
      "2026-10-20",
+     2.5
+    ],
+    [
+     "2026-10-29",
      2.5
     ]
    ]
@@ -80,32 +101,44 @@
     [
      "2026-10-20",
      9.25
+    ],
+    [
+     "2026-10-29",
+     9.25
     ]
    ]
   },
   "c-mtao4tlg6hu3": {
    "count": 7,
    "currency": "USD",
-   "min": 9.85,
+   "min": 9.86,
    "median": 15.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-006+SR",
    "h": [
     [
      "2026-10-20",
      15.0
+    ],
+    [
+     "2026-10-29",
+     15.0
     ]
    ]
   },
   "c-mtao4tlgufne": {
-   "count": 4,
+   "count": 3,
    "currency": "USD",
-   "min": 63.0,
-   "median": 95.0,
+   "min": 90.0,
+   "median": 100.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-006+SPR",
    "h": [
     [
      "2026-10-20",
      95.0
+    ],
+    [
+     "2026-10-29",
+     100.0
     ]
    ]
   },
@@ -118,6 +151,10 @@
    "h": [
     [
      "2026-10-20",
+     2.5
+    ],
+    [
+     "2026-10-29",
      2.5
     ]
    ]
@@ -132,6 +169,10 @@
     [
      "2026-10-20",
      3.95
+    ],
+    [
+     "2026-10-29",
+     3.95
     ]
    ]
   },
@@ -144,6 +185,10 @@
    "h": [
     [
      "2026-10-20",
+     2.95
+    ],
+    [
+     "2026-10-29",
      2.95
     ]
    ]
@@ -158,19 +203,27 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
   "c-mtao4tlga4d8": {
-   "count": 4,
+   "count": 5,
    "currency": "USD",
    "min": 2.5,
-   "median": 3.94,
+   "median": 3.95,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-011+R",
    "h": [
     [
      "2026-10-20",
      3.94
+    ],
+    [
+     "2026-10-29",
+     3.95
     ]
    ]
   },
@@ -183,6 +236,10 @@
    "h": [
     [
      "2026-10-20",
+     2.48
+    ],
+    [
+     "2026-10-29",
      2.48
     ]
    ]
@@ -197,6 +254,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -210,32 +271,44 @@
     [
      "2026-10-20",
      9.95
+    ],
+    [
+     "2026-10-29",
+     9.95
     ]
    ]
   },
   "c-mtao4tlglleg": {
-   "count": 8,
+   "count": 9,
    "currency": "USD",
    "min": 32.0,
-   "median": 79.95,
+   "median": 70.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-014+SPR",
    "h": [
     [
      "2026-10-20",
      79.95
+    ],
+    [
+     "2026-10-29",
+     70.0
     ]
    ]
   },
   "c-mtao4tlgds70": {
    "count": 7,
    "currency": "USD",
-   "min": 2.22,
-   "median": 2.95,
+   "min": 2.47,
+   "median": 3.15,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-015+R",
    "h": [
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     3.15
     ]
    ]
   },
@@ -249,71 +322,95 @@
     [
      "2026-10-20",
      1.98
+    ],
+    [
+     "2026-10-29",
+     1.98
     ]
    ]
   },
   "c-mtao4tlg9e92": {
-   "count": 7,
+   "count": 8,
    "currency": "USD",
-   "min": 5.61,
-   "median": 9.85,
+   "min": 5.58,
+   "median": 10.47,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-017+SR",
    "h": [
     [
      "2026-10-20",
      9.85
+    ],
+    [
+     "2026-10-29",
+     10.47
     ]
    ]
   },
   "c-mtao4tlgguks": {
-   "count": 6,
+   "count": 7,
    "currency": "USD",
    "min": 35.0,
-   "median": 47.83,
+   "median": 44.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-017+SPR",
    "h": [
     [
      "2026-10-20",
      47.83
+    ],
+    [
+     "2026-10-29",
+     44.0
     ]
    ]
   },
   "c-mtao4tlggzmi": {
    "count": 4,
    "currency": "USD",
-   "min": 2.22,
+   "min": 2.47,
    "median": 2.75,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-018+R",
    "h": [
     [
      "2026-10-20",
      2.75
+    ],
+    [
+     "2026-10-29",
+     2.75
     ]
    ]
   },
   "c-mtao4tlgnov9": {
-   "count": 13,
+   "count": 16,
    "currency": "USD",
-   "min": 10.0,
-   "median": 20.25,
+   "min": 4.5,
+   "median": 22.31,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-019+UR",
    "h": [
     [
      "2026-10-20",
      20.25
+    ],
+    [
+     "2026-10-29",
+     22.31
     ]
    ]
   },
   "c-mtao4tlgd556": {
-   "count": 12,
+   "count": 13,
    "currency": "USD",
-   "min": 28.03,
-   "median": 55.0,
+   "min": 27.89,
+   "median": 50.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-019+SPR",
    "h": [
     [
      "2026-10-20",
      55.0
+    ],
+    [
+     "2026-10-29",
+     50.0
     ]
    ]
   },
@@ -326,6 +423,10 @@
    "h": [
     [
      "2026-10-20",
+     3.45
+    ],
+    [
+     "2026-10-29",
      3.45
     ]
    ]
@@ -340,6 +441,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -352,6 +457,10 @@
    "h": [
     [
      "2026-10-20",
+     3.0
+    ],
+    [
+     "2026-10-29",
      3.0
     ]
    ]
@@ -366,19 +475,27 @@
     [
      "2026-10-20",
      3.5
+    ],
+    [
+     "2026-10-29",
+     3.5
     ]
    ]
   },
   "c-mtao4tlgc9i0": {
-   "count": 5,
+   "count": 6,
    "currency": "USD",
-   "min": 2.22,
-   "median": 2.95,
+   "min": 2.47,
+   "median": 3.95,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-024+R",
    "h": [
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     3.95
     ]
    ]
   },
@@ -391,6 +508,10 @@
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -405,6 +526,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -417,6 +542,10 @@
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -431,6 +560,10 @@
     [
      "2026-10-20",
      8.54
+    ],
+    [
+     "2026-10-29",
+     8.54
     ]
    ]
   },
@@ -443,6 +576,10 @@
    "h": [
     [
      "2026-10-20",
+     128.99
+    ],
+    [
+     "2026-10-29",
      128.99
     ]
    ]
@@ -457,6 +594,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -470,19 +611,27 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
   "c-mtao4tlges9d": {
    "count": 2,
    "currency": "USD",
-   "min": 1.13,
-   "median": 1.56,
+   "min": 1.25,
+   "median": 1.62,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-031+C",
    "h": [
     [
      "2026-10-20",
      1.56
+    ],
+    [
+     "2026-10-29",
+     1.62
     ]
    ]
   },
@@ -496,58 +645,78 @@
     [
      "2026-10-20",
      1.98
+    ],
+    [
+     "2026-10-29",
+     1.98
     ]
    ]
   },
   "c-mtao4tlgtha0": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
    "min": 2.5,
-   "median": 3.73,
+   "median": 4.95,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-033+R",
    "h": [
     [
      "2026-10-20",
      3.73
+    ],
+    [
+     "2026-10-29",
+     4.95
     ]
    ]
   },
   "c-mtao4tlgvbtc": {
-   "count": 8,
+   "count": 9,
    "currency": "USD",
-   "min": 6.12,
-   "median": 13.08,
+   "min": 5.0,
+   "median": 11.15,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-034+SR",
    "h": [
     [
      "2026-10-20",
      13.08
+    ],
+    [
+     "2026-10-29",
+     11.15
     ]
    ]
   },
   "c-mtao4tlgo3z9": {
-   "count": 11,
+   "count": 10,
    "currency": "USD",
    "min": 19.03,
-   "median": 31.0,
+   "median": 31.25,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-034+SPR",
    "h": [
     [
      "2026-10-20",
      31.0
+    ],
+    [
+     "2026-10-29",
+     31.25
     ]
    ]
   },
   "c-mtao4tlgkqb1": {
    "count": 2,
    "currency": "USD",
-   "min": 1.13,
-   "median": 1.56,
+   "min": 1.25,
+   "median": 1.62,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-035+C",
    "h": [
     [
      "2026-10-20",
      1.56
+    ],
+    [
+     "2026-10-29",
+     1.62
     ]
    ]
   },
@@ -561,97 +730,129 @@
     [
      "2026-10-20",
      2.5
+    ],
+    [
+     "2026-10-29",
+     2.5
     ]
    ]
   },
   "c-mtao4tlgo34t": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
-   "min": 1.94,
-   "median": 2.5,
+   "min": 2.15,
+   "median": 3.73,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-037+R",
    "h": [
     [
      "2026-10-20",
      2.5
+    ],
+    [
+     "2026-10-29",
+     3.73
     ]
    ]
   },
   "c-mtao4tlge84r": {
    "count": 4,
    "currency": "USD",
-   "min": 1.21,
+   "min": 1.35,
    "median": 2.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-038+C",
    "h": [
     [
      "2026-10-20",
      2.5
+    ],
+    [
+     "2026-10-29",
+     2.5
     ]
    ]
   },
   "c-mtao4tlgo9w6": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
    "min": 2.5,
-   "median": 2.99,
+   "median": 3.97,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-039+R",
    "h": [
     [
      "2026-10-20",
      2.99
+    ],
+    [
+     "2026-10-29",
+     3.97
     ]
    ]
   },
   "c-mtao4tlg78xd": {
-   "count": 11,
+   "count": 12,
    "currency": "USD",
    "min": 9.95,
-   "median": 14.99,
+   "median": 14.75,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-040+SR",
    "h": [
     [
      "2026-10-20",
      14.99
+    ],
+    [
+     "2026-10-29",
+     14.75
     ]
    ]
   },
   "c-mtao4tlgpnhl": {
-   "count": 7,
+   "count": 6,
    "currency": "USD",
-   "min": 26.61,
-   "median": 50.0,
+   "min": 26.65,
+   "median": 41.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-040+SPR",
    "h": [
     [
      "2026-10-20",
      50.0
+    ],
+    [
+     "2026-10-29",
+     41.0
     ]
    ]
   },
   "c-mtao4tlg1sqs": {
    "count": 2,
    "currency": "USD",
-   "min": 1.18,
-   "median": 1.59,
+   "min": 1.31,
+   "median": 1.66,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-041+C",
    "h": [
     [
      "2026-10-20",
      1.59
+    ],
+    [
+     "2026-10-29",
+     1.66
     ]
    ]
   },
   "c-mtao4tlgqkyp": {
-   "count": 5,
+   "count": 6,
    "currency": "USD",
    "min": 2.5,
-   "median": 2.99,
+   "median": 3.34,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-042+R",
    "h": [
     [
      "2026-10-20",
      2.99
+    ],
+    [
+     "2026-10-29",
+     3.34
     ]
    ]
   },
@@ -659,37 +860,49 @@
    "count": 6,
    "currency": "USD",
    "min": 2.0,
-   "median": 2.91,
+   "median": 3.07,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-043+R",
    "h": [
     [
      "2026-10-20",
      2.91
+    ],
+    [
+     "2026-10-29",
+     3.07
     ]
    ]
   },
   "c-mtao4tlg91vg": {
-   "count": 16,
+   "count": 17,
    "currency": "USD",
-   "min": 1.94,
-   "median": 6.5,
+   "min": 2.15,
+   "median": 6.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-044+SR",
    "h": [
     [
      "2026-10-20",
      6.5
+    ],
+    [
+     "2026-10-29",
+     6.0
     ]
    ]
   },
   "c-mtao4tlgzybk": {
    "count": 6,
    "currency": "USD",
-   "min": 19.03,
+   "min": 21.15,
    "median": 35.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-044+SPR",
    "h": [
     [
      "2026-10-20",
+     35.5
+    ],
+    [
+     "2026-10-29",
      35.5
     ]
    ]
@@ -704,6 +917,10 @@
     [
      "2026-10-20",
      2.98
+    ],
+    [
+     "2026-10-29",
+     2.98
     ]
    ]
   },
@@ -717,32 +934,44 @@
     [
      "2026-10-20",
      15.0
+    ],
+    [
+     "2026-10-29",
+     15.0
     ]
    ]
   },
   "c-mtao4tlg8wgj": {
-   "count": 6,
+   "count": 7,
    "currency": "USD",
-   "min": 43.99,
-   "median": 112.96,
+   "min": 35.0,
+   "median": 70.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-046+SPR",
    "h": [
     [
      "2026-10-20",
      112.96
+    ],
+    [
+     "2026-10-29",
+     70.0
     ]
    ]
   },
   "c-mtao4tlgk0cf": {
    "count": 2,
    "currency": "USD",
-   "min": 1.03,
-   "median": 1.52,
+   "min": 1.15,
+   "median": 1.57,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-047+C",
    "h": [
     [
      "2026-10-20",
      1.52
+    ],
+    [
+     "2026-10-29",
+     1.57
     ]
    ]
   },
@@ -755,6 +984,10 @@
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -769,6 +1002,10 @@
     [
      "2026-10-20",
      2.5
+    ],
+    [
+     "2026-10-29",
+     2.5
     ]
    ]
   },
@@ -782,18 +1019,26 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
   "c-mtao4tlg078h": {
    "count": 5,
    "currency": "USD",
-   "min": 2.22,
+   "min": 2.47,
    "median": 2.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-051+R",
    "h": [
     [
      "2026-10-20",
+     2.99
+    ],
+    [
+     "2026-10-29",
      2.99
     ]
    ]
@@ -808,6 +1053,10 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
@@ -820,6 +1069,10 @@
    "h": [
     [
      "2026-10-20",
+     1.56
+    ],
+    [
+     "2026-10-29",
      1.56
     ]
    ]
@@ -834,6 +1087,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -841,12 +1098,16 @@
    "count": 4,
    "currency": "USD",
    "min": 13.5,
-   "median": 17.2,
+   "median": 17.22,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-055+L",
    "h": [
     [
      "2026-10-20",
      17.2
+    ],
+    [
+     "2026-10-29",
+     17.22
     ]
    ]
   },
@@ -859,6 +1120,10 @@
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -873,19 +1138,27 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
   "c-mtao4tlgvieu": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
    "min": 2.5,
-   "median": 3.73,
+   "median": 4.95,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-058+R",
    "h": [
     [
      "2026-10-20",
      3.73
+    ],
+    [
+     "2026-10-29",
+     4.95
     ]
    ]
   },
@@ -898,6 +1171,10 @@
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -912,32 +1189,44 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
   "c-mtao4tlgvvc5": {
-   "count": 9,
+   "count": 10,
    "currency": "USD",
    "min": 6.0,
-   "median": 14.99,
+   "median": 14.49,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-061+SR",
    "h": [
     [
      "2026-10-20",
      14.99
+    ],
+    [
+     "2026-10-29",
+     14.49
     ]
    ]
   },
   "c-mtao4tlgf8gl": {
-   "count": 4,
+   "count": 5,
    "currency": "USD",
    "min": 34.0,
-   "median": 116.5,
+   "median": 188.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-061+SPR",
    "h": [
     [
      "2026-10-20",
      116.5
+    ],
+    [
+     "2026-10-29",
+     188.0
     ]
    ]
   },
@@ -950,6 +1239,10 @@
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -964,19 +1257,27 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
   "c-mtao4tlgyvm6": {
-   "count": 1,
+   "count": 2,
    "currency": "USD",
    "min": 2.5,
-   "median": 2.5,
+   "median": 3.25,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-064+R",
    "h": [
     [
      "2026-10-20",
      2.5
+    ],
+    [
+     "2026-10-29",
+     3.25
     ]
    ]
   },
@@ -989,6 +1290,10 @@
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -1003,6 +1308,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -1015,6 +1324,10 @@
    "h": [
     [
      "2026-10-20",
+     2.5
+    ],
+    [
+     "2026-10-29",
      2.5
     ]
    ]
@@ -1029,32 +1342,44 @@
     [
      "2026-10-20",
      3.23
+    ],
+    [
+     "2026-10-29",
+     3.23
     ]
    ]
   },
   "c-mtao4tlgi8q0": {
-   "count": 7,
+   "count": 6,
    "currency": "USD",
    "min": 6.0,
-   "median": 12.99,
+   "median": 13.97,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-069+SR",
    "h": [
     [
      "2026-10-20",
      12.99
+    ],
+    [
+     "2026-10-29",
+     13.97
     ]
    ]
   },
   "c-mtao4tlglk2r": {
    "count": 10,
    "currency": "USD",
-   "min": 19.5,
-   "median": 35.0,
+   "min": 21.67,
+   "median": 37.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-069+SPR",
    "h": [
     [
      "2026-10-20",
      35.0
+    ],
+    [
+     "2026-10-29",
+     37.0
     ]
    ]
   },
@@ -1067,6 +1392,10 @@
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -1081,57 +1410,77 @@
     [
      "2026-10-20",
      10.0
+    ],
+    [
+     "2026-10-29",
+     10.0
     ]
    ]
   },
   "c-mtao4tlgouyh": {
-   "count": 1,
+   "count": 3,
    "currency": "USD",
-   "min": 56.0,
+   "min": 39.99,
    "median": 56.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-071+SPR",
    "h": [
     [
      "2026-10-20",
      56.0
+    ],
+    [
+     "2026-10-29",
+     56.0
     ]
    ]
   },
   "c-mtao4tlgfvgi": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
    "min": 2.5,
-   "median": 8.95,
+   "median": 7.22,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-072+R",
    "h": [
     [
      "2026-10-20",
      8.95
+    ],
+    [
+     "2026-10-29",
+     7.22
     ]
    ]
   },
   "c-mtao4tlgiq57": {
-   "count": 13,
+   "count": 14,
    "currency": "USD",
    "min": 7.5,
-   "median": 25.0,
+   "median": 25.75,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-073+UR",
    "h": [
     [
      "2026-10-20",
      25.0
+    ],
+    [
+     "2026-10-29",
+     25.75
     ]
    ]
   },
   "c-mtao4tlg9xxi": {
    "count": 8,
    "currency": "USD",
-   "min": 24.72,
+   "min": 24.76,
    "median": 69.83,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-073+SPR",
    "h": [
     [
      "2026-10-20",
+     69.83
+    ],
+    [
+     "2026-10-29",
      69.83
     ]
    ]
@@ -1146,6 +1495,10 @@
     [
      "2026-10-20",
      4.5
+    ],
+    [
+     "2026-10-29",
+     4.5
     ]
    ]
   },
@@ -1158,6 +1511,10 @@
    "h": [
     [
      "2026-10-20",
+     3.95
+    ],
+    [
+     "2026-10-29",
      3.95
     ]
    ]
@@ -1172,6 +1529,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -1185,19 +1546,27 @@
     [
      "2026-10-20",
      1.56
+    ],
+    [
+     "2026-10-29",
+     1.56
     ]
    ]
   },
   "c-mtao4tlgsd2y": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
    "min": 2.5,
-   "median": 4.28,
+   "median": 4.85,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-078+R",
    "h": [
     [
      "2026-10-20",
      4.28
+    ],
+    [
+     "2026-10-29",
+     4.85
     ]
    ]
   },
@@ -1210,6 +1579,10 @@
    "h": [
     [
      "2026-10-20",
+     2.98
+    ],
+    [
+     "2026-10-29",
      2.98
     ]
    ]
@@ -1224,6 +1597,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -1236,6 +1613,10 @@
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -1250,6 +1631,10 @@
     [
      "2026-10-20",
      2.27
+    ],
+    [
+     "2026-10-29",
+     2.27
     ]
    ]
   },
@@ -1263,70 +1648,94 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
   "c-mtao8012th71": {
-   "count": 5,
+   "count": 4,
    "currency": "USD",
-   "min": 18.0,
-   "median": 32.95,
+   "min": 15.0,
+   "median": 31.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-003+UR",
    "h": [
     [
      "2026-10-20",
      32.95
+    ],
+    [
+     "2026-10-29",
+     31.99
     ]
    ]
   },
   "c-mtao8012ek3n": {
-   "count": 5,
+   "count": 3,
    "currency": "USD",
-   "min": 48.0,
+   "min": 53.0,
    "median": 70.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-003+SPR",
    "h": [
     [
      "2026-10-20",
      70.0
+    ],
+    [
+     "2026-10-29",
+     70.0
     ]
    ]
   },
   "c-mtao80126gpc": {
-   "count": 9,
+   "count": 8,
    "currency": "USD",
-   "min": 3.54,
-   "median": 8.0,
+   "min": 3.57,
+   "median": 9.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-006+SR",
    "h": [
     [
      "2026-10-20",
      8.0
+    ],
+    [
+     "2026-10-29",
+     9.0
     ]
    ]
   },
   "c-mtao8012glav": {
    "count": 11,
    "currency": "USD",
-   "min": 25.0,
-   "median": 39.25,
+   "min": 19.0,
+   "median": 41.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-006+SPR",
    "h": [
     [
      "2026-10-20",
      39.25
+    ],
+    [
+     "2026-10-29",
+     41.0
     ]
    ]
   },
   "c-mtao8012f4ug": {
    "count": 5,
    "currency": "USD",
-   "min": 2.66,
+   "min": 2.67,
    "median": 3.78,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-007+R",
    "h": [
     [
      "2026-10-20",
+     3.78
+    ],
+    [
+     "2026-10-29",
      3.78
     ]
    ]
@@ -1334,13 +1743,17 @@
   "c-mtao8012sq8b": {
    "count": 1,
    "currency": "USD",
-   "min": 1.44,
-   "median": 1.44,
+   "min": 1.6,
+   "median": 1.6,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-008+C",
    "h": [
     [
      "2026-10-20",
      1.44
+    ],
+    [
+     "2026-10-29",
+     1.6
     ]
    ]
   },
@@ -1354,45 +1767,61 @@
     [
      "2026-10-20",
      3.26
+    ],
+    [
+     "2026-10-29",
+     3.26
     ]
    ]
   },
   "c-mtao801245f8": {
    "count": 1,
    "currency": "USD",
-   "min": 2.38,
-   "median": 2.38,
+   "min": 2.65,
+   "median": 2.65,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-011+R",
    "h": [
     [
      "2026-10-20",
      2.38
+    ],
+    [
+     "2026-10-29",
+     2.65
     ]
    ]
   },
   "c-mtao80120xe8": {
-   "count": 9,
+   "count": 13,
    "currency": "USD",
    "min": 10.0,
-   "median": 14.0,
+   "median": 16.43,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-012+UR",
    "h": [
     [
      "2026-10-20",
      14.0
+    ],
+    [
+     "2026-10-29",
+     16.43
     ]
    ]
   },
   "c-mtao8012dfsc": {
-   "count": 6,
+   "count": 8,
    "currency": "USD",
    "min": 29.0,
-   "median": 40.0,
+   "median": 35.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-012+SPR",
    "h": [
     [
      "2026-10-20",
      40.0
+    ],
+    [
+     "2026-10-29",
+     35.0
     ]
    ]
   },
@@ -1406,6 +1835,10 @@
     [
      "2026-10-20",
      3.95
+    ],
+    [
+     "2026-10-29",
+     3.95
     ]
    ]
   },
@@ -1413,38 +1846,50 @@
    "count": 5,
    "currency": "USD",
    "min": 4.0,
-   "median": 4.24,
+   "median": 4.65,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-014+SR",
    "h": [
     [
      "2026-10-20",
      4.24
+    ],
+    [
+     "2026-10-29",
+     4.65
     ]
    ]
   },
   "c-mtao801214ey": {
-   "count": 10,
+   "count": 7,
    "currency": "USD",
    "min": 20.0,
-   "median": 31.5,
+   "median": 30.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-014+SPR",
    "h": [
     [
      "2026-10-20",
      31.5
+    ],
+    [
+     "2026-10-29",
+     30.0
     ]
    ]
   },
   "c-mtao8012zzcm": {
    "count": 5,
    "currency": "USD",
-   "min": 2.66,
-   "median": 3.54,
+   "min": 2.67,
+   "median": 3.57,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-016+R",
    "h": [
     [
      "2026-10-20",
      3.54
+    ],
+    [
+     "2026-10-29",
+     3.57
     ]
    ]
   },
@@ -1458,18 +1903,26 @@
     [
      "2026-10-20",
      5.47
+    ],
+    [
+     "2026-10-29",
+     5.47
     ]
    ]
   },
   "c-mtao801250lk": {
    "count": 4,
    "currency": "USD",
-   "min": 2.66,
+   "min": 2.67,
    "median": 12.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-019+R",
    "h": [
     [
      "2026-10-20",
+     12.5
+    ],
+    [
+     "2026-10-29",
      12.5
     ]
    ]
@@ -1484,6 +1937,10 @@
     [
      "2026-10-20",
      50.0
+    ],
+    [
+     "2026-10-29",
+     50.0
     ]
    ]
   },
@@ -1497,45 +1954,61 @@
     [
      "2026-10-20",
      4.97
+    ],
+    [
+     "2026-10-29",
+     4.97
     ]
    ]
   },
   "c-mtao8012dedn": {
-   "count": 11,
+   "count": 8,
    "currency": "USD",
-   "min": 19.88,
-   "median": 40.37,
+   "min": 29.99,
+   "median": 37.57,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-021+SPR",
    "h": [
     [
      "2026-10-20",
      40.37
+    ],
+    [
+     "2026-10-29",
+     37.57
     ]
    ]
   },
   "c-mtao80128mwu": {
    "count": 12,
    "currency": "USD",
-   "min": 4.77,
+   "min": 7.25,
    "median": 10.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-022+UR",
    "h": [
     [
      "2026-10-20",
      10.0
+    ],
+    [
+     "2026-10-29",
+     10.0
     ]
    ]
   },
   "c-mtao8012i7dh": {
-   "count": 13,
+   "count": 12,
    "currency": "USD",
-   "min": 11.31,
-   "median": 30.0,
+   "min": 10.75,
+   "median": 34.09,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-022+SPR",
    "h": [
     [
      "2026-10-20",
      30.0
+    ],
+    [
+     "2026-10-29",
+     34.09
     ]
    ]
   },
@@ -1548,6 +2021,10 @@
    "h": [
     [
      "2026-10-20",
+     3.95
+    ],
+    [
+     "2026-10-29",
      3.95
     ]
    ]
@@ -1562,6 +2039,10 @@
     [
      "2026-10-20",
      3.99
+    ],
+    [
+     "2026-10-29",
+     3.99
     ]
    ]
   },
@@ -1575,57 +2056,77 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
   "c-mtao8012n4w9": {
-   "count": 4,
+   "count": 5,
    "currency": "USD",
    "min": 3.99,
-   "median": 9.62,
+   "median": 15.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-028+L",
    "h": [
     [
      "2026-10-20",
      9.62
+    ],
+    [
+     "2026-10-29",
+     15.0
     ]
    ]
   },
   "c-mtao8012z1zb": {
-   "count": 4,
+   "count": 5,
    "currency": "USD",
-   "min": 123.34,
-   "median": 168.28,
+   "min": 122.69,
+   "median": 195.2,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-028+SPL",
    "h": [
     [
      "2026-10-20",
      168.28
+    ],
+    [
+     "2026-10-29",
+     195.2
     ]
    ]
   },
   "c-mtao8012y8w9": {
    "count": 1,
    "currency": "USD",
-   "min": 1.42,
-   "median": 1.42,
+   "min": 1.43,
+   "median": 1.43,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-031+C",
    "h": [
     [
      "2026-10-20",
      1.42
+    ],
+    [
+     "2026-10-29",
+     1.43
     ]
    ]
   },
   "c-mtao8012h1ht": {
    "count": 7,
    "currency": "USD",
-   "min": 2.66,
+   "min": 2.67,
    "median": 3.6,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-032+R",
    "h": [
     [
      "2026-10-20",
+     3.6
+    ],
+    [
+     "2026-10-29",
      3.6
     ]
    ]
@@ -1633,26 +2134,34 @@
   "c-mtao8012i8wb": {
    "count": 5,
    "currency": "USD",
-   "min": 2.66,
+   "min": 2.67,
    "median": 3.7,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-035+R",
    "h": [
     [
      "2026-10-20",
      3.7
+    ],
+    [
+     "2026-10-29",
+     3.7
     ]
    ]
   },
   "c-mtao801256gi": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
    "min": 2.95,
-   "median": 3.99,
+   "median": 11.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-036+R",
    "h": [
     [
      "2026-10-20",
      3.99
+    ],
+    [
+     "2026-10-29",
+     11.0
     ]
    ]
   },
@@ -1666,19 +2175,27 @@
     [
      "2026-10-20",
      3.63
+    ],
+    [
+     "2026-10-29",
+     3.63
     ]
    ]
   },
   "c-mtao8012zf0t": {
-   "count": 9,
+   "count": 10,
    "currency": "USD",
-   "min": 20.0,
-   "median": 30.0,
+   "min": 22.0,
+   "median": 34.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-039+SPR",
    "h": [
     [
      "2026-10-20",
      30.0
+    ],
+    [
+     "2026-10-29",
+     34.0
     ]
    ]
   },
@@ -1686,25 +2203,33 @@
    "count": 12,
    "currency": "USD",
    "min": 2.0,
-   "median": 8.48,
+   "median": 8.46,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-041+SR",
    "h": [
     [
      "2026-10-20",
      8.48
+    ],
+    [
+     "2026-10-29",
+     8.46
     ]
    ]
   },
   "c-mtao8012s5jx": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
    "min": 25.0,
-   "median": 35.0,
+   "median": 47.16,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-041+SPR",
    "h": [
     [
      "2026-10-20",
      35.0
+    ],
+    [
+     "2026-10-29",
+     47.16
     ]
    ]
   },
@@ -1712,51 +2237,67 @@
    "count": 16,
    "currency": "USD",
    "min": 1.99,
-   "median": 5.33,
+   "median": 5.36,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-042+SR",
    "h": [
     [
      "2026-10-20",
      5.33
+    ],
+    [
+     "2026-10-29",
+     5.36
     ]
    ]
   },
   "c-mtao8012dvp0": {
-   "count": 10,
+   "count": 9,
    "currency": "USD",
    "min": 20.0,
-   "median": 30.06,
+   "median": 30.14,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-042+SPR",
    "h": [
     [
      "2026-10-20",
      30.06
+    ],
+    [
+     "2026-10-29",
+     30.14
     ]
    ]
   },
   "c-mtao8012am2q": {
    "count": 6,
    "currency": "USD",
-   "min": 2.66,
+   "min": 2.67,
    "median": 3.88,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-045+R",
    "h": [
     [
      "2026-10-20",
      3.88
+    ],
+    [
+     "2026-10-29",
+     3.88
     ]
    ]
   },
   "c-mtao8012wu9e": {
-   "count": 9,
+   "count": 7,
    "currency": "USD",
-   "min": 9.0,
-   "median": 52.32,
+   "min": 32.0,
+   "median": 66.92,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-046+UR",
    "h": [
     [
      "2026-10-20",
      52.32
+    ],
+    [
+     "2026-10-29",
+     66.92
     ]
    ]
   },
@@ -1764,12 +2305,16 @@
    "count": 5,
    "currency": "USD",
    "min": 105.55,
-   "median": 200.0,
+   "median": 156.23,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-046+SPR",
    "h": [
     [
      "2026-10-20",
      200.0
+    ],
+    [
+     "2026-10-29",
+     156.23
     ]
    ]
   },
@@ -1783,18 +2328,26 @@
     [
      "2026-10-20",
      3.26
+    ],
+    [
+     "2026-10-29",
+     3.26
     ]
    ]
   },
   "c-mtao8012mq5h": {
    "count": 4,
    "currency": "USD",
-   "min": 1.66,
+   "min": 1.84,
    "median": 3.31,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-049+R",
    "h": [
     [
      "2026-10-20",
+     3.31
+    ],
+    [
+     "2026-10-29",
      3.31
     ]
    ]
@@ -1802,52 +2355,68 @@
   "c-mtao8012h7s3": {
    "count": 4,
    "currency": "USD",
-   "min": 1.48,
+   "min": 1.65,
    "median": 3.68,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-050+R",
    "h": [
     [
      "2026-10-20",
      3.68
+    ],
+    [
+     "2026-10-29",
+     3.68
     ]
    ]
   },
   "c-mtao80122pqc": {
-   "count": 4,
+   "count": 3,
    "currency": "USD",
-   "min": 3.99,
-   "median": 17.84,
+   "min": 15.62,
+   "median": 19.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-055+L",
    "h": [
     [
      "2026-10-20",
      17.84
+    ],
+    [
+     "2026-10-29",
+     19.99
     ]
    ]
   },
   "c-mtao8012nuxj": {
    "count": 2,
    "currency": "USD",
-   "min": 247.65,
-   "median": 334.13,
+   "min": 297.37,
+   "median": 358.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-055+SPL",
    "h": [
     [
      "2026-10-20",
      334.13
+    ],
+    [
+     "2026-10-29",
+     358.99
     ]
    ]
   },
   "c-mtao8012kiuv": {
    "count": 1,
    "currency": "USD",
-   "min": 1.41,
-   "median": 1.41,
+   "min": 1.42,
+   "median": 1.42,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-056+C",
    "h": [
     [
      "2026-10-20",
      1.41
+    ],
+    [
+     "2026-10-29",
+     1.42
     ]
    ]
   },
@@ -1855,128 +2424,168 @@
    "count": 13,
    "currency": "USD",
    "min": 2.5,
-   "median": 8.97,
+   "median": 8.92,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-057+SR",
    "h": [
     [
      "2026-10-20",
      8.97
+    ],
+    [
+     "2026-10-29",
+     8.92
     ]
    ]
   },
   "c-mtao8012n7ib": {
-   "count": 8,
+   "count": 6,
    "currency": "USD",
    "min": 25.0,
-   "median": 37.62,
+   "median": 40.69,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-057+SPR",
    "h": [
     [
      "2026-10-20",
      37.62
+    ],
+    [
+     "2026-10-29",
+     40.69
     ]
    ]
   },
   "c-mtao8012hejk": {
    "count": 3,
    "currency": "USD",
-   "min": 2.83,
+   "min": 2.86,
    "median": 2.95,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-059+R",
    "h": [
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
   "c-mtao8012vs50": {
-   "count": 11,
+   "count": 12,
    "currency": "USD",
    "min": 2.0,
-   "median": 5.0,
+   "median": 6.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-060+SR",
    "h": [
     [
      "2026-10-20",
      5.0
+    ],
+    [
+     "2026-10-29",
+     6.5
     ]
    ]
   },
   "c-mtao8012400u": {
    "count": 8,
    "currency": "USD",
-   "min": 7.29,
-   "median": 37.3,
+   "min": 7.25,
+   "median": 37.33,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-060+SPR",
    "h": [
     [
      "2026-10-20",
      37.3
+    ],
+    [
+     "2026-10-29",
+     37.33
     ]
    ]
   },
   "c-mtao8012owk9": {
    "count": 7,
    "currency": "USD",
-   "min": 44.0,
-   "median": 72.88,
+   "min": 45.0,
+   "median": 74.97,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-067+UR",
    "h": [
     [
      "2026-10-20",
      72.88
+    ],
+    [
+     "2026-10-29",
+     74.97
     ]
    ]
   },
   "c-mtao8012tr5p": {
-   "count": 8,
+   "count": 5,
    "currency": "USD",
    "min": 87.75,
-   "median": 276.75,
+   "median": 219.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-067+SPR",
    "h": [
     [
      "2026-10-20",
      276.75
+    ],
+    [
+     "2026-10-29",
+     219.99
     ]
    ]
   },
   "c-mtao8012pkbn": {
    "count": 4,
    "currency": "USD",
-   "min": 2.66,
-   "median": 3.46,
+   "min": 2.67,
+   "median": 3.47,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-069+R",
    "h": [
     [
      "2026-10-20",
      3.46
+    ],
+    [
+     "2026-10-29",
+     3.47
     ]
    ]
   },
   "c-mtao8012sq8m": {
-   "count": 5,
+   "count": 4,
    "currency": "USD",
-   "min": 2.99,
-   "median": 11.21,
+   "min": 10.0,
+   "median": 13.05,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-071+SR",
    "h": [
     [
      "2026-10-20",
      11.21
+    ],
+    [
+     "2026-10-29",
+     13.05
     ]
    ]
   },
   "c-mtao8012fdvp": {
    "count": 4,
    "currency": "USD",
-   "min": 36.99,
+   "min": 36.8,
    "median": 47.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-071+SPR",
    "h": [
     [
      "2026-10-20",
+     47.0
+    ],
+    [
+     "2026-10-29",
      47.0
     ]
    ]
@@ -1984,12 +2593,16 @@
   "c-mtao8012jp14": {
    "count": 5,
    "currency": "USD",
-   "min": 2.66,
+   "min": 2.67,
    "median": 3.75,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-072+R",
    "h": [
     [
      "2026-10-20",
+     3.75
+    ],
+    [
+     "2026-10-29",
      3.75
     ]
    ]
@@ -2004,6 +2617,10 @@
     [
      "2026-10-20",
      3.0
+    ],
+    [
+     "2026-10-29",
+     3.0
     ]
    ]
   },
@@ -2011,12 +2628,16 @@
    "count": 3,
    "currency": "USD",
    "min": 2.95,
-   "median": 3.54,
+   "median": 3.57,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-074+R",
    "h": [
     [
      "2026-10-20",
      3.54
+    ],
+    [
+     "2026-10-29",
+     3.57
     ]
    ]
   },
@@ -2029,6 +2650,10 @@
    "h": [
     [
      "2026-10-20",
+     2.95
+    ],
+    [
+     "2026-10-29",
      2.95
     ]
    ]
@@ -2043,19 +2668,27 @@
     [
      "2026-10-20",
      3.0
+    ],
+    [
+     "2026-10-29",
+     3.0
     ]
    ]
   },
   "c-mtao8012r939": {
    "count": 1,
    "currency": "USD",
-   "min": 1.41,
-   "median": 1.41,
+   "min": 1.42,
+   "median": 1.42,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-077+C",
    "h": [
     [
      "2026-10-20",
      1.41
+    ],
+    [
+     "2026-10-29",
+     1.42
     ]
    ]
   },
@@ -2069,32 +2702,44 @@
     [
      "2026-10-20",
      6.0
+    ],
+    [
+     "2026-10-29",
+     6.0
     ]
    ]
   },
   "c-mtao8kokjf71": {
-   "count": 4,
+   "count": 3,
    "currency": "USD",
    "min": 270.0,
-   "median": 442.77,
+   "median": 285.55,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-001+SPL",
    "h": [
     [
      "2026-10-20",
      442.77
+    ],
+    [
+     "2026-10-29",
+     285.55
     ]
    ]
   },
   "c-mtao8kokc3o4": {
    "count": 2,
    "currency": "USD",
-   "min": 0.99,
-   "median": 1.5,
+   "min": 1.1,
+   "median": 1.55,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-002+C",
    "h": [
     [
      "2026-10-20",
      1.5
+    ],
+    [
+     "2026-10-29",
+     1.55
     ]
    ]
   },
@@ -2108,6 +2753,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -2115,12 +2764,16 @@
    "count": 4,
    "currency": "USD",
    "min": 2.0,
-   "median": 3.1,
+   "median": 3.09,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-004+R",
    "h": [
     [
      "2026-10-20",
      3.1
+    ],
+    [
+     "2026-10-29",
+     3.09
     ]
    ]
   },
@@ -2133,6 +2786,10 @@
    "h": [
     [
      "2026-10-20",
+     7.0
+    ],
+    [
+     "2026-10-29",
      7.0
     ]
    ]
@@ -2147,19 +2804,27 @@
     [
      "2026-10-20",
      5.0
+    ],
+    [
+     "2026-10-29",
+     5.0
     ]
    ]
   },
   "c-mtao8kokd9v8": {
-   "count": 6,
+   "count": 4,
    "currency": "USD",
-   "min": 61.67,
-   "median": 87.0,
+   "min": 61.35,
+   "median": 79.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-006+SPR",
    "h": [
     [
      "2026-10-20",
      87.0
+    ],
+    [
+     "2026-10-29",
+     79.5
     ]
    ]
   },
@@ -2173,18 +2838,26 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
   "c-mtao8kokdlv6": {
    "count": 4,
    "currency": "USD",
-   "min": 1.31,
+   "min": 1.45,
    "median": 2.98,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-008+R",
    "h": [
     [
      "2026-10-20",
+     2.98
+    ],
+    [
+     "2026-10-29",
      2.98
     ]
    ]
@@ -2199,58 +2872,78 @@
     [
      "2026-10-20",
      5.0
+    ],
+    [
+     "2026-10-29",
+     5.0
     ]
    ]
   },
   "c-mtao8kok01qw": {
-   "count": 5,
+   "count": 4,
    "currency": "USD",
    "min": 24.0,
-   "median": 65.55,
+   "median": 50.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-009+SPR",
    "h": [
     [
      "2026-10-20",
      65.55
+    ],
+    [
+     "2026-10-29",
+     50.0
     ]
    ]
   },
   "c-mtao8koklkly": {
    "count": 5,
    "currency": "USD",
-   "min": 1.31,
-   "median": 2.21,
+   "min": 1.45,
+   "median": 2.45,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-010+R",
    "h": [
     [
      "2026-10-20",
      2.21
+    ],
+    [
+     "2026-10-29",
+     2.45
     ]
    ]
   },
   "c-mtao8kok3oih": {
-   "count": 9,
+   "count": 12,
    "currency": "USD",
    "min": 6.7,
-   "median": 15.0,
+   "median": 17.82,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-011+UR",
    "h": [
     [
      "2026-10-20",
      15.0
+    ],
+    [
+     "2026-10-29",
+     17.82
     ]
    ]
   },
   "c-mtao8koko17s": {
    "count": 8,
    "currency": "USD",
-   "min": 33.64,
-   "median": 51.5,
+   "min": 43.55,
+   "median": 59.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-011+SPR",
    "h": [
     [
      "2026-10-20",
      51.5
+    ],
+    [
+     "2026-10-29",
+     59.5
     ]
    ]
   },
@@ -2258,12 +2951,16 @@
    "count": 2,
    "currency": "USD",
    "min": 2.0,
-   "median": 2.77,
+   "median": 2.79,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-012+C",
    "h": [
     [
      "2026-10-20",
      2.77
+    ],
+    [
+     "2026-10-29",
+     2.79
     ]
    ]
   },
@@ -2276,6 +2973,10 @@
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -2290,6 +2991,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -2297,12 +3002,16 @@
    "count": 5,
    "currency": "USD",
    "min": 1.12,
-   "median": 2.66,
+   "median": 2.67,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-015+R",
    "h": [
     [
      "2026-10-20",
      2.66
+    ],
+    [
+     "2026-10-29",
+     2.67
     ]
    ]
   },
@@ -2315,6 +3024,10 @@
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -2329,6 +3042,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -2342,31 +3059,43 @@
     [
      "2026-10-20",
      11.0
+    ],
+    [
+     "2026-10-29",
+     11.0
     ]
    ]
   },
   "c-mtao8kok5d1x": {
-   "count": 7,
+   "count": 6,
    "currency": "USD",
    "min": 97.0,
-   "median": 150.0,
+   "median": 131.95,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-018+SPL",
    "h": [
     [
      "2026-10-20",
      150.0
+    ],
+    [
+     "2026-10-29",
+     131.95
     ]
    ]
   },
   "c-mtao8koks78a": {
    "count": 6,
    "currency": "USD",
-   "min": 1.31,
+   "min": 1.45,
    "median": 2.45,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-019+R",
    "h": [
     [
      "2026-10-20",
+     2.45
+    ],
+    [
+     "2026-10-29",
      2.45
     ]
    ]
@@ -2374,26 +3103,34 @@
   "c-mtao8kokxcuu": {
    "count": 7,
    "currency": "USD",
-   "min": 2.24,
+   "min": 2.23,
    "median": 5.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-020+SR",
    "h": [
     [
      "2026-10-20",
      5.0
+    ],
+    [
+     "2026-10-29",
+     5.0
     ]
    ]
   },
   "c-mtao8kok8792": {
-   "count": 12,
+   "count": 13,
    "currency": "USD",
    "min": 24.99,
-   "median": 30.5,
+   "median": 31.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-020+SPR",
    "h": [
     [
      "2026-10-20",
      30.5
+    ],
+    [
+     "2026-10-29",
+     31.0
     ]
    ]
   },
@@ -2407,6 +3144,10 @@
     [
      "2026-10-20",
      4.5
+    ],
+    [
+     "2026-10-29",
+     4.5
     ]
    ]
   },
@@ -2414,12 +3155,16 @@
    "count": 7,
    "currency": "USD",
    "min": 2.0,
-   "median": 3.54,
+   "median": 3.57,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-022+R",
    "h": [
     [
      "2026-10-20",
      3.54
+    ],
+    [
+     "2026-10-29",
+     3.57
     ]
    ]
   },
@@ -2432,6 +3177,10 @@
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -2446,18 +3195,26 @@
     [
      "2026-10-20",
      4.5
+    ],
+    [
+     "2026-10-29",
+     4.5
     ]
    ]
   },
   "c-mtao8kok6drl": {
    "count": 3,
    "currency": "USD",
-   "min": 1.31,
+   "min": 1.45,
    "median": 2.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-025+R",
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -2472,6 +3229,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -2485,24 +3246,32 @@
     [
      "2026-10-20",
      5.5
+    ],
+    [
+     "2026-10-29",
+     5.5
     ]
    ]
   },
   "c-mtao8kokhy6t": {
-   "count": 7,
+   "count": 8,
    "currency": "USD",
    "min": 21.0,
-   "median": 25.0,
+   "median": 28.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-027+SPR",
    "h": [
     [
      "2026-10-20",
      25.0
+    ],
+    [
+     "2026-10-29",
+     28.0
     ]
    ]
   },
   "c-mtao8kok8yds": {
-   "count": 12,
+   "count": 14,
    "currency": "USD",
    "min": 5.5,
    "median": 17.49,
@@ -2511,6 +3280,10 @@
     [
      "2026-10-20",
      17.49
+    ],
+    [
+     "2026-10-29",
+     17.49
     ]
    ]
   },
@@ -2518,12 +3291,16 @@
    "count": 9,
    "currency": "USD",
    "min": 32.0,
-   "median": 43.55,
+   "median": 55.17,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-028+SPR",
    "h": [
     [
      "2026-10-20",
      43.55
+    ],
+    [
+     "2026-10-29",
+     55.17
     ]
    ]
   },
@@ -2536,6 +3313,10 @@
    "h": [
     [
      "2026-10-20",
+     2.95
+    ],
+    [
+     "2026-10-29",
      2.95
     ]
    ]
@@ -2550,6 +3331,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -2562,6 +3347,10 @@
    "h": [
     [
      "2026-10-20",
+     3.31
+    ],
+    [
+     "2026-10-29",
      3.31
     ]
    ]
@@ -2576,6 +3365,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -2589,18 +3382,26 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
   "c-mtao8kokel36": {
    "count": 2,
    "currency": "USD",
-   "min": 1.42,
+   "min": 1.43,
    "median": 1.71,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-034+C",
    "h": [
     [
      "2026-10-20",
+     1.71
+    ],
+    [
+     "2026-10-29",
      1.71
     ]
    ]
@@ -2615,6 +3416,10 @@
     [
      "2026-10-20",
      18.99
+    ],
+    [
+     "2026-10-29",
+     18.99
     ]
    ]
   },
@@ -2622,12 +3427,16 @@
    "count": 3,
    "currency": "USD",
    "min": 400.0,
-   "median": 600.0,
+   "median": 400.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-035+SPL",
    "h": [
     [
      "2026-10-20",
      600.0
+    ],
+    [
+     "2026-10-29",
+     400.0
     ]
    ]
   },
@@ -2641,18 +3450,26 @@
     [
      "2026-10-20",
      4.5
+    ],
+    [
+     "2026-10-29",
+     4.5
     ]
    ]
   },
   "c-mtao8kok81g0": {
    "count": 3,
    "currency": "USD",
-   "min": 1.42,
+   "min": 1.43,
    "median": 2.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-037+C",
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -2667,32 +3484,44 @@
     [
      "2026-10-20",
      2.98
+    ],
+    [
+     "2026-10-29",
+     2.98
     ]
    ]
   },
   "c-mtao8kokxdcz": {
    "count": 11,
    "currency": "USD",
-   "min": 2.24,
-   "median": 6.87,
+   "min": 2.23,
+   "median": 7.63,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-039+SR",
    "h": [
     [
      "2026-10-20",
      6.87
+    ],
+    [
+     "2026-10-29",
+     7.63
     ]
    ]
   },
   "c-mtao8kok7ps4": {
-   "count": 7,
+   "count": 8,
    "currency": "USD",
-   "min": 63.78,
-   "median": 106.0,
+   "min": 64.31,
+   "median": 108.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-039+SPR",
    "h": [
     [
      "2026-10-20",
      106.0
+    ],
+    [
+     "2026-10-29",
+     108.0
     ]
    ]
   },
@@ -2700,38 +3529,50 @@
    "count": 5,
    "currency": "USD",
    "min": 1.99,
-   "median": 2.66,
+   "median": 2.67,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-040+R",
    "h": [
     [
      "2026-10-20",
      2.66
+    ],
+    [
+     "2026-10-29",
+     2.67
     ]
    ]
   },
   "c-mtao8kok0pfy": {
-   "count": 4,
+   "count": 5,
    "currency": "USD",
-   "min": 3.36,
-   "median": 5.8,
+   "min": 3.35,
+   "median": 6.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-041+SR",
    "h": [
     [
      "2026-10-20",
      5.8
+    ],
+    [
+     "2026-10-29",
+     6.0
     ]
    ]
   },
   "c-mtao8kok1nxs": {
-   "count": 4,
+   "count": 6,
    "currency": "USD",
    "min": 28.0,
-   "median": 45.5,
+   "median": 49.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-041+SPR",
    "h": [
     [
      "2026-10-20",
      45.5
+    ],
+    [
+     "2026-10-29",
+     49.0
     ]
    ]
   },
@@ -2745,58 +3586,78 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
   "c-mtao8kokkdk6": {
    "count": 5,
    "currency": "USD",
-   "min": 1.77,
+   "min": 1.79,
    "median": 1.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-043+C",
    "h": [
     [
      "2026-10-20",
      1.99
+    ],
+    [
+     "2026-10-29",
+     1.99
     ]
    ]
   },
   "c-mtao8kok3fa9": {
-   "count": 11,
+   "count": 12,
    "currency": "USD",
    "min": 6.7,
-   "median": 22.0,
+   "median": 23.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-044+UR",
    "h": [
     [
      "2026-10-20",
      22.0
+    ],
+    [
+     "2026-10-29",
+     23.5
     ]
    ]
   },
   "c-mtao8koknysb": {
-   "count": 7,
+   "count": 6,
    "currency": "USD",
-   "min": 55.0,
-   "median": 70.0,
+   "min": 50.0,
+   "median": 75.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-044+SPR",
    "h": [
     [
      "2026-10-20",
      70.0
+    ],
+    [
+     "2026-10-29",
+     75.0
     ]
    ]
   },
   "c-mtao8kok1n57": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
    "min": 2.0,
-   "median": 3.78,
+   "median": 3.08,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-045+R",
    "h": [
     [
      "2026-10-20",
      3.78
+    ],
+    [
+     "2026-10-29",
+     3.08
     ]
    ]
   },
@@ -2810,18 +3671,26 @@
     [
      "2026-10-20",
      2.48
+    ],
+    [
+     "2026-10-29",
+     2.48
     ]
    ]
   },
   "c-mtao8kokltiw": {
    "count": 3,
    "currency": "USD",
-   "min": 1.42,
+   "min": 1.43,
    "median": 2.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-047+C",
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -2836,6 +3705,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -2843,24 +3716,32 @@
    "count": 3,
    "currency": "USD",
    "min": 2.0,
-   "median": 2.13,
+   "median": 2.14,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-049+C",
    "h": [
     [
      "2026-10-20",
      2.13
+    ],
+    [
+     "2026-10-29",
+     2.14
     ]
    ]
   },
   "c-mtao8kokzpfm": {
    "count": 2,
    "currency": "USD",
-   "min": 1.42,
+   "min": 1.43,
    "median": 1.71,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-050+C",
    "h": [
     [
      "2026-10-20",
+     1.71
+    ],
+    [
+     "2026-10-29",
      1.71
     ]
    ]
@@ -2875,32 +3756,44 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
   "c-mtao8kok61rs": {
-   "count": 5,
+   "count": 4,
    "currency": "USD",
    "min": 8.0,
-   "median": 16.82,
+   "median": 15.97,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-052+L",
    "h": [
     [
      "2026-10-20",
      16.82
+    ],
+    [
+     "2026-10-29",
+     15.97
     ]
    ]
   },
   "c-mtao8kokb4yb": {
-   "count": 9,
+   "count": 8,
    "currency": "USD",
    "min": 110.0,
-   "median": 235.55,
+   "median": 196.78,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-052+SPL",
    "h": [
     [
      "2026-10-20",
      235.55
+    ],
+    [
+     "2026-10-29",
+     196.78
     ]
    ]
   },
@@ -2914,18 +3807,26 @@
     [
      "2026-10-20",
      4.5
+    ],
+    [
+     "2026-10-29",
+     4.5
     ]
    ]
   },
   "c-mtao8kokafxi": {
    "count": 3,
    "currency": "USD",
-   "min": 1.42,
+   "min": 1.43,
    "median": 2.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-054+C",
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -2934,12 +3835,16 @@
    "count": 3,
    "currency": "USD",
    "min": 2.0,
-   "median": 2.66,
+   "median": 2.67,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-055+R",
    "h": [
     [
      "2026-10-20",
      2.66
+    ],
+    [
+     "2026-10-29",
+     2.67
     ]
    ]
   },
@@ -2953,19 +3858,27 @@
     [
      "2026-10-20",
      2.48
+    ],
+    [
+     "2026-10-29",
+     2.48
     ]
    ]
   },
   "c-mtao8kokooib": {
    "count": 12,
    "currency": "USD",
-   "min": 2.47,
-   "median": 5.3,
+   "min": 2.74,
+   "median": 5.29,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-057+SR",
    "h": [
     [
      "2026-10-20",
      5.3
+    ],
+    [
+     "2026-10-29",
+     5.29
     ]
    ]
   },
@@ -2979,19 +3892,27 @@
     [
      "2026-10-20",
      44.27
+    ],
+    [
+     "2026-10-29",
+     44.27
     ]
    ]
   },
   "c-mtao8koklp7m": {
    "count": 2,
    "currency": "USD",
-   "min": 1.77,
-   "median": 1.89,
+   "min": 1.79,
+   "median": 1.9,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-058+C",
    "h": [
     [
      "2026-10-20",
      1.89
+    ],
+    [
+     "2026-10-29",
+     1.9
     ]
    ]
   },
@@ -2999,12 +3920,16 @@
    "count": 5,
    "currency": "USD",
    "min": 1.12,
-   "median": 2.66,
+   "median": 2.67,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-059+R",
    "h": [
     [
      "2026-10-20",
      2.66
+    ],
+    [
+     "2026-10-29",
+     2.67
     ]
    ]
   },
@@ -3018,58 +3943,78 @@
     [
      "2026-10-20",
      5.0
+    ],
+    [
+     "2026-10-29",
+     5.0
     ]
    ]
   },
   "c-mtao8kokebg0": {
-   "count": 12,
+   "count": 11,
    "currency": "USD",
    "min": 28.99,
-   "median": 53.77,
+   "median": 52.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-060+SPR",
    "h": [
     [
      "2026-10-20",
      53.77
+    ],
+    [
+     "2026-10-29",
+     52.0
     ]
    ]
   },
   "c-mtao8kokcv86": {
-   "count": 5,
+   "count": 8,
    "currency": "USD",
    "min": 12.0,
-   "median": 17.0,
+   "median": 17.49,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-061+UR",
    "h": [
     [
      "2026-10-20",
      17.0
+    ],
+    [
+     "2026-10-29",
+     17.49
     ]
    ]
   },
   "c-mtao8kokzpl9": {
-   "count": 10,
+   "count": 11,
    "currency": "USD",
-   "min": 22.67,
-   "median": 42.27,
+   "min": 23.9,
+   "median": 43.55,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-061+SPR",
    "h": [
     [
      "2026-10-20",
      42.27
+    ],
+    [
+     "2026-10-29",
+     43.55
     ]
    ]
   },
   "c-mtao8koklrql": {
-   "count": 4,
+   "count": 5,
    "currency": "USD",
    "min": 2.0,
-   "median": 3.22,
+   "median": 3.61,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-062+R",
    "h": [
     [
      "2026-10-20",
      3.22
+    ],
+    [
+     "2026-10-29",
+     3.61
     ]
    ]
   },
@@ -3082,6 +4027,10 @@
    "h": [
     [
      "2026-10-20",
+     2.48
+    ],
+    [
+     "2026-10-29",
      2.48
     ]
    ]
@@ -3096,18 +4045,26 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
   "c-mtao8kokd1vg": {
    "count": 5,
    "currency": "USD",
-   "min": 1.77,
+   "min": 1.97,
    "median": 2.49,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-065+R",
    "h": [
     [
      "2026-10-20",
+     2.49
+    ],
+    [
+     "2026-10-29",
      2.49
     ]
    ]
@@ -3122,6 +4079,10 @@
     [
      "2026-10-20",
      2.48
+    ],
+    [
+     "2026-10-29",
+     2.48
     ]
    ]
   },
@@ -3134,6 +4095,10 @@
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -3148,6 +4113,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -3161,19 +4130,27 @@
     [
      "2026-10-20",
      10.37
+    ],
+    [
+     "2026-10-29",
+     10.37
     ]
    ]
   },
   "c-mtao8kok9gin": {
-   "count": 5,
+   "count": 6,
    "currency": "USD",
    "min": 141.01,
-   "median": 235.0,
+   "median": 242.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-069+SPL",
    "h": [
     [
      "2026-10-20",
      235.0
+    ],
+    [
+     "2026-10-29",
+     242.5
     ]
    ]
   },
@@ -3186,6 +4163,10 @@
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -3200,18 +4181,26 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
   "c-mtao8kokoaw0": {
    "count": 2,
    "currency": "USD",
-   "min": 1.42,
+   "min": 1.43,
    "median": 1.71,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-072+C",
    "h": [
     [
      "2026-10-20",
+     1.71
+    ],
+    [
+     "2026-10-29",
      1.71
     ]
    ]
@@ -3220,12 +4209,16 @@
    "count": 5,
    "currency": "USD",
    "min": 2.0,
-   "median": 2.66,
+   "median": 2.67,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-073+R",
    "h": [
     [
      "2026-10-20",
      2.66
+    ],
+    [
+     "2026-10-29",
+     2.67
     ]
    ]
   },
@@ -3238,6 +4231,10 @@
    "h": [
     [
      "2026-10-20",
+     3.5
+    ],
+    [
+     "2026-10-29",
      3.5
     ]
    ]
@@ -3252,19 +4249,27 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
   "c-mtao8kokxa2d": {
-   "count": 11,
+   "count": 12,
    "currency": "USD",
    "min": 2.95,
-   "median": 5.0,
+   "median": 5.29,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-076+SR",
    "h": [
     [
      "2026-10-20",
      5.0
+    ],
+    [
+     "2026-10-29",
+     5.29
     ]
    ]
   },
@@ -3272,38 +4277,50 @@
    "count": 6,
    "currency": "USD",
    "min": 24.0,
-   "median": 36.8,
+   "median": 36.7,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-076+SPR",
    "h": [
     [
      "2026-10-20",
      36.8
+    ],
+    [
+     "2026-10-29",
+     36.7
     ]
    ]
   },
   "c-mtao8kok1u3t": {
-   "count": 7,
+   "count": 8,
    "currency": "USD",
-   "min": 12.0,
-   "median": 15.0,
+   "min": 4.0,
+   "median": 15.87,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-077+UR",
    "h": [
     [
      "2026-10-20",
      15.0
+    ],
+    [
+     "2026-10-29",
+     15.87
     ]
    ]
   },
   "c-mtao8kokfyif": {
-   "count": 17,
+   "count": 18,
    "currency": "USD",
    "min": 18.0,
-   "median": 29.99,
+   "median": 32.25,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-077+SPR",
    "h": [
     [
      "2026-10-20",
      29.99
+    ],
+    [
+     "2026-10-29",
+     32.25
     ]
    ]
   },
@@ -3317,6 +4334,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -3324,25 +4345,33 @@
    "count": 6,
    "currency": "USD",
    "min": 4.0,
-   "median": 4.5,
+   "median": 4.48,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-079+SR",
    "h": [
     [
      "2026-10-20",
      4.5
+    ],
+    [
+     "2026-10-29",
+     4.48
     ]
    ]
   },
   "c-mtao8kokiw8a": {
-   "count": 7,
+   "count": 8,
    "currency": "USD",
    "min": 40.0,
-   "median": 53.15,
+   "median": 69.78,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-079+SPR",
    "h": [
     [
      "2026-10-20",
      53.15
+    ],
+    [
+     "2026-10-29",
+     69.78
     ]
    ]
   },
@@ -3350,12 +4379,16 @@
    "count": 3,
    "currency": "USD",
    "min": 2.0,
-   "median": 2.66,
+   "median": 2.67,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-080+R",
    "h": [
     [
      "2026-10-20",
      2.66
+    ],
+    [
+     "2026-10-29",
+     2.67
     ]
    ]
   },
@@ -3368,6 +4401,10 @@
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -3382,6 +4419,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -3395,18 +4436,26 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
   "c-mtao8kokj3uw": {
    "count": 2,
    "currency": "USD",
-   "min": 1.42,
+   "min": 1.43,
    "median": 1.71,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-084+C",
    "h": [
     [
      "2026-10-20",
+     1.71
+    ],
+    [
+     "2026-10-29",
      1.71
     ]
    ]
@@ -3421,6 +4470,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -3433,6 +4486,10 @@
    "h": [
     [
      "2026-10-20",
+     5.0
+    ],
+    [
+     "2026-10-29",
      5.0
     ]
    ]
@@ -3447,6 +4504,10 @@
     [
      "2026-10-20",
      110.31
+    ],
+    [
+     "2026-10-29",
+     110.31
     ]
    ]
   },
@@ -3459,6 +4520,10 @@
    "h": [
     [
      "2026-10-20",
+     9.0
+    ],
+    [
+     "2026-10-29",
      9.0
     ]
    ]
@@ -3473,19 +4538,27 @@
     [
      "2026-10-20",
      140.11
+    ],
+    [
+     "2026-10-29",
+     140.11
     ]
    ]
   },
   "c-mtao95vj8lh8": {
    "count": 2,
    "currency": "USD",
-   "min": 0.99,
-   "median": 3.29,
+   "min": 1.1,
+   "median": 3.37,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-008+C",
    "h": [
     [
      "2026-10-20",
      3.29
+    ],
+    [
+     "2026-10-29",
+     3.37
     ]
    ]
   },
@@ -3499,83 +4572,111 @@
     [
      "2026-10-20",
      1.99
+    ],
+    [
+     "2026-10-29",
+     1.99
     ]
    ]
   },
   "c-mtao95vj3dxe": {
    "count": 1,
    "currency": "USD",
-   "min": 1.89,
-   "median": 1.89,
+   "min": 2.1,
+   "median": 2.1,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-017+R",
    "h": [
     [
      "2026-10-20",
      1.89
+    ],
+    [
+     "2026-10-29",
+     2.1
     ]
    ]
   },
   "c-mtao95vjiw0m": {
    "count": 7,
    "currency": "USD",
-   "min": 3.37,
+   "min": 3.75,
    "median": 4.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-020+SR",
    "h": [
     [
      "2026-10-20",
      4.99
+    ],
+    [
+     "2026-10-29",
+     4.99
     ]
    ]
   },
   "c-mtao95vjcuk5": {
-   "count": 4,
+   "count": 5,
    "currency": "USD",
    "min": 19.99,
-   "median": 27.08,
+   "median": 32.4,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-020+SPR",
    "h": [
     [
      "2026-10-20",
      27.08
+    ],
+    [
+     "2026-10-29",
+     32.4
     ]
    ]
   },
   "c-mtao95vjspmy": {
    "count": 3,
    "currency": "USD",
-   "min": 2.16,
+   "min": 2.4,
    "median": 4.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-021+SR",
    "h": [
     [
      "2026-10-20",
      4.99
+    ],
+    [
+     "2026-10-29",
+     4.99
     ]
    ]
   },
   "c-mtao95vj8np8": {
-   "count": 1,
+   "count": 2,
    "currency": "USD",
    "min": 25.0,
-   "median": 25.0,
+   "median": 44.98,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-021+SPR",
    "h": [
     [
      "2026-10-20",
      25.0
+    ],
+    [
+     "2026-10-29",
+     44.98
     ]
    ]
   },
   "c-mtao95vj3xtl": {
    "count": 4,
    "currency": "USD",
-   "min": 2.84,
+   "min": 3.16,
    "median": 4.17,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-022+SR",
    "h": [
     [
      "2026-10-20",
+     4.17
+    ],
+    [
+     "2026-10-29",
      4.17
     ]
    ]
@@ -3584,20 +4685,21 @@
    "count": 6,
    "currency": "USD",
    "min": 25.0,
-   "median": 29.16,
+   "median": 30.66,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-022+SPR",
    "h": [
     [
      "2026-10-20",
      29.16
+    ],
+    [
+     "2026-10-29",
+     30.66
     ]
    ]
   },
   "c-mtao95vj8sph": {
-   "count": 1,
-   "currency": "USD",
-   "min": 3.49,
-   "median": 3.49,
+   "count": 0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-024+R",
    "h": [
     [
@@ -3609,12 +4711,16 @@
   "c-mtao95vjqpph": {
    "count": 5,
    "currency": "USD",
-   "min": 2.16,
+   "min": 2.4,
    "median": 4.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-025+SR",
    "h": [
     [
      "2026-10-20",
+     4.99
+    ],
+    [
+     "2026-10-29",
      4.99
     ]
    ]
@@ -3623,64 +4729,84 @@
    "count": 4,
    "currency": "USD",
    "min": 19.99,
-   "median": 23.84,
+   "median": 37.59,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-025+SPR",
    "h": [
     [
      "2026-10-20",
      23.84
+    ],
+    [
+     "2026-10-29",
+     37.59
     ]
    ]
   },
   "c-mtao95vj5lnp": {
    "count": 3,
    "currency": "USD",
-   "min": 14.74,
-   "median": 14.99,
+   "min": 14.99,
+   "median": 15.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-027+UR",
    "h": [
     [
      "2026-10-20",
      14.99
+    ],
+    [
+     "2026-10-29",
+     15.0
     ]
    ]
   },
   "c-mtao95vjtm8g": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
    "min": 41.0,
-   "median": 41.5,
+   "median": 42.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-027+SPR",
    "h": [
     [
      "2026-10-20",
      41.5
+    ],
+    [
+     "2026-10-29",
+     42.0
     ]
    ]
   },
   "c-mtao95vj4cqr": {
    "count": 5,
    "currency": "USD",
-   "min": 2.16,
+   "min": 2.4,
    "median": 4.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-028+SR",
    "h": [
     [
      "2026-10-20",
      4.99
+    ],
+    [
+     "2026-10-29",
+     4.99
     ]
    ]
   },
   "c-mtao95vjevj6": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
    "min": 25.0,
-   "median": 31.25,
+   "median": 37.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-028+SPR",
    "h": [
     [
      "2026-10-20",
      31.25
+    ],
+    [
+     "2026-10-29",
+     37.5
     ]
    ]
   },
@@ -3694,58 +4820,78 @@
     [
      "2026-10-20",
      18.0
+    ],
+    [
+     "2026-10-29",
+     18.0
     ]
    ]
   },
   "c-mtao95vjphxu": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
-   "min": 23.76,
-   "median": 30.0,
+   "min": 26.4,
+   "median": 35.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-029+SPR",
    "h": [
     [
      "2026-10-20",
      30.0
+    ],
+    [
+     "2026-10-29",
+     35.5
     ]
    ]
   },
   "c-mtao95vj58i2": {
    "count": 1,
    "currency": "USD",
-   "min": 0.99,
-   "median": 0.99,
+   "min": 1.1,
+   "median": 1.1,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-030+C",
    "h": [
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     1.1
     ]
    ]
   },
   "c-mtao95vk2rsf": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
    "min": 6.95,
-   "median": 6.99,
+   "median": 8.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-037+UR",
    "h": [
     [
      "2026-10-20",
      6.99
+    ],
+    [
+     "2026-10-29",
+     8.5
     ]
    ]
   },
   "c-mtao95vko9ee": {
-   "count": 6,
+   "count": 4,
    "currency": "USD",
-   "min": 26.64,
-   "median": 29.0,
+   "min": 29.6,
+   "median": 30.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-037+SPR",
    "h": [
     [
      "2026-10-20",
      29.0
+    ],
+    [
+     "2026-10-29",
+     30.5
     ]
    ]
   },
@@ -3759,19 +4905,27 @@
     [
      "2026-10-20",
      30.0
+    ],
+    [
+     "2026-10-29",
+     30.0
     ]
    ]
   },
   "c-mtao95vk9kde": {
-   "count": 1,
+   "count": 2,
    "currency": "USD",
    "min": 191.0,
-   "median": 191.0,
+   "median": 287.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-041+SPL",
    "h": [
     [
      "2026-10-20",
      191.0
+    ],
+    [
+     "2026-10-29",
+     287.99
     ]
    ]
   },
@@ -3785,19 +4939,40 @@
     [
      "2026-10-20",
      179.65
+    ],
+    [
+     "2026-10-29",
+     179.65
+    ]
+   ]
+  },
+  "c-mtao95vkh81i": {
+   "count": 1,
+   "currency": "USD",
+   "min": 2.99,
+   "median": 2.99,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-051+C",
+   "h": [
+    [
+     "2026-10-29",
+     2.99
     ]
    ]
   },
   "c-mtao95vkcgty": {
    "count": 2,
    "currency": "USD",
-   "min": 0.99,
-   "median": 1.74,
+   "min": 1.1,
+   "median": 1.8,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-063+C",
    "h": [
     [
      "2026-10-20",
      1.74
+    ],
+    [
+     "2026-10-29",
+     1.8
     ]
    ]
   },
@@ -3811,44 +4986,60 @@
     [
      "2026-10-20",
      15.0
+    ],
+    [
+     "2026-10-29",
+     15.0
     ]
    ]
   },
   "c-mtao95vkpdut": {
    "count": 4,
    "currency": "USD",
-   "min": 3.36,
+   "min": 3.35,
    "median": 4.97,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-067+SR",
    "h": [
     [
      "2026-10-20",
      4.97
+    ],
+    [
+     "2026-10-29",
+     4.97
     ]
    ]
   },
   "c-mtao95vk8yuf": {
-   "count": 6,
+   "count": 5,
    "currency": "USD",
    "min": 8.0,
-   "median": 36.61,
+   "median": 33.45,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-067+SPR",
    "h": [
     [
      "2026-10-20",
      36.61
+    ],
+    [
+     "2026-10-29",
+     33.45
     ]
    ]
   },
   "c-mtao95vkxg1n": {
    "count": 5,
    "currency": "USD",
-   "min": 2.34,
+   "min": 2.6,
    "median": 4.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-068+SR",
    "h": [
     [
      "2026-10-20",
+     4.99
+    ],
+    [
+     "2026-10-29",
      4.99
     ]
    ]
@@ -3857,90 +5048,118 @@
    "count": 8,
    "currency": "USD",
    "min": 25.0,
-   "median": 29.21,
+   "median": 30.8,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-068+SPR",
    "h": [
     [
      "2026-10-20",
      29.21
+    ],
+    [
+     "2026-10-29",
+     30.8
     ]
    ]
   },
   "c-mtao95vk2om0": {
    "count": 4,
    "currency": "USD",
-   "min": 2.87,
+   "min": 3.19,
    "median": 4.67,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-069+SR",
    "h": [
     [
      "2026-10-20",
      4.67
+    ],
+    [
+     "2026-10-29",
+     4.67
     ]
    ]
   },
   "c-mtao95vk7ayt": {
-   "count": 5,
+   "count": 6,
    "currency": "USD",
    "min": 15.0,
-   "median": 25.0,
+   "median": 27.49,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-069+SPR",
    "h": [
     [
      "2026-10-20",
      25.0
+    ],
+    [
+     "2026-10-29",
+     27.49
     ]
    ]
   },
   "c-mtao95vkwa80": {
-   "count": 5,
+   "count": 6,
    "currency": "USD",
    "min": 12.0,
-   "median": 15.7,
+   "median": 16.81,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-070+UR",
    "h": [
     [
      "2026-10-20",
      15.7
+    ],
+    [
+     "2026-10-29",
+     16.81
     ]
    ]
   },
   "c-mtao95vk2zj6": {
-   "count": 4,
+   "count": 5,
    "currency": "USD",
    "min": 35.0,
-   "median": 50.5,
+   "median": 51.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-070+SPR",
    "h": [
     [
      "2026-10-20",
      50.5
+    ],
+    [
+     "2026-10-29",
+     51.0
     ]
    ]
   },
   "c-mtao95vkxkit": {
-   "count": 1,
+   "count": 2,
    "currency": "USD",
    "min": 18.0,
-   "median": 18.0,
+   "median": 28.98,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-072+UR",
    "h": [
     [
      "2026-10-20",
      18.0
+    ],
+    [
+     "2026-10-29",
+     28.98
     ]
    ]
   },
   "c-mtao95vk5s2j": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
    "min": 34.99,
-   "median": 45.0,
+   "median": 46.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-072+SPR",
    "h": [
     [
      "2026-10-20",
      45.0
+    ],
+    [
+     "2026-10-29",
+     46.5
     ]
    ]
   },
@@ -3948,51 +5167,67 @@
    "count": 3,
    "currency": "USD",
    "min": 10.0,
-   "median": 11.21,
+   "median": 11.15,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-074+SR",
    "h": [
     [
      "2026-10-20",
      11.21
+    ],
+    [
+     "2026-10-29",
+     11.15
     ]
    ]
   },
   "c-mtao95vk9j5q": {
-   "count": 5,
+   "count": 6,
    "currency": "USD",
-   "min": 14.99,
-   "median": 24.84,
+   "min": 13.59,
+   "median": 28.8,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-074+SPR",
    "h": [
     [
      "2026-10-20",
      24.84
+    ],
+    [
+     "2026-10-29",
+     28.8
     ]
    ]
   },
   "c-mtao95vko2nm": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
    "min": 15.0,
-   "median": 23.5,
+   "median": 32.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-075+UR",
    "h": [
     [
      "2026-10-20",
      23.5
+    ],
+    [
+     "2026-10-29",
+     32.0
     ]
    ]
   },
   "c-mtao95vka5bi": {
-   "count": 4,
+   "count": 3,
    "currency": "USD",
-   "min": 35.0,
-   "median": 112.0,
+   "min": 82.99,
+   "median": 141.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-075+SPR",
    "h": [
     [
      "2026-10-20",
      112.0
+    ],
+    [
+     "2026-10-29",
+     141.0
     ]
    ]
   },
@@ -4006,71 +5241,95 @@
     [
      "2026-10-20",
      3.49
+    ],
+    [
+     "2026-10-29",
+     3.49
     ]
    ]
   },
   "c-mtao95vk88am": {
    "count": 1,
    "currency": "USD",
-   "min": 5.58,
-   "median": 5.58,
+   "min": 5.64,
+   "median": 5.64,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-081+C",
    "h": [
     [
      "2026-10-20",
      5.58
+    ],
+    [
+     "2026-10-29",
+     5.64
     ]
    ]
   },
   "c-mtao95vkwjli": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
-   "min": 2.61,
-   "median": 3.36,
+   "min": 2.89,
+   "median": 3.12,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-082+SR",
    "h": [
     [
      "2026-10-20",
      3.36
+    ],
+    [
+     "2026-10-29",
+     3.12
     ]
    ]
   },
   "c-mtao95vkmr3z": {
    "count": 8,
    "currency": "USD",
-   "min": 26.17,
-   "median": 37.5,
+   "min": 27.99,
+   "median": 38.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT04-082+SPR",
    "h": [
     [
      "2026-10-20",
      37.5
+    ],
+    [
+     "2026-10-29",
+     38.0
     ]
    ]
   },
   "c-mtao9mnhvya3": {
    "count": 3,
    "currency": "USD",
-   "min": 5.18,
-   "median": 8.41,
+   "min": 5.75,
+   "median": 8.37,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-001+L",
    "h": [
     [
      "2026-10-20",
      8.41
+    ],
+    [
+     "2026-10-29",
+     8.37
     ]
    ]
   },
   "c-mtao9mnhp5fb": {
-   "count": 6,
+   "count": 7,
    "currency": "USD",
    "min": 132.0,
-   "median": 173.0,
+   "median": 191.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-001+SPL",
    "h": [
     [
      "2026-10-20",
      173.0
+    ],
+    [
+     "2026-10-29",
+     191.0
     ]
    ]
   },
@@ -4084,32 +5343,44 @@
     [
      "2026-10-20",
      2.99
+    ],
+    [
+     "2026-10-29",
+     2.99
     ]
    ]
   },
   "c-mtao9mnh6dlj": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
    "min": 25.0,
-   "median": 41.5,
+   "median": 58.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-005+SPR",
    "h": [
     [
      "2026-10-20",
      41.5
+    ],
+    [
+     "2026-10-29",
+     58.0
     ]
    ]
   },
   "c-mtao9mnhxpcl": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
-   "min": 23.43,
-   "median": 26.99,
+   "min": 26.03,
+   "median": 30.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-008+SPR",
    "h": [
     [
      "2026-10-20",
      26.99
+    ],
+    [
+     "2026-10-29",
+     30.99
     ]
    ]
   },
@@ -4123,32 +5394,44 @@
     [
      "2026-10-20",
      1.5
+    ],
+    [
+     "2026-10-29",
+     1.5
     ]
    ]
   },
   "c-mtao9mnh41s6": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
-   "min": 13.41,
-   "median": 14.76,
+   "min": 14.9,
+   "median": 16.56,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-011+UR",
    "h": [
     [
      "2026-10-20",
      14.76
+    ],
+    [
+     "2026-10-29",
+     16.56
     ]
    ]
   },
   "c-mtao9mnhchoc": {
    "count": 5,
    "currency": "USD",
-   "min": 25.37,
-   "median": 30.0,
+   "min": 28.19,
+   "median": 31.4,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-011+SPR",
    "h": [
     [
      "2026-10-20",
      30.0
+    ],
+    [
+     "2026-10-29",
+     31.4
     ]
    ]
   },
@@ -4162,84 +5445,112 @@
     [
      "2026-10-20",
      1.12
+    ],
+    [
+     "2026-10-29",
+     1.12
     ]
    ]
   },
   "c-mtao9mnhf4x4": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
    "min": 19.99,
-   "median": 31.0,
+   "median": 51.8,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-024+UR",
    "h": [
     [
      "2026-10-20",
      31.0
+    ],
+    [
+     "2026-10-29",
+     51.8
     ]
    ]
   },
   "c-mtao9mnh5ddz": {
-   "count": 5,
+   "count": 6,
    "currency": "USD",
-   "min": 19.96,
-   "median": 55.0,
+   "min": 19.99,
+   "median": 57.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-024+SPR",
    "h": [
     [
      "2026-10-20",
      55.0
+    ],
+    [
+     "2026-10-29",
+     57.5
     ]
    ]
   },
   "c-mtao9mnhtang": {
    "count": 1,
    "currency": "USD",
-   "min": 6.73,
-   "median": 6.73,
+   "min": 6.69,
+   "median": 6.69,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-025+SR",
    "h": [
     [
      "2026-10-20",
      6.73
+    ],
+    [
+     "2026-10-29",
+     6.69
     ]
    ]
   },
   "c-mtao9mnhz5kc": {
    "count": 6,
    "currency": "USD",
-   "min": 23.22,
-   "median": 25.28,
+   "min": 24.9,
+   "median": 27.1,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-025+SPR",
    "h": [
     [
      "2026-10-20",
      25.28
+    ],
+    [
+     "2026-10-29",
+     27.1
     ]
    ]
   },
   "c-mtao9mnh69bm": {
    "count": 1,
    "currency": "USD",
-   "min": 5.61,
-   "median": 5.61,
+   "min": 5.58,
+   "median": 5.58,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-028+SR",
    "h": [
     [
      "2026-10-20",
      5.61
+    ],
+    [
+     "2026-10-29",
+     5.58
     ]
    ]
   },
   "c-mtao9mnh71mh": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
-   "min": 23.46,
-   "median": 26.73,
+   "min": 26.07,
+   "median": 30.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-028+SPR",
    "h": [
     [
      "2026-10-20",
      26.73
+    ],
+    [
+     "2026-10-29",
+     30.0
     ]
    ]
   },
@@ -4253,18 +5564,26 @@
     [
      "2026-10-20",
      17.0
+    ],
+    [
+     "2026-10-29",
+     17.0
     ]
    ]
   },
   "c-mtao9mnhjn6g": {
    "count": 6,
    "currency": "USD",
-   "min": 103.0,
+   "min": 84.5,
    "median": 132.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-032+SPL",
    "h": [
     [
      "2026-10-20",
+     132.5
+    ],
+    [
+     "2026-10-29",
      132.5
     ]
    ]
@@ -4272,39 +5591,116 @@
   "c-mtao9mnh0zcp": {
    "count": 3,
    "currency": "USD",
-   "min": 6.73,
-   "median": 7.85,
+   "min": 6.69,
+   "median": 7.81,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-039+SR",
    "h": [
     [
      "2026-10-20",
      7.85
+    ],
+    [
+     "2026-10-29",
+     7.81
     ]
    ]
   },
   "c-mtao9mnhaod6": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
-   "min": 21.77,
-   "median": 23.38,
+   "min": 24.19,
+   "median": 25.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-039+SPR",
    "h": [
     [
      "2026-10-20",
      23.38
+    ],
+    [
+     "2026-10-29",
+     25.0
+    ]
+   ]
+  },
+  "c-mtao9mnh67r0": {
+   "count": 1,
+   "currency": "USD",
+   "min": 49.97,
+   "median": 49.97,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-041+UR",
+   "h": [
+    [
+     "2026-10-29",
+     49.97
+    ]
+   ]
+  },
+  "c-mtao9mnhzdcc": {
+   "count": 1,
+   "currency": "USD",
+   "min": 49.97,
+   "median": 49.97,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-041+UR",
+   "h": [
+    [
+     "2026-10-29",
+     49.97
+    ]
+   ]
+  },
+  "c-mtao9mnhx47w": {
+   "count": 1,
+   "currency": "USD",
+   "min": 49.97,
+   "median": 49.97,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-041+UR",
+   "h": [
+    [
+     "2026-10-29",
+     49.97
+    ]
+   ]
+  },
+  "c-mtao9mnha6fx": {
+   "count": 1,
+   "currency": "USD",
+   "min": 49.97,
+   "median": 49.97,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-041+UR",
+   "h": [
+    [
+     "2026-10-29",
+     49.97
     ]
    ]
   },
   "c-mtao9mnhrhh8": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
    "min": 30.0,
-   "median": 44.0,
+   "median": 58.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-044+SPR",
    "h": [
     [
      "2026-10-20",
      44.0
+    ],
+    [
+     "2026-10-29",
+     58.0
+    ]
+   ]
+  },
+  "c-mtao9mnh6l5m": {
+   "count": 1,
+   "currency": "USD",
+   "min": 49.97,
+   "median": 49.97,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-053+UR",
+   "h": [
+    [
+     "2026-10-29",
+     49.97
     ]
    ]
   },
@@ -4318,18 +5714,26 @@
     [
      "2026-10-20",
      41.61
+    ],
+    [
+     "2026-10-29",
+     41.61
     ]
    ]
   },
   "c-mtao9mnh0n9f": {
    "count": 3,
    "currency": "USD",
-   "min": 1.68,
+   "min": 1.67,
    "median": 2.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-055+SR",
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -4337,12 +5741,16 @@
   "c-mtao9mnha1ly": {
    "count": 3,
    "currency": "USD",
-   "min": 22.65,
+   "min": 25.17,
    "median": 30.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-055+SPR",
    "h": [
     [
      "2026-10-20",
+     30.0
+    ],
+    [
+     "2026-10-29",
      30.0
     ]
    ]
@@ -4350,25 +5758,33 @@
   "c-mtao9mnhs76f": {
    "count": 1,
    "currency": "USD",
-   "min": 8.97,
-   "median": 8.97,
+   "min": 8.92,
+   "median": 8.92,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-057+SR",
    "h": [
     [
      "2026-10-20",
      8.97
+    ],
+    [
+     "2026-10-29",
+     8.92
     ]
    ]
   },
   "c-mtao9mnh34bx": {
    "count": 4,
    "currency": "USD",
-   "min": 25.78,
+   "min": 22.3,
    "median": 29.4,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-057+SPR",
    "h": [
     [
      "2026-10-20",
+     29.4
+    ],
+    [
+     "2026-10-29",
      29.4
     ]
    ]
@@ -4383,6 +5799,10 @@
     [
      "2026-10-20",
      100.0
+    ],
+    [
+     "2026-10-29",
+     100.0
     ]
    ]
   },
@@ -4396,71 +5816,95 @@
     [
      "2026-10-20",
      30.0
+    ],
+    [
+     "2026-10-29",
+     30.0
     ]
    ]
   },
   "c-mtao9mnhk0ng": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
    "min": 4.0,
-   "median": 12.87,
+   "median": 15.52,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-067+UR",
    "h": [
     [
      "2026-10-20",
      12.87
+    ],
+    [
+     "2026-10-29",
+     15.52
     ]
    ]
   },
   "c-mtao9mnhv2l0": {
-   "count": 4,
+   "count": 6,
    "currency": "USD",
-   "min": 20.87,
-   "median": 24.95,
+   "min": 23.19,
+   "median": 25.28,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-067+SPR",
    "h": [
     [
      "2026-10-20",
      24.95
+    ],
+    [
+     "2026-10-29",
+     25.28
     ]
    ]
   },
   "c-mtao9mnh4bd7": {
    "count": 1,
    "currency": "USD",
-   "min": 3.25,
-   "median": 3.25,
+   "min": 3.23,
+   "median": 3.23,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-072+SR",
    "h": [
     [
      "2026-10-20",
      3.25
+    ],
+    [
+     "2026-10-29",
+     3.23
     ]
    ]
   },
   "c-mtao9mnhh8hm": {
-   "count": 7,
+   "count": 9,
    "currency": "USD",
-   "min": 18.85,
-   "median": 25.0,
+   "min": 20.94,
+   "median": 26.9,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-072+SPR",
    "h": [
     [
      "2026-10-20",
      25.0
+    ],
+    [
+     "2026-10-29",
+     26.9
     ]
    ]
   },
   "c-mtao9mnhe44t": {
-   "count": 5,
+   "count": 6,
    "currency": "USD",
-   "min": 21.69,
-   "median": 24.9,
+   "min": 24.1,
+   "median": 25.7,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-073+SPR",
    "h": [
     [
      "2026-10-20",
      24.9
+    ],
+    [
+     "2026-10-29",
+     25.7
     ]
    ]
   },
@@ -4474,24 +5918,32 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
   "c-mtaoa9gzagvx": {
    "count": 3,
    "currency": "USD",
-   "min": 5.57,
+   "min": 6.19,
    "median": 9.97,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-001+L",
    "h": [
     [
      "2026-10-20",
      9.97
+    ],
+    [
+     "2026-10-29",
+     9.97
     ]
    ]
   },
   "c-mtaoa9gzw5fd": {
-   "count": 9,
+   "count": 8,
    "currency": "USD",
    "min": 119.9,
    "median": 150.0,
@@ -4500,11 +5952,15 @@
     [
      "2026-10-20",
      150.0
+    ],
+    [
+     "2026-10-29",
+     150.0
     ]
    ]
   },
   "c-mtaoa9gzea8g": {
-   "count": 9,
+   "count": 8,
    "currency": "USD",
    "min": 119.9,
    "median": 150.0,
@@ -4512,6 +5968,10 @@
    "h": [
     [
      "2026-10-20",
+     150.0
+    ],
+    [
+     "2026-10-29",
      150.0
     ]
    ]
@@ -4526,6 +5986,10 @@
     [
      "2026-10-20",
      480.32
+    ],
+    [
+     "2026-10-29",
+     480.32
     ]
    ]
   },
@@ -4539,19 +6003,27 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
   "c-mtaoa9gz8fis": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
    "min": 1.12,
-   "median": 1.81,
+   "median": 2.49,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-004+R",
    "h": [
     [
      "2026-10-20",
      1.81
+    ],
+    [
+     "2026-10-29",
+     2.49
     ]
    ]
   },
@@ -4565,32 +6037,44 @@
     [
      "2026-10-20",
      3.99
+    ],
+    [
+     "2026-10-29",
+     3.99
     ]
    ]
   },
   "c-mtaoa9gz6evz": {
    "count": 3,
    "currency": "USD",
-   "min": 8.97,
+   "min": 8.92,
    "median": 15.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-006+UR",
    "h": [
     [
      "2026-10-20",
      15.0
+    ],
+    [
+     "2026-10-29",
+     15.0
     ]
    ]
   },
   "c-mtaoa9gzw9vt": {
-   "count": 4,
+   "count": 6,
    "currency": "USD",
-   "min": 28.03,
-   "median": 55.53,
+   "min": 27.89,
+   "median": 62.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-006+SPR",
    "h": [
     [
      "2026-10-20",
      55.53
+    ],
+    [
+     "2026-10-29",
+     62.5
     ]
    ]
   },
@@ -4604,19 +6088,27 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
   "c-mtaoa9gz2sab": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
    "min": 1.12,
-   "median": 2.49,
+   "median": 2.72,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-011+R",
    "h": [
     [
      "2026-10-20",
      2.49
+    ],
+    [
+     "2026-10-29",
+     2.72
     ]
    ]
   },
@@ -4629,6 +6121,10 @@
    "h": [
     [
      "2026-10-20",
+     3.99
+    ],
+    [
+     "2026-10-29",
      3.99
     ]
    ]
@@ -4643,6 +6139,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -4655,6 +6155,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -4669,6 +6173,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -4682,19 +6190,27 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
   "c-mtaoa9gzol7i": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
    "min": 1.12,
-   "median": 1.81,
+   "median": 2.49,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-017+R",
    "h": [
     [
      "2026-10-20",
      1.81
+    ],
+    [
+     "2026-10-29",
+     2.49
     ]
    ]
   },
@@ -4702,12 +6218,16 @@
    "count": 2,
    "currency": "USD",
    "min": 0.99,
-   "median": 3.29,
+   "median": 3.31,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-018+C",
    "h": [
     [
      "2026-10-20",
      3.29
+    ],
+    [
+     "2026-10-29",
+     3.31
     ]
    ]
   },
@@ -4721,19 +6241,27 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
   "c-mtaoa9gzpsnd": {
-   "count": 6,
+   "count": 7,
    "currency": "USD",
    "min": 2.49,
-   "median": 3.5,
+   "median": 3.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-020+R",
    "h": [
     [
      "2026-10-20",
      3.5
+    ],
+    [
+     "2026-10-29",
+     3.0
     ]
    ]
   },
@@ -4746,6 +6274,10 @@
    "h": [
     [
      "2026-10-20",
+     29.99
+    ],
+    [
+     "2026-10-29",
      29.99
     ]
    ]
@@ -4760,6 +6292,10 @@
     [
      "2026-10-20",
      168.45
+    ],
+    [
+     "2026-10-29",
+     168.45
     ]
    ]
   },
@@ -4772,6 +6308,10 @@
    "h": [
     [
      "2026-10-20",
+     3.67
+    ],
+    [
+     "2026-10-29",
      3.67
     ]
    ]
@@ -4786,6 +6326,10 @@
     [
      "2026-10-20",
      35.0
+    ],
+    [
+     "2026-10-29",
+     35.0
     ]
    ]
   },
@@ -4799,14 +6343,15 @@
     [
      "2026-10-20",
      3.99
+    ],
+    [
+     "2026-10-29",
+     3.99
     ]
    ]
   },
   "c-mtaoa9gz1idq": {
-   "count": 1,
-   "currency": "USD",
-   "min": 50.0,
-   "median": 50.0,
+   "count": 0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-023+SPR",
    "h": [
     [
@@ -4825,19 +6370,27 @@
     [
      "2026-10-20",
      7.0
+    ],
+    [
+     "2026-10-29",
+     7.0
     ]
    ]
   },
   "c-mtaoa9gzgmat": {
-   "count": 4,
+   "count": 3,
    "currency": "USD",
-   "min": 27.89,
-   "median": 31.82,
+   "min": 30.0,
+   "median": 33.46,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-024+SPR",
    "h": [
     [
      "2026-10-20",
      31.82
+    ],
+    [
+     "2026-10-29",
+     33.46
     ]
    ]
   },
@@ -4851,19 +6404,27 @@
     [
      "2026-10-20",
      46.84
+    ],
+    [
+     "2026-10-29",
+     46.84
     ]
    ]
   },
   "c-mtaoa9gz6a4n": {
-   "count": 3,
+   "count": 2,
    "currency": "USD",
-   "min": 56.07,
-   "median": 80.0,
+   "min": 56.42,
+   "median": 68.21,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-025+SPR",
    "h": [
     [
      "2026-10-20",
      80.0
+    ],
+    [
+     "2026-10-29",
+     68.21
     ]
    ]
   },
@@ -4876,6 +6437,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -4890,19 +6455,27 @@
     [
      "2026-10-20",
      3.99
+    ],
+    [
+     "2026-10-29",
+     3.99
     ]
    ]
   },
   "c-mtaoa9gzm88t": {
-   "count": 3,
+   "count": 2,
    "currency": "USD",
    "min": 29.8,
-   "median": 30.0,
+   "median": 41.2,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-029+SPR",
    "h": [
     [
      "2026-10-20",
      30.0
+    ],
+    [
+     "2026-10-29",
+     41.2
     ]
    ]
   },
@@ -4915,6 +6488,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -4929,6 +6506,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -4942,19 +6523,27 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
   "c-mtaoa9gzgk37": {
-   "count": 1,
+   "count": 2,
    "currency": "USD",
    "min": 2.49,
-   "median": 2.49,
+   "median": 2.72,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-033+R",
    "h": [
     [
      "2026-10-20",
      2.49
+    ],
+    [
+     "2026-10-29",
+     2.72
     ]
    ]
   },
@@ -4968,32 +6557,44 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
   "c-mtaoa9gzn2xa": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
    "min": 1.12,
-   "median": 2.49,
+   "median": 2.72,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-036+R",
    "h": [
     [
      "2026-10-20",
      2.49
+    ],
+    [
+     "2026-10-29",
+     2.72
     ]
    ]
   },
   "c-mtaoa9gz1vb4": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
    "min": 1.12,
-   "median": 1.5,
+   "median": 2.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-037+R",
    "h": [
     [
      "2026-10-20",
      1.5
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -5007,84 +6608,112 @@
     [
      "2026-10-20",
      3.95
+    ],
+    [
+     "2026-10-29",
+     3.95
     ]
    ]
   },
   "c-mtaoa9gz30ci": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
    "min": 2.88,
-   "median": 3.44,
+   "median": 2.95,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-039+R",
    "h": [
     [
      "2026-10-20",
      3.44
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
   "c-mtaoa9gzf0wh": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
    "min": 1.12,
-   "median": 1.81,
+   "median": 2.49,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-040+R",
    "h": [
     [
      "2026-10-20",
      1.81
+    ],
+    [
+     "2026-10-29",
+     2.49
     ]
    ]
   },
   "c-mtaoa9gzcotz": {
-   "count": 4,
+   "count": 3,
    "currency": "USD",
-   "min": 5.0,
-   "median": 11.11,
+   "min": 11.0,
+   "median": 11.15,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-043+L",
    "h": [
     [
      "2026-10-20",
      11.11
+    ],
+    [
+     "2026-10-29",
+     11.15
     ]
    ]
   },
   "c-mtaoa9gz3ka8": {
-   "count": 6,
+   "count": 4,
    "currency": "USD",
-   "min": 156.0,
-   "median": 260.06,
+   "min": 200.0,
+   "median": 350.11,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-043+SPL",
    "h": [
     [
      "2026-10-20",
      260.06
+    ],
+    [
+     "2026-10-29",
+     350.11
     ]
    ]
   },
   "c-mtaoa9gzel2f": {
-   "count": 6,
+   "count": 4,
    "currency": "USD",
-   "min": 156.0,
-   "median": 260.06,
+   "min": 200.0,
+   "median": 350.11,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-043+SPL",
    "h": [
     [
      "2026-10-20",
      260.06
+    ],
+    [
+     "2026-10-29",
+     350.11
     ]
    ]
   },
   "c-mtaoa9gzufb5": {
    "count": 1,
    "currency": "USD",
-   "min": 1047.0,
-   "median": 1047.0,
+   "min": 1058.1,
+   "median": 1058.1,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-043+SSL",
    "h": [
     [
      "2026-10-20",
      1047.0
+    ],
+    [
+     "2026-10-29",
+     1058.1
     ]
    ]
   },
@@ -5097,6 +6726,10 @@
    "h": [
     [
      "2026-10-20",
+     2.49
+    ],
+    [
+     "2026-10-29",
      2.49
     ]
    ]
@@ -5111,6 +6744,10 @@
     [
      "2026-10-20",
      1.99
+    ],
+    [
+     "2026-10-29",
+     1.99
     ]
    ]
   },
@@ -5123,6 +6760,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -5137,6 +6778,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -5149,6 +6794,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -5163,6 +6812,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -5176,45 +6829,61 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
   "c-mtaoa9gz9e8x": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
    "min": 1.99,
-   "median": 2.24,
+   "median": 2.49,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-053+R",
    "h": [
     [
      "2026-10-20",
      2.24
+    ],
+    [
+     "2026-10-29",
+     2.49
     ]
    ]
   },
   "c-mtaoa9gz7v73": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
    "min": 1.12,
-   "median": 1.81,
+   "median": 2.49,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-054+R",
    "h": [
     [
      "2026-10-20",
      1.81
+    ],
+    [
+     "2026-10-29",
+     2.49
     ]
    ]
   },
   "c-mtaoa9gze8gy": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
    "min": 1.12,
-   "median": 2.04,
+   "median": 2.95,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-055+R",
    "h": [
     [
      "2026-10-20",
      2.04
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
@@ -5227,6 +6896,10 @@
    "h": [
     [
      "2026-10-20",
+     1.81
+    ],
+    [
+     "2026-10-29",
      1.81
     ]
    ]
@@ -5241,32 +6914,44 @@
     [
      "2026-10-20",
      5.0
+    ],
+    [
+     "2026-10-29",
+     5.0
     ]
    ]
   },
   "c-mtaoa9gzrf7n": {
    "count": 1,
    "currency": "USD",
-   "min": 25.0,
-   "median": 25.0,
+   "min": 40.0,
+   "median": 40.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-057+SPR",
    "h": [
     [
      "2026-10-20",
      25.0
+    ],
+    [
+     "2026-10-29",
+     40.0
     ]
    ]
   },
   "c-mtaoa9gzaidr": {
-   "count": 10,
+   "count": 9,
    "currency": "USD",
    "min": 2.65,
-   "median": 4.49,
+   "median": 4.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-058+SR",
    "h": [
     [
      "2026-10-20",
      4.49
+    ],
+    [
+     "2026-10-29",
+     4.99
     ]
    ]
   },
@@ -5274,12 +6959,16 @@
    "count": 3,
    "currency": "USD",
    "min": 25.0,
-   "median": 28.48,
+   "median": 31.64,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-058+SPR",
    "h": [
     [
      "2026-10-20",
      28.48
+    ],
+    [
+     "2026-10-29",
+     31.64
     ]
    ]
   },
@@ -5292,6 +6981,10 @@
    "h": [
     [
      "2026-10-20",
+     3.77
+    ],
+    [
+     "2026-10-29",
      3.77
     ]
    ]
@@ -5306,6 +6999,10 @@
     [
      "2026-10-20",
      39.12
+    ],
+    [
+     "2026-10-29",
+     39.12
     ]
    ]
   },
@@ -5319,6 +7016,10 @@
     [
      "2026-10-20",
      3.77
+    ],
+    [
+     "2026-10-29",
+     3.77
     ]
    ]
   },
@@ -5326,12 +7027,16 @@
    "count": 3,
    "currency": "USD",
    "min": 30.0,
-   "median": 33.64,
+   "median": 33.46,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-061+SPR",
    "h": [
     [
      "2026-10-20",
      33.64
+    ],
+    [
+     "2026-10-29",
+     33.46
     ]
    ]
   },
@@ -5344,6 +7049,10 @@
    "h": [
     [
      "2026-10-20",
+     30.0
+    ],
+    [
+     "2026-10-29",
      30.0
     ]
    ]
@@ -5358,58 +7067,78 @@
     [
      "2026-10-20",
      35.0
+    ],
+    [
+     "2026-10-29",
+     35.0
     ]
    ]
   },
   "c-mtaoa9gz0hbt": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
-   "min": 34.0,
-   "median": 34.5,
+   "min": 25.0,
+   "median": 34.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-063+UR",
    "h": [
     [
      "2026-10-20",
      34.5
+    ],
+    [
+     "2026-10-29",
+     34.0
     ]
    ]
   },
   "c-mtaoa9gzyid4": {
-   "count": 5,
+   "count": 4,
    "currency": "USD",
-   "min": 34.0,
-   "median": 41.5,
+   "min": 39.0,
+   "median": 43.25,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-063+SPR",
    "h": [
     [
      "2026-10-20",
      41.5
+    ],
+    [
+     "2026-10-29",
+     43.25
     ]
    ]
   },
   "c-mtaoa9gzipxn": {
-   "count": 2,
+   "count": 4,
    "currency": "USD",
    "min": 10.99,
-   "median": 20.5,
+   "median": 23.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-064+UR",
    "h": [
     [
      "2026-10-20",
      20.5
+    ],
+    [
+     "2026-10-29",
+     23.99
     ]
    ]
   },
   "c-mtaoa9gz4my5": {
-   "count": 7,
+   "count": 4,
    "currency": "USD",
    "min": 33.0,
-   "median": 39.71,
+   "median": 37.36,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-064+SPR",
    "h": [
     [
      "2026-10-20",
      39.71
+    ],
+    [
+     "2026-10-29",
+     37.36
     ]
    ]
   },
@@ -5422,6 +7151,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -5436,19 +7169,27 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
   "c-mtaoa9gza8xr": {
-   "count": 1,
+   "count": 2,
    "currency": "USD",
    "min": 2.49,
-   "median": 2.49,
+   "median": 2.72,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-070+R",
    "h": [
     [
      "2026-10-20",
      2.49
+    ],
+    [
+     "2026-10-29",
+     2.72
     ]
    ]
   },
@@ -5461,6 +7202,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -5475,6 +7220,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -5487,6 +7236,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -5501,58 +7254,78 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
   "c-mtaoa9gzpo6h": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
    "min": 1.12,
-   "median": 1.81,
+   "median": 2.49,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-076+R",
    "h": [
     [
      "2026-10-20",
      1.81
+    ],
+    [
+     "2026-10-29",
+     2.49
     ]
    ]
   },
   "c-mtaoa9gznu86": {
-   "count": 1,
+   "count": 2,
    "currency": "USD",
    "min": 2.49,
-   "median": 2.49,
+   "median": 2.72,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-077+R",
    "h": [
     [
      "2026-10-20",
      2.49
+    ],
+    [
+     "2026-10-29",
+     2.72
     ]
    ]
   },
   "c-mtaoa9gz4jv3": {
-   "count": 4,
+   "count": 5,
    "currency": "USD",
    "min": 1.12,
-   "median": 2.74,
+   "median": 2.95,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-079+R",
    "h": [
     [
      "2026-10-20",
      2.74
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
   "c-mtaoa9gz53bt": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
    "min": 1.12,
-   "median": 1.81,
+   "median": 2.49,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-080+R",
    "h": [
     [
      "2026-10-20",
      1.81
+    ],
+    [
+     "2026-10-29",
+     2.49
     ]
    ]
   },
@@ -5566,27 +7339,32 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
   "c-mtaoa9gza1hp": {
    "count": 2,
    "currency": "USD",
-   "min": 5.61,
-   "median": 10.05,
+   "min": 5.58,
+   "median": 10.04,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-082+SR",
    "h": [
     [
      "2026-10-20",
      10.05
+    ],
+    [
+     "2026-10-29",
+     10.04
     ]
    ]
   },
   "c-mtaoa9gzbswz": {
-   "count": 1,
-   "currency": "USD",
-   "min": 43.0,
-   "median": 43.0,
+   "count": 0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT06-082+SPR",
    "h": [
     [
@@ -5598,18 +7376,22 @@
   "c-mtaoatz95zws": {
    "count": 7,
    "currency": "USD",
-   "min": 4.49,
-   "median": 5.61,
+   "min": 4.46,
+   "median": 5.58,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-001+L",
    "h": [
     [
      "2026-10-20",
      5.61
+    ],
+    [
+     "2026-10-29",
+     5.58
     ]
    ]
   },
   "c-mtaoatz9v1x4": {
-   "count": 17,
+   "count": 16,
    "currency": "USD",
    "min": 119.99,
    "median": 190.0,
@@ -5617,12 +7399,16 @@
    "h": [
     [
      "2026-10-20",
+     190.0
+    ],
+    [
+     "2026-10-29",
      190.0
     ]
    ]
   },
   "c-mtaoatz9j3c9": {
-   "count": 17,
+   "count": 16,
    "currency": "USD",
    "min": 119.99,
    "median": 190.0,
@@ -5631,19 +7417,27 @@
     [
      "2026-10-20",
      190.0
+    ],
+    [
+     "2026-10-29",
+     190.0
     ]
    ]
   },
   "c-mtaoatz9or96": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
-   "min": 447.81,
-   "median": 480.0,
+   "min": 383.54,
+   "median": 490.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-001+SSL",
    "h": [
     [
      "2026-10-20",
      480.0
+    ],
+    [
+     "2026-10-29",
+     490.0
     ]
    ]
   },
@@ -5656,6 +7450,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -5670,6 +7468,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -5682,6 +7484,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -5696,6 +7502,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -5708,6 +7518,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -5722,6 +7536,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -5734,6 +7552,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -5748,6 +7570,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -5760,6 +7586,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -5774,6 +7604,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -5786,6 +7620,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -5800,6 +7638,23 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
+    ]
+   ]
+  },
+  "c-mtaoatz9be54": {
+   "count": 1,
+   "currency": "USD",
+   "min": 1.95,
+   "median": 1.95,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-015+R",
+   "h": [
+    [
+     "2026-10-29",
+     1.95
     ]
    ]
   },
@@ -5812,6 +7667,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -5826,6 +7685,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -5839,19 +7702,27 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
   "c-mtaoatz9dijz": {
    "count": 1,
    "currency": "USD",
-   "min": 8.97,
-   "median": 8.97,
+   "min": 8.92,
+   "median": 8.92,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-020+R",
    "h": [
     [
      "2026-10-20",
      8.97
+    ],
+    [
+     "2026-10-29",
+     8.92
     ]
    ]
   },
@@ -5865,32 +7736,44 @@
     [
      "2026-10-20",
      5.0
+    ],
+    [
+     "2026-10-29",
+     5.0
     ]
    ]
   },
   "c-mtaoatz9ykpj": {
-   "count": 6,
+   "count": 7,
    "currency": "USD",
    "min": 35.0,
-   "median": 45.5,
+   "median": 45.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-023+SPR",
    "h": [
     [
      "2026-10-20",
      45.5
+    ],
+    [
+     "2026-10-29",
+     45.0
     ]
    ]
   },
   "c-mtaoatz9woki": {
-   "count": 6,
+   "count": 7,
    "currency": "USD",
    "min": 1.49,
-   "median": 4.46,
+   "median": 3.9,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-024+SR",
    "h": [
     [
      "2026-10-20",
      4.46
+    ],
+    [
+     "2026-10-29",
+     3.9
     ]
    ]
   },
@@ -5898,76 +7781,100 @@
    "count": 10,
    "currency": "USD",
    "min": 15.0,
-   "median": 24.89,
+   "median": 24.95,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-024+SPR",
    "h": [
     [
      "2026-10-20",
      24.89
+    ],
+    [
+     "2026-10-29",
+     24.95
     ]
    ]
   },
   "c-mtaoatz9ayd3": {
-   "count": 4,
+   "count": 5,
    "currency": "USD",
    "min": 2.5,
-   "median": 5.25,
+   "median": 4.46,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-025+SR",
    "h": [
     [
      "2026-10-20",
      5.25
+    ],
+    [
+     "2026-10-29",
+     4.46
     ]
    ]
   },
   "c-mtaoatz9ls5u": {
-   "count": 9,
+   "count": 10,
    "currency": "USD",
-   "min": 24.0,
-   "median": 25.0,
+   "min": 21.9,
+   "median": 25.89,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-025+SPR",
    "h": [
     [
      "2026-10-20",
      25.0
+    ],
+    [
+     "2026-10-29",
+     25.89
     ]
    ]
   },
   "c-mtaoatz9ch8e": {
-   "count": 1,
+   "count": 2,
    "currency": "USD",
    "min": 0.99,
-   "median": 0.99,
+   "median": 1.47,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-026+C",
    "h": [
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     1.47
     ]
    ]
   },
   "c-mtaoatz9bfz1": {
-   "count": 6,
+   "count": 7,
    "currency": "USD",
    "min": 2.5,
-   "median": 6.28,
+   "median": 3.95,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-028+SR",
    "h": [
     [
      "2026-10-20",
      6.28
+    ],
+    [
+     "2026-10-29",
+     3.95
     ]
    ]
   },
   "c-mtaoatz9i9ou": {
    "count": 9,
    "currency": "USD",
-   "min": 17.3,
+   "min": 12.13,
    "median": 31.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-028+SPR",
    "h": [
     [
      "2026-10-20",
+     31.99
+    ],
+    [
+     "2026-10-29",
      31.99
     ]
    ]
@@ -5982,6 +7889,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -5994,6 +7905,10 @@
    "h": [
     [
      "2026-10-20",
+     30.0
+    ],
+    [
+     "2026-10-29",
      30.0
     ]
    ]
@@ -6008,32 +7923,44 @@
     [
      "2026-10-20",
      42.5
+    ],
+    [
+     "2026-10-29",
+     42.5
     ]
    ]
   },
   "c-mtaoatz9xho2": {
    "count": 5,
    "currency": "USD",
-   "min": 3.97,
-   "median": 6.73,
+   "min": 2.95,
+   "median": 5.47,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-033+SR",
    "h": [
     [
      "2026-10-20",
      6.73
+    ],
+    [
+     "2026-10-29",
+     5.47
     ]
    ]
   },
   "c-mtaoatz93t3u": {
-   "count": 13,
+   "count": 14,
    "currency": "USD",
    "min": 20.0,
-   "median": 25.0,
+   "median": 25.89,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-033+SPR",
    "h": [
     [
      "2026-10-20",
      25.0
+    ],
+    [
+     "2026-10-29",
+     25.89
     ]
    ]
   },
@@ -6047,18 +7974,26 @@
     [
      "2026-10-20",
      50.0
+    ],
+    [
+     "2026-10-29",
+     50.0
     ]
    ]
   },
   "c-mtaoatz9yebl": {
    "count": 7,
    "currency": "USD",
-   "min": 33.7,
+   "min": 29.95,
    "median": 40.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-034+SPR",
    "h": [
     [
      "2026-10-20",
+     40.0
+    ],
+    [
+     "2026-10-29",
      40.0
     ]
    ]
@@ -6066,39 +8001,51 @@
   "c-mtaoatz92rkd": {
    "count": 6,
    "currency": "USD",
-   "min": 11.21,
-   "median": 17.98,
+   "min": 15.0,
+   "median": 19.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-035+UR",
    "h": [
     [
      "2026-10-20",
      17.98
+    ],
+    [
+     "2026-10-29",
+     19.99
     ]
    ]
   },
   "c-mtaoatz9bol1": {
-   "count": 5,
+   "count": 6,
    "currency": "USD",
-   "min": 29.22,
+   "min": 29.89,
    "median": 40.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-035+SPR",
    "h": [
     [
      "2026-10-20",
      40.0
+    ],
+    [
+     "2026-10-29",
+     40.0
     ]
    ]
   },
   "c-mtaoatz9wxk4": {
-   "count": 1,
+   "count": 2,
    "currency": "USD",
-   "min": 8.97,
-   "median": 8.97,
+   "min": 1.95,
+   "median": 5.43,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-036+R",
    "h": [
     [
      "2026-10-20",
      8.97
+    ],
+    [
+     "2026-10-29",
+     5.43
     ]
    ]
   },
@@ -6111,6 +8058,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -6125,6 +8076,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -6137,6 +8092,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -6151,6 +8110,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -6163,6 +8126,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -6177,6 +8144,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -6190,58 +8161,78 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
   "c-mtaoatz99g0i": {
-   "count": 8,
+   "count": 7,
    "currency": "USD",
-   "min": 5.05,
-   "median": 12.24,
+   "min": 5.47,
+   "median": 16.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-045+L",
    "h": [
     [
      "2026-10-20",
      12.24
+    ],
+    [
+     "2026-10-29",
+     16.99
     ]
    ]
   },
   "c-mtaoatz9ti93": {
-   "count": 10,
+   "count": 11,
    "currency": "USD",
    "min": 149.0,
-   "median": 194.99,
+   "median": 199.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-045+SPL",
    "h": [
     [
      "2026-10-20",
      194.99
+    ],
+    [
+     "2026-10-29",
+     199.99
     ]
    ]
   },
   "c-mtaoatz9ljhp": {
-   "count": 10,
+   "count": 11,
    "currency": "USD",
    "min": 149.0,
-   "median": 194.99,
+   "median": 199.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-045+SPL",
    "h": [
     [
      "2026-10-20",
      194.99
+    ],
+    [
+     "2026-10-29",
+     199.99
     ]
    ]
   },
   "c-mtaoatz9n63s": {
-   "count": 4,
+   "count": 5,
    "currency": "USD",
    "min": 500.0,
-   "median": 548.5,
+   "median": 555.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-045+SSL",
    "h": [
     [
      "2026-10-20",
      548.5
+    ],
+    [
+     "2026-10-29",
+     555.0
     ]
    ]
   },
@@ -6254,6 +8245,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -6268,19 +8263,27 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
   "c-mtaoatz9w8vy": {
-   "count": 1,
+   "count": 2,
    "currency": "USD",
    "min": 0.99,
-   "median": 0.99,
+   "median": 1.47,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-048+C",
    "h": [
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     1.47
     ]
    ]
   },
@@ -6293,6 +8296,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -6307,6 +8314,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -6319,6 +8330,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -6333,71 +8348,108 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
   "c-mtaoatz9pu3a": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
-   "min": 4.15,
-   "median": 8.32,
+   "min": 2.49,
+   "median": 4.15,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-054+R",
    "h": [
     [
      "2026-10-20",
      8.32
+    ],
+    [
+     "2026-10-29",
+     4.15
+    ]
+   ]
+  },
+  "c-mtaoatz9ewl8": {
+   "count": 1,
+   "currency": "USD",
+   "min": 2.49,
+   "median": 2.49,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-056+R",
+   "h": [
+    [
+     "2026-10-29",
+     2.49
     ]
    ]
   },
   "c-mtaoatz9jrzk": {
    "count": 3,
    "currency": "USD",
-   "min": 3.92,
-   "median": 5.61,
+   "min": 3.49,
+   "median": 3.9,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-058+SR",
    "h": [
     [
      "2026-10-20",
      5.61
+    ],
+    [
+     "2026-10-29",
+     3.9
     ]
    ]
   },
   "c-mtaoatz989gk": {
-   "count": 4,
+   "count": 5,
    "currency": "USD",
-   "min": 24.67,
+   "min": 22.0,
    "median": 25.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-058+SPR",
    "h": [
     [
      "2026-10-20",
      25.0
+    ],
+    [
+     "2026-10-29",
+     25.0
     ]
    ]
   },
   "c-mtaoatz923nh": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
-   "min": 4.77,
-   "median": 5.05,
+   "min": 3.95,
+   "median": 4.89,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-059+SR",
    "h": [
     [
      "2026-10-20",
      5.05
+    ],
+    [
+     "2026-10-29",
+     4.89
     ]
    ]
   },
   "c-mtaoatz9sxbd": {
-   "count": 11,
+   "count": 12,
    "currency": "USD",
    "min": 14.99,
-   "median": 29.38,
+   "median": 30.05,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-059+SPR",
    "h": [
     [
      "2026-10-20",
      29.38
+    ],
+    [
+     "2026-10-29",
+     30.05
     ]
    ]
   },
@@ -6410,6 +8462,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -6424,19 +8480,27 @@
     [
      "2026-10-20",
      27.5
+    ],
+    [
+     "2026-10-29",
+     27.5
     ]
    ]
   },
   "c-mtaoatz9afns": {
-   "count": 5,
+   "count": 4,
    "currency": "USD",
-   "min": 27.44,
-   "median": 48.99,
+   "min": 30.49,
+   "median": 46.89,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-062+SPR",
    "h": [
     [
      "2026-10-20",
      48.99
+    ],
+    [
+     "2026-10-29",
+     46.89
     ]
    ]
   },
@@ -6450,32 +8514,44 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
   "c-mtaoatz9f35b": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
    "min": 20.0,
-   "median": 28.58,
+   "median": 29.29,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-064+UR",
    "h": [
     [
      "2026-10-20",
      28.58
+    ],
+    [
+     "2026-10-29",
+     29.29
     ]
    ]
   },
   "c-mtaoatz9xdjb": {
    "count": 7,
    "currency": "USD",
-   "min": 31.86,
-   "median": 33.5,
+   "min": 32.9,
+   "median": 35.4,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-064+SPR",
    "h": [
     [
      "2026-10-20",
      33.5
+    ],
+    [
+     "2026-10-29",
+     35.4
     ]
    ]
   },
@@ -6489,19 +8565,27 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
   "c-mtaoatz957ig": {
-   "count": 1,
+   "count": 2,
    "currency": "USD",
-   "min": 5.97,
-   "median": 5.97,
+   "min": 3.95,
+   "median": 4.96,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-067+SR",
    "h": [
     [
      "2026-10-20",
      5.97
+    ],
+    [
+     "2026-10-29",
+     4.96
     ]
    ]
   },
@@ -6514,6 +8598,10 @@
    "h": [
     [
      "2026-10-20",
+     35.0
+    ],
+    [
+     "2026-10-29",
      35.0
     ]
    ]
@@ -6528,6 +8616,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -6541,32 +8633,44 @@
     [
      "2026-10-20",
      5.5
+    ],
+    [
+     "2026-10-29",
+     5.5
     ]
    ]
   },
   "c-mtaoatz98sk3": {
-   "count": 5,
+   "count": 6,
    "currency": "USD",
    "min": 14.89,
-   "median": 25.0,
+   "median": 23.25,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-070+SPR",
    "h": [
     [
      "2026-10-20",
      25.0
+    ],
+    [
+     "2026-10-29",
+     23.25
     ]
    ]
   },
   "c-mtaoatz9n1uy": {
-   "count": 6,
+   "count": 7,
    "currency": "USD",
-   "min": 2.92,
-   "median": 5.3,
+   "min": 2.9,
+   "median": 5.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-071+SR",
    "h": [
     [
      "2026-10-20",
      5.3
+    ],
+    [
+     "2026-10-29",
+     5.0
     ]
    ]
   },
@@ -6579,6 +8683,10 @@
    "h": [
     [
      "2026-10-20",
+     25.0
+    ],
+    [
+     "2026-10-29",
      25.0
     ]
    ]
@@ -6593,19 +8701,40 @@
     [
      "2026-10-20",
      26.0
+    ],
+    [
+     "2026-10-29",
+     26.0
     ]
    ]
   },
   "c-mtaoatz9hlhr": {
-   "count": 4,
+   "count": 5,
    "currency": "USD",
    "min": 38.0,
-   "median": 61.06,
+   "median": 60.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-072+SPR",
    "h": [
     [
      "2026-10-20",
      61.06
+    ],
+    [
+     "2026-10-29",
+     60.0
+    ]
+   ]
+  },
+  "c-mtaoatz945z4": {
+   "count": 1,
+   "currency": "USD",
+   "min": 1.95,
+   "median": 1.95,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-073+R",
+   "h": [
+    [
+     "2026-10-29",
+     1.95
     ]
    ]
   },
@@ -6618,6 +8747,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -6632,6 +8765,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -6644,6 +8781,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -6658,19 +8799,27 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
   "c-mtaoatz96smq": {
    "count": 1,
    "currency": "USD",
-   "min": 4.49,
-   "median": 4.49,
+   "min": 1.95,
+   "median": 1.95,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT07-079+R",
    "h": [
     [
      "2026-10-20",
      4.49
+    ],
+    [
+     "2026-10-29",
+     1.95
     ]
    ]
   },
@@ -6683,6 +8832,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -6697,6 +8850,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -6709,6 +8866,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -6723,6 +8884,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -6735,6 +8900,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -6749,6 +8918,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -6761,6 +8934,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -6775,6 +8952,10 @@
     [
      "2026-10-20",
      0.99
+    ],
+    [
+     "2026-10-29",
+     0.99
     ]
    ]
   },
@@ -6787,6 +8968,10 @@
    "h": [
     [
      "2026-10-20",
+     0.99
+    ],
+    [
+     "2026-10-29",
      0.99
     ]
    ]
@@ -6801,6 +8986,10 @@
     [
      "2026-10-20",
      35.0
+    ],
+    [
+     "2026-10-29",
+     35.0
     ]
    ]
   },
@@ -6813,6 +9002,10 @@
    "h": [
     [
      "2026-10-20",
+     200.0
+    ],
+    [
+     "2026-10-29",
      200.0
     ]
    ]
@@ -6827,19 +9020,27 @@
     [
      "2026-10-20",
      200.0
+    ],
+    [
+     "2026-10-29",
+     200.0
     ]
    ]
   },
   "c-mua9jk0r8e8x": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
    "min": 600.0,
-   "median": 636.39,
+   "median": 669.24,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-001+SSL",
    "h": [
     [
      "2026-10-20",
      636.39
+    ],
+    [
+     "2026-10-29",
+     669.24
     ]
    ]
   },
@@ -6852,6 +9053,10 @@
    "h": [
     [
      "2026-10-20",
+     2.95
+    ],
+    [
+     "2026-10-29",
      2.95
     ]
    ]
@@ -6866,6 +9071,10 @@
     [
      "2026-10-20",
      3.0
+    ],
+    [
+     "2026-10-29",
+     3.0
     ]
    ]
   },
@@ -6878,6 +9087,10 @@
    "h": [
     [
      "2026-10-20",
+     2.95
+    ],
+    [
+     "2026-10-29",
      2.95
     ]
    ]
@@ -6892,6 +9105,10 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
@@ -6905,24 +9122,32 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
   "c-mua9jk0rf1tb": {
-   "count": 15,
+   "count": 13,
    "currency": "USD",
-   "min": 2.66,
-   "median": 5.97,
+   "min": 3.5,
+   "median": 5.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-007+SR",
    "h": [
     [
      "2026-10-20",
      5.97
+    ],
+    [
+     "2026-10-29",
+     5.99
     ]
    ]
   },
   "c-mua9jk0rammh": {
-   "count": 7,
+   "count": 8,
    "currency": "USD",
    "min": 21.0,
    "median": 32.0,
@@ -6931,6 +9156,10 @@
     [
      "2026-10-20",
      32.0
+    ],
+    [
+     "2026-10-29",
+     32.0
     ]
    ]
   },
@@ -6938,12 +9167,16 @@
    "count": 2,
    "currency": "USD",
    "min": 2.95,
-   "median": 6.71,
+   "median": 6.76,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-008+C",
    "h": [
     [
      "2026-10-20",
      6.71
+    ],
+    [
+     "2026-10-29",
+     6.76
     ]
    ]
   },
@@ -6957,6 +9190,10 @@
     [
      "2026-10-20",
      2.48
+    ],
+    [
+     "2026-10-29",
+     2.48
     ]
    ]
   },
@@ -6964,50 +9201,66 @@
    "count": 13,
    "currency": "USD",
    "min": 2.95,
-   "median": 6.38,
+   "median": 6.43,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-010+SR",
    "h": [
     [
      "2026-10-20",
      6.38
+    ],
+    [
+     "2026-10-29",
+     6.43
     ]
    ]
   },
   "c-mua9jk0rywii": {
-   "count": 7,
+   "count": 6,
    "currency": "USD",
    "min": 25.0,
-   "median": 31.07,
+   "median": 28.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-010+SPR",
    "h": [
     [
      "2026-10-20",
      31.07
+    ],
+    [
+     "2026-10-29",
+     28.5
     ]
    ]
   },
   "c-mua9jk0rl72q": {
    "count": 7,
    "currency": "USD",
-   "min": 10.63,
+   "min": 10.72,
    "median": 14.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-011+UR",
    "h": [
     [
      "2026-10-20",
      14.99
+    ],
+    [
+     "2026-10-29",
+     14.99
     ]
    ]
   },
   "c-mua9jk0rax7y": {
-   "count": 6,
+   "count": 8,
    "currency": "USD",
-   "min": 23.99,
+   "min": 15.0,
    "median": 38.25,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-011+SPR",
    "h": [
     [
      "2026-10-20",
+     38.25
+    ],
+    [
+     "2026-10-29",
      38.25
     ]
    ]
@@ -7022,6 +9275,10 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
@@ -7034,6 +9291,10 @@
    "h": [
     [
      "2026-10-20",
+     2.95
+    ],
+    [
+     "2026-10-29",
      2.95
     ]
    ]
@@ -7048,6 +9309,10 @@
     [
      "2026-10-20",
      2.49
+    ],
+    [
+     "2026-10-29",
+     2.49
     ]
    ]
   },
@@ -7060,6 +9325,10 @@
    "h": [
     [
      "2026-10-20",
+     8.0
+    ],
+    [
+     "2026-10-29",
      8.0
     ]
    ]
@@ -7074,6 +9343,10 @@
     [
      "2026-10-20",
      20.0
+    ],
+    [
+     "2026-10-29",
+     20.0
     ]
    ]
   },
@@ -7086,6 +9359,10 @@
    "h": [
     [
      "2026-10-20",
+     426.33
+    ],
+    [
+     "2026-10-29",
      426.33
     ]
    ]
@@ -7100,6 +9377,10 @@
     [
      "2026-10-20",
      426.33
+    ],
+    [
+     "2026-10-29",
+     426.33
     ]
    ]
   },
@@ -7112,6 +9393,10 @@
    "h": [
     [
      "2026-10-20",
+     780.0
+    ],
+    [
+     "2026-10-29",
      780.0
     ]
    ]
@@ -7126,6 +9411,10 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
@@ -7138,6 +9427,10 @@
    "h": [
     [
      "2026-10-20",
+     2.95
+    ],
+    [
+     "2026-10-29",
      2.95
     ]
    ]
@@ -7152,6 +9445,10 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
@@ -7164,6 +9461,10 @@
    "h": [
     [
      "2026-10-20",
+     2.95
+    ],
+    [
+     "2026-10-29",
      2.95
     ]
    ]
@@ -7178,6 +9479,10 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
@@ -7190,6 +9495,10 @@
    "h": [
     [
      "2026-10-20",
+     15.0
+    ],
+    [
+     "2026-10-29",
      15.0
     ]
    ]
@@ -7204,6 +9513,10 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
@@ -7217,6 +9530,10 @@
     [
      "2026-10-20",
      9.0
+    ],
+    [
+     "2026-10-29",
+     9.0
     ]
    ]
   },
@@ -7224,63 +9541,83 @@
    "count": 8,
    "currency": "USD",
    "min": 13.0,
-   "median": 14.39,
+   "median": 14.4,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-027+UR",
    "h": [
     [
      "2026-10-20",
      14.39
+    ],
+    [
+     "2026-10-29",
+     14.4
     ]
    ]
   },
   "c-mua9jk0scnpw": {
-   "count": 7,
+   "count": 8,
    "currency": "USD",
    "min": 38.88,
-   "median": 45.0,
+   "median": 43.75,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-027+SPR",
    "h": [
     [
      "2026-10-20",
      45.0
+    ],
+    [
+     "2026-10-29",
+     43.75
     ]
    ]
   },
   "c-mua9jk0sjmkc": {
-   "count": 13,
+   "count": 10,
    "currency": "USD",
-   "min": 2.66,
-   "median": 4.0,
+   "min": 2.95,
+   "median": 4.64,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-028+SR",
    "h": [
     [
      "2026-10-20",
      4.0
+    ],
+    [
+     "2026-10-29",
+     4.64
     ]
    ]
   },
   "c-mua9jk0stm0c": {
-   "count": 5,
+   "count": 4,
    "currency": "USD",
    "min": 25.0,
-   "median": 30.0,
+   "median": 27.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-028+SPR",
    "h": [
     [
      "2026-10-20",
      30.0
+    ],
+    [
+     "2026-10-29",
+     27.5
     ]
    ]
   },
   "c-mua9jk0slw7g": {
-   "count": 11,
+   "count": 9,
    "currency": "USD",
-   "min": 2.66,
+   "min": 2.75,
    "median": 3.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-029+SR",
    "h": [
     [
      "2026-10-20",
+     3.5
+    ],
+    [
+     "2026-10-29",
      3.5
     ]
    ]
@@ -7289,12 +9626,16 @@
    "count": 9,
    "currency": "USD",
    "min": 19.99,
-   "median": 36.99,
+   "median": 44.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-029+SPR",
    "h": [
     [
      "2026-10-20",
      36.99
+    ],
+    [
+     "2026-10-29",
+     44.99
     ]
    ]
   },
@@ -7307,6 +9648,10 @@
    "h": [
     [
      "2026-10-20",
+     2.95
+    ],
+    [
+     "2026-10-29",
      2.95
     ]
    ]
@@ -7321,6 +9666,10 @@
     [
      "2026-10-20",
      4.95
+    ],
+    [
+     "2026-10-29",
+     4.95
     ]
    ]
   },
@@ -7334,19 +9683,27 @@
     [
      "2026-10-20",
      7.47
+    ],
+    [
+     "2026-10-29",
+     7.47
     ]
    ]
   },
   "c-mua9jk0srjg7": {
-   "count": 5,
+   "count": 6,
    "currency": "USD",
    "min": 5.0,
-   "median": 20.0,
+   "median": 24.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-035+L",
    "h": [
     [
      "2026-10-20",
      20.0
+    ],
+    [
+     "2026-10-29",
+     24.99
     ]
    ]
   },
@@ -7359,6 +9716,10 @@
    "h": [
     [
      "2026-10-20",
+     249.65
+    ],
+    [
+     "2026-10-29",
      249.65
     ]
    ]
@@ -7373,6 +9734,10 @@
     [
      "2026-10-20",
      249.65
+    ],
+    [
+     "2026-10-29",
+     249.65
     ]
    ]
   },
@@ -7385,6 +9750,10 @@
    "h": [
     [
      "2026-10-20",
+     555.0
+    ],
+    [
+     "2026-10-29",
      555.0
     ]
    ]
@@ -7399,6 +9768,10 @@
     [
      "2026-10-20",
      8.97
+    ],
+    [
+     "2026-10-29",
+     8.97
     ]
    ]
   },
@@ -7411,6 +9784,10 @@
    "h": [
     [
      "2026-10-20",
+     2.95
+    ],
+    [
+     "2026-10-29",
      2.95
     ]
    ]
@@ -7425,6 +9802,10 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
@@ -7438,32 +9819,44 @@
     [
      "2026-10-20",
      3.21
+    ],
+    [
+     "2026-10-29",
+     3.21
     ]
    ]
   },
   "c-mua9jk0sbd6d": {
-   "count": 11,
+   "count": 10,
    "currency": "USD",
    "min": 3.0,
-   "median": 4.99,
+   "median": 4.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-040+SR",
    "h": [
     [
      "2026-10-20",
      4.99
+    ],
+    [
+     "2026-10-29",
+     4.5
     ]
    ]
   },
   "c-mua9jk0swe3m": {
-   "count": 6,
+   "count": 5,
    "currency": "USD",
    "min": 21.99,
-   "median": 45.0,
+   "median": 44.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-040+SPR",
    "h": [
     [
      "2026-10-20",
      45.0
+    ],
+    [
+     "2026-10-29",
+     44.99
     ]
    ]
   },
@@ -7477,32 +9870,44 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
   "c-mua9jk0s87cl": {
    "count": 8,
    "currency": "USD",
-   "min": 6.65,
-   "median": 13.97,
+   "min": 9.99,
+   "median": 14.97,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-042+UR",
    "h": [
     [
      "2026-10-20",
      13.97
+    ],
+    [
+     "2026-10-29",
+     14.97
     ]
    ]
   },
   "c-mua9jk0spnse": {
-   "count": 11,
+   "count": 9,
    "currency": "USD",
-   "min": 19.95,
-   "median": 44.9,
+   "min": 28.0,
+   "median": 45.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-042+SPR",
    "h": [
     [
      "2026-10-20",
      44.9
+    ],
+    [
+     "2026-10-29",
+     45.0
     ]
    ]
   },
@@ -7515,6 +9920,10 @@
    "h": [
     [
      "2026-10-20",
+     2.95
+    ],
+    [
+     "2026-10-29",
      2.95
     ]
    ]
@@ -7529,6 +9938,10 @@
     [
      "2026-10-20",
      6.0
+    ],
+    [
+     "2026-10-29",
+     6.0
     ]
    ]
   },
@@ -7542,19 +9955,27 @@
     [
      "2026-10-20",
      6.47
+    ],
+    [
+     "2026-10-29",
+     6.47
     ]
    ]
   },
   "c-mua9jk0snei9": {
-   "count": 8,
+   "count": 7,
    "currency": "USD",
    "min": 32.8,
-   "median": 59.5,
+   "median": 59.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-045+SPR",
    "h": [
     [
      "2026-10-20",
      59.5
+    ],
+    [
+     "2026-10-29",
+     59.0
     ]
    ]
   },
@@ -7567,6 +9988,10 @@
    "h": [
     [
      "2026-10-20",
+     4.95
+    ],
+    [
+     "2026-10-29",
      4.95
     ]
    ]
@@ -7581,6 +10006,10 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
@@ -7593,6 +10022,10 @@
    "h": [
     [
      "2026-10-20",
+     4.0
+    ],
+    [
+     "2026-10-29",
      4.0
     ]
    ]
@@ -7607,6 +10040,10 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
@@ -7620,45 +10057,61 @@
     [
      "2026-10-20",
      20.0
+    ],
+    [
+     "2026-10-29",
+     20.0
     ]
    ]
   },
   "c-mua9jk0shevo": {
-   "count": 13,
+   "count": 14,
    "currency": "USD",
    "min": 148.99,
-   "median": 200.0,
+   "median": 205.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-052+SPL",
    "h": [
     [
      "2026-10-20",
      200.0
+    ],
+    [
+     "2026-10-29",
+     205.5
     ]
    ]
   },
   "c-mua9jk0sp8bd": {
-   "count": 13,
+   "count": 14,
    "currency": "USD",
    "min": 148.99,
-   "median": 200.0,
+   "median": 205.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-052+SPL",
    "h": [
     [
      "2026-10-20",
      200.0
+    ],
+    [
+     "2026-10-29",
+     205.5
     ]
    ]
   },
   "c-mua9jk0savcc": {
-   "count": 8,
+   "count": 9,
    "currency": "USD",
-   "min": 499.0,
-   "median": 590.0,
+   "min": 440.0,
+   "median": 580.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-052+SSL",
    "h": [
     [
      "2026-10-20",
      590.0
+    ],
+    [
+     "2026-10-29",
+     580.0
     ]
    ]
   },
@@ -7671,6 +10124,10 @@
    "h": [
     [
      "2026-10-20",
+     2.95
+    ],
+    [
+     "2026-10-29",
      2.95
     ]
    ]
@@ -7685,6 +10142,10 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
@@ -7697,6 +10158,10 @@
    "h": [
     [
      "2026-10-20",
+     5.5
+    ],
+    [
+     "2026-10-29",
      5.5
     ]
    ]
@@ -7711,6 +10176,10 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
@@ -7723,6 +10192,10 @@
    "h": [
     [
      "2026-10-20",
+     2.95
+    ],
+    [
+     "2026-10-29",
      2.95
     ]
    ]
@@ -7737,6 +10210,10 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
@@ -7750,84 +10227,112 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
   "c-mua9jk0s8cr8": {
-   "count": 12,
+   "count": 9,
    "currency": "USD",
-   "min": 2.66,
-   "median": 4.12,
+   "min": 3.0,
+   "median": 4.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-060+SR",
    "h": [
     [
      "2026-10-20",
      4.12
+    ],
+    [
+     "2026-10-29",
+     4.0
     ]
    ]
   },
   "c-mua9jk0spq9a": {
-   "count": 6,
+   "count": 5,
    "currency": "USD",
    "min": 25.0,
-   "median": 39.62,
+   "median": 39.04,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-060+SPR",
    "h": [
     [
      "2026-10-20",
      39.62
+    ],
+    [
+     "2026-10-29",
+     39.04
     ]
    ]
   },
   "c-mua9jk0soxb2": {
-   "count": 13,
+   "count": 12,
    "currency": "USD",
-   "min": 2.66,
+   "min": 3.0,
    "median": 4.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-061+SR",
    "h": [
     [
      "2026-10-20",
      4.0
+    ],
+    [
+     "2026-10-29",
+     4.0
     ]
    ]
   },
   "c-mua9jk0s1rwc": {
-   "count": 11,
+   "count": 10,
    "currency": "USD",
    "min": 19.99,
-   "median": 30.0,
+   "median": 31.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-061+SPR",
    "h": [
     [
      "2026-10-20",
      30.0
+    ],
+    [
+     "2026-10-29",
+     31.0
     ]
    ]
   },
   "c-mua9jk0ssr77": {
    "count": 4,
    "currency": "USD",
-   "min": 11.69,
+   "min": 11.79,
    "median": 13.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-062+UR",
    "h": [
     [
      "2026-10-20",
      13.0
+    ],
+    [
+     "2026-10-29",
+     13.0
     ]
    ]
   },
   "c-mua9jk0szu79": {
-   "count": 13,
+   "count": 12,
    "currency": "USD",
    "min": 31.0,
-   "median": 36.99,
+   "median": 44.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-062+SPR",
    "h": [
     [
      "2026-10-20",
      36.99
+    ],
+    [
+     "2026-10-29",
+     44.5
     ]
    ]
   },
@@ -7840,6 +10345,10 @@
    "h": [
     [
      "2026-10-20",
+     2.95
+    ],
+    [
+     "2026-10-29",
      2.95
     ]
    ]
@@ -7854,6 +10363,10 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
@@ -7866,6 +10379,10 @@
    "h": [
     [
      "2026-10-20",
+     2.95
+    ],
+    [
+     "2026-10-29",
      2.95
     ]
    ]
@@ -7880,45 +10397,61 @@
     [
      "2026-10-20",
      8.97
+    ],
+    [
+     "2026-10-29",
+     8.97
     ]
    ]
   },
   "c-mua9jk0sm4q7": {
-   "count": 4,
+   "count": 6,
    "currency": "USD",
-   "min": 5.0,
-   "median": 15.0,
+   "min": 4.99,
+   "median": 10.29,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-069+L",
    "h": [
     [
      "2026-10-20",
      15.0
+    ],
+    [
+     "2026-10-29",
+     10.29
     ]
    ]
   },
   "c-mua9jk0sf7yz": {
-   "count": 9,
+   "count": 10,
    "currency": "USD",
    "min": 135.0,
-   "median": 199.99,
+   "median": 200.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-069+SPL",
    "h": [
     [
      "2026-10-20",
      199.99
+    ],
+    [
+     "2026-10-29",
+     200.0
     ]
    ]
   },
   "c-mua9jk0s9av5": {
-   "count": 9,
+   "count": 10,
    "currency": "USD",
    "min": 135.0,
-   "median": 199.99,
+   "median": 200.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-069+SPL",
    "h": [
     [
      "2026-10-20",
      199.99
+    ],
+    [
+     "2026-10-29",
+     200.0
     ]
    ]
   },
@@ -7931,6 +10464,10 @@
    "h": [
     [
      "2026-10-20",
+     558.0
+    ],
+    [
+     "2026-10-29",
      558.0
     ]
    ]
@@ -7945,6 +10482,10 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
@@ -7957,6 +10498,10 @@
    "h": [
     [
      "2026-10-20",
+     2.95
+    ],
+    [
+     "2026-10-29",
      2.95
     ]
    ]
@@ -7971,6 +10516,10 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
@@ -7983,6 +10532,10 @@
    "h": [
     [
      "2026-10-20",
+     2.98
+    ],
+    [
+     "2026-10-29",
      2.98
     ]
    ]
@@ -7997,6 +10550,10 @@
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
@@ -8010,45 +10567,61 @@
     [
      "2026-10-20",
      3.95
+    ],
+    [
+     "2026-10-29",
+     3.95
     ]
    ]
   },
   "c-mua9jk0s19us": {
-   "count": 8,
+   "count": 7,
    "currency": "USD",
    "min": 3.99,
-   "median": 5.6,
+   "median": 6.95,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-076+SR",
    "h": [
     [
      "2026-10-20",
      5.6
+    ],
+    [
+     "2026-10-29",
+     6.95
     ]
    ]
   },
   "c-mua9jk0s7zc1": {
-   "count": 7,
+   "count": 6,
    "currency": "USD",
    "min": 21.0,
-   "median": 30.0,
+   "median": 25.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-076+SPR",
    "h": [
     [
      "2026-10-20",
      30.0
+    ],
+    [
+     "2026-10-29",
+     25.0
     ]
    ]
   },
   "c-mua9jk0sqmmw": {
-   "count": 8,
+   "count": 6,
    "currency": "USD",
-   "min": 2.66,
-   "median": 14.99,
+   "min": 14.0,
+   "median": 15.86,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-077+UR",
    "h": [
     [
      "2026-10-20",
      14.99
+    ],
+    [
+     "2026-10-29",
+     15.86
     ]
    ]
   },
@@ -8062,19 +10635,27 @@
     [
      "2026-10-20",
      36.99
+    ],
+    [
+     "2026-10-29",
+     36.99
     ]
    ]
   },
   "c-mua9jk0s5238": {
-   "count": 12,
+   "count": 9,
    "currency": "USD",
    "min": 2.0,
-   "median": 5.06,
+   "median": 6.17,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT08-078+SR",
    "h": [
     [
      "2026-10-20",
      5.06
+    ],
+    [
+     "2026-10-29",
+     6.17
     ]
    ]
   },
@@ -8087,6 +10668,10 @@
    "h": [
     [
      "2026-10-20",
+     36.0
+    ],
+    [
+     "2026-10-29",
      36.0
     ]
    ]
@@ -8101,6 +10686,10 @@
     [
      "2026-10-20",
      2.49
+    ],
+    [
+     "2026-10-29",
+     2.49
     ]
    ]
   },
@@ -8113,6 +10702,10 @@
    "h": [
     [
      "2026-10-20",
+     2.95
+    ],
+    [
+     "2026-10-29",
      2.95
     ]
    ]
@@ -8127,6 +10720,10 @@
     [
      "2026-10-20",
      5.97
+    ],
+    [
+     "2026-10-29",
+     5.97
     ]
    ]
   },
@@ -8140,24 +10737,32 @@
     [
      "2026-10-20",
      150.0
+    ],
+    [
+     "2026-10-29",
+     150.0
     ]
    ]
   },
   "c-mtuojk6uw8yr": {
-   "count": 18,
+   "count": 19,
    "currency": "USD",
    "min": 2.0,
-   "median": 4.97,
+   "median": 4.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST01-010+UR",
    "h": [
     [
      "2026-10-20",
      4.97
+    ],
+    [
+     "2026-10-29",
+     4.99
     ]
    ]
   },
   "c-mtuojk6uxr8m": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
    "min": 25.0,
    "median": 30.0,
@@ -8166,19 +10771,27 @@
     [
      "2026-10-20",
      30.0
+    ],
+    [
+     "2026-10-29",
+     30.0
     ]
    ]
   },
   "c-mtuojk6uuc28": {
-   "count": 3,
+   "count": 2,
    "currency": "USD",
    "min": 40.0,
-   "median": 85.1,
+   "median": 62.55,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST01-011+SBR",
    "h": [
     [
      "2026-10-20",
      85.1
+    ],
+    [
+     "2026-10-29",
+     62.55
     ]
    ]
   },
@@ -8191,6 +10804,10 @@
    "h": [
     [
      "2026-10-20",
+     3.0
+    ],
+    [
+     "2026-10-29",
      3.0
     ]
    ]
@@ -8205,6 +10822,10 @@
     [
      "2026-10-20",
      2.99
+    ],
+    [
+     "2026-10-29",
+     2.99
     ]
    ]
   },
@@ -8218,58 +10839,78 @@
     [
      "2026-10-20",
      2.99
+    ],
+    [
+     "2026-10-29",
+     2.99
     ]
    ]
   },
   "c-mtuojk6uxo8g": {
-   "count": 9,
+   "count": 8,
    "currency": "USD",
    "min": 1.75,
-   "median": 3.0,
+   "median": 3.17,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-015+SR",
    "h": [
     [
      "2026-10-20",
      3.0
+    ],
+    [
+     "2026-10-29",
+     3.17
     ]
    ]
   },
   "c-mtuojk6uzt1l": {
    "count": 17,
    "currency": "USD",
-   "min": 2.66,
-   "median": 4.99,
+   "min": 3.35,
+   "median": 5.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-001+UR",
    "h": [
     [
      "2026-10-20",
      4.99
+    ],
+    [
+     "2026-10-29",
+     5.99
     ]
    ]
   },
   "c-mtuojk6unn26": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
    "min": 42.9,
-   "median": 60.0,
+   "median": 59.95,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-001+SPR",
    "h": [
     [
      "2026-10-20",
      60.0
+    ],
+    [
+     "2026-10-29",
+     59.95
     ]
    ]
   },
   "c-mtuojk6u9osi": {
    "count": 12,
    "currency": "USD",
-   "min": 3.36,
-   "median": 6.5,
+   "min": 3.35,
+   "median": 7.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-002+UR",
    "h": [
     [
      "2026-10-20",
      6.5
+    ],
+    [
+     "2026-10-29",
+     7.0
     ]
    ]
   },
@@ -8283,6 +10924,10 @@
     [
      "2026-10-20",
      45.0
+    ],
+    [
+     "2026-10-29",
+     45.0
     ]
    ]
   },
@@ -8290,64 +10935,84 @@
    "count": 10,
    "currency": "USD",
    "min": 3.59,
-   "median": 10.25,
+   "median": 11.04,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-003+UR",
    "h": [
     [
      "2026-10-20",
      10.25
+    ],
+    [
+     "2026-10-29",
+     11.04
     ]
    ]
   },
   "c-mtuojk6uzmru": {
-   "count": 12,
+   "count": 11,
    "currency": "USD",
    "min": 73.0,
-   "median": 104.5,
+   "median": 99.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-003+SBR",
    "h": [
     [
      "2026-10-20",
      104.5
+    ],
+    [
+     "2026-10-29",
+     99.0
     ]
    ]
   },
   "c-mtuojk6uvybm": {
    "count": 11,
    "currency": "USD",
-   "min": 1.58,
+   "min": 1.75,
    "median": 3.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-004+SR",
    "h": [
     [
      "2026-10-20",
      3.0
+    ],
+    [
+     "2026-10-29",
+     3.0
     ]
    ]
   },
   "c-mtuojk6u3f8y": {
-   "count": 11,
+   "count": 10,
    "currency": "USD",
-   "min": 1.6,
+   "min": 1.78,
    "median": 3.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-005+SR",
    "h": [
     [
      "2026-10-20",
      3.0
+    ],
+    [
+     "2026-10-29",
+     3.0
     ]
    ]
   },
   "c-mtuojk6ud731": {
-   "count": 7,
+   "count": 8,
    "currency": "USD",
    "min": 109.99,
-   "median": 129.0,
+   "median": 132.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST02-001+SBL",
    "h": [
     [
      "2026-10-20",
      129.0
+    ],
+    [
+     "2026-10-29",
+     132.0
     ]
    ]
   },
@@ -8361,19 +11026,27 @@
     [
      "2026-10-20",
      699.99
+    ],
+    [
+     "2026-10-29",
+     699.99
     ]
    ]
   },
   "c-mtuojk6utifr": {
-   "count": 17,
+   "count": 16,
    "currency": "USD",
    "min": 1.01,
-   "median": 2.66,
+   "median": 2.65,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST02-005+SR",
    "h": [
     [
      "2026-10-20",
      2.66
+    ],
+    [
+     "2026-10-29",
+     2.65
     ]
    ]
   },
@@ -8387,97 +11060,129 @@
     [
      "2026-10-20",
      41.5
+    ],
+    [
+     "2026-10-29",
+     41.5
     ]
    ]
   },
   "c-mtuojk6up321": {
-   "count": 22,
+   "count": 24,
    "currency": "USD",
-   "min": 1.99,
-   "median": 4.5,
+   "min": 1.79,
+   "median": 5.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST02-010+UR",
    "h": [
     [
      "2026-10-20",
      4.5
+    ],
+    [
+     "2026-10-29",
+     5.0
     ]
    ]
   },
   "c-mtuojk6usv13": {
    "count": 5,
    "currency": "USD",
-   "min": 21.96,
+   "min": 22.0,
    "median": 25.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST02-010+SPR",
    "h": [
     [
      "2026-10-20",
      25.0
+    ],
+    [
+     "2026-10-29",
+     25.0
     ]
    ]
   },
   "c-mtuojk6uxdeq": {
-   "count": 12,
+   "count": 13,
    "currency": "USD",
    "min": 0.99,
-   "median": 2.88,
+   "median": 2.8,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST02-011+SR",
    "h": [
     [
      "2026-10-20",
      2.88
+    ],
+    [
+     "2026-10-29",
+     2.8
     ]
    ]
   },
   "c-mtuojk6umepv": {
-   "count": 11,
+   "count": 12,
    "currency": "USD",
    "min": 1.5,
-   "median": 2.95,
+   "median": 2.88,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST02-015+SR",
    "h": [
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.88
     ]
    ]
   },
   "c-mtuojk6um9zi": {
    "count": 16,
    "currency": "USD",
-   "min": 1.23,
+   "min": 1.37,
    "median": 2.33,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT01-043+SR",
    "h": [
     [
      "2026-10-20",
      2.33
+    ],
+    [
+     "2026-10-29",
+     2.33
     ]
    ]
   },
   "c-mtuojk6uayxd": {
-   "count": 12,
+   "count": 11,
    "currency": "USD",
    "min": 0.99,
-   "median": 2.8,
+   "median": 2.95,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-006+SR",
    "h": [
     [
      "2026-10-20",
      2.8
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
   "c-mtuojk6ur03a": {
-   "count": 27,
+   "count": 26,
    "currency": "USD",
-   "min": 2.66,
-   "median": 4.49,
+   "min": 3.0,
+   "median": 4.75,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-007+UR",
    "h": [
     [
      "2026-10-20",
      4.49
+    ],
+    [
+     "2026-10-29",
+     4.75
     ]
    ]
   },
@@ -8485,64 +11190,84 @@
    "count": 8,
    "currency": "USD",
    "min": 20.0,
-   "median": 23.5,
+   "median": 24.65,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-007+SPR",
    "h": [
     [
      "2026-10-20",
      23.5
+    ],
+    [
+     "2026-10-29",
+     24.65
     ]
    ]
   },
   "c-mtuojk6uekdu": {
-   "count": 20,
+   "count": 22,
    "currency": "USD",
    "min": 3.0,
-   "median": 4.92,
+   "median": 4.25,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-008+UR",
    "h": [
     [
      "2026-10-20",
      4.92
+    ],
+    [
+     "2026-10-29",
+     4.25
     ]
    ]
   },
   "c-mtuojk6uzw6z": {
-   "count": 5,
+   "count": 4,
    "currency": "USD",
-   "min": 21.3,
-   "median": 34.7,
+   "min": 23.67,
+   "median": 30.95,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-008+SPR",
    "h": [
     [
      "2026-10-20",
      34.7
+    ],
+    [
+     "2026-10-29",
+     30.95
     ]
    ]
   },
   "c-mtuojk6uq18b": {
-   "count": 8,
+   "count": 9,
    "currency": "USD",
-   "min": 1.5,
-   "median": 2.98,
+   "min": 1.49,
+   "median": 2.95,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-009+SR",
    "h": [
     [
      "2026-10-20",
      2.98
+    ],
+    [
+     "2026-10-29",
+     2.95
     ]
    ]
   },
   "c-mtuojk6umpau": {
-   "count": 26,
+   "count": 25,
    "currency": "USD",
-   "min": 2.66,
-   "median": 4.67,
+   "min": 3.0,
+   "median": 4.89,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-010+UR",
    "h": [
     [
      "2026-10-20",
      4.67
+    ],
+    [
+     "2026-10-29",
+     4.89
     ]
    ]
   },
@@ -8555,6 +11280,10 @@
    "h": [
     [
      "2026-10-20",
+     54.0
+    ],
+    [
+     "2026-10-29",
      54.0
     ]
    ]
@@ -8569,6 +11298,10 @@
     [
      "2026-10-20",
      150.0
+    ],
+    [
+     "2026-10-29",
+     150.0
     ]
    ]
   },
@@ -8582,32 +11315,44 @@
     [
      "2026-10-20",
      859.0
+    ],
+    [
+     "2026-10-29",
+     859.0
     ]
    ]
   },
   "c-mtuojk6uvdk3": {
-   "count": 16,
+   "count": 18,
    "currency": "USD",
    "min": 3.0,
-   "median": 4.8,
+   "median": 4.97,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST03-003+UR",
    "h": [
     [
      "2026-10-20",
      4.8
+    ],
+    [
+     "2026-10-29",
+     4.97
     ]
    ]
   },
   "c-mtuojk6uf6ws": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
-   "min": 25.28,
-   "median": 35.0,
+   "min": 25.0,
+   "median": 30.16,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST03-003+SPR",
    "h": [
     [
      "2026-10-20",
      35.0
+    ],
+    [
+     "2026-10-29",
+     30.16
     ]
    ]
   },
@@ -8621,24 +11366,32 @@
     [
      "2026-10-20",
      2.7
+    ],
+    [
+     "2026-10-29",
+     2.7
     ]
    ]
   },
   "c-mtuojk6ueqol": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
    "min": 29.8,
-   "median": 32.4,
+   "median": 35.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST03-011+SBR",
    "h": [
     [
      "2026-10-20",
      32.4
+    ],
+    [
+     "2026-10-29",
+     35.0
     ]
    ]
   },
   "c-mtuojk6u5xos": {
-   "count": 17,
+   "count": 19,
    "currency": "USD",
    "min": 0.99,
    "median": 2.65,
@@ -8646,6 +11399,10 @@
    "h": [
     [
      "2026-10-20",
+     2.65
+    ],
+    [
+     "2026-10-29",
      2.65
     ]
    ]
@@ -8660,19 +11417,27 @@
     [
      "2026-10-20",
      3.0
+    ],
+    [
+     "2026-10-29",
+     3.0
     ]
    ]
   },
   "c-mtuojk6umhld": {
-   "count": 6,
+   "count": 7,
    "currency": "USD",
    "min": 1.99,
-   "median": 2.68,
+   "median": 2.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-049+SR",
    "h": [
     [
      "2026-10-20",
      2.68
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -8686,97 +11451,129 @@
     [
      "2026-10-20",
      2.98
+    ],
+    [
+     "2026-10-29",
+     2.98
     ]
    ]
   },
   "c-mtuojk6u6vdo": {
-   "count": 24,
+   "count": 22,
    "currency": "USD",
-   "min": 2.66,
+   "min": 2.79,
    "median": 4.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-012+UR",
    "h": [
     [
      "2026-10-20",
      4.99
+    ],
+    [
+     "2026-10-29",
+     4.99
     ]
    ]
   },
   "c-mtuojk6ugiz7": {
-   "count": 5,
+   "count": 3,
    "currency": "USD",
-   "min": 20.0,
-   "median": 38.9,
+   "min": 36.9,
+   "median": 42.9,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-012+SPR",
    "h": [
     [
      "2026-10-20",
      38.9
+    ],
+    [
+     "2026-10-29",
+     42.9
     ]
    ]
   },
   "c-mtuojk6ucj5g": {
    "count": 27,
    "currency": "USD",
-   "min": 1.99,
-   "median": 4.99,
+   "min": 3.35,
+   "median": 5.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-013+UR",
    "h": [
     [
      "2026-10-20",
      4.99
+    ],
+    [
+     "2026-10-29",
+     5.0
     ]
    ]
   },
   "c-mtuojk6ulg4v": {
-   "count": 5,
+   "count": 4,
    "currency": "USD",
-   "min": 26.46,
-   "median": 50.0,
+   "min": 29.4,
+   "median": 42.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-013+SBR",
    "h": [
     [
      "2026-10-20",
      50.0
+    ],
+    [
+     "2026-10-29",
+     42.5
     ]
    ]
   },
   "c-mtuojk6urdv6": {
-   "count": 13,
+   "count": 14,
    "currency": "USD",
    "min": 0.99,
-   "median": 2.8,
+   "median": 2.72,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-014+SR",
    "h": [
     [
      "2026-10-20",
      2.8
+    ],
+    [
+     "2026-10-29",
+     2.72
     ]
    ]
   },
   "c-mtuojk6uvgk5": {
-   "count": 22,
+   "count": 24,
    "currency": "USD",
-   "min": 2.87,
-   "median": 4.99,
+   "min": 3.19,
+   "median": 5.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-015+UR",
    "h": [
     [
      "2026-10-20",
      4.99
+    ],
+    [
+     "2026-10-29",
+     5.0
     ]
    ]
   },
   "c-mtuojk6uugg4": {
-   "count": 4,
+   "count": 5,
    "currency": "USD",
    "min": 29.99,
-   "median": 32.5,
+   "median": 35.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-015+SPR",
    "h": [
     [
      "2026-10-20",
      32.5
+    ],
+    [
+     "2026-10-29",
+     35.0
     ]
    ]
   },
@@ -8784,12 +11581,16 @@
    "count": 2,
    "currency": "USD",
    "min": 145.0,
-   "median": 322.5,
+   "median": 172.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST04-001+SBL",
    "h": [
     [
      "2026-10-20",
      322.5
+    ],
+    [
+     "2026-10-29",
+     172.5
     ]
    ]
   },
@@ -8803,45 +11604,61 @@
     [
      "2026-10-20",
      694.0
+    ],
+    [
+     "2026-10-29",
+     694.0
     ]
    ]
   },
   "c-mtuojk6u1jnq": {
    "count": 11,
    "currency": "USD",
-   "min": 3.36,
+   "min": 3.35,
    "median": 5.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST04-007+UR",
    "h": [
     [
      "2026-10-20",
      5.99
+    ],
+    [
+     "2026-10-29",
+     5.99
     ]
    ]
   },
   "c-mtuojk6uwtr9": {
-   "count": 5,
+   "count": 6,
    "currency": "USD",
-   "min": 21.66,
-   "median": 25.56,
+   "min": 24.07,
+   "median": 28.34,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST04-007+SPR",
    "h": [
     [
      "2026-10-20",
      25.56
+    ],
+    [
+     "2026-10-29",
+     28.34
     ]
    ]
   },
   "c-mtuojk6uzpse": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
    "min": 29.99,
-   "median": 29.99,
+   "median": 30.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST04-011+SBR",
    "h": [
     [
      "2026-10-20",
      29.99
+    ],
+    [
+     "2026-10-29",
+     30.0
     ]
    ]
   },
@@ -8854,6 +11671,10 @@
    "h": [
     [
      "2026-10-20",
+     2.95
+    ],
+    [
+     "2026-10-29",
      2.95
     ]
    ]
@@ -8868,6 +11689,10 @@
     [
      "2026-10-20",
      2.5
+    ],
+    [
+     "2026-10-29",
+     2.5
     ]
    ]
   },
@@ -8881,45 +11706,61 @@
     [
      "2026-10-20",
      2.48
+    ],
+    [
+     "2026-10-29",
+     2.48
     ]
    ]
   },
   "c-mtuojk6umzux": {
    "count": 10,
    "currency": "USD",
-   "min": 1.35,
+   "min": 1.5,
    "median": 3.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-065+SR",
    "h": [
     [
      "2026-10-20",
      3.0
+    ],
+    [
+     "2026-10-29",
+     3.0
     ]
    ]
   },
   "c-mtuojk6uwyzd": {
-   "count": 25,
+   "count": 24,
    "currency": "USD",
    "min": 1.99,
-   "median": 4.0,
+   "median": 4.25,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-016+UR",
    "h": [
     [
      "2026-10-20",
      4.0
+    ],
+    [
+     "2026-10-29",
+     4.25
     ]
    ]
   },
   "c-mtuojk6undby": {
    "count": 7,
    "currency": "USD",
-   "min": 15.91,
-   "median": 35.0,
+   "min": 17.68,
+   "median": 30.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-016+SPR",
    "h": [
     [
      "2026-10-20",
      35.0
+    ],
+    [
+     "2026-10-29",
+     30.0
     ]
    ]
   },
@@ -8933,18 +11774,26 @@
     [
      "2026-10-20",
      1.9
+    ],
+    [
+     "2026-10-29",
+     1.9
     ]
    ]
   },
   "c-mtuojk6uuiz0": {
    "count": 18,
    "currency": "USD",
-   "min": 1.35,
+   "min": 1.5,
    "median": 2.97,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-018+SR",
    "h": [
     [
      "2026-10-20",
+     2.97
+    ],
+    [
+     "2026-10-29",
      2.97
     ]
    ]
@@ -8952,12 +11801,16 @@
   "c-mtuojk6u94a4": {
    "count": 23,
    "currency": "USD",
-   "min": 3.0,
+   "min": 2.79,
    "median": 4.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-019+UR",
    "h": [
     [
      "2026-10-20",
+     4.99
+    ],
+    [
+     "2026-10-29",
      4.99
     ]
    ]
@@ -8972,32 +11825,44 @@
     [
      "2026-10-20",
      60.0
+    ],
+    [
+     "2026-10-29",
+     60.0
     ]
    ]
   },
   "c-mtuojk6u1ikd": {
-   "count": 21,
+   "count": 22,
    "currency": "USD",
-   "min": 1.99,
+   "min": 3.0,
    "median": 4.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-020+UR",
    "h": [
     [
      "2026-10-20",
      4.99
+    ],
+    [
+     "2026-10-29",
+     4.99
     ]
    ]
   },
   "c-mtuojk6umyxv": {
-   "count": 4,
+   "count": 5,
    "currency": "USD",
-   "min": 39.0,
-   "median": 54.14,
+   "min": 35.9,
+   "median": 48.27,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-020+SBR",
    "h": [
     [
      "2026-10-20",
      54.14
+    ],
+    [
+     "2026-10-29",
+     48.27
     ]
    ]
   },
@@ -9005,64 +11870,84 @@
    "count": 2,
    "currency": "USD",
    "min": 300.33,
-   "median": 375.16,
+   "median": 350.16,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST05-001+SBL",
    "h": [
     [
      "2026-10-20",
      375.16
+    ],
+    [
+     "2026-10-29",
+     350.16
     ]
    ]
   },
   "c-mtuojk6utbph": {
-   "count": 10,
+   "count": 11,
    "currency": "USD",
    "min": 1.0,
-   "median": 2.52,
+   "median": 2.24,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST05-003+SR",
    "h": [
     [
      "2026-10-20",
      2.52
+    ],
+    [
+     "2026-10-29",
+     2.24
     ]
    ]
   },
   "c-mtuojk6u970l": {
-   "count": 12,
+   "count": 11,
    "currency": "USD",
-   "min": 3.08,
-   "median": 6.32,
+   "min": 3.35,
+   "median": 5.99,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST05-006+UR",
    "h": [
     [
      "2026-10-20",
      6.32
+    ],
+    [
+     "2026-10-29",
+     5.99
     ]
    ]
   },
   "c-mtuojk6uclu5": {
-   "count": 6,
+   "count": 7,
    "currency": "USD",
-   "min": 27.6,
-   "median": 34.62,
+   "min": 30.0,
+   "median": 39.04,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST05-006+SPR",
    "h": [
     [
      "2026-10-20",
      34.62
+    ],
+    [
+     "2026-10-29",
+     39.04
     ]
    ]
   },
   "c-mtuojk6uhl2h": {
-   "count": 3,
+   "count": 4,
    "currency": "USD",
-   "min": 29.47,
-   "median": 33.0,
+   "min": 32.74,
+   "median": 39.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST05-011+SBR",
    "h": [
     [
      "2026-10-20",
      33.0
+    ],
+    [
+     "2026-10-29",
+     39.0
     ]
    ]
   },
@@ -9070,12 +11955,16 @@
    "count": 14,
    "currency": "USD",
    "min": 1.0,
-   "median": 2.5,
+   "median": 2.62,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-076+SR",
    "h": [
     [
      "2026-10-20",
      2.5
+    ],
+    [
+     "2026-10-29",
+     2.62
     ]
    ]
   },
@@ -9088,6 +11977,10 @@
    "h": [
     [
      "2026-10-20",
+     2.95
+    ],
+    [
+     "2026-10-29",
      2.95
     ]
    ]
@@ -9102,24 +11995,32 @@
     [
      "2026-10-20",
      2.5
+    ],
+    [
+     "2026-10-29",
+     2.5
     ]
    ]
   },
   "c-mtuojk6uorf9": {
-   "count": 10,
+   "count": 9,
    "currency": "USD",
-   "min": 2.87,
-   "median": 4.62,
+   "min": 3.19,
+   "median": 5.25,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-021+UR",
    "h": [
     [
      "2026-10-20",
      4.62
+    ],
+    [
+     "2026-10-29",
+     5.25
     ]
    ]
   },
   "c-mtuojk6u166y": {
-   "count": 5,
+   "count": 6,
    "currency": "USD",
    "min": 19.0,
    "median": 40.0,
@@ -9128,83 +12029,111 @@
     [
      "2026-10-20",
      40.0
+    ],
+    [
+     "2026-10-29",
+     40.0
     ]
    ]
   },
   "c-mtuojk6ub0d9": {
    "count": 15,
    "currency": "USD",
-   "min": 1.34,
+   "min": 1.49,
    "median": 2.75,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-022+SR",
    "h": [
     [
      "2026-10-20",
      2.75
+    ],
+    [
+     "2026-10-29",
+     2.75
     ]
    ]
   },
   "c-mtuojk6ult7y": {
-   "count": 13,
+   "count": 14,
    "currency": "USD",
    "min": 1.5,
-   "median": 2.95,
+   "median": 2.8,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-023+SR",
    "h": [
     [
      "2026-10-20",
      2.95
+    ],
+    [
+     "2026-10-29",
+     2.8
     ]
    ]
   },
   "c-mtuojk6uxl7k": {
-   "count": 7,
+   "count": 8,
    "currency": "USD",
-   "min": 2.87,
-   "median": 8.5,
+   "min": 3.19,
+   "median": 9.25,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-024+UR",
    "h": [
     [
      "2026-10-20",
      8.5
+    ],
+    [
+     "2026-10-29",
+     9.25
     ]
    ]
   },
   "c-mtuojk6uixwu": {
    "count": 11,
    "currency": "USD",
-   "min": 2.87,
-   "median": 5.0,
+   "min": 3.19,
+   "median": 7.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-025+UR",
    "h": [
     [
      "2026-10-20",
      5.0
+    ],
+    [
+     "2026-10-29",
+     7.5
     ]
    ]
   },
   "c-mtuojk6u8ywf": {
-   "count": 4,
+   "count": 6,
    "currency": "USD",
-   "min": 26.61,
-   "median": 49.4,
+   "min": 26.65,
+   "median": 58.21,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB01-025+SPR",
    "h": [
     [
      "2026-10-20",
      49.4
+    ],
+    [
+     "2026-10-29",
+     58.21
     ]
    ]
   },
   "c-mtuoqjqhjcj8": {
    "count": 5,
    "currency": "USD",
-   "min": 24.88,
+   "min": 27.65,
    "median": 35.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST08-014+SBR",
    "h": [
     [
      "2026-10-20",
+     35.0
+    ],
+    [
+     "2026-10-29",
      35.0
     ]
    ]
@@ -9219,6 +12148,23 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
+    ]
+   ]
+  },
+  "c-mtuoqjqhjclg": {
+   "count": 2,
+   "currency": "USD",
+   "min": 4.0,
+   "median": 5.53,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-003+UR",
+   "h": [
+    [
+     "2026-10-29",
+     5.53
     ]
    ]
   },
@@ -9231,6 +12177,10 @@
    "h": [
     [
      "2026-10-20",
+     40.55
+    ],
+    [
+     "2026-10-29",
      40.55
     ]
    ]
@@ -9245,6 +12195,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -9258,6 +12212,23 @@
     [
      "2026-10-20",
      1.5
+    ],
+    [
+     "2026-10-29",
+     1.5
+    ]
+   ]
+  },
+  "c-mtuoqjqhmyj9": {
+   "count": 1,
+   "currency": "USD",
+   "min": 3.0,
+   "median": 3.0,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-001+L",
+   "h": [
+    [
+     "2026-10-29",
+     3.0
     ]
    ]
   },
@@ -9270,6 +12241,10 @@
    "h": [
     [
      "2026-10-20",
+     224.0
+    ],
+    [
+     "2026-10-29",
      224.0
     ]
    ]
@@ -9284,18 +12259,26 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
   "c-mtuoqjqhlitv": {
    "count": 3,
    "currency": "USD",
-   "min": 1.68,
+   "min": 1.67,
    "median": 2.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-003+SR",
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -9304,25 +12287,59 @@
    "count": 4,
    "currency": "USD",
    "min": 35.0,
-   "median": 46.5,
+   "median": 42.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-004+SPR",
    "h": [
     [
      "2026-10-20",
      46.5
+    ],
+    [
+     "2026-10-29",
+     42.0
+    ]
+   ]
+  },
+  "c-mtuoqjqhkm1r": {
+   "count": 1,
+   "currency": "USD",
+   "min": 4.0,
+   "median": 4.0,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-005+UR",
+   "h": [
+    [
+     "2026-10-29",
+     4.0
     ]
    ]
   },
   "c-mtuoqjqh5kto": {
    "count": 4,
    "currency": "USD",
-   "min": 24.47,
-   "median": 43.0,
+   "min": 27.19,
+   "median": 43.69,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-005+SPR",
    "h": [
     [
      "2026-10-20",
      43.0
+    ],
+    [
+     "2026-10-29",
+     43.69
+    ]
+   ]
+  },
+  "c-mtuoqjqhpphm": {
+   "count": 1,
+   "currency": "USD",
+   "min": 4.0,
+   "median": 4.0,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-006+UR",
+   "h": [
+    [
+     "2026-10-29",
+     4.0
     ]
    ]
   },
@@ -9336,19 +12353,27 @@
     [
      "2026-10-20",
      60.0
+    ],
+    [
+     "2026-10-29",
+     60.0
     ]
    ]
   },
   "c-mtuoqjqh5weo": {
    "count": 2,
    "currency": "USD",
-   "min": 1.68,
-   "median": 1.84,
+   "min": 1.67,
+   "median": 1.83,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-007+SR",
    "h": [
     [
      "2026-10-20",
      1.84
+    ],
+    [
+     "2026-10-29",
+     1.83
     ]
    ]
   },
@@ -9362,6 +12387,49 @@
     [
      "2026-10-20",
      45.0
+    ],
+    [
+     "2026-10-29",
+     45.0
+    ]
+   ]
+  },
+  "c-mtuoqjqh3g8r": {
+   "count": 1,
+   "currency": "USD",
+   "min": 2.0,
+   "median": 2.0,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST08-008+SR",
+   "h": [
+    [
+     "2026-10-29",
+     2.0
+    ]
+   ]
+  },
+  "c-mtuoqjqhcm9v": {
+   "count": 1,
+   "currency": "USD",
+   "min": 2.0,
+   "median": 2.0,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-018+SR",
+   "h": [
+    [
+     "2026-10-29",
+     2.0
+    ]
+   ]
+  },
+  "c-mtuoqjqhj8cc": {
+   "count": 1,
+   "currency": "USD",
+   "min": 2.0,
+   "median": 2.0,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-020+SR",
+   "h": [
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -9374,6 +12442,10 @@
    "h": [
     [
      "2026-10-20",
+     4.0
+    ],
+    [
+     "2026-10-29",
      4.0
     ]
    ]
@@ -9388,32 +12460,57 @@
     [
      "2026-10-20",
      37.19
+    ],
+    [
+     "2026-10-29",
+     37.19
     ]
    ]
   },
   "c-mtuoqjqh3f6m": {
    "count": 1,
    "currency": "USD",
-   "min": 3.92,
-   "median": 3.92,
+   "min": 3.9,
+   "median": 3.9,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-009+L",
    "h": [
     [
      "2026-10-20",
      3.92
+    ],
+    [
+     "2026-10-29",
+     3.9
     ]
    ]
   },
   "c-mtuoqjqhdrmb": {
-   "count": 6,
+   "count": 7,
    "currency": "USD",
    "min": 130.0,
-   "median": 208.82,
+   "median": 219.65,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-009+SBL",
    "h": [
     [
      "2026-10-20",
      208.82
+    ],
+    [
+     "2026-10-29",
+     219.65
+    ]
+   ]
+  },
+  "c-mtuoqjqhf2s3": {
+   "count": 1,
+   "currency": "USD",
+   "min": 2.0,
+   "median": 2.0,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-010+SR",
+   "h": [
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -9427,45 +12524,61 @@
     [
      "2026-10-20",
      14.66
+    ],
+    [
+     "2026-10-29",
+     14.66
     ]
    ]
   },
   "c-mtuoqjqhrnvz": {
    "count": 2,
    "currency": "USD",
-   "min": 32.0,
-   "median": 33.5,
+   "min": 35.0,
+   "median": 42.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-011+SPR",
    "h": [
     [
      "2026-10-20",
      33.5
+    ],
+    [
+     "2026-10-29",
+     42.0
     ]
    ]
   },
   "c-mtuoqjqh9jju": {
-   "count": 1,
+   "count": 2,
    "currency": "USD",
-   "min": 7.49,
-   "median": 7.49,
+   "min": 2.0,
+   "median": 4.75,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-012+SR",
    "h": [
     [
      "2026-10-20",
      7.49
+    ],
+    [
+     "2026-10-29",
+     4.75
     ]
    ]
   },
   "c-mtuoqjqhxaim": {
    "count": 2,
    "currency": "USD",
-   "min": 1.68,
-   "median": 2.84,
+   "min": 1.67,
+   "median": 2.83,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-013+UR",
    "h": [
     [
      "2026-10-20",
      2.84
+    ],
+    [
+     "2026-10-29",
+     2.83
     ]
    ]
   },
@@ -9479,18 +12592,26 @@
     [
      "2026-10-20",
      42.39
+    ],
+    [
+     "2026-10-29",
+     42.39
     ]
    ]
   },
   "c-mtuoqjqhdmjz": {
    "count": 3,
    "currency": "USD",
-   "min": 2.8,
+   "min": 2.79,
    "median": 4.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-014+UR",
    "h": [
     [
      "2026-10-20",
+     4.0
+    ],
+    [
+     "2026-10-29",
      4.0
     ]
    ]
@@ -9499,12 +12620,16 @@
    "count": 4,
    "currency": "USD",
    "min": 32.9,
-   "median": 48.9,
+   "median": 54.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-014+SBR",
    "h": [
     [
      "2026-10-20",
      48.9
+    ],
+    [
+     "2026-10-29",
+     54.5
     ]
    ]
   },
@@ -9517,6 +12642,10 @@
    "h": [
     [
      "2026-10-20",
+     1.5
+    ],
+    [
+     "2026-10-29",
      1.5
     ]
    ]
@@ -9531,19 +12660,27 @@
     [
      "2026-10-20",
      51.5
+    ],
+    [
+     "2026-10-29",
+     51.5
     ]
    ]
   },
   "c-mtuoqjqh354n": {
    "count": 2,
    "currency": "USD",
-   "min": 1.68,
-   "median": 1.84,
+   "min": 1.67,
+   "median": 1.83,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-033+SR",
    "h": [
     [
      "2026-10-20",
      1.84
+    ],
+    [
+     "2026-10-29",
+     1.83
     ]
    ]
   },
@@ -9556,6 +12693,10 @@
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -9570,6 +12711,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -9582,6 +12727,10 @@
    "h": [
     [
      "2026-10-20",
+     4.0
+    ],
+    [
+     "2026-10-29",
      4.0
     ]
    ]
@@ -9596,19 +12745,27 @@
     [
      "2026-10-20",
      35.0
+    ],
+    [
+     "2026-10-29",
+     35.0
     ]
    ]
   },
   "c-mtuoqjqh64ir": {
-   "count": 1,
+   "count": 2,
    "currency": "USD",
    "min": 3.0,
-   "median": 3.0,
+   "median": 5.03,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-017+L",
    "h": [
     [
      "2026-10-20",
      3.0
+    ],
+    [
+     "2026-10-29",
+     5.03
     ]
    ]
   },
@@ -9621,6 +12778,10 @@
    "h": [
     [
      "2026-10-20",
+     350.0
+    ],
+    [
+     "2026-10-29",
      350.0
     ]
    ]
@@ -9635,6 +12796,10 @@
     [
      "2026-10-20",
      800.86
+    ],
+    [
+     "2026-10-29",
+     800.86
     ]
    ]
   },
@@ -9647,6 +12812,10 @@
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -9661,6 +12830,10 @@
     [
      "2026-10-20",
      5.0
+    ],
+    [
+     "2026-10-29",
+     5.0
     ]
    ]
   },
@@ -9673,6 +12846,10 @@
    "h": [
     [
      "2026-10-20",
+     33.5
+    ],
+    [
+     "2026-10-29",
      33.5
     ]
    ]
@@ -9687,19 +12864,27 @@
     [
      "2026-10-20",
      2.5
+    ],
+    [
+     "2026-10-29",
+     2.5
     ]
    ]
   },
   "c-mtuoqjqhad84": {
    "count": 2,
    "currency": "USD",
-   "min": 1.68,
-   "median": 3.34,
+   "min": 1.67,
+   "median": 3.33,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-021+UR",
    "h": [
     [
      "2026-10-20",
      3.34
+    ],
+    [
+     "2026-10-29",
+     3.33
     ]
    ]
   },
@@ -9707,12 +12892,16 @@
    "count": 3,
    "currency": "USD",
    "min": 40.0,
-   "median": 58.0,
+   "median": 49.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-021+SPR",
    "h": [
     [
      "2026-10-20",
      58.0
+    ],
+    [
+     "2026-10-29",
+     49.0
     ]
    ]
   },
@@ -9726,19 +12915,27 @@
     [
      "2026-10-20",
      7.99
+    ],
+    [
+     "2026-10-29",
+     7.99
     ]
    ]
   },
   "c-mtuoqjqhh9vq": {
    "count": 3,
    "currency": "USD",
-   "min": 57.0,
-   "median": 60.0,
+   "min": 49.0,
+   "median": 50.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-022+SBR",
    "h": [
     [
      "2026-10-20",
      60.0
+    ],
+    [
+     "2026-10-29",
+     50.0
     ]
    ]
   },
@@ -9751,6 +12948,23 @@
    "h": [
     [
      "2026-10-20",
+     2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
+    ]
+   ]
+  },
+  "c-mtuoqjqhoa9i": {
+   "count": 1,
+   "currency": "USD",
+   "min": 2.0,
+   "median": 2.0,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST09-005+SR",
+   "h": [
+    [
+     "2026-10-29",
      2.0
     ]
    ]
@@ -9765,6 +12979,10 @@
     [
      "2026-10-20",
      58.0
+    ],
+    [
+     "2026-10-29",
+     58.0
     ]
    ]
   },
@@ -9777,6 +12995,10 @@
    "h": [
     [
      "2026-10-20",
+     4.0
+    ],
+    [
+     "2026-10-29",
      4.0
     ]
    ]
@@ -9791,6 +13013,36 @@
     [
      "2026-10-20",
      42.0
+    ],
+    [
+     "2026-10-29",
+     42.0
+    ]
+   ]
+  },
+  "c-mtuoqjqh8jfs": {
+   "count": 1,
+   "currency": "USD",
+   "min": 2.0,
+   "median": 2.0,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-054+SR",
+   "h": [
+    [
+     "2026-10-29",
+     2.0
+    ]
+   ]
+  },
+  "c-mtuoqjqhsuqg": {
+   "count": 1,
+   "currency": "USD",
+   "min": 2.0,
+   "median": 2.0,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-056+SR",
+   "h": [
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -9803,6 +13055,10 @@
    "h": [
     [
      "2026-10-20",
+     25.94
+    ],
+    [
+     "2026-10-29",
      25.94
     ]
    ]
@@ -9817,6 +13073,10 @@
     [
      "2026-10-20",
      250.0
+    ],
+    [
+     "2026-10-29",
+     250.0
     ]
    ]
   },
@@ -9829,6 +13089,10 @@
    "h": [
     [
      "2026-10-20",
+     495.0
+    ],
+    [
+     "2026-10-29",
      495.0
     ]
    ]
@@ -9843,6 +13107,10 @@
     [
      "2026-10-20",
      2.0
+    ],
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
@@ -9850,25 +13118,33 @@
    "count": 2,
    "currency": "USD",
    "min": 2.0,
-   "median": 22.17,
+   "median": 22.39,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-027+SR",
    "h": [
     [
      "2026-10-20",
      22.17
+    ],
+    [
+     "2026-10-29",
+     22.39
     ]
    ]
   },
   "c-mtuoqjqh5lr6": {
-   "count": 1,
+   "count": 2,
    "currency": "USD",
-   "min": 44.99,
-   "median": 44.99,
+   "min": 4.0,
+   "median": 22.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-028+UR",
    "h": [
     [
      "2026-10-20",
      44.99
+    ],
+    [
+     "2026-10-29",
+     22.0
     ]
    ]
   },
@@ -9882,6 +13158,23 @@
     [
      "2026-10-20",
      47.37
+    ],
+    [
+     "2026-10-29",
+     47.37
+    ]
+   ]
+  },
+  "c-mtuoqjqhvlxl": {
+   "count": 1,
+   "currency": "USD",
+   "min": 7.0,
+   "median": 7.0,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-029+UR",
+   "h": [
+    [
+     "2026-10-29",
+     7.0
     ]
    ]
   },
@@ -9895,19 +13188,27 @@
     [
      "2026-10-20",
      47.0
+    ],
+    [
+     "2026-10-29",
+     47.0
     ]
    ]
   },
   "c-mtuoqjqhu2pl": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
    "min": 4.0,
-   "median": 18.05,
+   "median": 10.58,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-030+UR",
    "h": [
     [
      "2026-10-20",
      18.05
+    ],
+    [
+     "2026-10-29",
+     10.58
     ]
    ]
   },
@@ -9915,12 +13216,16 @@
    "count": 3,
    "currency": "USD",
    "min": 39.99,
-   "median": 57.0,
+   "median": 49.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-030+SBR",
    "h": [
     [
      "2026-10-20",
      57.0
+    ],
+    [
+     "2026-10-29",
+     49.0
     ]
    ]
   },
@@ -9934,44 +13239,86 @@
     [
      "2026-10-20",
      1.5
+    ],
+    [
+     "2026-10-29",
+     1.5
+    ]
+   ]
+  },
+  "c-mtuoqjqh4ucj": {
+   "count": 1,
+   "currency": "USD",
+   "min": 2.0,
+   "median": 2.0,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-064+SR",
+   "h": [
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
   "c-mtuoqjqhbd1h": {
    "count": 3,
    "currency": "USD",
-   "min": 25.78,
-   "median": 49.0,
+   "min": 22.3,
+   "median": 35.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-066+SBR",
    "h": [
     [
      "2026-10-20",
      49.0
+    ],
+    [
+     "2026-10-29",
+     35.0
+    ]
+   ]
+  },
+  "c-mtuoqjqh50af": {
+   "count": 1,
+   "currency": "USD",
+   "min": 2.0,
+   "median": 2.0,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-070+SR",
+   "h": [
+    [
+     "2026-10-29",
+     2.0
     ]
    ]
   },
   "c-mtuoqjqh5il3": {
-   "count": 2,
+   "count": 3,
    "currency": "USD",
-   "min": 8.49,
-   "median": 22.12,
+   "min": 4.0,
+   "median": 8.49,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-071+UR",
    "h": [
     [
      "2026-10-20",
      22.12
+    ],
+    [
+     "2026-10-29",
+     8.49
     ]
    ]
   },
   "c-mtuoqjqho5u5": {
    "count": 4,
    "currency": "USD",
-   "min": 24.85,
+   "min": 27.61,
    "median": 33.45,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT05-071+SPR",
    "h": [
     [
      "2026-10-20",
+     33.45
+    ],
+    [
+     "2026-10-29",
      33.45
     ]
    ]
@@ -9979,13 +13326,17 @@
   "c-mtuoqjqhqv8z": {
    "count": 2,
    "currency": "USD",
-   "min": 300.0,
-   "median": 309.69,
+   "min": 150.0,
+   "median": 234.69,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-033+SBL",
    "h": [
     [
      "2026-10-20",
      309.69
+    ],
+    [
+     "2026-10-29",
+     234.69
     ]
    ]
   },
@@ -9998,6 +13349,10 @@
    "h": [
     [
      "2026-10-20",
+     782.31
+    ],
+    [
+     "2026-10-29",
      782.31
     ]
    ]
@@ -10012,6 +13367,10 @@
     [
      "2026-10-20",
      16.8
+    ],
+    [
+     "2026-10-29",
+     16.8
     ]
    ]
   },
@@ -10019,12 +13378,16 @@
    "count": 2,
    "currency": "USD",
    "min": 40.0,
-   "median": 44.0,
+   "median": 44.5,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-034+SPR",
    "h": [
     [
      "2026-10-20",
      44.0
+    ],
+    [
+     "2026-10-29",
+     44.5
     ]
    ]
   },
@@ -10037,6 +13400,10 @@
    "h": [
     [
      "2026-10-20",
+     4.75
+    ],
+    [
+     "2026-10-29",
      4.75
     ]
    ]
@@ -10051,45 +13418,61 @@
     [
      "2026-10-20",
      1.5
+    ],
+    [
+     "2026-10-29",
+     1.5
     ]
    ]
   },
   "c-mtuoqjqhq402": {
-   "count": 1,
+   "count": 2,
    "currency": "USD",
-   "min": 4.0,
-   "median": 4.0,
+   "min": 3.5,
+   "median": 3.75,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-037+UR",
    "h": [
     [
      "2026-10-20",
      4.0
+    ],
+    [
+     "2026-10-29",
+     3.75
     ]
    ]
   },
   "c-mtuoqjqhyvzj": {
    "count": 2,
    "currency": "USD",
-   "min": 31.99,
-   "median": 33.49,
+   "min": 27.99,
+   "median": 31.49,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-037+SPR",
    "h": [
     [
      "2026-10-20",
      33.49
+    ],
+    [
+     "2026-10-29",
+     31.49
     ]
    ]
   },
   "c-mtuoqjqhqedc": {
    "count": 2,
    "currency": "USD",
-   "min": 1.68,
-   "median": 3.34,
+   "min": 1.67,
+   "median": 3.33,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+SB02-038+UR",
    "h": [
     [
      "2026-10-20",
      3.34
+    ],
+    [
+     "2026-10-29",
+     3.33
     ]
    ]
   },
@@ -10102,6 +13485,10 @@
    "h": [
     [
      "2026-10-20",
+     60.0
+    ],
+    [
+     "2026-10-29",
      60.0
     ]
    ]
@@ -10116,6 +13503,10 @@
     [
      "2026-10-20",
      4.5
+    ],
+    [
+     "2026-10-29",
+     4.5
     ]
    ]
   },
@@ -10128,6 +13519,10 @@
    "h": [
     [
      "2026-10-20",
+     30.0
+    ],
+    [
+     "2026-10-29",
      30.0
     ]
    ]
@@ -10142,6 +13537,10 @@
     [
      "2026-10-20",
      50.5
+    ],
+    [
+     "2026-10-29",
+     50.5
     ]
    ]
   },
@@ -10154,6 +13553,10 @@
    "h": [
     [
      "2026-10-20",
+     50.0
+    ],
+    [
+     "2026-10-29",
      50.0
     ]
    ]
@@ -10168,6 +13571,10 @@
     [
      "2026-10-20",
      40.0
+    ],
+    [
+     "2026-10-29",
+     40.0
     ]
    ]
   },
@@ -10181,6 +13588,23 @@
     [
      "2026-10-20",
      22.5
+    ],
+    [
+     "2026-10-29",
+     22.5
+    ]
+   ]
+  },
+  "c-mtuos8k5gme1": {
+   "count": 1,
+   "currency": "USD",
+   "min": 48.14,
+   "median": 48.14,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+PR01-003+P",
+   "h": [
+    [
+     "2026-10-29",
+     48.14
     ]
    ]
   },
@@ -10193,6 +13617,10 @@
    "h": [
     [
      "2026-10-20",
+     28.12
+    ],
+    [
+     "2026-10-29",
      28.12
     ]
    ]
@@ -10207,6 +13635,10 @@
     [
      "2026-10-20",
      43.97
+    ],
+    [
+     "2026-10-29",
+     43.97
     ]
    ]
   },
@@ -10219,6 +13651,10 @@
    "h": [
     [
      "2026-10-20",
+     74.0
+    ],
+    [
+     "2026-10-29",
      74.0
     ]
    ]
@@ -10233,14 +13669,15 @@
     [
      "2026-10-20",
      100.0
+    ],
+    [
+     "2026-10-29",
+     100.0
     ]
    ]
   },
   "c-mtuos8k5ism6": {
-   "count": 1,
-   "currency": "USD",
-   "min": 50.99,
-   "median": 50.99,
+   "count": 0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+PR01-010+P",
    "h": [
     [
@@ -10259,6 +13696,10 @@
     [
      "2026-10-20",
      42.5
+    ],
+    [
+     "2026-10-29",
+     42.5
     ]
    ]
   },
@@ -10271,6 +13712,10 @@
    "h": [
     [
      "2026-10-20",
+     87.5
+    ],
+    [
+     "2026-10-29",
      87.5
     ]
    ]
@@ -10285,6 +13730,10 @@
     [
      "2026-10-20",
      35.0
+    ],
+    [
+     "2026-10-29",
+     35.0
     ]
    ]
   },
@@ -10297,6 +13746,10 @@
    "h": [
     [
      "2026-10-20",
+     45.09
+    ],
+    [
+     "2026-10-29",
      45.09
     ]
    ]
@@ -10311,6 +13764,10 @@
     [
      "2026-10-20",
      85.0
+    ],
+    [
+     "2026-10-29",
+     85.0
     ]
    ]
   },
@@ -10323,6 +13780,10 @@
    "h": [
     [
      "2026-10-20",
+     42.5
+    ],
+    [
+     "2026-10-29",
      42.5
     ]
    ]
@@ -10337,19 +13798,27 @@
     [
      "2026-10-20",
      50.0
+    ],
+    [
+     "2026-10-29",
+     50.0
     ]
    ]
   },
   "c-mtuos8k5o6ut": {
-   "count": 3,
+   "count": 2,
    "currency": "USD",
-   "min": 11.98,
-   "median": 48.0,
+   "min": 48.0,
+   "median": 49.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST10-014+P",
    "h": [
     [
      "2026-10-20",
      48.0
+    ],
+    [
+     "2026-10-29",
+     49.0
     ]
    ]
   },
@@ -10362,6 +13831,10 @@
    "h": [
     [
      "2026-10-20",
+     50.0
+    ],
+    [
+     "2026-10-29",
      50.0
     ]
    ]
@@ -10376,6 +13849,10 @@
     [
      "2026-10-20",
      50.0
+    ],
+    [
+     "2026-10-29",
+     50.0
     ]
    ]
   },
@@ -10388,6 +13865,10 @@
    "h": [
     [
      "2026-10-20",
+     50.0
+    ],
+    [
+     "2026-10-29",
      50.0
     ]
    ]
@@ -10402,6 +13883,10 @@
     [
      "2026-10-20",
      50.0
+    ],
+    [
+     "2026-10-29",
+     50.0
     ]
    ]
   },
@@ -10414,6 +13899,10 @@
    "h": [
     [
      "2026-10-20",
+     399.99
+    ],
+    [
+     "2026-10-29",
      399.99
     ]
    ]
@@ -10428,6 +13917,10 @@
     [
      "2026-10-20",
      2.69
+    ],
+    [
+     "2026-10-29",
+     2.69
     ]
    ]
   },
@@ -10441,19 +13934,40 @@
     [
      "2026-10-20",
      14.9
+    ],
+    [
+     "2026-10-29",
+     14.9
+    ]
+   ]
+  },
+  "c-mtuos8k5xamc": {
+   "count": 1,
+   "currency": "USD",
+   "min": 44.62,
+   "median": 44.62,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-012+P",
+   "h": [
+    [
+     "2026-10-29",
+     44.62
     ]
    ]
   },
   "c-mtuos8k58uie": {
    "count": 1,
    "currency": "USD",
-   "min": 6.38,
-   "median": 6.38,
+   "min": 6.43,
+   "median": 6.43,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-011+P",
    "h": [
     [
      "2026-10-20",
      6.38
+    ],
+    [
+     "2026-10-29",
+     6.43
     ]
    ]
   },
@@ -10466,6 +13980,10 @@
    "h": [
     [
      "2026-10-20",
+     305.5
+    ],
+    [
+     "2026-10-29",
      305.5
     ]
    ]
@@ -10480,6 +13998,10 @@
     [
      "2026-10-20",
      34.12
+    ],
+    [
+     "2026-10-29",
+     34.12
     ]
    ]
   },
@@ -10492,6 +14014,10 @@
    "h": [
     [
      "2026-10-20",
+     71.11
+    ],
+    [
+     "2026-10-29",
      71.11
     ]
    ]
@@ -10506,6 +14032,10 @@
     [
      "2026-10-20",
      19.64
+    ],
+    [
+     "2026-10-29",
+     19.64
     ]
    ]
   },
@@ -10518,6 +14048,10 @@
    "h": [
     [
      "2026-10-20",
+     30.0
+    ],
+    [
+     "2026-10-29",
      30.0
     ]
    ]
@@ -10532,6 +14066,10 @@
     [
      "2026-10-20",
      50.5
+    ],
+    [
+     "2026-10-29",
+     50.5
     ]
    ]
   },
@@ -10544,6 +14082,10 @@
    "h": [
     [
      "2026-10-20",
+     50.0
+    ],
+    [
+     "2026-10-29",
      50.0
     ]
    ]
@@ -10558,6 +14100,10 @@
     [
      "2026-10-20",
      40.0
+    ],
+    [
+     "2026-10-29",
+     40.0
     ]
    ]
   },
@@ -10571,6 +14117,23 @@
     [
      "2026-10-20",
      22.5
+    ],
+    [
+     "2026-10-29",
+     22.5
+    ]
+   ]
+  },
+  "c-mtuos8k5mew3": {
+   "count": 1,
+   "currency": "USD",
+   "min": 48.14,
+   "median": 48.14,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+PR01-003+P",
+   "h": [
+    [
+     "2026-10-29",
+     48.14
     ]
    ]
   },
@@ -10583,6 +14146,10 @@
    "h": [
     [
      "2026-10-20",
+     28.12
+    ],
+    [
+     "2026-10-29",
      28.12
     ]
    ]
@@ -10597,6 +14164,10 @@
     [
      "2026-10-20",
      43.97
+    ],
+    [
+     "2026-10-29",
+     43.97
     ]
    ]
   },
@@ -10609,6 +14180,10 @@
    "h": [
     [
      "2026-10-20",
+     74.0
+    ],
+    [
+     "2026-10-29",
      74.0
     ]
    ]
@@ -10623,14 +14198,15 @@
     [
      "2026-10-20",
      100.0
+    ],
+    [
+     "2026-10-29",
+     100.0
     ]
    ]
   },
   "c-mtuos8k5knhd": {
-   "count": 1,
-   "currency": "USD",
-   "min": 50.99,
-   "median": 50.99,
+   "count": 0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+PR01-010+P",
    "h": [
     [
@@ -10649,6 +14225,10 @@
     [
      "2026-10-20",
      42.5
+    ],
+    [
+     "2026-10-29",
+     42.5
     ]
    ]
   },
@@ -10661,6 +14241,10 @@
    "h": [
     [
      "2026-10-20",
+     87.5
+    ],
+    [
+     "2026-10-29",
      87.5
     ]
    ]
@@ -10675,6 +14259,10 @@
     [
      "2026-10-20",
      35.0
+    ],
+    [
+     "2026-10-29",
+     35.0
     ]
    ]
   },
@@ -10687,6 +14275,10 @@
    "h": [
     [
      "2026-10-20",
+     45.09
+    ],
+    [
+     "2026-10-29",
      45.09
     ]
    ]
@@ -10701,6 +14293,10 @@
     [
      "2026-10-20",
      85.0
+    ],
+    [
+     "2026-10-29",
+     85.0
     ]
    ]
   },
@@ -10713,6 +14309,10 @@
    "h": [
     [
      "2026-10-20",
+     42.5
+    ],
+    [
+     "2026-10-29",
      42.5
     ]
    ]
@@ -10727,19 +14327,27 @@
     [
      "2026-10-20",
      50.0
+    ],
+    [
+     "2026-10-29",
+     50.0
     ]
    ]
   },
   "c-mtuos8k57pl1": {
-   "count": 3,
+   "count": 2,
    "currency": "USD",
-   "min": 11.98,
-   "median": 48.0,
+   "min": 48.0,
+   "median": 49.0,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+ST10-014+P",
    "h": [
     [
      "2026-10-20",
      48.0
+    ],
+    [
+     "2026-10-29",
+     49.0
     ]
    ]
   },
@@ -10752,6 +14360,10 @@
    "h": [
     [
      "2026-10-20",
+     50.0
+    ],
+    [
+     "2026-10-29",
      50.0
     ]
    ]
@@ -10766,6 +14378,10 @@
     [
      "2026-10-20",
      50.0
+    ],
+    [
+     "2026-10-29",
+     50.0
     ]
    ]
   },
@@ -10778,6 +14394,10 @@
    "h": [
     [
      "2026-10-20",
+     50.0
+    ],
+    [
+     "2026-10-29",
      50.0
     ]
    ]
@@ -10792,6 +14412,10 @@
     [
      "2026-10-20",
      50.0
+    ],
+    [
+     "2026-10-29",
+     50.0
     ]
    ]
   },
@@ -10804,6 +14428,10 @@
    "h": [
     [
      "2026-10-20",
+     399.99
+    ],
+    [
+     "2026-10-29",
      399.99
     ]
    ]
@@ -10818,6 +14446,10 @@
     [
      "2026-10-20",
      2.69
+    ],
+    [
+     "2026-10-29",
+     2.69
     ]
    ]
   },
@@ -10831,19 +14463,40 @@
     [
      "2026-10-20",
      14.9
+    ],
+    [
+     "2026-10-29",
+     14.9
+    ]
+   ]
+  },
+  "c-mtuos8k5wgbr": {
+   "count": 1,
+   "currency": "USD",
+   "min": 44.62,
+   "median": 44.62,
+   "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT03-012+P",
+   "h": [
+    [
+     "2026-10-29",
+     44.62
     ]
    ]
   },
   "c-mtuos8k5y8hi": {
    "count": 1,
    "currency": "USD",
-   "min": 6.38,
-   "median": 6.38,
+   "min": 6.43,
+   "median": 6.43,
    "searchUrl": "https://www.ebay.com/sch/i.html?_nkw=Nivel+Arena+BT02-011+P",
    "h": [
     [
      "2026-10-20",
      6.38
+    ],
+    [
+     "2026-10-29",
+     6.43
     ]
    ]
   },
@@ -10856,6 +14509,10 @@
    "h": [
     [
      "2026-10-20",
+     305.5
+    ],
+    [
+     "2026-10-29",
      305.5
     ]
    ]
@@ -10870,6 +14527,10 @@
     [
      "2026-10-20",
      34.12
+    ],
+    [
+     "2026-10-29",
+     34.12
     ]
    ]
   },
@@ -10883,6 +14544,10 @@
     [
      "2026-10-20",
      71.11
+    ],
+    [
+     "2026-10-29",
+     71.11
     ]
    ]
   },
@@ -10895,6 +14560,10 @@
    "h": [
     [
      "2026-10-20",
+     19.64
+    ],
+    [
+     "2026-10-29",
      19.64
     ]
    ]
