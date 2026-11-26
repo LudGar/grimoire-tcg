@@ -50,8 +50,9 @@
   .holo-layer{ position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
   .holo-art{ background-size:100% 100%; background-repeat:no-repeat; }
 
-  /* one printed face: the whole card, one half of a double-faced leader, or a sideways leader */
-  .hf{ position:absolute; container-type:size; overflow:hidden; font-family:'Barlow Semi Condensed','Roboto Condensed','Arial Narrow','Segoe UI','Yu Gothic','Noto Sans JP',sans-serif; }
+  /* one printed face: the whole card, one half of a double-faced leader, or a sideways leader.
+     Geometry, sizes and colours follow the design frames (591 x 823); the font is theirs too. */
+  .hf{ position:absolute; container-type:size; overflow:hidden; font-family:'Space Mono','Noto Sans JP','Yu Gothic','Meiryo',monospace; font-weight:700; }
   .holo-card.holo-original .hf{ display:none; }
   /* blurred copy of the scan, only where Korean text is printed - the artwork stays sharp */
   .hf-veil{
@@ -59,42 +60,65 @@
     /* three patches: the effect text (full width), the name (not the element icon on its right)
        and the affiliation (not the type label or logo beside it) */
     mask-image:
-      linear-gradient(to bottom, transparent calc(var(--vt,70%) - 5%), #000 var(--vt,70%), #000 var(--vd,86%), transparent var(--vd,86%)),
-      linear-gradient(#000,#000), linear-gradient(#000,#000);
+      linear-gradient(to bottom, transparent calc(var(--vt,70%) - 4%), #000 var(--vt,70%), #000 var(--vd,86%), transparent var(--vd,86%)),
+      linear-gradient(90deg, #000 94%, transparent), linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
     mask-repeat:no-repeat;
     mask-size:100% 100%, var(--nw,0) var(--nh,0), var(--aw,0) var(--ah,0);
     mask-position:0 0, 0 var(--ny,0), 50% var(--ay,0);
   }
   .hf-veil-img{ position:absolute; background-size:100% 100%; filter:blur(1.15cqh) saturate(1.1); }
-  .hf-desc{ position:absolute; left:0; right:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-end; padding:1cqh 3.6cqw .8cqh; line-height:1.24; font-weight:600; overflow-wrap:anywhere; hyphens:auto; }
-  .hf[data-panel="box"] .hf-desc{ justify-content:flex-start; background:rgba(243,241,241,.87); color:#17120f; }
-  .hf[data-panel="glass"] .hf-desc{ background:linear-gradient(to bottom, rgba(18,14,22,0), rgba(18,14,22,.48) 3cqh); color:#fff; }
-  .hf[data-panel="art"] .hf-desc{ background:linear-gradient(to bottom, rgba(10,8,16,0), rgba(10,8,16,.26) 4cqh); color:#fff; }
-  .hf[data-panel="glass"] .hf-desc, .hf[data-panel="art"] .hf-desc{ -webkit-text-stroke:.22em rgba(14,10,16,.9); paint-order:stroke fill; }
-  .hf-line{ margin:0 0 .18em; }
-  .hf-tags{ display:flex; flex-wrap:wrap; gap:.3em; margin:0 0 .25em; }
-  .hf-pill{ display:inline-block; padding:0 .45em; margin-right:.35em; border-radius:.28em; font-weight:800; line-height:1.3; color:#fff; background:var(--pill,#555); -webkit-text-stroke:0; box-shadow:0 0 0 1px rgba(255,255,255,.35); }
+
+  /* ---- effect text ---- */
+  .hf-desc{ position:absolute; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-end; line-height:1.22; letter-spacing:-.02em; overflow-wrap:anywhere; }
+  .hf-desc:lang(ja){ line-height:1.32; letter-spacing:0; }
+  /* common and rare: the printed white box, edge to edge */
+  .hf[data-desc="box"] .hf-desc{ left:0; right:0; justify-content:flex-start; padding:1.15cqh 4.4cqw .7cqh 5.2cqw; background:rgba(242,240,240,.86); color:#0e0c0c; }
+  /* super rare: an inset frosted panel */
+  .hf[data-desc="glass"] .hf-desc{ left:2.9%; right:2.9%; padding:1cqh 2cqw; background:rgba(255,255,255,.7); color:#0e0c0c; }
+  /* full art: lettering straight on the artwork */
+  .hf[data-desc="art"] .hf-desc{ left:2.9%; right:2.9%; padding:1cqh 2cqw .4cqh; color:#fff; -webkit-text-stroke:.2em rgba(16,12,18,.92); paint-order:stroke fill; background:radial-gradient(120% 100% at 50% 100%, rgba(12,10,18,.3), rgba(12,10,18,0) 90%); }
+  .hf[data-kind="leader"][data-desc="box"] .hf-desc, .hf[data-kind="leader"][data-desc="glass"] .hf-desc{ left:1.46%; right:1.46%; padding:.9cqh 1.5cqw; }
+  .hf[data-kind="leader"][data-desc="art"] .hf-desc{ left:1.46%; right:1.46%; padding:.9cqh 1.5cqw .4cqh; }
+  .hf-line{ margin:0 0 .12em; }
+  .hf-tags{ display:flex; flex-wrap:wrap; gap:.3em; margin:0 0 .2em; }
+  .hf-pill{ display:inline-block; vertical-align:.07em; padding:0 .34em; margin-right:.45em; border-radius:.2em; font-size:.82em; line-height:1.34; color:#fff; background:var(--pill,#555); letter-spacing:0; -webkit-text-stroke:0; }
   .hf-tags .hf-pill{ margin-right:0; }
   .hf-pill.vow{ background:#fff; color:#111; box-shadow:inset 0 0 0 1px #111; }
-  .hf-trigger{ margin-top:.35em; padding:.18em .55em; border-radius:.3em .9em .3em .9em; }
-  .hf-trigger b{ font-weight:800; margin-right:.15em; }
-  .hf[data-panel="box"] .hf-trigger, .hf[data-panel="glass"] .hf-trigger{ background:rgba(255,255,255,.9); color:#17120f; -webkit-text-stroke:0; }
-  .hf[data-panel="box"] .hf-trigger{ box-shadow:0 0 0 1px rgba(0,0,0,.14); }
-  .hf[data-panel="art"] .hf-trigger{ border:1px solid rgba(255,255,255,.85); background:rgba(8,6,12,.2); }
-  .hf-icon svg{ height:1.15em; width:auto; vertical-align:-.2em; margin:0 .15em; }
+  /* trigger box: two opposite corners cut off, filled on plain cards and outlined on full art */
+  .hf-trigger{ --cut:.62em; position:relative; margin:.35em -.05em 0; padding:.28em .45em .34em; }
+  .hf-trigger b{ margin-right:.1em; }
+  .hf-trigger.fill{ background:rgba(255,255,255,.86); color:#0e0c0c; -webkit-text-stroke:0; clip-path:polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, var(--cut) 100%, 0 calc(100% - var(--cut))); }
+  .hf[data-desc="glass"] .hf-trigger.fill{ background:rgba(255,255,255,.82); }
+  .hf-trigger.line{ --t:max(1px, .07em); --ink:#fff;
+    background-repeat:no-repeat;
+    background-image:
+      linear-gradient(var(--ink),var(--ink)), linear-gradient(var(--ink),var(--ink)),
+      linear-gradient(var(--ink),var(--ink)), linear-gradient(var(--ink),var(--ink)),
+      linear-gradient(45deg, transparent calc(50% - var(--t) / 2), var(--ink) 0 calc(50% + var(--t) / 2), transparent 0),
+      linear-gradient(45deg, transparent calc(50% - var(--t) / 2), var(--ink) 0 calc(50% + var(--t) / 2), transparent 0);
+    background-size:calc(100% - var(--cut)) var(--t), var(--t) calc(100% - var(--cut)), calc(100% - var(--cut)) var(--t), var(--t) calc(100% - var(--cut)), var(--cut) var(--cut), var(--cut) var(--cut);
+    background-position:0 0, 100% 100%, 100% 100%, 0 0, 100% 0, 0 100%;
+  }
+  .hf-icon svg{ height:1.1em; width:auto; vertical-align:-.18em; margin:0 .12em; }
 
-  .hf-name, .hf-aff{ position:absolute; display:flex; align-items:center; justify-content:center; white-space:nowrap; overflow:hidden; }
-  .hf-name{ left:0; right:0; font-weight:800; letter-spacing:.01em; }
-  .hf-aff{ left:17%; right:17%; font-weight:700; }
-  .hf[data-panel="box"] .hf-name{ color:#fff; background:linear-gradient(90deg, var(--el), var(--el) 55%, color-mix(in srgb, var(--el) 55%, var(--el-dark)) 87%, transparent 90%); }
-  .hf[data-panel="box"] .hf-aff{ color:#fff; background:linear-gradient(90deg, transparent, var(--el-dark) 9%, var(--el-dark) 91%, transparent); }
-  .hf[data-panel="glass"] .hf-name{ color:#fff; text-shadow:0 1px 3px rgba(0,0,0,.55); background:linear-gradient(90deg, transparent, color-mix(in srgb, var(--el) 84%, transparent) 18%, color-mix(in srgb, var(--el) 84%, transparent) 80%, transparent 89%); }
-  .hf[data-panel="glass"] .hf-aff{ color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.6); background:linear-gradient(90deg, transparent, color-mix(in srgb, var(--el-dark) 80%, transparent) 14%, color-mix(in srgb, var(--el-dark) 80%, transparent) 86%, transparent); }
-  .hf[data-panel="art"] .hf-name{ color:var(--el-dark); background:linear-gradient(90deg, transparent 3%, rgba(255,255,255,.74) 28%, rgba(255,255,255,.74) 72%, transparent 88%); }
-  .hf[data-panel="art"] .hf-aff{ color:var(--el-dark); background:linear-gradient(90deg, transparent, rgba(255,255,255,.68) 22%, rgba(255,255,255,.68) 78%, transparent); }
-  .hf[data-panel="art"] .hf-name span, .hf[data-panel="art"] .hf-aff span{ -webkit-text-stroke:.22em #fff; paint-order:stroke fill; }
-  .hf[data-panel="art"].hf-white .hf-name, .hf[data-panel="art"].hf-white .hf-aff{ color:#fff; background:linear-gradient(90deg, transparent, rgba(14,10,16,.28) 28%, rgba(14,10,16,.28) 72%, transparent); }
-  .hf[data-panel="art"].hf-white .hf-name span, .hf[data-panel="art"].hf-white .hf-aff span{ -webkit-text-stroke:.22em color-mix(in srgb, var(--el-dark) 75%, #000); }
+  /* ---- name and affiliation bars ---- */
+  .hf-name, .hf-aff{ position:absolute; display:flex; align-items:center; justify-content:center; white-space:nowrap; overflow:hidden; color:#fff; }
+  .hf-name{ left:0; right:0; }
+  .hf-aff{ left:13%; right:15%; }
+  .hf[data-kind="leader"] .hf-aff{ left:13%; right:13%; }
+  /* solid element bars (C, R, L). The name bar stops short of the element emblem */
+  .hf[data-bars="solid"] .hf-name{ background:linear-gradient(90deg, var(--el), var(--el) 45%, var(--el-edge) 86%, transparent 89%); }
+  .hf[data-bars="solid"] .hf-aff{ background:linear-gradient(90deg, transparent, var(--el-sub) 6%, var(--el-sub) 94%, transparent); }
+  /* element bars that fade out to the sides (SR, UR) */
+  .hf[data-bars="fade"] .hf-name{ background:linear-gradient(90deg, transparent, var(--el-edge) 18%, var(--el) 50%, var(--el-edge) 80%, transparent 89%); }
+  .hf[data-bars="fade"] .hf-aff{ background:linear-gradient(90deg, transparent, color-mix(in srgb, var(--el-sub) 88%, transparent) 12%, color-mix(in srgb, var(--el-sub) 88%, transparent) 88%, transparent); }
+  /* white bars with element lettering and hairlines (SPR and the other full-art parallels) */
+  .hf[data-bars="light"] .hf-name, .hf[data-bars="light"] .hf-aff{ color:var(--el-edge); }
+  .hf[data-bars="light"] .hf-name{ background:linear-gradient(90deg, transparent, var(--el) 50%, transparent) top / 100% .25cqh no-repeat, linear-gradient(90deg, transparent 2%, rgba(255,255,255,.88) 28%, rgba(255,255,255,.88) 72%, transparent 89%); }
+  .hf[data-bars="light"] .hf-aff{ background:linear-gradient(90deg, transparent, var(--el) 50%, transparent) top / 100% .25cqh no-repeat, linear-gradient(90deg, transparent, rgba(255,255,255,.76) 24%, rgba(255,255,255,.76) 76%, transparent); }
+  .hf[data-bars="light"] .hf-name span, .hf[data-bars="light"] .hf-aff span{ -webkit-text-stroke:.2em #fff; paint-order:stroke fill; }
+  .hf[data-bars="light"].hf-gold .hf-name{ color:#eda316; }
+  .hf[data-bars="fade"] .hf-name span, .hf[data-bars="fade"] .hf-aff span{ text-shadow:0 0 .12em var(--el-sub), 0 .05em .1em rgba(0,0,0,.35); }
 
   /* ---- foil ---- */
   .holo-layer-holo{
@@ -701,30 +725,38 @@
 // carry Korean text are blurred and repainted, so cost, power, hit, element, number, logos and
 // the artwork stay as printed. Positions are percentages measured on the scans.
 const HOLO_ELEMENT_ICONS = {"파도":{"viewBox":"0 0 100 79.76","shapes":[{"d":"M 97.62,92.54 C 97.62,92.54 85.50,98.51 61.90,98.51 C 38.31,98.51 19.05,98.51 19.05,98.51 C 19.05,98.51 2.38,82.19 2.38,53.73 C 2.38,25.27 18.33,2.98 40.48,2.98 C 73.13,2.98 83.33,38.81 83.33,38.81 C 83.33,38.81 71.43,46.01 71.43,56.72 C 71.43,70.25 80.06,84.82 97.62,92.54 Z","fill":"#699dce"},{"d":"M 55.95,29.85 C 55.95,29.85 45.24,40.66 45.24,53.73 C 45.24,80.51 60.71,95.52 60.71,95.52 C 60.71,95.52 66.67,95.52 66.67,95.52 C 66.67,95.52 48.81,78.47 48.81,53.73 C 48.81,38.65 55.95,29.85 55.95,29.85 Z","fill":"#274b91"},{"d":"M 36.90,95.52 C 36.90,95.52 23.81,86.29 23.81,53.73 C 23.81,26.75 41.67,20.90 41.67,20.90 C 41.67,20.90 27.38,31.49 27.38,53.73 C 27.38,79.31 42.86,95.52 42.86,95.52 C 42.86,95.52 36.90,95.52 36.90,95.52 Z","fill":"#274a91"}]},"대지":{"viewBox":"0 0 100 100.0","shapes":[{"d":"M 50.70,2.82 C 50.70,2.82 2.82,50.70 2.82,50.70 C 2.82,50.70 50.70,98.59 50.70,98.59 C 50.70,98.59 98.59,50.70 98.59,50.70 C 98.59,50.70 50.70,2.82 50.70,2.82 Z","fill":"#296738"},{"d":"M 19.65,59.09 C 14.75,54.19 11.27,50.70 11.27,50.70 C 11.27,50.70 34.20,27.77 45.09,16.88 C 46.17,28.72 20.56,59.99 19.65,59.09 Z","fill":"#8bc67c"},{"d":"M 33.79,73.23 C 29.97,69.41 22.50,61.93 22.50,61.93 C 22.50,61.93 32.89,53.15 45.07,42.25 C 46.57,55.03 34.74,74.17 33.79,73.23 Z","fill":"#8bc67c"},{"d":"M 48.01,87.45 C 48.01,87.45 41.24,80.68 36.60,76.04 C 36.60,76.04 44.01,66.46 47.89,64.79 C 49.38,75.17 48.01,87.45 48.01,87.45 Z","fill":"#8bc67c"},{"d":"M 67.62,73.23 C 61.95,78.89 56.60,84.24 53.49,87.35 C 53.49,87.35 56.50,77.79 53.52,64.79 C 60.14,66.29 67.62,73.23 67.62,73.23 Z","fill":"#8bc67c"},{"d":"M 81.56,59.28 C 78.25,62.59 70.39,70.46 70.39,70.46 C 70.39,70.46 53.52,58.27 53.52,42.25 C 67.96,53.95 81.56,59.28 81.56,59.28 Z","fill":"#8bc67c"},{"d":"M 56.48,17.05 C 68.09,28.65 90.14,50.70 90.14,50.70 C 90.14,50.70 87.91,52.93 84.52,56.33 C 84.52,56.33 55.21,41.42 56.48,17.05 Z","fill":"#8bc67c"}]},"폭풍":{"viewBox":"0 0 100 92.31","shapes":[{"d":"M 61.39,26.34 C 66.61,25.32 72.15,25.92 77.32,29.08 C 89.13,36.28 98.64,60.89 87.01,82.16 C 82.49,90.43 74.81,93.59 74.81,93.59 C 74.81,93.59 75.10,81.19 68.80,77.35 C 67.52,76.57 66.27,76.10 65.16,75.83 C 65.16,75.83 63.73,85.46 54.37,91.01 C 42.57,98.21 17.63,94.61 6.00,73.33 C 1.48,65.07 2.73,56.46 2.73,56.46 C 2.73,56.46 12.75,62.93 19.05,59.08 C 23.25,56.53 23.25,54.94 23.25,54.94 C 19.42,50.56 16.84,44.91 16.84,38.18 C 16.84,23.79 32.27,2.78 55.53,2.78 C 64.56,2.78 71.00,8.22 71.00,8.22 C 71.00,8.22 60.68,14.16 60.68,21.84 C 60.68,24.65 61.39,26.34 61.39,26.34 Z","fill":"#412c8c"},{"d":"M 7.69,62.63 C 7.69,62.63 15.83,72.94 25.64,58.33 C 33.56,77.74 61.33,69.96 56.41,47.22 C 61.46,51.72 64.10,59.11 64.10,66.67 C 64.10,74.23 57.47,88.89 41.03,88.89 C 24.58,88.89 14.09,75.61 7.69,62.63 Z","fill":"#b388bc"},{"d":"M 64.06,8.37 C 64.06,8.37 53.10,14.65 56.41,27.78 C 39.87,30.67 29.23,55.02 49.83,61.98 C 43.71,64.54 38.72,64.73 32.69,60.83 C 26.66,56.94 18.27,42.97 26.48,27.07 C 34.68,11.17 50.51,7.87 64.06,8.37 Z","fill":"#b388bc"},{"d":"M 79.49,88.89 C 79.49,88.89 80.55,75.12 66.67,72.22 C 79.92,59.78 60.20,32.47 43.59,48.43 C 44.64,41.36 47.10,36.55 53.52,32.81 C 59.94,29.07 76.03,28.18 85.04,43.95 C 94.06,59.71 87.01,76.33 79.49,88.89 Z","fill":"#b488bd"}]},"번개":{"viewBox":"0 0 100 100.0","shapes":[{"d":"M 44.44,98.77 C 44.44,98.77 47.06,92.29 46.91,83.95 C 41.57,87.90 32.10,88.89 32.10,88.89 C 32.10,88.89 54.87,54.32 19.75,54.32 C 9.67,54.32 2.47,56.79 2.47,56.79 C 2.47,56.79 56.79,2.47 56.79,2.47 C 56.79,2.47 54.17,8.94 54.32,17.28 C 59.66,13.34 69.14,12.35 69.14,12.35 C 69.14,12.35 46.37,46.91 81.48,46.91 C 91.57,46.91 98.77,44.44 98.77,44.44 C 98.77,44.44 44.44,98.77 44.44,98.77 Z","fill":"#ca6c33"},{"d":"M 88.89,49.38 C 88.89,49.38 51.85,86.42 51.85,86.42 C 51.85,86.42 56.46,77.55 54.32,64.20 C 48.82,78.30 46.99,78.35 39.51,83.95 C 46.56,74.66 48.75,51.85 27.16,51.85 C 27.16,51.85 14.81,51.85 14.81,51.85 C 14.81,51.85 51.85,12.35 51.85,12.35 C 51.85,12.35 45.56,25.83 49.38,39.51 C 49.70,26.16 61.73,17.28 61.73,17.28 C 61.73,17.28 48.03,49.38 76.54,49.38 C 77.42,49.53 88.89,49.38 88.89,49.38 Z","fill":"#fcd027"}]},"화염":{"viewBox":"0 0 100 130.3","shapes":[{"d":"M 15.15,4.65 C 15.15,4.65 48.74,9.13 60.61,20.93 C 94.22,27.69 96.97,51.95 96.97,60.47 C 96.97,79.90 75.83,97.67 48.48,97.67 C 21.13,97.67 6.06,86.88 6.06,67.44 C 6.06,55.81 16.23,42.79 33.33,34.88 C 41.91,19.06 15.15,4.65 15.15,4.65 Z","fill":"#7b0429"},{"d":"M 36.36,39.53 C 36.36,39.53 12.12,46.27 12.12,67.44 C 12.12,77.57 19.99,93.02 48.48,93.02 C 76.98,93.02 90.91,75.60 90.91,67.44 C 90.91,51.79 90.12,35.21 66.67,25.58 C 75.14,39.13 63.64,39.96 63.64,48.84 C 63.64,60.62 76.75,66.78 90.91,60.47 C 77.66,76.15 68.51,79.07 57.58,79.07 C 39.25,79.07 27.27,70.35 27.27,55.81 C 27.27,46.27 36.36,39.53 36.36,39.53 Z","fill":"#f18356"},{"d":"M 33.33,11.63 C 33.33,11.63 63.64,18.94 63.64,34.88 C 63.64,41.14 57.58,42.50 57.58,51.16 C 57.58,59.82 70.69,68.67 87.88,62.79 C 76.48,77.65 63.53,76.74 54.55,76.74 C 45.56,76.74 30.30,69.38 30.30,55.81 C 30.30,42.24 39.39,41.66 39.39,27.91 C 39.39,14.15 33.33,11.63 33.33,11.63 Z","fill":"#f18356"}]}};
+// name bar, name bar edge, affiliation bar - sampled from the scans
 const HOLO_ELEMENTS = {
-  '화염':['#e8545f','#b53045'], '대지':['#00ae80','#1f7a5f'], '폭풍':['#7561aa','#5b458f'],
-  '파도':['#128dcc','#046cae'], '번개':['#f5a016','#d9731a']
+  '화염':['#e95864','#ca425a','#b53045'], '대지':['#00b282','#009773','#248267'], '폭풍':['#7462ac','#74539d','#664a97'],
+  '파도':['#1e8fce','#007eb8','#006db2'], '번개':['#fdb319','#f9992b','#f4882c']
 };
-// per rarity: how the text areas are printed (box = solid panel, glass = faint panel,
-// art = text straight on the artwork) and how much foil the card gets
+// per rarity: effect text (box = solid panel, glass = frosted panel, art = straight on the
+// artwork), the name/affiliation bars (solid, fade, light) and how much foil the card gets.
+// Promos are printed in more than one of these styles, so P is read off the scan.
 const HOLO_RARITY = {
-  C:{panel:'box',foil:'none'}, CC:{panel:'box',foil:'none'},
-  R:{panel:'box',foil:'rare'}, RR:{panel:'box',foil:'rare'},
-  SR:{panel:'glass',foil:'full'}, P:{panel:'glass',foil:'simple'},
-  SPR:{panel:'art',foil:'full'}, SBR:{panel:'art',foil:'full'}, SSR:{panel:'art',foil:'max'},
-  UR:{panel:'art',foil:'max',white:true},
-  L:{panel:'box',foil:'simple',back:'glass'}, ANL:{panel:'box',foil:'full',back:'art'},
-  SBL:{panel:'box',foil:'full',back:'art'}, SPL:{panel:'art',foil:'full'}, SSL:{panel:'art',foil:'max'}
+  C:{desc:'box',bars:'solid',foil:'none'}, CC:{desc:'box',bars:'solid',foil:'none'},
+  R:{desc:'box',bars:'solid',foil:'rare'}, RR:{desc:'box',bars:'solid',foil:'rare'},
+  SR:{desc:'glass',bars:'fade',foil:'full'}, UR:{desc:'art',bars:'fade',foil:'max'},
+  SPR:{desc:'art',bars:'light',foil:'full'}, SBR:{desc:'art',bars:'light',foil:'full'},
+  SSR:{desc:'art',bars:'light',foil:'max',gold:true},
+  P:{auto:true,foil:'simple'},
+  L:{desc:'glass',bars:'solid',foil:'simple'}, SPL:{desc:'art',bars:'light',foil:'full'},
+  SBL:{desc:'art',bars:'light',foil:'full'}, ANL:{desc:'art',bars:'light',foil:'full',gold:true},
+  SSL:{desc:'art',bars:'light',foil:'max',gold:true}
 };
-// text areas of one face, in percent of its height. desc is where the effect text ends; line and
-// perLine describe the Korean print and are only used to estimate where it starts.
+// text areas of one face, in percent of its height (cards 823 tall, upright leaders 591 tall).
+// text/name/aff are the frame's font sizes; effect text shrinks to `soft` before it grows upward
+// and to `hard` before it gives up. line and perLine describe the Korean print and are only used
+// to estimate where it starts.
 const HOLO_FACES = {
-  card:  {desc:86.2, nameH:6.1, affH:3.0, text:2.25, name:3.7, aff:2.15, line:3.4, perLine:38, floor:24},
-  leader:{desc:80.5, nameH:8.3, affH:5.3, text:3.7,  name:5.6, aff:3.5,  line:4.6, perLine:66, floor:12}
+  card:  {descEnd:{box:86.03, glass:84.08, art:84.08}, nameTop:86.03, nameH:5.83, affTop:91.86, affH:3.40,
+          text:2.67, soft:2.0, hard:1.5, name:4.86, aff:2.43, line:3.2, perLine:38, floor:28},
+  leader:{descEnd:{box:78, glass:78, art:78}, nameTop:80.54, nameH:8.29, affTop:88.83, affH:4.91,
+          text:3.72, soft:2.9, hard:2.2, name:6.77, aff:3.38, line:4.6, perLine:66, floor:14}
 };
 const HOLO_PILLS = {
-  '어태커':'#c8101e','엔트리':'#e2711a','패시브':'#5e1a86','액티브':'#0a6db5','가디언':'#0f9494',
-  '디펜더':'#0d8a4e','엑시트':'#555a60','이스케이프':'#1587c0','암드':'#6e3d1c','버프':'#82810e',
+  '어태커':'#c20f23','엔트리':'#ed7323','패시브':'#652089','액티브':'#0d6fb8','가디언':'#0f9494',
+  '디펜더':'#008654','엑시트':'#555555','이스케이프':'#1587c0','암드':'#6e3d1c','버프':'#82810e',
   '체인':'#7a0a18','크레딧':'#a87606','레벨링크':'#468c32','믹스':'#8a5aa8','포지션':'#24385c',
   '커넥트':'#a5521c','서포트':'#7d6e5e','전선구축':'#8a5e36','스위치':'#12808c','서약':'#fff','각성':'#111','트리거':'#fff'
 };
@@ -814,10 +846,11 @@ class HoloCard {
     if(key === this._key) return;
     this._key = key;
 
-    const style = HOLO_RARITY[rarity && rarity.abbr] || {panel:'glass', foil:'simple'};
-    const colors = HOLO_ELEMENTS[card.element] || ['#6b6b78','#45454f'];
+    const style = HOLO_RARITY[rarity && rarity.abbr] || {desc:'glass', bars:'fade', foil:'simple'};
+    const colors = HOLO_ELEMENTS[card.element] || ['#6b6b78','#55555f','#45454f'];
     this.cardEl.style.setProperty('--el', colors[0]);
-    this.cardEl.style.setProperty('--el-dark', colors[1]);
+    this.cardEl.style.setProperty('--el-edge', colors[1]);
+    this.cardEl.style.setProperty('--el-sub', colors[2]);
     this.cardEl.dataset.holo = style.foil;
     this.backEl.innerHTML = ''; this.frontEl.innerHTML = ''; this._faces = []; this._layout = null;
     this.artEl.style.backgroundImage = '';
@@ -831,7 +864,7 @@ class HoloCard {
         if(this._destroyed || key!==this._key) return;
         this.artEl.style.backgroundImage = 'url("'+src+'")';
         this._layout = card.type==='리더' ? (this._isStacked(img, rarity) ? 'stacked' : 'sideways') : 'card';
-        this._buildText(card, style, fields, src, l, terms);
+        this._buildText(card, style.auto ? this._readStyle(img, style, card.element, this._layout==='sideways') : style, fields, src, l, terms);
         this._applyPrefs();
       };
       img.onerror = ()=>{ if(next && !this._destroyed && key===this._key) load(next, null); };
@@ -854,6 +887,20 @@ class HoloCard {
       }
       return false;
     }catch(e){ return /^(SBL|ANL|P)$/.test((rarity && rarity.abbr) || ''); }
+  }
+  // promos: an affiliation bar in the element's own colour means the framed print, otherwise full art
+  _readStyle(img, style, element, sideways){
+    let art = false;
+    try{
+      const col = (HOLO_ELEMENTS[element] || [])[2];
+      const c = document.createElement('canvas'); c.width = 200; c.height = 200;
+      const ctx = c.getContext('2d', {willReadFrequently:true}); ctx.drawImage(img, 0, 0, 200, 200);
+      // a patch of that bar where nothing is printed (a sideways leader has it along its left side)
+      const d = (sideways ? ctx.getImageData(16, 40, 3, 28) : ctx.getImageData(38, 186, 18, 3)).data;
+      const mid = i => { const v=[]; for(let p=i;p<d.length;p+=4) v.push(d[p]); v.sort((x,y)=>x-y); return v[v.length>>1]; };
+      if(col) art = Math.hypot(...[0,1,2].map(i => mid(i) - parseInt(col.slice(1+i*2, 3+i*2), 16))) > 70;
+    }catch(e){}
+    return { ...style, desc: art?'art':'glass', bars: art?'light':'fade' };
   }
   _buildText(card, style, fields, src, l, terms){
     const pick = (base)=>({en:card[base+'En'], de:card[base+'De'], jp:card[base+'Jp']})[l];
@@ -878,28 +925,34 @@ class HoloCard {
       const side = (i)=>({ lines:(tr[i]||[]).slice(1), ko:(ko[i]||[]).slice(1) });
       const base = side(0), awake = side(1);
       base.tags = ['서약','각성']; awake.tags = keywords;
+      const look = { desc:style.desc, bars:style.bars, gold:style.gold };
       if(this._layout === 'stacked'){
-        this._addFace({...common, ...base, kind:'leader', top:0, height:49.6, panel:style.panel, white:style.white, boxed:true, src});
-        this._addFace({...common, ...awake, kind:'leader', top:50.4, height:49.6, panel:style.back||style.panel, white:style.white, src});
+        this._addFace({...common, ...base, kind:'leader', top:0, height:49.6, desc:'box', bars:'solid', boxed:true, src});
+        this._addFace({...common, ...awake, ...look, kind:'leader', top:50.4, height:49.6, src});
       } else {
-        this._addFace({...common, ...awake, kind:'leader', sideways:true, panel:style.back||style.panel, white:style.white, src});
+        this._addFace({...common, ...awake, ...look, kind:'leader', sideways:true, src});
       }
       return;
     }
+    // items are printed with white lettering on every rarity; full art outlines the trigger box
     const item = card.type === '아이템';
     this._addFace({...common, kind:'card', top:0, height:100,
       lines:String(desc||'').split('\n').map(s=>s.trim()).filter(s=>s && s!=='-'),
       ko:String(card.description||'').split('\n').map(s=>s.trim()).filter(Boolean),
-      tags:keywords, panel:style.panel, white:style.white,
-      // common and rare units and skills have a fixed text box; items do not
-      boxed: style.panel==='box' && !item, src});
+      tags:keywords, item,
+      desc: item ? 'art' : style.desc, bars:style.bars, gold:style.gold,
+      trigger: style.desc==='art' ? 'line' : 'fill',
+      // common and rare units and skills have a fixed text box
+      boxed: style.desc==='box' && !item, src});
   }
   _addFace(f){
     const g = HOLO_FACES[f.kind];
     const el = (cls, parent, tag)=>{ const d=document.createElement(tag||'div'); d.className=cls; parent.appendChild(d); return d; };
     const place = (face)=>{
-      face.dataset.panel = f.panel;
-      if(f.white) face.classList.add('hf-white');
+      face.dataset.kind = f.kind;
+      face.dataset.desc = f.desc;
+      face.dataset.bars = f.bars;
+      if(f.gold) face.classList.add('hf-gold');
       if(f.sideways){
         // upright coordinates, turned a quarter to match the print
         face.style.cssText = 'left:50%;top:50%;width:100cqh;height:100cqw;transform:translate(-50%,-50%) rotate(90deg)';
@@ -918,31 +971,32 @@ class HoloCard {
       img.style.cssText += ';left:0;width:100%;top:'+(-f.top/f.height*100)+'%;height:'+(10000/f.height)+'%';
     }
 
-    const nameTop = g.desc, affTop = g.desc + g.nameH;
     const name = el('hf-name', front);
-    name.style.cssText = 'top:'+nameTop+'%;height:'+g.nameH+'%;font-size:'+g.name+'cqh';
+    name.style.cssText = 'top:'+g.nameTop+'%;height:'+g.nameH+'%;font-size:'+g.name+'cqh';
     el('', name, 'span').textContent = f.name;
     let aff = null;
     if(f.aff){
       aff = el('hf-aff', front);
-      aff.style.cssText = 'top:'+affTop+'%;height:'+g.affH+'%;font-size:'+g.aff+'cqh';
+      aff.style.cssText = 'top:'+g.affTop+'%;height:'+g.affH+'%;font-size:'+g.aff+'cqh';
       el('', aff, 'span').textContent = f.aff;
     }
 
-    // where the Korean text starts, estimated from its length (boxed prints have a fixed top)
-    const koRows = f.ko.reduce((n, line)=> n + Math.max(1, Math.ceil((line.length+4)/g.perLine)), 0);
-    let printedTop = Math.max(g.floor+20, g.desc - (koRows*g.line + 2.4));
-    if(f.boxed) printedTop = f.kind==='card' ? 61.7 : Math.min(printedTop, 67);
+    // where the Korean text starts, estimated from its length (boxed prints have a fixed top).
+    // Items print their equip condition above the effect, which the scrape leaves out.
+    const descEnd = g.descEnd[f.desc];
+    const koRows = f.ko.reduce((n, line)=> n + Math.max(1, Math.ceil((line.length+4)/g.perLine)), f.item ? 1.4 : 0);
+    let printedTop = Math.max(g.floor+20, descEnd - (koRows*g.line + 2.4));
+    if(f.boxed) printedTop = f.kind==='card' ? 61.73 : Math.min(printedTop, 66);
 
     let desc = null;
     if(f.lines.length){
       desc = el('hf-desc', front);
       desc.lang = f.lang==='jp' ? 'ja' : f.lang;
-      desc.style.bottom = (100 - g.desc)+'%';
-      desc.style.minHeight = (g.desc - printedTop)+'%';
+      desc.style.bottom = (100 - descEnd)+'%';
+      desc.style.minHeight = (descEnd - printedTop)+'%';
       this._fillDesc(desc, f);
     }
-    this._faces.push({ back, front, veil, desc, name, aff, g, printedTop, panel:f.panel });
+    this._faces.push({ back, front, veil, desc, name, aff, g, descEnd, printedTop, bars:f.bars });
   }
   _fillDesc(desc, f){
     const el = (cls, parent, tag)=>{ const d=document.createElement(tag||'div'); d.className=cls; parent.appendChild(d); return d; };
@@ -996,7 +1050,7 @@ class HoloCard {
 
     f.lines.forEach((line, i)=>{
       const trig = /^(Trigger|Auslöser|トリガー|트리거)\s*[\/／:：]\s*(.*)$/.exec(line);
-      const div = el(trig ? 'hf-trigger' : 'hf-line', desc);
+      const div = el(trig ? 'hf-trigger '+(f.trigger||'fill') : 'hf-line', desc);
       if(trig){ el('', div, 'b').textContent = trig[1]+' /'; div.appendChild(document.createTextNode(' ')); rich(div, trig[2], i); return; }
       if(perLine && tags[i]) pill(div, label(tags[i]), tags[i]);
       else if(!perLine && tags.length===1 && i===0) pill(div, label(tags[0]), tags[0]);
@@ -1008,13 +1062,22 @@ class HoloCard {
     (this._faces||[]).forEach(face=>{
       const h = face.front.clientHeight;
       if(!h) return;
-      const { g, desc } = face;
+      const { g, desc, descEnd } = face;
       let top = face.printedTop;
       if(desc){
-        const room = h * (g.desc - g.floor) / 100;
+        // first try to stay within the area the Korean text used, then let it grow up the art
+        const printed = h * Math.max(descEnd - face.printedTop, 24) / 100;
+        const most = h * (descEnd - g.floor) / 100;
         let size = g.text;
+        const shrink = (room, least)=>{
+          for(let i=0; i<40 && desc.offsetHeight > room+1 && size > least; i++){
+            size = Math.max(least, size - g.text*0.025);
+            desc.style.fontSize = size+'cqh';
+          }
+        };
         desc.style.fontSize = size+'cqh';
-        for(let i=0; i<24 && desc.offsetHeight > room && size > g.text*0.6; i++){ size -= g.text*0.02; desc.style.fontSize = size+'cqh'; }
+        shrink(printed, g.soft);
+        shrink(most, g.hard);
         top = Math.min(top, desc.offsetTop / h * 100);
       }
       [face.name, face.aff].forEach(box=>{
@@ -1022,15 +1085,16 @@ class HoloCard {
         const span = box.firstChild;
         let size = box===face.name ? g.name : g.aff;
         box.style.fontSize = size+'cqh';
-        for(let i=0; i<24 && span.offsetWidth > box.clientWidth*(box===face.name?0.84:0.96); i++){ size *= 0.96; box.style.fontSize = size+'cqh'; }
+        // the name stays clear of the element emblem on its right
+        for(let i=0; i<30 && span.offsetWidth > box.clientWidth*(box===face.name?0.76:0.94); i++){ size *= 0.96; box.style.fontSize = size+'cqh'; }
       });
       const v = (k, n)=>face.veil.style.setProperty(k, n.toFixed(2)+'%');
-      v('--vt', top); v('--vd', g.desc);
-      // solid panels cover their own name bar; the others need it blurred too.
+      v('--vt', top); v('--vd', descEnd);
+      // solid bars cover their own text; the see-through ones need it blurred too.
       // (a mask position of p% puts a patch's top at p% of the space left over)
-      if(face.panel!=='box'){
-        v('--nw', 87); v('--nh', g.nameH); v('--ny', g.desc / (100-g.nameH) * 100);
-        v('--aw', 64); v('--ah', g.affH); v('--ay', (g.desc+g.nameH) / (100-g.affH) * 100);
+      if(face.bars!=='solid'){
+        v('--nw', 89); v('--nh', g.nameH); v('--ny', g.nameTop / (100-g.nameH) * 100);
+        v('--aw', 70); v('--ah', g.affH); v('--ay', g.affTop / (100-g.affH) * 100);
       }
     });
   }
