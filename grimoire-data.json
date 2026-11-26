@@ -34175,6 +34175,146 @@
         "textColor": "#f4ece7"
       },
       "terms": {
+        "리더": {
+          "en": "Leader",
+          "de": "Anführer",
+          "jp": "リーダー"
+        },
+        "유닛": {
+          "en": "Unit",
+          "de": "Einheit",
+          "jp": "ユニット"
+        },
+        "스킬": {
+          "en": "Skill",
+          "de": "Fähigkeit",
+          "jp": "スキル"
+        },
+        "아이템": {
+          "en": "Item",
+          "de": "Gegenstand",
+          "jp": "アイテム"
+        },
+        "화염": {
+          "en": "Fire",
+          "de": "Feuer",
+          "jp": "炎"
+        },
+        "대지": {
+          "en": "Earth",
+          "de": "Erde",
+          "jp": "大地"
+        },
+        "폭풍": {
+          "en": "Storm",
+          "de": "Sturm",
+          "jp": "嵐"
+        },
+        "파도": {
+          "en": "Wave",
+          "de": "Welle",
+          "jp": "波"
+        },
+        "번개": {
+          "en": "Lightning",
+          "de": "Blitz",
+          "jp": "雷"
+        },
+        "가디언": {
+          "en": "Guardian",
+          "de": "Wächter",
+          "jp": "ガーディアン"
+        },
+        "디펜더": {
+          "en": "Defender",
+          "de": "Verteidiger",
+          "jp": "ディフェンダー"
+        },
+        "레벨링크": {
+          "en": "Level Link",
+          "de": "Level-Link",
+          "jp": "レベルリンク"
+        },
+        "믹스": {
+          "en": "Mix",
+          "de": "Mix",
+          "jp": "ミックス"
+        },
+        "버프": {
+          "en": "Buff",
+          "de": "Buff",
+          "jp": "バフ"
+        },
+        "스위치": {
+          "en": "Switch",
+          "de": "Wechsel",
+          "jp": "スイッチ"
+        },
+        "암드": {
+          "en": "Armed",
+          "de": "Bewaffnet",
+          "jp": "アームド"
+        },
+        "액티브": {
+          "en": "Active",
+          "de": "Aktiv",
+          "jp": "アクティブ"
+        },
+        "어태커": {
+          "en": "Attacker",
+          "de": "Angreifer",
+          "jp": "アタッカー"
+        },
+        "엑시트": {
+          "en": "Exit",
+          "de": "Exit",
+          "jp": "エグジット"
+        },
+        "엔트리": {
+          "en": "Entry",
+          "de": "Entry",
+          "jp": "エントリー"
+        },
+        "이스케이프": {
+          "en": "Escape",
+          "de": "Escape",
+          "jp": "エスケープ"
+        },
+        "전선구축": {
+          "en": "Frontline Formation",
+          "de": "Frontaufbau",
+          "jp": "前線構築"
+        },
+        "체인": {
+          "en": "Chain",
+          "de": "Kette",
+          "jp": "チェイン"
+        },
+        "크레딧": {
+          "en": "Credit",
+          "de": "Credit",
+          "jp": "クレジット"
+        },
+        "패시브": {
+          "en": "Passive",
+          "de": "Passiv",
+          "jp": "パッシブ"
+        },
+        "포지션": {
+          "en": "Position",
+          "de": "Position",
+          "jp": "ポジション"
+        },
+        "커넥트": {
+          "en": "Connect",
+          "de": "Connect",
+          "jp": "コネクト"
+        },
+        "서포트": {
+          "en": "Support",
+          "de": "Support",
+          "jp": "サポート"
+        },
         "승리의 여신: 니케": {
           "en": "Goddess of Victory: NIKKE",
           "de": "Goddess of Victory: NIKKE",
