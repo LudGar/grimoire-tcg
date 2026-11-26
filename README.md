@@ -15,7 +15,8 @@ Designed for collectors who want full control over their game definitions, expan
 - **Pull Rate Analytics** — Per-rarity completion bars, theoretical odds, and booster/box counters calculated automatically from your tracked cards.
 - **Home Dashboard** — "Recently Added" and "Rarest Pulls" highlights per system.
 - **Themes** — Switch between *Grimoire Ledger*, *Gilt Reliquary*, *Moonlit Athenaeum*, *Black*, and *Light*.
-- **Multilingual** — Interface available in **English**, **Korean**, and **German** (card content can be scraped/translated too).
+- **Multilingual** — Interface and card data in **Korean**, **English**, **German** and **Japanese**. Card translations are machine-made and unofficial.
+- **Sign-in & Sync (optional)** — Sign in to keep your collection in step across devices (Supabase). Signed out, everything stays in your browser.
 - **Import / Export** — Export your collection progress as JSON, or import it on another device. Expansion card lists can also be exported/imported independently.
 - **Image Hosting** — Point expansions to a custom image base URL (e.g., GitHub Pages) with automatic fallback to original sources. Includes a Python helper script to batch-download card art.
 - **eBay Prices & Collection Value** — Card tiles and the detail view show the median asking price of active eBay listings for every printing; the stats bar shows what your copies of the current expansion are worth, and Home shows your total collection value, value per expansion and a value-over-time chart. See [eBay Prices](#ebay-prices).
@@ -43,6 +44,6 @@ Prices come from `grimoire-prices.json`, which is generated locally with the eBa
 as plain data - no API keys or fetch tooling live in this repo. Every price update appends a dated
 point to each card's history (`h`), which is what the timeline is drawn from, so it grows with each
 refresh. Cards without matching listings show no price and are counted as "without listings" rather
-than valued at zero. Your owned cards never leave your browser; values are computed on the page.
+than valued at zero. Values are computed on the page; your owned cards stay in your browser unless you sign in to sync.
 
 ---

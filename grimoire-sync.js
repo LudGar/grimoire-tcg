@@ -1,12 +1,11 @@
 /* Sign-in and collection sync for Grimoire, backed by Supabase.
  *
  * The browser copy (localStorage) stays the working copy, so the page keeps
- * working signed out or offline. Syncing is a three-way merge per card between
- *   base   - what the server held after this browser's last sync
- *   local  - this browser now
- *   remote - the server now
- * A card changed here since the last sync wins; otherwise the server's value is
- * taken, so changes and removals made on other devices arrive too.
+ * working signed out or offline. One sync is one call to the database function
+ * sync_collection: it sends the cards changed here since the last sync, the
+ * server applies them in one transaction and returns the whole collection. So a
+ * card changed here wins; everything else comes from the server, including
+ * changes and removals made on other devices.
  *
  * The key below is the publishable key. It is meant to be public: access is
  * enforced by the database's row level security.
@@ -17,7 +16,7 @@
   var API = 'https://lzdkfxdeaikgnylfrkzr.supabase.co';
   var KEY = 'sb_publishable_YNAUvrkRJuH3m2WIeOVGQg_ovTy-EnW';
   var AUTH_KEY = 'grimoire-auth-v1';
-  var TABLE = '/rest/v1/grimoire_collection';
+  var RPC = '/rest/v1/rpc/sync_collection';
   var RESET_GUARD = 10;
 
   // ---------- pure merge logic ----------
@@ -48,8 +47,8 @@
     for (var i = 0; i < arguments.length; i++) Object.keys(arguments[i] || {}).forEach(function (k) { seen[k] = 1; });
     return Object.keys(seen);
   }
-  // base === null means "never synced": keep everything from both sides, using
-  // the larger quantity (the same copies are usually recorded on both).
+  // Used for edits made while a sync is running: what changed here wins, the
+  // rest comes from the server. (base === null keeps the larger quantity.)
   function merge(base, local, remote) {
     var out = {};
     keysOf(base, local, remote).forEach(function (k) {
@@ -60,7 +59,7 @@
     });
     return out;
   }
-  // What has to change on the server to go from `remote` to `wanted`.
+  // What differs when going from `remote` to `wanted`.
   function changes(wanted, remote) {
     var upserts = [], deletes = [];
     keysOf(wanted, remote).forEach(function (k) {
@@ -140,48 +139,29 @@
 
   // ---------- collection rows ----------
   async function rest(path, init, token) {
-    init = init || {};
     init.headers = Object.assign({ apikey: KEY, Authorization: 'Bearer ' + token }, init.headers || {});
     var res = await send(path, init);
     if (!res.ok) throw fail(res.status === 401 ? 'signed_out' : 'http_' + res.status, await res.text());
     return res;
   }
-  async function fetchRemote(token) {
-    var out = {}, page = 1000;
-    for (var from = 0; ; from += page) {
-      var res = await rest(TABLE + '?select=system_id,card_id,qty,added_at&order=system_id,card_id&limit=' + page + '&offset=' + from, {}, token);
-      var rows = await res.json();
-      rows.forEach(function (r) {
-        out[r.system_id + '\n' + r.card_id] = { owned: true, qty: r.qty, addedAt: Date.parse(r.added_at) };
-      });
-      // An empty page is the only reliable end: the server may cap pages below `page`.
-      if (!rows.length) return out;
-      page = rows.length;
-    }
-  }
-  async function pushChanges(wanted, diff, userId, token) {
-    var now = new Date().toISOString();
-    for (var i = 0; i < diff.upserts.length; i += 500) {
-      var body = diff.upserts.slice(i, i + 500).map(function (k) {
-        var p = k.split('\n');
-        return { user_id: userId, system_id: p[0], card_id: p[1], qty: wanted[k].qty,
-                 added_at: new Date(wanted[k].addedAt || Date.now()).toISOString(), updated_at: now };
-      });
-      await rest(TABLE + '?on_conflict=user_id,system_id,card_id', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Prefer: 'resolution=merge-duplicates,return=minimal' },
-        body: JSON.stringify(body)
-      }, token);
-    }
-    var bySystem = {};
-    diff.deletes.forEach(function (k) { var p = k.split('\n'); (bySystem[p[0]] = bySystem[p[0]] || []).push(p[1]); });
-    for (var sys of Object.keys(bySystem)) {
-      for (var j = 0; j < bySystem[sys].length; j += 100) {
-        var list = bySystem[sys].slice(j, j + 100).map(function (id) { return '"' + id.replace(/["\\]/g, '\\$&') + '"'; }).join(',');
-        await rest(TABLE + '?system_id=eq.' + encodeURIComponent(sys) + '&card_id=in.(' + encodeURIComponent(list) + ')',
-          { method: 'DELETE' }, token);
-      }
-    }
+  // Send `keys` as the server should now hold them (quantity 0 removes) and get
+  // the whole collection back. keepLarger never lowers or removes anything.
+  async function exchange(local, keys, keepLarger, token) {
+    var list = keys.map(function (k) {
+      var p = k.split('\n'), e = local[k];
+      var row = { game_id: p[0], card_id: p[1], qty: e ? e.qty : 0 };
+      if (e && e.addedAt) row.added_at = new Date(e.addedAt).toISOString();
+      return row;
+    });
+    var res = await rest(RPC, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ changes: list, keep_larger: keepLarger })
+    }, token);
+    var data = await res.json();
+    var remote = {};
+    data.rows.forEach(function (r) { remote[r[0] + '\n' + r[1]] = { owned: true, qty: r[2], addedAt: r[3] }; });
+    return { before: data.before, remote: remote };
   }
 
   // ---------- sync ----------
@@ -201,30 +181,32 @@
       var local = before;
       if (meta && !mine && Object.keys(before).length && !io.mergeForeign()) local = {};
 
-      var remote = await fetchRemote(token);
       var base = mine ? meta.base : null;
+      var diff = changes(local, base || {});
+      var answer = await exchange(local, diff.upserts.concat(diff.deletes), base === null, token);
       // An empty server after a sync that held many cards is far more likely a
       // reset database than someone unticking every card: upload again, don't erase.
-      if (base && !Object.keys(remote).length && Object.keys(base).length >= RESET_GUARD) base = null;
-      var merged = merge(base, local, remote);
-      var diff = changes(merged, remote);
-      await pushChanges(merged, diff, user.id, token);
+      if (base && !answer.before && Object.keys(base).length >= RESET_GUARD) {
+        diff = changes(local, {});
+        answer = await exchange(local, diff.upserts, true, token);
+      }
+      var remote = answer.remote;
 
       var current = getSession();
       if (!current || current.user.id !== user.id) throw fail('signed_out');
 
       // Keep anything the user changed while the requests were running.
       var latest = flatten(io.read().collector);
-      var result = merge(before, latest, merged);
+      var result = merge(before, latest, remote);
       var lost = Object.keys(latest).some(function (k) { return qtyOf(result, k) < latest[k].qty; });
-      io.write(unflatten(result), { userId: user.id, base: quantities(merged), at: Date.now() }, lost ? unflatten(latest) : null);
+      io.write(unflatten(result), { userId: user.id, base: quantities(remote), at: Date.now() }, lost ? unflatten(latest) : null);
 
-      var rest_ = changes(result, merged);
+      var waiting = changes(result, remote);
       return {
         collector: unflatten(result),
         uploaded: diff.upserts.length,
         removed: diff.deletes.length,
-        pending: rest_.upserts.length + rest_.deletes.length > 0
+        pending: waiting.upserts.length + waiting.deletes.length > 0
       };
     });
   }
