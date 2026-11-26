@@ -11,7 +11,7 @@
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Libre+Caslon+Text:wght@400;700&family=Cormorant+SC:wght@500;600;700&family=EB+Garamond:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Libre+Caslon+Text:wght@400;700&family=Cormorant+SC:wght@500;600;700&family=EB+Garamond:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Barlow+Semi+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -30,7 +30,8 @@
   .tile-card:hover .tile-overlay{opacity:1}
 
   /* ================= holo card renderer ================= */
-  .holo-stage{ perspective:1000px; width:100%; touch-action:none; cursor:grab; }
+  .holo-wrap{ display:flex; flex-direction:column; gap:9px; width:100%; }
+  .holo-stage{ perspective:1000px; width:100%; touch-action:none; cursor:grab; position:relative; }
   .holo-card{
     position:relative; width:100%; aspect-ratio:591/823;
     border-radius:4.6%/3.3%;
@@ -40,32 +41,62 @@
     overflow:hidden; background:#111;
     container-type:size;
   }
-  .holo-layer{ position:absolute; inset:0; width:100%; height:100%; }
-  .holo-layer-bg{
-    background-size:130% 130%; background-position:center; background-repeat:no-repeat;
-    transform:translate(calc(var(--ryn,0) * -0.55%), calc(var(--rxn,0) * 0.55%)) scale(1.04);
+  /* a sideways-printed leader turned upright */
+  .holo-stage.upright{ aspect-ratio:823/591; container-type:inline-size; }
+  .holo-stage.upright .holo-card{
+    position:absolute; left:50%; top:50%; width:calc(100cqw * 591 / 823);
+    transform:translate(-50%,-50%) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) rotate(-90deg);
   }
-  .holo-layer-chrome{ background-size:100% 100%; background-repeat:no-repeat; }
-  .holo-layer-data{ font-family:'Space Mono','Consolas','Courier New',monospace; --cardText:#f6efe6; --cardTextShadow:rgba(0,0,0,.4); --cardTextTop:#f6efe6; --cardTextTopShadow:rgba(0,0,0,.4); }
-  .holo-slot{ position:absolute; display:flex; overflow:hidden; }
-  .holo-slot-cost,.holo-slot-power,.holo-slot-hit{ align-items:center; justify-content:center; font-weight:800; color:var(--cardTextTop); text-shadow:0 1px 2px var(--cardTextTopShadow); z-index:3; }
-  .holo-slot-power{ justify-content:flex-start; padding-left:2%; }
-  .holo-slot-sparkle{ pointer-events:none; z-index:2; }
-  .holo-slot-sparkle svg{ width:100%; height:100%; display:block; filter:drop-shadow(0 1px 1px rgba(0,0,0,.4)); }
-  .holo-slot-name{ align-items:center; justify-content:center; font-weight:800; letter-spacing:.03em; color:var(--cardText); text-align:center; text-shadow:0 1px 2px var(--cardTextShadow); white-space:nowrap; }
-  .holo-slot-name span{ overflow:hidden; text-overflow:ellipsis; max-width:100%; }
-  .holo-slot-type{ align-items:center; justify-content:center; font-weight:700; letter-spacing:.05em; color:var(--cardText); text-shadow:0 1px 2px var(--cardTextShadow); text-transform:uppercase; text-align:center; }
-  .holo-slot-affiliation{ align-items:center; justify-content:center; font-weight:600; letter-spacing:.04em; color:var(--cardText); text-shadow:0 1px 2px var(--cardTextShadow); text-align:center; }
-  .holo-slot-cardnumber{ align-items:center; justify-content:center; font-weight:700; color:var(--cardText); text-shadow:0 1px 2px var(--cardTextShadow); letter-spacing:.02em; text-align:center; }
-  .holo-slot-rarity{ align-items:center; justify-content:center; border-radius:22%/34%; font-weight:800; color:#fff; box-shadow:0 1px 3px rgba(0,0,0,.4); }
-  .holo-slot-copyright{ align-items:center; justify-content:center; font-weight:500; color:var(--cardText); text-shadow:0 1px 2px var(--cardTextShadow); opacity:.85; white-space:nowrap; }
-  .holo-slot-level{ align-items:center; justify-content:center; font-weight:800; letter-spacing:.08em; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.35); }
-  .holo-slot-element svg{ width:100%; height:100%; display:block; filter:drop-shadow(0 2px 3px rgba(0,0,0,.4)); }
-  .holo-slot-keywords{ align-items:center; gap:5px; flex-wrap:wrap; }
-  .holo-kw-pill-img{ height:100%; width:auto; filter:drop-shadow(0 1px 2px rgba(0,0,0,.35)); }
-  .holo-kw-pill-text{ font-size:3.2cqh; font-weight:700; color:#eee; background:#514a5c; border-radius:22%/50%; padding:0 8px; height:100%; display:flex; align-items:center; }
-  .holo-slot-description{ flex-direction:column; justify-content:center; overflow:hidden; line-height:1.32; color:#1b1b1b; font-weight:600; white-space:pre-wrap; }
-  .holo-kw-inline-icon{ height:1.5em; vertical-align:-0.35em; margin:0 2px; }
+  .holo-layer{ position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+  .holo-art{ background-size:100% 100%; background-repeat:no-repeat; }
+
+  /* one printed face: the whole card, one half of a double-faced leader, or a sideways leader */
+  .hf{ position:absolute; container-type:size; overflow:hidden; font-family:'Barlow Semi Condensed','Roboto Condensed','Arial Narrow','Segoe UI','Yu Gothic','Noto Sans JP',sans-serif; }
+  .holo-card.holo-original .hf{ display:none; }
+  /* blurred copy of the scan, only where Korean text is printed - the artwork stays sharp */
+  .hf-veil{
+    position:absolute; inset:0;
+    /* three patches: the effect text (full width), the name (not the element icon on its right)
+       and the affiliation (not the type label or logo beside it) */
+    mask-image:
+      linear-gradient(to bottom, transparent calc(var(--vt,70%) - 5%), #000 var(--vt,70%), #000 var(--vd,86%), transparent var(--vd,86%)),
+      linear-gradient(#000,#000), linear-gradient(#000,#000);
+    mask-repeat:no-repeat;
+    mask-size:100% 100%, var(--nw,0) var(--nh,0), var(--aw,0) var(--ah,0);
+    mask-position:0 0, 0 var(--ny,0), 50% var(--ay,0);
+  }
+  .hf-veil-img{ position:absolute; background-size:100% 100%; filter:blur(1.15cqh) saturate(1.1); }
+  .hf-desc{ position:absolute; left:0; right:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-end; padding:1cqh 3.6cqw .8cqh; line-height:1.24; font-weight:600; overflow-wrap:anywhere; hyphens:auto; }
+  .hf[data-panel="box"] .hf-desc{ justify-content:flex-start; background:rgba(243,241,241,.87); color:#17120f; }
+  .hf[data-panel="glass"] .hf-desc{ background:linear-gradient(to bottom, rgba(18,14,22,0), rgba(18,14,22,.48) 3cqh); color:#fff; }
+  .hf[data-panel="art"] .hf-desc{ background:linear-gradient(to bottom, rgba(10,8,16,0), rgba(10,8,16,.26) 4cqh); color:#fff; }
+  .hf[data-panel="glass"] .hf-desc, .hf[data-panel="art"] .hf-desc{ -webkit-text-stroke:.22em rgba(14,10,16,.9); paint-order:stroke fill; }
+  .hf-line{ margin:0 0 .18em; }
+  .hf-tags{ display:flex; flex-wrap:wrap; gap:.3em; margin:0 0 .25em; }
+  .hf-pill{ display:inline-block; padding:0 .45em; margin-right:.35em; border-radius:.28em; font-weight:800; line-height:1.3; color:#fff; background:var(--pill,#555); -webkit-text-stroke:0; box-shadow:0 0 0 1px rgba(255,255,255,.35); }
+  .hf-tags .hf-pill{ margin-right:0; }
+  .hf-pill.vow{ background:#fff; color:#111; box-shadow:inset 0 0 0 1px #111; }
+  .hf-trigger{ margin-top:.35em; padding:.18em .55em; border-radius:.3em .9em .3em .9em; }
+  .hf-trigger b{ font-weight:800; margin-right:.15em; }
+  .hf[data-panel="box"] .hf-trigger, .hf[data-panel="glass"] .hf-trigger{ background:rgba(255,255,255,.9); color:#17120f; -webkit-text-stroke:0; }
+  .hf[data-panel="box"] .hf-trigger{ box-shadow:0 0 0 1px rgba(0,0,0,.14); }
+  .hf[data-panel="art"] .hf-trigger{ border:1px solid rgba(255,255,255,.85); background:rgba(8,6,12,.2); }
+  .hf-icon svg{ height:1.15em; width:auto; vertical-align:-.2em; margin:0 .15em; }
+
+  .hf-name, .hf-aff{ position:absolute; display:flex; align-items:center; justify-content:center; white-space:nowrap; overflow:hidden; }
+  .hf-name{ left:0; right:0; font-weight:800; letter-spacing:.01em; }
+  .hf-aff{ left:17%; right:17%; font-weight:700; }
+  .hf[data-panel="box"] .hf-name{ color:#fff; background:linear-gradient(90deg, var(--el), var(--el) 55%, color-mix(in srgb, var(--el) 55%, var(--el-dark)) 87%, transparent 90%); }
+  .hf[data-panel="box"] .hf-aff{ color:#fff; background:linear-gradient(90deg, transparent, var(--el-dark) 9%, var(--el-dark) 91%, transparent); }
+  .hf[data-panel="glass"] .hf-name{ color:#fff; text-shadow:0 1px 3px rgba(0,0,0,.55); background:linear-gradient(90deg, transparent, color-mix(in srgb, var(--el) 84%, transparent) 18%, color-mix(in srgb, var(--el) 84%, transparent) 80%, transparent 89%); }
+  .hf[data-panel="glass"] .hf-aff{ color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.6); background:linear-gradient(90deg, transparent, color-mix(in srgb, var(--el-dark) 80%, transparent) 14%, color-mix(in srgb, var(--el-dark) 80%, transparent) 86%, transparent); }
+  .hf[data-panel="art"] .hf-name{ color:var(--el-dark); background:linear-gradient(90deg, transparent 3%, rgba(255,255,255,.74) 28%, rgba(255,255,255,.74) 72%, transparent 88%); }
+  .hf[data-panel="art"] .hf-aff{ color:var(--el-dark); background:linear-gradient(90deg, transparent, rgba(255,255,255,.68) 22%, rgba(255,255,255,.68) 78%, transparent); }
+  .hf[data-panel="art"] .hf-name span, .hf[data-panel="art"] .hf-aff span{ -webkit-text-stroke:.22em #fff; paint-order:stroke fill; }
+  .hf[data-panel="art"].hf-white .hf-name, .hf[data-panel="art"].hf-white .hf-aff{ color:#fff; background:linear-gradient(90deg, transparent, rgba(14,10,16,.28) 28%, rgba(14,10,16,.28) 72%, transparent); }
+  .hf[data-panel="art"].hf-white .hf-name span, .hf[data-panel="art"].hf-white .hf-aff span{ -webkit-text-stroke:.22em color-mix(in srgb, var(--el-dark) 75%, #000); }
+
+  /* ---- foil ---- */
   .holo-layer-holo{
     mix-blend-mode:color-dodge;
     opacity:calc((0.08 + var(--glow,.4) * 0.8) * var(--foilMul,1));
@@ -85,6 +116,8 @@
     background-size:150px 150px; background-position:var(--mx,50%) var(--my,50%);
     filter:brightness(1.3);
   }
+  .holo-card[data-holo="full"]{ --foilMul:.7; --sparkleMul:.75; }
+  .holo-card[data-holo="max"]{ --foilMul:.95; --sparkleMul:1.15; }
   .holo-card[data-holo="none"] > .holo-layer-holo,
   .holo-card[data-holo="none"] > .holo-layer-sparkle{ opacity:0 !important; }
   .holo-card[data-holo="simple"] > .holo-layer-holo{
@@ -99,12 +132,33 @@
   .holo-card[data-holo="simple"] > .holo-layer-sparkle{
     opacity:calc((0.05 + var(--glow,.4) * 0.22) * var(--sparkleMul,1));
   }
+  /* rare: broad sheen in the card's element colour, plus glitter */
+  .holo-card[data-holo="rare"] > .holo-layer-holo{
+    background:repeating-linear-gradient(115deg,
+      transparent 0%, transparent 14%,
+      var(--el) 26%, #fff 33%, var(--el) 40%,
+      transparent 52%, transparent 100%);
+    background-size:220% 220%; background-position:var(--mx,50%) var(--my,50%);
+    opacity:calc(0.08 + var(--glow,.4) * 0.5);
+    filter:saturate(1.2);
+  }
+  .holo-card[data-holo="rare"] > .holo-layer-sparkle{
+    opacity:calc(0.1 + var(--glow,.4) * 0.45);
+  }
   .holo-layer-glare{
     mix-blend-mode:soft-light;
     background:radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,.9), rgba(255,255,255,0) 42%);
-    opacity:calc(0.4 + var(--glow,.4)*0.5);
+    opacity:calc(0.2 + var(--glow,.4)*0.4);
   }
   .holo-layer-edge{ box-shadow:inset 0 0 0 1px rgba(255,255,255,.18); border-radius:inherit; }
+
+  .holo-tools{ display:flex; justify-content:center; gap:6px; }
+  .holo-tools button{ width:38px; height:32px; border-radius:7px; border:1px solid var(--line2,#363636); background:var(--panel,#151515); color:var(--ink3,#8f8b84); cursor:pointer; font-size:13px; }
+  .holo-tools button:hover{ color:var(--ink,#ece8e2); }
+  .holo-tools button.on{ color:var(--ink,#ece8e2); background:var(--raise,#262626); }
+  .holo-overlay{ position:fixed; inset:0; z-index:200; background:rgba(5,5,8,.93); display:flex; align-items:center; justify-content:center; padding:16px; box-sizing:border-box; }
+  .holo-overlay .holo-wrap{ width:min(94vw, calc((100vh - 90px) * 591 / 823)); gap:14px; }
+  .holo-overlay .holo-wrap.upright{ width:min(94vw, calc((100vh - 90px) * 823 / 591)); }
 </style>
 </helmet>
 
@@ -642,249 +696,379 @@
 <script type="text/x-dc" data-dc-script>
 
 // ================= holo card renderer =================
-// Live-rendered, data-driven card face with per-rarity chrome/foil templates and a
-// mouse/touch-tilt holographic effect. Ported from a standalone demo (holo-card-demo-v3.html)
-// built against this exact dataset - slot positions, rarity->chrome mapping, keyword icon
-// keys and element icon paths all come from there. The demo's per-rarity "art" bitmaps were
-// just placeholder samples for the standalone file; here we swap in each card's own scanned
-// image instead, since every chrome template has a transparent window at the card's center
-// (verified directly against the extracted webp alpha channels) for it to show through.
-const HOLO_ASSET_BASE = 'nivel/holo/';
-const HOLO_DATA = {"sparklePaths":["M 26.00,0.00 L 31.61,9.90 L 26.74,25.20 L 41.96,20.30 L 52.00,26.00 L 42.03,31.60 L 26.73,26.73 L 31.62,41.99 L 26.00,52.00 L 20.30,41.94 L 25.21,26.73 L 9.98,31.63 L 0.00,26.00 L 9.97,20.31 L 25.21,25.21 L 20.33,9.94 Z","M 44.00,8.00 L 29.60,26.00 L 44.00,44.00 L 26.00,29.60 L 8.00,44.00 L 22.40,26.00 L 8.00,8.00 L 26.00,22.40 Z"],"keywordIconMap":{"엔트리":"ENTRY","어태커":"ATTACKER","디펜더":"DEFENDER","엑시트":"EXIT","패시브":"PASSIVE","액티브":"ACTIVE","암드":"ARMED","가디언":"GUARDIAN","믹스":"MIX","포지션":"POSITION","버프":"BUFF","레벨링크":"LEVELLINK","크레딧":"CREDIT","체인":"CHAIN","이스케이프":"ESCAPE","트리거":"TRIGGER"},"slotsByFamily":{"standard":{"cost":{"left":2.37,"top":2.43,"width":7.45,"height":7.05,"fontSize":6.56},"power":{"left":67.68,"top":2.43,"width":20.98,"height":5.35,"fontSize":4.62},"hit":{"left":90.36,"top":2.92,"width":4.4,"height":3.89,"fontSize":3.16},"sparkle_icon":{"left":88.16,"top":1.82,"width":8.8,"height":6.32},"name":{"left":0.0,"top":85.78,"width":100.0,"height":6.2,"fontSize":3.65},"type":{"left":3.38,"top":92.35,"width":22.0,"height":2.19,"fontSize":1.82},"affiliation":{"left":25.38,"top":92.1,"width":74.62,"height":2.67,"fontSize":2.43},"card_number":{"left":3.38,"top":96.11,"width":15.23,"height":1.94,"fontSize":1.58},"rarity_badge":{"left":17.6,"top":95.75,"width":5.08,"height":2.43,"fontSize":1.22},"copyright":{"left":33.84,"top":96.35,"width":66.16,"height":1.82,"fontSize":1.58},"description":{"left":16.07,"top":65.61,"width":79.53,"height":6.56,"fontSize":1.34},"keyword_row":{"left":4.57,"top":65.13,"width":50.76,"height":3.52},"element_badge":{"left":90.19,"top":86.03,"width":5.92,"height":5.47}},"c":{"cost":{"left":2.37,"top":2.43,"width":7.45,"height":7.05,"fontSize":6.56},"power":{"left":67.68,"top":2.43,"width":20.98,"height":5.35,"fontSize":4.62},"hit":{"left":90.36,"top":2.92,"width":4.4,"height":3.89,"fontSize":3.16},"sparkle_icon":{"left":88.16,"top":1.82,"width":8.8,"height":6.32},"name":{"left":0.0,"top":85.78,"width":100.0,"height":6.2,"fontSize":3.65},"type":{"left":3.38,"top":92.35,"width":22.0,"height":2.19,"fontSize":1.82},"affiliation":{"left":25.38,"top":92.1,"width":74.62,"height":2.67,"fontSize":2.43},"card_number":{"left":3.38,"top":96.11,"width":15.23,"height":1.94,"fontSize":1.58},"rarity_badge":{"left":17.6,"top":95.75,"width":5.08,"height":2.43,"fontSize":1.22},"copyright":{"left":33.84,"top":96.35,"width":66.16,"height":1.82,"fontSize":1.58},"description":{"left":16.58,"top":62.82,"width":79.53,"height":6.56,"fontSize":1.34},"keyword_row":{"left":5.08,"top":62.33,"width":50.76,"height":3.52},"element_badge":{"left":90.19,"top":86.03,"width":5.92,"height":5.47}},"leader":{"type":{"cx":8.54,"cy":6.44,"w":12.18,"h":1.82,"fontSize":1.82},"name":{"cx":15.14,"cy":50.18,"w":15.91,"h":3.52,"fontSize":3.52},"affiliation":{"cx":8.54,"cy":50.24,"w":28.93,"h":2.31,"fontSize":2.31},"level_label":{"cx":94.42,"cy":91.25,"w":22.0,"h":4.37,"fontSize":4.37},"card_number":{"cx":3.13,"cy":6.8,"w":13.2,"h":1.58,"fontSize":1.58},"copyright":{"cx":2.96,"cy":50.0,"w":22.17,"h":1.58,"fontSize":1.58},"description":{"cx":25.63,"cy":52.37,"w":113.03,"h":2.07,"fontSize":2.07},"keyword_row":{"cx":25.63,"cy":6.74,"w":11.34,"h":3.28,"fontSize":3.28},"rarity_badge":{"left":1.69,"top":12.15,"width":2.88,"height":3.28},"element_badge":{"left":11.34,"top":92.95,"width":7.78,"height":5.59}}},"rarityMeta":{"C":{"family":"c","holo":"none","assetKey":"C"},"R":{"family":"c","holo":"simple","assetKey":"C"},"CC":{"family":"c","holo":"simple","assetKey":"C"},"RR":{"family":"c","holo":"simple","assetKey":"C"},"SR":{"family":"standard","holo":"full","assetKey":"SR"},"SPR":{"family":"standard","holo":"full","assetKey":"SPR"},"UR":{"family":"standard","holo":"full","assetKey":"UR"},"L":{"family":"leader","holo":"simple","assetKey":"L"},"SPL":{"family":"leader","holo":"full","assetKey":"SPL"},"SRL":{"family":"leader","holo":"full","assetKey":"SPL","wip":true}},"elementIcons":{"파도":{"viewBox":"0 0 100 79.76","shapes":[{"d":"M 97.62,92.54 C 97.62,92.54 85.50,98.51 61.90,98.51 C 38.31,98.51 19.05,98.51 19.05,98.51 C 19.05,98.51 2.38,82.19 2.38,53.73 C 2.38,25.27 18.33,2.98 40.48,2.98 C 73.13,2.98 83.33,38.81 83.33,38.81 C 83.33,38.81 71.43,46.01 71.43,56.72 C 71.43,70.25 80.06,84.82 97.62,92.54 Z","fill":"#699dce"},{"d":"M 55.95,29.85 C 55.95,29.85 45.24,40.66 45.24,53.73 C 45.24,80.51 60.71,95.52 60.71,95.52 C 60.71,95.52 66.67,95.52 66.67,95.52 C 66.67,95.52 48.81,78.47 48.81,53.73 C 48.81,38.65 55.95,29.85 55.95,29.85 Z","fill":"#274b91"},{"d":"M 36.90,95.52 C 36.90,95.52 23.81,86.29 23.81,53.73 C 23.81,26.75 41.67,20.90 41.67,20.90 C 41.67,20.90 27.38,31.49 27.38,53.73 C 27.38,79.31 42.86,95.52 42.86,95.52 C 42.86,95.52 36.90,95.52 36.90,95.52 Z","fill":"#274a91"}]},"대지":{"viewBox":"0 0 100 100.0","shapes":[{"d":"M 50.70,2.82 C 50.70,2.82 2.82,50.70 2.82,50.70 C 2.82,50.70 50.70,98.59 50.70,98.59 C 50.70,98.59 98.59,50.70 98.59,50.70 C 98.59,50.70 50.70,2.82 50.70,2.82 Z","fill":"#296738"},{"d":"M 19.65,59.09 C 14.75,54.19 11.27,50.70 11.27,50.70 C 11.27,50.70 34.20,27.77 45.09,16.88 C 46.17,28.72 20.56,59.99 19.65,59.09 Z","fill":"#8bc67c"},{"d":"M 33.79,73.23 C 29.97,69.41 22.50,61.93 22.50,61.93 C 22.50,61.93 32.89,53.15 45.07,42.25 C 46.57,55.03 34.74,74.17 33.79,73.23 Z","fill":"#8bc67c"},{"d":"M 48.01,87.45 C 48.01,87.45 41.24,80.68 36.60,76.04 C 36.60,76.04 44.01,66.46 47.89,64.79 C 49.38,75.17 48.01,87.45 48.01,87.45 Z","fill":"#8bc67c"},{"d":"M 67.62,73.23 C 61.95,78.89 56.60,84.24 53.49,87.35 C 53.49,87.35 56.50,77.79 53.52,64.79 C 60.14,66.29 67.62,73.23 67.62,73.23 Z","fill":"#8bc67c"},{"d":"M 81.56,59.28 C 78.25,62.59 70.39,70.46 70.39,70.46 C 70.39,70.46 53.52,58.27 53.52,42.25 C 67.96,53.95 81.56,59.28 81.56,59.28 Z","fill":"#8bc67c"},{"d":"M 56.48,17.05 C 68.09,28.65 90.14,50.70 90.14,50.70 C 90.14,50.70 87.91,52.93 84.52,56.33 C 84.52,56.33 55.21,41.42 56.48,17.05 Z","fill":"#8bc67c"}]},"폭풍":{"viewBox":"0 0 100 92.31","shapes":[{"d":"M 61.39,26.34 C 66.61,25.32 72.15,25.92 77.32,29.08 C 89.13,36.28 98.64,60.89 87.01,82.16 C 82.49,90.43 74.81,93.59 74.81,93.59 C 74.81,93.59 75.10,81.19 68.80,77.35 C 67.52,76.57 66.27,76.10 65.16,75.83 C 65.16,75.83 63.73,85.46 54.37,91.01 C 42.57,98.21 17.63,94.61 6.00,73.33 C 1.48,65.07 2.73,56.46 2.73,56.46 C 2.73,56.46 12.75,62.93 19.05,59.08 C 23.25,56.53 23.25,54.94 23.25,54.94 C 19.42,50.56 16.84,44.91 16.84,38.18 C 16.84,23.79 32.27,2.78 55.53,2.78 C 64.56,2.78 71.00,8.22 71.00,8.22 C 71.00,8.22 60.68,14.16 60.68,21.84 C 60.68,24.65 61.39,26.34 61.39,26.34 Z","fill":"#412c8c"},{"d":"M 7.69,62.63 C 7.69,62.63 15.83,72.94 25.64,58.33 C 33.56,77.74 61.33,69.96 56.41,47.22 C 61.46,51.72 64.10,59.11 64.10,66.67 C 64.10,74.23 57.47,88.89 41.03,88.89 C 24.58,88.89 14.09,75.61 7.69,62.63 Z","fill":"#b388bc"},{"d":"M 64.06,8.37 C 64.06,8.37 53.10,14.65 56.41,27.78 C 39.87,30.67 29.23,55.02 49.83,61.98 C 43.71,64.54 38.72,64.73 32.69,60.83 C 26.66,56.94 18.27,42.97 26.48,27.07 C 34.68,11.17 50.51,7.87 64.06,8.37 Z","fill":"#b388bc"},{"d":"M 79.49,88.89 C 79.49,88.89 80.55,75.12 66.67,72.22 C 79.92,59.78 60.20,32.47 43.59,48.43 C 44.64,41.36 47.10,36.55 53.52,32.81 C 59.94,29.07 76.03,28.18 85.04,43.95 C 94.06,59.71 87.01,76.33 79.49,88.89 Z","fill":"#b488bd"}]},"번개":{"viewBox":"0 0 100 100.0","shapes":[{"d":"M 44.44,98.77 C 44.44,98.77 47.06,92.29 46.91,83.95 C 41.57,87.90 32.10,88.89 32.10,88.89 C 32.10,88.89 54.87,54.32 19.75,54.32 C 9.67,54.32 2.47,56.79 2.47,56.79 C 2.47,56.79 56.79,2.47 56.79,2.47 C 56.79,2.47 54.17,8.94 54.32,17.28 C 59.66,13.34 69.14,12.35 69.14,12.35 C 69.14,12.35 46.37,46.91 81.48,46.91 C 91.57,46.91 98.77,44.44 98.77,44.44 C 98.77,44.44 44.44,98.77 44.44,98.77 Z","fill":"#ca6c33"},{"d":"M 88.89,49.38 C 88.89,49.38 51.85,86.42 51.85,86.42 C 51.85,86.42 56.46,77.55 54.32,64.20 C 48.82,78.30 46.99,78.35 39.51,83.95 C 46.56,74.66 48.75,51.85 27.16,51.85 C 27.16,51.85 14.81,51.85 14.81,51.85 C 14.81,51.85 51.85,12.35 51.85,12.35 C 51.85,12.35 45.56,25.83 49.38,39.51 C 49.70,26.16 61.73,17.28 61.73,17.28 C 61.73,17.28 48.03,49.38 76.54,49.38 C 77.42,49.53 88.89,49.38 88.89,49.38 Z","fill":"#fcd027"}]},"화염":{"viewBox":"0 0 100 130.3","shapes":[{"d":"M 15.15,4.65 C 15.15,4.65 48.74,9.13 60.61,20.93 C 94.22,27.69 96.97,51.95 96.97,60.47 C 96.97,79.90 75.83,97.67 48.48,97.67 C 21.13,97.67 6.06,86.88 6.06,67.44 C 6.06,55.81 16.23,42.79 33.33,34.88 C 41.91,19.06 15.15,4.65 15.15,4.65 Z","fill":"#7b0429"},{"d":"M 36.36,39.53 C 36.36,39.53 12.12,46.27 12.12,67.44 C 12.12,77.57 19.99,93.02 48.48,93.02 C 76.98,93.02 90.91,75.60 90.91,67.44 C 90.91,51.79 90.12,35.21 66.67,25.58 C 75.14,39.13 63.64,39.96 63.64,48.84 C 63.64,60.62 76.75,66.78 90.91,60.47 C 77.66,76.15 68.51,79.07 57.58,79.07 C 39.25,79.07 27.27,70.35 27.27,55.81 C 27.27,46.27 36.36,39.53 36.36,39.53 Z","fill":"#f18356"},{"d":"M 33.33,11.63 C 33.33,11.63 63.64,18.94 63.64,34.88 C 63.64,41.14 57.58,42.50 57.58,51.16 C 57.58,59.82 70.69,68.67 87.88,62.79 C 76.48,77.65 63.53,76.74 54.55,76.74 C 45.56,76.74 30.30,69.38 30.30,55.81 C 30.30,42.24 39.39,41.66 39.39,27.91 C 39.39,14.15 33.33,11.63 33.33,11.63 Z","fill":"#f18356"}]}}};
+// The holo view is the card's own scan with a foil effect that follows the pointer. In Korean
+// that is all it is: the print is already right. In the other languages only the areas that
+// carry Korean text are blurred and repainted, so cost, power, hit, element, number, logos and
+// the artwork stay as printed. Positions are percentages measured on the scans.
+const HOLO_ELEMENT_ICONS = {"파도":{"viewBox":"0 0 100 79.76","shapes":[{"d":"M 97.62,92.54 C 97.62,92.54 85.50,98.51 61.90,98.51 C 38.31,98.51 19.05,98.51 19.05,98.51 C 19.05,98.51 2.38,82.19 2.38,53.73 C 2.38,25.27 18.33,2.98 40.48,2.98 C 73.13,2.98 83.33,38.81 83.33,38.81 C 83.33,38.81 71.43,46.01 71.43,56.72 C 71.43,70.25 80.06,84.82 97.62,92.54 Z","fill":"#699dce"},{"d":"M 55.95,29.85 C 55.95,29.85 45.24,40.66 45.24,53.73 C 45.24,80.51 60.71,95.52 60.71,95.52 C 60.71,95.52 66.67,95.52 66.67,95.52 C 66.67,95.52 48.81,78.47 48.81,53.73 C 48.81,38.65 55.95,29.85 55.95,29.85 Z","fill":"#274b91"},{"d":"M 36.90,95.52 C 36.90,95.52 23.81,86.29 23.81,53.73 C 23.81,26.75 41.67,20.90 41.67,20.90 C 41.67,20.90 27.38,31.49 27.38,53.73 C 27.38,79.31 42.86,95.52 42.86,95.52 C 42.86,95.52 36.90,95.52 36.90,95.52 Z","fill":"#274a91"}]},"대지":{"viewBox":"0 0 100 100.0","shapes":[{"d":"M 50.70,2.82 C 50.70,2.82 2.82,50.70 2.82,50.70 C 2.82,50.70 50.70,98.59 50.70,98.59 C 50.70,98.59 98.59,50.70 98.59,50.70 C 98.59,50.70 50.70,2.82 50.70,2.82 Z","fill":"#296738"},{"d":"M 19.65,59.09 C 14.75,54.19 11.27,50.70 11.27,50.70 C 11.27,50.70 34.20,27.77 45.09,16.88 C 46.17,28.72 20.56,59.99 19.65,59.09 Z","fill":"#8bc67c"},{"d":"M 33.79,73.23 C 29.97,69.41 22.50,61.93 22.50,61.93 C 22.50,61.93 32.89,53.15 45.07,42.25 C 46.57,55.03 34.74,74.17 33.79,73.23 Z","fill":"#8bc67c"},{"d":"M 48.01,87.45 C 48.01,87.45 41.24,80.68 36.60,76.04 C 36.60,76.04 44.01,66.46 47.89,64.79 C 49.38,75.17 48.01,87.45 48.01,87.45 Z","fill":"#8bc67c"},{"d":"M 67.62,73.23 C 61.95,78.89 56.60,84.24 53.49,87.35 C 53.49,87.35 56.50,77.79 53.52,64.79 C 60.14,66.29 67.62,73.23 67.62,73.23 Z","fill":"#8bc67c"},{"d":"M 81.56,59.28 C 78.25,62.59 70.39,70.46 70.39,70.46 C 70.39,70.46 53.52,58.27 53.52,42.25 C 67.96,53.95 81.56,59.28 81.56,59.28 Z","fill":"#8bc67c"},{"d":"M 56.48,17.05 C 68.09,28.65 90.14,50.70 90.14,50.70 C 90.14,50.70 87.91,52.93 84.52,56.33 C 84.52,56.33 55.21,41.42 56.48,17.05 Z","fill":"#8bc67c"}]},"폭풍":{"viewBox":"0 0 100 92.31","shapes":[{"d":"M 61.39,26.34 C 66.61,25.32 72.15,25.92 77.32,29.08 C 89.13,36.28 98.64,60.89 87.01,82.16 C 82.49,90.43 74.81,93.59 74.81,93.59 C 74.81,93.59 75.10,81.19 68.80,77.35 C 67.52,76.57 66.27,76.10 65.16,75.83 C 65.16,75.83 63.73,85.46 54.37,91.01 C 42.57,98.21 17.63,94.61 6.00,73.33 C 1.48,65.07 2.73,56.46 2.73,56.46 C 2.73,56.46 12.75,62.93 19.05,59.08 C 23.25,56.53 23.25,54.94 23.25,54.94 C 19.42,50.56 16.84,44.91 16.84,38.18 C 16.84,23.79 32.27,2.78 55.53,2.78 C 64.56,2.78 71.00,8.22 71.00,8.22 C 71.00,8.22 60.68,14.16 60.68,21.84 C 60.68,24.65 61.39,26.34 61.39,26.34 Z","fill":"#412c8c"},{"d":"M 7.69,62.63 C 7.69,62.63 15.83,72.94 25.64,58.33 C 33.56,77.74 61.33,69.96 56.41,47.22 C 61.46,51.72 64.10,59.11 64.10,66.67 C 64.10,74.23 57.47,88.89 41.03,88.89 C 24.58,88.89 14.09,75.61 7.69,62.63 Z","fill":"#b388bc"},{"d":"M 64.06,8.37 C 64.06,8.37 53.10,14.65 56.41,27.78 C 39.87,30.67 29.23,55.02 49.83,61.98 C 43.71,64.54 38.72,64.73 32.69,60.83 C 26.66,56.94 18.27,42.97 26.48,27.07 C 34.68,11.17 50.51,7.87 64.06,8.37 Z","fill":"#b388bc"},{"d":"M 79.49,88.89 C 79.49,88.89 80.55,75.12 66.67,72.22 C 79.92,59.78 60.20,32.47 43.59,48.43 C 44.64,41.36 47.10,36.55 53.52,32.81 C 59.94,29.07 76.03,28.18 85.04,43.95 C 94.06,59.71 87.01,76.33 79.49,88.89 Z","fill":"#b488bd"}]},"번개":{"viewBox":"0 0 100 100.0","shapes":[{"d":"M 44.44,98.77 C 44.44,98.77 47.06,92.29 46.91,83.95 C 41.57,87.90 32.10,88.89 32.10,88.89 C 32.10,88.89 54.87,54.32 19.75,54.32 C 9.67,54.32 2.47,56.79 2.47,56.79 C 2.47,56.79 56.79,2.47 56.79,2.47 C 56.79,2.47 54.17,8.94 54.32,17.28 C 59.66,13.34 69.14,12.35 69.14,12.35 C 69.14,12.35 46.37,46.91 81.48,46.91 C 91.57,46.91 98.77,44.44 98.77,44.44 C 98.77,44.44 44.44,98.77 44.44,98.77 Z","fill":"#ca6c33"},{"d":"M 88.89,49.38 C 88.89,49.38 51.85,86.42 51.85,86.42 C 51.85,86.42 56.46,77.55 54.32,64.20 C 48.82,78.30 46.99,78.35 39.51,83.95 C 46.56,74.66 48.75,51.85 27.16,51.85 C 27.16,51.85 14.81,51.85 14.81,51.85 C 14.81,51.85 51.85,12.35 51.85,12.35 C 51.85,12.35 45.56,25.83 49.38,39.51 C 49.70,26.16 61.73,17.28 61.73,17.28 C 61.73,17.28 48.03,49.38 76.54,49.38 C 77.42,49.53 88.89,49.38 88.89,49.38 Z","fill":"#fcd027"}]},"화염":{"viewBox":"0 0 100 130.3","shapes":[{"d":"M 15.15,4.65 C 15.15,4.65 48.74,9.13 60.61,20.93 C 94.22,27.69 96.97,51.95 96.97,60.47 C 96.97,79.90 75.83,97.67 48.48,97.67 C 21.13,97.67 6.06,86.88 6.06,67.44 C 6.06,55.81 16.23,42.79 33.33,34.88 C 41.91,19.06 15.15,4.65 15.15,4.65 Z","fill":"#7b0429"},{"d":"M 36.36,39.53 C 36.36,39.53 12.12,46.27 12.12,67.44 C 12.12,77.57 19.99,93.02 48.48,93.02 C 76.98,93.02 90.91,75.60 90.91,67.44 C 90.91,51.79 90.12,35.21 66.67,25.58 C 75.14,39.13 63.64,39.96 63.64,48.84 C 63.64,60.62 76.75,66.78 90.91,60.47 C 77.66,76.15 68.51,79.07 57.58,79.07 C 39.25,79.07 27.27,70.35 27.27,55.81 C 27.27,46.27 36.36,39.53 36.36,39.53 Z","fill":"#f18356"},{"d":"M 33.33,11.63 C 33.33,11.63 63.64,18.94 63.64,34.88 C 63.64,41.14 57.58,42.50 57.58,51.16 C 57.58,59.82 70.69,68.67 87.88,62.79 C 76.48,77.65 63.53,76.74 54.55,76.74 C 45.56,76.74 30.30,69.38 30.30,55.81 C 30.30,42.24 39.39,41.66 39.39,27.91 C 39.39,14.15 33.33,11.63 33.33,11.63 Z","fill":"#f18356"}]}};
+const HOLO_ELEMENTS = {
+  '화염':['#e8545f','#b53045'], '대지':['#00ae80','#1f7a5f'], '폭풍':['#7561aa','#5b458f'],
+  '파도':['#128dcc','#046cae'], '번개':['#f5a016','#d9731a']
+};
+// per rarity: how the text areas are printed (box = solid panel, glass = faint panel,
+// art = text straight on the artwork) and how much foil the card gets
+const HOLO_RARITY = {
+  C:{panel:'box',foil:'none'}, CC:{panel:'box',foil:'none'},
+  R:{panel:'box',foil:'rare'}, RR:{panel:'box',foil:'rare'},
+  SR:{panel:'glass',foil:'full'}, P:{panel:'glass',foil:'simple'},
+  SPR:{panel:'art',foil:'full'}, SBR:{panel:'art',foil:'full'}, SSR:{panel:'art',foil:'max'},
+  UR:{panel:'art',foil:'max',white:true},
+  L:{panel:'box',foil:'simple',back:'glass'}, ANL:{panel:'box',foil:'full',back:'art'},
+  SBL:{panel:'box',foil:'full',back:'art'}, SPL:{panel:'art',foil:'full'}, SSL:{panel:'art',foil:'max'}
+};
+// text areas of one face, in percent of its height. desc is where the effect text ends; line and
+// perLine describe the Korean print and are only used to estimate where it starts.
+const HOLO_FACES = {
+  card:  {desc:86.2, nameH:6.1, affH:3.0, text:2.25, name:3.7, aff:2.15, line:3.4, perLine:38, floor:24},
+  leader:{desc:80.5, nameH:8.3, affH:5.3, text:3.7,  name:5.6, aff:3.5,  line:4.6, perLine:66, floor:12}
+};
+const HOLO_PILLS = {
+  '어태커':'#c8101e','엔트리':'#e2711a','패시브':'#5e1a86','액티브':'#0a6db5','가디언':'#0f9494',
+  '디펜더':'#0d8a4e','엑시트':'#555a60','이스케이프':'#1587c0','암드':'#6e3d1c','버프':'#82810e',
+  '체인':'#7a0a18','크레딧':'#a87606','레벨링크':'#468c32','믹스':'#8a5aa8','포지션':'#24385c',
+  '커넥트':'#a5521c','서포트':'#7d6e5e','전선구축':'#8a5e36','스위치':'#12808c','서약':'#fff','각성':'#111','트리거':'#fff'
+};
+const HOLO_TAG_EXTRA = { '각성':{en:'Awaken',de:'Erwachen',jp:'覚醒'}, '트리거':{en:'Trigger',de:'Trigger',jp:'トリガー'} };
 
 class HoloCard {
-  constructor(container){
+  static prefs = { text:true, motion:true };
+  constructor(container, opts){
     this.container = container;
+    this.big = !!(opts && opts.big);
     this._raf = null;
     this._destroyed = false;
+    this._key = null;
+    this._args = null;
+    this._layout = null;     // 'card' | 'sideways' | 'stacked'
+    this._upright = this.big;
     this._build();
     this._bindTilt();
   }
   _build(){
-    const stage = this.container;
-    stage.classList.add('holo-stage');
-    const card = document.createElement('div'); card.className = 'holo-card';
-    stage.appendChild(card);
-    this.cardEl = card;
-    const mk = (cls)=>{ const d=document.createElement('div'); d.className='holo-layer '+cls; card.appendChild(d); return d; };
-    this.elLayerBg = mk('holo-layer-bg');
-    this.elLayerChrome = mk('holo-layer-chrome');
-    this.dataLayer = mk('holo-layer-data');
-    mk('holo-layer-holo');
-    mk('holo-layer-sparkle');
-    mk('holo-layer-glare');
-    mk('holo-layer-edge');
+    const el = (cls, parent, tag)=>{ const d=document.createElement(tag||'div'); d.className=cls; parent.appendChild(d); return d; };
+    const wrap = el('holo-wrap', this.container);
+    this.wrapEl = wrap;
+    this.stageEl = el('holo-stage', wrap);
+    this.cardEl = el('holo-card', this.stageEl);
+    this.artEl = el('holo-layer holo-art', this.cardEl);
+    this.backEl = el('holo-layer', this.cardEl);      // blur, under the foil
+    el('holo-layer holo-layer-holo', this.cardEl);
+    el('holo-layer holo-layer-sparkle', this.cardEl);
+    this.frontEl = el('holo-layer', this.cardEl);     // translated text, over the foil
+    el('holo-layer holo-layer-glare', this.cardEl);
+    el('holo-layer holo-layer-edge', this.cardEl);
 
-    this.S = HOLO_DATA.slotsByFamily.standard;
-    const setSlot = (el, key) => {
-      const s = this.S[key];
-      if(!s){ el.style.display='none'; return; }
-      el.style.display='';
-      if(s.cx !== undefined){
-        el.style.left = s.cx+'%'; el.style.top = s.cy+'%'; el.style.width = s.w+'%'; el.style.height = s.h+'%';
-        el.style.transform = 'translate(-50%,-50%) rotate(90deg)';
-      } else {
-        el.style.left = s.left+'%'; el.style.top = s.top+'%'; el.style.width = s.width+'%'; el.style.height = s.height+'%';
-        el.style.transform = '';
-      }
-      if(s.fontSize) el.style.fontSize = s.fontSize+'cqh';
+    const tools = el('holo-tools', wrap);
+    const btn = (icon, fn)=>{ const b=el('', tools, 'button'); b.type='button'; el('fa-solid '+icon, b, 'i'); b.addEventListener('click', fn); return b; };
+    this.btnText = btn('fa-language', ()=>{ HoloCard.prefs.text = !HoloCard.prefs.text; this._applyPrefs(); });
+    this.btnMotion = btn('fa-pause', ()=>{ HoloCard.prefs.motion = !HoloCard.prefs.motion; this._applyPrefs(); });
+    this.btnRotate = btn('fa-rotate', ()=>{ this._upright = !this._upright; this._applyPrefs(); });
+    if(this.big) this.btnClose = btn('fa-xmark', ()=>this.onClose && this.onClose());
+    else this.btnBig = btn('fa-expand', ()=>this._openBig());
+  }
+  _applyPrefs(){
+    const p = HoloCard.prefs;
+    this.cardEl.classList.toggle('holo-original', !p.text);
+    this.btnText.classList.toggle('on', p.text);
+    this.btnMotion.classList.toggle('on', p.motion);
+    this.btnMotion.firstChild.className = 'fa-solid '+(p.motion?'fa-pause':'fa-play');
+    const sideways = this._layout === 'sideways';
+    this.btnRotate.style.display = sideways ? '' : 'none';
+    const up = sideways && this._upright;
+    this.btnRotate.classList.toggle('on', up);
+    this.stageEl.classList.toggle('upright', up);
+    this.wrapEl.classList.toggle('upright', up);
+    if(p.text) this._fit();
+  }
+  _openBig(){
+    if(!this._args || this._overlay) return;
+    const overlay = document.createElement('div'); overlay.className = 'holo-overlay';
+    document.body.appendChild(overlay);
+    const big = new HoloCard(overlay, {big:true});
+    const close = ()=>{
+      window.removeEventListener('keydown', onKey, true);
+      big.destroy(); overlay.remove(); this._overlay = null;
+      if(!this._destroyed) this._applyPrefs();
     };
-    this._setSlot = setSlot;
-
-    const dl = this.dataLayer;
-    this.elCost = document.createElement('div'); this.elCost.className='holo-slot holo-slot-cost'; setSlot(this.elCost,'cost'); dl.appendChild(this.elCost);
-    this.elPower = document.createElement('div'); this.elPower.className='holo-slot holo-slot-power'; setSlot(this.elPower,'power'); dl.appendChild(this.elPower);
-    this.elSparkle = document.createElement('div'); this.elSparkle.className='holo-slot holo-slot-sparkle'; setSlot(this.elSparkle,'sparkle_icon');
-    this.elSparkle.innerHTML = '<svg viewBox="0 0 52 52">' + HOLO_DATA.sparklePaths.map(d=>'<path d="'+d+'" fill="#fff"/>').join('') + '</svg>';
-    dl.appendChild(this.elSparkle);
-    this.elHit = document.createElement('div'); this.elHit.className='holo-slot holo-slot-hit'; setSlot(this.elHit,'hit'); dl.appendChild(this.elHit);
-    this.elName = document.createElement('div'); this.elName.className='holo-slot holo-slot-name'; setSlot(this.elName,'name');
-    this.elNameSpan = document.createElement('span'); this.elName.appendChild(this.elNameSpan); dl.appendChild(this.elName);
-    this.elType = document.createElement('div'); this.elType.className='holo-slot holo-slot-type'; setSlot(this.elType,'type'); dl.appendChild(this.elType);
-    this.elAff = document.createElement('div'); this.elAff.className='holo-slot holo-slot-affiliation'; setSlot(this.elAff,'affiliation'); dl.appendChild(this.elAff);
-    this.elNum = document.createElement('div'); this.elNum.className='holo-slot holo-slot-cardnumber'; setSlot(this.elNum,'card_number'); dl.appendChild(this.elNum);
-    this.elRarity = document.createElement('div'); this.elRarity.className='holo-slot holo-slot-rarity'; setSlot(this.elRarity,'rarity_badge'); dl.appendChild(this.elRarity);
-    this.elCopy = document.createElement('div'); this.elCopy.className='holo-slot holo-slot-copyright'; setSlot(this.elCopy,'copyright'); dl.appendChild(this.elCopy);
-    this.elElement = document.createElement('div'); this.elElement.className='holo-slot holo-slot-element'; setSlot(this.elElement,'element_badge'); dl.appendChild(this.elElement);
-    this.elKw = document.createElement('div'); this.elKw.className='holo-slot holo-slot-keywords'; setSlot(this.elKw,'keyword_row'); dl.appendChild(this.elKw);
-    this.elDesc = document.createElement('div'); this.elDesc.className='holo-slot holo-slot-description'; setSlot(this.elDesc,'description'); dl.appendChild(this.elDesc);
-    this.elLevel = document.createElement('div'); this.elLevel.className='holo-slot holo-slot-level'; setSlot(this.elLevel,'level_label'); this.elLevel.textContent='LEVEL'; dl.appendChild(this.elLevel);
-
-    const kwKeys = Object.keys(HOLO_DATA.keywordIconMap).sort((a,b)=>b.length-a.length);
-    this._kwRegex = kwKeys.length ? new RegExp('(' + kwKeys.join('|') + ')(?=\\s*[\\[\\(/]|\\s*$|\\n)', 'g') : null;
-  }
-  _applySlotsForFamily(family){
-    this.S = HOLO_DATA.slotsByFamily[family] || HOLO_DATA.slotsByFamily.standard;
-    this._setSlot(this.elCost,'cost'); this._setSlot(this.elPower,'power'); this._setSlot(this.elSparkle,'sparkle_icon');
-    this._setSlot(this.elHit,'hit'); this._setSlot(this.elName,'name'); this._setSlot(this.elType,'type');
-    this._setSlot(this.elAff,'affiliation'); this._setSlot(this.elNum,'card_number'); this._setSlot(this.elRarity,'rarity_badge');
-    this._setSlot(this.elCopy,'copyright'); this._setSlot(this.elElement,'element_badge'); this._setSlot(this.elKw,'keyword_row');
-    this._setSlot(this.elDesc,'description'); this._setSlot(this.elLevel,'level_label');
-  }
-  _iconImg(key, cls){
-    const img = document.createElement('img'); img.className = cls;
-    img.src = HOLO_ASSET_BASE + 'keywords/' + key + '.webp';
-    return img;
-  }
-  // samples the actual chrome artwork under the name-bar and the top-corner (cost/power/hit)
-  // regions so the overlaid text color/shadow follows whatever's really printed there per
-  // rarity, instead of one fixed color that only happened to read on some chromes.
-  _sampleTextColors(chromeUrl){
-    const forS = this.S;
-    const img = new Image();
-    img.onload = ()=>{
-      if(this._destroyed || this.S!==forS) return;
-      try{
-        const cw=img.naturalWidth, ch=img.naturalHeight;
-        const canvas=document.createElement('canvas'); canvas.width=cw; canvas.height=ch;
-        const ctx=canvas.getContext('2d'); ctx.drawImage(img,0,0);
-        const lumOf=(rect)=>{
-          if(!rect) return null;
-          let x0,y0,x1,y1;
-          if(rect.cx!=null){ x0=(rect.cx-rect.w/2)/100*cw; x1=(rect.cx+rect.w/2)/100*cw; y0=(rect.cy-rect.h/2)/100*ch; y1=(rect.cy+rect.h/2)/100*ch; }
-          else { x0=rect.left/100*cw; x1=(rect.left+rect.width)/100*cw; y0=rect.top/100*ch; y1=(rect.top+rect.height)/100*ch; }
-          x0=Math.max(0,Math.floor(x0)); y0=Math.max(0,Math.floor(y0));
-          x1=Math.min(cw,Math.ceil(x1)); y1=Math.min(ch,Math.ceil(y1));
-          const w=Math.max(1,x1-x0), h=Math.max(1,y1-y0);
-          let data; try{ data=ctx.getImageData(x0,y0,w,h).data; }catch(e){ return null; }
-          let r=0,g=0,b=0,n=0;
-          for(let i=0;i<data.length;i+=4){ if(data[i+3]<40) continue; r+=data[i]; g+=data[i+1]; b+=data[i+2]; n++; }
-          if(!n) return null;
-          return (0.299*(r/n)+0.587*(g/n)+0.114*(b/n))/255;
-        };
-        const apply=(varBase, rect)=>{
-          const lum = lumOf(rect);
-          const bright = lum==null ? true : lum < 0.55;
-          this.cardEl.style.setProperty('--'+varBase, bright?'#f6efe6':'#1c1712');
-          this.cardEl.style.setProperty('--'+varBase+'Shadow', bright?'rgba(0,0,0,.4)':'rgba(255,255,255,.35)');
-        };
-        apply('cardText', forS.name);
-        apply('cardTextTop', forS.cost);
-      }catch(e){}
-    };
-    img.src = chromeUrl;
-  }
-  _renderDescription(text){
-    const elDesc = this.elDesc; elDesc.innerHTML = '';
-    if(!text || text === '-'){ elDesc.textContent = '—'; return; }
-    const lines = String(text).split('\n');
-    lines.forEach((line, li)=>{
-      if(li>0) elDesc.appendChild(document.createElement('br'));
-      if(!this._kwRegex){ elDesc.appendChild(document.createTextNode(line)); return; }
-      let last = 0; let m; this._kwRegex.lastIndex = 0;
-      while((m = this._kwRegex.exec(line))){
-        if(m.index > last) elDesc.appendChild(document.createTextNode(line.slice(last, m.index)));
-        const key = HOLO_DATA.keywordIconMap[m[1]];
-        if(key) elDesc.appendChild(this._iconImg(key, 'holo-kw-inline-icon'));
-        elDesc.appendChild(document.createTextNode(m[1]));
-        last = m.index + m[1].length;
-      }
-      elDesc.appendChild(document.createTextNode(line.slice(last)));
-    });
-  }
-  _renderKeywordPills(value, lang){
-    const elKw = this.elKw; elKw.innerHTML = '';
-    if(!value || value === '-') return;
-    String(value).split(',').map(s=>s.trim()).filter(Boolean).forEach(term=>{
-      const key = HOLO_DATA.keywordIconMap[term];
-      if(key){ elKw.appendChild(this._iconImg(key, 'holo-kw-pill-img')); }
-      else {
-        const i18n = Component.KEYWORD_I18N[term];
-        const label = i18n ? (lang==='en'?i18n.en:(lang==='de'?i18n.de:(lang==='jp'?i18n.jp:term))) : term;
-        const span = document.createElement('span'); span.className='holo-kw-pill-text'; span.textContent=label; elKw.appendChild(span);
-      }
-    });
-  }
-  _renderElementBadge(elementId){
-    const icon = HOLO_DATA.elementIcons[elementId];
-    if(!icon){ this.elElement.innerHTML=''; return; }
-    this.elElement.innerHTML = '<svg viewBox="'+icon.viewBox+'">' + icon.shapes.map(s=>'<path d="'+s.d+'" fill="'+s.fill+'"/>').join('') + '</svg>';
-  }
-  _shrinkToFit(el, startSize, floor){
-    let size = startSize; el.style.fontSize = size+'cqh'; let guard = 0;
-    while(el.scrollHeight > el.clientHeight+1 && size > floor && guard < 20){ size -= 0.15; el.style.fontSize = size+'cqh'; guard++; }
+    const onKey = e=>{ if(e.key==='Escape'){ e.stopPropagation(); close(); } };
+    big.onClose = close;
+    overlay.addEventListener('click', e=>{ if(e.target===overlay || e.target===overlay.firstChild) close(); });
+    window.addEventListener('keydown', onKey, true);
+    this._overlay = { close };
+    big.renderCard(...this._args);
   }
   // card: the Grimoire card object. rarity: {abbr,color,name}. fields: {cost,power,hit,
   // affiliation,keyword} field-id map for this system's cardLayout. artUrls: {primary,fallback}
   // resolved image URLs (same imageBaseUrl-then-original-source logic as the flat card view).
-  renderCard(card, rarity, fields, artUrls, lang, terms){
-    const meta = HOLO_DATA.rarityMeta[rarity&&rarity.abbr] || {family:'standard',holo:'full',assetKey:'SPR'};
-    this._applySlotsForFamily(meta.family);
-    const chromeUrl = HOLO_ASSET_BASE+'chrome/'+meta.assetKey+'-chrome.webp';
-    this.elLayerChrome.style.backgroundImage = 'url("'+chromeUrl+'")';
-    this.cardEl.dataset.holo = meta.holo;
-    this._sampleTextColors(chromeUrl);
-
-    if(artUrls && artUrls.primary){
-      const test = new Image();
-      test.onload = ()=>{ if(!this._destroyed) this.elLayerBg.style.backgroundImage = 'url("'+artUrls.primary+'")'; };
-      test.onerror = ()=>{ if(!this._destroyed && artUrls.fallback && artUrls.fallback!==artUrls.primary) this.elLayerBg.style.backgroundImage = 'url("'+artUrls.fallback+'")'; };
-      test.src = artUrls.primary;
-    } else {
-      this.elLayerBg.style.backgroundImage = '';
-    }
-
+  // Called again on every app re-render, so it does nothing when nothing changed.
+  renderCard(card, rarity, fields, artUrls, lang, terms, labels){
+    this._args = [card, rarity, fields, artUrls, lang, terms, labels];
     const l = lang || 'ko';
-    const nameText = (l==='en'&&card.nameEn) ? card.nameEn : (l==='de'&&card.nameDe) ? card.nameDe : (l==='jp'&&card.nameJp) ? card.nameJp : card.name;
-    const descText = (l==='en'&&card.descriptionEn) ? card.descriptionEn : (l==='de'&&card.descriptionDe) ? card.descriptionDe : (l==='jp'&&card.descriptionJp) ? card.descriptionJp : card.description;
+    const url = artUrls && artUrls.primary;
+    const key = JSON.stringify([card.id, rarity && rarity.abbr, l, url]);
+    if(labels){
+      this.btnText.title = labels.text; this.btnMotion.title = labels.motion; this.btnRotate.title = labels.rotate;
+      if(this.btnBig) this.btnBig.title = labels.enlarge;
+      if(this.btnClose) this.btnClose.title = labels.close;
+    }
+    if(key === this._key) return;
+    this._key = key;
+
+    const style = HOLO_RARITY[rarity && rarity.abbr] || {panel:'glass', foil:'simple'};
+    const colors = HOLO_ELEMENTS[card.element] || ['#6b6b78','#45454f'];
+    this.cardEl.style.setProperty('--el', colors[0]);
+    this.cardEl.style.setProperty('--el-dark', colors[1]);
+    this.cardEl.dataset.holo = style.foil;
+    this.backEl.innerHTML = ''; this.frontEl.innerHTML = ''; this._faces = []; this._layout = null;
+    this.artEl.style.backgroundImage = '';
+    this.btnText.style.display = 'none';
+    this._applyPrefs();
+    if(!url) return;
+
+    const load = (src, next)=>{
+      const img = new Image();
+      img.onload = ()=>{
+        if(this._destroyed || key!==this._key) return;
+        this.artEl.style.backgroundImage = 'url("'+src+'")';
+        this._layout = card.type==='리더' ? (this._isStacked(img, rarity) ? 'stacked' : 'sideways') : 'card';
+        this._buildText(card, style, fields, src, l, terms);
+        this._applyPrefs();
+      };
+      img.onerror = ()=>{ if(next && !this._destroyed && key===this._key) load(next, null); };
+      img.src = src;
+    };
+    load(url, artUrls.fallback!==url ? artUrls.fallback : null);
+  }
+  // leader scans are either one sideways face, or two upright faces stacked with a white gap
+  _isStacked(img, rarity){
+    try{
+      // read at full size: the gap is only a few pixels and would blur away if scaled down
+      const w = img.naturalWidth, h = img.naturalHeight, edge = Math.round(w*.08);
+      const c = document.createElement('canvas'); c.width = w; c.height = h;
+      const ctx = c.getContext('2d', {willReadFrequently:true}); ctx.drawImage(img, 0, 0);
+      for(let y = Math.floor(h*.47); y < h*.53; y++){
+        const d = ctx.getImageData(edge, y, w-edge*2, 1).data;
+        let white = 0;
+        for(let i=0;i<d.length;i+=4){ if(d[i]>240 && d[i+1]>240 && d[i+2]>240) white++; }
+        if(white / (d.length/4) > .95) return true;
+      }
+      return false;
+    }catch(e){ return /^(SBL|ANL|P)$/.test((rarity && rarity.abbr) || ''); }
+  }
+  _buildText(card, style, fields, src, l, terms){
+    const pick = (base)=>({en:card[base+'En'], de:card[base+'De'], jp:card[base+'Jp']})[l];
+    const name = pick('name'), desc = pick('description');
+    if(l==='ko' || (!name && !desc)) return;
+    this.btnText.style.display = '';
 
     const stats = card.stats || {};
-    this.elCost.textContent = (fields.cost!=null && stats[fields.cost]!=null) ? stats[fields.cost] : '';
-    this.elPower.textContent = (fields.power!=null && stats[fields.power]!=null) ? stats[fields.power] : '';
-    this.elHit.textContent = (fields.hit!=null && stats[fields.hit]!=null) ? stats[fields.hit] : '';
-    this.elNameSpan.textContent = nameText || '';
-    const typeI18n = card.type!=null ? Component.CARDTYPE_I18N[card.type] : null;
-    this.elType.textContent = (typeI18n && typeI18n[l]) || card.type || '';
-    const aff = fields.affiliation!=null ? stats[fields.affiliation] : null;
-    this.elAff.textContent = (aff && aff !== '-') ? Component.termText(aff, l, terms) : '';
-    this.elNum.textContent = card.number || '';
-    this.elRarity.textContent = (rarity&&rarity.abbr) || '';
-    this.elRarity.style.background = (rarity&&rarity.color) || '#888';
-    this._renderElementBadge(card.element);
-    this._renderKeywordPills(fields.keyword!=null ? stats[fields.keyword] : null, l);
-    this._renderDescription(descText);
-    this._shrinkToFit(this.elDesc, this.S.description.fontSize, this.S.description.fontSize*0.6);
+    const stat = id => (id!=null && stats[id]!=null && stats[id]!=='-') ? String(stats[id]) : '';
+    const aff = stat(fields.affiliation);
+    const keywords = stat(fields.keyword).split(',').map(s=>s.trim()).filter(k=>HOLO_PILLS[k]);
+    const common = {
+      name: name || card.name,
+      aff: aff ? Component.termText(aff, l, terms) : '',
+      element: card.element, lang: l
+    };
+    const blocks = t => String(t||'').split(/\n[ \t]*\n+/).map(b=>b.split('\n').map(s=>s.trim()).filter(Boolean)).filter(b=>b.length);
+
+    if(card.type === '리더'){
+      // two blocks, each headed by its face name: the base side and the awakened side
+      const ko = blocks(card.description), tr = blocks(desc);
+      const side = (i)=>({ lines:(tr[i]||[]).slice(1), ko:(ko[i]||[]).slice(1) });
+      const base = side(0), awake = side(1);
+      base.tags = ['서약','각성']; awake.tags = keywords;
+      if(this._layout === 'stacked'){
+        this._addFace({...common, ...base, kind:'leader', top:0, height:49.6, panel:style.panel, white:style.white, boxed:true, src});
+        this._addFace({...common, ...awake, kind:'leader', top:50.4, height:49.6, panel:style.back||style.panel, white:style.white, src});
+      } else {
+        this._addFace({...common, ...awake, kind:'leader', sideways:true, panel:style.back||style.panel, white:style.white, src});
+      }
+      return;
+    }
+    const item = card.type === '아이템';
+    this._addFace({...common, kind:'card', top:0, height:100,
+      lines:String(desc||'').split('\n').map(s=>s.trim()).filter(s=>s && s!=='-'),
+      ko:String(card.description||'').split('\n').map(s=>s.trim()).filter(Boolean),
+      tags:keywords, panel:style.panel, white:style.white,
+      // common and rare units and skills have a fixed text box; items do not
+      boxed: style.panel==='box' && !item, src});
+  }
+  _addFace(f){
+    const g = HOLO_FACES[f.kind];
+    const el = (cls, parent, tag)=>{ const d=document.createElement(tag||'div'); d.className=cls; parent.appendChild(d); return d; };
+    const place = (face)=>{
+      face.dataset.panel = f.panel;
+      if(f.white) face.classList.add('hf-white');
+      if(f.sideways){
+        // upright coordinates, turned a quarter to match the print
+        face.style.cssText = 'left:50%;top:50%;width:100cqh;height:100cqw;transform:translate(-50%,-50%) rotate(90deg)';
+      } else {
+        face.style.cssText = 'left:0;width:100%;top:'+f.top+'%;height:'+f.height+'%';
+      }
+    };
+    const back = el('hf', this.backEl), front = el('hf', this.frontEl);
+    place(back); place(front);
+
+    const veil = el('hf-veil', back), img = el('hf-veil-img', veil);
+    img.style.backgroundImage = 'url("'+f.src+'")';
+    if(f.sideways){
+      img.style.cssText += ';left:50%;top:50%;width:100cqh;height:100cqw;transform:translate(-50%,-50%) rotate(-90deg)';
+    } else {
+      img.style.cssText += ';left:0;width:100%;top:'+(-f.top/f.height*100)+'%;height:'+(10000/f.height)+'%';
+    }
+
+    const nameTop = g.desc, affTop = g.desc + g.nameH;
+    const name = el('hf-name', front);
+    name.style.cssText = 'top:'+nameTop+'%;height:'+g.nameH+'%;font-size:'+g.name+'cqh';
+    el('', name, 'span').textContent = f.name;
+    let aff = null;
+    if(f.aff){
+      aff = el('hf-aff', front);
+      aff.style.cssText = 'top:'+affTop+'%;height:'+g.affH+'%;font-size:'+g.aff+'cqh';
+      el('', aff, 'span').textContent = f.aff;
+    }
+
+    // where the Korean text starts, estimated from its length (boxed prints have a fixed top)
+    const koRows = f.ko.reduce((n, line)=> n + Math.max(1, Math.ceil((line.length+4)/g.perLine)), 0);
+    let printedTop = Math.max(g.floor+20, g.desc - (koRows*g.line + 2.4));
+    if(f.boxed) printedTop = f.kind==='card' ? 61.7 : Math.min(printedTop, 67);
+
+    let desc = null;
+    if(f.lines.length){
+      desc = el('hf-desc', front);
+      desc.lang = f.lang==='jp' ? 'ja' : f.lang;
+      desc.style.bottom = (100 - g.desc)+'%';
+      desc.style.minHeight = (g.desc - printedTop)+'%';
+      this._fillDesc(desc, f);
+    }
+    this._faces.push({ back, front, veil, desc, name, aff, g, printedTop, panel:f.panel });
+  }
+  _fillDesc(desc, f){
+    const el = (cls, parent, tag)=>{ const d=document.createElement(tag||'div'); d.className=cls; parent.appendChild(d); return d; };
+    const pill = (parent, label, koKey)=>{
+      // vow and trigger are printed as white pills with dark lettering
+      const p = el('hf-pill'+(koKey==='서약'||koKey==='트리거'?' vow':''), parent, 'span');
+      p.style.setProperty('--pill', koKey==='EX' ? '#1285a8' : (HOLO_PILLS[koKey]||'#555'));
+      p.textContent = label;
+    };
+    const table = { ...Component.KEYWORD_I18N, ...HOLO_TAG_EXTRA };
+    const byLabel = {};
+    Object.keys(table).forEach(k=>{ if(HOLO_PILLS[k] && table[k][f.lang]) byLabel[table[k][f.lang].toLowerCase()] = k; });
+    const tagKey = (inner)=>{
+      const head = inner.split(/[:：]/)[0].trim().toLowerCase();
+      return head==='ex' ? 'EX' : byLabel[head];
+    };
+    const label = k => (table[k] && table[k][f.lang]) || k;
+    const icon = HOLO_ELEMENT_ICONS[f.element];
+    // the scrape drops icons, leaving empty brackets; the deck rule's one is the element
+    const deckRule = f.ko.findIndex(line=>line.includes('카드만 넣을 수 있다'));
+
+    const rich = (parent, text, lineIndex)=>{
+      let elementDone = false;
+      text.split(/(\[[^\]]*\]|【[^】]*】)/).forEach(part=>{
+        if(!part) return;
+        const m = /^[\[【]([^\]】]*)[\]】]$/.exec(part);
+        const k = m && tagKey(m[1]);
+        if(k){ pill(parent, m[1], k); return; }
+        if(m && !m[1].trim() && lineIndex===deckRule && !elementDone && icon){
+          elementDone = true;
+          const s = el('hf-icon', parent, 'span');
+          s.innerHTML = '<svg viewBox="'+icon.viewBox+'">'+icon.shapes.map(sh=>'<path d="'+sh.d+'" fill="'+sh.fill+'"/>').join('')+'</svg>';
+          return;
+        }
+        parent.appendChild(document.createTextNode(part));
+      });
+    };
+
+    // only a tag that opens a line stands for the printed one; a mention ("units with [Exit]") does not.
+    // Japanese can open a line with a mention too, recognisable by the particle after it.
+    const hasOwnTags = f.lines.some(line=>{
+      const m = /^\s*(?:[・･]\s*)?[\[【]([^\]】]*)[\]】](?!を)/.exec(line);
+      const k = m && tagKey(m[1]);
+      return !!k && k!=='EX';
+    });
+    const tags = hasOwnTags ? [] : (f.tags||[]);
+    // leader base side: one tag per line (vow, awaken). Otherwise one tag goes in front of the
+    // first line and several sit in a row above the text.
+    const perLine = tags[0]==='서약';
+    if(!perLine && tags.length>1){ const row = el('hf-tags', desc); tags.forEach(k=>pill(row, label(k), k)); }
+
+    f.lines.forEach((line, i)=>{
+      const trig = /^(Trigger|Auslöser|トリガー|트리거)\s*[\/／:：]\s*(.*)$/.exec(line);
+      const div = el(trig ? 'hf-trigger' : 'hf-line', desc);
+      if(trig){ el('', div, 'b').textContent = trig[1]+' /'; div.appendChild(document.createTextNode(' ')); rich(div, trig[2], i); return; }
+      if(perLine && tags[i]) pill(div, label(tags[i]), tags[i]);
+      else if(!perLine && tags.length===1 && i===0) pill(div, label(tags[0]), tags[0]);
+      rich(div, line, i);
+    });
+  }
+  // shrink long text until it fits, then stretch the blur to cover what was printed and what we drew
+  _fit(){
+    (this._faces||[]).forEach(face=>{
+      const h = face.front.clientHeight;
+      if(!h) return;
+      const { g, desc } = face;
+      let top = face.printedTop;
+      if(desc){
+        const room = h * (g.desc - g.floor) / 100;
+        let size = g.text;
+        desc.style.fontSize = size+'cqh';
+        for(let i=0; i<24 && desc.offsetHeight > room && size > g.text*0.6; i++){ size -= g.text*0.02; desc.style.fontSize = size+'cqh'; }
+        top = Math.min(top, desc.offsetTop / h * 100);
+      }
+      [face.name, face.aff].forEach(box=>{
+        if(!box) return;
+        const span = box.firstChild;
+        let size = box===face.name ? g.name : g.aff;
+        box.style.fontSize = size+'cqh';
+        for(let i=0; i<24 && span.offsetWidth > box.clientWidth*(box===face.name?0.84:0.96); i++){ size *= 0.96; box.style.fontSize = size+'cqh'; }
+      });
+      const v = (k, n)=>face.veil.style.setProperty(k, n.toFixed(2)+'%');
+      v('--vt', top); v('--vd', g.desc);
+      // solid panels cover their own name bar; the others need it blurred too.
+      // (a mask position of p% puts a patch's top at p% of the space left over)
+      if(face.panel!=='box'){
+        v('--nw', 87); v('--nh', g.nameH); v('--ny', g.desc / (100-g.nameH) * 100);
+        v('--aw', 64); v('--ah', g.affH); v('--ay', (g.desc+g.nameH) / (100-g.affH) * 100);
+      }
+    });
   }
   _bindTilt(){
-    const stage = this.container, card = this.cardEl;
-    const settings = { maxTilt:10, autoSpin:true };
+    const stage = this.stageEl, card = this.cardEl;
+    const maxTilt = this.big ? 8 : 10;
     let pointerActive = false;
     let rx=0, ry=0, mx=50, my=50, targetRx=0, targetRy=0, targetMx=50, targetMy=50;
     let idleT = Math.random()*10;
     const setFromClient = (clientX, clientY)=>{
-      const r = card.getBoundingClientRect();
+      const r = stage.getBoundingClientRect();
       const px = Math.min(1, Math.max(0, (clientX-r.left)/r.width));
       const py = Math.min(1, Math.max(0, (clientY-r.top)/r.height));
       targetMx = px*100; targetMy = py*100;
-      targetRy = (px-0.5)*settings.maxTilt*2;
-      targetRx = (0.5-py)*settings.maxTilt*2;
+      targetRy = (px-0.5)*maxTilt*2;
+      targetRx = (0.5-py)*maxTilt*2;
     };
     const onMove = e=>{ pointerActive=true; setFromClient(e.clientX,e.clientY); };
     const onDown = e=>{ pointerActive=true; setFromClient(e.clientX,e.clientY); stage.style.cursor='grabbing'; };
     const onUp = ()=>{ stage.style.cursor='grab'; };
     const onLeave = ()=>{ pointerActive=false; };
     const onTouchMove = e=>{ if(!e.touches.length) return; pointerActive=true; setFromClient(e.touches[0].clientX, e.touches[0].clientY); };
-    const onTouchEnd = ()=>{ pointerActive=false; };
     stage.addEventListener('pointermove', onMove);
     stage.addEventListener('pointerdown', onDown);
     window.addEventListener('pointerup', onUp);
     stage.addEventListener('pointerleave', onLeave);
     stage.addEventListener('touchmove', onTouchMove, {passive:true});
-    stage.addEventListener('touchend', onTouchEnd);
-    this._cleanup = ()=>{
-      stage.removeEventListener('pointermove', onMove);
-      stage.removeEventListener('pointerdown', onDown);
-      window.removeEventListener('pointerup', onUp);
-      stage.removeEventListener('pointerleave', onLeave);
-      stage.removeEventListener('touchmove', onTouchMove);
-      stage.removeEventListener('touchend', onTouchEnd);
-    };
+    stage.addEventListener('touchend', onLeave);
+    this._cleanup = ()=>window.removeEventListener('pointerup', onUp);
+    // text is fitted to the box, so fit again when the box or the web font changes
+    if(window.ResizeObserver){ this._ro = new ResizeObserver(()=>this._fit()); this._ro.observe(stage); }
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(()=>{ if(!this._destroyed) this._fit(); });
     const tick = ()=>{
       if(this._destroyed) return;
-      if(!pointerActive && settings.autoSpin){
+      if(!pointerActive && HoloCard.prefs.motion){
         idleT += 0.011;
-        targetRx = Math.sin(idleT)*settings.maxTilt*0.55;
-        targetRy = Math.cos(idleT*0.85)*settings.maxTilt*0.85;
+        targetRx = Math.sin(idleT)*maxTilt*0.55;
+        targetRy = Math.cos(idleT*0.85)*maxTilt*0.85;
         targetMx = 50+Math.cos(idleT*0.85)*32;
         targetMy = 50+Math.sin(idleT)*32;
       } else if(!pointerActive){
@@ -895,11 +1079,9 @@ class HoloCard {
       mx += (targetMx-mx)*0.09; my += (targetMy-my)*0.09;
       card.style.setProperty('--rx', rx.toFixed(2)+'deg');
       card.style.setProperty('--ry', ry.toFixed(2)+'deg');
-      card.style.setProperty('--rxn', rx.toFixed(2));
-      card.style.setProperty('--ryn', ry.toFixed(2));
       card.style.setProperty('--mx', mx.toFixed(2)+'%');
       card.style.setProperty('--my', my.toFixed(2)+'%');
-      const mag = Math.min(1, (Math.abs(rx)+Math.abs(ry))/(settings.maxTilt*2));
+      const mag = Math.min(1, (Math.abs(rx)+Math.abs(ry))/(maxTilt*2));
       card.style.setProperty('--glow', mag.toFixed(3));
       this._raf = requestAnimationFrame(tick);
     };
@@ -907,7 +1089,9 @@ class HoloCard {
   }
   destroy(){
     this._destroyed = true;
+    if(this._overlay) this._overlay.close();
     if(this._raf) cancelAnimationFrame(this._raf);
+    if(this._ro) this._ro.disconnect();
     if(this._cleanup) this._cleanup();
     this.container.innerHTML = '';
   }
@@ -997,10 +1181,10 @@ class Component extends DCLogic {
   };
 
   static I18N = {
-    en:{accountTitle:'Sign in to sync your collection',mAccount:'Account',loginIntro:'Sign in to keep your collection in step across your devices. Without signing in it stays in this browser, as before.',lEmail:'Email',lPassword:'Password',signIn:'Sign in',signingIn:'Signing in…',signOut:'Sign out',syncNow:'Sync now',signedInAs:'Signed in as %s',syncing:'Syncing…',syncedAt:'Synced at %s',syncWaiting:'Not synced yet',syncOffline:'Offline. Your changes are kept here and synced later.',syncError:'Sync failed. Your changes are kept here; try again.',syncSignedOut:'You were signed out. Please sign in again.',loginWrong:'Wrong email or password.',loginUnconfirmed:'This email address is not confirmed yet.',loginFailed:'Sign-in failed. Please try again later.',signOutNote:'Signing out keeps this browser’s copy of your collection.',syncForeign:'This browser holds a collection from a different account. Press OK to add those cards to this account, or Cancel to replace them with this account’s collection.',valueW:'Value',collectionValue:'Collection value',setValueL:'full set ~%s',pricedCopies:'%d copies priced',unpricedCopies:'%d without listings',valueTimeline:'Value over time',timelineHint:'Each price update adds a point here - the trend fills in as prices are refreshed.',valueByExp:'Value by expansion',tagline:'TCG Builder & Collector',builder:'TCG Builder',collector:'Collector',system:'System',newSystem:'New System',forgeTitle:'Forge your first TCG',forgeDesc:'Define a card game system — its rarities, expansions, and cards. Then switch to Collector mode to track what you own.',createSystem:'Create a System',systemSettings:'System Settings',addExpansion:'Expansion',booster:'Booster',starter:'Starter',special:'Special',promo:'Promo',expansions:'Expansions',totalCards:'Total Cards',rarities:'Rarities',rarityTiers:'Rarity Tiers',addRarity:'Add Rarity',pullRateWord:'Pull rate',cardLayout:'Card Layout',addField:'Add Field',layoutDesc:'Stat fields shown on every card in this system, plus the always-present name, number, type, rarity, image and effect text.',noFieldsMsg:'No stat fields — cards show just name, type and rarity. Add one like Cost or Power.',edit:'Edit',del:'Delete',addCard:'Add Card',noCardsTitle:'No cards in this expansion yet',autoNumber:'Cards are auto-numbered as you add them.',addFirstCard:'Add First Card',collecting:'Collecting',condition:'Condition',ownedW:'Owned',missingW:'Missing',dupes:'Duplicates',pullRateTitle:'Pull Rate',pullHint:"Add the cards you've pulled (set quantities on the cards below) and your observed pull rate per rarity appears here.",pullRatesDesc:'Set the expected pull rate (%) for each rarity in this system. Leave blank if unknown.',tPullRatesSaved:'Pull rates saved',all:'All',nothingTitle:'Nothing to collect yet',nothingDesc:'Build a TCG system first, then come back here to track your collection.',goBuilder:'Go to Builder',cardsN:'%d cards',cardN1:'%d card',unused:'unused',shownOnCard:'shown on card',hiddenW:'hidden',numberT:'Number',textT:'Text',longTextT:'Long Text',elementW:'Element',linkedTypeNote:'Automatically uses the card\'s real type and standard colors.',linkedElementNote:'Automatically uses the card\'s real element and standard colors.',linkedLongtextNote:'Long-form text — only shown in the card detail view, never on the tile.',sections:'Sections',addSection:'Add Section',sectionsDesc:'Group your expansions into collapsible sections, shown in the sidebar. Expansions are assigned a section from the expansion editor.',noSectionsMsg:'No sections yet — expansions show ungrouped. Add one like Booster or Starter.',mNewSection:'New Section',mEditSection:'Edit Section',lSectionName:'Section Name',lSection:'Section',ungrouped:'Ungrouped',tSectionAdded:'Section added',tSectionUpdated:'Section updated',tSectionRemoved:'Section removed',delSectionMsg:'Delete the “%s” section? Its expansions will become ungrouped.',expN1:'%d expansion',expsN:'%d expansions',emptySection:'empty',statsForX:'Stats for %s',statsNone:'Select an expansion to see its stats',noDate:'No date',copiesSummary:'%a copies pulled · %b unique',targetL:'target %s%',copiesW:'%d copies',expectedL:'~%s% expected',pulledL:'%s% · %d pulled',variants1:'+%d Variant',variantsN:'+%d Variants',setQty1:'Set the quantity you own',setQtyN:'%d versions · set the quantity you own of each',ownedX:'Owned ×%d',notOwned:'Not owned',ofPulls:'%s% of pulls',done:'Done',cancel:'Cancel',saveW:'Save',saveChanges:'Save Changes',createExpansion:'Create Expansion',mNewSystem:'New TCG System',mEditSystem:'Edit System',mNewRarity:'New Rarity',mEditRarity:'Edit Rarity',mNewExpansion:'New Expansion',mEditExpansion:'Edit Expansion',mNewCard:'New Card',mEditCard:'Edit Card',mNewField:'New Card Field',mEditField:'Edit Field',mConfirmDelete:'Confirm Deletion',lSystemName:'System Name',lDescription:'Description',lRarityName:'Rarity Name',lColor:'Color',lPullRatePct:'Pull rate (%)',lExpName:'Expansion Name',lAbbr:'Abbreviation',lRelease:'Release Date',lSeries:'Series',noSeries:'No Series',lImageBaseUrl:'Image Host URL',imageBaseUrlHint:'Optional. If set, card art loads from here first (e.g. GitHub Pages) and falls back to the original source URL if a file is missing.',lCardName:'Card Name',lCardNumber:'Card Number',lType:'Type',lElement:'Element',noElement:'No Element',lRarity:'Rarity',lImage:'Image URL (optional)',lFieldLabel:'Field Label',lValueType:'Value Type',lIcon:'Icon',lShowOnCard:'Show on card',lShowCardList:'Show Card List',lReassign:'Reassign those cards to',delSystemMsg:'Delete this entire system? All expansions, cards, and collection progress will be lost.',delExpMsg:'Delete “%s” and all its cards?',delRarityMsg:'Delete the “%s” rarity tier?',delRarityUse:'%d card(s) currently use it.',onlyRarity:'This is the only rarity — add another before deleting it.',sureMsg:'Are you sure?',tNameRequired:'Name is required',tLabelRequired:'Label is required',tSystemCreated:'System created',tSystemUpdated:'System updated',tSystemDeleted:'System deleted',tRarityAdded:'Rarity added',tRarityUpdated:'Rarity updated',tRarityRemoved:'Rarity removed',tFieldAdded:'Field added',tFieldUpdated:'Field updated',tFieldRemoved:'Field removed',tExpCreated:'Expansion created',tExpUpdated:'Expansion updated',tExpDeleted:'Expansion deleted',tCardAdded:'Card added',tCardUpdated:'Card updated',tCardDeleted:'Card deleted',tExported:'Progress exported',tImported:'Import successful',tInvalid:'Invalid file',exportProgressTitle:'Export Progress',importProgressTitle:'Import Progress',tAddRarityFirst:'Add another rarity first',pageOfN:'Page %d of %d',pagesRangeOfN:'Pages %d–%d of %d',stackVariants:'Stack Variants',cardSize:'Card Size',dynamicSize:'Dynamic',haveW:'Have',needW:'Need',dupesW:'Dupes',prevW:'Prev',nextW:'Next',imgNone:'No image URL yet',imgLoadFail:'Image failed to load',binderCover:'Binder Cover',binderCoverDesc:"Design a custom front cover for this system's binder — shown when you open the collection in Binder view.",editCover:'Edit Cover',editDivider:'Divider',viewCover:'Binder Cover',openBinder:'Back to Cards',mDesignCover:'Design Binder Cover',mEditCoverTitle:'Edit Binder Cover',mDesignDivider:'Design Divider',mEditDividerTitle:'Edit Divider',lTitle:'Title',lSubtitle:'Subtitle',lBackground:'Background',bgColor:'Solid',bgGradient:'Gradient',bgImage:'Image',lTextColor:'Text Color',lColor2:'Second Color',lImageUrl:'Image URL',resetDesign:'Reset to Default',lDownload:'Download',tExportImgFail:'Could not include the background image (cross-origin) — exported without it',tCoverSaved:'Cover saved',tDividerSaved:'Divider saved',tDesignReset:'Design reset',lCardsPerBooster:'Cards / Booster',lBoostersPerBox:'Boosters / Box',boosters:'Boosters',boostersOpenedW:'opened',boxesOwned:'Boxes',uniqueDesigns:'Unique Designs',totalCollected:'Total Collected',homeTab:'Home',recentlyAddedTitle:'Recently Added',rarestOwnedTitle:'Rarest Pulls',homeEmptyTitle:'Nothing collected yet',homeEmptyDesc:"Start marking cards as owned and they'll show up here.",homeNoSectionsMsg:'No sections selected — pick at least one above to see your cards.',fromCardsTracked:'from %d cards tracked',extraCards:'%d extra',calcFromCards:'Calculated from the cards you\'ve tracked, not entered manually',dragHint:'Drag cards to reorder',manualOrderBadge:'Manual Order',resetOrder:'Reset to numeric order',tOrderReset:'Card order reset',expImport:'Import Cards',expExport:'Export Cards',expImportTitle:'Import Expansion Cards',expExportTitle:'Export Expansion Cards',expImportDesc:'Load a card list JSON into this expansion. Existing cards in this expansion will be replaced, but your collection progress for other expansions is kept.',expExportDesc:'Download just this expansion\'s card list as a JSON file. Use it to back up or share this set.',imgScript:'Image Script',imgScriptTitle:'Download Image Fetcher',imgScriptDesc:'Your browser can\'t directly save images from most card game sites due to security rules (CORS). Download this small Python script and run it to fetch all images for this expansion into a local folder.',downloadScript:'Download .py Script',flatScanW:'Scan',holoViewW:'Holo',ebayMedian:'eBay ~%s',ebayListings:'%d listings',ebayFrom:'from %s',ebayTip:'Median asking price of active eBay Buy It Now listings · updated %s',},
-    jp:{accountTitle:'ログインしてコレクションを同期',mAccount:'アカウント',loginIntro:'ログインすると、コレクションを端末間で同期できます。ログインしない場合は、これまで通りこのブラウザに保存されます。',lEmail:'メールアドレス',lPassword:'パスワード',signIn:'ログイン',signingIn:'ログイン中…',signOut:'ログアウト',syncNow:'今すぐ同期',signedInAs:'%s でログイン中',syncing:'同期中…',syncedAt:'%s に同期しました',syncWaiting:'まだ同期していません',syncOffline:'オフラインです。変更はここに保存され、後で同期されます。',syncError:'同期に失敗しました。変更はここに保存されています。もう一度お試しください。',syncSignedOut:'ログアウトされました。もう一度ログインしてください。',loginWrong:'メールアドレスかパスワードが違います。',loginUnconfirmed:'このメールアドレスはまだ確認されていません。',loginFailed:'ログインに失敗しました。しばらくしてからお試しください。',signOutNote:'ログアウトしても、このブラウザのコレクションは残ります。',syncForeign:'このブラウザには別のアカウントのコレクションがあります。OKでそのカードをこのアカウントに追加し、キャンセルでこのアカウントのコレクションに置き換えます。',valueW:'価値',collectionValue:'コレクション価値',setValueL:'フルセット ~%s',pricedCopies:'価格あり%d枚',unpricedCopies:'出品なし%d枚',valueTimeline:'価値の推移',timelineHint:'価格を更新するたびにここに点が追加されます。',valueByExp:'拡張パック別の価値',tagline:'TCGビルダー＆コレクター',builder:'TCGビルダー',collector:'コレクター',system:'システム',newSystem:'新規システム',forgeTitle:'最初のTCGを作成しよう',forgeDesc:'カードゲームシステム（レアリティ、拡張パック、カード）を定義しましょう。定義が済んだら、コレクターモードに切り替えて所持カードを管理できます。',createSystem:'システムを作成',systemSettings:'システム設定',addExpansion:'拡張パック',booster:'ブースター',starter:'スターター',special:'スペシャル',promo:'プロモ',expansions:'拡張パック',totalCards:'総カード数',rarities:'レアリティ',rarityTiers:'レアリティ階層',addRarity:'レアリティを追加',pullRateWord:'排出率',cardLayout:'カードレイアウト',addField:'項目を追加',layoutDesc:'このシステムの全カードに表示されるステータス項目です。名前・番号・タイプ・レアリティ・画像・効果テキストは常に表示されます。',noFieldsMsg:'ステータス項目がありません。カードには名前・タイプ・レアリティのみが表示されます。「コスト」や「パワー」などを追加しましょう。',edit:'編集',del:'削除',addCard:'カードを追加',noCardsTitle:'この拡張パックにはまだカードがありません',autoNumber:'カードは追加時に自動で番号が振られます。',addFirstCard:'最初のカードを追加',collecting:'収集中',condition:'状態',ownedW:'所持',missingW:'未所持',dupes:'重複',pullRateTitle:'排出率',pullHint:'引いたカードを登録すると（下のカードで枚数を設定）、レアリティごとの実測排出率がここに表示されます。',pullRatesDesc:'このシステムの各レアリティの想定排出率（%）を設定します。不明な場合は空欄のままで構いません。',tPullRatesSaved:'排出率を保存しました',all:'すべて',nothingTitle:'収集できるものがまだありません',nothingDesc:'まずTCGシステムを作成してください。その後ここに戻ってコレクションを管理できます。',goBuilder:'ビルダーへ移動',cardsN:'%d枚のカード',cardN1:'%d枚のカード',unused:'未使用',shownOnCard:'カードに表示',hiddenW:'非表示',numberT:'数値',textT:'テキスト',longTextT:'長文テキスト',elementW:'属性',linkedTypeNote:'カードの実際のタイプと標準カラーを自動的に使用します。',linkedElementNote:'カードの実際の属性と標準カラーを自動的に使用します。',linkedLongtextNote:'長文テキストです。カード詳細画面にのみ表示され、一覧のタイルには表示されません。',sections:'セクション',addSection:'セクションを追加',sectionsDesc:'拡張パックを折りたたみ可能なセクションにまとめ、サイドバーに表示します。拡張パックの編集画面からセクションを割り当てられます。',noSectionsMsg:'セクションがまだありません。拡張パックはグループ分けされずに表示されます。「ブースター」や「スターター」などを追加しましょう。',mNewSection:'新規セクション',mEditSection:'セクションを編集',lSectionName:'セクション名',lSection:'セクション',ungrouped:'未分類',tSectionAdded:'セクションを追加しました',tSectionUpdated:'セクションを更新しました',tSectionRemoved:'セクションを削除しました',delSectionMsg:'「%s」セクションを削除しますか？ 含まれる拡張パックは未分類になります。',expN1:'%d件の拡張パック',expsN:'%d件の拡張パック',emptySection:'空',statsForX:'%sの統計',statsNone:'拡張パックを選択すると統計が表示されます',noDate:'日付なし',copiesSummary:'%a枚獲得・%b種類',targetL:'目標 %s%',copiesW:'%d枚',expectedL:'想定 約%s%',pulledL:'%s%・%d枚獲得',variants1:'+%d種類',variantsN:'+%d種類',setQty1:'所持数を設定してください',setQtyN:'%d種類・それぞれの所持数を設定してください',ownedX:'所持 ×%d',notOwned:'未所持',ofPulls:'排出のうち%s%',done:'完了',cancel:'キャンセル',saveW:'保存',saveChanges:'変更を保存',createExpansion:'拡張パックを作成',mNewSystem:'新規TCGシステム',mEditSystem:'システムを編集',mNewRarity:'新規レアリティ',mEditRarity:'レアリティを編集',mNewExpansion:'新規拡張パック',mEditExpansion:'拡張パックを編集',mNewCard:'新規カード',mEditCard:'カードを編集',mNewField:'新規カード項目',mEditField:'項目を編集',mConfirmDelete:'削除の確認',lSystemName:'システム名',lDescription:'説明',lRarityName:'レアリティ名',lColor:'カラー',lPullRatePct:'排出率（%）',lExpName:'拡張パック名',lAbbr:'略称',lRelease:'発売日',lSeries:'シリーズ',noSeries:'シリーズなし',lImageBaseUrl:'画像ホストURL',imageBaseUrlHint:'任意項目です。設定すると、カード画像はまずこちら（GitHub Pagesなど）から読み込まれ、ファイルが見つからない場合は元のURLにフォールバックします。',lCardName:'カード名',lCardNumber:'カード番号',lType:'タイプ',lElement:'属性',noElement:'属性なし',lRarity:'レアリティ',lImage:'画像URL（任意）',lFieldLabel:'項目名',lValueType:'値の種類',lIcon:'アイコン',lShowOnCard:'カードに表示',lShowCardList:'カードリストを表示',lReassign:'これらのカードの割り当て先',delSystemMsg:'このシステムをすべて削除しますか？ すべての拡張パック、カード、収集の進捗データが失われます。',delExpMsg:'「%s」とそのすべてのカードを削除しますか？',delRarityMsg:'「%s」レアリティを削除しますか？',delRarityUse:'現在%d枚のカードで使用されています。',onlyRarity:'これは唯一のレアリティです。削除する前に別のレアリティを追加してください。',sureMsg:'本当によろしいですか？',tNameRequired:'名前を入力してください',tLabelRequired:'項目名を入力してください',tSystemCreated:'システムを作成しました',tSystemUpdated:'システムを更新しました',tSystemDeleted:'システムを削除しました',tRarityAdded:'レアリティを追加しました',tRarityUpdated:'レアリティを更新しました',tRarityRemoved:'レアリティを削除しました',tFieldAdded:'項目を追加しました',tFieldUpdated:'項目を更新しました',tFieldRemoved:'項目を削除しました',tExpCreated:'拡張パックを作成しました',tExpUpdated:'拡張パックを更新しました',tExpDeleted:'拡張パックを削除しました',tCardAdded:'カードを追加しました',tCardUpdated:'カードを更新しました',tCardDeleted:'カードを削除しました',tExported:'進捗をエクスポートしました',tImported:'インポートが完了しました',tInvalid:'無効なファイルです',exportProgressTitle:'進捗をエクスポート',importProgressTitle:'進捗をインポート',tAddRarityFirst:'先に別のレアリティを追加してください',pageOfN:'%d / %d ページ',pagesRangeOfN:'%d–%d / %d ページ',stackVariants:'バリアントをまとめる',cardSize:'カードサイズ',dynamicSize:'自動調整',haveW:'所持',needW:'必要',dupesW:'重複',prevW:'前へ',nextW:'次へ',imgNone:'画像URL未設定',imgLoadFail:'画像を読み込めませんでした',binderCover:'バインダー表紙',binderCoverDesc:'このシステムのバインダー表紙をデザインできます。バインダー表示でコレクションを開くと表示されます。',editCover:'表紙を編集',editDivider:'仕切り',viewCover:'バインダー表紙',openBinder:'カード一覧に戻る',mDesignCover:'バインダー表紙をデザイン',mEditCoverTitle:'バインダー表紙を編集',mDesignDivider:'仕切りをデザイン',mEditDividerTitle:'仕切りを編集',lTitle:'タイトル',lSubtitle:'サブタイトル',lBackground:'背景',bgColor:'単色',bgGradient:'グラデーション',bgImage:'画像',lTextColor:'文字色',lColor2:'第2カラー',lImageUrl:'画像URL',resetDesign:'デフォルトに戻す',lDownload:'ダウンロード',tExportImgFail:'背景画像を含められませんでした(クロスオリジン制限) — 画像なしで書き出しました',tCoverSaved:'表紙を保存しました',tDividerSaved:'仕切りを保存しました',tDesignReset:'デザインをリセットしました',lCardsPerBooster:'1パックあたりの枚数',lBoostersPerBox:'1ボックスあたりのパック数',boosters:'ブースター',boostersOpenedW:'開封済み',boxesOwned:'ボックス',uniqueDesigns:'種類数',totalCollected:'収集総数',homeTab:'ホーム',recentlyAddedTitle:'最近追加したカード',rarestOwnedTitle:'最もレアな獲得カード',homeEmptyTitle:'まだ何も収集していません',homeEmptyDesc:'カードを所持済みとしてマークすると、ここに表示されます。',homeNoSectionsMsg:'セクションが選択されていません。上から1つ以上選択するとカードが表示されます。',fromCardsTracked:'%d枚のカードから集計',extraCards:'%d枚追加',calcFromCards:'手入力ではなく、登録済みのカードから自動計算されています',dragHint:'ドラッグしてカードを並べ替え',manualOrderBadge:'手動並び替え',resetOrder:'番号順にリセット',tOrderReset:'並び順をリセットしました',expImport:'カードをインポート',expExport:'カードをエクスポート',expImportTitle:'拡張パックのカードをインポート',expExportTitle:'拡張パックのカードをエクスポート',expImportDesc:'カードリストのJSONファイルをこの拡張パックに読み込みます。この拡張パック内の既存カードは置き換えられますが、他の拡張パックの収集進捗は保持されます。',expExportDesc:'この拡張パックのカードリストのみをJSONファイルとしてダウンロードします。バックアップやセットの共有にご利用ください。',imgScript:'画像取得スクリプト',imgScriptTitle:'画像取得ツールをダウンロード',imgScriptDesc:'セキュリティ制限（CORS）のため、ブラウザはほとんどのカードゲームサイトから直接画像を保存できません。この小さなPythonスクリプトをダウンロードして実行すると、この拡張パックの全画像をローカルフォルダに取得できます。',downloadScript:'.pyスクリプトをダウンロード',flatScanW:'スキャン',holoViewW:'ホロ',ebayMedian:'eBay ~%s',ebayListings:'出品%d件',ebayFrom:'最安 %s',ebayTip:'eBay即決出品の中央値 · 更新 %s'},
-    ko:{accountTitle:'로그인하여 컬렉션 동기화',mAccount:'계정',loginIntro:'로그인하면 여러 기기에서 컬렉션이 동기화됩니다. 로그인하지 않으면 지금처럼 이 브라우저에 저장됩니다.',lEmail:'이메일',lPassword:'비밀번호',signIn:'로그인',signingIn:'로그인 중…',signOut:'로그아웃',syncNow:'지금 동기화',signedInAs:'%s 계정으로 로그인됨',syncing:'동기화 중…',syncedAt:'%s 동기화됨',syncWaiting:'아직 동기화되지 않음',syncOffline:'오프라인입니다. 변경 사항은 여기에 보관되며 나중에 동기화됩니다.',syncError:'동기화에 실패했습니다. 변경 사항은 여기에 보관됩니다. 다시 시도해 주세요.',syncSignedOut:'로그아웃되었습니다. 다시 로그인해 주세요.',loginWrong:'이메일 또는 비밀번호가 올바르지 않습니다.',loginUnconfirmed:'아직 인증되지 않은 이메일 주소입니다.',loginFailed:'로그인에 실패했습니다. 잠시 후 다시 시도해 주세요.',signOutNote:'로그아웃해도 이 브라우저의 컬렉션은 남습니다.',syncForeign:'이 브라우저에는 다른 계정의 컬렉션이 있습니다. 확인을 누르면 그 카드를 이 계정에 추가하고, 취소를 누르면 이 계정의 컬렉션으로 바꿉니다.',valueW:'가치',collectionValue:'컬렉션 가치',setValueL:'전체 세트 ~%s',pricedCopies:'%d장 시세 있음',unpricedCopies:'%d장 매물 없음',valueTimeline:'가치 추이',timelineHint:'가격을 업데이트할 때마다 점이 추가되어 추이가 채워집니다.',valueByExp:'확장팩별 가치',tagline:'TCG 빌더 & 컬렉터',builder:'TCG 빌더',collector:'컬렉터',system:'시스템',newSystem:'새 시스템',forgeTitle:'첫 TCG를 만들어 보세요',forgeDesc:'카드 게임 시스템 — 레어도, 확장팩, 카드 — 를 정의한 뒤, 컬렉터 모드에서 소장 카드를 관리하세요.',createSystem:'시스템 만들기',systemSettings:'시스템 설정',addExpansion:'확장팩',booster:'부스터',starter:'스타터',special:'스페셜',promo:'프로모',expansions:'확장팩',totalCards:'전체 카드',rarities:'레어도',rarityTiers:'레어도 등급',addRarity:'레어도 추가',pullRateWord:'배출률',cardLayout:'카드 레이아웃',addField:'필드 추가',layoutDesc:'이 시스템의 모든 카드에 표시되는 스탯 필드입니다. 이름·번호·타입·레어도·이미지·효과 텍스트는 항상 표시됩니다.',noFieldsMsg:'스탯 필드가 없습니다 — 카드에는 이름·타입·레어도만 표시됩니다. 코스트나 파워 같은 필드를 추가해 보세요.',edit:'수정',del:'삭제',addCard:'카드 추가',noCardsTitle:'아직 이 확장팩에 카드가 없습니다',autoNumber:'카드는 추가하는 순서대로 자동 번호가 매겨집니다.',addFirstCard:'첫 카드 추가',collecting:'컬렉션',condition:'상태',ownedW:'보유',missingW:'미보유',dupes:'중복',pullRateTitle:'배출률',pullHint:'뽑은 카드의 수량을 아래 카드에 입력하면 레어도별 실제 배출률이 여기에 표시됩니다.',pullRatesDesc:'이 시스템의 각 레어도별 예상 배출률(%)을 설정하세요. 모르면 비워 두세요.',tPullRatesSaved:'배출률이 저장되었습니다',all:'전체',nothingTitle:'아직 수집할 것이 없습니다',nothingDesc:'먼저 빌더에서 TCG 시스템을 만든 뒤, 여기에서 컬렉션을 관리하세요.',goBuilder:'빌더로 이동',cardsN:'%d장',cardN1:'%d장',unused:'미사용',shownOnCard:'카드에 표시',hiddenW:'숨김',numberT:'숫자',textT:'텍스트',longTextT:'긴 텍스트',elementW:'속성',linkedTypeNote:'카드의 실제 타입과 기본 색상이 자동으로 사용됩니다.',linkedElementNote:'카드의 실제 속성과 기본 색상이 자동으로 사용됩니다.',linkedLongtextNote:'긴 텍스트 — 카드 상세보기에서만 표시되며 카드 앞면에는 표시되지 않습니다.',sections:'섹션',addSection:'섹션 추가',sectionsDesc:'확장팩을 접을 수 있는 섹션으로 묶어 사이드바에 표시합니다. 확장팩 편집 화면에서 섹션을 지정할 수 있습니다.',noSectionsMsg:'아직 섹션이 없습니다 — 확장팩이 그룹 없이 표시됩니다. 부스터나 스타터 같은 섹션을 추가해 보세요.',mNewSection:'새 섹션',mEditSection:'섹션 수정',lSectionName:'섹션 이름',lSection:'섹션',ungrouped:'미분류',tSectionAdded:'섹션 추가됨',tSectionUpdated:'섹션 수정됨',tSectionRemoved:'섹션 삭제됨',delSectionMsg:'“%s” 섹션을 삭제할까요? 포함된 확장팩은 미분류로 이동합니다.',expN1:'확장팩 %d개',expsN:'확장팩 %d개',emptySection:'비어 있음',statsForX:'%s 통계',statsNone:'통계를 보려면 확장팩을 선택하세요',noDate:'날짜 없음',copiesSummary:'총 %a장 개봉 · 고유 %b종',targetL:'목표 %s%',copiesW:'%d장',expectedL:'예상 ~%s%',pulledL:'%s% · %d장',variants1:'+%d 버전',variantsN:'+%d 버전',setQty1:'보유 수량을 설정하세요',setQtyN:'%d가지 버전 · 각각 보유 수량을 설정하세요',ownedX:'보유 ×%d',notOwned:'미보유',ofPulls:'전체 개봉의 %s%',done:'완료',cancel:'취소',saveW:'저장',saveChanges:'변경 사항 저장',createExpansion:'확장팩 만들기',mNewSystem:'새 TCG 시스템',mEditSystem:'시스템 수정',mNewRarity:'새 레어도',mEditRarity:'레어도 수정',mNewExpansion:'새 확장팩',mEditExpansion:'확장팩 수정',mNewCard:'새 카드',mEditCard:'카드 수정',mNewField:'새 카드 필드',mEditField:'필드 수정',mConfirmDelete:'삭제 확인',lSystemName:'시스템 이름',lDescription:'설명',lRarityName:'레어도 이름',lColor:'색상',lPullRatePct:'배출률 (%)',lExpName:'확장팩 이름',lAbbr:'약칭',lRelease:'출시일',lSeries:'시리즈',noSeries:'시리즈 없음',lImageBaseUrl:'이미지 호스팅 URL',imageBaseUrlHint:'선택 사항입니다. 설정하면 카드 이미지를 이곳에서 먼저 불러오고(예: GitHub Pages), 파일이 없으면 원본 출처 URL로 대체합니다.',lCardName:'카드 이름',lCardNumber:'카드 번호',lType:'타입',lElement:'속성',noElement:'속성 없음',lRarity:'레어도',lImage:'이미지 URL (선택)',lFieldLabel:'필드 이름',lValueType:'값 타입',lIcon:'아이콘',lShowOnCard:'카드에 표시',lShowCardList:'카드 목록 표시',lReassign:'해당 카드를 다음 레어도로 이동',delSystemMsg:'이 시스템 전체를 삭제할까요? 모든 확장팩, 카드, 컬렉션 진행 상황이 사라집니다.',delExpMsg:'“%s”와(과) 모든 카드를 삭제할까요?',delRarityMsg:'“%s” 레어도 등급을 삭제할까요?',delRarityUse:'현재 %d장의 카드가 사용 중입니다.',onlyRarity:'유일한 레어도입니다 — 삭제 전에 다른 레어도를 추가하세요.',sureMsg:'정말 삭제할까요?',tNameRequired:'이름을 입력하세요',tLabelRequired:'이름을 입력하세요',tSystemCreated:'시스템 생성됨',tSystemUpdated:'시스템 수정됨',tSystemDeleted:'시스템 삭제됨',tRarityAdded:'레어도 추가됨',tRarityUpdated:'레어도 수정됨',tRarityRemoved:'레어도 삭제됨',tFieldAdded:'필드 추가됨',tFieldUpdated:'필드 수정됨',tFieldRemoved:'필드 삭제됨',tExpCreated:'확장팩 생성됨',tExpUpdated:'확장팩 수정됨',tExpDeleted:'확장팩 삭제됨',tCardAdded:'카드 추가됨',tCardUpdated:'카드 수정됨',tCardDeleted:'카드 삭제됨',tExported:'진행 상황 내보내기 완료',tImported:'가져오기 완료',tInvalid:'잘못된 파일',exportProgressTitle:'진행 상황 내보내기',importProgressTitle:'진행 상황 가져오기',tAddRarityFirst:'먼저 다른 레어도를 추가하세요',pageOfN:'%d / %d 페이지',pagesRangeOfN:'%d–%d / %d 페이지',stackVariants:'버전 묶어보기',cardSize:'카드 크기',dynamicSize:'자동',haveW:'보유',needW:'미보유',dupesW:'중복',prevW:'이전',nextW:'다음',imgNone:'이미지 URL이 없습니다',imgLoadFail:'이미지를 불러오지 못했습니다',binderCover:'바인더 표지',binderCoverDesc:'이 시스템의 바인더 앞표지를 디자인하세요 — 바인더 보기를 열면 표시됩니다.',editCover:'표지 편집',editDivider:'구분지',viewCover:'바인더 표지',openBinder:'카드로 돌아가기',mDesignCover:'바인더 표지 디자인',mEditCoverTitle:'바인더 표지 편집',mDesignDivider:'구분지 디자인',mEditDividerTitle:'구분지 편집',lTitle:'제목',lSubtitle:'부제목',lBackground:'배경',bgColor:'단색',bgGradient:'그라데이션',bgImage:'이미지',lTextColor:'텍스트 색상',lColor2:'두 번째 색상',lImageUrl:'이미지 URL',resetDesign:'기본값으로 재설정',lDownload:'다운로드',tExportImgFail:'배경 이미지를 포함할 수 없습니다(교차 출처 제한) — 이미지 없이 내보냈습니다',tCoverSaved:'표지 저장됨',tDividerSaved:'구분지 저장됨',tDesignReset:'디자인 초기화됨',lCardsPerBooster:'부스터당 카드 수',lBoostersPerBox:'박스당 부스터 수',boosters:'부스터',boostersOpenedW:'개봉',boxesOwned:'박스',uniqueDesigns:'고유 카드',totalCollected:'전체 수집률',homeTab:'홈',recentlyAddedTitle:'최근 추가됨',rarestOwnedTitle:'가장 희귀한 카드',homeEmptyTitle:'아직 수집한 카드가 없습니다',homeEmptyDesc:'카드를 보유로 표시하면 여기에 표시됩니다.',homeNoSectionsMsg:'선택된 섹션이 없습니다 — 위에서 하나 이상 선택하세요.',fromCardsTracked:'기록된 카드 %d장 기준',extraCards:'%d장 남음',calcFromCards:'직접 입력하지 않고, 기록된 카드 수를 기준으로 자동 계산됩니다',dragHint:'카드를 드래그하여 순서를 바꿀 수 있습니다',manualOrderBadge:'수동 정렬',resetOrder:'번호순으로 초기화',tOrderReset:'카드 순서가 초기화되었습니다',expImport:'카드 가져오기',expExport:'카드 내보내기',expImportTitle:'확장팩 카드 가져오기',expExportTitle:'확장팩 카드 내보내기',expImportDesc:'카드 목록 JSON을 이 확장팩에 불러옵니다. 이 확장팩의 기존 카드는 교체되지만, 다른 확장팩의 컬렉션 진행 상황은 유지됩니다.',expExportDesc:'이 확장팩의 카드 목록만 JSON 파일로 다운로드합니다. 백업이나 공유에 사용하세요.',imgScript:'이미지 스크립트',imgScriptTitle:'이미지 다운로더 받기',imgScriptDesc:'브라우저 보안 규칙(CORS) 때문에 대부분의 카드 게임 사이트에서 이미지를 직접 저장할 수 없습니다. 이 작은 Python 스크립트를 다운로드해서 실행하면 이 확장팩의 모든 이미지를 로컬 폴더에 받을 수 있습니다.',downloadScript:'스크립트 다운로드',flatScanW:'스캔',holoViewW:'홀로',ebayMedian:'eBay ~%s',ebayListings:'매물 %d건',ebayFrom:'최저 %s',ebayTip:'eBay 즉시구매 매물 중간 가격 · 업데이트 %s',},
-    de:{accountTitle:'Anmelden und Sammlung synchronisieren',mAccount:'Konto',loginIntro:'Melde dich an, um deine Sammlung auf all deinen Geräten gleich zu halten. Ohne Anmeldung bleibt sie wie bisher in diesem Browser.',lEmail:'E-Mail',lPassword:'Passwort',signIn:'Anmelden',signingIn:'Anmeldung läuft…',signOut:'Abmelden',syncNow:'Jetzt synchronisieren',signedInAs:'Angemeldet als %s',syncing:'Synchronisiere…',syncedAt:'Synchronisiert um %s',syncWaiting:'Noch nicht synchronisiert',syncOffline:'Offline. Deine Änderungen bleiben hier und werden später synchronisiert.',syncError:'Synchronisierung fehlgeschlagen. Deine Änderungen bleiben hier; versuche es erneut.',syncSignedOut:'Du wurdest abgemeldet. Bitte melde dich erneut an.',loginWrong:'E-Mail oder Passwort ist falsch.',loginUnconfirmed:'Diese E-Mail-Adresse ist noch nicht bestätigt.',loginFailed:'Anmeldung fehlgeschlagen. Bitte versuche es später erneut.',signOutNote:'Beim Abmelden bleibt die Kopie deiner Sammlung in diesem Browser.',syncForeign:'In diesem Browser liegt die Sammlung eines anderen Kontos. Mit OK fügst du diese Karten diesem Konto hinzu, mit Abbrechen werden sie durch die Sammlung dieses Kontos ersetzt.',valueW:'Wert',collectionValue:'Sammlungswert',setValueL:'Komplettset ~%s',pricedCopies:'%d Karten mit Preis',unpricedCopies:'%d ohne Angebote',valueTimeline:'Wertverlauf',timelineHint:'Jede Preisaktualisierung fügt hier einen Punkt hinzu - der Verlauf füllt sich mit jedem Update.',valueByExp:'Wert nach Erweiterung',tagline:'TCG-Builder & Sammlung',builder:'TCG-Builder',collector:'Sammlung',system:'System',newSystem:'Neues System',forgeTitle:'Erschaffe dein erstes TCG',forgeDesc:'Definiere ein Kartenspiel-System — Seltenheiten, Erweiterungen und Karten. Wechsle dann in den Sammlungsmodus, um deinen Bestand zu verwalten.',createSystem:'System erstellen',systemSettings:'Systemeinstellungen',addExpansion:'Erweiterung',booster:'Booster',starter:'Starter',special:'Spezial',promo:'Promo',expansions:'Erweiterungen',totalCards:'Karten gesamt',rarities:'Seltenheiten',rarityTiers:'Seltenheitsstufen',addRarity:'Seltenheit hinzufügen',pullRateWord:'Pull-Rate',cardLayout:'Kartenlayout',addField:'Feld hinzufügen',layoutDesc:'Stat-Felder, die auf jeder Karte dieses Systems erscheinen — zusätzlich zu Name, Nummer, Typ, Seltenheit, Bild und Effekttext.',noFieldsMsg:'Keine Stat-Felder — Karten zeigen nur Name, Typ und Seltenheit. Füge z. B. Kosten oder Power hinzu.',edit:'Bearbeiten',del:'Löschen',addCard:'Karte hinzufügen',noCardsTitle:'Noch keine Karten in dieser Erweiterung',autoNumber:'Karten werden beim Hinzufügen automatisch nummeriert.',addFirstCard:'Erste Karte hinzufügen',collecting:'Sammle',condition:'Zustand',ownedW:'Im Besitz',missingW:'Fehlend',dupes:'Duplikate',pullRateTitle:'Pull-Rate',pullHint:'Trage unten die gezogenen Karten ein (Mengen setzen), dann erscheint hier deine beobachtete Pull-Rate pro Seltenheit.',pullRatesDesc:'Lege die erwartete Pull-Rate (%) für jede Seltenheit in diesem System fest. Leer lassen, wenn unbekannt.',tPullRatesSaved:'Pull-Raten gespeichert',all:'Alle',nothingTitle:'Noch nichts zu sammeln',nothingDesc:'Erstelle zuerst ein TCG-System im Builder und verwalte danach hier deine Sammlung.',goBuilder:'Zum Builder',cardsN:'%d Karten',cardN1:'%d Karte',unused:'ungenutzt',shownOnCard:'auf Karte sichtbar',hiddenW:'ausgeblendet',numberT:'Zahl',textT:'Text',longTextT:'Langtext',elementW:'Element',linkedTypeNote:'Verwendet automatisch den echten Typ der Karte und Standardfarben.',linkedElementNote:'Verwendet automatisch das echte Element der Karte und Standardfarben.',linkedLongtextNote:'Langform-Text — wird nur in der Kartendetailansicht angezeigt, nie auf der Kachel.',sections:'Abschnitte',addSection:'Abschnitt hinzufügen',sectionsDesc:'Gruppiere deine Erweiterungen in einklappbare Abschnitte, die in der Seitenleiste angezeigt werden. Erweiterungen werden im Erweiterungs-Editor einem Abschnitt zugewiesen.',noSectionsMsg:'Noch keine Abschnitte — Erweiterungen werden ungruppiert angezeigt. Füge z. B. Booster oder Starter hinzu.',mNewSection:'Neuer Abschnitt',mEditSection:'Abschnitt bearbeiten',lSectionName:'Abschnittsname',lSection:'Abschnitt',ungrouped:'Ungruppiert',tSectionAdded:'Abschnitt hinzugefügt',tSectionUpdated:'Abschnitt aktualisiert',tSectionRemoved:'Abschnitt entfernt',delSectionMsg:'Den Abschnitt „%s“ löschen? Seine Erweiterungen werden ungruppiert.',expN1:'%d Erweiterung',expsN:'%d Erweiterungen',emptySection:'leer',statsForX:'Statistik für %s',statsNone:'Wähle eine Erweiterung, um ihre Statistik zu sehen',noDate:'Kein Datum',copiesSummary:'%a Karten gezogen · %b einzigartig',targetL:'Ziel %s%',copiesW:'%d Stück',expectedL:'~%s% erwartet',pulledL:'%s% · %d gezogen',variants1:'+%d Variante',variantsN:'+%d Varianten',setQty1:'Lege die Anzahl in deinem Besitz fest',setQtyN:'%d Versionen · lege die Anzahl je Version fest',ownedX:'Im Besitz ×%d',notOwned:'Nicht im Besitz',ofPulls:'%s% der Pulls',done:'Fertig',cancel:'Abbrechen',saveW:'Speichern',saveChanges:'Änderungen speichern',createExpansion:'Erweiterung erstellen',mNewSystem:'Neues TCG-System',mEditSystem:'System bearbeiten',mNewRarity:'Neue Seltenheit',mEditRarity:'Seltenheit bearbeiten',mNewExpansion:'Neue Erweiterung',mEditExpansion:'Erweiterung bearbeiten',mNewCard:'Neue Karte',mEditCard:'Karte bearbeiten',mNewField:'Neues Kartenfeld',mEditField:'Feld bearbeiten',mConfirmDelete:'Löschen bestätigen',lSystemName:'Systemname',lDescription:'Beschreibung',lRarityName:'Name der Seltenheit',lColor:'Farbe',lPullRatePct:'Pull-Rate (%)',lExpName:'Name der Erweiterung',lAbbr:'Kürzel',lRelease:'Erscheinungsdatum',lSeries:'Serie',noSeries:'Keine Serie',lImageBaseUrl:'Bild-Hosting-URL',imageBaseUrlHint:'Optional. Falls gesetzt, werden Kartenbilder zuerst von hier geladen (z. B. GitHub Pages) und bei fehlender Datei auf die ursprüngliche Quelle zurückgegriffen.',lCardName:'Kartenname',lCardNumber:'Kartennummer',lType:'Typ',lElement:'Element',noElement:'Kein Element',lRarity:'Seltenheit',lImage:'Bild-URL (optional)',lFieldLabel:'Feldname',lValueType:'Werttyp',lIcon:'Symbol',lShowOnCard:'Auf Karte anzeigen',lShowCardList:'Kartenliste anzeigen',lReassign:'Diese Karten zuordnen zu',delSystemMsg:'Dieses System komplett löschen? Alle Erweiterungen, Karten und Sammlungsfortschritte gehen verloren.',delExpMsg:'„%s“ und alle zugehörigen Karten löschen?',delRarityMsg:'Die Seltenheitsstufe „%s“ löschen?',delRarityUse:'%d Karte(n) verwenden sie derzeit.',onlyRarity:'Dies ist die einzige Seltenheit — füge zuerst eine andere hinzu.',sureMsg:'Bist du sicher?',tNameRequired:'Name ist erforderlich',tLabelRequired:'Bezeichnung ist erforderlich',tSystemCreated:'System erstellt',tSystemUpdated:'System aktualisiert',tSystemDeleted:'System gelöscht',tRarityAdded:'Seltenheit hinzugefügt',tRarityUpdated:'Seltenheit aktualisiert',tRarityRemoved:'Seltenheit entfernt',tFieldAdded:'Feld hinzugefügt',tFieldUpdated:'Feld aktualisiert',tFieldRemoved:'Feld entfernt',tExpCreated:'Erweiterung erstellt',tExpUpdated:'Erweiterung aktualisiert',tExpDeleted:'Erweiterung gelöscht',tCardAdded:'Karte hinzugefügt',tCardUpdated:'Karte aktualisiert',tCardDeleted:'Karte gelöscht',tExported:'Fortschritt exportiert',tImported:'Import erfolgreich',tInvalid:'Ungültige Datei',exportProgressTitle:'Fortschritt exportieren',importProgressTitle:'Fortschritt importieren',tAddRarityFirst:'Füge zuerst eine andere Seltenheit hinzu',pageOfN:'Seite %d von %d',pagesRangeOfN:'Seiten %d–%d von %d',stackVariants:'Varianten stapeln',cardSize:'Kartengröße',dynamicSize:'Dynamisch',haveW:'Vorhanden',needW:'Fehlend',dupesW:'Duplikate',prevW:'Zurück',nextW:'Weiter',imgNone:'Noch keine Bild-URL',imgLoadFail:'Bild konnte nicht geladen werden',binderCover:'Ordner-Cover',binderCoverDesc:'Gestalte ein eigenes Titelblatt für den Ordner dieses Systems — wird in der Ordneransicht angezeigt.',editCover:'Cover bearbeiten',editDivider:'Trennblatt',viewCover:'Ordner-Cover',openBinder:'Zurück zu den Karten',mDesignCover:'Ordner-Cover gestalten',mEditCoverTitle:'Ordner-Cover bearbeiten',mDesignDivider:'Trennblatt gestalten',mEditDividerTitle:'Trennblatt bearbeiten',lTitle:'Titel',lSubtitle:'Untertitel',lBackground:'Hintergrund',bgColor:'Farbe',bgGradient:'Verlauf',bgImage:'Bild',lTextColor:'Textfarbe',lColor2:'Zweite Farbe',lImageUrl:'Bild-URL',resetDesign:'Zurücksetzen',lDownload:'Herunterladen',tExportImgFail:'Das Hintergrundbild konnte nicht eingebunden werden (Cross-Origin) — ohne Bild exportiert',tCoverSaved:'Cover gespeichert',tDividerSaved:'Trennblatt gespeichert',tDesignReset:'Design zurückgesetzt',lCardsPerBooster:'Karten / Booster',lBoostersPerBox:'Booster / Box',boosters:'Booster',boostersOpenedW:'geöffnet',boxesOwned:'Boxen',uniqueDesigns:'Einzigartige Designs',totalCollected:'Gesamt gesammelt',homeTab:'Start',recentlyAddedTitle:'Kürzlich hinzugefügt',rarestOwnedTitle:'Seltenste Funde',homeEmptyTitle:'Noch nichts gesammelt',homeEmptyDesc:'Markiere Karten als im Besitz und sie erscheinen hier.',homeNoSectionsMsg:'Keine Abschnitte ausgewählt — wähle oben mindestens einen aus.',fromCardsTracked:'aus %d erfassten Karten',extraCards:'%d übrig',calcFromCards:'Berechnet aus den erfassten Karten, nicht manuell eingegeben',dragHint:'Karten per Drag & Drop neu anordnen',manualOrderBadge:'Manuelle Reihenfolge',resetOrder:'Auf Nummernreihenfolge zurücksetzen',tOrderReset:'Kartenreihenfolge zurückgesetzt',expImport:'Karten importieren',expExport:'Karten exportieren',expImportTitle:'Erweiterungskarten importieren',expExportTitle:'Erweiterungskarten exportieren',expImportDesc:'Lade eine Kartenlisten-JSON in diese Erweiterung. Bestehende Karten werden ersetzt, aber der Sammlungsfortschritt anderer Erweiterungen bleibt erhalten.',expExportDesc:'Lade nur die Kartenliste dieser Erweiterung als JSON herunter. Zum Sichern oder Teilen.',imgScript:'Bild-Skript',imgScriptTitle:'Bild-Downloader herunterladen',imgScriptDesc:'Der Browser kann Bilder von den meisten Kartenspiel-Websites aus Sicherheitsgründen (CORS) nicht direkt speichern. Lade dieses kleine Python-Skript herunter und führe es aus, um alle Bilder dieser Erweiterung lokal zu speichern.',downloadScript:'Skript herunterladen',flatScanW:'Scan',holoViewW:'Holo',ebayMedian:'eBay ~%s',ebayListings:'%d Angebote',ebayFrom:'ab %s',ebayTip:'Median der aktiven eBay-Sofortkauf-Angebote · aktualisiert %s',}
+    en:{holoClose:'Close',holoText:'Translation / original print',holoMotion:'Motion',holoRotate:'Turn upright',holoEnlarge:'Enlarge',accountTitle:'Sign in to sync your collection',mAccount:'Account',loginIntro:'Sign in to keep your collection in step across your devices. Without signing in it stays in this browser, as before.',lEmail:'Email',lPassword:'Password',signIn:'Sign in',signingIn:'Signing in…',signOut:'Sign out',syncNow:'Sync now',signedInAs:'Signed in as %s',syncing:'Syncing…',syncedAt:'Synced at %s',syncWaiting:'Not synced yet',syncOffline:'Offline. Your changes are kept here and synced later.',syncError:'Sync failed. Your changes are kept here; try again.',syncSignedOut:'You were signed out. Please sign in again.',loginWrong:'Wrong email or password.',loginUnconfirmed:'This email address is not confirmed yet.',loginFailed:'Sign-in failed. Please try again later.',signOutNote:'Signing out keeps this browser’s copy of your collection.',syncForeign:'This browser holds a collection from a different account. Press OK to add those cards to this account, or Cancel to replace them with this account’s collection.',valueW:'Value',collectionValue:'Collection value',setValueL:'full set ~%s',pricedCopies:'%d copies priced',unpricedCopies:'%d without listings',valueTimeline:'Value over time',timelineHint:'Each price update adds a point here - the trend fills in as prices are refreshed.',valueByExp:'Value by expansion',tagline:'TCG Builder & Collector',builder:'TCG Builder',collector:'Collector',system:'System',newSystem:'New System',forgeTitle:'Forge your first TCG',forgeDesc:'Define a card game system — its rarities, expansions, and cards. Then switch to Collector mode to track what you own.',createSystem:'Create a System',systemSettings:'System Settings',addExpansion:'Expansion',booster:'Booster',starter:'Starter',special:'Special',promo:'Promo',expansions:'Expansions',totalCards:'Total Cards',rarities:'Rarities',rarityTiers:'Rarity Tiers',addRarity:'Add Rarity',pullRateWord:'Pull rate',cardLayout:'Card Layout',addField:'Add Field',layoutDesc:'Stat fields shown on every card in this system, plus the always-present name, number, type, rarity, image and effect text.',noFieldsMsg:'No stat fields — cards show just name, type and rarity. Add one like Cost or Power.',edit:'Edit',del:'Delete',addCard:'Add Card',noCardsTitle:'No cards in this expansion yet',autoNumber:'Cards are auto-numbered as you add them.',addFirstCard:'Add First Card',collecting:'Collecting',condition:'Condition',ownedW:'Owned',missingW:'Missing',dupes:'Duplicates',pullRateTitle:'Pull Rate',pullHint:"Add the cards you've pulled (set quantities on the cards below) and your observed pull rate per rarity appears here.",pullRatesDesc:'Set the expected pull rate (%) for each rarity in this system. Leave blank if unknown.',tPullRatesSaved:'Pull rates saved',all:'All',nothingTitle:'Nothing to collect yet',nothingDesc:'Build a TCG system first, then come back here to track your collection.',goBuilder:'Go to Builder',cardsN:'%d cards',cardN1:'%d card',unused:'unused',shownOnCard:'shown on card',hiddenW:'hidden',numberT:'Number',textT:'Text',longTextT:'Long Text',elementW:'Element',linkedTypeNote:'Automatically uses the card\'s real type and standard colors.',linkedElementNote:'Automatically uses the card\'s real element and standard colors.',linkedLongtextNote:'Long-form text — only shown in the card detail view, never on the tile.',sections:'Sections',addSection:'Add Section',sectionsDesc:'Group your expansions into collapsible sections, shown in the sidebar. Expansions are assigned a section from the expansion editor.',noSectionsMsg:'No sections yet — expansions show ungrouped. Add one like Booster or Starter.',mNewSection:'New Section',mEditSection:'Edit Section',lSectionName:'Section Name',lSection:'Section',ungrouped:'Ungrouped',tSectionAdded:'Section added',tSectionUpdated:'Section updated',tSectionRemoved:'Section removed',delSectionMsg:'Delete the “%s” section? Its expansions will become ungrouped.',expN1:'%d expansion',expsN:'%d expansions',emptySection:'empty',statsForX:'Stats for %s',statsNone:'Select an expansion to see its stats',noDate:'No date',copiesSummary:'%a copies pulled · %b unique',targetL:'target %s%',copiesW:'%d copies',expectedL:'~%s% expected',pulledL:'%s% · %d pulled',variants1:'+%d Variant',variantsN:'+%d Variants',setQty1:'Set the quantity you own',setQtyN:'%d versions · set the quantity you own of each',ownedX:'Owned ×%d',notOwned:'Not owned',ofPulls:'%s% of pulls',done:'Done',cancel:'Cancel',saveW:'Save',saveChanges:'Save Changes',createExpansion:'Create Expansion',mNewSystem:'New TCG System',mEditSystem:'Edit System',mNewRarity:'New Rarity',mEditRarity:'Edit Rarity',mNewExpansion:'New Expansion',mEditExpansion:'Edit Expansion',mNewCard:'New Card',mEditCard:'Edit Card',mNewField:'New Card Field',mEditField:'Edit Field',mConfirmDelete:'Confirm Deletion',lSystemName:'System Name',lDescription:'Description',lRarityName:'Rarity Name',lColor:'Color',lPullRatePct:'Pull rate (%)',lExpName:'Expansion Name',lAbbr:'Abbreviation',lRelease:'Release Date',lSeries:'Series',noSeries:'No Series',lImageBaseUrl:'Image Host URL',imageBaseUrlHint:'Optional. If set, card art loads from here first (e.g. GitHub Pages) and falls back to the original source URL if a file is missing.',lCardName:'Card Name',lCardNumber:'Card Number',lType:'Type',lElement:'Element',noElement:'No Element',lRarity:'Rarity',lImage:'Image URL (optional)',lFieldLabel:'Field Label',lValueType:'Value Type',lIcon:'Icon',lShowOnCard:'Show on card',lShowCardList:'Show Card List',lReassign:'Reassign those cards to',delSystemMsg:'Delete this entire system? All expansions, cards, and collection progress will be lost.',delExpMsg:'Delete “%s” and all its cards?',delRarityMsg:'Delete the “%s” rarity tier?',delRarityUse:'%d card(s) currently use it.',onlyRarity:'This is the only rarity — add another before deleting it.',sureMsg:'Are you sure?',tNameRequired:'Name is required',tLabelRequired:'Label is required',tSystemCreated:'System created',tSystemUpdated:'System updated',tSystemDeleted:'System deleted',tRarityAdded:'Rarity added',tRarityUpdated:'Rarity updated',tRarityRemoved:'Rarity removed',tFieldAdded:'Field added',tFieldUpdated:'Field updated',tFieldRemoved:'Field removed',tExpCreated:'Expansion created',tExpUpdated:'Expansion updated',tExpDeleted:'Expansion deleted',tCardAdded:'Card added',tCardUpdated:'Card updated',tCardDeleted:'Card deleted',tExported:'Progress exported',tImported:'Import successful',tInvalid:'Invalid file',exportProgressTitle:'Export Progress',importProgressTitle:'Import Progress',tAddRarityFirst:'Add another rarity first',pageOfN:'Page %d of %d',pagesRangeOfN:'Pages %d–%d of %d',stackVariants:'Stack Variants',cardSize:'Card Size',dynamicSize:'Dynamic',haveW:'Have',needW:'Need',dupesW:'Dupes',prevW:'Prev',nextW:'Next',imgNone:'No image URL yet',imgLoadFail:'Image failed to load',binderCover:'Binder Cover',binderCoverDesc:"Design a custom front cover for this system's binder — shown when you open the collection in Binder view.",editCover:'Edit Cover',editDivider:'Divider',viewCover:'Binder Cover',openBinder:'Back to Cards',mDesignCover:'Design Binder Cover',mEditCoverTitle:'Edit Binder Cover',mDesignDivider:'Design Divider',mEditDividerTitle:'Edit Divider',lTitle:'Title',lSubtitle:'Subtitle',lBackground:'Background',bgColor:'Solid',bgGradient:'Gradient',bgImage:'Image',lTextColor:'Text Color',lColor2:'Second Color',lImageUrl:'Image URL',resetDesign:'Reset to Default',lDownload:'Download',tExportImgFail:'Could not include the background image (cross-origin) — exported without it',tCoverSaved:'Cover saved',tDividerSaved:'Divider saved',tDesignReset:'Design reset',lCardsPerBooster:'Cards / Booster',lBoostersPerBox:'Boosters / Box',boosters:'Boosters',boostersOpenedW:'opened',boxesOwned:'Boxes',uniqueDesigns:'Unique Designs',totalCollected:'Total Collected',homeTab:'Home',recentlyAddedTitle:'Recently Added',rarestOwnedTitle:'Rarest Pulls',homeEmptyTitle:'Nothing collected yet',homeEmptyDesc:"Start marking cards as owned and they'll show up here.",homeNoSectionsMsg:'No sections selected — pick at least one above to see your cards.',fromCardsTracked:'from %d cards tracked',extraCards:'%d extra',calcFromCards:'Calculated from the cards you\'ve tracked, not entered manually',dragHint:'Drag cards to reorder',manualOrderBadge:'Manual Order',resetOrder:'Reset to numeric order',tOrderReset:'Card order reset',expImport:'Import Cards',expExport:'Export Cards',expImportTitle:'Import Expansion Cards',expExportTitle:'Export Expansion Cards',expImportDesc:'Load a card list JSON into this expansion. Existing cards in this expansion will be replaced, but your collection progress for other expansions is kept.',expExportDesc:'Download just this expansion\'s card list as a JSON file. Use it to back up or share this set.',imgScript:'Image Script',imgScriptTitle:'Download Image Fetcher',imgScriptDesc:'Your browser can\'t directly save images from most card game sites due to security rules (CORS). Download this small Python script and run it to fetch all images for this expansion into a local folder.',downloadScript:'Download .py Script',flatScanW:'Scan',holoViewW:'Holo',ebayMedian:'eBay ~%s',ebayListings:'%d listings',ebayFrom:'from %s',ebayTip:'Median asking price of active eBay Buy It Now listings · updated %s',},
+    jp:{holoClose:'閉じる',holoText:'翻訳／原版',holoMotion:'動き',holoRotate:'正しい向きにする',holoEnlarge:'拡大',accountTitle:'ログインしてコレクションを同期',mAccount:'アカウント',loginIntro:'ログインすると、コレクションを端末間で同期できます。ログインしない場合は、これまで通りこのブラウザに保存されます。',lEmail:'メールアドレス',lPassword:'パスワード',signIn:'ログイン',signingIn:'ログイン中…',signOut:'ログアウト',syncNow:'今すぐ同期',signedInAs:'%s でログイン中',syncing:'同期中…',syncedAt:'%s に同期しました',syncWaiting:'まだ同期していません',syncOffline:'オフラインです。変更はここに保存され、後で同期されます。',syncError:'同期に失敗しました。変更はここに保存されています。もう一度お試しください。',syncSignedOut:'ログアウトされました。もう一度ログインしてください。',loginWrong:'メールアドレスかパスワードが違います。',loginUnconfirmed:'このメールアドレスはまだ確認されていません。',loginFailed:'ログインに失敗しました。しばらくしてからお試しください。',signOutNote:'ログアウトしても、このブラウザのコレクションは残ります。',syncForeign:'このブラウザには別のアカウントのコレクションがあります。OKでそのカードをこのアカウントに追加し、キャンセルでこのアカウントのコレクションに置き換えます。',valueW:'価値',collectionValue:'コレクション価値',setValueL:'フルセット ~%s',pricedCopies:'価格あり%d枚',unpricedCopies:'出品なし%d枚',valueTimeline:'価値の推移',timelineHint:'価格を更新するたびにここに点が追加されます。',valueByExp:'拡張パック別の価値',tagline:'TCGビルダー＆コレクター',builder:'TCGビルダー',collector:'コレクター',system:'システム',newSystem:'新規システム',forgeTitle:'最初のTCGを作成しよう',forgeDesc:'カードゲームシステム（レアリティ、拡張パック、カード）を定義しましょう。定義が済んだら、コレクターモードに切り替えて所持カードを管理できます。',createSystem:'システムを作成',systemSettings:'システム設定',addExpansion:'拡張パック',booster:'ブースター',starter:'スターター',special:'スペシャル',promo:'プロモ',expansions:'拡張パック',totalCards:'総カード数',rarities:'レアリティ',rarityTiers:'レアリティ階層',addRarity:'レアリティを追加',pullRateWord:'排出率',cardLayout:'カードレイアウト',addField:'項目を追加',layoutDesc:'このシステムの全カードに表示されるステータス項目です。名前・番号・タイプ・レアリティ・画像・効果テキストは常に表示されます。',noFieldsMsg:'ステータス項目がありません。カードには名前・タイプ・レアリティのみが表示されます。「コスト」や「パワー」などを追加しましょう。',edit:'編集',del:'削除',addCard:'カードを追加',noCardsTitle:'この拡張パックにはまだカードがありません',autoNumber:'カードは追加時に自動で番号が振られます。',addFirstCard:'最初のカードを追加',collecting:'収集中',condition:'状態',ownedW:'所持',missingW:'未所持',dupes:'重複',pullRateTitle:'排出率',pullHint:'引いたカードを登録すると（下のカードで枚数を設定）、レアリティごとの実測排出率がここに表示されます。',pullRatesDesc:'このシステムの各レアリティの想定排出率（%）を設定します。不明な場合は空欄のままで構いません。',tPullRatesSaved:'排出率を保存しました',all:'すべて',nothingTitle:'収集できるものがまだありません',nothingDesc:'まずTCGシステムを作成してください。その後ここに戻ってコレクションを管理できます。',goBuilder:'ビルダーへ移動',cardsN:'%d枚のカード',cardN1:'%d枚のカード',unused:'未使用',shownOnCard:'カードに表示',hiddenW:'非表示',numberT:'数値',textT:'テキスト',longTextT:'長文テキスト',elementW:'属性',linkedTypeNote:'カードの実際のタイプと標準カラーを自動的に使用します。',linkedElementNote:'カードの実際の属性と標準カラーを自動的に使用します。',linkedLongtextNote:'長文テキストです。カード詳細画面にのみ表示され、一覧のタイルには表示されません。',sections:'セクション',addSection:'セクションを追加',sectionsDesc:'拡張パックを折りたたみ可能なセクションにまとめ、サイドバーに表示します。拡張パックの編集画面からセクションを割り当てられます。',noSectionsMsg:'セクションがまだありません。拡張パックはグループ分けされずに表示されます。「ブースター」や「スターター」などを追加しましょう。',mNewSection:'新規セクション',mEditSection:'セクションを編集',lSectionName:'セクション名',lSection:'セクション',ungrouped:'未分類',tSectionAdded:'セクションを追加しました',tSectionUpdated:'セクションを更新しました',tSectionRemoved:'セクションを削除しました',delSectionMsg:'「%s」セクションを削除しますか？ 含まれる拡張パックは未分類になります。',expN1:'%d件の拡張パック',expsN:'%d件の拡張パック',emptySection:'空',statsForX:'%sの統計',statsNone:'拡張パックを選択すると統計が表示されます',noDate:'日付なし',copiesSummary:'%a枚獲得・%b種類',targetL:'目標 %s%',copiesW:'%d枚',expectedL:'想定 約%s%',pulledL:'%s%・%d枚獲得',variants1:'+%d種類',variantsN:'+%d種類',setQty1:'所持数を設定してください',setQtyN:'%d種類・それぞれの所持数を設定してください',ownedX:'所持 ×%d',notOwned:'未所持',ofPulls:'排出のうち%s%',done:'完了',cancel:'キャンセル',saveW:'保存',saveChanges:'変更を保存',createExpansion:'拡張パックを作成',mNewSystem:'新規TCGシステム',mEditSystem:'システムを編集',mNewRarity:'新規レアリティ',mEditRarity:'レアリティを編集',mNewExpansion:'新規拡張パック',mEditExpansion:'拡張パックを編集',mNewCard:'新規カード',mEditCard:'カードを編集',mNewField:'新規カード項目',mEditField:'項目を編集',mConfirmDelete:'削除の確認',lSystemName:'システム名',lDescription:'説明',lRarityName:'レアリティ名',lColor:'カラー',lPullRatePct:'排出率（%）',lExpName:'拡張パック名',lAbbr:'略称',lRelease:'発売日',lSeries:'シリーズ',noSeries:'シリーズなし',lImageBaseUrl:'画像ホストURL',imageBaseUrlHint:'任意項目です。設定すると、カード画像はまずこちら（GitHub Pagesなど）から読み込まれ、ファイルが見つからない場合は元のURLにフォールバックします。',lCardName:'カード名',lCardNumber:'カード番号',lType:'タイプ',lElement:'属性',noElement:'属性なし',lRarity:'レアリティ',lImage:'画像URL（任意）',lFieldLabel:'項目名',lValueType:'値の種類',lIcon:'アイコン',lShowOnCard:'カードに表示',lShowCardList:'カードリストを表示',lReassign:'これらのカードの割り当て先',delSystemMsg:'このシステムをすべて削除しますか？ すべての拡張パック、カード、収集の進捗データが失われます。',delExpMsg:'「%s」とそのすべてのカードを削除しますか？',delRarityMsg:'「%s」レアリティを削除しますか？',delRarityUse:'現在%d枚のカードで使用されています。',onlyRarity:'これは唯一のレアリティです。削除する前に別のレアリティを追加してください。',sureMsg:'本当によろしいですか？',tNameRequired:'名前を入力してください',tLabelRequired:'項目名を入力してください',tSystemCreated:'システムを作成しました',tSystemUpdated:'システムを更新しました',tSystemDeleted:'システムを削除しました',tRarityAdded:'レアリティを追加しました',tRarityUpdated:'レアリティを更新しました',tRarityRemoved:'レアリティを削除しました',tFieldAdded:'項目を追加しました',tFieldUpdated:'項目を更新しました',tFieldRemoved:'項目を削除しました',tExpCreated:'拡張パックを作成しました',tExpUpdated:'拡張パックを更新しました',tExpDeleted:'拡張パックを削除しました',tCardAdded:'カードを追加しました',tCardUpdated:'カードを更新しました',tCardDeleted:'カードを削除しました',tExported:'進捗をエクスポートしました',tImported:'インポートが完了しました',tInvalid:'無効なファイルです',exportProgressTitle:'進捗をエクスポート',importProgressTitle:'進捗をインポート',tAddRarityFirst:'先に別のレアリティを追加してください',pageOfN:'%d / %d ページ',pagesRangeOfN:'%d–%d / %d ページ',stackVariants:'バリアントをまとめる',cardSize:'カードサイズ',dynamicSize:'自動調整',haveW:'所持',needW:'必要',dupesW:'重複',prevW:'前へ',nextW:'次へ',imgNone:'画像URL未設定',imgLoadFail:'画像を読み込めませんでした',binderCover:'バインダー表紙',binderCoverDesc:'このシステムのバインダー表紙をデザインできます。バインダー表示でコレクションを開くと表示されます。',editCover:'表紙を編集',editDivider:'仕切り',viewCover:'バインダー表紙',openBinder:'カード一覧に戻る',mDesignCover:'バインダー表紙をデザイン',mEditCoverTitle:'バインダー表紙を編集',mDesignDivider:'仕切りをデザイン',mEditDividerTitle:'仕切りを編集',lTitle:'タイトル',lSubtitle:'サブタイトル',lBackground:'背景',bgColor:'単色',bgGradient:'グラデーション',bgImage:'画像',lTextColor:'文字色',lColor2:'第2カラー',lImageUrl:'画像URL',resetDesign:'デフォルトに戻す',lDownload:'ダウンロード',tExportImgFail:'背景画像を含められませんでした(クロスオリジン制限) — 画像なしで書き出しました',tCoverSaved:'表紙を保存しました',tDividerSaved:'仕切りを保存しました',tDesignReset:'デザインをリセットしました',lCardsPerBooster:'1パックあたりの枚数',lBoostersPerBox:'1ボックスあたりのパック数',boosters:'ブースター',boostersOpenedW:'開封済み',boxesOwned:'ボックス',uniqueDesigns:'種類数',totalCollected:'収集総数',homeTab:'ホーム',recentlyAddedTitle:'最近追加したカード',rarestOwnedTitle:'最もレアな獲得カード',homeEmptyTitle:'まだ何も収集していません',homeEmptyDesc:'カードを所持済みとしてマークすると、ここに表示されます。',homeNoSectionsMsg:'セクションが選択されていません。上から1つ以上選択するとカードが表示されます。',fromCardsTracked:'%d枚のカードから集計',extraCards:'%d枚追加',calcFromCards:'手入力ではなく、登録済みのカードから自動計算されています',dragHint:'ドラッグしてカードを並べ替え',manualOrderBadge:'手動並び替え',resetOrder:'番号順にリセット',tOrderReset:'並び順をリセットしました',expImport:'カードをインポート',expExport:'カードをエクスポート',expImportTitle:'拡張パックのカードをインポート',expExportTitle:'拡張パックのカードをエクスポート',expImportDesc:'カードリストのJSONファイルをこの拡張パックに読み込みます。この拡張パック内の既存カードは置き換えられますが、他の拡張パックの収集進捗は保持されます。',expExportDesc:'この拡張パックのカードリストのみをJSONファイルとしてダウンロードします。バックアップやセットの共有にご利用ください。',imgScript:'画像取得スクリプト',imgScriptTitle:'画像取得ツールをダウンロード',imgScriptDesc:'セキュリティ制限（CORS）のため、ブラウザはほとんどのカードゲームサイトから直接画像を保存できません。この小さなPythonスクリプトをダウンロードして実行すると、この拡張パックの全画像をローカルフォルダに取得できます。',downloadScript:'.pyスクリプトをダウンロード',flatScanW:'スキャン',holoViewW:'ホロ',ebayMedian:'eBay ~%s',ebayListings:'出品%d件',ebayFrom:'最安 %s',ebayTip:'eBay即決出品の中央値 · 更新 %s'},
+    ko:{holoClose:'닫기',holoText:'번역 / 원본',holoMotion:'움직임',holoRotate:'바로 세우기',holoEnlarge:'크게 보기',accountTitle:'로그인하여 컬렉션 동기화',mAccount:'계정',loginIntro:'로그인하면 여러 기기에서 컬렉션이 동기화됩니다. 로그인하지 않으면 지금처럼 이 브라우저에 저장됩니다.',lEmail:'이메일',lPassword:'비밀번호',signIn:'로그인',signingIn:'로그인 중…',signOut:'로그아웃',syncNow:'지금 동기화',signedInAs:'%s 계정으로 로그인됨',syncing:'동기화 중…',syncedAt:'%s 동기화됨',syncWaiting:'아직 동기화되지 않음',syncOffline:'오프라인입니다. 변경 사항은 여기에 보관되며 나중에 동기화됩니다.',syncError:'동기화에 실패했습니다. 변경 사항은 여기에 보관됩니다. 다시 시도해 주세요.',syncSignedOut:'로그아웃되었습니다. 다시 로그인해 주세요.',loginWrong:'이메일 또는 비밀번호가 올바르지 않습니다.',loginUnconfirmed:'아직 인증되지 않은 이메일 주소입니다.',loginFailed:'로그인에 실패했습니다. 잠시 후 다시 시도해 주세요.',signOutNote:'로그아웃해도 이 브라우저의 컬렉션은 남습니다.',syncForeign:'이 브라우저에는 다른 계정의 컬렉션이 있습니다. 확인을 누르면 그 카드를 이 계정에 추가하고, 취소를 누르면 이 계정의 컬렉션으로 바꿉니다.',valueW:'가치',collectionValue:'컬렉션 가치',setValueL:'전체 세트 ~%s',pricedCopies:'%d장 시세 있음',unpricedCopies:'%d장 매물 없음',valueTimeline:'가치 추이',timelineHint:'가격을 업데이트할 때마다 점이 추가되어 추이가 채워집니다.',valueByExp:'확장팩별 가치',tagline:'TCG 빌더 & 컬렉터',builder:'TCG 빌더',collector:'컬렉터',system:'시스템',newSystem:'새 시스템',forgeTitle:'첫 TCG를 만들어 보세요',forgeDesc:'카드 게임 시스템 — 레어도, 확장팩, 카드 — 를 정의한 뒤, 컬렉터 모드에서 소장 카드를 관리하세요.',createSystem:'시스템 만들기',systemSettings:'시스템 설정',addExpansion:'확장팩',booster:'부스터',starter:'스타터',special:'스페셜',promo:'프로모',expansions:'확장팩',totalCards:'전체 카드',rarities:'레어도',rarityTiers:'레어도 등급',addRarity:'레어도 추가',pullRateWord:'배출률',cardLayout:'카드 레이아웃',addField:'필드 추가',layoutDesc:'이 시스템의 모든 카드에 표시되는 스탯 필드입니다. 이름·번호·타입·레어도·이미지·효과 텍스트는 항상 표시됩니다.',noFieldsMsg:'스탯 필드가 없습니다 — 카드에는 이름·타입·레어도만 표시됩니다. 코스트나 파워 같은 필드를 추가해 보세요.',edit:'수정',del:'삭제',addCard:'카드 추가',noCardsTitle:'아직 이 확장팩에 카드가 없습니다',autoNumber:'카드는 추가하는 순서대로 자동 번호가 매겨집니다.',addFirstCard:'첫 카드 추가',collecting:'컬렉션',condition:'상태',ownedW:'보유',missingW:'미보유',dupes:'중복',pullRateTitle:'배출률',pullHint:'뽑은 카드의 수량을 아래 카드에 입력하면 레어도별 실제 배출률이 여기에 표시됩니다.',pullRatesDesc:'이 시스템의 각 레어도별 예상 배출률(%)을 설정하세요. 모르면 비워 두세요.',tPullRatesSaved:'배출률이 저장되었습니다',all:'전체',nothingTitle:'아직 수집할 것이 없습니다',nothingDesc:'먼저 빌더에서 TCG 시스템을 만든 뒤, 여기에서 컬렉션을 관리하세요.',goBuilder:'빌더로 이동',cardsN:'%d장',cardN1:'%d장',unused:'미사용',shownOnCard:'카드에 표시',hiddenW:'숨김',numberT:'숫자',textT:'텍스트',longTextT:'긴 텍스트',elementW:'속성',linkedTypeNote:'카드의 실제 타입과 기본 색상이 자동으로 사용됩니다.',linkedElementNote:'카드의 실제 속성과 기본 색상이 자동으로 사용됩니다.',linkedLongtextNote:'긴 텍스트 — 카드 상세보기에서만 표시되며 카드 앞면에는 표시되지 않습니다.',sections:'섹션',addSection:'섹션 추가',sectionsDesc:'확장팩을 접을 수 있는 섹션으로 묶어 사이드바에 표시합니다. 확장팩 편집 화면에서 섹션을 지정할 수 있습니다.',noSectionsMsg:'아직 섹션이 없습니다 — 확장팩이 그룹 없이 표시됩니다. 부스터나 스타터 같은 섹션을 추가해 보세요.',mNewSection:'새 섹션',mEditSection:'섹션 수정',lSectionName:'섹션 이름',lSection:'섹션',ungrouped:'미분류',tSectionAdded:'섹션 추가됨',tSectionUpdated:'섹션 수정됨',tSectionRemoved:'섹션 삭제됨',delSectionMsg:'“%s” 섹션을 삭제할까요? 포함된 확장팩은 미분류로 이동합니다.',expN1:'확장팩 %d개',expsN:'확장팩 %d개',emptySection:'비어 있음',statsForX:'%s 통계',statsNone:'통계를 보려면 확장팩을 선택하세요',noDate:'날짜 없음',copiesSummary:'총 %a장 개봉 · 고유 %b종',targetL:'목표 %s%',copiesW:'%d장',expectedL:'예상 ~%s%',pulledL:'%s% · %d장',variants1:'+%d 버전',variantsN:'+%d 버전',setQty1:'보유 수량을 설정하세요',setQtyN:'%d가지 버전 · 각각 보유 수량을 설정하세요',ownedX:'보유 ×%d',notOwned:'미보유',ofPulls:'전체 개봉의 %s%',done:'완료',cancel:'취소',saveW:'저장',saveChanges:'변경 사항 저장',createExpansion:'확장팩 만들기',mNewSystem:'새 TCG 시스템',mEditSystem:'시스템 수정',mNewRarity:'새 레어도',mEditRarity:'레어도 수정',mNewExpansion:'새 확장팩',mEditExpansion:'확장팩 수정',mNewCard:'새 카드',mEditCard:'카드 수정',mNewField:'새 카드 필드',mEditField:'필드 수정',mConfirmDelete:'삭제 확인',lSystemName:'시스템 이름',lDescription:'설명',lRarityName:'레어도 이름',lColor:'색상',lPullRatePct:'배출률 (%)',lExpName:'확장팩 이름',lAbbr:'약칭',lRelease:'출시일',lSeries:'시리즈',noSeries:'시리즈 없음',lImageBaseUrl:'이미지 호스팅 URL',imageBaseUrlHint:'선택 사항입니다. 설정하면 카드 이미지를 이곳에서 먼저 불러오고(예: GitHub Pages), 파일이 없으면 원본 출처 URL로 대체합니다.',lCardName:'카드 이름',lCardNumber:'카드 번호',lType:'타입',lElement:'속성',noElement:'속성 없음',lRarity:'레어도',lImage:'이미지 URL (선택)',lFieldLabel:'필드 이름',lValueType:'값 타입',lIcon:'아이콘',lShowOnCard:'카드에 표시',lShowCardList:'카드 목록 표시',lReassign:'해당 카드를 다음 레어도로 이동',delSystemMsg:'이 시스템 전체를 삭제할까요? 모든 확장팩, 카드, 컬렉션 진행 상황이 사라집니다.',delExpMsg:'“%s”와(과) 모든 카드를 삭제할까요?',delRarityMsg:'“%s” 레어도 등급을 삭제할까요?',delRarityUse:'현재 %d장의 카드가 사용 중입니다.',onlyRarity:'유일한 레어도입니다 — 삭제 전에 다른 레어도를 추가하세요.',sureMsg:'정말 삭제할까요?',tNameRequired:'이름을 입력하세요',tLabelRequired:'이름을 입력하세요',tSystemCreated:'시스템 생성됨',tSystemUpdated:'시스템 수정됨',tSystemDeleted:'시스템 삭제됨',tRarityAdded:'레어도 추가됨',tRarityUpdated:'레어도 수정됨',tRarityRemoved:'레어도 삭제됨',tFieldAdded:'필드 추가됨',tFieldUpdated:'필드 수정됨',tFieldRemoved:'필드 삭제됨',tExpCreated:'확장팩 생성됨',tExpUpdated:'확장팩 수정됨',tExpDeleted:'확장팩 삭제됨',tCardAdded:'카드 추가됨',tCardUpdated:'카드 수정됨',tCardDeleted:'카드 삭제됨',tExported:'진행 상황 내보내기 완료',tImported:'가져오기 완료',tInvalid:'잘못된 파일',exportProgressTitle:'진행 상황 내보내기',importProgressTitle:'진행 상황 가져오기',tAddRarityFirst:'먼저 다른 레어도를 추가하세요',pageOfN:'%d / %d 페이지',pagesRangeOfN:'%d–%d / %d 페이지',stackVariants:'버전 묶어보기',cardSize:'카드 크기',dynamicSize:'자동',haveW:'보유',needW:'미보유',dupesW:'중복',prevW:'이전',nextW:'다음',imgNone:'이미지 URL이 없습니다',imgLoadFail:'이미지를 불러오지 못했습니다',binderCover:'바인더 표지',binderCoverDesc:'이 시스템의 바인더 앞표지를 디자인하세요 — 바인더 보기를 열면 표시됩니다.',editCover:'표지 편집',editDivider:'구분지',viewCover:'바인더 표지',openBinder:'카드로 돌아가기',mDesignCover:'바인더 표지 디자인',mEditCoverTitle:'바인더 표지 편집',mDesignDivider:'구분지 디자인',mEditDividerTitle:'구분지 편집',lTitle:'제목',lSubtitle:'부제목',lBackground:'배경',bgColor:'단색',bgGradient:'그라데이션',bgImage:'이미지',lTextColor:'텍스트 색상',lColor2:'두 번째 색상',lImageUrl:'이미지 URL',resetDesign:'기본값으로 재설정',lDownload:'다운로드',tExportImgFail:'배경 이미지를 포함할 수 없습니다(교차 출처 제한) — 이미지 없이 내보냈습니다',tCoverSaved:'표지 저장됨',tDividerSaved:'구분지 저장됨',tDesignReset:'디자인 초기화됨',lCardsPerBooster:'부스터당 카드 수',lBoostersPerBox:'박스당 부스터 수',boosters:'부스터',boostersOpenedW:'개봉',boxesOwned:'박스',uniqueDesigns:'고유 카드',totalCollected:'전체 수집률',homeTab:'홈',recentlyAddedTitle:'최근 추가됨',rarestOwnedTitle:'가장 희귀한 카드',homeEmptyTitle:'아직 수집한 카드가 없습니다',homeEmptyDesc:'카드를 보유로 표시하면 여기에 표시됩니다.',homeNoSectionsMsg:'선택된 섹션이 없습니다 — 위에서 하나 이상 선택하세요.',fromCardsTracked:'기록된 카드 %d장 기준',extraCards:'%d장 남음',calcFromCards:'직접 입력하지 않고, 기록된 카드 수를 기준으로 자동 계산됩니다',dragHint:'카드를 드래그하여 순서를 바꿀 수 있습니다',manualOrderBadge:'수동 정렬',resetOrder:'번호순으로 초기화',tOrderReset:'카드 순서가 초기화되었습니다',expImport:'카드 가져오기',expExport:'카드 내보내기',expImportTitle:'확장팩 카드 가져오기',expExportTitle:'확장팩 카드 내보내기',expImportDesc:'카드 목록 JSON을 이 확장팩에 불러옵니다. 이 확장팩의 기존 카드는 교체되지만, 다른 확장팩의 컬렉션 진행 상황은 유지됩니다.',expExportDesc:'이 확장팩의 카드 목록만 JSON 파일로 다운로드합니다. 백업이나 공유에 사용하세요.',imgScript:'이미지 스크립트',imgScriptTitle:'이미지 다운로더 받기',imgScriptDesc:'브라우저 보안 규칙(CORS) 때문에 대부분의 카드 게임 사이트에서 이미지를 직접 저장할 수 없습니다. 이 작은 Python 스크립트를 다운로드해서 실행하면 이 확장팩의 모든 이미지를 로컬 폴더에 받을 수 있습니다.',downloadScript:'스크립트 다운로드',flatScanW:'스캔',holoViewW:'홀로',ebayMedian:'eBay ~%s',ebayListings:'매물 %d건',ebayFrom:'최저 %s',ebayTip:'eBay 즉시구매 매물 중간 가격 · 업데이트 %s',},
+    de:{holoClose:'Schließen',holoText:'Übersetzung / Originaldruck',holoMotion:'Bewegung',holoRotate:'Aufrecht drehen',holoEnlarge:'Vergrößern',accountTitle:'Anmelden und Sammlung synchronisieren',mAccount:'Konto',loginIntro:'Melde dich an, um deine Sammlung auf all deinen Geräten gleich zu halten. Ohne Anmeldung bleibt sie wie bisher in diesem Browser.',lEmail:'E-Mail',lPassword:'Passwort',signIn:'Anmelden',signingIn:'Anmeldung läuft…',signOut:'Abmelden',syncNow:'Jetzt synchronisieren',signedInAs:'Angemeldet als %s',syncing:'Synchronisiere…',syncedAt:'Synchronisiert um %s',syncWaiting:'Noch nicht synchronisiert',syncOffline:'Offline. Deine Änderungen bleiben hier und werden später synchronisiert.',syncError:'Synchronisierung fehlgeschlagen. Deine Änderungen bleiben hier; versuche es erneut.',syncSignedOut:'Du wurdest abgemeldet. Bitte melde dich erneut an.',loginWrong:'E-Mail oder Passwort ist falsch.',loginUnconfirmed:'Diese E-Mail-Adresse ist noch nicht bestätigt.',loginFailed:'Anmeldung fehlgeschlagen. Bitte versuche es später erneut.',signOutNote:'Beim Abmelden bleibt die Kopie deiner Sammlung in diesem Browser.',syncForeign:'In diesem Browser liegt die Sammlung eines anderen Kontos. Mit OK fügst du diese Karten diesem Konto hinzu, mit Abbrechen werden sie durch die Sammlung dieses Kontos ersetzt.',valueW:'Wert',collectionValue:'Sammlungswert',setValueL:'Komplettset ~%s',pricedCopies:'%d Karten mit Preis',unpricedCopies:'%d ohne Angebote',valueTimeline:'Wertverlauf',timelineHint:'Jede Preisaktualisierung fügt hier einen Punkt hinzu - der Verlauf füllt sich mit jedem Update.',valueByExp:'Wert nach Erweiterung',tagline:'TCG-Builder & Sammlung',builder:'TCG-Builder',collector:'Sammlung',system:'System',newSystem:'Neues System',forgeTitle:'Erschaffe dein erstes TCG',forgeDesc:'Definiere ein Kartenspiel-System — Seltenheiten, Erweiterungen und Karten. Wechsle dann in den Sammlungsmodus, um deinen Bestand zu verwalten.',createSystem:'System erstellen',systemSettings:'Systemeinstellungen',addExpansion:'Erweiterung',booster:'Booster',starter:'Starter',special:'Spezial',promo:'Promo',expansions:'Erweiterungen',totalCards:'Karten gesamt',rarities:'Seltenheiten',rarityTiers:'Seltenheitsstufen',addRarity:'Seltenheit hinzufügen',pullRateWord:'Pull-Rate',cardLayout:'Kartenlayout',addField:'Feld hinzufügen',layoutDesc:'Stat-Felder, die auf jeder Karte dieses Systems erscheinen — zusätzlich zu Name, Nummer, Typ, Seltenheit, Bild und Effekttext.',noFieldsMsg:'Keine Stat-Felder — Karten zeigen nur Name, Typ und Seltenheit. Füge z. B. Kosten oder Power hinzu.',edit:'Bearbeiten',del:'Löschen',addCard:'Karte hinzufügen',noCardsTitle:'Noch keine Karten in dieser Erweiterung',autoNumber:'Karten werden beim Hinzufügen automatisch nummeriert.',addFirstCard:'Erste Karte hinzufügen',collecting:'Sammle',condition:'Zustand',ownedW:'Im Besitz',missingW:'Fehlend',dupes:'Duplikate',pullRateTitle:'Pull-Rate',pullHint:'Trage unten die gezogenen Karten ein (Mengen setzen), dann erscheint hier deine beobachtete Pull-Rate pro Seltenheit.',pullRatesDesc:'Lege die erwartete Pull-Rate (%) für jede Seltenheit in diesem System fest. Leer lassen, wenn unbekannt.',tPullRatesSaved:'Pull-Raten gespeichert',all:'Alle',nothingTitle:'Noch nichts zu sammeln',nothingDesc:'Erstelle zuerst ein TCG-System im Builder und verwalte danach hier deine Sammlung.',goBuilder:'Zum Builder',cardsN:'%d Karten',cardN1:'%d Karte',unused:'ungenutzt',shownOnCard:'auf Karte sichtbar',hiddenW:'ausgeblendet',numberT:'Zahl',textT:'Text',longTextT:'Langtext',elementW:'Element',linkedTypeNote:'Verwendet automatisch den echten Typ der Karte und Standardfarben.',linkedElementNote:'Verwendet automatisch das echte Element der Karte und Standardfarben.',linkedLongtextNote:'Langform-Text — wird nur in der Kartendetailansicht angezeigt, nie auf der Kachel.',sections:'Abschnitte',addSection:'Abschnitt hinzufügen',sectionsDesc:'Gruppiere deine Erweiterungen in einklappbare Abschnitte, die in der Seitenleiste angezeigt werden. Erweiterungen werden im Erweiterungs-Editor einem Abschnitt zugewiesen.',noSectionsMsg:'Noch keine Abschnitte — Erweiterungen werden ungruppiert angezeigt. Füge z. B. Booster oder Starter hinzu.',mNewSection:'Neuer Abschnitt',mEditSection:'Abschnitt bearbeiten',lSectionName:'Abschnittsname',lSection:'Abschnitt',ungrouped:'Ungruppiert',tSectionAdded:'Abschnitt hinzugefügt',tSectionUpdated:'Abschnitt aktualisiert',tSectionRemoved:'Abschnitt entfernt',delSectionMsg:'Den Abschnitt „%s“ löschen? Seine Erweiterungen werden ungruppiert.',expN1:'%d Erweiterung',expsN:'%d Erweiterungen',emptySection:'leer',statsForX:'Statistik für %s',statsNone:'Wähle eine Erweiterung, um ihre Statistik zu sehen',noDate:'Kein Datum',copiesSummary:'%a Karten gezogen · %b einzigartig',targetL:'Ziel %s%',copiesW:'%d Stück',expectedL:'~%s% erwartet',pulledL:'%s% · %d gezogen',variants1:'+%d Variante',variantsN:'+%d Varianten',setQty1:'Lege die Anzahl in deinem Besitz fest',setQtyN:'%d Versionen · lege die Anzahl je Version fest',ownedX:'Im Besitz ×%d',notOwned:'Nicht im Besitz',ofPulls:'%s% der Pulls',done:'Fertig',cancel:'Abbrechen',saveW:'Speichern',saveChanges:'Änderungen speichern',createExpansion:'Erweiterung erstellen',mNewSystem:'Neues TCG-System',mEditSystem:'System bearbeiten',mNewRarity:'Neue Seltenheit',mEditRarity:'Seltenheit bearbeiten',mNewExpansion:'Neue Erweiterung',mEditExpansion:'Erweiterung bearbeiten',mNewCard:'Neue Karte',mEditCard:'Karte bearbeiten',mNewField:'Neues Kartenfeld',mEditField:'Feld bearbeiten',mConfirmDelete:'Löschen bestätigen',lSystemName:'Systemname',lDescription:'Beschreibung',lRarityName:'Name der Seltenheit',lColor:'Farbe',lPullRatePct:'Pull-Rate (%)',lExpName:'Name der Erweiterung',lAbbr:'Kürzel',lRelease:'Erscheinungsdatum',lSeries:'Serie',noSeries:'Keine Serie',lImageBaseUrl:'Bild-Hosting-URL',imageBaseUrlHint:'Optional. Falls gesetzt, werden Kartenbilder zuerst von hier geladen (z. B. GitHub Pages) und bei fehlender Datei auf die ursprüngliche Quelle zurückgegriffen.',lCardName:'Kartenname',lCardNumber:'Kartennummer',lType:'Typ',lElement:'Element',noElement:'Kein Element',lRarity:'Seltenheit',lImage:'Bild-URL (optional)',lFieldLabel:'Feldname',lValueType:'Werttyp',lIcon:'Symbol',lShowOnCard:'Auf Karte anzeigen',lShowCardList:'Kartenliste anzeigen',lReassign:'Diese Karten zuordnen zu',delSystemMsg:'Dieses System komplett löschen? Alle Erweiterungen, Karten und Sammlungsfortschritte gehen verloren.',delExpMsg:'„%s“ und alle zugehörigen Karten löschen?',delRarityMsg:'Die Seltenheitsstufe „%s“ löschen?',delRarityUse:'%d Karte(n) verwenden sie derzeit.',onlyRarity:'Dies ist die einzige Seltenheit — füge zuerst eine andere hinzu.',sureMsg:'Bist du sicher?',tNameRequired:'Name ist erforderlich',tLabelRequired:'Bezeichnung ist erforderlich',tSystemCreated:'System erstellt',tSystemUpdated:'System aktualisiert',tSystemDeleted:'System gelöscht',tRarityAdded:'Seltenheit hinzugefügt',tRarityUpdated:'Seltenheit aktualisiert',tRarityRemoved:'Seltenheit entfernt',tFieldAdded:'Feld hinzugefügt',tFieldUpdated:'Feld aktualisiert',tFieldRemoved:'Feld entfernt',tExpCreated:'Erweiterung erstellt',tExpUpdated:'Erweiterung aktualisiert',tExpDeleted:'Erweiterung gelöscht',tCardAdded:'Karte hinzugefügt',tCardUpdated:'Karte aktualisiert',tCardDeleted:'Karte gelöscht',tExported:'Fortschritt exportiert',tImported:'Import erfolgreich',tInvalid:'Ungültige Datei',exportProgressTitle:'Fortschritt exportieren',importProgressTitle:'Fortschritt importieren',tAddRarityFirst:'Füge zuerst eine andere Seltenheit hinzu',pageOfN:'Seite %d von %d',pagesRangeOfN:'Seiten %d–%d von %d',stackVariants:'Varianten stapeln',cardSize:'Kartengröße',dynamicSize:'Dynamisch',haveW:'Vorhanden',needW:'Fehlend',dupesW:'Duplikate',prevW:'Zurück',nextW:'Weiter',imgNone:'Noch keine Bild-URL',imgLoadFail:'Bild konnte nicht geladen werden',binderCover:'Ordner-Cover',binderCoverDesc:'Gestalte ein eigenes Titelblatt für den Ordner dieses Systems — wird in der Ordneransicht angezeigt.',editCover:'Cover bearbeiten',editDivider:'Trennblatt',viewCover:'Ordner-Cover',openBinder:'Zurück zu den Karten',mDesignCover:'Ordner-Cover gestalten',mEditCoverTitle:'Ordner-Cover bearbeiten',mDesignDivider:'Trennblatt gestalten',mEditDividerTitle:'Trennblatt bearbeiten',lTitle:'Titel',lSubtitle:'Untertitel',lBackground:'Hintergrund',bgColor:'Farbe',bgGradient:'Verlauf',bgImage:'Bild',lTextColor:'Textfarbe',lColor2:'Zweite Farbe',lImageUrl:'Bild-URL',resetDesign:'Zurücksetzen',lDownload:'Herunterladen',tExportImgFail:'Das Hintergrundbild konnte nicht eingebunden werden (Cross-Origin) — ohne Bild exportiert',tCoverSaved:'Cover gespeichert',tDividerSaved:'Trennblatt gespeichert',tDesignReset:'Design zurückgesetzt',lCardsPerBooster:'Karten / Booster',lBoostersPerBox:'Booster / Box',boosters:'Booster',boostersOpenedW:'geöffnet',boxesOwned:'Boxen',uniqueDesigns:'Einzigartige Designs',totalCollected:'Gesamt gesammelt',homeTab:'Start',recentlyAddedTitle:'Kürzlich hinzugefügt',rarestOwnedTitle:'Seltenste Funde',homeEmptyTitle:'Noch nichts gesammelt',homeEmptyDesc:'Markiere Karten als im Besitz und sie erscheinen hier.',homeNoSectionsMsg:'Keine Abschnitte ausgewählt — wähle oben mindestens einen aus.',fromCardsTracked:'aus %d erfassten Karten',extraCards:'%d übrig',calcFromCards:'Berechnet aus den erfassten Karten, nicht manuell eingegeben',dragHint:'Karten per Drag & Drop neu anordnen',manualOrderBadge:'Manuelle Reihenfolge',resetOrder:'Auf Nummernreihenfolge zurücksetzen',tOrderReset:'Kartenreihenfolge zurückgesetzt',expImport:'Karten importieren',expExport:'Karten exportieren',expImportTitle:'Erweiterungskarten importieren',expExportTitle:'Erweiterungskarten exportieren',expImportDesc:'Lade eine Kartenlisten-JSON in diese Erweiterung. Bestehende Karten werden ersetzt, aber der Sammlungsfortschritt anderer Erweiterungen bleibt erhalten.',expExportDesc:'Lade nur die Kartenliste dieser Erweiterung als JSON herunter. Zum Sichern oder Teilen.',imgScript:'Bild-Skript',imgScriptTitle:'Bild-Downloader herunterladen',imgScriptDesc:'Der Browser kann Bilder von den meisten Kartenspiel-Websites aus Sicherheitsgründen (CORS) nicht direkt speichern. Lade dieses kleine Python-Skript herunter und führe es aus, um alle Bilder dieser Erweiterung lokal zu speichern.',downloadScript:'Skript herunterladen',flatScanW:'Scan',holoViewW:'Holo',ebayMedian:'eBay ~%s',ebayListings:'%d Angebote',ebayFrom:'ab %s',ebayTip:'Median der aktiven eBay-Sofortkauf-Angebote · aktualisiert %s',}
   };
 
 
@@ -2740,7 +2924,7 @@ class Component extends DCLogic {
         let totalPulledM=0; if(cexpM){ cexpM.cards.forEach(c=>{ const en=bucket[c.id]; if(en&&en.owned) totalPulledM+=(en.qty||0); }); }
         const rcnt={}; if(cexpM){ cexpM.cards.forEach(c=>{ rcnt[c.rarityId]=(rcnt[c.rarityId]||0)+1; }); }
         const theoOf=(c)=>{ const rr=this.rarityById(cs,c.rarityId); if(!rr) return null; const t=(/^-?\d*\.?\d+$/.test(String(rr.pullRate).trim()))?parseFloat(rr.pullRate):null; const n=rcnt[c.rarityId]||0; return (t!=null&&n)?(t/n):null; };
-        v.modalTitle=this.cardName(base); v.modalWidth='760px';
+        v.modalTitle=this.cardName(base); v.modalWidth=S.holoView?'880px':'760px';
         const cond=S.globalCondition||'Near Mint';
         const rowStyle='display:flex;align-items:center;gap:12px;padding:11px 12px;background:var(--panel);border:1px solid var(--line);border-radius:11px;margin-bottom:9px';
         const stepBtn='width:30px;height:30px;border-radius:7px;border:1px solid var(--line2);background:var(--row);color:var(--ink);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0';
@@ -2754,10 +2938,15 @@ class Component extends DCLogic {
               R('span',{style:{marginLeft:'7px'}}, this.fmt(this.t('ebayListings'),pr.count)+' · '+this.fmt(this.t('ebayFrom'),this.fmtMoney(pr.min,pr.currency))))
           );
         };
+        const shown=m.variants.find(c=>c.id===m.preview)||base;
+        const pickable=m.variants.length>1;
+        const preview=(c)=>{ if(pickable&&c.id!==shown.id) this.setState(st=>({modal:{...st.modal,preview:c.id}})); };
         const rows=m.variants.map((c)=>{ const rr=this.rarityById(cs,c.rarityId); const rc=rr?rr.color:'var(--ink3)'; const ti=this.typeInfo(c.type,cs);
           const en=bucket[c.id]; const qty=en&&en.owned?en.qty:0; const owned=qty>0;
           const pct=(owned&&totalPulledM)?(qty/totalPulledM*100):0;
-          return R('div',{key:c.id,style:this.parseStyle(rowStyle+(owned?';border-color:'+rc+'66':''))},
+          const picked=pickable&&c.id===shown.id;
+          // border-color is always set: dropping it from a live element would turn the border white
+          return R('div',{key:c.id,onClick:()=>preview(c),style:this.parseStyle(rowStyle+';border-color:'+(picked?rc:owned?rc+'66':'var(--line)')+(pickable?';cursor:pointer':'')+(picked?';background:var(--raise)':''))},
             R('div',{style:{flex:1,minWidth:0}},
               R('div',{style:{display:'flex',alignItems:'center',gap:'7px',marginBottom:'3px'}},
                 R('span',{style:{width:'9px',height:'9px',borderRadius:'50%',background:rc,flexShrink:0}}),
@@ -2774,7 +2963,7 @@ class Component extends DCLogic {
             R('button',{onClick:()=>this.setVariantQty(c,qty+1),style:this.parseStyle(stepBtn.replace('var(--row)','var(--raise)'))},R('i',{className:'fa-solid fa-plus',style:{fontSize:'11px'}}))
           );
         });
-        const brr0=this.rarityById(cs,base.rarityId); const bti=this.typeInfo(base.type,cs);
+        const brr0=this.rarityById(cs,shown.rarityId); const bti=this.typeInfo(base.type,cs);
         const statChipsM=this.layoutOf(cs).filter(fld=>fld.showOnTile&&fld.type!=='longtext'&&fld.type!=='type'&&fld.type!=='element').map(fld=>{
           const val=this.cardStatVal(base,fld); if(val===''||val==null) return null;
           return R('div',{key:fld.id,style:{display:'flex',alignItems:'center',gap:'6px',background:'var(--panel)',border:'1px solid var(--line)',borderRadius:'8px',padding:'6px 10px'}},
@@ -2789,23 +2978,27 @@ class Component extends DCLogic {
         const fieldIdByLabel=(label)=>{ const f=(this.layoutOf(cs)||[]).find(x=>(x.label||'').toLowerCase()===label.toLowerCase()); return f?f.id:null; };
         const holoFields={ cost:fieldIdByLabel('Cost'), power:fieldIdByLabel('Power'), hit:fieldIdByLabel('Hit'), affiliation:fieldIdByLabel('Affiliation'), keyword:fieldIdByLabel('Keyword') };
         let holoArtUrls=null;
-        if(base.image){
+        if(shown.image){
           const hasHost=cs&&cs.imageBaseUrl;
-          holoArtUrls={ primary: hasHost?(cs.imageBaseUrl.replace(/\/+$/,'')+'/'+this.cleanImageFilename(base.image)):base.image, fallback: base.image };
+          holoArtUrls={ primary: hasHost?(cs.imageBaseUrl.replace(/\/+$/,'')+'/'+this.cleanImageFilename(shown.image)):shown.image, fallback: shown.image };
         }
-        if(holoOn && this._holoInstance){ this._holoInstance.renderCard(base, brr0, holoFields, holoArtUrls, S.lang, cs.terms); }
+        const holoLabels={ text:this.t('holoText'), motion:this.t('holoMotion'), rotate:this.t('holoRotate'), enlarge:this.t('holoEnlarge'), close:this.t('holoClose') };
+        this._holoArgs=[shown,brr0,holoFields,holoArtUrls,S.lang,cs.terms,holoLabels];
+        if(!this._holoRef) this._holoRef=(el)=>{
+          if(this._holoInstance){ this._holoInstance.destroy(); this._holoInstance=null; }
+          if(el){ this._holoInstance=new HoloCard(el); this._holoInstance.renderCard(...this._holoArgs); }
+        };
+        else if(holoOn && this._holoInstance && this._holoShown===shown.id) this._holoInstance.renderCard(...this._holoArgs);
+        this._holoShown=shown.id;
         const toggleBtnStyle=(active)=>`flex:1;padding:7px 0;border-radius:6px;border:none;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;background:${active?'var(--accent)':'transparent'};color:${active?'var(--on-accent)':'var(--ink3)'}`;
-        const imgPanel=R('div',{style:{width:'240px',flexShrink:0}},
+        const imgPanel=R('div',{style:{width:holoOn?'min(360px,100%)':'240px',flexShrink:0}},
           R('div',{style:{display:'flex',gap:'3px',background:'var(--panel)',border:'1px solid var(--line)',borderRadius:'8px',padding:'3px',marginBottom:'9px'}},
             R('button',{onClick:()=>this.setState({holoView:false}),style:this.parseStyle(toggleBtnStyle(!holoOn))},this.t('flatScanW')),
             R('button',{onClick:()=>this.setState({holoView:true}),style:this.parseStyle(toggleBtnStyle(holoOn))},this.t('holoViewW'))
           ),
           holoOn
-            ? R('div',{key:'holo-'+base.id,style:{position:'relative'},ref:(el)=>{
-                if(el){ if(!this._holoInstance){ this._holoInstance=new HoloCard(el); this._holoInstance.renderCard(base,brr0,holoFields,holoArtUrls,S.lang,cs.terms); } }
-                else if(this._holoInstance){ this._holoInstance.destroy(); this._holoInstance=null; }
-              }})
-            : R('div',{style:{position:'relative',aspectRatio:'5/7',borderRadius:'14px',overflow:'hidden',background:this.artStyle(base.type,cs),boxShadow:'0 20px 46px rgba(0,0,0,.5)',border:'1px solid var(--line2)'}}, this.artNode(base,true,cs))
+            ? R('div',{key:'holo-'+shown.id,style:{position:'relative'},ref:this._holoRef})
+            : R('div',{style:{position:'relative',aspectRatio:'5/7',borderRadius:'14px',overflow:'hidden',background:this.artStyle(shown.type,cs),boxShadow:'0 20px 46px rgba(0,0,0,.5)',border:'1px solid var(--line2)'}}, this.artNode(shown,true,cs))
         );
         const rightCol=R('div',{style:{flex:'1 1 300px',minWidth:'260px'}},
           R('div',{style:{display:'flex',alignItems:'center',gap:'10px',flexWrap:'wrap',marginBottom:'12px'}},
