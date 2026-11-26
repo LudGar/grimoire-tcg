@@ -35,6 +35,44 @@
   .home-row:hover, .home-set:hover{ background:var(--row) !important; }
   .home-set:hover{ border-color:var(--line2) !important; }
 
+  /* ================= phones ================= */
+  .side-wrap{ display:contents; }
+  .side-toggle{ display:none; }
+  @media (max-width:720px){
+    .app-header{ position:relative !important; }
+    .app-head{ padding:10px 12px !important; gap:8px !important; }
+    .app-tagline{ display:none; }
+    .app-main{ padding:0 12px 40px !important; }
+
+    .side-row{ flex-direction:column; align-items:stretch !important; gap:6px !important; }
+    .side-wrap{ display:block; position:sticky; top:0; z-index:30; background:var(--bg); padding:8px 0; }
+    .side-toggle{ display:flex; align-items:center; gap:10px; width:100%; height:42px; padding:0 14px; background:var(--panel); color:var(--ink);
+      border:1px solid var(--line); border-radius:10px; font-size:13px; font-weight:600; cursor:pointer; }
+    .side-nav{ display:none; position:absolute !important; left:0; right:0; top:100% !important; width:auto !important; max-height:65vh !important;
+      box-shadow:0 18px 40px rgba(0,0,0,.6); }
+    .side-nav.open{ display:block; }
+
+    .size-ctl{ display:none !important; }
+    .pocket-sizes{ max-width:100%; flex-wrap:wrap; }
+    .card-grid{ grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:10px !important; }
+
+    .binder-frame{ flex-direction:column !important; gap:8px !important; }
+    .binder-page{ flex:none !important; width:100%; max-width:none !important; border-radius:12px !important; }
+    .binder-page:has(.pocket-grid){ padding:8px !important; }
+    .pocket-grid{ gap:6px !important; }
+    .binder-rings{ display:none !important; }
+
+    .set-footer{ position:static !important; margin-top:18px; padding:12px !important; border:1px solid var(--line) !important; border-radius:12px; }
+    .set-footer .foot-row{ flex-wrap:wrap; gap:6px 12px !important; }
+    .set-footer .foot-bar{ flex:1 1 100% !important; }
+
+    .modal-back{ padding:10px 8px !important; }
+    .modal-head{ padding:12px 16px !important; }
+    .modal-body{ padding:14px !important; }
+
+    .home-strip > *{ flex-basis:150px; }
+  }
+
   /* ================= holo card renderer ================= */
   /* holo faces on the list and binder tiles: laid over the plain scan, still until the mouse is on them
      (the tilt is applied to the tile itself, see _bindTileTilt) */
@@ -204,15 +242,15 @@
 
 <div style="position:relative;z-index:1;min-height:100vh">
   <!-- HEADER -->
-  <header style="position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)">
-    <div style="max-width:1600px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+  <header class="app-header" style="position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)">
+    <div class="app-head" style="max-width:1600px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
       <div style="display:flex;align-items:center;gap:12px;margin-right:auto">
         <div style="width:40px;height:40px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px color-mix(in srgb,var(--accent) 28%,transparent)">
           <i class="fa-solid fa-book" style="color:var(--on-accent);font-size:18px"></i>
         </div>
         <div>
           <div style="font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:.02em;line-height:1">Grimoire</div>
-          <div style="font-family:var(--mono);font-size:10px;color:var(--ink3);letter-spacing:.2em;text-transform:uppercase;margin-top:3px">{{ L.tagline }}</div>
+          <div class="app-tagline" style="font-family:var(--mono);font-size:10px;color:var(--ink3);letter-spacing:.2em;text-transform:uppercase;margin-top:3px">{{ L.tagline }}</div>
         </div>
       </div>
      
@@ -245,7 +283,7 @@
     </div>
   </header>
 
-  <main style="max-width:100%;margin:0;padding:28px 16px 170px">
+  <main class="app-main" style="max-width:100%;margin:0;padding:28px 16px 170px">
 
     <!-- ================= COLLECTOR MODE ================= -->
     <sc-if value="{{ isCollector }}" hint-placeholder-val="{{ false }}">
@@ -260,9 +298,15 @@
 
       <sc-if value="{{ hasSystems }}" hint-placeholder-val="{{ true }}">
         <!-- expansion sidebar with progress -->
-        <div style="display:flex;gap:22px;align-items:flex-start">
-        <aside style="width:238px;flex-shrink:0;position:sticky;top:82px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px;max-height:calc(100vh - 106px);overflow-y:auto">
-          <button onClick="{{ goHome }}" style="{{ homeTabStyle }}"><i class="fa-solid fa-house" style="margin-right:8px;width:14px;text-align:center"></i>{{ L.homeTab }}</button>
+        <div class="side-row" style="display:flex;gap:22px;align-items:flex-start">
+        <div class="side-wrap">
+        <button class="side-toggle" onClick="{{ toggleNav }}" aria-expanded="{{ navExpanded }}">
+          <i class="fa-solid fa-bars" style="color:var(--accent-ink)"></i>
+          <span style="flex:1;min-width:0;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ navCurrent }}</span>
+          <i class="{{ navChevron }}" style="font-size:11px;color:var(--ink3)"></i>
+        </button>
+        <aside class="side-nav {{ navClass }}" onClick="{{ navPick }}" style="width:238px;flex-shrink:0;position:sticky;top:82px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px;max-height:calc(100vh - 106px);overflow-y:auto">
+          <button class="side-item" onClick="{{ goHome }}" style="{{ homeTabStyle }}"><i class="fa-solid fa-house" style="margin-right:8px;width:14px;text-align:center"></i>{{ L.homeTab }}</button>
           <div style="height:8px"></div>
           <sc-for list="{{ collectorGroups }}" as="g" hint-placeholder-count="2">
             <sc-if value="{{ g.hasLabel }}" hint-placeholder-val="{{ false }}">
@@ -272,7 +316,7 @@
             </sc-if>
             <sc-if value="{{ g.expanded }}" hint-placeholder-val="{{ true }}">
               <sc-for list="{{ g.tabs }}" as="e" hint-placeholder-count="4">
-                <button onClick="{{ e.onClick }}" style="{{ e.style }}" title="{{ e.ip }}">
+                <button class="side-item" onClick="{{ e.onClick }}" style="{{ e.style }}" title="{{ e.ip }}">
                   <div style="display:flex;align-items:flex-start;gap:8px;width:100%">
                     <span style="width:7px;height:7px;border-radius:50%;background:{{ e.ipColor }};flex-shrink:0;margin-top:5px"></span>
                     <span style="font-family:var(--mono);font-size:10px;font-weight:700;color:var(--accent-ink);flex-shrink:0;width:36px;padding-top:1px">{{ e.abbr }}</span>
@@ -284,6 +328,7 @@
             </sc-if>
           </sc-for>
         </aside>
+        </div>
         <div style="flex:1;min-width:0">
 
         <!-- home page -->
@@ -304,7 +349,7 @@
             <sc-for list="{{ ownFilters }}" as="f" hint-placeholder-count="4">
               <button onClick="{{ f.onClick }}" style="{{ f.style }}">{{ f.name }}<span style="opacity:.6;margin-left:6px">{{ f.count }}</span></button>
             </sc-for>
-            <div style="margin-left:auto;display:flex;align-items:center;gap:8px" title="{{ L.cardSize }}">
+            <div class="size-ctl" style="margin-left:auto;display:flex;align-items:center;gap:8px" title="{{ L.cardSize }}">
               <i class="fa-solid fa-up-right-and-down-left-from-center" style="font-size:11px;color:var(--ink2);opacity:.7"></i>
               <input type="range" min="0" max="100" step="10" list="cardSizeTicks" value="{{ cardSizeValue }}" onChange="{{ onCardSizeChange }}" style="width:110px;accent-color:var(--accent);cursor:pointer">
               <datalist id="cardSizeTicks">
@@ -313,7 +358,7 @@
               <span style="font-size:12px;color:var(--ink3);font-weight:600;min-width:44px">{{ cardSizeLabel }}</span>
             </div>
             <sc-if value="{{ isBinder }}" hint-placeholder-val="{{ false }}">
-              <div style="display:flex;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:3px">
+              <div class="pocket-sizes" style="display:flex;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:3px">
                 <sc-for list="{{ pocketOptions }}" as="p" hint-placeholder-count="4">
                   <button onClick="{{ p.onClick }}" style="{{ p.style }}">{{ p.label }}</button>
                 </sc-for>
@@ -340,7 +385,7 @@
           </sc-if>
           <sc-if value="{{ isGridMode }}" hint-placeholder-val="{{ true }}">
             <div style="{{ pagePanelStyle }}">
-              <div style="display:grid;grid-template-columns:{{ gridCols }};gap:{{ gridGap }};align-items:start">
+              <div class="card-grid" style="display:grid;grid-template-columns:{{ gridCols }};gap:{{ gridGap }};align-items:start">
                 <sc-for list="{{ gridTiles }}" as="t" hint-placeholder-count="10">
                   <sc-if value="{{ t.empty }}" hint-placeholder-val="{{ false }}">
                     <div style="position:relative;aspect-ratio:5/7;border-radius:14px;border:1.5px dashed var(--line2);background:var(--inset);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:.5">
@@ -394,8 +439,8 @@
             </div>
           </sc-if>
           <sc-if value="{{ isBinder }}" hint-placeholder-val="{{ false }}">
-            <div style="{{ binderFrameStyle }}">
-              <div style="{{ leftPanelStyle }}">
+            <div class="binder-frame" style="{{ binderFrameStyle }}">
+              <div class="binder-page" style="{{ leftPanelStyle }}">
                 <sc-if value="{{ showCoverPages }}" hint-placeholder-val="{{ false }}">
                   <div style="width:100%;height:100%;min-height:200px;border-radius:18px 6px 6px 18px;background:{{ coverInsideBg }}"></div>
                 </sc-if>
@@ -443,7 +488,7 @@
                 </sc-if>
                 <sc-if value="{{ hasLeftPage }}" hint-placeholder-val="{{ false }}">
                   <div style="display:flex;gap:16px;align-items:stretch">
-                  <div style="display:grid;grid-template-columns:{{ gridCols }};gap:{{ gridGap }};align-items:start;flex:1;min-width:0">
+                  <div class="pocket-grid" style="display:grid;grid-template-columns:{{ gridCols }};gap:{{ gridGap }};align-items:start;flex:1;min-width:0">
                     <sc-for list="{{ leftGridTiles }}" as="t" hint-placeholder-count="9">
                       <sc-if value="{{ t.empty }}" hint-placeholder-val="{{ false }}">
                         <div style="position:relative;aspect-ratio:5/7;border-radius:14px;border:1.5px dashed var(--line2);background:var(--inset);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:.5">
@@ -494,7 +539,7 @@
                       </sc-if>
                     </sc-for>
                   </div>
-                  <div style="display:flex;flex-direction:column;justify-content:space-around;padding:20px 0;flex-shrink:0">
+                  <div class="binder-rings" style="display:flex;flex-direction:column;justify-content:space-around;padding:20px 0;flex-shrink:0">
                     <sc-for list="{{ binderRings }}" as="r" hint-placeholder-count="3">
                       <div style="width:13px;height:13px;border-radius:50%;background:var(--bg);border:1px solid var(--line2);box-shadow:inset 0 2px 3px rgba(0,0,0,.6)"></div>
                     </sc-for>
@@ -502,7 +547,7 @@
                   </div>
                 </sc-if>
               </div>
-              <div style="{{ rightPanelStyle }}">
+              <div class="binder-page" style="{{ rightPanelStyle }}">
                 <sc-if value="{{ showCoverPages }}" hint-placeholder-val="{{ false }}">
                   <div style="width:100%;height:100%;min-height:200px;border-radius:6px 18px 18px 6px;background:{{ coverPage.bg }};display:flex;align-items:center;justify-content:center;text-align:center;padding:40px;overflow:hidden">
                     <div>
@@ -515,12 +560,12 @@
                 </sc-if>
                 <sc-if value="{{ hasRightPage }}" hint-placeholder-val="{{ true }}">
                   <div style="display:flex;gap:16px;align-items:stretch">
-                  <div style="display:flex;flex-direction:column;justify-content:space-around;padding:20px 0;flex-shrink:0">
+                  <div class="binder-rings" style="display:flex;flex-direction:column;justify-content:space-around;padding:20px 0;flex-shrink:0">
                     <sc-for list="{{ binderRings }}" as="r" hint-placeholder-count="3">
                       <div style="width:13px;height:13px;border-radius:50%;background:var(--bg);border:1px solid var(--line2);box-shadow:inset 0 2px 3px rgba(0,0,0,.6)"></div>
                     </sc-for>
                   </div>
-                  <div style="display:grid;grid-template-columns:{{ gridCols }};gap:{{ gridGap }};align-items:start;flex:1;min-width:0">
+                  <div class="pocket-grid" style="display:grid;grid-template-columns:{{ gridCols }};gap:{{ gridGap }};align-items:start;flex:1;min-width:0">
                     <sc-for list="{{ rightGridTiles }}" as="t" hint-placeholder-count="9">
                       <sc-if value="{{ t.empty }}" hint-placeholder-val="{{ false }}">
                         <div style="position:relative;aspect-ratio:5/7;border-radius:14px;border:1.5px dashed var(--line2);background:var(--inset);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:.5">
@@ -594,11 +639,11 @@
         </div>
         </div>
         <sc-if value="{{ collectorHasExp }}" hint-placeholder-val="{{ true }}">
-          <div style="position:fixed;left:0;right:0;bottom:0;z-index:35;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(20px);border-top:1px solid var(--line);padding:10px 24px">
+          <div class="set-footer" style="position:fixed;left:0;right:0;bottom:0;z-index:35;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(20px);border-top:1px solid var(--line);padding:10px 24px">
             <div style="max-width:1240px;margin:0 auto">
-              <div style="display:flex;align-items:center;gap:16px">
+              <div class="foot-row" style="display:flex;align-items:center;gap:16px">
                 <span style="font-family:var(--display);font-size:13px;font-weight:600;white-space:nowrap;flex-shrink:0">{{ collectorExpName }}</span>
-                <div style="flex:1;height:6px;background:var(--raise);border-radius:3px;overflow:hidden;min-width:60px;display:flex">
+                <div class="foot-bar" style="flex:1;height:6px;background:var(--raise);border-radius:3px;overflow:hidden;min-width:60px;display:flex">
                   <sc-for list="{{ rarityBarRows }}" as="rb" hint-placeholder-count="4">
                     <div title="{{ rb.tooltip }}" style="height:100%;background:{{ rb.color }};width:{{ rb.widthPct }};flex-shrink:0;transition:width .6s ease"></div>
                   </sc-for>
@@ -609,9 +654,9 @@
                 <span style="font-size:12px;color:var(--accent-ink);white-space:nowrap;flex-shrink:0">{{ stats.dupes }} {{ L.dupes }}</span>
                 <span style="font-size:13px;font-weight:700;font-family:var(--display);white-space:nowrap;flex-shrink:0">{{ stats.pct }}%</span>
               </div>
-              <div style="display:flex;align-items:center;gap:16px;margin-top:9px">
+              <div class="foot-row" style="display:flex;align-items:center;gap:16px;margin-top:9px">
                 <span style="font-size:11px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;flex-shrink:0;white-space:nowrap">{{ L.uniqueDesigns }}</span>
-                <div style="flex:1;height:6px;background:var(--raise);border-radius:3px;overflow:hidden;min-width:60px;display:flex">
+                <div class="foot-bar" style="flex:1;height:6px;background:var(--raise);border-radius:3px;overflow:hidden;min-width:60px;display:flex">
                   <div title="{{ uniqueStats.baseTip }}" style="height:100%;background:var(--accent);width:{{ uniqueStats.baseWidth }};flex-shrink:0;transition:width .6s ease"></div>
                   <div title="{{ uniqueStats.extraTip }}" style="height:100%;background:var(--accent-ink);width:{{ uniqueStats.extraWidth }};flex-shrink:0;transition:width .6s ease"></div>
                 </div>
@@ -650,13 +695,13 @@
 
 <!-- ================= MODAL ================= -->
 <sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
-<div onClick="{{ closeModal }}" style="position:fixed;inset:0;z-index:60;background:rgba(4,4,8,.72);backdrop-filter:blur(6px);display:flex;align-items:flex-start;justify-content:center;padding:60px 20px;overflow-y:auto">
+<div class="modal-back" onClick="{{ closeModal }}" style="position:fixed;inset:0;z-index:60;background:rgba(4,4,8,.72);backdrop-filter:blur(6px);display:flex;align-items:flex-start;justify-content:center;padding:60px 20px;overflow-y:auto">
   <div onClick="{{ stop }}" style="background:var(--inset);border:1px solid var(--line2);border-radius:16px;width:100%;max-width:{{ modalWidth }};box-shadow:0 24px 70px rgba(0,0,0,.6);animation:pop .22s ease">
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--line)">
+    <div class="modal-head" style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--line)">
       <div style="font-family:var(--display);font-size:17px;font-weight:600">{{ modalTitle }}</div>
       <button onClick="{{ closeModal }}" style="background:transparent;border:none;color:var(--ink3);cursor:pointer;font-size:18px;width:30px;height:30px;border-radius:6px" style-hover="color:var(--ink);background:var(--raise)"><i class="fa-solid fa-xmark"></i></button>
     </div>
-    <div style="padding:24px">{{ modalBody }}</div>
+    <div class="modal-body" style="padding:24px">{{ modalBody }}</div>
   </div>
 </div>
 </sc-if>
@@ -1453,6 +1498,7 @@ class Component extends DCLogic {
         if(m!=null) value+=(bucket[c.id].qty||1)*m; });
       return {date:d,value}; });
   }
+  toTop(){ window.scrollTo({top:0,behavior:'instant'}); }
   // ---------- home ----------
   // the newest price date and the one roughly a month before it, to compare against
   priceDates(){
@@ -1471,7 +1517,7 @@ class Component extends DCLogic {
     const signed=(n)=>(n<0?'−':'+')+money(Math.abs(n));
     const own=(c)=>{ const en=bucket[c.id]; return en&&en.owned?(en.qty||1):0; };
     const median=(c)=>{ const pr=this.priceOf(c); return pr&&pr.count?pr.median:null; };
-    const openSet=(e)=>this.setState({collectorExpansionId:e.id,collectorHome:false,collectorRarity:'all',collectorSpread:0});
+    const openSet=(e)=>{ this.setState({collectorExpansionId:e.id,collectorHome:false,collectorRarity:'all',collectorSpread:0}); this.toTop(); };
 
     // ---- the section filter comes first: everything below follows it ----
     const groupIdOf=(e)=>e.groupId||'__ungrouped__';
@@ -1539,7 +1585,7 @@ class Component extends DCLogic {
       R('span',{style:small},label), R('span',{style:{fontFamily:'var(--display)',fontSize:'13px',fontWeight:700}},value));
     const progress=R('div',{style:box},
       head('fa-solid fa-chart-pie',this.t('totalCollected')),
-      R('div',{style:{display:'flex',alignItems:'center',gap:'22px',flexWrap:'wrap'}},
+      R('div',{style:{display:'flex',alignItems:'center',justifyContent:'center',gap:'22px',flexWrap:'wrap'}},
         R('svg',{viewBox:'0 0 128 128',style:{width:'150px',height:'150px',flexShrink:0}},
           R('circle',{cx:64,cy:64,r:52,fill:'none',stroke:'var(--raise)',strokeWidth:12}),
           pct?R('circle',{cx:64,cy:64,r:52,fill:'none',stroke:'var(--accent)',strokeWidth:12,strokeLinecap:'round',strokeDasharray:(C*pct/100)+' '+C,transform:'rotate(-90 64 64)'}):null,
@@ -2660,6 +2706,13 @@ class Component extends DCLogic {
         });
         v.collectorGroups=this.groupTabs(cs, v.collectorExpansions);
         v.goHome=()=>this.setState({collectorHome:true});
+        // the phone's page picker; picking a page closes it and starts that page at the top
+        const navOpen=!!S.navOpen;
+        v.navClass=navOpen?'open':''; v.navExpanded=navOpen?'true':'false';
+        v.navChevron=navOpen?'fa-solid fa-chevron-up':'fa-solid fa-chevron-down';
+        v.navCurrent=S.collectorHome?this.t('homeTab'):(cexp?cexp.abbreviation+' · '+this.packName(cexp):this.t('homeTab'));
+        v.toggleNav=()=>this.setState({navOpen:!navOpen});
+        v.navPick=(ev)=>{ if(navOpen&&ev.target.closest('.side-item')){ this.setState({navOpen:false}); this.toTop(); } };
         v.homeTabStyle=this.sideItem(!!S.collectorHome);
 
         v.collectorShowHome=!!S.collectorHome;
@@ -3222,7 +3275,7 @@ class Component extends DCLogic {
         else if(holoOn && this._holoInstance && this._holoShown===shown.id) this._holoInstance.renderCard(...this._holoArgs);
         this._holoShown=shown.id;
         const toggleBtnStyle=(active)=>`flex:1;padding:7px 0;border-radius:6px;border:none;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;background:${active?'var(--accent)':'transparent'};color:${active?'var(--on-accent)':'var(--ink3)'}`;
-        const imgPanel=R('div',{style:{width:holoOn?'min(360px,100%)':'240px',flexShrink:0}},
+        const imgPanel=R('div',{style:{width:holoOn?'min(360px,100%)':'240px',flexShrink:0,margin:'0 auto'}},
           R('div',{style:{display:'flex',gap:'3px',background:'var(--panel)',border:'1px solid var(--line)',borderRadius:'8px',padding:'3px',marginBottom:'9px'}},
             R('button',{onClick:()=>this.setState({holoView:false}),style:this.parseStyle(toggleBtnStyle(!holoOn))},this.t('flatScanW')),
             R('button',{onClick:()=>this.setState({holoView:true}),style:this.parseStyle(toggleBtnStyle(holoOn))},this.t('holoViewW'))
