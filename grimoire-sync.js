@@ -217,6 +217,8 @@
     signOut: signOut,
     sync: run,
     AUTH_KEY: AUTH_KEY,
+    API: API,
+    KEY: KEY,
     _pure: { flatten: flatten, unflatten: unflatten, merge: merge, changes: changes }
   };
   root.GrimoireSync = api;

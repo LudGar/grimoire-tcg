@@ -40,10 +40,11 @@ of active eBay Buy It Now listings for each printing. Your collection's value - 
 median, per expansion and in total - is shown in the expansion stats bar and on Home, along with a
 value-over-time chart.
 
-Prices come from `grimoire-prices.json`, which is generated locally with the eBay API and committed
-as plain data - no API keys or fetch tooling live in this repo. Every price update appends a dated
-point to each card's history (`h`), which is what the timeline is drawn from, so it grows with each
-refresh. Cards without matching listings show no price and are counted as "without listings" rather
+Prices are refreshed every three days by a scheduled job in the Supabase database; the eBay API keys
+are stored there and never appear in this repo or the page. Every refresh appends a dated point to
+each card's history, which is what the timeline is drawn from. `grimoire-prices.json` is the
+fallback the page uses while the database can't be reached, so it can be older than what you see
+normally. Cards without matching listings show no price and are counted as "without listings" rather
 than valued at zero. Values are computed on the page; your owned cards stay in your browser unless you sign in to sync.
 
 ---

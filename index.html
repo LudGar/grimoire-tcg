@@ -1396,13 +1396,17 @@ class Component extends DCLogic {
     if(s==='ok') return this.fmt(this.t('syncedAt'), new Date(this.state.syncedAt).toLocaleTimeString());
     return this.t('syncWaiting');
   }
-  // eBay prices are fetched offline by tools/ebay_prices.py (the eBay API needs a secret and
-  // blocks browser requests) and published next to the card database - optional, so a
-  // missing file just means no price lines in the card detail view.
+  // eBay prices are refreshed every few days by a job in the database (the eBay API needs a
+  // secret and blocks browser requests). The price file next to the card database is the
+  // fallback while the database can't be reached; prices are optional either way.
   loadPrices(){
-    fetch(Component.PRICE_FILE,{cache:'no-cache'}).then(r=>r.ok?r.json():null).then(p=>{
-      if(p && p.cards) this.setState({prices:p});
-    }).catch(()=>{});
+    const read=(url,opts)=>fetch(url,opts).then(r=>r.ok?r.json():null).then(p=>p&&p.cards?p:null).catch(()=>null);
+    const sync=window.GrimoireSync;
+    const live=sync&&sync.API
+      ? read(sync.API+'/rest/v1/rpc/price_file',{method:'POST',headers:{apikey:sync.KEY,'Content-Type':'application/json'},body:'{}',
+          signal:AbortSignal.timeout?AbortSignal.timeout(8000):undefined})
+      : Promise.resolve(null);
+    live.then(p=>p||read(Component.PRICE_FILE,{cache:'no-cache'})).then(p=>{ if(p) this.setState({prices:p}); });
   }
   priceOf(c){ const p=this.state.prices; return p&&p.cards?p.cards[c.id]:null; }
   priceCurrency(){ const p=this.state.prices; if(p&&p.cards){ for(const k in p.cards){ if(p.cards[k].currency) return p.cards[k].currency; } } return 'USD'; }
