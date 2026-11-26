@@ -30,6 +30,13 @@
   .tile-card:hover .tile-overlay{opacity:1}
 
   /* ================= holo card renderer ================= */
+  /* holo faces on the list and binder tiles: laid over the plain scan, still until the mouse is on them */
+  .holo-tile{ position:absolute; inset:0; pointer-events:none; isolation:isolate; }
+  .holo-tile .holo-wrap, .holo-tile .holo-stage{ height:100%; }
+  .holo-tile .holo-stage{ perspective:none; touch-action:auto; cursor:inherit; }
+  .holo-tile .holo-card{ height:100%; aspect-ratio:auto; transform:none; transform-style:flat; box-shadow:none; background:transparent; border-radius:5.5%; --glow:.16; }
+  .holo-tile .holo-card:not(.holo-ready){ visibility:hidden; }
+  .holo-tile .holo-tools{ display:none; }
   .holo-wrap{ display:flex; flex-direction:column; gap:9px; width:100%; }
   .holo-stage{ perspective:1000px; width:100%; touch-action:none; cursor:grab; position:relative; }
   .holo-card{
@@ -371,6 +378,7 @@
             <sc-if value="{{ isBinder }}" hint-placeholder-val="{{ false }}">
               <button onClick="{{ toggleCoverView }}" title="{{ L.viewCover }}" style="{{ coverToggleStyle }}"><i class="fa-solid fa-bookmark"></i></button>
             </sc-if>
+            <button onClick="{{ toggleHoloTiles }}" title="{{ L.holoViewW }}" style="{{ holoTilesStyle }}"><i class="fa-solid fa-wand-magic-sparkles"></i></button>
             <div style="display:flex;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:3px">
               <button onClick="{{ setGridView }}" title="Grid view" style="{{ gridViewBtnStyle }}"><i class="fa-solid fa-table-cells-large"></i></button>
               <button onClick="{{ setBinderView }}" title="Binder view" style="{{ binderViewBtnStyle }}"><i class="fa-solid fa-book-open"></i></button>
@@ -767,6 +775,7 @@ class HoloCard {
   constructor(container, opts){
     this.container = container;
     this.big = !!(opts && opts.big);
+    this.tile = !!(opts && opts.tile);     // a face on a list or binder tile
     this._raf = null;
     this._destroyed = false;
     this._key = null;
@@ -800,7 +809,8 @@ class HoloCard {
   }
   _applyPrefs(){
     const p = HoloCard.prefs;
-    this.cardEl.classList.toggle('holo-original', !p.text);
+    const text = this.tile || p.text;      // tiles have no button to switch it back
+    this.cardEl.classList.toggle('holo-original', !text);
     this.btnText.classList.toggle('on', p.text);
     this.btnMotion.classList.toggle('on', p.motion);
     this.btnMotion.firstChild.className = 'fa-solid '+(p.motion?'fa-pause':'fa-play');
@@ -810,7 +820,7 @@ class HoloCard {
     this.btnRotate.classList.toggle('on', up);
     this.stageEl.classList.toggle('upright', up);
     this.wrapEl.classList.toggle('upright', up);
-    if(p.text) this._fit();
+    if(text) this._fit();
   }
   _openBig(){
     if(!this._args || this._overlay) return;
@@ -852,6 +862,7 @@ class HoloCard {
     this.cardEl.style.setProperty('--el-edge', colors[1]);
     this.cardEl.style.setProperty('--el-sub', colors[2]);
     this.cardEl.dataset.holo = style.foil;
+    this.cardEl.classList.remove('holo-ready');
     this.backEl.innerHTML = ''; this.frontEl.innerHTML = ''; this._faces = []; this._layout = null;
     this.artEl.style.backgroundImage = '';
     this.btnText.style.display = 'none';
@@ -865,6 +876,7 @@ class HoloCard {
         this.artEl.style.backgroundImage = 'url("'+src+'")';
         this._layout = card.type==='리더' ? (this._isStacked(img, rarity) ? 'stacked' : 'sideways') : 'card';
         this._buildText(card, style.auto ? this._readStyle(img, style, card.element, this._layout==='sideways') : style, fields, src, l, terms);
+        this.cardEl.classList.add('holo-ready');
         this._applyPrefs();
       };
       img.onerror = ()=>{ if(next && !this._destroyed && key===this._key) load(next, null); };
@@ -1098,7 +1110,32 @@ class HoloCard {
       }
     });
   }
+  // text is fitted to the box, so fit again when the box or the web font changes
+  _watchSize(){
+    if(window.ResizeObserver){ this._ro = new ResizeObserver(()=>this._fit()); this._ro.observe(this.stageEl); }
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(()=>{ if(!this._destroyed) this._fit(); });
+  }
+  // tiles don't tilt or run on their own: the foil just follows the mouse over the tile
+  _bindFoil(){
+    const card = this.cardEl, host = this.container.parentElement;
+    const set = (x, y, glow)=>{
+      card.style.setProperty('--mx', x.toFixed(1)+'%');
+      card.style.setProperty('--my', y.toFixed(1)+'%');
+      card.style.setProperty('--glow', glow.toFixed(3));
+    };
+    const onMove = e=>{
+      const r = host.getBoundingClientRect();
+      const x = Math.min(1, Math.max(0, (e.clientX-r.left)/r.width)), y = Math.min(1, Math.max(0, (e.clientY-r.top)/r.height));
+      set(x*100, y*100, 0.35 + Math.min(0.5, Math.abs(x-0.5)+Math.abs(y-0.5)));
+    };
+    const onLeave = ()=>{ ['--mx','--my','--glow'].forEach(k=>card.style.removeProperty(k)); };
+    host.addEventListener('pointermove', onMove);
+    host.addEventListener('pointerleave', onLeave);
+    this._cleanup = ()=>{ host.removeEventListener('pointermove', onMove); host.removeEventListener('pointerleave', onLeave); };
+  }
   _bindTilt(){
+    this._watchSize();
+    if(this.tile) return this._bindFoil();
     const stage = this.stageEl, card = this.cardEl;
     const maxTilt = this.big ? 8 : 10;
     let pointerActive = false;
@@ -1124,9 +1161,6 @@ class HoloCard {
     stage.addEventListener('touchmove', onTouchMove, {passive:true});
     stage.addEventListener('touchend', onLeave);
     this._cleanup = ()=>window.removeEventListener('pointerup', onUp);
-    // text is fitted to the box, so fit again when the box or the web font changes
-    if(window.ResizeObserver){ this._ro = new ResizeObserver(()=>this._fit()); this._ro.observe(stage); }
-    if(document.fonts && document.fonts.ready) document.fonts.ready.then(()=>{ if(!this._destroyed) this._fit(); });
     const tick = ()=>{
       if(this._destroyed) return;
       if(!pointerActive && HoloCard.prefs.motion){
@@ -1159,6 +1193,26 @@ class HoloCard {
     if(this._cleanup) this._cleanup();
     this.container.innerHTML = '';
   }
+}
+
+// The holo face of one list or binder tile. Built only while the tile is near the screen,
+// so a large set doesn't keep hundreds of blurred, blended layers alive.
+function HoloTile({args}){
+  const ref = React.useRef(null);
+  const live = React.useRef({ card:null, args });
+  live.current.args = args;
+  React.useEffect(()=>{
+    const el = ref.current, s = live.current;
+    const show = ()=>{ if(!s.card) s.card = new HoloCard(el, {tile:true}); s.card.renderCard(...s.args); };
+    const hide = ()=>{ if(s.card){ s.card.destroy(); s.card = null; } };
+    if(!window.IntersectionObserver){ show(); return hide; }
+    const io = new IntersectionObserver(seen=>{ if(seen[seen.length-1].isIntersecting) show(); else hide(); }, {rootMargin:'600px'});
+    io.observe(el);
+    return ()=>{ io.disconnect(); hide(); };
+  }, []);
+  // another card, rarity or language on the same tile (renderCard ignores repeats)
+  React.useEffect(()=>{ if(live.current.card) live.current.card.renderCard(...live.current.args); });
+  return React.createElement('div', { ref, className:'holo-tile' });
 }
 
 class Component extends DCLogic {
@@ -1639,6 +1693,29 @@ class Component extends DCLogic {
         style:{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover'}});
     }
     return React.createElement('i',{className:ti.icon,style:{fontSize:big?'44px':'18px',color:big?'rgba(255,255,255,.22)':'rgba(255,255,255,.35)'}});
+  }
+  // what HoloCard.renderCard needs to draw one card of this system
+  holoArgs(card, sys){
+    const fieldId=(label)=>{ const f=(this.layoutOf(sys)||[]).find(x=>(x.label||'').toLowerCase()===label.toLowerCase()); return f?f.id:null; };
+    const fields={ cost:fieldId('Cost'), power:fieldId('Power'), hit:fieldId('Hit'), affiliation:fieldId('Affiliation'), keyword:fieldId('Keyword') };
+    let urls=null;
+    if(card.image){
+      const hasHost=sys&&sys.imageBaseUrl;
+      urls={ primary: hasHost?(sys.imageBaseUrl.replace(/\/+$/,'')+'/'+this.cleanImageFilename(card.image)):card.image, fallback: card.image };
+    }
+    const labels={ text:this.t('holoText'), motion:this.t('holoMotion'), rotate:this.t('holoRotate'), enlarge:this.t('holoEnlarge'), close:this.t('holoClose') };
+    return [card, this.rarityById(sys,card.rarityId), fields, urls, this.state.lang, sys.terms, labels];
+  }
+  // list and binder tiles: the plain scan, with the holo face over it when that is switched on
+  tileArt(card, sys, holo){
+    const scan=this.artNode(card,true,sys);
+    if(!holo || !card.image) return scan;
+    return React.createElement(React.Fragment, null, scan, React.createElement(HoloTile,{key:'holo', args:this.holoArgs(card,sys)}));
+  }
+  holoTilesOn(){
+    if(this.state.holoTiles!=null) return this.state.holoTiles;
+    if(this._holoTilesSaved==null) this._holoTilesSaved=this.readLocalState().holoTiles!==false;
+    return this._holoTilesSaved;
   }
 
   // ---------- init / persistence ----------
@@ -2515,6 +2592,10 @@ class Component extends DCLogic {
           v.binderViewBtnStyle=viewToggleBtn(v.isBinder);
           v.setGridView=()=>this.setState({collectorViewMode:'grid',collectorShowCover:false});
           v.setBinderView=()=>this.setState({collectorViewMode:'binder',collectorSpread:0});
+          // ---- holo faces on the tiles of both views (remembered on this device) ----
+          const holoTiles=this.holoTilesOn();
+          v.holoTilesStyle=this.parseStyle(`width:40px;height:38px;border-radius:9px;cursor:pointer;font-size:13px;background:${holoTiles?'var(--accent)':'var(--panel)'};border:1px solid ${holoTiles?'var(--accent)':'var(--line)'};color:${holoTiles?'var(--on-accent)':'var(--ink3)'}`);
+          v.toggleHoloTiles=()=>{ this.writeLocalState({holoTiles:!holoTiles}); this.setState({holoTiles:!holoTiles}); };
           // ---- binder cover: a dedicated front-cover spread, toggled on top of the normal pages ----
           const showCover=v.isBinder&&!!S.collectorShowCover;
           v.showCoverPages=showCover;
@@ -2546,7 +2627,7 @@ class Component extends DCLogic {
           v.onCardSizeChange=(e)=>this.setState({collectorCardSize:parseInt(e.target.value,10)});
           const effectiveCardW=cardSizeVal>0?Math.round(NATIVE_CARD_W*cardSizeVal/100):NATIVE_CARD_W;
           if(v.isBinder){
-            v.gridCols=cardSizeVal>0?`repeat(${pocketCols},${effectiveCardW}px)`:`repeat(${pocketCols},minmax(0,1fr))`;
+            v.gridCols=cardSizeVal>0?`repeat(${pocketCols},minmax(0,${effectiveCardW}px))`:`repeat(${pocketCols},minmax(0,1fr))`;
           } else if(cardSizeVal>0){
             v.gridCols=`repeat(auto-fill,${effectiveCardW}px)`;
           } else {
@@ -2672,7 +2753,7 @@ class Component extends DCLogic {
               baseRarityName:brr?brr.name:'—',baseRarityAbbr:brr?(brr.abbr||brr.name):'—',baseRarityColor:brr?brr.color:'var(--ink3)',
               owned,pullLabel:groupCopies?this.fmt(this.t('pulledL'),groupPct.toFixed(1),groupCopies):'',
               missing:!owned,hasDupes:dupeCopies>0,theoLabel:theo!=null?this.fmt(this.t('expectedL'),theo.toFixed(theo<1?2:1)):'',
-              artStyle:this.artStyle(displayCard.type,cs),art:this.artNode(displayCard,true,cs),artOpacity:owned?'1':'0.4',
+              artStyle:this.artStyle(displayCard.type,cs),art:this.tileArt(displayCard,cs,holoTiles),artOpacity:owned?'1':'0.4',
               variants,typeChips,hasTypeChips:typeChips.length>0,
               onOpen:()=>this.openCollectorCard(base)};
           };
@@ -3043,15 +3124,7 @@ class Component extends DCLogic {
         // (see the HoloCard class + HOLO_DATA above Component) - a toggle next to the flat
         // scan, not a replacement for it, since not every rarity has its own chrome art yet.
         const holoOn = !!S.holoView;
-        const fieldIdByLabel=(label)=>{ const f=(this.layoutOf(cs)||[]).find(x=>(x.label||'').toLowerCase()===label.toLowerCase()); return f?f.id:null; };
-        const holoFields={ cost:fieldIdByLabel('Cost'), power:fieldIdByLabel('Power'), hit:fieldIdByLabel('Hit'), affiliation:fieldIdByLabel('Affiliation'), keyword:fieldIdByLabel('Keyword') };
-        let holoArtUrls=null;
-        if(shown.image){
-          const hasHost=cs&&cs.imageBaseUrl;
-          holoArtUrls={ primary: hasHost?(cs.imageBaseUrl.replace(/\/+$/,'')+'/'+this.cleanImageFilename(shown.image)):shown.image, fallback: shown.image };
-        }
-        const holoLabels={ text:this.t('holoText'), motion:this.t('holoMotion'), rotate:this.t('holoRotate'), enlarge:this.t('holoEnlarge'), close:this.t('holoClose') };
-        this._holoArgs=[shown,brr0,holoFields,holoArtUrls,S.lang,cs.terms,holoLabels];
+        this._holoArgs=this.holoArgs(shown,cs);
         if(!this._holoRef) this._holoRef=(el)=>{
           if(this._holoInstance){ this._holoInstance.destroy(); this._holoInstance=null; }
           if(el){ this._holoInstance=new HoloCard(el); this._holoInstance.renderCard(...this._holoArgs); }
