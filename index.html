@@ -30,7 +30,8 @@
   .tile-card:hover .tile-overlay{opacity:1}
 
   /* ================= holo card renderer ================= */
-  /* holo faces on the list and binder tiles: laid over the plain scan, still until the mouse is on them */
+  /* holo faces on the list and binder tiles: laid over the plain scan, still until the mouse is on them
+     (the tilt is applied to the tile itself, see _bindTileTilt) */
   .holo-tile{ position:absolute; inset:0; pointer-events:none; isolation:isolate; }
   .holo-tile .holo-wrap, .holo-tile .holo-stage{ height:100%; }
   .holo-tile .holo-stage{ perspective:none; touch-action:auto; cursor:inherit; }
@@ -1115,27 +1116,46 @@ class HoloCard {
     if(window.ResizeObserver){ this._ro = new ResizeObserver(()=>this._fit()); this._ro.observe(this.stageEl); }
     if(document.fonts && document.fonts.ready) document.fonts.ready.then(()=>{ if(!this._destroyed) this._fit(); });
   }
-  // tiles don't tilt or run on their own: the foil just follows the mouse over the tile
-  _bindFoil(){
+  // tiles don't move on their own: while the mouse is on one, the whole tile (scan, ticks and
+  // overlay included) tilts towards it and the foil follows, then both settle back
+  _bindTileTilt(){
     const card = this.cardEl, host = this.container.parentElement;
-    const set = (x, y, glow)=>{
-      card.style.setProperty('--mx', x.toFixed(1)+'%');
-      card.style.setProperty('--my', y.toFixed(1)+'%');
-      card.style.setProperty('--glow', glow.toFixed(3));
+    const frame = host.parentElement;      // stays flat, so the pointer is measured on it
+    const MAX = 4;                        // gentler than the details view: many cards side by side
+    const rest = { x:50, y:50, glow:0.16, rx:0, ry:0 };
+    const now = { ...rest };
+    let goal = rest;
+    const draw = ()=>{
+      let moving = false;
+      for(const k in now){
+        const d = goal[k] - now[k];
+        if(Math.abs(d) > (k==='glow' ? 0.004 : 0.05)){ now[k] += d*0.18; moving = true; } else now[k] = goal[k];
+      }
+      card.style.setProperty('--mx', now.x.toFixed(1)+'%');
+      card.style.setProperty('--my', now.y.toFixed(1)+'%');
+      card.style.setProperty('--glow', now.glow.toFixed(3));
+      host.style.transform = (goal===rest && !moving) ? '' : 'perspective(900px) rotateX('+now.rx.toFixed(2)+'deg) rotateY('+now.ry.toFixed(2)+'deg)';
+      this._raf = moving ? requestAnimationFrame(draw) : null;
     };
+    const aim = g=>{ goal = g; if(!this._raf) this._raf = requestAnimationFrame(draw); };
     const onMove = e=>{
-      const r = host.getBoundingClientRect();
+      if(e.pointerType==='touch') return;      // a finger is scrolling, not pointing
+      const r = frame.getBoundingClientRect();
       const x = Math.min(1, Math.max(0, (e.clientX-r.left)/r.width)), y = Math.min(1, Math.max(0, (e.clientY-r.top)/r.height));
-      set(x*100, y*100, 0.35 + Math.min(0.5, Math.abs(x-0.5)+Math.abs(y-0.5)));
+      aim({ x:x*100, y:y*100, glow:0.35 + Math.min(0.5, Math.abs(x-0.5)+Math.abs(y-0.5)), rx:(0.5-y)*MAX*2, ry:(x-0.5)*MAX*2 });
     };
-    const onLeave = ()=>{ ['--mx','--my','--glow'].forEach(k=>card.style.removeProperty(k)); };
-    host.addEventListener('pointermove', onMove);
-    host.addEventListener('pointerleave', onLeave);
-    this._cleanup = ()=>{ host.removeEventListener('pointermove', onMove); host.removeEventListener('pointerleave', onLeave); };
+    const onLeave = ()=>aim(rest);
+    frame.addEventListener('pointermove', onMove);
+    frame.addEventListener('pointerleave', onLeave);
+    this._cleanup = ()=>{
+      frame.removeEventListener('pointermove', onMove);
+      frame.removeEventListener('pointerleave', onLeave);
+      host.style.transform = '';
+    };
   }
   _bindTilt(){
     this._watchSize();
-    if(this.tile) return this._bindFoil();
+    if(this.tile) return this._bindTileTilt();
     const stage = this.stageEl, card = this.cardEl;
     const maxTilt = this.big ? 8 : 10;
     let pointerActive = false;
