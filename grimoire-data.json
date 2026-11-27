@@ -27922,7 +27922,8 @@
               "nameJp": "堕落の愉悦 シャーロット",
               "descriptionEn": "Power-1000 for each 1 card in your hand.\n If this unit's Power is 11000 or more, it may attack 1 more time during this turn's Attack Phase.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Stärke-1000 für jede 1 Karte in deiner Hand.\n Falls die Stärke dieser Einheit 11000 oder mehr ist, darf sie während der Angriffsphase dieses Zuges noch 1 weiteres Mal angreifen.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "自分の手札1枚につきパワー-1000。\n このユニットのパワーが11000以上なら、このターンのアタックフェイズ中にもう1回攻撃できる。\n\n\nトリガー/このカードを自分の手札に加える。"
+              "descriptionJp": "自分の手札1枚につきパワー-1000。\n このユニットのパワーが11000以上なら、このターンのアタックフェイズ中にもう1回攻撃できる。\n\n\nトリガー/このカードを自分の手札に加える。",
+              "sortIndex": 0
             },
             {
               "id": "c-mtuoqjqh8uxw",
@@ -27947,7 +27948,8 @@
               "nameJp": "スイートデビル・レニ",
               "descriptionEn": "If your field has a card other than Fire, Encountering Unit's Power-2000 until the end of this attack.",
               "descriptionDe": "Falls dein Feld eine Karte außer Feuer hat, Stärke der begegnenden Einheit-2000 bis zum Ende dieses Angriffs.",
-              "descriptionJp": "自分のフィールドに炎以外のカードがあるなら、この攻撃が終わるまで対面ユニットのパワー-2000。"
+              "descriptionJp": "自分のフィールドに炎以外のカードがあるなら、この攻撃が終わるまで対面ユニットのパワー-2000。",
+              "sortIndex": 1
             },
             {
               "id": "c-mtuoqjqhjclg",
@@ -27972,7 +27974,8 @@
               "nameJp": "射撃教官 テオドール",
               "descriptionEn": "When this unit is deployed, draw 1 card. When this unit is trashed, choose 1 card from your hand and trash it.\n If your field has a card other than Fire, Encountering Unit's Power-4000 until the end of this turn.",
               "descriptionDe": "Wenn diese Einheit platziert wird, ziehe 1 Karte. Wenn diese Einheit getrasht wird, wähle 1 Karte aus deiner Hand und trashe sie.\n Falls dein Feld eine Karte außer Feuer hat, Stärke der begegnenden Einheit-4000 bis zum Ende dieses Zuges.",
-              "descriptionJp": "このユニットが配置されたら、カードを1枚ドローする。このユニットがトラッシュされたら、自分の手札を1枚選びトラッシュする。\n 自分のフィールドに炎以外のカードがあるなら、このターンが終わるまで対面ユニットのパワー-4000。"
+              "descriptionJp": "このユニットが配置されたら、カードを1枚ドローする。このユニットがトラッシュされたら、自分の手札を1枚選びトラッシュする。\n 自分のフィールドに炎以外のカードがあるなら、このターンが終わるまで対面ユニットのパワー-4000。",
+              "sortIndex": 2
             },
             {
               "id": "c-mtuoqjqhltqd",
@@ -27997,7 +28000,8 @@
               "nameJp": "射撃教官 テオドール",
               "descriptionEn": "When this unit is deployed, draw 1 card. When this unit is trashed, choose 1 card from your hand and trash it.\n If your field has a card other than Fire, Encountering Unit's Power-4000 until the end of this turn.",
               "descriptionDe": "Wenn diese Einheit platziert wird, ziehe 1 Karte. Wenn diese Einheit getrasht wird, wähle 1 Karte aus deiner Hand und trashe sie.\n Falls dein Feld eine Karte außer Feuer hat, Stärke der begegnenden Einheit-4000 bis zum Ende dieses Zuges.",
-              "descriptionJp": "このユニットが配置されたら、カードを1枚ドローする。このユニットがトラッシュされたら、自分の手札を1枚選びトラッシュする。\n 自分のフィールドに炎以外のカードがあるなら、このターンが終わるまで対面ユニットのパワー-4000。"
+              "descriptionJp": "このユニットが配置されたら、カードを1枚ドローする。このユニットがトラッシュされたら、自分の手札を1枚選びトラッシュする。\n 自分のフィールドに炎以外のカードがあるなら、このターンが終わるまで対面ユニットのパワー-4000。",
+              "sortIndex": 3
             },
             {
               "id": "c-mtuoqjqh9a86",
@@ -28022,7 +28026,8 @@
               "nameJp": "龍 ダイリン",
               "descriptionEn": "Until the end of this turn, the opponent cannot activate [Defender] and [Exit] effects.\n Power+2000 until the end of this attack.",
               "descriptionDe": "Bis zum Ende dieses Zuges kann der Gegner keine [Verteidiger]- und [Exit]-Effekte aktivieren.\n Stärke+2000 bis zum Ende dieses Angriffs.",
-              "descriptionJp": "このターン終了時まで、相手は【ディフェンダー】と【エグジット】効果を発動できない。\n この攻撃終了時までパワー+2000。"
+              "descriptionJp": "このターン終了時まで、相手は【ディフェンダー】と【エグジット】効果を発動できない。\n この攻撃終了時までパワー+2000。",
+              "sortIndex": 4
             },
             {
               "id": "c-mtuoqjqhqf9g",
@@ -28047,7 +28052,8 @@
               "nameJp": "メッヒョヌ",
               "descriptionEn": "When this unit is deployed, draw 1 card. When this unit is trashed, choose 1 card from your hand and trash it.\n Encountering Unit's Power-4000 until the end of this attack. If that unit is trashed by this effect, choose 1 Skill card without [Trigger] and Cost 2 or less from your Trash Zone and add it to your hand.",
               "descriptionDe": "Wenn diese Einheit platziert wird, ziehe 1 Karte. Wenn diese Einheit getrasht wird, wähle 1 Karte aus deiner Hand und trashe sie.\n Stärke der begegnenden Einheit-4000 bis zum Ende dieses Angriffs. Falls diese Einheit durch diesen Effekt getrasht wird, wähle 1 Fähigkeitskarte ohne [Trigger] mit Kosten 2 oder weniger aus deiner Trash-Zone und lege sie auf deine Hand.",
-              "descriptionJp": "このユニットが配置されたら、カードを1枚ドローする。このユニットがトラッシュされたら、自分の手札を1枚選びトラッシュする。\n この攻撃が終わるまで対面ユニットのパワー-4000。この効果でそのユニットをトラッシュしたなら、自分のトラッシュゾーンから【トリガー】を持たず2コスト以下のスキルカードを1枚選び手札に加える。"
+              "descriptionJp": "このユニットが配置されたら、カードを1枚ドローする。このユニットがトラッシュされたら、自分の手札を1枚選びトラッシュする。\n この攻撃が終わるまで対面ユニットのパワー-4000。この効果でそのユニットをトラッシュしたなら、自分のトラッシュゾーンから【トリガー】を持たず2コスト以下のスキルカードを1枚選び手札に加える。",
+              "sortIndex": 5
             },
             {
               "id": "c-mtuoqjqhmyj9",
@@ -28072,7 +28078,8 @@
               "nameJp": "悪役令嬢 アドリアナ",
               "descriptionEn": "Base Side\n You must put Fire cards in your deck. All cards other than Fire must share the same attribute.\n If your Leader Level is 5 or higher, flip this card. If your field has a card other than Fire, the opponent may draw 1 card.\n\nAwakened Side\n Choose 1 to 3 cards from your hand and trash them. If your hand has 2 or fewer cards, you may choose 1 unit card from your Trash Zone with Hit equal to or less than the number of cards trashed by this effect, with [Credit] and without [Trigger], and add it to your hand.",
               "descriptionDe": "Grundseite\n Du musst Feuer-Karten in dein Deck legen. Alle Karten außer Feuer müssen dasselbe Attribut haben.\n Falls dein Anführer-Level 5 oder höher ist, drehe diese Karte um. Falls dein Feld eine Karte außer Feuer hat, darf der Gegner 1 Karte ziehen.\n\nErwachte Seite\n Wähle 1 bis 3 Karten aus deiner Hand und trashe sie. Falls deine Hand 2 oder weniger Karten hat, kannst du 1 Einheitenkarte aus deiner Trash-Zone wählen mit Treffer gleich oder niedriger als die Anzahl der durch diesen Effekt getrashten Karten, mit [Credit] und ohne [Trigger], und sie auf deine Hand legen.",
-              "descriptionJp": "基本面\n 自分のデッキに炎のカードを入れなければならない。炎以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが5以上なら、このカードを反転する。自分のフィールドに炎以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n 自分の手札を1枚から3枚まで選びトラッシュする。自分の手札が2枚以下なら、ヒットがこの効果でトラッシュしたカードの数以下で【クレジット】を持ち【トリガー】を持たないユニットカードを、自分のトラッシュゾーンから1枚選び手札に加えられる。"
+              "descriptionJp": "基本面\n 自分のデッキに炎のカードを入れなければならない。炎以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが5以上なら、このカードを反転する。自分のフィールドに炎以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n 自分の手札を1枚から3枚まで選びトラッシュする。自分の手札が2枚以下なら、ヒットがこの効果でトラッシュしたカードの数以下で【クレジット】を持ち【トリガー】を持たないユニットカードを、自分のトラッシュゾーンから1枚選び手札に加えられる。",
+              "sortIndex": 6
             },
             {
               "id": "c-mtuoqjqh700b",
@@ -28097,7 +28104,8 @@
               "nameJp": "悪役令嬢 アドリアナ",
               "descriptionEn": "Base Side\n You must put Fire cards in your deck. All cards other than Fire must share the same attribute.\n If your Leader Level is 5 or higher, flip this card. If your field has a card other than Fire, the opponent may draw 1 card.\n\nAwakened Side\n Choose 1 to 3 cards from your hand and trash them. If your hand has 2 or fewer cards, you may choose 1 unit card from your Trash Zone with Hit equal to or less than the number of cards trashed by this effect, with [Credit] and without [Trigger], and add it to your hand.",
               "descriptionDe": "Grundseite\n Du musst Feuer-Karten in dein Deck legen. Alle Karten außer Feuer müssen dasselbe Attribut haben.\n Falls dein Anführer-Level 5 oder höher ist, drehe diese Karte um. Falls dein Feld eine Karte außer Feuer hat, darf der Gegner 1 Karte ziehen.\n\nErwachte Seite\n Wähle 1 bis 3 Karten aus deiner Hand und trashe sie. Falls deine Hand 2 oder weniger Karten hat, kannst du 1 Einheitenkarte aus deiner Trash-Zone wählen mit Treffer gleich oder niedriger als die Anzahl der durch diesen Effekt getrashten Karten, mit [Credit] und ohne [Trigger], und sie auf deine Hand legen.",
-              "descriptionJp": "基本面\n 自分のデッキに炎のカードを入れなければならない。炎以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが5以上なら、このカードを反転する。自分のフィールドに炎以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n 自分の手札を1枚から3枚まで選びトラッシュする。自分の手札が2枚以下なら、ヒットがこの効果でトラッシュしたカードの数以下で【クレジット】を持ち【トリガー】を持たないユニットカードを、自分のトラッシュゾーンから1枚選び手札に加えられる。"
+              "descriptionJp": "基本面\n 自分のデッキに炎のカードを入れなければならない。炎以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが5以上なら、このカードを反転する。自分のフィールドに炎以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n 自分の手札を1枚から3枚まで選びトラッシュする。自分の手札が2枚以下なら、ヒットがこの効果でトラッシュしたカードの数以下で【クレジット】を持ち【トリガー】を持たないユニットカードを、自分のトラッシュゾーンから1枚選び手札に加えられる。",
+              "sortIndex": 7
             },
             {
               "id": "c-mtuoqjqh3dwu",
@@ -28122,7 +28130,8 @@
               "nameJp": "悪役令嬢 アドリアナ",
               "descriptionEn": "Base Side\n You must put Fire cards in your deck. All cards other than Fire must share the same attribute.\n If your Leader Level is 5 or higher, flip this card. If your field has a card other than Fire, the opponent may draw 1 card.\n\nAwakened Side\n Choose 1 to 3 cards from your hand and trash them. If your hand has 2 or fewer cards, you may choose 1 unit card from your Trash Zone with Hit equal to or less than the number of cards trashed by this effect, with [Credit] and without [Trigger], and add it to your hand.",
               "descriptionDe": "Grundseite\n Du musst Feuer-Karten in dein Deck legen. Alle Karten außer Feuer müssen dasselbe Attribut haben.\n Falls dein Anführer-Level 5 oder höher ist, drehe diese Karte um. Falls dein Feld eine Karte außer Feuer hat, darf der Gegner 1 Karte ziehen.\n\nErwachte Seite\n Wähle 1 bis 3 Karten aus deiner Hand und trashe sie. Falls deine Hand 2 oder weniger Karten hat, kannst du 1 Einheitenkarte aus deiner Trash-Zone wählen mit Treffer gleich oder niedriger als die Anzahl der durch diesen Effekt getrashten Karten, mit [Credit] und ohne [Trigger], und sie auf deine Hand legen.",
-              "descriptionJp": "基本面\n 自分のデッキに炎のカードを入れなければならない。炎以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが5以上なら、このカードを反転する。自分のフィールドに炎以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n 自分の手札を1枚から3枚まで選びトラッシュする。自分の手札が2枚以下なら、ヒットがこの効果でトラッシュしたカードの数以下で【クレジット】を持ち【トリガー】を持たないユニットカードを、自分のトラッシュゾーンから1枚選び手札に加えられる。"
+              "descriptionJp": "基本面\n 自分のデッキに炎のカードを入れなければならない。炎以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが5以上なら、このカードを反転する。自分のフィールドに炎以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n 自分の手札を1枚から3枚まで選びトラッシュする。自分の手札が2枚以下なら、ヒットがこの効果でトラッシュしたカードの数以下で【クレジット】を持ち【トリガー】を持たないユニットカードを、自分のトラッシュゾーンから1枚選び手札に加えられる。",
+              "sortIndex": 8
             },
             {
               "id": "c-mtuoqjqheplf",
@@ -28147,7 +28156,8 @@
               "nameJp": "安全教官 エステル",
               "descriptionEn": "If your field has a card other than Fire, choose 1 opposing unit on the field and give it Power-2000 until the end of this turn. If that unit is trashed by this effect, draw 1 card.",
               "descriptionDe": "Falls dein Feld eine Karte außer Feuer hat, wähle 1 gegnerische Einheit auf dem Feld und gib ihr Stärke-2000 bis zum Ende dieses Zuges. Falls diese Einheit durch diesen Effekt getrasht wird, ziehe 1 Karte.",
-              "descriptionJp": "自分のフィールドに炎以外のカードがあるなら、フィールドにいる相手ユニットを1枚選び、このターン終了時までパワー-2000。この効果でそのユニットをトラッシュしたなら、カードを1枚ドローする。"
+              "descriptionJp": "自分のフィールドに炎以外のカードがあるなら、フィールドにいる相手ユニットを1枚選び、このターン終了時までパワー-2000。この効果でそのユニットをトラッシュしたなら、カードを1枚ドローする。",
+              "sortIndex": 9
             },
             {
               "id": "c-mtuoqjqhlitv",
@@ -28172,7 +28182,8 @@
               "nameJp": "ファイナルラップ ロジー",
               "descriptionEn": "Power-1000 for each 1 card in your hand. If this unit's Power is 8000 or more, gain [Attacker] Piercing [1] and Hit+1.",
               "descriptionDe": "Stärke-1000 für jede 1 Karte in deiner Hand. Falls die Stärke dieser Einheit 8000 oder mehr ist, erhalte [Angreifer] Durchbohren [1] und Treffer+1.",
-              "descriptionJp": "自分の手札1枚につきパワー-1000。このユニットのパワーが8000以上なら【アタッカー】貫通[1]を得てヒット+1。"
+              "descriptionJp": "自分の手札1枚につきパワー-1000。このユニットのパワーが8000以上なら【アタッカー】貫通[1]を得てヒット+1。",
+              "sortIndex": 10
             },
             {
               "id": "c-mtuoqjqhyy38",
@@ -28197,7 +28208,8 @@
               "nameJp": "ポディウムフィニッシュ ブレア",
               "descriptionEn": "When this unit is deployed, draw 1 card. When this unit is trashed, choose 1 card from your hand and trash it.\n You may choose up to 2 cards from your hand and trash them. Based on the number of cards in your hand, gain all of the effects below until the end of this attack.\n・2 or fewer: Power+3500.\n・1 or fewer: Hit+1.\n・0: Piercing [1].",
               "descriptionDe": "Wenn diese Einheit platziert wird, ziehe 1 Karte. Wenn diese Einheit getrasht wird, wähle 1 Karte aus deiner Hand und trashe sie.\n Du kannst bis zu 2 Karten aus deiner Hand wählen und trashen. Basierend auf der Anzahl der Karten in deiner Hand, erhalte alle folgenden Effekte bis zum Ende dieses Angriffs.\n・2 oder weniger: Stärke+3500.\n・1 oder weniger: Treffer+1.\n・0: Durchbohren [1].",
-              "descriptionJp": "このユニットが配置されたら、カードを1枚ドローする。このユニットがトラッシュされたら、自分の手札を1枚選びトラッシュする。\n 自分の手札を2枚まで選びトラッシュできる。自分の手札の枚数に応じて、この攻撃が終わるまで下記の効果をすべて得る。\n・2枚以下：パワー+3500。\n・1枚以下：ヒット+1。\n・0枚：貫通[1]。"
+              "descriptionJp": "このユニットが配置されたら、カードを1枚ドローする。このユニットがトラッシュされたら、自分の手札を1枚選びトラッシュする。\n 自分の手札を2枚まで選びトラッシュできる。自分の手札の枚数に応じて、この攻撃が終わるまで下記の効果をすべて得る。\n・2枚以下：パワー+3500。\n・1枚以下：ヒット+1。\n・0枚：貫通[1]。",
+              "sortIndex": 11
             },
             {
               "id": "c-mtuoqjqh8v3t",
@@ -28222,7 +28234,8 @@
               "nameJp": "ポディウムフィニッシュ ブレア",
               "descriptionEn": "When this unit is deployed, draw 1 card. When this unit is trashed, choose 1 card from your hand and trash it.\n You may choose up to 2 cards from your hand and trash them. Based on the number of cards in your hand, gain all of the effects below until the end of this attack.\n・2 or fewer: Power+3500.\n・1 or fewer: Hit+1.\n・0: Piercing [1].",
               "descriptionDe": "Wenn diese Einheit platziert wird, ziehe 1 Karte. Wenn diese Einheit getrasht wird, wähle 1 Karte aus deiner Hand und trashe sie.\n Du kannst bis zu 2 Karten aus deiner Hand wählen und trashen. Basierend auf der Anzahl der Karten in deiner Hand, erhalte alle folgenden Effekte bis zum Ende dieses Angriffs.\n・2 oder weniger: Stärke+3500.\n・1 oder weniger: Treffer+1.\n・0: Durchbohren [1].",
-              "descriptionJp": "このユニットが配置されたら、カードを1枚ドローする。このユニットがトラッシュされたら、自分の手札を1枚選びトラッシュする。\n 自分の手札を2枚まで選びトラッシュできる。自分の手札の枚数に応じて、この攻撃が終わるまで下記の効果をすべて得る。\n・2枚以下：パワー+3500。\n・1枚以下：ヒット+1。\n・0枚：貫通[1]。"
+              "descriptionJp": "このユニットが配置されたら、カードを1枚ドローする。このユニットがトラッシュされたら、自分の手札を1枚選びトラッシュする。\n 自分の手札を2枚まで選びトラッシュできる。自分の手札の枚数に応じて、この攻撃が終わるまで下記の効果をすべて得る。\n・2枚以下：パワー+3500。\n・1枚以下：ヒット+1。\n・0枚：貫通[1]。",
+              "sortIndex": 12
             },
             {
               "id": "c-mtuoqjqhkm1r",
@@ -28247,7 +28260,8 @@
               "nameJp": "コーラライン",
               "descriptionEn": "When this unit is deployed, draw 1 card. When this unit is trashed, choose 1 card from your hand and trash it.\n You may choose up to 3 cards from your hand and trash them. For each card trashed this way, choose 1 of the effects below and gain it until the end of this attack.\n・Duelist.\n・Piercing [1].\n・Power+4000.",
               "descriptionDe": "Wenn diese Einheit platziert wird, ziehe 1 Karte. Wenn diese Einheit getrasht wird, wähle 1 Karte aus deiner Hand und trashe sie.\n Du kannst bis zu 3 Karten aus deiner Hand wählen und trashen. Für jede so getrashte Karte wähle einen der folgenden Effekte und erhalte ihn bis zum Ende dieses Angriffs.\n・Duellant.\n・Durchbohren [1].\n・Stärke+4000.",
-              "descriptionJp": "このユニットが配置されたら、カードを1枚ドローする。このユニットがトラッシュされたら、自分の手札を1枚選びトラッシュする。\n 自分の手札を3枚まで選びトラッシュできる。そうしたら、トラッシュした手札1枚につき下記の効果から1種類ずつ選び、この攻撃が終わるまで得る。\n・デュエリスト。\n・貫通[1]。\n・パワー+4000。"
+              "descriptionJp": "このユニットが配置されたら、カードを1枚ドローする。このユニットがトラッシュされたら、自分の手札を1枚選びトラッシュする。\n 自分の手札を3枚まで選びトラッシュできる。そうしたら、トラッシュした手札1枚につき下記の効果から1種類ずつ選び、この攻撃が終わるまで得る。\n・デュエリスト。\n・貫通[1]。\n・パワー+4000。",
+              "sortIndex": 13
             },
             {
               "id": "c-mtuoqjqh5kto",
@@ -28272,7 +28286,8 @@
               "nameJp": "コーラライン",
               "descriptionEn": "When this unit is deployed, draw 1 card. When this unit is trashed, choose 1 card from your hand and trash it.\n You may choose up to 3 cards from your hand and trash them. For each card trashed this way, choose 1 of the effects below and gain it until the end of this attack.\n・Duelist.\n・Piercing [1].\n・Power+4000.",
               "descriptionDe": "Wenn diese Einheit platziert wird, ziehe 1 Karte. Wenn diese Einheit getrasht wird, wähle 1 Karte aus deiner Hand und trashe sie.\n Du kannst bis zu 3 Karten aus deiner Hand wählen und trashen. Für jede so getrashte Karte wähle einen der folgenden Effekte und erhalte ihn bis zum Ende dieses Angriffs.\n・Duellant.\n・Durchbohren [1].\n・Stärke+4000.",
-              "descriptionJp": "このユニットが配置されたら、カードを1枚ドローする。このユニットがトラッシュされたら、自分の手札を1枚選びトラッシュする。\n 自分の手札を3枚まで選びトラッシュできる。そうしたら、トラッシュした手札1枚につき下記の効果から1種類ずつ選び、この攻撃が終わるまで得る。\n・デュエリスト。\n・貫通[1]。\n・パワー+4000。"
+              "descriptionJp": "このユニットが配置されたら、カードを1枚ドローする。このユニットがトラッシュされたら、自分の手札を1枚選びトラッシュする。\n 自分の手札を3枚まで選びトラッシュできる。そうしたら、トラッシュした手札1枚につき下記の効果から1種類ずつ選び、この攻撃が終わるまで得る。\n・デュエリスト。\n・貫通[1]。\n・パワー+4000。",
+              "sortIndex": 14
             },
             {
               "id": "c-mtuoqjqhpphm",
@@ -28297,7 +28312,8 @@
               "nameJp": "悪役令嬢 アドリアナ",
               "descriptionEn": "If your field has a card other than Fire, when you trash cards from your hand by your [Credit] effects, you may increase or decrease that number by 1.\n You may choose 1 card from your hand and trash it. If you and the opponent have a different number of cards in hand, Encountering Unit's Power-1000 for each card of the difference, until the end of this turn. You may process this effect 1 additional time if your hand has 0 cards.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Falls dein Feld eine Karte außer Feuer hat, wenn du Karten aus deiner Hand durch deine [Credit]-Effekte trashst, kannst du diese Anzahl um 1 erhöhen oder verringern.\n Du kannst 1 Karte aus deiner Hand wählen und trashen. Falls du und der Gegner eine unterschiedliche Anzahl an Handkarten habt, Stärke der begegnenden Einheit-1000 für jede Karte der Differenz, bis zum Ende dieses Zuges. Du kannst diesen Effekt 1 zusätzliches Mal verarbeiten, falls deine Hand 0 Karten hat.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "自分のフィールドに炎以外のカードがあるなら、自分の【クレジット】効果で手札をトラッシュする時、その枚数を1枚増やすか減らすことができる。\n 自分の手札を1枚選びトラッシュできる。自分と相手の手札の枚数が異なるなら、このターン終了時まで、その差1枚につき対面ユニットのパワー-1000。この効果は自分の手札が0枚なら1回だけさらに処理できる。\n\n\nトリガー/このカードを自分の手札に加える。"
+              "descriptionJp": "自分のフィールドに炎以外のカードがあるなら、自分の【クレジット】効果で手札をトラッシュする時、その枚数を1枚増やすか減らすことができる。\n 自分の手札を1枚選びトラッシュできる。自分と相手の手札の枚数が異なるなら、このターン終了時まで、その差1枚につき対面ユニットのパワー-1000。この効果は自分の手札が0枚なら1回だけさらに処理できる。\n\n\nトリガー/このカードを自分の手札に加える。",
+              "sortIndex": 15
             },
             {
               "id": "c-mtuoqjqhybgl",
@@ -28322,7 +28338,8 @@
               "nameJp": "悪役令嬢 アドリアナ",
               "descriptionEn": "If your field has a card other than Fire, when you trash cards from your hand by your [Credit] effects, you may increase or decrease that number by 1.\n You may choose 1 card from your hand and trash it. If you and the opponent have a different number of cards in hand, Encountering Unit's Power-1000 for each card of the difference, until the end of this turn. You may process this effect 1 additional time if your hand has 0 cards.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Falls dein Feld eine Karte außer Feuer hat, wenn du Karten aus deiner Hand durch deine [Credit]-Effekte trashst, kannst du diese Anzahl um 1 erhöhen oder verringern.\n Du kannst 1 Karte aus deiner Hand wählen und trashen. Falls du und der Gegner eine unterschiedliche Anzahl an Handkarten habt, Stärke der begegnenden Einheit-1000 für jede Karte der Differenz, bis zum Ende dieses Zuges. Du kannst diesen Effekt 1 zusätzliches Mal verarbeiten, falls deine Hand 0 Karten hat.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "自分のフィールドに炎以外のカードがあるなら、自分の【クレジット】効果で手札をトラッシュする時、その枚数を1枚増やすか減らすことができる。\n 自分の手札を1枚選びトラッシュできる。自分と相手の手札の枚数が異なるなら、このターン終了時まで、その差1枚につき対面ユニットのパワー-1000。この効果は自分の手札が0枚なら1回だけさらに処理できる。\n\n\nトリガー/このカードを自分の手札に加える。"
+              "descriptionJp": "自分のフィールドに炎以外のカードがあるなら、自分の【クレジット】効果で手札をトラッシュする時、その枚数を1枚増やすか減らすことができる。\n 自分の手札を1枚選びトラッシュできる。自分と相手の手札の枚数が異なるなら、このターン終了時まで、その差1枚につき対面ユニットのパワー-1000。この効果は自分の手札が0枚なら1回だけさらに処理できる。\n\n\nトリガー/このカードを自分の手札に加える。",
+              "sortIndex": 16
             },
             {
               "id": "c-mtuoqjqh5weo",
@@ -28347,7 +28364,8 @@
               "nameJp": "アストラバースト!",
               "descriptionEn": "Choose 2 cards without [Trigger] from your Trash Zone and put them on the bottom of your deck in any order. Then choose 1 opposing unit on the field and give it Power-2000 until the end of this turn. If your field has a card other than Fire, additionally draw 1 card.",
               "descriptionDe": "Wähle 2 Karten ohne [Trigger] aus deiner Trash-Zone und lege sie in beliebiger Reihenfolge unter dein Deck. Wähle dann 1 gegnerische Einheit auf dem Feld und gib ihr Stärke-2000 bis zum Ende dieses Zuges. Falls dein Feld eine Karte außer Feuer hat, ziehe zusätzlich 1 Karte.",
-              "descriptionJp": "自分のトラッシュゾーンから【トリガー】を持たないカードを2枚選び、デッキの一番下に好きな順番で置く。そうすればフィールドにいる相手ユニットを1枚選び、このターン終了時までパワー-2000。自分のフィールドに炎以外のカードがあるなら、追加でカードを1枚ドローする。"
+              "descriptionJp": "自分のトラッシュゾーンから【トリガー】を持たないカードを2枚選び、デッキの一番下に好きな順番で置く。そうすればフィールドにいる相手ユニットを1枚選び、このターン終了時までパワー-2000。自分のフィールドに炎以外のカードがあるなら、追加でカードを1枚ドローする。",
+              "sortIndex": 17
             },
             {
               "id": "c-mtuoqjqhudjf",
@@ -28372,7 +28390,8 @@
               "nameJp": "ウィドウメーカー",
               "descriptionEn": "Reveal 1 card from the top of your deck and you may add it to your hand or trash it. If a card other than a Skill card was added to your hand by this effect, choose 1 equipped 〈Widow Maker〉and trash it.",
               "descriptionDe": "Decke 1 Karte von der Oberseite deines Decks auf und du kannst sie auf deine Hand legen oder trashen. Falls eine andere Karte als eine Fähigkeitskarte durch diesen Effekt auf deine Hand gelegt wurde, wähle 1 ausgerüstetes 〈Witwenmacher〉und trashe es.",
-              "descriptionJp": "自分のデッキの上からカードを1枚公開し、手札に加えるかトラッシュできる。この効果でスキルカード以外のカードを手札に加えたなら、このユニットが装備している〈ウィドウメイカー〉を1枚選びトラッシュする。"
+              "descriptionJp": "自分のデッキの上からカードを1枚公開し、手札に加えるかトラッシュできる。この効果でスキルカード以外のカードを手札に加えたなら、このユニットが装備している〈ウィドウメイカー〉を1枚選びトラッシュする。",
+              "sortIndex": 18
             },
             {
               "id": "c-mtuoqjqhbhmv",
@@ -28397,7 +28416,8 @@
               "nameJp": "1st Anniversary スア",
               "descriptionEn": "If your Leader Level is 6 or higher, all other units of yours on the field get Power+2000.\n If your Leader Level is 8 or higher, when your Main Phase begins, put this unit on the bottom of the owner's deck. Then reveal 3 cards from the top of your deck, choose 1 unit card among them and deploy it to an empty Unit Zone of yours, ignoring Size. That unit's Cost becomes 0 and gets Power+5000, Hit+1 until the end of this turn. Trash the rest.\n\n\nTrigger / You may trash this card. If not, your Leader Level+1.",
               "descriptionDe": "Falls dein Anführer-Level 6 oder höher ist, erhalten alle anderen deiner Einheiten auf dem Feld Stärke+2000.\n Falls dein Anführer-Level 8 oder höher ist, wenn deine Hauptphase beginnt, lege diese Einheit unter das Deck des Besitzers. Decke dann 3 Karten von der Oberseite deines Decks auf, wähle 1 Einheitenkarte darunter und platziere sie ignorierend der Größe in eine leere Einheitenzone von dir. Die Kosten dieser Einheit werden 0 und sie erhält Stärke+5000, Treffer+1 bis zum Ende dieses Zuges. Trashe den Rest.\n\n\nTrigger / Du kannst diese Karte trashen. Andernfalls, dein Anführer-Level+1.",
-              "descriptionJp": "自分のリーダーレベルが6以上なら、フィールドにいる他のすべての自分ユニットのパワー+2000。\n 自分のリーダーレベルが8以上なら、自分のメインフェイズが始まる時、このユニットを持ち主のデッキの下に置く。そうしたら、自分のデッキの上からカードを3枚公開し、その中からユニットカードを1枚選び、空いている自分のユニットゾーンにサイズを無視して配置する。そのユニットは、このターン終了時までコスト0になり、パワー+5000、ヒット+1。残りはすべてトラッシュする。\n\n\nトリガー/このカードをトラッシュできる。そうでなければ、自分のリーダーレベル+1。"
+              "descriptionJp": "自分のリーダーレベルが6以上なら、フィールドにいる他のすべての自分ユニットのパワー+2000。\n 自分のリーダーレベルが8以上なら、自分のメインフェイズが始まる時、このユニットを持ち主のデッキの下に置く。そうしたら、自分のデッキの上からカードを3枚公開し、その中からユニットカードを1枚選び、空いている自分のユニットゾーンにサイズを無視して配置する。そのユニットは、このターン終了時までコスト0になり、パワー+5000、ヒット+1。残りはすべてトラッシュする。\n\n\nトリガー/このカードをトラッシュできる。そうでなければ、自分のリーダーレベル+1。",
+              "sortIndex": 19
             },
             {
               "id": "c-mtuoqjqh3g8r",
@@ -28422,7 +28442,8 @@
               "nameJp": "教えてあげましょう。",
               "descriptionEn": "Your Leader Level+1.",
               "descriptionDe": "Dein Anführer-Level+1.",
-              "descriptionJp": "自分のリーダーレベル+1。"
+              "descriptionJp": "自分のリーダーレベル+1。",
+              "sortIndex": 20
             },
             {
               "id": "c-mtuoqjqhcm9v",
@@ -28447,7 +28468,8 @@
               "nameJp": "鬼火に導かれたイアン",
               "descriptionEn": "When this unit is deployed, draw 1 card. When this unit is trashed, choose 1 card from your hand and trash it.\n If your Leader Level is 4 or higher, all other units of yours on the field get Power+2000.",
               "descriptionDe": "Wenn diese Einheit platziert wird, ziehe 1 Karte. Wenn diese Einheit getrasht wird, wähle 1 Karte aus deiner Hand und trashe sie.\n Falls dein Anführer-Level 4 oder höher ist, erhalten alle anderen deiner Einheiten auf dem Feld Stärke+2000.",
-              "descriptionJp": "このユニットが配置されたら、カードを1枚ドローする。このユニットがトラッシュされたら、自分の手札を1枚選びトラッシュする。\n 自分のリーダーレベルが4以上なら、フィールドにいる他のすべての自分のユニットのパワー+2000。"
+              "descriptionJp": "このユニットが配置されたら、カードを1枚ドローする。このユニットがトラッシュされたら、自分の手札を1枚選びトラッシュする。\n 自分のリーダーレベルが4以上なら、フィールドにいる他のすべての自分のユニットのパワー+2000。",
+              "sortIndex": 21
             },
             {
               "id": "c-mtuoqjqhj8cc",
@@ -28472,7 +28494,8 @@
               "nameJp": "転校生 ビアンカ",
               "descriptionEn": "Your Leader Level+1.",
               "descriptionDe": "Dein Anführer-Level+1.",
-              "descriptionJp": "自分のリーダーレベル+1。"
+              "descriptionJp": "自分のリーダーレベル+1。",
+              "sortIndex": 22
             },
             {
               "id": "c-mtuoqjqhge7d",
@@ -28497,7 +28520,8 @@
               "nameJp": "放課後の自由時間 デビー&マルレーン",
               "descriptionEn": "If your field has a card other than Earth and your Leader Level is 10 or higher, your Size+5 until the end of this turn. If 9 or lower, you may choose 1 card from your hand and trash it. If you do, your Leader Level+2.",
               "descriptionDe": "Falls dein Feld eine Karte außer Erde hat und dein Anführer-Level 10 oder höher ist, deine Größe+5 bis zum Ende dieses Zuges. Falls 9 oder niedriger, kannst du 1 Karte aus deiner Hand wählen und trashen. Falls du das tust, dein Anführer-Level+2.",
-              "descriptionJp": "自分のフィールドに大地以外のカードがあり、自分のリーダーレベルが10以上なら、このターン終了時まで自分のサイズ+5。9以下なら、自分の手札を1枚選びトラッシュできる。そうすれば自分のリーダーレベル+2。"
+              "descriptionJp": "自分のフィールドに大地以外のカードがあり、自分のリーダーレベルが10以上なら、このターン終了時まで自分のサイズ+5。9以下なら、自分の手札を1枚選びトラッシュできる。そうすれば自分のリーダーレベル+2。",
+              "sortIndex": 23
             },
             {
               "id": "c-mtuoqjqhhoc3",
@@ -28522,7 +28546,8 @@
               "nameJp": "放課後の自由時間 デビー&マルレーン",
               "descriptionEn": "If your field has a card other than Earth and your Leader Level is 10 or higher, your Size+5 until the end of this turn. If 9 or lower, you may choose 1 card from your hand and trash it. If you do, your Leader Level+2.",
               "descriptionDe": "Falls dein Feld eine Karte außer Erde hat und dein Anführer-Level 10 oder höher ist, deine Größe+5 bis zum Ende dieses Zuges. Falls 9 oder niedriger, kannst du 1 Karte aus deiner Hand wählen und trashen. Falls du das tust, dein Anführer-Level+2.",
-              "descriptionJp": "自分のフィールドに大地以外のカードがあり、自分のリーダーレベルが10以上なら、このターン終了時まで自分のサイズ+5。9以下なら、自分の手札を1枚選びトラッシュできる。そうすれば自分のリーダーレベル+2。"
+              "descriptionJp": "自分のフィールドに大地以外のカードがあり、自分のリーダーレベルが10以上なら、このターン終了時まで自分のサイズ+5。9以下なら、自分の手札を1枚選びトラッシュできる。そうすれば自分のリーダーレベル+2。",
+              "sortIndex": 24
             },
             {
               "id": "c-mtuoqjqh3f6m",
@@ -28547,7 +28572,8 @@
               "nameJp": "転校生 シャーロット",
               "descriptionEn": "Base Side\n You must put Earth cards in your deck. All cards other than Earth must share the same attribute.\n If your Leader Level is 6 or higher, flip this card. If your field has a card other than Earth, the opponent may draw 1 card.\n\nAwakened Side\n Choose 1 of your units on the field with Cost 3 or less and without [Trigger], and give it Hit+1 until the end of the opponent's turn. If your field has 3 or more units with Cost 3 or less, additionally Hit+1 until the end of the opponent's turn.",
               "descriptionDe": "Grundseite\n Du musst Erde-Karten in dein Deck legen. Alle Karten außer Erde müssen dasselbe Attribut haben.\n Falls dein Anführer-Level 6 oder höher ist, drehe diese Karte um. Falls dein Feld eine Karte außer Erde hat, darf der Gegner 1 Karte ziehen.\n\nErwachte Seite\n Wähle 1 deiner Einheiten auf dem Feld mit Kosten 3 oder weniger und ohne [Trigger], und gib ihr Treffer+1 bis zum Ende des gegnerischen Zuges. Falls dein Feld 3 oder mehr Einheiten mit Kosten 3 oder weniger hat, zusätzlich Treffer+1 bis zum Ende des gegnerischen Zuges.",
-              "descriptionJp": "基本面\n 自分のデッキに大地のカードを入れなければならない。大地以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが6以上なら、このカードを反転する。自分のフィールドに大地以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n フィールドにいる【トリガー】を持たず3コスト以下の自分のユニットを1枚選び、相手のターンが終わるまでヒット+1。フィールドにいる3コスト以下の自分のユニットが3枚以上なら、さらに相手のターンが終わるまでヒット+1。"
+              "descriptionJp": "基本面\n 自分のデッキに大地のカードを入れなければならない。大地以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが6以上なら、このカードを反転する。自分のフィールドに大地以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n フィールドにいる【トリガー】を持たず3コスト以下の自分のユニットを1枚選び、相手のターンが終わるまでヒット+1。フィールドにいる3コスト以下の自分のユニットが3枚以上なら、さらに相手のターンが終わるまでヒット+1。",
+              "sortIndex": 25
             },
             {
               "id": "c-mtuoqjqhdrmb",
@@ -28572,7 +28598,8 @@
               "nameJp": "転校生 シャーロット",
               "descriptionEn": "Base Side\n You must put Earth cards in your deck. All cards other than Earth must share the same attribute.\n If your Leader Level is 6 or higher, flip this card. If your field has a card other than Earth, the opponent may draw 1 card.\n\nAwakened Side\n Choose 1 of your units on the field with Cost 3 or less and without [Trigger], and give it Hit+1 until the end of the opponent's turn. If your field has 3 or more units with Cost 3 or less, additionally Hit+1 until the end of the opponent's turn.",
               "descriptionDe": "Grundseite\n Du musst Erde-Karten in dein Deck legen. Alle Karten außer Erde müssen dasselbe Attribut haben.\n Falls dein Anführer-Level 6 oder höher ist, drehe diese Karte um. Falls dein Feld eine Karte außer Erde hat, darf der Gegner 1 Karte ziehen.\n\nErwachte Seite\n Wähle 1 deiner Einheiten auf dem Feld mit Kosten 3 oder weniger und ohne [Trigger], und gib ihr Treffer+1 bis zum Ende des gegnerischen Zuges. Falls dein Feld 3 oder mehr Einheiten mit Kosten 3 oder weniger hat, zusätzlich Treffer+1 bis zum Ende des gegnerischen Zuges.",
-              "descriptionJp": "基本面\n 自分のデッキに大地のカードを入れなければならない。大地以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが6以上なら、このカードを反転する。自分のフィールドに大地以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n フィールドにいる【トリガー】を持たず3コスト以下の自分のユニットを1枚選び、相手のターンが終わるまでヒット+1。フィールドにいる3コスト以下の自分のユニットが3枚以上なら、さらに相手のターンが終わるまでヒット+1。"
+              "descriptionJp": "基本面\n 自分のデッキに大地のカードを入れなければならない。大地以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが6以上なら、このカードを反転する。自分のフィールドに大地以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n フィールドにいる【トリガー】を持たず3コスト以下の自分のユニットを1枚選び、相手のターンが終わるまでヒット+1。フィールドにいる3コスト以下の自分のユニットが3枚以上なら、さらに相手のターンが終わるまでヒット+1。",
+              "sortIndex": 26
             },
             {
               "id": "c-mtuoqjqh6j7u",
@@ -28597,7 +28624,8 @@
               "nameJp": "転校生 シャーロット",
               "descriptionEn": "Base Side\n You must put Earth cards in your deck. All cards other than Earth must share the same attribute.\n If your Leader Level is 6 or higher, flip this card. If your field has a card other than Earth, the opponent may draw 1 card.\n\nAwakened Side\n Choose 1 of your units on the field with Cost 3 or less and without [Trigger], and give it Hit+1 until the end of the opponent's turn. If your field has 3 or more units with Cost 3 or less, additionally Hit+1 until the end of the opponent's turn.",
               "descriptionDe": "Grundseite\n Du musst Erde-Karten in dein Deck legen. Alle Karten außer Erde müssen dasselbe Attribut haben.\n Falls dein Anführer-Level 6 oder höher ist, drehe diese Karte um. Falls dein Feld eine Karte außer Erde hat, darf der Gegner 1 Karte ziehen.\n\nErwachte Seite\n Wähle 1 deiner Einheiten auf dem Feld mit Kosten 3 oder weniger und ohne [Trigger], und gib ihr Treffer+1 bis zum Ende des gegnerischen Zuges. Falls dein Feld 3 oder mehr Einheiten mit Kosten 3 oder weniger hat, zusätzlich Treffer+1 bis zum Ende des gegnerischen Zuges.",
-              "descriptionJp": "基本面\n 自分のデッキに大地のカードを入れなければならない。大地以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが6以上なら、このカードを反転する。自分のフィールドに大地以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n フィールドにいる【トリガー】を持たず3コスト以下の自分のユニットを1枚選び、相手のターンが終わるまでヒット+1。フィールドにいる3コスト以下の自分のユニットが3枚以上なら、さらに相手のターンが終わるまでヒット+1。"
+              "descriptionJp": "基本面\n 自分のデッキに大地のカードを入れなければならない。大地以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが6以上なら、このカードを反転する。自分のフィールドに大地以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n フィールドにいる【トリガー】を持たず3コスト以下の自分のユニットを1枚選び、相手のターンが終わるまでヒット+1。フィールドにいる3コスト以下の自分のユニットが3枚以上なら、さらに相手のターンが終わるまでヒット+1。",
+              "sortIndex": 27
             },
             {
               "id": "c-mtuoqjqhf2s3",
@@ -28622,7 +28650,8 @@
               "nameJp": "先生 キャシー",
               "descriptionEn": "Based on this unit's Hit, gain all of the effects below.\n・2 or more: Power+3000.\n・3 or more: [Attacker] Choose 1 other unit of yours on the field, and give it Hit+1 until the end of the opponent's turn.",
               "descriptionDe": "Basierend auf dem Treffer dieser Einheit, erhalte alle folgenden Effekte.\n・2 oder mehr: Stärke+3000.\n・3 oder mehr: [Angreifer] Wähle 1 andere deiner Einheiten auf dem Feld, und gib ihr Treffer+1 bis zum Ende des gegnerischen Zuges.",
-              "descriptionJp": "このユニットのヒットに応じて、下記の効果をすべて得る。\n・2以上：パワー+3000。\n・3以上：【アタッカー】フィールドにいる他の自分のユニットを1枚選び、相手のターンが終わるまでヒット+1。"
+              "descriptionJp": "このユニットのヒットに応じて、下記の効果をすべて得る。\n・2以上：パワー+3000。\n・3以上：【アタッカー】フィールドにいる他の自分のユニットを1枚選び、相手のターンが終わるまでヒット+1。",
+              "sortIndex": 28
             },
             {
               "id": "c-mtuoqjqh7yfx",
@@ -28647,7 +28676,8 @@
               "nameJp": "暗香疎影 ツバメ",
               "descriptionEn": "Based on this unit's Hit, gain all of the effects below.\n・2 or more: Power+3000.\n・3 or more: [Attacker] Reveal 3 cards from the top of your deck, choose 1 and add it to your hand. Trash the rest.",
               "descriptionDe": "Basierend auf dem Treffer dieser Einheit, erhalte alle folgenden Effekte.\n・2 oder mehr: Stärke+3000.\n・3 oder mehr: [Angreifer] Decke 3 Karten von der Oberseite deines Decks auf, wähle 1 und lege sie auf deine Hand. Trashe den Rest.",
-              "descriptionJp": "このユニットのヒットに応じて、下記の効果をすべて得る。\n・2以上：パワー+3000。\n・3以上：【アタッカー】自分のデッキの一番上からカードを3枚公開し、その中から1枚を選び手札に加える。残りはすべてトラッシュする。"
+              "descriptionJp": "このユニットのヒットに応じて、下記の効果をすべて得る。\n・2以上：パワー+3000。\n・3以上：【アタッカー】自分のデッキの一番上からカードを3枚公開し、その中から1枚を選び手札に加える。残りはすべてトラッシュする。",
+              "sortIndex": 29
             },
             {
               "id": "c-mtuoqjqhrnvz",
@@ -28672,7 +28702,8 @@
               "nameJp": "暗香疎影 ツバメ",
               "descriptionEn": "Based on this unit's Hit, gain all of the effects below.\n・2 or more: Power+3000.\n・3 or more: [Attacker] Reveal 3 cards from the top of your deck, choose 1 and add it to your hand. Trash the rest.",
               "descriptionDe": "Basierend auf dem Treffer dieser Einheit, erhalte alle folgenden Effekte.\n・2 oder mehr: Stärke+3000.\n・3 oder mehr: [Angreifer] Decke 3 Karten von der Oberseite deines Decks auf, wähle 1 und lege sie auf deine Hand. Trashe den Rest.",
-              "descriptionJp": "このユニットのヒットに応じて、下記の効果をすべて得る。\n・2以上：パワー+3000。\n・3以上：【アタッカー】自分のデッキの一番上からカードを3枚公開し、その中から1枚を選び手札に加える。残りはすべてトラッシュする。"
+              "descriptionJp": "このユニットのヒットに応じて、下記の効果をすべて得る。\n・2以上：パワー+3000。\n・3以上：【アタッカー】自分のデッキの一番上からカードを3枚公開し、その中から1枚を選び手札に加える。残りはすべてトラッシュする。",
+              "sortIndex": 30
             },
             {
               "id": "c-mtuoqjqh9jju",
@@ -28697,7 +28728,8 @@
               "nameJp": "玄黙清花 シュリン",
               "descriptionEn": "This unit cannot attack until the end of this turn.\n Choose 1 other unit of yours on the field with Cost 3 or less, and give it Hit+1 until the end of this turn.",
               "descriptionDe": "Diese Einheit kann bis zum Ende dieses Zuges nicht angreifen.\n Wähle 1 andere deiner Einheiten auf dem Feld mit Kosten 3 oder weniger, und gib ihr Treffer+1 bis zum Ende dieses Zuges.",
-              "descriptionJp": "このユニットはこのターンが終わるまで攻撃できない。\n フィールドにいる3コスト以下の他の自分のユニットを1枚選び、このターンが終わるまでヒット+1。"
+              "descriptionJp": "このユニットはこのターンが終わるまで攻撃できない。\n フィールドにいる3コスト以下の他の自分のユニットを1枚選び、このターンが終わるまでヒット+1。",
+              "sortIndex": 31
             },
             {
               "id": "c-mtuoqjqhxaim",
@@ -28722,7 +28754,8 @@
               "nameJp": "あなたと私の猫祭り イレム",
               "descriptionEn": "If your field has a card other than Earth, reveal 4 cards from the top of your deck, choose 1 and add it to your hand. Trash the rest. If an Item card was trashed by this effect, your Leader Level+1.\n\n\nTrigger / You may trash this card. If not, your Leader Level+1.",
               "descriptionDe": "Falls dein Feld eine Karte außer Erde hat, decke 4 Karten von der Oberseite deines Decks auf, wähle 1 und lege sie auf deine Hand. Trashe den Rest. Falls eine Item-Karte durch diesen Effekt getrasht wurde, dein Anführer-Level+1.\n\n\nTrigger / Du kannst diese Karte trashen. Andernfalls, dein Anführer-Level+1.",
-              "descriptionJp": "自分のフィールドに大地以外のカードがあるなら、自分のデッキの一番上からカードを4枚公開し、そのうち1枚を選び手札に加える。残りは全てトラッシュする。この効果でアイテムカードをトラッシュしたなら、自分のリーダーレベル+1。\n\n\nトリガー/このカードをトラッシュできる。そうしなければ自分のリーダーレベル+1。"
+              "descriptionJp": "自分のフィールドに大地以外のカードがあるなら、自分のデッキの一番上からカードを4枚公開し、そのうち1枚を選び手札に加える。残りは全てトラッシュする。この効果でアイテムカードをトラッシュしたなら、自分のリーダーレベル+1。\n\n\nトリガー/このカードをトラッシュできる。そうしなければ自分のリーダーレベル+1。",
+              "sortIndex": 32
             },
             {
               "id": "c-mtuoqjqhhyn2",
@@ -28747,7 +28780,8 @@
               "nameJp": "あなたと私の猫祭り イレム",
               "descriptionEn": "If your field has a card other than Earth, reveal 4 cards from the top of your deck, choose 1 and add it to your hand. Trash the rest. If an Item card was trashed by this effect, your Leader Level+1.\n\n\nTrigger / You may trash this card. If not, your Leader Level+1.",
               "descriptionDe": "Falls dein Feld eine Karte außer Erde hat, decke 4 Karten von der Oberseite deines Decks auf, wähle 1 und lege sie auf deine Hand. Trashe den Rest. Falls eine Item-Karte durch diesen Effekt getrasht wurde, dein Anführer-Level+1.\n\n\nTrigger / Du kannst diese Karte trashen. Andernfalls, dein Anführer-Level+1.",
-              "descriptionJp": "自分のフィールドに大地以外のカードがあるなら、自分のデッキの一番上からカードを4枚公開し、そのうち1枚を選び手札に加える。残りは全てトラッシュする。この効果でアイテムカードをトラッシュしたなら、自分のリーダーレベル+1。\n\n\nトリガー/このカードをトラッシュできる。そうしなければ自分のリーダーレベル+1。"
+              "descriptionJp": "自分のフィールドに大地以外のカードがあるなら、自分のデッキの一番上からカードを4枚公開し、そのうち1枚を選び手札に加える。残りは全てトラッシュする。この効果でアイテムカードをトラッシュしたなら、自分のリーダーレベル+1。\n\n\nトリガー/このカードをトラッシュできる。そうしなければ自分のリーダーレベル+1。",
+              "sortIndex": 33
             },
             {
               "id": "c-mtuoqjqhdmjz",
@@ -28772,7 +28806,8 @@
               "nameJp": "転校生 シャーロット",
               "descriptionEn": "Based on this unit's Hit, gain all of the effects below.\n・2 or more: Power+3000.\n・3 or more: [Mix] [Attacker] If your field has a card other than Earth, you may choose and trash cards from your hand equal to the Encountering Unit's Hit minus 1. If you do, gain Piercing [X: Encountering Unit's Hit] until the end of this attack.",
               "descriptionDe": "Basierend auf dem Treffer dieser Einheit, erhalte alle folgenden Effekte.\n・2 oder mehr: Stärke+3000.\n・3 oder mehr: [Mix] [Angreifer] Falls dein Feld eine Karte außer Erde hat, kannst du Karten aus deiner Hand in Höhe von Treffer der begegnenden Einheit minus 1 wählen und trashen. Falls du das tust, erhalte Durchbohren [X: Treffer der begegnenden Einheit] bis zum Ende dieses Angriffs.",
-              "descriptionJp": "このユニットのヒットに応じて、下記の効果をすべて得る。\n・2以上：パワー+3000。\n・3以上：【ミックス】【アタッカー】自分のフィールドに大地以外のカードがあるなら、対面ユニットのヒット-1枚分、自分の手札を選びトラッシュできる。そうしたら、この攻撃が終わるまで貫通[X：対面ユニットのヒット]を得る。"
+              "descriptionJp": "このユニットのヒットに応じて、下記の効果をすべて得る。\n・2以上：パワー+3000。\n・3以上：【ミックス】【アタッカー】自分のフィールドに大地以外のカードがあるなら、対面ユニットのヒット-1枚分、自分の手札を選びトラッシュできる。そうしたら、この攻撃が終わるまで貫通[X：対面ユニットのヒット]を得る。",
+              "sortIndex": 34
             },
             {
               "id": "c-mtuoqjqhfxlu",
@@ -28797,7 +28832,8 @@
               "nameJp": "転校生 シャーロット",
               "descriptionEn": "Based on this unit's Hit, gain all of the effects below.\n・2 or more: Power+3000.\n・3 or more: [Mix] [Attacker] If your field has a card other than Earth, you may choose and trash cards from your hand equal to the Encountering Unit's Hit minus 1. If you do, gain Piercing [X: Encountering Unit's Hit] until the end of this attack.",
               "descriptionDe": "Basierend auf dem Treffer dieser Einheit, erhalte alle folgenden Effekte.\n・2 oder mehr: Stärke+3000.\n・3 oder mehr: [Mix] [Angreifer] Falls dein Feld eine Karte außer Erde hat, kannst du Karten aus deiner Hand in Höhe von Treffer der begegnenden Einheit minus 1 wählen und trashen. Falls du das tust, erhalte Durchbohren [X: Treffer der begegnenden Einheit] bis zum Ende dieses Angriffs.",
-              "descriptionJp": "このユニットのヒットに応じて、下記の効果をすべて得る。\n・2以上：パワー+3000。\n・3以上：【ミックス】【アタッカー】自分のフィールドに大地以外のカードがあるなら、対面ユニットのヒット-1枚分、自分の手札を選びトラッシュできる。そうしたら、この攻撃が終わるまで貫通[X：対面ユニットのヒット]を得る。"
+              "descriptionJp": "このユニットのヒットに応じて、下記の効果をすべて得る。\n・2以上：パワー+3000。\n・3以上：【ミックス】【アタッカー】自分のフィールドに大地以外のカードがあるなら、対面ユニットのヒット-1枚分、自分の手札を選びトラッシュできる。そうしたら、この攻撃が終わるまで貫通[X：対面ユニットのヒット]を得る。",
+              "sortIndex": 35
             },
             {
               "id": "c-mtuoqjqh6fll",
@@ -28822,7 +28858,8 @@
               "nameJp": "我が時間到来なり。",
               "descriptionEn": "Choose up to 2 unit cards with Cost 3 or less from your hand and deploy them to empty Unit Zones of yours, ignoring Size. If your field has a card other than Earth and 2 or more units were deployed by this effect, draw 1 card, and all units deployed by this effect get Power+2000, Hit+1 until the end of the opponent's turn.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Wähle bis zu 2 Einheitenkarten mit Kosten 3 oder weniger aus deiner Hand und platziere sie ignorierend der Größe in leere Einheitenzonen von dir. Falls dein Feld eine Karte außer Erde hat und 2 oder mehr Einheiten durch diesen Effekt platziert wurden, ziehe 1 Karte, und alle durch diesen Effekt platzierten Einheiten erhalten Stärke+2000, Treffer+1 bis zum Ende des gegnerischen Zuges.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "自分の手札から3コスト以下のユニットカードを2枚まで選び、空いている自分のユニットゾーンにサイズを無視して配置する。自分のフィールドに大地以外のカードがあり、この効果で配置したユニットが2枚以上なら、カードを1枚ドローし、相手のターン終了時までこの効果で配置した全てのユニットのパワー+2000、ヒット+1。\n\n\nトリガー/このカードを自分の手札に加える。"
+              "descriptionJp": "自分の手札から3コスト以下のユニットカードを2枚まで選び、空いている自分のユニットゾーンにサイズを無視して配置する。自分のフィールドに大地以外のカードがあり、この効果で配置したユニットが2枚以上なら、カードを1枚ドローし、相手のターン終了時までこの効果で配置した全てのユニットのパワー+2000、ヒット+1。\n\n\nトリガー/このカードを自分の手札に加える。",
+              "sortIndex": 36
             },
             {
               "id": "c-mtuoqjqhqk62",
@@ -28847,7 +28884,8 @@
               "nameJp": "ピースブリンガー",
               "descriptionEn": "Power+1000.\n This unit's Hit becomes 2 until the end of the opponent's turn.",
               "descriptionDe": "Stärke+1000.\n Der Treffer dieser Einheit wird bis zum Ende des gegnerischen Zuges 2.",
-              "descriptionJp": "パワー+1000。\n このユニットのヒットが相手のターン終了時まで2になる。"
+              "descriptionJp": "パワー+1000。\n このユニットのヒットが相手のターン終了時まで2になる。",
+              "sortIndex": 37
             },
             {
               "id": "c-mtuoqjqheasq",
@@ -28872,7 +28910,8 @@
               "nameJp": "マジカルラビット エマ",
               "descriptionEn": "Once per your and the opponent's turn each, when a unit on the field is trashed by your effect, you may choose 1 card from your hand and trash it. If you do, deal damage to the opponent equal to the number of units trashed by that effect.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Einmal pro deinem und dem gegnerischen Zug je, wenn eine Einheit auf dem Feld durch deinen Effekt getrasht wird, kannst du 1 Karte aus deiner Hand wählen und trashen. Falls du das tust, füge dem Gegner Schaden in Höhe der Anzahl der durch diesen Effekt getrashten Einheiten zu.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "自分と相手のターンごとに1回、フィールドにいるユニットが自分の効果でトラッシュされると、自分の手札を1枚選びトラッシュできる。そうしたら、その効果でトラッシュされたユニットの数だけ相手にダメージを与える。\n\n\nトリガー/このカードを自分の手札に加える。"
+              "descriptionJp": "自分と相手のターンごとに1回、フィールドにいるユニットが自分の効果でトラッシュされると、自分の手札を1枚選びトラッシュできる。そうしたら、その効果でトラッシュされたユニットの数だけ相手にダメージを与える。\n\n\nトリガー/このカードを自分の手札に加える。",
+              "sortIndex": 38
             },
             {
               "id": "c-mtuoqjqh354n",
@@ -28897,7 +28936,8 @@
               "nameJp": "ボンバーラビット セリーン",
               "descriptionEn": "Choose 1 opposing unit on the field, and give it Power-2000 until the end of this turn. If your field has a card other than Storm, additionally Power-2000.",
               "descriptionDe": "Wähle 1 gegnerische Einheit auf dem Feld, und gib ihr Stärke-2000 bis zum Ende dieses Zuges. Falls dein Feld eine Karte außer Sturm hat, zusätzlich Stärke-2000.",
-              "descriptionJp": "フィールドにいる相手ユニットを1枚選び、このターンが終わるまでパワー-2000。自分のフィールドに嵐以外のカードがあるなら、さらにパワー-2000。"
+              "descriptionJp": "フィールドにいる相手ユニットを1枚選び、このターンが終わるまでパワー-2000。自分のフィールドに嵐以外のカードがあるなら、さらにパワー-2000。",
+              "sortIndex": 39
             },
             {
               "id": "c-mtuoqjqhf591",
@@ -28922,7 +28962,8 @@
               "nameJp": "ゴーストハンター キアラ",
               "descriptionEn": "When this unit is deployed, draw 1 card. When this unit is trashed, choose 1 card from your hand and trash it.\n You may choose 1 unit card from your Trash Zone with [Exit] and without [Trigger], choose 1 of its [Exit] effects, and activate it. If you do, put that card on the bottom of your deck.",
               "descriptionDe": "Wenn diese Einheit platziert wird, ziehe 1 Karte. Wenn diese Einheit getrasht wird, wähle 1 Karte aus deiner Hand und trashe sie.\n Du kannst 1 Einheitenkarte aus deiner Trash-Zone mit [Exit] und ohne [Trigger] wählen, einen ihrer [Exit]-Effekte wählen und aktivieren. Falls du das tust, lege diese Karte unter dein Deck.",
-              "descriptionJp": "このユニットが配置されたら、カードを1枚ドローする。このユニットがトラッシュされたら、自分の手札を1枚選びトラッシュする。\n 自分のトラッシュゾーンから【エグジット】を持ち【トリガー】を持たないユニットカードを1枚選び、そのカードが持つ【エグジット】効果を1つ選び発動できる。そうしたら、そのカードをデッキの一番下に置く。"
+              "descriptionJp": "このユニットが配置されたら、カードを1枚ドローする。このユニットがトラッシュされたら、自分の手札を1枚選びトラッシュする。\n 自分のトラッシュゾーンから【エグジット】を持ち【トリガー】を持たないユニットカードを1枚選び、そのカードが持つ【エグジット】効果を1つ選び発動できる。そうしたら、そのカードをデッキの一番下に置く。",
+              "sortIndex": 40
             },
             {
               "id": "c-mtuoqjqhym9u",
@@ -28947,7 +28988,8 @@
               "nameJp": "ポーカーフェイスバニー・アビゲイル",
               "descriptionEn": "If your field has a card other than Storm, Power+2000.\n If your field has a card other than Storm, choose 1 unit card without [Trigger] and Cost 2 or less from your Trash Zone and deploy it to an empty Unit Zone of yours, ignoring Size.",
               "descriptionDe": "Falls dein Feld eine Karte außer Sturm hat, Stärke+2000.\n Falls dein Feld eine Karte außer Sturm hat, wähle 1 Einheitenkarte ohne [Trigger] mit Kosten 2 oder weniger aus deiner Trash-Zone und platziere sie ignorierend der Größe in eine leere Einheitenzone von dir.",
-              "descriptionJp": "自分のフィールドに嵐以外のカードがあるならパワー+2000。\n 自分のフィールドに嵐以外のカードがあるなら、自分のトラッシュゾーンから【トリガー】を持たず2コスト以下のユニットカードを1枚選び、空いている自分のユニットゾーンにサイズを無視して配置する。"
+              "descriptionJp": "自分のフィールドに嵐以外のカードがあるならパワー+2000。\n 自分のフィールドに嵐以外のカードがあるなら、自分のトラッシュゾーンから【トリガー】を持たず2コスト以下のユニットカードを1枚選び、空いている自分のユニットゾーンにサイズを無視して配置する。",
+              "sortIndex": 41
             },
             {
               "id": "c-mtuoqjqhdwip",
@@ -28972,7 +29014,8 @@
               "nameJp": "ラグジュアリーバニー ジェニー",
               "descriptionEn": "Choose 1 of your units on the field and trash it.\n If your field has a card other than Storm, choose 1 opposing unit on the field without an Encountering Unit and trash it.",
               "descriptionDe": "Wähle 1 deiner Einheiten auf dem Feld und trashe sie.\n Falls dein Feld eine Karte außer Sturm hat, wähle 1 gegnerische Einheit auf dem Feld ohne begegnende Einheit und trashe sie.",
-              "descriptionJp": "フィールドにいる自分のユニットを1枚選びトラッシュする。\n 自分のフィールドに嵐以外のカードがあるなら、フィールドにいる対面ユニットを持たない相手ユニットを1枚選びトラッシュする。"
+              "descriptionJp": "フィールドにいる自分のユニットを1枚選びトラッシュする。\n 自分のフィールドに嵐以外のカードがあるなら、フィールドにいる対面ユニットを持たない相手ユニットを1枚選びトラッシュする。",
+              "sortIndex": 42
             },
             {
               "id": "c-mtuoqjqhx3l0",
@@ -28997,7 +29040,8 @@
               "nameJp": "ラグジュアリーバニー ジェニー",
               "descriptionEn": "Choose 1 of your units on the field and trash it.\n If your field has a card other than Storm, choose 1 opposing unit on the field without an Encountering Unit and trash it.",
               "descriptionDe": "Wähle 1 deiner Einheiten auf dem Feld und trashe sie.\n Falls dein Feld eine Karte außer Sturm hat, wähle 1 gegnerische Einheit auf dem Feld ohne begegnende Einheit und trashe sie.",
-              "descriptionJp": "フィールドにいる自分のユニットを1枚選びトラッシュする。\n 自分のフィールドに嵐以外のカードがあるなら、フィールドにいる対面ユニットを持たない相手ユニットを1枚選びトラッシュする。"
+              "descriptionJp": "フィールドにいる自分のユニットを1枚選びトラッシュする。\n 自分のフィールドに嵐以外のカードがあるなら、フィールドにいる対面ユニットを持たない相手ユニットを1枚選びトラッシュする。",
+              "sortIndex": 43
             },
             {
               "id": "c-mtuoqjqh64ir",
@@ -29022,7 +29066,8 @@
               "nameJp": "ノーブルエース バニー ヘイズ",
               "descriptionEn": "Base Side\n You must put Storm cards in your deck. All cards other than Storm must share the same attribute.\n If your Leader Level is 5 or higher, flip this card. If your field has a card other than Storm, the opponent may draw 1 card.\n\nAwakened Side\n Trash 3 cards from the top of your deck. Then choose 1 card without [Trigger] from your Trash Zone and put it on the bottom of your deck.",
               "descriptionDe": "Grundseite\n Du musst Sturm-Karten in dein Deck legen. Alle Karten außer Sturm müssen dasselbe Attribut haben.\n Falls dein Anführer-Level 5 oder höher ist, drehe diese Karte um. Falls dein Feld eine Karte außer Sturm hat, darf der Gegner 1 Karte ziehen.\n\nErwachte Seite\n Trashe 3 Karten von der Oberseite deines Decks. Wähle dann 1 Karte ohne [Trigger] aus deiner Trash-Zone und lege sie unter dein Deck.",
-              "descriptionJp": "基本面\n 自分のデッキに嵐のカードを入れなければならない。嵐以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが5以上なら、このカードを反転する。自分のフィールドに嵐以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n 自分のデッキの一番上からカードを3枚トラッシュする。そうしたら、自分のトラッシュゾーンから【トリガー】を持たないカードを1枚選びデッキの一番下に置く。"
+              "descriptionJp": "基本面\n 自分のデッキに嵐のカードを入れなければならない。嵐以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが5以上なら、このカードを反転する。自分のフィールドに嵐以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n 自分のデッキの一番上からカードを3枚トラッシュする。そうしたら、自分のトラッシュゾーンから【トリガー】を持たないカードを1枚選びデッキの一番下に置く。",
+              "sortIndex": 44
             },
             {
               "id": "c-mtuoqjqhjfl6",
@@ -29047,7 +29092,8 @@
               "nameJp": "ノーブルエース バニー ヘイズ",
               "descriptionEn": "Base Side\n You must put Storm cards in your deck. All cards other than Storm must share the same attribute.\n If your Leader Level is 5 or higher, flip this card. If your field has a card other than Storm, the opponent may draw 1 card.\n\nAwakened Side\n Trash 3 cards from the top of your deck. Then choose 1 card without [Trigger] from your Trash Zone and put it on the bottom of your deck.",
               "descriptionDe": "Grundseite\n Du musst Sturm-Karten in dein Deck legen. Alle Karten außer Sturm müssen dasselbe Attribut haben.\n Falls dein Anführer-Level 5 oder höher ist, drehe diese Karte um. Falls dein Feld eine Karte außer Sturm hat, darf der Gegner 1 Karte ziehen.\n\nErwachte Seite\n Trashe 3 Karten von der Oberseite deines Decks. Wähle dann 1 Karte ohne [Trigger] aus deiner Trash-Zone und lege sie unter dein Deck.",
-              "descriptionJp": "基本面\n 自分のデッキに嵐のカードを入れなければならない。嵐以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが5以上なら、このカードを反転する。自分のフィールドに嵐以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n 自分のデッキの一番上からカードを3枚トラッシュする。そうしたら、自分のトラッシュゾーンから【トリガー】を持たないカードを1枚選びデッキの一番下に置く。"
+              "descriptionJp": "基本面\n 自分のデッキに嵐のカードを入れなければならない。嵐以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが5以上なら、このカードを反転する。自分のフィールドに嵐以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n 自分のデッキの一番上からカードを3枚トラッシュする。そうしたら、自分のトラッシュゾーンから【トリガー】を持たないカードを1枚選びデッキの一番下に置く。",
+              "sortIndex": 45
             },
             {
               "id": "c-mtuoqjqh0d6a",
@@ -29072,7 +29118,8 @@
               "nameJp": "ノーブルエース バニー ヘイズ",
               "descriptionEn": "Base Side\n You must put Storm cards in your deck. All cards other than Storm must share the same attribute.\n If your Leader Level is 5 or higher, flip this card. If your field has a card other than Storm, the opponent may draw 1 card.\n\nAwakened Side\n Trash 3 cards from the top of your deck. Then choose 1 card without [Trigger] from your Trash Zone and put it on the bottom of your deck.",
               "descriptionDe": "Grundseite\n Du musst Sturm-Karten in dein Deck legen. Alle Karten außer Sturm müssen dasselbe Attribut haben.\n Falls dein Anführer-Level 5 oder höher ist, drehe diese Karte um. Falls dein Feld eine Karte außer Sturm hat, darf der Gegner 1 Karte ziehen.\n\nErwachte Seite\n Trashe 3 Karten von der Oberseite deines Decks. Wähle dann 1 Karte ohne [Trigger] aus deiner Trash-Zone und lege sie unter dein Deck.",
-              "descriptionJp": "基本面\n 自分のデッキに嵐のカードを入れなければならない。嵐以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが5以上なら、このカードを反転する。自分のフィールドに嵐以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n 自分のデッキの一番上からカードを3枚トラッシュする。そうしたら、自分のトラッシュゾーンから【トリガー】を持たないカードを1枚選びデッキの一番下に置く。"
+              "descriptionJp": "基本面\n 自分のデッキに嵐のカードを入れなければならない。嵐以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが5以上なら、このカードを反転する。自分のフィールドに嵐以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n 自分のデッキの一番上からカードを3枚トラッシュする。そうしたら、自分のトラッシュゾーンから【トリガー】を持たないカードを1枚選びデッキの一番下に置く。",
+              "sortIndex": 46
             },
             {
               "id": "c-mtuoqjqhq6ue",
@@ -29097,7 +29144,8 @@
               "nameJp": "グルーミーバニー キアラ",
               "descriptionEn": "You may trash 3 cards from the top of your deck. If you do, choose 1 to 3 cards without [Trigger] from your Trash Zone and put them on the bottom of your deck in any order.",
               "descriptionDe": "Du kannst 3 Karten von der Oberseite deines Decks trashen. Falls du das tust, wähle 1 bis 3 Karten ohne [Trigger] aus deiner Trash-Zone und lege sie in beliebiger Reihenfolge unter dein Deck.",
-              "descriptionJp": "自分のデッキの上からカードを3枚トラッシュできる。そうしたら、自分のトラッシュゾーンから【トリガー】を持たないカードを1枚から3枚まで選び、デッキの下に好きな順番で置く。"
+              "descriptionJp": "自分のデッキの上からカードを3枚トラッシュできる。そうしたら、自分のトラッシュゾーンから【トリガー】を持たないカードを1枚から3枚まで選び、デッキの下に好きな順番で置く。",
+              "sortIndex": 47
             },
             {
               "id": "c-mtuoqjqhvu0s",
@@ -29122,7 +29170,8 @@
               "nameJp": "ゴーストハンター ヒスイ",
               "descriptionEn": "Choose 1 card other than 〈Ghosthunter Hisui〉from your Trash Zone without [Trigger] and with Cost equal to or less than the number of cards put on the bottom of your deck this turn, and add it to your hand.",
               "descriptionDe": "Wähle 1 andere Karte als 〈Geisterjägerin Hisui〉aus deiner Trash-Zone ohne [Trigger] und mit Kosten gleich oder niedriger als die Anzahl der diesen Zug unter dein Deck gelegten Karten, und lege sie auf deine Hand.",
-              "descriptionJp": "コストがこのターン中に自分のデッキの一番下に置かれたカードの数以下で、〈ゴーストハンター・ヒスイ〉以外の【トリガー】を持たないカードを自分のトラッシュゾーンから1枚選び手札に加える。"
+              "descriptionJp": "コストがこのターン中に自分のデッキの一番下に置かれたカードの数以下で、〈ゴーストハンター・ヒスイ〉以外の【トリガー】を持たないカードを自分のトラッシュゾーンから1枚選び手札に加える。",
+              "sortIndex": 48
             },
             {
               "id": "c-mtuoqjqhixms",
@@ -29147,7 +29196,8 @@
               "nameJp": "ゴーストハンター ヒスイ",
               "descriptionEn": "Choose 1 card other than 〈Ghosthunter Hisui〉from your Trash Zone without [Trigger] and with Cost equal to or less than the number of cards put on the bottom of your deck this turn, and add it to your hand.",
               "descriptionDe": "Wähle 1 andere Karte als 〈Geisterjägerin Hisui〉aus deiner Trash-Zone ohne [Trigger] und mit Kosten gleich oder niedriger als die Anzahl der diesen Zug unter dein Deck gelegten Karten, und lege sie auf deine Hand.",
-              "descriptionJp": "コストがこのターン中に自分のデッキの一番下に置かれたカードの数以下で、〈ゴーストハンター・ヒスイ〉以外の【トリガー】を持たないカードを自分のトラッシュゾーンから1枚選び手札に加える。"
+              "descriptionJp": "コストがこのターン中に自分のデッキの一番下に置かれたカードの数以下で、〈ゴーストハンター・ヒスイ〉以外の【トリガー】を持たないカードを自分のトラッシュゾーンから1枚選び手札に加える。",
+              "sortIndex": 49
             },
             {
               "id": "c-mtuoqjqh5by9",
@@ -29172,7 +29222,8 @@
               "nameJp": "アラモードバニー・マイ",
               "descriptionEn": "Choose 2 cards without [Trigger] from your Trash Zone and put them on the bottom of your deck in any order. Then draw 1 card. If 3 or more cards were put on the bottom of your deck this turn, additionally draw 1 card.",
               "descriptionDe": "Wähle 2 Karten ohne [Trigger] aus deiner Trash-Zone und lege sie in beliebiger Reihenfolge unter dein Deck. Ziehe dann 1 Karte. Falls diesen Zug 3 oder mehr Karten unter dein Deck gelegt wurden, ziehe zusätzlich 1 Karte.",
-              "descriptionJp": "自分のトラッシュゾーンから【トリガー】を持たないカードを2枚選び、デッキの一番下に好きな順番で置く。そうすればカードを1枚ドローする。このターン中に自分のデッキの一番下に置かれたカードが3枚以上なら、追加でカードを1枚ドローする。"
+              "descriptionJp": "自分のトラッシュゾーンから【トリガー】を持たないカードを2枚選び、デッキの一番下に好きな順番で置く。そうすればカードを1枚ドローする。このターン中に自分のデッキの一番下に置かれたカードが3枚以上なら、追加でカードを1枚ドローする。",
+              "sortIndex": 50
             },
             {
               "id": "c-mtuoqjqhad84",
@@ -29197,7 +29248,8 @@
               "nameJp": "ラッキーヒーローバニー ユスティナ",
               "descriptionEn": "If your field has a card other than Storm and the Encountering Unit's Cost is equal to or less than the number of cards put on the bottom of your deck this turn, trash the Encountering Unit.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Falls dein Feld eine Karte außer Sturm hat und die Kosten der begegnenden Einheit gleich oder niedriger als die Anzahl der diesen Zug unter dein Deck gelegten Karten sind, trashe die begegnende Einheit.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "自分のフィールドに嵐以外のカードがあり、対面ユニットのコストがこのターン中に自分のデッキの一番下に置かれたカードの数以下なら、対面ユニットをトラッシュする。\n\n\nトリガー/このカードを自分の手札に加える。"
+              "descriptionJp": "自分のフィールドに嵐以外のカードがあり、対面ユニットのコストがこのターン中に自分のデッキの一番下に置かれたカードの数以下なら、対面ユニットをトラッシュする。\n\n\nトリガー/このカードを自分の手札に加える。",
+              "sortIndex": 51
             },
             {
               "id": "c-mtuoqjqh0pm9",
@@ -29222,7 +29274,8 @@
               "nameJp": "ラッキーヒーローバニー ユスティナ",
               "descriptionEn": "If your field has a card other than Storm and the Encountering Unit's Cost is equal to or less than the number of cards put on the bottom of your deck this turn, trash the Encountering Unit.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Falls dein Feld eine Karte außer Sturm hat und die Kosten der begegnenden Einheit gleich oder niedriger als die Anzahl der diesen Zug unter dein Deck gelegten Karten sind, trashe die begegnende Einheit.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "自分のフィールドに嵐以外のカードがあり、対面ユニットのコストがこのターン中に自分のデッキの一番下に置かれたカードの数以下なら、対面ユニットをトラッシュする。\n\n\nトリガー/このカードを自分の手札に加える。"
+              "descriptionJp": "自分のフィールドに嵐以外のカードがあり、対面ユニットのコストがこのターン中に自分のデッキの一番下に置かれたカードの数以下なら、対面ユニットをトラッシュする。\n\n\nトリガー/このカードを自分の手札に加える。",
+              "sortIndex": 52
             },
             {
               "id": "c-mtuoqjqhlt6i",
@@ -29247,7 +29300,8 @@
               "nameJp": "ノーブルエース バニー ヘイズ",
               "descriptionEn": "You may trash 2 cards from the top of your deck. If you do, choose 1 or 2 cards without [Trigger] from your Trash Zone and put them on the bottom of your deck in any order.\n If your field has a card other than Storm, choose 1 opposing unit on the field with Cost equal to or less than the number of cards put on the bottom of your deck this turn, and trash it.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Du kannst 2 Karten von der Oberseite deines Decks trashen. Falls du das tust, wähle 1 oder 2 Karten ohne [Trigger] aus deiner Trash-Zone und lege sie in beliebiger Reihenfolge unter dein Deck.\n Falls dein Feld eine Karte außer Sturm hat, wähle 1 gegnerische Einheit auf dem Feld mit Kosten gleich oder niedriger als die Anzahl der diesen Zug unter dein Deck gelegten Karten, und trashe sie.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "自分のデッキの上からカードを2枚トラッシュできる。そうしたら、自分のトラッシュゾーンから【トリガー】を持たないカードを1枚か2枚選び、デッキの下に好きな順番で置く。\n 自分のフィールドに嵐以外のカードがあるなら、コストがこのターン中に自分のデッキの下に置かれたカードの数以下の相手ユニットをフィールドから1枚選びトラッシュする。\n\n\nトリガー/このカードを自分の手札に加える。"
+              "descriptionJp": "自分のデッキの上からカードを2枚トラッシュできる。そうしたら、自分のトラッシュゾーンから【トリガー】を持たないカードを1枚か2枚選び、デッキの下に好きな順番で置く。\n 自分のフィールドに嵐以外のカードがあるなら、コストがこのターン中に自分のデッキの下に置かれたカードの数以下の相手ユニットをフィールドから1枚選びトラッシュする。\n\n\nトリガー/このカードを自分の手札に加える。",
+              "sortIndex": 53
             },
             {
               "id": "c-mtuoqjqhh9vq",
@@ -29272,7 +29326,8 @@
               "nameJp": "ノーブルエース バニー ヘイズ",
               "descriptionEn": "You may trash 2 cards from the top of your deck. If you do, choose 1 or 2 cards without [Trigger] from your Trash Zone and put them on the bottom of your deck in any order.\n If your field has a card other than Storm, choose 1 opposing unit on the field with Cost equal to or less than the number of cards put on the bottom of your deck this turn, and trash it.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Du kannst 2 Karten von der Oberseite deines Decks trashen. Falls du das tust, wähle 1 oder 2 Karten ohne [Trigger] aus deiner Trash-Zone und lege sie in beliebiger Reihenfolge unter dein Deck.\n Falls dein Feld eine Karte außer Sturm hat, wähle 1 gegnerische Einheit auf dem Feld mit Kosten gleich oder niedriger als die Anzahl der diesen Zug unter dein Deck gelegten Karten, und trashe sie.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "自分のデッキの上からカードを2枚トラッシュできる。そうしたら、自分のトラッシュゾーンから【トリガー】を持たないカードを1枚か2枚選び、デッキの下に好きな順番で置く。\n 自分のフィールドに嵐以外のカードがあるなら、コストがこのターン中に自分のデッキの下に置かれたカードの数以下の相手ユニットをフィールドから1枚選びトラッシュする。\n\n\nトリガー/このカードを自分の手札に加える。"
+              "descriptionJp": "自分のデッキの上からカードを2枚トラッシュできる。そうしたら、自分のトラッシュゾーンから【トリガー】を持たないカードを1枚か2枚選び、デッキの下に好きな順番で置く。\n 自分のフィールドに嵐以外のカードがあるなら、コストがこのターン中に自分のデッキの下に置かれたカードの数以下の相手ユニットをフィールドから1枚選びトラッシュする。\n\n\nトリガー/このカードを自分の手札に加える。",
+              "sortIndex": 54
             },
             {
               "id": "c-mtuoqjqh54fv",
@@ -29297,7 +29352,8 @@
               "nameJp": "ロイヤルストレートフラッシュ",
               "descriptionEn": "Choose 3 cards without [Trigger] from your Trash Zone and put them on the bottom of your deck in any order. Then draw 3 cards.",
               "descriptionDe": "Wähle 3 Karten ohne [Trigger] aus deiner Trash-Zone und lege sie in beliebiger Reihenfolge unter dein Deck. Ziehe dann 3 Karten.",
-              "descriptionJp": "自分のトラッシュゾーンから【トリガー】を持たないカードを3枚選び、デッキの一番下に好きな順番で置く。そうすればカードを3枚ドローする。"
+              "descriptionJp": "自分のトラッシュゾーンから【トリガー】を持たないカードを3枚選び、デッキの一番下に好きな順番で置く。そうすればカードを3枚ドローする。",
+              "sortIndex": 55
             },
             {
               "id": "c-mtuoqjqh95x5",
@@ -29322,7 +29378,8 @@
               "nameJp": "ヘルファイア",
               "descriptionEn": "Trash 2 cards from the top of your deck. Then choose 2 cards without [Trigger] from your Trash Zone and put them on the bottom of your deck in any order.",
               "descriptionDe": "Trashe 2 Karten von der Oberseite deines Decks. Wähle dann 2 Karten ohne [Trigger] aus deiner Trash-Zone und lege sie in beliebiger Reihenfolge unter dein Deck.",
-              "descriptionJp": "自分のデッキの上からカードを2枚トラッシュする。そうしたら、自分のトラッシュゾーンから【トリガー】を持たないカードを2枚選び、デッキの下に好きな順番で置く。"
+              "descriptionJp": "自分のデッキの上からカードを2枚トラッシュする。そうしたら、自分のトラッシュゾーンから【トリガー】を持たないカードを2枚選び、デッキの下に好きな順番で置く。",
+              "sortIndex": 56
             },
             {
               "id": "c-mtuoqjqhoa9i",
@@ -29347,7 +29404,8 @@
               "nameJp": "浜辺のキアラ",
               "descriptionEn": "At the end of your turn, if your hand has 8 or more cards, choose and trash cards until it has 7. Then deal damage to the opponent equal to the number of cards trashed.\n When your Main Phase begins, put this unit on the bottom of the owner's deck. Draw 1 card.",
               "descriptionDe": "Am Ende deines Zuges, falls deine Hand 8 oder mehr Karten hat, wähle und trashe Karten, bis sie 7 hat. Füge dann dem Gegner Schaden in Höhe der Anzahl der getrashten Karten zu.\n Wenn deine Hauptphase beginnt, lege diese Einheit unter das Deck des Besitzers. Ziehe 1 Karte.",
-              "descriptionJp": "自分のターンが終わる時、自分の手札が8枚以上なら7枚になるようカードを選びトラッシュする。そうすればトラッシュしたカードの数だけ相手にダメージを与える。\n 自分のメインフェイズが始まる時、このユニットを持ち主のデッキの一番下に置く。カードを1枚ドローする。"
+              "descriptionJp": "自分のターンが終わる時、自分の手札が8枚以上なら7枚になるようカードを選びトラッシュする。そうすればトラッシュしたカードの数だけ相手にダメージを与える。\n 自分のメインフェイズが始まる時、このユニットを持ち主のデッキの一番下に置く。カードを1枚ドローする。",
+              "sortIndex": 57
             },
             {
               "id": "c-mtuoqjqh8c5j",
@@ -29372,7 +29430,8 @@
               "nameJp": "トロピカルディメンション アビゲイル",
               "descriptionEn": "Once per your and the opponent's turn each, when another unit of yours on the field is put on the bottom of your deck, you may deal damage to the opponent equal to that unit's Hit.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Einmal pro deinem und dem gegnerischen Zug je, wenn eine andere deiner Einheiten auf dem Feld unter dein Deck gelegt wird, kannst du dem Gegner Schaden in Höhe von Treffer dieser Einheit zufügen.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "自分と相手のターンごとに1回、フィールドにいる他の自分ユニットが自分のデッキの下に置かれると、そのユニットのヒットの数だけ相手にダメージを与えることができる。\n\n\nトリガー/このカードを自分の手札に加える。"
+              "descriptionJp": "自分と相手のターンごとに1回、フィールドにいる他の自分ユニットが自分のデッキの下に置かれると、そのユニットのヒットの数だけ相手にダメージを与えることができる。\n\n\nトリガー/このカードを自分の手札に加える。",
+              "sortIndex": 58
             },
             {
               "id": "c-mtuoqjqhfwnf",
@@ -29397,7 +29456,8 @@
               "nameJp": "ビーチバレー ニキ",
               "descriptionEn": "If your field has a card other than Wave, gain Infiltrate [1].\n If your hand has 6 or more cards, gain Breakthrough until the end of this attack.",
               "descriptionDe": "Falls dein Feld eine Karte außer Welle hat, erhalte Infiltration [1].\n Falls deine Hand 6 oder mehr Karten hat, erhalte Durchbruch bis zum Ende dieses Angriffs.",
-              "descriptionJp": "自分のフィールドに波以外のカードがあるなら、浸透[1]を得る。\n 自分の手札が6枚以上なら、この攻撃が終わるまで突破を得る。"
+              "descriptionJp": "自分のフィールドに波以外のカードがあるなら、浸透[1]を得る。\n 自分の手札が6枚以上なら、この攻撃が終わるまで突破を得る。",
+              "sortIndex": 59
             },
             {
               "id": "c-mtuoqjqhbsc8",
@@ -29422,7 +29482,8 @@
               "nameJp": "ビーチバレー ニキ",
               "descriptionEn": "If your field has a card other than Wave, gain Infiltrate [1].\n If your hand has 6 or more cards, gain Breakthrough until the end of this attack.",
               "descriptionDe": "Falls dein Feld eine Karte außer Welle hat, erhalte Infiltration [1].\n Falls deine Hand 6 oder mehr Karten hat, erhalte Durchbruch bis zum Ende dieses Angriffs.",
-              "descriptionJp": "自分のフィールドに波以外のカードがあるなら、浸透[1]を得る。\n 自分の手札が6枚以上なら、この攻撃が終わるまで突破を得る。"
+              "descriptionJp": "自分のフィールドに波以外のカードがあるなら、浸透[1]を得る。\n 自分の手札が6枚以上なら、この攻撃が終わるまで突破を得る。",
+              "sortIndex": 60
             },
             {
               "id": "c-mtuoqjqh8jfs",
@@ -29447,7 +29508,8 @@
               "nameJp": "浜辺の戦士 マーカス",
               "descriptionEn": "Barrier [2].\n When your Main Phase begins, put this unit on the bottom of the owner's deck. Draw 1 card.",
               "descriptionDe": "Barriere [2].\n Wenn deine Hauptphase beginnt, lege diese Einheit unter das Deck des Besitzers. Ziehe 1 Karte.",
-              "descriptionJp": "防壁[2]。\n 自分のメインフェイズが始まる時、このユニットを持ち主のデッキの一番下に置く。カードを1枚ドローする。"
+              "descriptionJp": "防壁[2]。\n 自分のメインフェイズが始まる時、このユニットを持ち主のデッキの一番下に置く。カードを1枚ドローする。",
+              "sortIndex": 61
             },
             {
               "id": "c-mtuoqjqhsuqg",
@@ -29472,7 +29534,8 @@
               "nameJp": "海の画家 ティア",
               "descriptionEn": "You may choose 1 card from your hand and trash it. If you do, deal damage to the opponent equal to the number of Skills in your Skill Zone. This unit cannot attack until the end of this turn.",
               "descriptionDe": "Du kannst 1 Karte aus deiner Hand wählen und trashen. Falls du das tust, füge dem Gegner Schaden in Höhe der Anzahl der Fähigkeiten in deiner Fähigkeitenzone zu. Diese Einheit kann bis zum Ende dieses Zuges nicht angreifen.",
-              "descriptionJp": "自分の手札を1枚選びトラッシュできる。そうすれば自分のスキルゾーンにあるスキルの数だけ相手にダメージを与える。このユニットはこのターン終了時まで攻撃できない。"
+              "descriptionJp": "自分の手札を1枚選びトラッシュできる。そうすれば自分のスキルゾーンにあるスキルの数だけ相手にダメージを与える。このユニットはこのターン終了時まで攻撃できない。",
+              "sortIndex": 62
             },
             {
               "id": "c-mtuoqjqh0u3b",
@@ -29497,7 +29560,8 @@
               "nameJp": "スパークリングツインズ デビ&マルレーヌ",
               "descriptionEn": "Base Side\n You must put Wave cards in your deck. All cards other than Wave must share the same attribute.\n If your Leader Level is 4 or higher, flip this card. If your field has a card other than Wave, the opponent may draw 1 card.\n\nAwakened Side\n Your hand size limit +3.",
               "descriptionDe": "Grundseite\n Du musst Welle-Karten in dein Deck legen. Alle Karten außer Welle müssen dasselbe Attribut haben.\n Falls dein Anführer-Level 4 oder höher ist, drehe diese Karte um. Falls dein Feld eine Karte außer Welle hat, darf der Gegner 1 Karte ziehen.\n\nErwachte Seite\n Dein Hand-Kartenlimit +3.",
-              "descriptionJp": "基本面\n 自分のデッキに波のカードを入れなければならない。波以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが4以上なら、このカードを反転する。自分のフィールドに波以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n 自分の手札制限枚数+3。"
+              "descriptionJp": "基本面\n 自分のデッキに波のカードを入れなければならない。波以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが4以上なら、このカードを反転する。自分のフィールドに波以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n 自分の手札制限枚数+3。",
+              "sortIndex": 63
             },
             {
               "id": "c-mtuoqjqhdtn3",
@@ -29522,7 +29586,8 @@
               "nameJp": "スパークリングツインズ デビ&マルレーヌ",
               "descriptionEn": "Base Side\n You must put Wave cards in your deck. All cards other than Wave must share the same attribute.\n If your Leader Level is 4 or higher, flip this card. If your field has a card other than Wave, the opponent may draw 1 card.\n\nAwakened Side\n Your hand size limit +3.",
               "descriptionDe": "Grundseite\n Du musst Welle-Karten in dein Deck legen. Alle Karten außer Welle müssen dasselbe Attribut haben.\n Falls dein Anführer-Level 4 oder höher ist, drehe diese Karte um. Falls dein Feld eine Karte außer Welle hat, darf der Gegner 1 Karte ziehen.\n\nErwachte Seite\n Dein Hand-Kartenlimit +3.",
-              "descriptionJp": "基本面\n 自分のデッキに波のカードを入れなければならない。波以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが4以上なら、このカードを反転する。自分のフィールドに波以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n 自分の手札制限枚数+3。"
+              "descriptionJp": "基本面\n 自分のデッキに波のカードを入れなければならない。波以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが4以上なら、このカードを反転する。自分のフィールドに波以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n 自分の手札制限枚数+3。",
+              "sortIndex": 64
             },
             {
               "id": "c-mtuoqjqhkynn",
@@ -29547,7 +29612,8 @@
               "nameJp": "スパークリングツインズ デビ&マルレーヌ",
               "descriptionEn": "Base Side\n You must put Wave cards in your deck. All cards other than Wave must share the same attribute.\n If your Leader Level is 4 or higher, flip this card. If your field has a card other than Wave, the opponent may draw 1 card.\n\nAwakened Side\n Your hand size limit +3.",
               "descriptionDe": "Grundseite\n Du musst Welle-Karten in dein Deck legen. Alle Karten außer Welle müssen dasselbe Attribut haben.\n Falls dein Anführer-Level 4 oder höher ist, drehe diese Karte um. Falls dein Feld eine Karte außer Welle hat, darf der Gegner 1 Karte ziehen.\n\nErwachte Seite\n Dein Hand-Kartenlimit +3.",
-              "descriptionJp": "基本面\n 自分のデッキに波のカードを入れなければならない。波以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが4以上なら、このカードを反転する。自分のフィールドに波以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n 自分の手札制限枚数+3。"
+              "descriptionJp": "基本面\n 自分のデッキに波のカードを入れなければならない。波以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが4以上なら、このカードを反転する。自分のフィールドに波以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n 自分の手札制限枚数+3。",
+              "sortIndex": 65
             },
             {
               "id": "c-mtuoqjqh8dyw",
@@ -29572,7 +29638,8 @@
               "nameJp": "プライベートサマー ヘイズ",
               "descriptionEn": "Choose 1 other unit of yours on the field. That unit gains \"[Passive] Power+500 for each 1 card in your hand. If your hand has 8 or more cards, additionally Hit+1\" until the end of the opponent's turn.",
               "descriptionDe": "Wähle 1 andere deiner Einheiten auf dem Feld. Diese Einheit erhält „[Passiv] Stärke+500 für jede 1 Karte in deiner Hand. Falls deine Hand 8 oder mehr Karten hat, zusätzlich Treffer+1“ bis zum Ende des gegnerischen Zuges.",
-              "descriptionJp": "フィールドにいる他の自分のユニットを1枚選ぶ。そのユニットは相手のターンが終わるまで「【パッシブ】自分の手札1枚につきパワー+500。手札が8枚以上ならさらにヒット+1」を得る。"
+              "descriptionJp": "フィールドにいる他の自分のユニットを1枚選ぶ。そのユニットは相手のターンが終わるまで「【パッシブ】自分の手札1枚につきパワー+500。手札が8枚以上ならさらにヒット+1」を得る。",
+              "sortIndex": 66
             },
             {
               "id": "c-mtuoqjqhsn5p",
@@ -29597,7 +29664,8 @@
               "nameJp": "サマーパーティーマジシャン エマ",
               "descriptionEn": "If your field has a card other than Wave, at the end of the opponent's Attack Declaration Step, you may put this unit on the bottom of the owner's deck. If you do, end this attack.\n If your field has a card other than Wave, you may choose 1 unit card from your Trash Zone with Cost equal to or less than your Leader Level and with [Escape], and deploy it to an empty Unit Zone of yours, ignoring Size.",
               "descriptionDe": "Falls dein Feld eine Karte außer Welle hat, kannst du am Ende des gegnerischen Angriffsdeklarationsschritts diese Einheit unter das Deck des Besitzers legen. Falls du das tust, beende diesen Angriff.\n Falls dein Feld eine Karte außer Welle hat, kannst du 1 Einheitenkarte aus deiner Trash-Zone mit Kosten gleich oder niedriger als dein Anführer-Level und mit [Escape] wählen und ignorierend der Größe in eine leere Einheitenzone von dir platzieren.",
-              "descriptionJp": "自分のフィールドに波以外のカードがあるなら、相手の攻撃宣言ステップが終わる時、このユニットを持ち主のデッキの一番下に置くことができる。そうすれば今回の攻撃を終了する。\n 自分のフィールドに波以外のカードがあるなら、コストが自分のリーダーレベル以下で【エスケープ】を持つユニットカードを自分のトラッシュゾーンから1枚選び、空いている自分のユニットゾーンにサイズを無視して配置できる。"
+              "descriptionJp": "自分のフィールドに波以外のカードがあるなら、相手の攻撃宣言ステップが終わる時、このユニットを持ち主のデッキの一番下に置くことができる。そうすれば今回の攻撃を終了する。\n 自分のフィールドに波以外のカードがあるなら、コストが自分のリーダーレベル以下で【エスケープ】を持つユニットカードを自分のトラッシュゾーンから1枚選び、空いている自分のユニットゾーンにサイズを無視して配置できる。",
+              "sortIndex": 67
             },
             {
               "id": "c-mtuoqjqh5lr6",
@@ -29622,7 +29690,8 @@
               "nameJp": "真夏の思い出 イヴァ",
               "descriptionEn": "Power+1000 for each 1 card in your hand. If your hand has 8 or more cards, additionally Hit+1.\n If your field has a card other than Wave and your hand has 7 or fewer cards when your Attack Phase begins, draw 1 card.\n If your field has a card other than Wave and your hand has 8 or more cards, when this would be trashed by battle or an effect, you may choose 2 cards from your hand and trash them. If you do, return this unit to the owner's hand.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Stärke+1000 für jede 1 Karte in deiner Hand. Falls deine Hand 8 oder mehr Karten hat, zusätzlich Treffer+1.\n Falls dein Feld eine Karte außer Welle hat und deine Hand 7 oder weniger Karten hat, wenn deine Angriffsphase beginnt, ziehe 1 Karte.\n Falls dein Feld eine Karte außer Welle hat und deine Hand 8 oder mehr Karten hat, wenn diese Einheit durch Kampf oder einen Effekt getrasht würde, kannst du 2 Karten aus deiner Hand wählen und trashen. Falls du das tust, gib diese Einheit zurück auf die Hand des Besitzers.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "自分の手札1枚につきパワー+1000。手札が8枚以上なら追加でヒット+1。\n 自分のフィールドに波以外のカードがあり、自分のアタックフェイズが始まる時、自分の手札が7枚以下なら、カードを1枚ドローする。\n 自分のフィールドに波以外のカードがあり、自分の手札が8枚以上なら、戦闘や効果でトラッシュされる時、自分の手札を2枚選びトラッシュできる。そうすればこのユニットを持ち主の手札に戻す。\n\n\nトリガー/このカードを自分の手札に加える。"
+              "descriptionJp": "自分の手札1枚につきパワー+1000。手札が8枚以上なら追加でヒット+1。\n 自分のフィールドに波以外のカードがあり、自分のアタックフェイズが始まる時、自分の手札が7枚以下なら、カードを1枚ドローする。\n 自分のフィールドに波以外のカードがあり、自分の手札が8枚以上なら、戦闘や効果でトラッシュされる時、自分の手札を2枚選びトラッシュできる。そうすればこのユニットを持ち主の手札に戻す。\n\n\nトリガー/このカードを自分の手札に加える。",
+              "sortIndex": 68
             },
             {
               "id": "c-mtuoqjqhma05",
@@ -29647,7 +29716,8 @@
               "nameJp": "真夏の思い出 イヴァ",
               "descriptionEn": "Power+1000 for each 1 card in your hand. If your hand has 8 or more cards, additionally Hit+1.\n If your field has a card other than Wave and your hand has 7 or fewer cards when your Attack Phase begins, draw 1 card.\n If your field has a card other than Wave and your hand has 8 or more cards, when this would be trashed by battle or an effect, you may choose 2 cards from your hand and trash them. If you do, return this unit to the owner's hand.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Stärke+1000 für jede 1 Karte in deiner Hand. Falls deine Hand 8 oder mehr Karten hat, zusätzlich Treffer+1.\n Falls dein Feld eine Karte außer Welle hat und deine Hand 7 oder weniger Karten hat, wenn deine Angriffsphase beginnt, ziehe 1 Karte.\n Falls dein Feld eine Karte außer Welle hat und deine Hand 8 oder mehr Karten hat, wenn diese Einheit durch Kampf oder einen Effekt getrasht würde, kannst du 2 Karten aus deiner Hand wählen und trashen. Falls du das tust, gib diese Einheit zurück auf die Hand des Besitzers.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "自分の手札1枚につきパワー+1000。手札が8枚以上なら追加でヒット+1。\n 自分のフィールドに波以外のカードがあり、自分のアタックフェイズが始まる時、自分の手札が7枚以下なら、カードを1枚ドローする。\n 自分のフィールドに波以外のカードがあり、自分の手札が8枚以上なら、戦闘や効果でトラッシュされる時、自分の手札を2枚選びトラッシュできる。そうすればこのユニットを持ち主の手札に戻す。\n\n\nトリガー/このカードを自分の手札に加える。"
+              "descriptionJp": "自分の手札1枚につきパワー+1000。手札が8枚以上なら追加でヒット+1。\n 自分のフィールドに波以外のカードがあり、自分のアタックフェイズが始まる時、自分の手札が7枚以下なら、カードを1枚ドローする。\n 自分のフィールドに波以外のカードがあり、自分の手札が8枚以上なら、戦闘や効果でトラッシュされる時、自分の手札を2枚選びトラッシュできる。そうすればこのユニットを持ち主の手札に戻す。\n\n\nトリガー/このカードを自分の手札に加える。",
+              "sortIndex": 69
             },
             {
               "id": "c-mtuoqjqhvlxl",
@@ -29672,7 +29742,8 @@
               "nameJp": "浜辺のスア",
               "descriptionEn": "If your field has a card other than Wave, all other units of yours on the field with [Escape] get Hit+1.\n When your Main Phase begins, put this unit on the bottom of the owner's deck. Choose 1 unit card from your Trash Zone or hand with Cost equal to or less than your Leader Level and with [Escape], and deploy it to an empty Unit Zone of yours, ignoring Size.",
               "descriptionDe": "Falls dein Feld eine Karte außer Welle hat, erhalten alle anderen deiner Einheiten auf dem Feld mit [Escape] Treffer+1.\n Wenn deine Hauptphase beginnt, lege diese Einheit unter das Deck des Besitzers. Wähle 1 Einheitenkarte aus deiner Trash-Zone oder Hand mit Kosten gleich oder niedriger als dein Anführer-Level und mit [Escape], und platziere sie ignorierend der Größe in eine leere Einheitenzone von dir.",
-              "descriptionJp": "自分のフィールドに波以外のカードがあるなら、フィールドにいる【エスケープ】を持つ他の全ての自分ユニットのヒット+1。\n 自分のメインフェイズが始まる時、このユニットを持ち主のデッキの一番下に置く。自分のトラッシュゾーンか手札からコストが自分のリーダーレベル以下で【エスケープ】を持つユニットカードを1枚選び、空いている自分のユニットゾーンにサイズを無視して配置する。"
+              "descriptionJp": "自分のフィールドに波以外のカードがあるなら、フィールドにいる【エスケープ】を持つ他の全ての自分ユニットのヒット+1。\n 自分のメインフェイズが始まる時、このユニットを持ち主のデッキの一番下に置く。自分のトラッシュゾーンか手札からコストが自分のリーダーレベル以下で【エスケープ】を持つユニットカードを1枚選び、空いている自分のユニットゾーンにサイズを無視して配置する。",
+              "sortIndex": 70
             },
             {
               "id": "c-mtuoqjqhfnym",
@@ -29697,7 +29768,8 @@
               "nameJp": "浜辺のスア",
               "descriptionEn": "If your field has a card other than Wave, all other units of yours on the field with [Escape] get Hit+1.\n When your Main Phase begins, put this unit on the bottom of the owner's deck. Choose 1 unit card from your Trash Zone or hand with Cost equal to or less than your Leader Level and with [Escape], and deploy it to an empty Unit Zone of yours, ignoring Size.",
               "descriptionDe": "Falls dein Feld eine Karte außer Welle hat, erhalten alle anderen deiner Einheiten auf dem Feld mit [Escape] Treffer+1.\n Wenn deine Hauptphase beginnt, lege diese Einheit unter das Deck des Besitzers. Wähle 1 Einheitenkarte aus deiner Trash-Zone oder Hand mit Kosten gleich oder niedriger als dein Anführer-Level und mit [Escape], und platziere sie ignorierend der Größe in eine leere Einheitenzone von dir.",
-              "descriptionJp": "自分のフィールドに波以外のカードがあるなら、フィールドにいる【エスケープ】を持つ他の全ての自分ユニットのヒット+1。\n 自分のメインフェイズが始まる時、このユニットを持ち主のデッキの一番下に置く。自分のトラッシュゾーンか手札からコストが自分のリーダーレベル以下で【エスケープ】を持つユニットカードを1枚選び、空いている自分のユニットゾーンにサイズを無視して配置する。"
+              "descriptionJp": "自分のフィールドに波以外のカードがあるなら、フィールドにいる【エスケープ】を持つ他の全ての自分ユニットのヒット+1。\n 自分のメインフェイズが始まる時、このユニットを持ち主のデッキの一番下に置く。自分のトラッシュゾーンか手札からコストが自分のリーダーレベル以下で【エスケープ】を持つユニットカードを1枚選び、空いている自分のユニットゾーンにサイズを無視して配置する。",
+              "sortIndex": 71
             },
             {
               "id": "c-mtuoqjqhu2pl",
@@ -29722,7 +29794,8 @@
               "nameJp": "スパークリングツインズ デビ&マルレーヌ",
               "descriptionEn": "Choose 1 of your units on the field other than 〈Sparkling Twins Debi & Marlene〉with [Escape]. Choose 1 of its effects with [Escape] and activate it.\n If 2 or more of your units were put on the bottom of your deck from the field this turn, you may choose 1 opposing unit with Cost 4 or more in an adjacent lane and return that unit and all items it has equipped to the owner's hand. Additionally, you may choose 1 Wave unit card from your hand with Cost equal to or less than your Leader Level and a different card name than this unit, and deploy it to an empty Unit Zone of yours, ignoring Size.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Wähle 1 deiner Einheiten auf dem Feld außer 〈Sparkling Twins Debi & Marlene〉mit [Escape]. Wähle einen ihrer Effekte mit [Escape] und aktiviere ihn.\n Falls diesen Zug 2 oder mehr deiner Einheiten vom Feld unter dein Deck gelegt wurden, kannst du 1 gegnerische Einheit mit Kosten 4 oder mehr in einer angrenzenden Lane wählen und diese Einheit und alle von ihr ausgerüsteten Items auf die Hand des Besitzers zurückgeben. Zusätzlich kannst du 1 Welle-Einheitenkarte aus deiner Hand mit Kosten gleich oder niedriger als dein Anführer-Level und einem anderen Kartennamen als diese Einheit wählen und ignorierend der Größe in eine leere Einheitenzone von dir platzieren.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "フィールドにいる〈スパークリングツインズ デビー&マルレーン〉以外の【エスケープ】を持つ自分のユニットを1枚選ぶ。そのユニットが持つ【エスケープ】効果を1つ選び発動する。\n このターン中、フィールドから自分のデッキの一番下に置かれたユニットが2枚以上いるなら、隣接したレーンにいるコスト4以上の相手ユニットを1枚選び、そのユニットとそのユニットが装着したアイテムをすべて持ち主の手札に戻すことができる。さらにコストが自分のリーダーレベル以下で、このユニットとカード名が異なる波のユニットカードを手札から1枚選び、空いている自分のユニットゾーンにサイズを無視して配置することができる。\n\n\nトリガー / このカードを自分の手札に加える。"
+              "descriptionJp": "フィールドにいる〈スパークリングツインズ デビー&マルレーン〉以外の【エスケープ】を持つ自分のユニットを1枚選ぶ。そのユニットが持つ【エスケープ】効果を1つ選び発動する。\n このターン中、フィールドから自分のデッキの一番下に置かれたユニットが2枚以上いるなら、隣接したレーンにいるコスト4以上の相手ユニットを1枚選び、そのユニットとそのユニットが装着したアイテムをすべて持ち主の手札に戻すことができる。さらにコストが自分のリーダーレベル以下で、このユニットとカード名が異なる波のユニットカードを手札から1枚選び、空いている自分のユニットゾーンにサイズを無視して配置することができる。\n\n\nトリガー / このカードを自分の手札に加える。",
+              "sortIndex": 72
             },
             {
               "id": "c-mtuoqjqha0q8",
@@ -29747,7 +29820,8 @@
               "nameJp": "スパークリングツインズ デビ&マルレーヌ",
               "descriptionEn": "Choose 1 of your units on the field other than 〈Sparkling Twins Debi & Marlene〉with [Escape]. Choose 1 of its effects with [Escape] and activate it.\n If 2 or more of your units were put on the bottom of your deck from the field this turn, you may choose 1 opposing unit with Cost 4 or more in an adjacent lane and return that unit and all items it has equipped to the owner's hand. Additionally, you may choose 1 Wave unit card from your hand with Cost equal to or less than your Leader Level and a different card name than this unit, and deploy it to an empty Unit Zone of yours, ignoring Size.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Wähle 1 deiner Einheiten auf dem Feld außer 〈Sparkling Twins Debi & Marlene〉mit [Escape]. Wähle einen ihrer Effekte mit [Escape] und aktiviere ihn.\n Falls diesen Zug 2 oder mehr deiner Einheiten vom Feld unter dein Deck gelegt wurden, kannst du 1 gegnerische Einheit mit Kosten 4 oder mehr in einer angrenzenden Lane wählen und diese Einheit und alle von ihr ausgerüsteten Items auf die Hand des Besitzers zurückgeben. Zusätzlich kannst du 1 Welle-Einheitenkarte aus deiner Hand mit Kosten gleich oder niedriger als dein Anführer-Level und einem anderen Kartennamen als diese Einheit wählen und ignorierend der Größe in eine leere Einheitenzone von dir platzieren.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "フィールドにいる〈スパークリングツインズ デビー&マルレーン〉以外の【エスケープ】を持つ自分のユニットを1枚選ぶ。そのユニットが持つ【エスケープ】効果を1つ選び発動する。\n このターン中、フィールドから自分のデッキの一番下に置かれたユニットが2枚以上いるなら、隣接したレーンにいるコスト4以上の相手ユニットを1枚選び、そのユニットとそのユニットが装着したアイテムをすべて持ち主の手札に戻すことができる。さらにコストが自分のリーダーレベル以下で、このユニットとカード名が異なる波のユニットカードを手札から1枚選び、空いている自分のユニットゾーンにサイズを無視して配置することができる。\n\n\nトリガー / このカードを自分の手札に加える。"
+              "descriptionJp": "フィールドにいる〈スパークリングツインズ デビー&マルレーン〉以外の【エスケープ】を持つ自分のユニットを1枚選ぶ。そのユニットが持つ【エスケープ】効果を1つ選び発動する。\n このターン中、フィールドから自分のデッキの一番下に置かれたユニットが2枚以上いるなら、隣接したレーンにいるコスト4以上の相手ユニットを1枚選び、そのユニットとそのユニットが装着したアイテムをすべて持ち主の手札に戻すことができる。さらにコストが自分のリーダーレベル以下で、このユニットとカード名が異なる波のユニットカードを手札から1枚選び、空いている自分のユニットゾーンにサイズを無視して配置することができる。\n\n\nトリガー / このカードを自分の手札に加える。",
+              "sortIndex": 73
             },
             {
               "id": "c-mtuoqjqhz6ry",
@@ -29772,7 +29846,8 @@
               "nameJp": "海についての物語",
               "descriptionEn": "Draw cards equal to the number of your units on the field with [Escape]. If 2 or more cards were drawn by this effect, you may choose 1 of your units on the field with [Escape], choose 1 of its effects with [Escape], and activate it.",
               "descriptionDe": "Ziehe Karten in Höhe der Anzahl deiner Einheiten auf dem Feld mit [Escape]. Falls 2 oder mehr Karten durch diesen Effekt gezogen wurden, kannst du 1 deiner Einheiten auf dem Feld mit [Escape] wählen, einen ihrer Effekte mit [Escape] wählen und aktivieren.",
-              "descriptionJp": "フィールドにいる【エスケープ】を持つ自分のユニットの数だけカードをドローする。この効果でドローしたカードが2枚以上なら、フィールドにいる【エスケープ】を持つ自分のユニットを1枚選び、そのユニットが持つ【エスケープ】効果を1つ選び発動することができる。"
+              "descriptionJp": "フィールドにいる【エスケープ】を持つ自分のユニットの数だけカードをドローする。この効果でドローしたカードが2枚以上なら、フィールドにいる【エスケープ】を持つ自分のユニットを1枚選び、そのユニットが持つ【エスケープ】効果を1つ選び発動することができる。",
+              "sortIndex": 74
             },
             {
               "id": "c-mtuoqjqhouyy",
@@ -29797,7 +29872,8 @@
               "nameJp": "黒蓮飛鏢",
               "descriptionEn": "This unit's Cost becomes 0 until the end of this turn.\n At the end of your turn, if this unit attacked this turn and the Encountering Unit never blocked this unit's attack, the Encountering Unit cannot attack until the end of the opponent's turn.",
               "descriptionDe": "Die Kosten dieser Einheit werden bis zum Ende dieses Zuges 0.\n Am Ende deines Zuges, falls diese Einheit diesen Zug angriff und die begegnende Einheit den Angriff dieser Einheit kein einziges Mal blockte, kann die begegnende Einheit bis zum Ende des gegnerischen Zuges nicht angreifen.",
-              "descriptionJp": "このユニットはこのターンが終わるまで0コストになる。\n 自分のターンが終わる時、このターン中にこのユニットが攻撃し、対面ユニットがこのユニットの攻撃を一度も防御しなかったなら、対面ユニットは相手のターンが終わるまで攻撃できない。"
+              "descriptionJp": "このユニットはこのターンが終わるまで0コストになる。\n 自分のターンが終わる時、このターン中にこのユニットが攻撃し、対面ユニットがこのユニットの攻撃を一度も防御しなかったなら、対面ユニットは相手のターンが終わるまで攻撃できない。",
+              "sortIndex": 75
             },
             {
               "id": "c-mtuoqjqh4ucj",
@@ -29822,7 +29898,8 @@
               "nameJp": "アンステル",
               "descriptionEn": "When this unit is deployed, draw 1 card. When this unit is trashed, choose 1 card from your hand and trash it.",
               "descriptionDe": "Wenn diese Einheit platziert wird, ziehe 1 Karte. Wenn diese Einheit getrasht wird, wähle 1 Karte aus deiner Hand und trashe sie.",
-              "descriptionJp": "このユニットが配置されたら、カードを1枚ドローする。このユニットがトラッシュされたら、自分の手札を1枚選びトラッシュする。"
+              "descriptionJp": "このユニットが配置されたら、カードを1枚ドローする。このユニットがトラッシュされたら、自分の手札を1枚選びトラッシュする。",
+              "sortIndex": 76
             },
             {
               "id": "c-mtuoqjqhbd1h",
@@ -29847,7 +29924,8 @@
               "nameJp": "士官候補生 ハート",
               "descriptionEn": "Trash 3 cards from the top of your deck. If 1 or more Item cards were trashed by this effect, draw 1 card.",
               "descriptionDe": "Trashe 3 Karten von der Oberseite deines Decks. Falls 1 oder mehr Item-Karten durch diesen Effekt getrasht wurden, ziehe 1 Karte.",
-              "descriptionJp": "自分のデッキの上からカードを3枚トラッシュする。この効果でトラッシュしたアイテムカードが1枚以上なら、カードを1枚ドローする。"
+              "descriptionJp": "自分のデッキの上からカードを3枚トラッシュする。この効果でトラッシュしたアイテムカードが1枚以上なら、カードを1枚ドローする。",
+              "sortIndex": 77
             },
             {
               "id": "c-mtuoqjqh50af",
@@ -29872,7 +29950,8 @@
               "nameJp": "20年前のマルティナ",
               "descriptionEn": "Choose up to 2 cards from your hand and trash them, then draw that many cards. If 2 or more Item cards were trashed by this effect, additionally draw 1 card.",
               "descriptionDe": "Wähle bis zu 2 Karten aus deiner Hand und trashe sie, ziehe dann so viele Karten. Falls 2 oder mehr Item-Karten durch diesen Effekt getrasht wurden, ziehe zusätzlich 1 Karte.",
-              "descriptionJp": "自分の手札を2枚まで選びトラッシュし、トラッシュした数だけカードをドローする。この効果でトラッシュしたアイテムカードが2枚以上なら、追加でカードを1枚ドローする。"
+              "descriptionJp": "自分の手札を2枚まで選びトラッシュし、トラッシュした数だけカードをドローする。この効果でトラッシュしたアイテムカードが2枚以上なら、追加でカードを1枚ドローする。",
+              "sortIndex": 78
             },
             {
               "id": "c-mtuoqjqh5il3",
@@ -29897,7 +29976,8 @@
               "nameJp": "士官候補生 マグナス",
               "descriptionEn": "If your field has a card other than Lightning and this unit is equipped with an item, Power+3000, Hit+1.",
               "descriptionDe": "Falls dein Feld eine Karte außer Blitz hat und diese Einheit mit einem Item ausgerüstet ist, Stärke+3000, Treffer+1.",
-              "descriptionJp": "自分のフィールドに雷以外のカードがあり、アイテムを装着しているならパワー+3000、ヒット+1。"
+              "descriptionJp": "自分のフィールドに雷以外のカードがあり、アイテムを装着しているならパワー+3000、ヒット+1。",
+              "sortIndex": 79
             },
             {
               "id": "c-mtuoqjqho5u5",
@@ -29922,7 +30002,8 @@
               "nameJp": "士官候補生 マグナス",
               "descriptionEn": "If your field has a card other than Lightning and this unit is equipped with an item, Power+3000, Hit+1.",
               "descriptionDe": "Falls dein Feld eine Karte außer Blitz hat und diese Einheit mit einem Item ausgerüstet ist, Stärke+3000, Treffer+1.",
-              "descriptionJp": "自分のフィールドに雷以外のカードがあり、アイテムを装着しているならパワー+3000、ヒット+1。"
+              "descriptionJp": "自分のフィールドに雷以外のカードがあり、アイテムを装着しているならパワー+3000、ヒット+1。",
+              "sortIndex": 80
             },
             {
               "id": "c-mtuoqjqh5owy",
@@ -29947,7 +30028,8 @@
               "nameJp": "ひぃぃ",
               "descriptionEn": "Choose 1 or more Item cards from your hand and trash them. Then draw that many cards.",
               "descriptionDe": "Wähle 1 oder mehr Item-Karten aus deiner Hand und trashe sie. Ziehe dann so viele Karten.",
-              "descriptionJp": "自分の手札からアイテムカードを1枚以上選びトラッシュする。そうすればトラッシュした数だけカードをドローする。"
+              "descriptionJp": "自分の手札からアイテムカードを1枚以上選びトラッシュする。そうすればトラッシュした数だけカードをドローする。",
+              "sortIndex": 81
             },
             {
               "id": "c-mtuoqjqhohh4",
@@ -29972,7 +30054,8 @@
               "nameJp": "いたずらくまさんメイド レニ",
               "descriptionEn": "Base Side\n You must put Lightning cards in your deck. All cards other than Lightning must share the same attribute.\n If your Leader Level is 5 or higher, flip this card. If your field has a card other than Lightning, the opponent may draw 1 card.\n\nAwakened Side\n If your field has a unit of yours with an equipped item, choose 1 card without [Trigger] from your hand and place it in your Damage Zone. Then choose 1 card with a different card name than the card placed in your Damage Zone by this effect, and add it to your hand.",
               "descriptionDe": "Grundseite\n Du musst Blitz-Karten in dein Deck legen. Alle Karten außer Blitz müssen dasselbe Attribut haben.\n Falls dein Anführer-Level 5 oder höher ist, drehe diese Karte um. Falls dein Feld eine Karte außer Blitz hat, darf der Gegner 1 Karte ziehen.\n\nErwachte Seite\n Falls dein Feld eine deiner Einheiten mit ausgerüstetem Item hat, wähle 1 Karte ohne [Trigger] aus deiner Hand und lege sie in deine Schadenszone. Wähle dann 1 Karte mit einem anderen Kartennamen als die durch diesen Effekt in die Schadenszone gelegte Karte und lege sie auf deine Hand.",
-              "descriptionJp": "基本面\n 自分のデッキに雷のカードを入れなければならない。雷以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが5以上なら、このカードを反転する。自分のフィールドに雷以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n フィールドにアイテムを装備した自分のユニットがいるなら、自分の手札から【トリガー】を持たないカードを1枚選びダメージゾーンに置く。そうしたら、自分のダメージゾーンからこの効果でダメージゾーンに置いたカードとカード名が異なるカードを1枚選び手札に加える。"
+              "descriptionJp": "基本面\n 自分のデッキに雷のカードを入れなければならない。雷以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが5以上なら、このカードを反転する。自分のフィールドに雷以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n フィールドにアイテムを装備した自分のユニットがいるなら、自分の手札から【トリガー】を持たないカードを1枚選びダメージゾーンに置く。そうしたら、自分のダメージゾーンからこの効果でダメージゾーンに置いたカードとカード名が異なるカードを1枚選び手札に加える。",
+              "sortIndex": 82
             },
             {
               "id": "c-mtuoqjqhqv8z",
@@ -29997,7 +30080,8 @@
               "nameJp": "いたずらくまさんメイド レニ",
               "descriptionEn": "Base Side\n You must put Lightning cards in your deck. All cards other than Lightning must share the same attribute.\n If your Leader Level is 5 or higher, flip this card. If your field has a card other than Lightning, the opponent may draw 1 card.\n\nAwakened Side\n If your field has a unit of yours with an equipped item, choose 1 card without [Trigger] from your hand and place it in your Damage Zone. Then choose 1 card with a different card name than the card placed in your Damage Zone by this effect, and add it to your hand.",
               "descriptionDe": "Grundseite\n Du musst Blitz-Karten in dein Deck legen. Alle Karten außer Blitz müssen dasselbe Attribut haben.\n Falls dein Anführer-Level 5 oder höher ist, drehe diese Karte um. Falls dein Feld eine Karte außer Blitz hat, darf der Gegner 1 Karte ziehen.\n\nErwachte Seite\n Falls dein Feld eine deiner Einheiten mit ausgerüstetem Item hat, wähle 1 Karte ohne [Trigger] aus deiner Hand und lege sie in deine Schadenszone. Wähle dann 1 Karte mit einem anderen Kartennamen als die durch diesen Effekt in die Schadenszone gelegte Karte und lege sie auf deine Hand.",
-              "descriptionJp": "基本面\n 自分のデッキに雷のカードを入れなければならない。雷以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが5以上なら、このカードを反転する。自分のフィールドに雷以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n フィールドにアイテムを装備した自分のユニットがいるなら、自分の手札から【トリガー】を持たないカードを1枚選びダメージゾーンに置く。そうしたら、自分のダメージゾーンからこの効果でダメージゾーンに置いたカードとカード名が異なるカードを1枚選び手札に加える。"
+              "descriptionJp": "基本面\n 自分のデッキに雷のカードを入れなければならない。雷以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが5以上なら、このカードを反転する。自分のフィールドに雷以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n フィールドにアイテムを装備した自分のユニットがいるなら、自分の手札から【トリガー】を持たないカードを1枚選びダメージゾーンに置く。そうしたら、自分のダメージゾーンからこの効果でダメージゾーンに置いたカードとカード名が異なるカードを1枚選び手札に加える。",
+              "sortIndex": 83
             },
             {
               "id": "c-mtuoqjqhwfaz",
@@ -30022,7 +30106,8 @@
               "nameJp": "いたずらくまさんメイド レニ",
               "descriptionEn": "Base Side\n You must put Lightning cards in your deck. All cards other than Lightning must share the same attribute.\n If your Leader Level is 5 or higher, flip this card. If your field has a card other than Lightning, the opponent may draw 1 card.\n\nAwakened Side\n If your field has a unit of yours with an equipped item, choose 1 card without [Trigger] from your hand and place it in your Damage Zone. Then choose 1 card with a different card name than the card placed in your Damage Zone by this effect, and add it to your hand.",
               "descriptionDe": "Grundseite\n Du musst Blitz-Karten in dein Deck legen. Alle Karten außer Blitz müssen dasselbe Attribut haben.\n Falls dein Anführer-Level 5 oder höher ist, drehe diese Karte um. Falls dein Feld eine Karte außer Blitz hat, darf der Gegner 1 Karte ziehen.\n\nErwachte Seite\n Falls dein Feld eine deiner Einheiten mit ausgerüstetem Item hat, wähle 1 Karte ohne [Trigger] aus deiner Hand und lege sie in deine Schadenszone. Wähle dann 1 Karte mit einem anderen Kartennamen als die durch diesen Effekt in die Schadenszone gelegte Karte und lege sie auf deine Hand.",
-              "descriptionJp": "基本面\n 自分のデッキに雷のカードを入れなければならない。雷以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが5以上なら、このカードを反転する。自分のフィールドに雷以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n フィールドにアイテムを装備した自分のユニットがいるなら、自分の手札から【トリガー】を持たないカードを1枚選びダメージゾーンに置く。そうしたら、自分のダメージゾーンからこの効果でダメージゾーンに置いたカードとカード名が異なるカードを1枚選び手札に加える。"
+              "descriptionJp": "基本面\n 自分のデッキに雷のカードを入れなければならない。雷以外のカードはすべて同じ属性でなければならない。\n 自分のリーダーレベルが5以上なら、このカードを反転する。自分のフィールドに雷以外のカードがあるなら、相手はカードを1枚ドローできる。\n\n覚醒面\n フィールドにアイテムを装備した自分のユニットがいるなら、自分の手札から【トリガー】を持たないカードを1枚選びダメージゾーンに置く。そうしたら、自分のダメージゾーンからこの効果でダメージゾーンに置いたカードとカード名が異なるカードを1枚選び手札に加える。",
+              "sortIndex": 84
             },
             {
               "id": "c-mtuoqjqhhr9e",
@@ -30047,7 +30132,8 @@
               "nameJp": "こっそりリスメイド ティア",
               "descriptionEn": "If your field has a card other than Lightning, choose up to 2 Item cards from your Damage Zone and equip them to 1 other unit of yours on the field, ignoring Size. Then choose that many cards without [Trigger] from your Trash Zone or hand and place them in your Damage Zone. A unit equipped with items by this effect cannot be equipped with items until the end of this turn.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Falls dein Feld eine Karte außer Blitz hat, wähle bis zu 2 Item-Karten aus deiner Schadenszone und rüste sie ignorierend der Größe an 1 anderer deiner Einheiten auf dem Feld aus. Wähle dann so viele Karten ohne [Trigger] aus deiner Trash-Zone oder Hand und lege sie in deine Schadenszone. Eine durch diesen Effekt mit Items ausgerüstete Einheit kann bis zum Ende dieses Zuges nicht mit Items ausgerüstet werden.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "自分のフィールドに雷以外のカードがあるなら、自分のダメージゾーンからアイテムカードを2枚まで選び、フィールドにいる他の自分ユニット1枚にサイズを無視して装着する。そうすればこの効果で装着したアイテムの数だけ自分のトラッシュゾーンか手札から【トリガー】を持たないカードを選び、ダメージゾーンに置く。この効果でアイテムを装着したユニットはこのターン終了時までアイテムを装着できない。\n\n\nトリガー/このカードを自分の手札に加える。"
+              "descriptionJp": "自分のフィールドに雷以外のカードがあるなら、自分のダメージゾーンからアイテムカードを2枚まで選び、フィールドにいる他の自分ユニット1枚にサイズを無視して装着する。そうすればこの効果で装着したアイテムの数だけ自分のトラッシュゾーンか手札から【トリガー】を持たないカードを選び、ダメージゾーンに置く。この効果でアイテムを装着したユニットはこのターン終了時までアイテムを装着できない。\n\n\nトリガー/このカードを自分の手札に加える。",
+              "sortIndex": 85
             },
             {
               "id": "c-mtuoqjqhvlyj",
@@ -30072,7 +30158,8 @@
               "nameJp": "こっそりリスメイド ティア",
               "descriptionEn": "If your field has a card other than Lightning, choose up to 2 Item cards from your Damage Zone and equip them to 1 other unit of yours on the field, ignoring Size. Then choose that many cards without [Trigger] from your Trash Zone or hand and place them in your Damage Zone. A unit equipped with items by this effect cannot be equipped with items until the end of this turn.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Falls dein Feld eine Karte außer Blitz hat, wähle bis zu 2 Item-Karten aus deiner Schadenszone und rüste sie ignorierend der Größe an 1 anderer deiner Einheiten auf dem Feld aus. Wähle dann so viele Karten ohne [Trigger] aus deiner Trash-Zone oder Hand und lege sie in deine Schadenszone. Eine durch diesen Effekt mit Items ausgerüstete Einheit kann bis zum Ende dieses Zuges nicht mit Items ausgerüstet werden.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "自分のフィールドに雷以外のカードがあるなら、自分のダメージゾーンからアイテムカードを2枚まで選び、フィールドにいる他の自分ユニット1枚にサイズを無視して装着する。そうすればこの効果で装着したアイテムの数だけ自分のトラッシュゾーンか手札から【トリガー】を持たないカードを選び、ダメージゾーンに置く。この効果でアイテムを装着したユニットはこのターン終了時までアイテムを装着できない。\n\n\nトリガー/このカードを自分の手札に加える。"
+              "descriptionJp": "自分のフィールドに雷以外のカードがあるなら、自分のダメージゾーンからアイテムカードを2枚まで選び、フィールドにいる他の自分ユニット1枚にサイズを無視して装着する。そうすればこの効果で装着したアイテムの数だけ自分のトラッシュゾーンか手札から【トリガー】を持たないカードを選び、ダメージゾーンに置く。この効果でアイテムを装着したユニットはこのターン終了時までアイテムを装着できない。\n\n\nトリガー/このカードを自分の手札に加える。",
+              "sortIndex": 86
             },
             {
               "id": "c-mtuoqjqhc49e",
@@ -30097,7 +30184,8 @@
               "nameJp": "ドジっ子にゃんにゃんメイド ヘジン",
               "descriptionEn": "Choose up to 2 Item cards with different card names from your Trash Zone and equip them to 1 of your units on the field with [Armed], ignoring Size.",
               "descriptionDe": "Wähle bis zu 2 Item-Karten mit unterschiedlichen Kartennamen aus deiner Trash-Zone und rüste sie ignorierend der Größe an 1 deiner Einheiten auf dem Feld mit [Bewaffnet] aus.",
-              "descriptionJp": "自分のトラッシュゾーンからカード名が異なるアイテムカードを2枚まで選び、フィールドにいる【アームド】を持つ自分ユニット1枚にサイズを無視して装着する。"
+              "descriptionJp": "自分のトラッシュゾーンからカード名が異なるアイテムカードを2枚まで選び、フィールドにいる【アームド】を持つ自分ユニット1枚にサイズを無視して装着する。",
+              "sortIndex": 87
             },
             {
               "id": "c-mtuoqjqh4jn7",
@@ -30122,7 +30210,8 @@
               "nameJp": "こっくりこっくり 幼き小鳥メイド バーニャ",
               "descriptionEn": "Choose 1 opposing unit on the field with Cost 3 or more. You may choose Item cards from your Trash Zone equal to that unit's Cost and put them on the bottom of your deck in any order. If you do, trash that unit.",
               "descriptionDe": "Wähle 1 gegnerische Einheit auf dem Feld mit Kosten 3 oder mehr. Du kannst Item-Karten aus deiner Trash-Zone in Höhe von Kosten dieser Einheit wählen und in beliebiger Reihenfolge unter dein Deck legen. Falls du das tust, trashe diese Einheit.",
-              "descriptionJp": "フィールドにいるコスト3以上の相手ユニットを1枚選ぶ。そのユニットのコスト分だけ、自分のトラッシュゾーンからアイテムカードを選び、自分のデッキの一番下に好きな順番で置くことができる。それならそのユニットをトラッシュする。"
+              "descriptionJp": "フィールドにいるコスト3以上の相手ユニットを1枚選ぶ。そのユニットのコスト分だけ、自分のトラッシュゾーンからアイテムカードを選び、自分のデッキの一番下に好きな順番で置くことができる。それならそのユニットをトラッシュする。",
+              "sortIndex": 88
             },
             {
               "id": "c-mtuoqjqhq402",
@@ -30147,7 +30236,8 @@
               "nameJp": "士官候補生 ナディン",
               "descriptionEn": "You may choose 1 card from your hand and trash it. If you do, choose 1 Item card other than the card trashed by this effect from your Trash Zone with Cost 1 or less, and equip it.\n If your field has a card other than Lightning, Power+2000 for each item this unit has equipped. All your units on the field with [Armed] and an equipped item get Hit+1.",
               "descriptionDe": "Du kannst 1 Karte aus deiner Hand wählen und trashen. Falls du das tust, wähle 1 andere Item-Karte als die durch diesen Effekt getrashte Karte aus deiner Trash-Zone mit Kosten 1 oder weniger, und rüste sie aus.\n Falls dein Feld eine Karte außer Blitz hat, Stärke+2000 für jedes von dieser Einheit ausgerüstete Item. Alle deine Einheiten auf dem Feld mit [Bewaffnet] und ausgerüstetem Item erhalten Treffer+1.",
-              "descriptionJp": "自分の手札を1枚選びトラッシュできる。そうすれば自分のトラッシュゾーンからこの効果でトラッシュしたカード以外の1コスト以下のアイテムカードを1枚選び装着する。\n 自分のフィールドに雷以外のカードがあるなら、このユニットが装着したアイテム1枚につきパワー+2000。フィールドにいる【アームド】を持ちアイテムを装着した全ての自分ユニットのヒット+1。"
+              "descriptionJp": "自分の手札を1枚選びトラッシュできる。そうすれば自分のトラッシュゾーンからこの効果でトラッシュしたカード以外の1コスト以下のアイテムカードを1枚選び装着する。\n 自分のフィールドに雷以外のカードがあるなら、このユニットが装着したアイテム1枚につきパワー+2000。フィールドにいる【アームド】を持ちアイテムを装着した全ての自分ユニットのヒット+1。",
+              "sortIndex": 89
             },
             {
               "id": "c-mtuoqjqhyvzj",
@@ -30172,7 +30262,8 @@
               "nameJp": "士官候補生 ナディン",
               "descriptionEn": "You may choose 1 card from your hand and trash it. If you do, choose 1 Item card other than the card trashed by this effect from your Trash Zone with Cost 1 or less, and equip it.\n If your field has a card other than Lightning, Power+2000 for each item this unit has equipped. All your units on the field with [Armed] and an equipped item get Hit+1.",
               "descriptionDe": "Du kannst 1 Karte aus deiner Hand wählen und trashen. Falls du das tust, wähle 1 andere Item-Karte als die durch diesen Effekt getrashte Karte aus deiner Trash-Zone mit Kosten 1 oder weniger, und rüste sie aus.\n Falls dein Feld eine Karte außer Blitz hat, Stärke+2000 für jedes von dieser Einheit ausgerüstete Item. Alle deine Einheiten auf dem Feld mit [Bewaffnet] und ausgerüstetem Item erhalten Treffer+1.",
-              "descriptionJp": "自分の手札を1枚選びトラッシュできる。そうすれば自分のトラッシュゾーンからこの効果でトラッシュしたカード以外の1コスト以下のアイテムカードを1枚選び装着する。\n 自分のフィールドに雷以外のカードがあるなら、このユニットが装着したアイテム1枚につきパワー+2000。フィールドにいる【アームド】を持ちアイテムを装着した全ての自分ユニットのヒット+1。"
+              "descriptionJp": "自分の手札を1枚選びトラッシュできる。そうすれば自分のトラッシュゾーンからこの効果でトラッシュしたカード以外の1コスト以下のアイテムカードを1枚選び装着する。\n 自分のフィールドに雷以外のカードがあるなら、このユニットが装着したアイテム1枚につきパワー+2000。フィールドにいる【アームド】を持ちアイテムを装着した全ての自分ユニットのヒット+1。",
+              "sortIndex": 90
             },
             {
               "id": "c-mtuoqjqhqedc",
@@ -30197,7 +30288,8 @@
               "nameJp": "いたずらくまさんメイド レニ",
               "descriptionEn": "If your field has a card other than Lightning and the Encountering Unit's Cost is lower than the total Cost of Item cards in your Damage Zone, trash the Encountering Unit.",
               "descriptionDe": "Falls dein Feld eine Karte außer Blitz hat und die Kosten der begegnenden Einheit niedriger als die Gesamtkosten der Item-Karten in deiner Schadenszone sind, trashe die begegnende Einheit.",
-              "descriptionJp": "自分のフィールドに雷以外のカードがあり、対面ユニットのコストが自分のダメージゾーンにあるアイテムカードのコストの合計より低いなら、対面ユニットをトラッシュする。"
+              "descriptionJp": "自分のフィールドに雷以外のカードがあり、対面ユニットのコストが自分のダメージゾーンにあるアイテムカードのコストの合計より低いなら、対面ユニットをトラッシュする。",
+              "sortIndex": 91
             },
             {
               "id": "c-mtuoqjqhvxqj",
@@ -30222,7 +30314,8 @@
               "nameJp": "いたずらくまさんメイド レニ",
               "descriptionEn": "If your field has a card other than Lightning and the Encountering Unit's Cost is lower than the total Cost of Item cards in your Damage Zone, trash the Encountering Unit.",
               "descriptionDe": "Falls dein Feld eine Karte außer Blitz hat und die Kosten der begegnenden Einheit niedriger als die Gesamtkosten der Item-Karten in deiner Schadenszone sind, trashe die begegnende Einheit.",
-              "descriptionJp": "自分のフィールドに雷以外のカードがあり、対面ユニットのコストが自分のダメージゾーンにあるアイテムカードのコストの合計より低いなら、対面ユニットをトラッシュする。"
+              "descriptionJp": "自分のフィールドに雷以外のカードがあり、対面ユニットのコストが自分のダメージゾーンにあるアイテムカードのコストの合計より低いなら、対面ユニットをトラッシュする。",
+              "sortIndex": 92
             },
             {
               "id": "c-mtuoqjqhdocr",
@@ -30247,7 +30340,8 @@
               "nameJp": "準備はいい?じゃあ行こう。",
               "descriptionEn": "Choose any number of Item cards from your Damage Zone and trash them. Then choose that many cards without [Trigger] from your Trash Zone and place them in your Damage Zone. If your field has a card other than Lightning, trash this Skill.",
               "descriptionDe": "Wähle eine beliebige Anzahl von Item-Karten aus deiner Schadenszone und trashe sie. Wähle dann so viele Karten ohne [Trigger] aus deiner Trash-Zone und lege sie in deine Schadenszone. Falls dein Feld eine Karte außer Blitz hat, trashe diese Fähigkeit.",
-              "descriptionJp": "自分のダメージゾーンからアイテムカードを好きな数選びトラッシュする。そうしたら、この効果でトラッシュしたカードの数だけ自分のトラッシュゾーンから【トリガー】を持たないカードを選びダメージゾーンに置く。自分のフィールドに雷以外のカードがあるなら、このスキルをトラッシュする。"
+              "descriptionJp": "自分のダメージゾーンからアイテムカードを好きな数選びトラッシュする。そうしたら、この効果でトラッシュしたカードの数だけ自分のトラッシュゾーンから【トリガー】を持たないカードを選びダメージゾーンに置く。自分のフィールドに雷以外のカードがあるなら、このスキルをトラッシュする。",
+              "sortIndex": 93
             },
             {
               "id": "c-mtuoqjqh97gi",
@@ -30272,7 +30366,8 @@
               "nameJp": "ハイヌーン",
               "descriptionEn": "Choose 1 Item card other than 〈High Noon〉from your Damage Zone and equip it to this unit, ignoring Size. Then choose 1 equipped 〈High Noon〉and place it in your Damage Zone. This unit cannot be equipped with items until the end of this turn.",
               "descriptionDe": "Wähle 1 andere Item-Karte als 〈High Noon〉aus deiner Schadenszone und rüste sie ignorierend der Größe an dieser Einheit aus. Wähle dann 1 ausgerüstetes 〈High Noon〉und lege es in deine Schadenszone. Diese Einheit kann bis zum Ende dieses Zuges nicht mit Items ausgerüstet werden.",
-              "descriptionJp": "自分のダメージゾーンから〈ハイヌーン〉以外のアイテムカードを1枚選び、このユニットにサイズを無視して装備する。そうしたら、このユニットが装備している〈ハイヌーン〉を1枚選びダメージゾーンに置く。このユニットは、このターン終了時までアイテムを装備できない。"
+              "descriptionJp": "自分のダメージゾーンから〈ハイヌーン〉以外のアイテムカードを1枚選び、このユニットにサイズを無視して装備する。そうしたら、このユニットが装備している〈ハイヌーン〉を1枚選びダメージゾーンに置く。このユニットは、このターン終了時までアイテムを装備できない。",
+              "sortIndex": 94
             }
           ],
           "divider": {
