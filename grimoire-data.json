@@ -25772,7 +25772,8 @@
               "nameJp": "ラピ",
               "descriptionEn": "Base Side\n You may only put Fire cards in your deck.\n If your Leader Level is 5 or higher, flip this card.\n\nAwakened Side\n All your units on the field get Power+1000 during your turn.",
               "descriptionDe": "Grundseite\n Du darfst nur Feuer-Karten in dein Deck legen.\n Falls dein Anführer-Level 5 oder höher ist, drehe diese Karte um.\n\nErwachte Seite\n Alle deine Einheiten auf dem Feld erhalten Stärke+1000 während deines Zuges.",
-              "descriptionJp": "基本面\n 自分のデッキに炎のカードのみ入れられる。\n 自分のリーダーレベルが5以上なら、このカードを反転する。\n\n覚醒面\n フィールドにいるすべての自分のユニットは、自分のターン中パワー+1000。"
+              "descriptionJp": "基本面\n 自分のデッキに炎のカードのみ入れられる。\n 自分のリーダーレベルが5以上なら、このカードを反転する。\n\n覚醒面\n フィールドにいるすべての自分のユニットは、自分のターン中パワー+1000。",
+              "sortIndex": 0
             },
             {
               "id": "c-mtuojk6uz97h",
@@ -25797,7 +25798,8 @@
               "nameJp": "ラピ",
               "descriptionEn": "Base Side\n You may only put Fire cards in your deck.\n If your Leader Level is 5 or higher, flip this card.\n\nAwakened Side\n All your units on the field get Power+1000 during your turn.",
               "descriptionDe": "Grundseite\n Du darfst nur Feuer-Karten in dein Deck legen.\n Falls dein Anführer-Level 5 oder höher ist, drehe diese Karte um.\n\nErwachte Seite\n Alle deine Einheiten auf dem Feld erhalten Stärke+1000 während deines Zuges.",
-              "descriptionJp": "基本面\n 自分のデッキに炎のカードのみ入れられる。\n 自分のリーダーレベルが5以上なら、このカードを反転する。\n\n覚醒面\n フィールドにいるすべての自分のユニットは、自分のターン中パワー+1000。"
+              "descriptionJp": "基本面\n 自分のデッキに炎のカードのみ入れられる。\n 自分のリーダーレベルが5以上なら、このカードを反転する。\n\n覚醒面\n フィールドにいるすべての自分のユニットは、自分のターン中パワー+1000。",
+              "sortIndex": 1
             },
             {
               "id": "c-mtuojk6uw8yr",
@@ -25822,7 +25824,8 @@
               "nameJp": "アニス",
               "descriptionEn": "Choose 1 card from your hand, put it into your deck, and shuffle. Then Encountering Unit's Power-3000 until the end of this turn.\n\n\nTrigger / Trash this card. Choose 1 opposing unit on the field and give it Power-5000 until the end of this turn.",
               "descriptionDe": "Wähle 1 Karte aus deiner Hand, lege sie in dein Deck und mische. Dann Stärke der begegnenden Einheit-3000 bis zum Ende dieses Zuges.\n\n\nTrigger / Trashe diese Karte. Wähle 1 gegnerische Einheit auf dem Feld und gib ihr Stärke-5000 bis zum Ende dieses Zuges.",
-              "descriptionJp": "自分の手札を1枚選び、デッキに入れてシャッフルする。そうすればこのターン終了時まで対面ユニットのパワー-3000。\n\n\nトリガー/このカードをトラッシュする。フィールドにいる相手ユニットを1枚選び、このターン終了時までパワー-5000。"
+              "descriptionJp": "自分の手札を1枚選び、デッキに入れてシャッフルする。そうすればこのターン終了時まで対面ユニットのパワー-3000。\n\n\nトリガー/このカードをトラッシュする。フィールドにいる相手ユニットを1枚選び、このターン終了時までパワー-5000。",
+              "sortIndex": 2
             },
             {
               "id": "c-mtuojk6uxr8m",
@@ -25847,7 +25850,8 @@
               "nameJp": "アニス",
               "descriptionEn": "Choose 1 card from your hand, put it into your deck, and shuffle. Then Encountering Unit's Power-3000 until the end of this turn.\n\n\nTrigger / Trash this card. Choose 1 opposing unit on the field and give it Power-5000 until the end of this turn.",
               "descriptionDe": "Wähle 1 Karte aus deiner Hand, lege sie in dein Deck und mische. Dann Stärke der begegnenden Einheit-3000 bis zum Ende dieses Zuges.\n\n\nTrigger / Trashe diese Karte. Wähle 1 gegnerische Einheit auf dem Feld und gib ihr Stärke-5000 bis zum Ende dieses Zuges.",
-              "descriptionJp": "自分の手札を1枚選び、デッキに入れてシャッフルする。そうすればこのターン終了時まで対面ユニットのパワー-3000。\n\n\nトリガー/このカードをトラッシュする。フィールドにいる相手ユニットを1枚選び、このターン終了時までパワー-5000。"
+              "descriptionJp": "自分の手札を1枚選び、デッキに入れてシャッフルする。そうすればこのターン終了時まで対面ユニットのパワー-3000。\n\n\nトリガー/このカードをトラッシュする。フィールドにいる相手ユニットを1枚選び、このターン終了時までパワー-5000。",
+              "sortIndex": 3
             },
             {
               "id": "c-mtuojk6uuc28",
@@ -25872,7 +25876,8 @@
               "nameJp": "ラピ",
               "descriptionEn": "Piercing [1].\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Durchbohren [1].\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "貫通[1]。\n\n\nトリガー／このカードを自分の手札に加える。"
+              "descriptionJp": "貫通[1]。\n\n\nトリガー／このカードを自分の手札に加える。",
+              "sortIndex": 4
             },
             {
               "id": "c-mtuojk6uxwdu",
@@ -25897,7 +25902,8 @@
               "nameJp": "ミサイル",
               "descriptionEn": "Choose 1 opposing unit on the field, and give it Power-5000 until the end of this turn.\n\n\nTrigger / Trash this card. Choose 1 opposing unit on the field and give it Power-5000 until the end of this turn.",
               "descriptionDe": "Wähle 1 gegnerische Einheit auf dem Feld, und gib ihr Stärke-5000 bis zum Ende dieses Zuges.\n\n\nTrigger / Trashe diese Karte. Wähle 1 gegnerische Einheit auf dem Feld und gib ihr Stärke-5000 bis zum Ende dieses Zuges.",
-              "descriptionJp": "フィールドにいる相手ユニットを1枚選び、このターンが終わるまでパワー-5000。\n\n\nトリガー / このカードをトラッシュする。フィールドにいる相手ユニットを1枚選び、このターンが終わるまでパワー-5000。"
+              "descriptionJp": "フィールドにいる相手ユニットを1枚選び、このターンが終わるまでパワー-5000。\n\n\nトリガー / このカードをトラッシュする。フィールドにいる相手ユニットを1枚選び、このターンが終わるまでパワー-5000。",
+              "sortIndex": 5
             },
             {
               "id": "c-mtuojk6uyi4j",
@@ -25922,7 +25928,8 @@
               "nameJp": "ノワール-黒猫",
               "descriptionEn": "Encountering Unit's Power-4000 until the end of this turn.",
               "descriptionDe": "Stärke der begegnenden Einheit-4000 bis zum Ende dieses Zuges.",
-              "descriptionJp": "このターン終了時まで対面ユニットのパワー-4000。"
+              "descriptionJp": "このターン終了時まで対面ユニットのパワー-4000。",
+              "sortIndex": 6
             },
             {
               "id": "c-mtuojk6u34lf",
@@ -25947,7 +25954,8 @@
               "nameJp": "フィナーレ",
               "descriptionEn": "Choose 1 opposing unit on the field, and give it Power-3000 until the end of this turn. If that unit is trashed by this effect, draw 1 card.",
               "descriptionDe": "Wähle 1 gegnerische Einheit auf dem Feld, und gib ihr Stärke-3000 bis zum Ende dieses Zuges. Falls diese Einheit durch diesen Effekt getrasht wird, ziehe 1 Karte.",
-              "descriptionJp": "フィールドにいる相手ユニットを1枚選び、このターンが終わるまでパワー-3000。この効果でそのユニットをトラッシュしたなら、カードを1枚ドローする。"
+              "descriptionJp": "フィールドにいる相手ユニットを1枚選び、このターンが終わるまでパワー-3000。この効果でそのユニットをトラッシュしたなら、カードを1枚ドローする。",
+              "sortIndex": 7
             },
             {
               "id": "c-mtuojk6uxo8g",
@@ -25972,7 +25980,8 @@
               "nameJp": "継承される力",
               "descriptionEn": "Choose 1 opposing unit on the field. If you choose 1 unit card from your hand and trash it, until the end of this turn, that unit's Power decreases by the trashed unit card's Power.",
               "descriptionDe": "Wähle 1 gegnerische Einheit auf dem Feld. Falls du 1 Einheitenkarte aus deiner Hand wählst und trashst, verringert sich bis zum Ende dieses Zuges die Stärke dieser Einheit um die Stärke der getrashten Einheitenkarte.",
-              "descriptionJp": "フィールドにいる相手ユニットを1枚選ぶ。自分の手札からユニットカードを1枚選びトラッシュしたら、このターンが終わるまでそのユニットのパワーがトラッシュしたユニットカードのパワー分だけ減少する。"
+              "descriptionJp": "フィールドにいる相手ユニットを1枚選ぶ。自分の手札からユニットカードを1枚選びトラッシュしたら、このターンが終わるまでそのユニットのパワーがトラッシュしたユニットカードのパワー分だけ減少する。",
+              "sortIndex": 8
             },
             {
               "id": "c-mtuojk6uzt1l",
@@ -25997,7 +26006,8 @@
               "nameJp": "ルージュ-アンラッキーラビット",
               "descriptionEn": "You may choose 1 Skill from your Skill Zone and trash it. If you do, choose 1 opposing unit on the field. Until the end of this turn, that unit's Power-2000 for each 1 Cost of the trashed Skill.",
               "descriptionDe": "Du kannst 1 Fähigkeit aus deiner Fähigkeitenzone wählen und trashen. Falls du das tust, wähle 1 gegnerische Einheit auf dem Feld. Bis zum Ende dieses Zuges, Stärke dieser Einheit-2000 für jeden 1 Kostenpunkt der getrashten Fähigkeit.",
-              "descriptionJp": "自分のスキルゾーンからスキルを1枚選びトラッシュできる。そうしたら、フィールドにいる相手ユニットを1枚選ぶ。このターン終了時まで、トラッシュしたスキルのコスト1につき、そのユニットのパワー-2000。"
+              "descriptionJp": "自分のスキルゾーンからスキルを1枚選びトラッシュできる。そうしたら、フィールドにいる相手ユニットを1枚選ぶ。このターン終了時まで、トラッシュしたスキルのコスト1につき、そのユニットのパワー-2000。",
+              "sortIndex": 9
             },
             {
               "id": "c-mtuojk6unn26",
@@ -26022,7 +26032,8 @@
               "nameJp": "ルージュ-アンラッキーラビット",
               "descriptionEn": "You may choose 1 Skill from your Skill Zone and trash it. If you do, choose 1 opposing unit on the field. Until the end of this turn, that unit's Power-2000 for each 1 Cost of the trashed Skill.",
               "descriptionDe": "Du kannst 1 Fähigkeit aus deiner Fähigkeitenzone wählen und trashen. Falls du das tust, wähle 1 gegnerische Einheit auf dem Feld. Bis zum Ende dieses Zuges, Stärke dieser Einheit-2000 für jeden 1 Kostenpunkt der getrashten Fähigkeit.",
-              "descriptionJp": "自分のスキルゾーンからスキルを1枚選びトラッシュできる。そうしたら、フィールドにいる相手ユニットを1枚選ぶ。このターン終了時まで、トラッシュしたスキルのコスト1につき、そのユニットのパワー-2000。"
+              "descriptionJp": "自分のスキルゾーンからスキルを1枚選びトラッシュできる。そうしたら、フィールドにいる相手ユニットを1枚選ぶ。このターン終了時まで、トラッシュしたスキルのコスト1につき、そのユニットのパワー-2000。",
+              "sortIndex": 10
             },
             {
               "id": "c-mtuojk6u9osi",
@@ -26047,7 +26058,8 @@
               "nameJp": "ベイ-レディアントラビット",
               "descriptionEn": "If you have 3 or more units on the field with [Attacker], gain Piercing [1] until the end of this attack.\n Choose 1 card from your hand and trash it. Then all your units on the field with [Attacker] and Cost equal to or less than the trashed card get Power+1000 for each 1 Cost of the trashed card, until the end of this turn. Additionally Hit+1.",
               "descriptionDe": "Falls du 3 oder mehr Einheiten auf dem Feld mit [Angreifer] hast, erhalte Durchbohren [1] bis zum Ende dieses Angriffs.\n Wähle 1 Karte aus deiner Hand und trashe sie. Dann erhalten alle deine Einheiten auf dem Feld mit [Angreifer] und Kosten gleich oder niedriger als die getrashte Karte Stärke+1000 für jeden 1 Kostenpunkt der getrashten Karte, bis zum Ende dieses Zuges. Zusätzlich Treffer+1.",
-              "descriptionJp": "フィールドにいる【アタッカー】を持つ自分のユニットが3枚以上なら、この攻撃が終わるまで貫通[1]を得る。\n 自分の手札を1枚選びトラッシュする。それならコストがトラッシュしたカードのコスト以下で【アタッカー】を持つ、フィールドにいるすべての自分のユニットは、このターンが終わるまでトラッシュしたカードのコスト1につきパワー+1000。さらにヒット+1。"
+              "descriptionJp": "フィールドにいる【アタッカー】を持つ自分のユニットが3枚以上なら、この攻撃が終わるまで貫通[1]を得る。\n 自分の手札を1枚選びトラッシュする。それならコストがトラッシュしたカードのコスト以下で【アタッカー】を持つ、フィールドにいるすべての自分のユニットは、このターンが終わるまでトラッシュしたカードのコスト1につきパワー+1000。さらにヒット+1。",
+              "sortIndex": 11
             },
             {
               "id": "c-mtuojk6u9nxu",
@@ -26072,7 +26084,8 @@
               "nameJp": "ベイ-レディアントラビット",
               "descriptionEn": "If you have 3 or more units on the field with [Attacker], gain Piercing [1] until the end of this attack.\n Choose 1 card from your hand and trash it. Then all your units on the field with [Attacker] and Cost equal to or less than the trashed card get Power+1000 for each 1 Cost of the trashed card, until the end of this turn. Additionally Hit+1.",
               "descriptionDe": "Falls du 3 oder mehr Einheiten auf dem Feld mit [Angreifer] hast, erhalte Durchbohren [1] bis zum Ende dieses Angriffs.\n Wähle 1 Karte aus deiner Hand und trashe sie. Dann erhalten alle deine Einheiten auf dem Feld mit [Angreifer] und Kosten gleich oder niedriger als die getrashte Karte Stärke+1000 für jeden 1 Kostenpunkt der getrashten Karte, bis zum Ende dieses Zuges. Zusätzlich Treffer+1.",
-              "descriptionJp": "フィールドにいる【アタッカー】を持つ自分のユニットが3枚以上なら、この攻撃が終わるまで貫通[1]を得る。\n 自分の手札を1枚選びトラッシュする。それならコストがトラッシュしたカードのコスト以下で【アタッカー】を持つ、フィールドにいるすべての自分のユニットは、このターンが終わるまでトラッシュしたカードのコスト1につきパワー+1000。さらにヒット+1。"
+              "descriptionJp": "フィールドにいる【アタッカー】を持つ自分のユニットが3枚以上なら、この攻撃が終わるまで貫通[1]を得る。\n 自分の手札を1枚選びトラッシュする。それならコストがトラッシュしたカードのコスト以下で【アタッカー】を持つ、フィールドにいるすべての自分のユニットは、このターンが終わるまでトラッシュしたカードのコスト1につきパワー+1000。さらにヒット+1。",
+              "sortIndex": 12
             },
             {
               "id": "c-mtuojk6uk62r",
@@ -26097,7 +26110,8 @@
               "nameJp": "ラピ:レッドフード-レッドフレーバー",
               "descriptionEn": "Duelist.\n Until the end of this attack, Power+500 for each card in your Damage Zone. If this unit attacks and trashes an opposing unit in battle, you may choose and trash cards from your hand up to the trashed unit's Hit. If you do, deal 1 damage to the opponent for each card trashed this way.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Duellant.\n Bis zum Ende dieses Angriffs, Stärke+500 für jede Karte in deiner Schadenszone. Falls diese Einheit angreift und eine gegnerische Einheit im Kampf trasht, kannst du Karten aus deiner Hand bis zum Treffer der getrashten Einheit wählen und trashen. Falls du das tust, füge dem Gegner 1 Schaden für jede so getrashte Karte zu.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "デュエリスト。\n この攻撃が終わるまで、自分のダメージゾーンにあるカード1枚につきパワー+500。このユニットが攻撃して相手ユニットを戦闘でトラッシュしたなら、トラッシュしたユニットのヒット以下になるように自分の手札を選びトラッシュできる。そうしたら、トラッシュした手札1枚につき相手に1ダメージを与える。\n\n\nトリガー／このカードを自分の手札に加える。"
+              "descriptionJp": "デュエリスト。\n この攻撃が終わるまで、自分のダメージゾーンにあるカード1枚につきパワー+500。このユニットが攻撃して相手ユニットを戦闘でトラッシュしたなら、トラッシュしたユニットのヒット以下になるように自分の手札を選びトラッシュできる。そうしたら、トラッシュした手札1枚につき相手に1ダメージを与える。\n\n\nトリガー／このカードを自分の手札に加える。",
+              "sortIndex": 13
             },
             {
               "id": "c-mtuojk6uzmru",
@@ -26122,7 +26136,8 @@
               "nameJp": "ラピ:レッドフード-レッドフレーバー",
               "descriptionEn": "Duelist.\n Until the end of this attack, Power+500 for each card in your Damage Zone. If this unit attacks and trashes an opposing unit in battle, you may choose and trash cards from your hand up to the trashed unit's Hit. If you do, deal 1 damage to the opponent for each card trashed this way.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Duellant.\n Bis zum Ende dieses Angriffs, Stärke+500 für jede Karte in deiner Schadenszone. Falls diese Einheit angreift und eine gegnerische Einheit im Kampf trasht, kannst du Karten aus deiner Hand bis zum Treffer der getrashten Einheit wählen und trashen. Falls du das tust, füge dem Gegner 1 Schaden für jede so getrashte Karte zu.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "デュエリスト。\n この攻撃が終わるまで、自分のダメージゾーンにあるカード1枚につきパワー+500。このユニットが攻撃して相手ユニットを戦闘でトラッシュしたなら、トラッシュしたユニットのヒット以下になるように自分の手札を選びトラッシュできる。そうしたら、トラッシュした手札1枚につき相手に1ダメージを与える。\n\n\nトリガー／このカードを自分の手札に加える。"
+              "descriptionJp": "デュエリスト。\n この攻撃が終わるまで、自分のダメージゾーンにあるカード1枚につきパワー+500。このユニットが攻撃して相手ユニットを戦闘でトラッシュしたなら、トラッシュしたユニットのヒット以下になるように自分の手札を選びトラッシュできる。そうしたら、トラッシュした手札1枚につき相手に1ダメージを与える。\n\n\nトリガー／このカードを自分の手札に加える。",
+              "sortIndex": 14
             },
             {
               "id": "c-mtuojk6uvybm",
@@ -26147,7 +26162,8 @@
               "nameJp": "レッドフレーバー",
               "descriptionEn": "Draw cards equal to the number of your units on the field with [Attacker]. Until the end of the opponent's turn, if the opponent draws 1 or more cards by an effect, deal 1 damage to the opponent.",
               "descriptionDe": "Ziehe Karten in Höhe der Anzahl deiner Einheiten auf dem Feld mit [Angreifer]. Bis zum Ende des gegnerischen Zuges, falls der Gegner 1 oder mehr Karten durch einen Effekt zieht, füge dem Gegner 1 Schaden zu.",
-              "descriptionJp": "フィールドにいる【アタッカー】を持つ自分のユニットの数だけカードをドローする。相手のターンが終わるまで、相手が効果でカードを1枚以上ドローしたら相手に1ダメージを与える。"
+              "descriptionJp": "フィールドにいる【アタッカー】を持つ自分のユニットの数だけカードをドローする。相手のターンが終わるまで、相手が効果でカードを1枚以上ドローしたら相手に1ダメージを与える。",
+              "sortIndex": 15
             },
             {
               "id": "c-mtuojk6u3f8y",
@@ -26172,7 +26188,8 @@
               "nameJp": "チームバニーガール結成",
               "descriptionEn": "Draw 1 card. Choose 1 opposing unit on the field. That unit gains \"[Passive] When this unit is trashed, place this card from your Trash Zone in your Damage Zone\" until the end of this turn. If your field has 2 or more units with [Attacker], you may trash this Skill.",
               "descriptionDe": "Ziehe 1 Karte. Wähle 1 gegnerische Einheit auf dem Feld. Diese Einheit erhält „[Passiv] Wenn diese Einheit getrasht wird, lege diese Karte aus deiner Trash-Zone in deine Schadenszone“ bis zum Ende dieses Zuges. Falls dein Feld 2 oder mehr Einheiten mit [Angreifer] hat, kannst du diese Fähigkeit trashen.",
-              "descriptionJp": "カードを1枚ドローする。フィールドにいる相手ユニットを1枚選ぶ。そのユニットはこのターン終了時まで「【パッシブ】このユニットがトラッシュされたら、自分のトラッシュゾーンにあるこのカードをダメージゾーンに置く」を得る。フィールドにいる【アタッカー】を持つ自分ユニットが2枚以上なら、このスキルをトラッシュできる。"
+              "descriptionJp": "カードを1枚ドローする。フィールドにいる相手ユニットを1枚選ぶ。そのユニットはこのターン終了時まで「【パッシブ】このユニットがトラッシュされたら、自分のトラッシュゾーンにあるこのカードをダメージゾーンに置く」を得る。フィールドにいる【アタッカー】を持つ自分ユニットが2枚以上なら、このスキルをトラッシュできる。",
+              "sortIndex": 16
             },
             {
               "id": "c-mtuojk6ud731",
@@ -26197,7 +26214,8 @@
               "nameJp": "ギルティ",
               "descriptionEn": "Base Side\n You may only put Earth cards in your deck.\n If your Leader Level is 6 or higher, flip this card.\n\nAwakened Side\n Your Size+1.",
               "descriptionDe": "Grundseite\n Du darfst nur Erde-Karten in dein Deck legen.\n Falls dein Anführer-Level 6 oder höher ist, drehe diese Karte um.\n\nErwachte Seite\n Deine Größe+1.",
-              "descriptionJp": "基本面\n 自分のデッキに大地のカードのみ入れられる。\n 自分のリーダーレベルが6以上なら、このカードを反転する。\n\n覚醒面\n 自分のサイズ+1。"
+              "descriptionJp": "基本面\n 自分のデッキに大地のカードのみ入れられる。\n 自分のリーダーレベルが6以上なら、このカードを反転する。\n\n覚醒面\n 自分のサイズ+1。",
+              "sortIndex": 17
             },
             {
               "id": "c-mtuojk6uhtrm",
@@ -26222,7 +26240,8 @@
               "nameJp": "ギルティ",
               "descriptionEn": "Base Side\n You may only put Earth cards in your deck.\n If your Leader Level is 6 or higher, flip this card.\n\nAwakened Side\n Your Size+1.",
               "descriptionDe": "Grundseite\n Du darfst nur Erde-Karten in dein Deck legen.\n Falls dein Anführer-Level 6 oder höher ist, drehe diese Karte um.\n\nErwachte Seite\n Deine Größe+1.",
-              "descriptionJp": "基本面\n 自分のデッキに大地のカードのみ入れられる。\n 自分のリーダーレベルが6以上なら、このカードを反転する。\n\n覚醒面\n 自分のサイズ+1。"
+              "descriptionJp": "基本面\n 自分のデッキに大地のカードのみ入れられる。\n 自分のリーダーレベルが6以上なら、このカードを反転する。\n\n覚醒面\n 自分のサイズ+1。",
+              "sortIndex": 18
             },
             {
               "id": "c-mtuojk6utifr",
@@ -26247,7 +26266,8 @@
               "nameJp": "ヤン",
               "descriptionEn": "Your Leader Level+1.",
               "descriptionDe": "Dein Anführer-Level+1.",
-              "descriptionJp": "自分のリーダーレベル+1。"
+              "descriptionJp": "自分のリーダーレベル+1。",
+              "sortIndex": 19
             },
             {
               "id": "c-mtuojk6umjow",
@@ -26272,7 +26292,8 @@
               "nameJp": "ギルティ",
               "descriptionEn": "Trigger / Trash this card. Choose 1 opposing unit on the field with Cost 3 or less and trash it.",
               "descriptionDe": "Trigger / Trashe diese Karte. Wähle 1 gegnerische Einheit auf dem Feld mit Kosten 3 oder weniger und trashe sie.",
-              "descriptionJp": "トリガー/このカードをトラッシュする。フィールドにいる3コスト以下の相手ユニットを1枚選びトラッシュする。"
+              "descriptionJp": "トリガー/このカードをトラッシュする。フィールドにいる3コスト以下の相手ユニットを1枚選びトラッシュする。",
+              "sortIndex": 20
             },
             {
               "id": "c-mtuojk6up321",
@@ -26297,7 +26318,8 @@
               "nameJp": "スノーホワイト",
               "descriptionEn": "Breakthrough [Cost 2 or less].\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Durchbruch [Kosten 2 oder weniger].\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "突破[2コスト以下]。\n\n\nトリガー／このカードを自分の手札に加える。"
+              "descriptionJp": "突破[2コスト以下]。\n\n\nトリガー／このカードを自分の手札に加える。",
+              "sortIndex": 21
             },
             {
               "id": "c-mtuojk6usv13",
@@ -26322,7 +26344,8 @@
               "nameJp": "スノーホワイト",
               "descriptionEn": "Breakthrough [Cost 2 or less].\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Durchbruch [Kosten 2 oder weniger].\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "突破[2コスト以下]。\n\n\nトリガー／このカードを自分の手札に加える。"
+              "descriptionJp": "突破[2コスト以下]。\n\n\nトリガー／このカードを自分の手札に加える。",
+              "sortIndex": 22
             },
             {
               "id": "c-mtuojk6uxdeq",
@@ -26347,7 +26370,8 @@
               "nameJp": "ディーゼル",
               "descriptionEn": "Power+1000 for each 1 of your Leader Level.",
               "descriptionDe": "Stärke+1000 für jeden 1 Punkt deines Anführer-Levels.",
-              "descriptionJp": "自分のリーダーレベル1につきパワー+1000。"
+              "descriptionJp": "自分のリーダーレベル1につきパワー+1000。",
+              "sortIndex": 23
             },
             {
               "id": "c-mtuojk6umepv",
@@ -26372,7 +26396,8 @@
               "nameJp": "アクセラレーション",
               "descriptionEn": "Choose 1 lane that has both a unit of yours and an opposing unit, and trash the unit with the lowest Power in that lane. If tied, trash all of them.\n\n\nTrigger / Trash this card. Choose 1 opposing unit on the field with Cost 3 or less and trash it.",
               "descriptionDe": "Wähle 1 Lane, die sowohl eine deiner Einheiten als auch eine gegnerische Einheit hat, und trashe die Einheit mit der niedrigsten Stärke in dieser Lane. Bei Gleichstand, trashe alle davon.\n\n\nTrigger / Trashe diese Karte. Wähle 1 gegnerische Einheit auf dem Feld mit Kosten 3 oder weniger und trashe sie.",
-              "descriptionJp": "自分ユニットと相手ユニットが両方いるレーンを1つ選び、そのレーンでパワーが最も低いユニットをトラッシュする。同じ場合はすべてトラッシュする。\n\n\nトリガー/このカードをトラッシュする。フィールドにいるコスト3以下の相手ユニットを1枚選びトラッシュする。"
+              "descriptionJp": "自分ユニットと相手ユニットが両方いるレーンを1つ選び、そのレーンでパワーが最も低いユニットをトラッシュする。同じ場合はすべてトラッシュする。\n\n\nトリガー/このカードをトラッシュする。フィールドにいるコスト3以下の相手ユニットを1枚選びトラッシュする。",
+              "sortIndex": 24
             },
             {
               "id": "c-mtuojk6um9zi",
@@ -26397,7 +26422,8 @@
               "nameJp": "ティア",
               "descriptionEn": "-",
               "descriptionDe": "-",
-              "descriptionJp": "-"
+              "descriptionJp": "-",
+              "sortIndex": 25
             },
             {
               "id": "c-mtuojk6uayxd",
@@ -26422,7 +26448,8 @@
               "nameJp": "ソラ",
               "descriptionEn": "If your Size is 3 or more higher than the total Cost of cards on your field, choose 1 card from your hand and trash it. Then choose 1 of your units on the field with Cost 3 or less. That unit gains [Attacker] Breakthrough until the end of this turn.",
               "descriptionDe": "Falls deine Größe 3 oder mehr höher als die Gesamtkosten der Karten auf deinem Feld ist, wähle 1 Karte aus deiner Hand und trashe sie. Wähle dann 1 deiner Einheiten auf dem Feld mit Kosten 3 oder weniger. Diese Einheit erhält [Angreifer] Durchbruch bis zum Ende dieses Zuges.",
-              "descriptionJp": "自分のサイズが自分のフィールドにあるカードのコストの合計より3以上高いなら、自分の手札を1枚選びトラッシュする。そうしたら、フィールドにいるコスト3以下の自分ユニットを1枚選ぶ。そのユニットは、このターン終了時まで【アタッカー】突破を得る。"
+              "descriptionJp": "自分のサイズが自分のフィールドにあるカードのコストの合計より3以上高いなら、自分の手札を1枚選びトラッシュする。そうしたら、フィールドにいるコスト3以下の自分ユニットを1枚選ぶ。そのユニットは、このターン終了時まで【アタッカー】突破を得る。",
+              "sortIndex": 26
             },
             {
               "id": "c-mtuojk6ur03a",
@@ -26447,7 +26474,8 @@
               "nameJp": "ティア-スイートシェフ",
               "descriptionEn": "You may reveal 1 card from the top of your deck. If you choose 1 card from your hand and trash it, you may choose the unit card among it and deploy it to an empty Unit Zone of yours. A unit deployed by this effect has Cost 0. Trash the rest.",
               "descriptionDe": "Du kannst 1 Karte von der Oberseite deines Decks aufdecken. Falls du 1 Karte aus deiner Hand wählst und trashst, kannst du die Einheitenkarte darunter wählen und in eine leere Einheitenzone von dir platzieren. Eine durch diesen Effekt platzierte Einheit hat Kosten 0. Trashe den Rest.",
-              "descriptionJp": "自分のデッキの上からカードを1枚公開できる。自分の手札を1枚選びトラッシュすると、その中からユニットカードを1枚選び、空いている自分のユニットゾーンに配置できる。この効果で配置したユニットはコスト0になる。残りはすべてトラッシュする。"
+              "descriptionJp": "自分のデッキの上からカードを1枚公開できる。自分の手札を1枚選びトラッシュすると、その中からユニットカードを1枚選び、空いている自分のユニットゾーンに配置できる。この効果で配置したユニットはコスト0になる。残りはすべてトラッシュする。",
+              "sortIndex": 27
             },
             {
               "id": "c-mtuojk6ursaj",
@@ -26472,7 +26500,8 @@
               "nameJp": "ティア-スイートシェフ",
               "descriptionEn": "You may reveal 1 card from the top of your deck. If you choose 1 card from your hand and trash it, you may choose the unit card among it and deploy it to an empty Unit Zone of yours. A unit deployed by this effect has Cost 0. Trash the rest.",
               "descriptionDe": "Du kannst 1 Karte von der Oberseite deines Decks aufdecken. Falls du 1 Karte aus deiner Hand wählst und trashst, kannst du die Einheitenkarte darunter wählen und in eine leere Einheitenzone von dir platzieren. Eine durch diesen Effekt platzierte Einheit hat Kosten 0. Trashe den Rest.",
-              "descriptionJp": "自分のデッキの上からカードを1枚公開できる。自分の手札を1枚選びトラッシュすると、その中からユニットカードを1枚選び、空いている自分のユニットゾーンに配置できる。この効果で配置したユニットはコスト0になる。残りはすべてトラッシュする。"
+              "descriptionJp": "自分のデッキの上からカードを1枚公開できる。自分の手札を1枚選びトラッシュすると、その中からユニットカードを1枚選び、空いている自分のユニットゾーンに配置できる。この効果で配置したユニットはコスト0になる。残りはすべてトラッシュする。",
+              "sortIndex": 28
             },
             {
               "id": "c-mtuojk6uekdu",
@@ -26497,7 +26526,8 @@
               "nameJp": "紅蓮-レーサーズハイ",
               "descriptionEn": "If all of your Unit Zones have a unit, Power+2000. All your units on the field with Cost 3 or less gain \"[Exit] If trashed by an effect, you may choose 1 card from your hand and trash it. If you do, deploy this unit card to an empty Unit Zone of yours.\"",
               "descriptionDe": "Falls alle deine Einheitenzonen eine Einheit haben, Stärke+2000. Alle deine Einheiten auf dem Feld mit Kosten 3 oder weniger erhalten „[Exit] Falls durch einen Effekt getrasht, kannst du 1 Karte aus deiner Hand wählen und trashen. Falls du das tust, platziere diese Einheitenkarte in eine leere Einheitenzone von dir.“",
-              "descriptionJp": "自分のすべてのユニットゾーンにユニットがいるなら、パワー+2000。フィールドにいるコスト3以下のすべての自分ユニットは「【エグジット】効果でトラッシュされたなら、自分の手札を1枚選びトラッシュできる。そうしたら、空いている自分のユニットゾーンにこのユニットカードを配置する」を得る。"
+              "descriptionJp": "自分のすべてのユニットゾーンにユニットがいるなら、パワー+2000。フィールドにいるコスト3以下のすべての自分ユニットは「【エグジット】効果でトラッシュされたなら、自分の手札を1枚選びトラッシュできる。そうしたら、空いている自分のユニットゾーンにこのユニットカードを配置する」を得る。",
+              "sortIndex": 29
             },
             {
               "id": "c-mtuojk6uzw6z",
@@ -26522,7 +26552,8 @@
               "nameJp": "紅蓮-レーサーズハイ",
               "descriptionEn": "If all of your Unit Zones have a unit, Power+2000. All your units on the field with Cost 3 or less gain \"[Exit] If trashed by an effect, you may choose 1 card from your hand and trash it. If you do, deploy this unit card to an empty Unit Zone of yours.\"",
               "descriptionDe": "Falls alle deine Einheitenzonen eine Einheit haben, Stärke+2000. Alle deine Einheiten auf dem Feld mit Kosten 3 oder weniger erhalten „[Exit] Falls durch einen Effekt getrasht, kannst du 1 Karte aus deiner Hand wählen und trashen. Falls du das tust, platziere diese Einheitenkarte in eine leere Einheitenzone von dir.“",
-              "descriptionJp": "自分のすべてのユニットゾーンにユニットがいるなら、パワー+2000。フィールドにいるコスト3以下のすべての自分ユニットは「【エグジット】効果でトラッシュされたなら、自分の手札を1枚選びトラッシュできる。そうしたら、空いている自分のユニットゾーンにこのユニットカードを配置する」を得る。"
+              "descriptionJp": "自分のすべてのユニットゾーンにユニットがいるなら、パワー+2000。フィールドにいるコスト3以下のすべての自分ユニットは「【エグジット】効果でトラッシュされたなら、自分の手札を1枚選びトラッシュできる。そうしたら、空いている自分のユニットゾーンにこのユニットカードを配置する」を得る。",
+              "sortIndex": 30
             },
             {
               "id": "c-mtuojk6uq18b",
@@ -26547,7 +26578,8 @@
               "nameJp": "ナガ-エレガンスデート",
               "descriptionEn": "If your Leader Level is 6 or higher, the opponent cannot deploy a unit with Cost 4 or less from their hand to the lane this unit is in.",
               "descriptionDe": "Falls dein Anführer-Level 6 oder höher ist, kann der Gegner keine Einheit mit Kosten 4 oder weniger aus seiner Hand in die Lane platzieren, in der sich diese Einheit befindet.",
-              "descriptionJp": "自分のリーダーレベルが6以上なら、相手は手札からコスト4以下のユニットをこのユニットがいるレーンに配置できない。"
+              "descriptionJp": "自分のリーダーレベルが6以上なら、相手は手札からコスト4以下のユニットをこのユニットがいるレーンに配置できない。",
+              "sortIndex": 31
             },
             {
               "id": "c-mtuojk6umpau",
@@ -26572,7 +26604,8 @@
               "nameJp": "ナユタ",
               "descriptionEn": "If your Leader Level is 8 or higher, Hit+1.\n Until the end of this attack, if the opponent blocks with a unit with lower Hit than this unit, they must choose and trash cards from their hand equal to the difference.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Falls dein Anführer-Level 8 oder höher ist, Treffer+1.\n Bis zum Ende dieses Angriffs, falls der Gegner mit einer Einheit mit niedrigerem Treffer als dieser Einheit blockt, muss er Karten aus seiner Hand in Höhe der Differenz wählen und trashen.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "自分のリーダーレベルが8以上なら、ヒット+1。\n この攻撃終了時まで、相手はこのユニットよりヒットが低いユニットで防御する場合、その差の数だけ手札を選びトラッシュしなければならない。\n\n\nトリガー/このカードを自分の手札に加える。"
+              "descriptionJp": "自分のリーダーレベルが8以上なら、ヒット+1。\n この攻撃終了時まで、相手はこのユニットよりヒットが低いユニットで防御する場合、その差の数だけ手札を選びトラッシュしなければならない。\n\n\nトリガー/このカードを自分の手札に加える。",
+              "sortIndex": 32
             },
             {
               "id": "c-mtuojk6u0ar9",
@@ -26597,7 +26630,8 @@
               "nameJp": "ナユタ",
               "descriptionEn": "If your Leader Level is 8 or higher, Hit+1.\n Until the end of this attack, if the opponent blocks with a unit with lower Hit than this unit, they must choose and trash cards from their hand equal to the difference.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Falls dein Anführer-Level 8 oder höher ist, Treffer+1.\n Bis zum Ende dieses Angriffs, falls der Gegner mit einer Einheit mit niedrigerem Treffer als dieser Einheit blockt, muss er Karten aus seiner Hand in Höhe der Differenz wählen und trashen.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "自分のリーダーレベルが8以上なら、ヒット+1。\n この攻撃終了時まで、相手はこのユニットよりヒットが低いユニットで防御する場合、その差の数だけ手札を選びトラッシュしなければならない。\n\n\nトリガー/このカードを自分の手札に加える。"
+              "descriptionJp": "自分のリーダーレベルが8以上なら、ヒット+1。\n この攻撃終了時まで、相手はこのユニットよりヒットが低いユニットで防御する場合、その差の数だけ手札を選びトラッシュしなければならない。\n\n\nトリガー/このカードを自分の手札に加える。",
+              "sortIndex": 33
             },
             {
               "id": "c-mtuojk6ude3e",
@@ -26622,7 +26656,8 @@
               "nameJp": "モダニア",
               "descriptionEn": "Base Side\n You may only put Storm cards in your deck.\n If your Leader Level is 4 or higher, flip this card.\n\nAwakened Side\n All your units on the field with [Exit] get Power+1000.",
               "descriptionDe": "Grundseite\n Du darfst nur Sturm-Karten in dein Deck legen.\n Falls dein Anführer-Level 4 oder höher ist, drehe diese Karte um.\n\nErwachte Seite\n Alle deine Einheiten auf dem Feld mit [Exit] erhalten Stärke+1000.",
-              "descriptionJp": "基本面\n 自分のデッキに嵐のカードのみ入れられる。\n 自分のリーダーレベルが4以上なら、このカードを反転する。\n\n覚醒面\n フィールドにいる【エグジット】を持つすべての自分のユニットのパワー+1000。"
+              "descriptionJp": "基本面\n 自分のデッキに嵐のカードのみ入れられる。\n 自分のリーダーレベルが4以上なら、このカードを反転する。\n\n覚醒面\n フィールドにいる【エグジット】を持つすべての自分のユニットのパワー+1000。",
+              "sortIndex": 34
             },
             {
               "id": "c-mtuojk6ud0hk",
@@ -26647,7 +26682,8 @@
               "nameJp": "モダニア",
               "descriptionEn": "Base Side\n You may only put Storm cards in your deck.\n If your Leader Level is 4 or higher, flip this card.\n\nAwakened Side\n All your units on the field with [Exit] get Power+1000.",
               "descriptionDe": "Grundseite\n Du darfst nur Sturm-Karten in dein Deck legen.\n Falls dein Anführer-Level 4 oder höher ist, drehe diese Karte um.\n\nErwachte Seite\n Alle deine Einheiten auf dem Feld mit [Exit] erhalten Stärke+1000.",
-              "descriptionJp": "基本面\n 自分のデッキに嵐のカードのみ入れられる。\n 自分のリーダーレベルが4以上なら、このカードを反転する。\n\n覚醒面\n フィールドにいる【エグジット】を持つすべての自分のユニットのパワー+1000。"
+              "descriptionJp": "基本面\n 自分のデッキに嵐のカードのみ入れられる。\n 自分のリーダーレベルが4以上なら、このカードを反転する。\n\n覚醒面\n フィールドにいる【エグジット】を持つすべての自分のユニットのパワー+1000。",
+              "sortIndex": 35
             },
             {
               "id": "c-mtuojk6uvdk3",
@@ -26672,7 +26708,8 @@
               "nameJp": "プリヴァーティ",
               "descriptionEn": "The opponent chooses 1 card from their hand and trashes it.\n\n\nTrigger / Trash this card. If the opponent's hand has 3 or more cards, the opponent chooses 1 card from their hand and trashes it.",
               "descriptionDe": "Der Gegner wählt 1 Karte aus seiner Hand und trasht sie.\n\n\nTrigger / Trashe diese Karte. Falls die Hand des Gegners 3 oder mehr Karten hat, wählt der Gegner 1 Karte aus seiner Hand und trasht sie.",
-              "descriptionJp": "相手は手札を1枚選びトラッシュする。\n\n\nトリガー／このカードをトラッシュする。相手の手札が3枚以上なら、相手は手札を1枚選びトラッシュする。"
+              "descriptionJp": "相手は手札を1枚選びトラッシュする。\n\n\nトリガー／このカードをトラッシュする。相手の手札が3枚以上なら、相手は手札を1枚選びトラッシュする。",
+              "sortIndex": 36
             },
             {
               "id": "c-mtuojk6uf6ws",
@@ -26697,7 +26734,8 @@
               "nameJp": "プリヴァーティ",
               "descriptionEn": "The opponent chooses 1 card from their hand and trashes it.\n\n\nTrigger / Trash this card. If the opponent's hand has 3 or more cards, the opponent chooses 1 card from their hand and trashes it.",
               "descriptionDe": "Der Gegner wählt 1 Karte aus seiner Hand und trasht sie.\n\n\nTrigger / Trashe diese Karte. Falls die Hand des Gegners 3 oder mehr Karten hat, wählt der Gegner 1 Karte aus seiner Hand und trasht sie.",
-              "descriptionJp": "相手は手札を1枚選びトラッシュする。\n\n\nトリガー／このカードをトラッシュする。相手の手札が3枚以上なら、相手は手札を1枚選びトラッシュする。"
+              "descriptionJp": "相手は手札を1枚選びトラッシュする。\n\n\nトリガー／このカードをトラッシュする。相手の手札が3枚以上なら、相手は手札を1枚選びトラッシュする。",
+              "sortIndex": 37
             },
             {
               "id": "c-mtuojk6us43j",
@@ -26722,7 +26760,8 @@
               "nameJp": "サクラ",
               "descriptionEn": "Draw 1 card.",
               "descriptionDe": "Ziehe 1 Karte.",
-              "descriptionJp": "カードを1枚ドローする。"
+              "descriptionJp": "カードを1枚ドローする。",
+              "sortIndex": 38
             },
             {
               "id": "c-mtuojk6ueqol",
@@ -26747,7 +26786,8 @@
               "nameJp": "モダニア",
               "descriptionEn": "You may trash your entire hand. If 2 or more cards were trashed by this effect, trash the Encountering Unit.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Du kannst deine gesamte Hand trashen. Falls 2 oder mehr Karten durch diesen Effekt getrasht wurden, trashe die begegnende Einheit.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "自分の手札を全てトラッシュできる。この効果でトラッシュしたカードが2枚以上なら、対面ユニットをトラッシュする。\n\n\nトリガー/このカードを自分の手札に加える。"
+              "descriptionJp": "自分の手札を全てトラッシュできる。この効果でトラッシュしたカードが2枚以上なら、対面ユニットをトラッシュする。\n\n\nトリガー/このカードを自分の手札に加える。",
+              "sortIndex": 39
             },
             {
               "id": "c-mtuojk6u5xos",
@@ -26772,7 +26812,8 @@
               "nameJp": "黒化",
               "descriptionEn": "Choose 1 unit card from your hand and trash it. Choose 1 unit on the field with lower Cost than that card and trash it.",
               "descriptionDe": "Wähle 1 Einheitenkarte aus deiner Hand und trashe sie. Wähle 1 Einheit auf dem Feld mit niedrigeren Kosten als diese Karte und trashe sie.",
-              "descriptionJp": "自分の手札からユニットカードを1枚選びトラッシュする。そのカードよりコストが低いユニットをフィールドから1枚選びトラッシュする。"
+              "descriptionJp": "自分の手札からユニットカードを1枚選びトラッシュする。そのカードよりコストが低いユニットをフィールドから1枚選びトラッシュする。",
+              "sortIndex": 40
             },
             {
               "id": "c-mtuojk6udfqk",
@@ -26797,7 +26838,8 @@
               "nameJp": "新世界",
               "descriptionEn": "Choose 1 unit card from your hand and trash it. Draw cards equal to that card's Hit.",
               "descriptionDe": "Wähle 1 Einheitenkarte aus deiner Hand und trashe sie. Ziehe Karten in Höhe von Treffer dieser Karte.",
-              "descriptionJp": "自分の手札からユニットカードを1枚選びトラッシュする。そのカードのヒットの数だけカードをドローする。"
+              "descriptionJp": "自分の手札からユニットカードを1枚選びトラッシュする。そのカードのヒットの数だけカードをドローする。",
+              "sortIndex": 41
             },
             {
               "id": "c-mtuojk6umhld",
@@ -26822,7 +26864,8 @@
               "nameJp": "ボンディングペイン",
               "descriptionEn": "Choose 1 of your units on the field. Until the end of this turn, all other units of yours on the field have their Power increase by that unit's Power. Trash that unit.",
               "descriptionDe": "Wähle 1 deiner Einheiten auf dem Feld. Bis zum Ende dieses Zuges erhöht sich die Stärke aller anderen deiner Einheiten auf dem Feld um die Stärke dieser Einheit. Trashe diese Einheit.",
-              "descriptionJp": "フィールドにいる自分のユニットを1枚選ぶ。フィールドにいる他のすべての自分のユニットのパワーが、このターンが終わるまでそのユニットのパワー分だけ増加する。そのユニットをトラッシュする。"
+              "descriptionJp": "フィールドにいる自分のユニットを1枚選ぶ。フィールドにいる他のすべての自分のユニットのパワーが、このターンが終わるまでそのユニットのパワー分だけ増加する。そのユニットをトラッシュする。",
+              "sortIndex": 42
             },
             {
               "id": "c-mtuojk6uo0wa",
@@ -26847,7 +26890,8 @@
               "nameJp": "エクシア-ハッカーラビット",
               "descriptionEn": "If it is your turn, draw cards equal to the number of your units trashed by effects this turn. If 3 or more cards were drawn by this effect, deal 1 damage to the opponent.",
               "descriptionDe": "Falls es dein Zug ist, ziehe Karten in Höhe der Anzahl deiner diesen Zug durch Effekte getrashten Einheiten. Falls 3 oder mehr Karten durch diesen Effekt gezogen wurden, füge dem Gegner 1 Schaden zu.",
-              "descriptionJp": "自分のターンなら、このターン中に効果でトラッシュされた自分ユニットの数だけカードをドローする。この効果でドローしたカードが3枚以上なら相手に1ダメージを与える。"
+              "descriptionJp": "自分のターンなら、このターン中に効果でトラッシュされた自分ユニットの数だけカードをドローする。この効果でドローしたカードが3枚以上なら相手に1ダメージを与える。",
+              "sortIndex": 43
             },
             {
               "id": "c-mtuojk6u6vdo",
@@ -26872,7 +26916,8 @@
               "nameJp": "ミハラ:ボンディングチェイン-ペインイーター",
               "descriptionEn": "If 1 or more of your units were trashed from the field this turn, trash this unit. If you do, deal 1 damage to the opponent.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Falls diesen Zug 1 oder mehr deiner Einheiten vom Feld getrasht wurden, trashe diese Einheit. Falls du das tust, füge dem Gegner 1 Schaden zu.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "このターン中にフィールドでトラッシュされた自分ユニットが1枚以上なら、このユニットをトラッシュする。そうしたら、相手に1ダメージを与える。\n\n\nトリガー/このカードを自分の手札に加える。"
+              "descriptionJp": "このターン中にフィールドでトラッシュされた自分ユニットが1枚以上なら、このユニットをトラッシュする。そうしたら、相手に1ダメージを与える。\n\n\nトリガー/このカードを自分の手札に加える。",
+              "sortIndex": 44
             },
             {
               "id": "c-mtuojk6ugiz7",
@@ -26897,7 +26942,8 @@
               "nameJp": "ミハラ:ボンディングチェイン-ペインイーター",
               "descriptionEn": "If 1 or more of your units were trashed from the field this turn, trash this unit. If you do, deal 1 damage to the opponent.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Falls diesen Zug 1 oder mehr deiner Einheiten vom Feld getrasht wurden, trashe diese Einheit. Falls du das tust, füge dem Gegner 1 Schaden zu.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "このターン中にフィールドでトラッシュされた自分ユニットが1枚以上なら、このユニットをトラッシュする。そうしたら、相手に1ダメージを与える。\n\n\nトリガー/このカードを自分の手札に加える。"
+              "descriptionJp": "このターン中にフィールドでトラッシュされた自分ユニットが1枚以上なら、このユニットをトラッシュする。そうしたら、相手に1ダメージを与える。\n\n\nトリガー/このカードを自分の手札に加える。",
+              "sortIndex": 45
             },
             {
               "id": "c-mtuojk6ucj5g",
@@ -26922,7 +26968,8 @@
               "nameJp": "リヴェレリオ",
               "descriptionEn": "Until the end of this turn, whenever your [Active] effect would deal 1 damage to the opponent, deal 2 damage instead. You may trash this unit. If you do, you may choose 1 unit card with Cost 5 from your hand and deploy it to the Unit Zone this unit was in. A unit deployed by this effect has Cost 3 until the end of this turn.",
               "descriptionDe": "Bis zum Ende dieses Zuges, immer wenn dein [Aktiv]-Effekt dem Gegner 1 Schaden zufügen würde, füge stattdessen 2 Schaden zu. Du kannst diese Einheit trashen. Falls du das tust, kannst du 1 Einheitenkarte mit Kosten 5 aus deiner Hand wählen und in die Einheitenzone platzieren, in der sich diese Einheit befand. Eine durch diesen Effekt platzierte Einheit hat bis zum Ende dieses Zuges Kosten 3.",
-              "descriptionJp": "このターン終了時まで、自分の【アクティブ】効果で相手に1ダメージを与える時、代わりに2ダメージを与える。このユニットをトラッシュできる。そうしたら、自分の手札からコスト5のユニットカードを1枚選び、このユニットがいたユニットゾーンに配置できる。この効果で配置したユニットは、このターン終了時までコスト3になる。"
+              "descriptionJp": "このターン終了時まで、自分の【アクティブ】効果で相手に1ダメージを与える時、代わりに2ダメージを与える。このユニットをトラッシュできる。そうしたら、自分の手札からコスト5のユニットカードを1枚選び、このユニットがいたユニットゾーンに配置できる。この効果で配置したユニットは、このターン終了時までコスト3になる。",
+              "sortIndex": 46
             },
             {
               "id": "c-mtuojk6ulg4v",
@@ -26947,7 +26994,8 @@
               "nameJp": "リヴェレリオ",
               "descriptionEn": "Until the end of this turn, whenever your [Active] effect would deal 1 damage to the opponent, deal 2 damage instead. You may trash this unit. If you do, you may choose 1 unit card with Cost 5 from your hand and deploy it to the Unit Zone this unit was in. A unit deployed by this effect has Cost 3 until the end of this turn.",
               "descriptionDe": "Bis zum Ende dieses Zuges, immer wenn dein [Aktiv]-Effekt dem Gegner 1 Schaden zufügen würde, füge stattdessen 2 Schaden zu. Du kannst diese Einheit trashen. Falls du das tust, kannst du 1 Einheitenkarte mit Kosten 5 aus deiner Hand wählen und in die Einheitenzone platzieren, in der sich diese Einheit befand. Eine durch diesen Effekt platzierte Einheit hat bis zum Ende dieses Zuges Kosten 3.",
-              "descriptionJp": "このターン終了時まで、自分の【アクティブ】効果で相手に1ダメージを与える時、代わりに2ダメージを与える。このユニットをトラッシュできる。そうしたら、自分の手札からコスト5のユニットカードを1枚選び、このユニットがいたユニットゾーンに配置できる。この効果で配置したユニットは、このターン終了時までコスト3になる。"
+              "descriptionJp": "このターン終了時まで、自分の【アクティブ】効果で相手に1ダメージを与える時、代わりに2ダメージを与える。このユニットをトラッシュできる。そうしたら、自分の手札からコスト5のユニットカードを1枚選び、このユニットがいたユニットゾーンに配置できる。この効果で配置したユニットは、このターン終了時までコスト3になる。",
+              "sortIndex": 47
             },
             {
               "id": "c-mtuojk6urdv6",
@@ -26972,7 +27020,8 @@
               "nameJp": "ペインイーター",
               "descriptionEn": "Choose 1 unit card with Cost 2 or less from your Trash Zone and deploy it to an empty Unit Zone of yours, ignoring Size. That unit gains \"[Passive] When this unit is trashed, choose 1 〈Pain Eater〉from your Skill Zone and trash it\" until the end of this turn.",
               "descriptionDe": "Wähle 1 Einheitenkarte mit Kosten 2 oder weniger aus deiner Trash-Zone und platziere sie ignorierend der Größe in eine leere Einheitenzone von dir. Diese Einheit erhält „[Passiv] Wenn diese Einheit getrasht wird, wähle 1 〈Schmerzfresser〉aus deiner Fähigkeitenzone und trashe es“ bis zum Ende dieses Zuges.",
-              "descriptionJp": "自分のトラッシュゾーンから2コスト以下のユニットカードを1枚選び、空いている自分のユニットゾーンにサイズを無視して配置する。そのユニットはこのターン終了時まで「【パッシブ】このユニットがトラッシュされたら、自分のスキルゾーンから〈ペインイーター〉を1枚選びトラッシュする」を得る。"
+              "descriptionJp": "自分のトラッシュゾーンから2コスト以下のユニットカードを1枚選び、空いている自分のユニットゾーンにサイズを無視して配置する。そのユニットはこのターン終了時まで「【パッシブ】このユニットがトラッシュされたら、自分のスキルゾーンから〈ペインイーター〉を1枚選びトラッシュする」を得る。",
+              "sortIndex": 48
             },
             {
               "id": "c-mtuojk6uvgk5",
@@ -26997,7 +27046,8 @@
               "nameJp": "静かな水深",
               "descriptionEn": "Choose 1 of your units on the field with Cost 5 or less and trash it. Then choose 1 unit card from your Trash Zone with the same original Cost and card name as the trashed unit, and deploy it to the Unit Zone that unit was in.",
               "descriptionDe": "Wähle 1 deiner Einheiten auf dem Feld mit Kosten 5 oder weniger und trashe sie. Wähle dann 1 Einheitenkarte aus deiner Trash-Zone mit denselben ursprünglichen Kosten und demselben Kartennamen wie die getrashte Einheit, und platziere sie in die Einheitenzone, in der sich diese Einheit befand.",
-              "descriptionJp": "フィールドにいるコスト5以下の自分のユニットを1枚選びトラッシュする。それならトラッシュしたユニットの元のコストと同じコストでカード名が同じユニットカードを、自分のトラッシュゾーンから1枚選び、そのユニットがいたユニットゾーンに配置する。"
+              "descriptionJp": "フィールドにいるコスト5以下の自分のユニットを1枚選びトラッシュする。それならトラッシュしたユニットの元のコストと同じコストでカード名が同じユニットカードを、自分のトラッシュゾーンから1枚選び、そのユニットがいたユニットゾーンに配置する。",
+              "sortIndex": 49
             },
             {
               "id": "c-mtuojk6uugg4",
@@ -27022,7 +27072,8 @@
               "nameJp": "静かな水深",
               "descriptionEn": "Choose 1 of your units on the field with Cost 5 or less and trash it. Then choose 1 unit card from your Trash Zone with the same original Cost and card name as the trashed unit, and deploy it to the Unit Zone that unit was in.",
               "descriptionDe": "Wähle 1 deiner Einheiten auf dem Feld mit Kosten 5 oder weniger und trashe sie. Wähle dann 1 Einheitenkarte aus deiner Trash-Zone mit denselben ursprünglichen Kosten und demselben Kartennamen wie die getrashte Einheit, und platziere sie in die Einheitenzone, in der sich diese Einheit befand.",
-              "descriptionJp": "フィールドにいるコスト5以下の自分のユニットを1枚選びトラッシュする。それならトラッシュしたユニットの元のコストと同じコストでカード名が同じユニットカードを、自分のトラッシュゾーンから1枚選び、そのユニットがいたユニットゾーンに配置する。"
+              "descriptionJp": "フィールドにいるコスト5以下の自分のユニットを1枚選びトラッシュする。それならトラッシュしたユニットの元のコストと同じコストでカード名が同じユニットカードを、自分のトラッシュゾーンから1枚選び、そのユニットがいたユニットゾーンに配置する。",
+              "sortIndex": 50
             },
             {
               "id": "c-mtuojk6ur36c",
@@ -27047,7 +27098,8 @@
               "nameJp": "ドロシー",
               "descriptionEn": "Base Side\n You may only put Wave cards in your deck.\n If your Leader Level is 4 or higher, flip this card.\n\nAwakened Side\n All your units on the field get Power+1000 during the opponent's turn.",
               "descriptionDe": "Grundseite\n Du darfst nur Welle-Karten in dein Deck legen.\n Falls dein Anführer-Level 4 oder höher ist, drehe diese Karte um.\n\nErwachte Seite\n Alle deine Einheiten auf dem Feld erhalten Stärke+1000 während des gegnerischen Zuges.",
-              "descriptionJp": "基本面\n 自分のデッキに波のカードのみ入れられる。\n 自分のリーダーレベルが4以上なら、このカードを反転する。\n\n覚醒面\n フィールドにいるすべての自分のユニットは、相手のターン中パワー+1000。"
+              "descriptionJp": "基本面\n 自分のデッキに波のカードのみ入れられる。\n 自分のリーダーレベルが4以上なら、このカードを反転する。\n\n覚醒面\n フィールドにいるすべての自分のユニットは、相手のターン中パワー+1000。",
+              "sortIndex": 51
             },
             {
               "id": "c-mtuojk6usvbq",
@@ -27072,7 +27124,8 @@
               "nameJp": "ドロシー",
               "descriptionEn": "Base Side\n You may only put Wave cards in your deck.\n If your Leader Level is 4 or higher, flip this card.\n\nAwakened Side\n All your units on the field get Power+1000 during the opponent's turn.",
               "descriptionDe": "Grundseite\n Du darfst nur Welle-Karten in dein Deck legen.\n Falls dein Anführer-Level 4 oder höher ist, drehe diese Karte um.\n\nErwachte Seite\n Alle deine Einheiten auf dem Feld erhalten Stärke+1000 während des gegnerischen Zuges.",
-              "descriptionJp": "基本面\n 自分のデッキに波のカードのみ入れられる。\n 自分のリーダーレベルが4以上なら、このカードを反転する。\n\n覚醒面\n フィールドにいるすべての自分のユニットは、相手のターン中パワー+1000。"
+              "descriptionJp": "基本面\n 自分のデッキに波のカードのみ入れられる。\n 自分のリーダーレベルが4以上なら、このカードを反転する。\n\n覚醒面\n フィールドにいるすべての自分のユニットは、相手のターン中パワー+1000。",
+              "sortIndex": 52
             },
             {
               "id": "c-mtuojk6u1jnq",
@@ -27097,7 +27150,8 @@
               "nameJp": "アリス",
               "descriptionEn": "Breakthrough [Cost 4 or more].\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Durchbruch [Kosten 4 oder mehr].\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "突破[4コスト以上]。\n\n\nトリガー／このカードを自分の手札に加える。"
+              "descriptionJp": "突破[4コスト以上]。\n\n\nトリガー／このカードを自分の手札に加える。",
+              "sortIndex": 53
             },
             {
               "id": "c-mtuojk6uwtr9",
@@ -27122,7 +27176,8 @@
               "nameJp": "アリス",
               "descriptionEn": "Breakthrough [Cost 4 or more].\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Durchbruch [Kosten 4 oder mehr].\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "突破[4コスト以上]。\n\n\nトリガー／このカードを自分の手札に加える。"
+              "descriptionJp": "突破[4コスト以上]。\n\n\nトリガー／このカードを自分の手札に加える。",
+              "sortIndex": 54
             },
             {
               "id": "c-mtuojk6uzpse",
@@ -27147,7 +27202,8 @@
               "nameJp": "ドロシー",
               "descriptionEn": "Barrier [3].\n Power+2000 until the end of this block.",
               "descriptionDe": "Barriere [3].\n Stärke+2000 bis zum Ende dieser Verteidigung.",
-              "descriptionJp": "防壁[3]。\n この防御が終わるまでパワー+2000。"
+              "descriptionJp": "防壁[3]。\n この防御が終わるまでパワー+2000。",
+              "sortIndex": 55
             },
             {
               "id": "c-mtuojk6uyrib",
@@ -27172,7 +27228,8 @@
               "nameJp": "ナッシング",
               "descriptionEn": "Draw 2 cards.",
               "descriptionDe": "Ziehe 2 Karten.",
-              "descriptionJp": "カードを2枚ドローする。"
+              "descriptionJp": "カードを2枚ドローする。",
+              "sortIndex": 56
             },
             {
               "id": "c-mtuojk6u7lc8",
@@ -27197,7 +27254,8 @@
               "nameJp": "失楽園",
               "descriptionEn": "Choose 1 of your units on the field with [Guardian]. That unit gains [Attacker] Breakthrough until the end of this turn.\n\n\nTrigger / Trash this card. Choose the opposing unit on the field with the lowest Cost and return that unit and all items it has equipped to the owner's hand.",
               "descriptionDe": "Wähle 1 deiner Einheiten auf dem Feld mit [Wächter]. Diese Einheit erhält [Angreifer] Durchbruch bis zum Ende dieses Zuges.\n\n\nTrigger / Trashe diese Karte. Wähle die gegnerische Einheit auf dem Feld mit den niedrigsten Kosten und gib diese Einheit und alle von ihr ausgerüsteten Items auf die Hand des Besitzers zurück.",
-              "descriptionJp": "フィールドにいる【ガーディアン】を持つ自分のユニットを1枚選ぶ。そのユニットはこのターンが終わるまで【アタッカー】突破を得る。\n\n\nトリガー / このカードをトラッシュする。フィールドにいる相手ユニットの中でコストが最も低いユニットを1枚選び、そのユニットとそのユニットが装着したアイテムをすべて持ち主の手札に戻す。"
+              "descriptionJp": "フィールドにいる【ガーディアン】を持つ自分のユニットを1枚選ぶ。そのユニットはこのターンが終わるまで【アタッカー】突破を得る。\n\n\nトリガー / このカードをトラッシュする。フィールドにいる相手ユニットの中でコストが最も低いユニットを1枚選び、そのユニットとそのユニットが装着したアイテムをすべて持ち主の手札に戻す。",
+              "sortIndex": 57
             },
             {
               "id": "c-mtuojk6uv9mr",
@@ -27222,7 +27280,8 @@
               "nameJp": "アンカー : イノセントメイド",
               "descriptionEn": "You may choose 2 cards from your hand and trash them. If you do, the opponent cannot deploy a unit with Cost 5 or more from their hand until the end of the opponent's turn.\n Power+1000 until the end of this block.",
               "descriptionDe": "Du kannst 2 Karten aus deiner Hand wählen und trashen. Falls du das tust, kann der Gegner bis zum Ende des gegnerischen Zuges keine Einheit mit Kosten 5 oder mehr aus seiner Hand platzieren.\n Stärke+1000 bis zum Ende dieser Verteidigung.",
-              "descriptionJp": "自分の手札を2枚選びトラッシュできる。そうすれば相手のターン終了時まで、相手は手札から5コスト以上のユニットを配置できない。\n この防御が終わるまでパワー+1000。"
+              "descriptionJp": "自分の手札を2枚選びトラッシュできる。そうすれば相手のターン終了時まで、相手は手札から5コスト以上のユニットを配置できない。\n この防御が終わるまでパワー+1000。",
+              "sortIndex": 58
             },
             {
               "id": "c-mtuojk6umzux",
@@ -27247,7 +27306,8 @@
               "nameJp": "温かいお風呂",
               "descriptionEn": "Draw cards equal to the number of your units on the field with [Defender]. The opponent cannot activate [Attacker] effects until the end of the opponent's turn.",
               "descriptionDe": "Ziehe Karten in Höhe der Anzahl deiner Einheiten auf dem Feld mit [Verteidiger]. Der Gegner kann bis zum Ende des gegnerischen Zuges keine [Angreifer]-Effekte aktivieren.",
-              "descriptionJp": "フィールドにいる【ディフェンダー】を持つ自分のユニットの数だけカードをドローする。相手のターンが終わるまで相手は【アタッカー】効果を発動できない。"
+              "descriptionJp": "フィールドにいる【ディフェンダー】を持つ自分のユニットの数だけカードをドローする。相手のターンが終わるまで相手は【アタッカー】効果を発動できない。",
+              "sortIndex": 59
             },
             {
               "id": "c-mtuojk6uwyzd",
@@ -27272,7 +27332,8 @@
               "nameJp": "アイン-ハンドメイドフェスタ",
               "descriptionEn": "All your units on the field get Power+1000 for each of your units on the field with [Defender].\n You may choose 1 opposing unit on the field. If you do, that unit cannot attack until the end of this turn.",
               "descriptionDe": "Alle deine Einheiten auf dem Feld erhalten Stärke+1000 für jede deiner Einheiten auf dem Feld mit [Verteidiger].\n Du kannst 1 gegnerische Einheit auf dem Feld wählen. Falls du das tust, kann diese Einheit bis zum Ende dieses Zuges nicht angreifen.",
-              "descriptionJp": "フィールドにいる【ディフェンダー】を持つ自分のユニット1枚につき、フィールドにいるすべての自分のユニットのパワー+1000。\n フィールドにいる相手ユニットを1枚選ぶことができる。それならそのユニットはこのターンが終わるまで攻撃できない。"
+              "descriptionJp": "フィールドにいる【ディフェンダー】を持つ自分のユニット1枚につき、フィールドにいるすべての自分のユニットのパワー+1000。\n フィールドにいる相手ユニットを1枚選ぶことができる。それならそのユニットはこのターンが終わるまで攻撃できない。",
+              "sortIndex": 60
             },
             {
               "id": "c-mtuojk6undby",
@@ -27297,7 +27358,8 @@
               "nameJp": "アイン-ハンドメイドフェスタ",
               "descriptionEn": "All your units on the field get Power+1000 for each of your units on the field with [Defender].\n You may choose 1 opposing unit on the field. If you do, that unit cannot attack until the end of this turn.",
               "descriptionDe": "Alle deine Einheiten auf dem Feld erhalten Stärke+1000 für jede deiner Einheiten auf dem Feld mit [Verteidiger].\n Du kannst 1 gegnerische Einheit auf dem Feld wählen. Falls du das tust, kann diese Einheit bis zum Ende dieses Zuges nicht angreifen.",
-              "descriptionJp": "フィールドにいる【ディフェンダー】を持つ自分のユニット1枚につき、フィールドにいるすべての自分のユニットのパワー+1000。\n フィールドにいる相手ユニットを1枚選ぶことができる。それならそのユニットはこのターンが終わるまで攻撃できない。"
+              "descriptionJp": "フィールドにいる【ディフェンダー】を持つ自分のユニット1枚につき、フィールドにいるすべての自分のユニットのパワー+1000。\n フィールドにいる相手ユニットを1枚選ぶことができる。それならそのユニットはこのターンが終わるまで攻撃できない。",
+              "sortIndex": 61
             },
             {
               "id": "c-mtuojk6u6yq9",
@@ -27322,7 +27384,8 @@
               "nameJp": "ツヴァイ-ファーストフェスタ",
               "descriptionEn": "Barrier [1].\n You may choose 1 card from your hand and trash it. If you do, the unit that attacked in this battle cannot attack until the end of the opponent's next turn.",
               "descriptionDe": "Barriere [1].\n Du kannst 1 Karte aus deiner Hand wählen und trashen. Falls du das tust, kann die Einheit, die in diesem Kampf angriff, bis zum Ende des nächsten gegnerischen Zuges nicht angreifen.",
-              "descriptionJp": "防壁[1]。\n 自分の手札を1枚選びトラッシュできる。そうしたら、この戦闘で攻撃したユニットは、次の相手のターンが終わるまで攻撃できない。"
+              "descriptionJp": "防壁[1]。\n 自分の手札を1枚選びトラッシュできる。そうしたら、この戦闘で攻撃したユニットは、次の相手のターンが終わるまで攻撃できない。",
+              "sortIndex": 62
             },
             {
               "id": "c-mtuojk6uuiz0",
@@ -27347,7 +27410,8 @@
               "nameJp": "ヘルム-シャンデリアライト",
               "descriptionEn": "If the Encountering Unit has Cost 4 or more, you may choose 1 card from your hand and trash it. If you do, return the Encountering Unit and all items it has equipped to the owner's hand.\n Power+3000 until the end of this block.",
               "descriptionDe": "Falls die begegnende Einheit Kosten 4 oder mehr hat, kannst du 1 Karte aus deiner Hand wählen und trashen. Falls du das tust, gib die begegnende Einheit und alle von ihr ausgerüsteten Items auf die Hand des Besitzers zurück.\n Stärke+3000 bis zum Ende dieser Verteidigung.",
-              "descriptionJp": "対面ユニットが4コスト以上なら、自分の手札を1枚選びトラッシュできる。そうすれば対面ユニットとそのユニットが装着したアイテムを全て持ち主の手札に戻す。\n この防御が終わるまでパワー+3000。"
+              "descriptionJp": "対面ユニットが4コスト以上なら、自分の手札を1枚選びトラッシュできる。そうすれば対面ユニットとそのユニットが装着したアイテムを全て持ち主の手札に戻す。\n この防御が終わるまでパワー+3000。",
+              "sortIndex": 63
             },
             {
               "id": "c-mtuojk6u94a4",
@@ -27372,7 +27436,8 @@
               "nameJp": "トーブ-サンブレイズ",
               "descriptionEn": "All your units on the field with [Defender] gain \"[Defender] Deal 1 damage to the opponent.\" If this unit's Power is 5000 or more, additionally all your units on the field with [Defender] gain \"[Defender] Draw 1 card.\"\n Power+4000 until the end of this block.\n\n\nTrigger / Trash this card. Choose the opposing unit on the field with the lowest Cost and return that unit and all items it has equipped to the owner's hand.",
               "descriptionDe": "Alle deine Einheiten auf dem Feld mit [Verteidiger] erhalten „[Verteidiger] Füge dem Gegner 1 Schaden zu.“ Falls die Stärke dieser Einheit 5000 oder mehr ist, erhalten zusätzlich alle deine Einheiten auf dem Feld mit [Verteidiger] „[Verteidiger] Ziehe 1 Karte.“\n Stärke+4000 bis zum Ende dieser Verteidigung.\n\n\nTrigger / Trashe diese Karte. Wähle die gegnerische Einheit auf dem Feld mit den niedrigsten Kosten und gib diese Einheit und alle von ihr ausgerüsteten Items auf die Hand des Besitzers zurück.",
-              "descriptionJp": "フィールドにいる【ディフェンダー】を持つすべての自分のユニットは「【ディフェンダー】相手に1ダメージを与える」を得る。このユニットのパワーが5000以上なら、さらにフィールドにいる【ディフェンダー】を持つすべての自分のユニットは「【ディフェンダー】カードを1枚ドローする」を得る。\n この防御が終わるまでパワー+4000。\n\n\nトリガー / このカードをトラッシュする。フィールドにいる相手ユニットの中でコストが最も低いユニットを1枚選び、そのユニットとそのユニットが装着したアイテムをすべて持ち主の手札に戻す。"
+              "descriptionJp": "フィールドにいる【ディフェンダー】を持つすべての自分のユニットは「【ディフェンダー】相手に1ダメージを与える」を得る。このユニットのパワーが5000以上なら、さらにフィールドにいる【ディフェンダー】を持つすべての自分のユニットは「【ディフェンダー】カードを1枚ドローする」を得る。\n この防御が終わるまでパワー+4000。\n\n\nトリガー / このカードをトラッシュする。フィールドにいる相手ユニットの中でコストが最も低いユニットを1枚選び、そのユニットとそのユニットが装着したアイテムをすべて持ち主の手札に戻す。",
+              "sortIndex": 64
             },
             {
               "id": "c-mtuojk6ucvar",
@@ -27397,7 +27462,8 @@
               "nameJp": "トーブ-サンブレイズ",
               "descriptionEn": "All your units on the field with [Defender] gain \"[Defender] Deal 1 damage to the opponent.\" If this unit's Power is 5000 or more, additionally all your units on the field with [Defender] gain \"[Defender] Draw 1 card.\"\n Power+4000 until the end of this block.\n\n\nTrigger / Trash this card. Choose the opposing unit on the field with the lowest Cost and return that unit and all items it has equipped to the owner's hand.",
               "descriptionDe": "Alle deine Einheiten auf dem Feld mit [Verteidiger] erhalten „[Verteidiger] Füge dem Gegner 1 Schaden zu.“ Falls die Stärke dieser Einheit 5000 oder mehr ist, erhalten zusätzlich alle deine Einheiten auf dem Feld mit [Verteidiger] „[Verteidiger] Ziehe 1 Karte.“\n Stärke+4000 bis zum Ende dieser Verteidigung.\n\n\nTrigger / Trashe diese Karte. Wähle die gegnerische Einheit auf dem Feld mit den niedrigsten Kosten und gib diese Einheit und alle von ihr ausgerüsteten Items auf die Hand des Besitzers zurück.",
-              "descriptionJp": "フィールドにいる【ディフェンダー】を持つすべての自分のユニットは「【ディフェンダー】相手に1ダメージを与える」を得る。このユニットのパワーが5000以上なら、さらにフィールドにいる【ディフェンダー】を持つすべての自分のユニットは「【ディフェンダー】カードを1枚ドローする」を得る。\n この防御が終わるまでパワー+4000。\n\n\nトリガー / このカードをトラッシュする。フィールドにいる相手ユニットの中でコストが最も低いユニットを1枚選び、そのユニットとそのユニットが装着したアイテムをすべて持ち主の手札に戻す。"
+              "descriptionJp": "フィールドにいる【ディフェンダー】を持つすべての自分のユニットは「【ディフェンダー】相手に1ダメージを与える」を得る。このユニットのパワーが5000以上なら、さらにフィールドにいる【ディフェンダー】を持つすべての自分のユニットは「【ディフェンダー】カードを1枚ドローする」を得る。\n この防御が終わるまでパワー+4000。\n\n\nトリガー / このカードをトラッシュする。フィールドにいる相手ユニットの中でコストが最も低いユニットを1枚選び、そのユニットとそのユニットが装着したアイテムをすべて持ち主の手札に戻す。",
+              "sortIndex": 65
             },
             {
               "id": "c-mtuojk6u1ikd",
@@ -27422,7 +27488,8 @@
               "nameJp": "ドロシー:セレンディピティ",
               "descriptionEn": "All your units on the field with [Defender] gain \"[Passive] Encountering Unit gains Berserker.\" If this unit's Power is 6000 or more, when this would be trashed by an opponent's effect, you may choose 1 card from your hand and trash it. If you do, this unit is not trashed.\n Power+4000 until the end of this block.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Alle deine Einheiten auf dem Feld mit [Verteidiger] erhalten „[Passiv] Begegnende Einheit erhält Berserker.“ Falls die Stärke dieser Einheit 6000 oder mehr ist, wenn diese Einheit durch einen gegnerischen Effekt getrasht würde, kannst du 1 Karte aus deiner Hand wählen und trashen. Falls du das tust, wird diese Einheit nicht getrasht.\n Stärke+4000 bis zum Ende dieser Verteidigung.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "フィールドにいる【ディフェンダー】を持つすべての自分のユニットは「【パッシブ】対面ユニットは狂戦士を得る」を得る。このユニットのパワーが6000以上なら、相手の効果でトラッシュされる時、自分の手札を1枚選びトラッシュすることができる。それならこのユニットはトラッシュされない。\n この防御が終わるまでパワー+4000。\n\n\nトリガー / このカードを自分の手札に加える。"
+              "descriptionJp": "フィールドにいる【ディフェンダー】を持つすべての自分のユニットは「【パッシブ】対面ユニットは狂戦士を得る」を得る。このユニットのパワーが6000以上なら、相手の効果でトラッシュされる時、自分の手札を1枚選びトラッシュすることができる。それならこのユニットはトラッシュされない。\n この防御が終わるまでパワー+4000。\n\n\nトリガー / このカードを自分の手札に加える。",
+              "sortIndex": 66
             },
             {
               "id": "c-mtuojk6umyxv",
@@ -27447,7 +27514,8 @@
               "nameJp": "ドロシー:セレンディピティ",
               "descriptionEn": "All your units on the field with [Defender] gain \"[Passive] Encountering Unit gains Berserker.\" If this unit's Power is 6000 or more, when this would be trashed by an opponent's effect, you may choose 1 card from your hand and trash it. If you do, this unit is not trashed.\n Power+4000 until the end of this block.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Alle deine Einheiten auf dem Feld mit [Verteidiger] erhalten „[Passiv] Begegnende Einheit erhält Berserker.“ Falls die Stärke dieser Einheit 6000 oder mehr ist, wenn diese Einheit durch einen gegnerischen Effekt getrasht würde, kannst du 1 Karte aus deiner Hand wählen und trashen. Falls du das tust, wird diese Einheit nicht getrasht.\n Stärke+4000 bis zum Ende dieser Verteidigung.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "フィールドにいる【ディフェンダー】を持つすべての自分のユニットは「【パッシブ】対面ユニットは狂戦士を得る」を得る。このユニットのパワーが6000以上なら、相手の効果でトラッシュされる時、自分の手札を1枚選びトラッシュすることができる。それならこのユニットはトラッシュされない。\n この防御が終わるまでパワー+4000。\n\n\nトリガー / このカードを自分の手札に加える。"
+              "descriptionJp": "フィールドにいる【ディフェンダー】を持つすべての自分のユニットは「【パッシブ】対面ユニットは狂戦士を得る」を得る。このユニットのパワーが6000以上なら、相手の効果でトラッシュされる時、自分の手札を1枚選びトラッシュすることができる。それならこのユニットはトラッシュされない。\n この防御が終わるまでパワー+4000。\n\n\nトリガー / このカードを自分の手札に加える。",
+              "sortIndex": 67
             },
             {
               "id": "c-mtuojk6ukdw3",
@@ -27472,7 +27540,8 @@
               "nameJp": "プリヴァーティ : アンカインドメイド",
               "descriptionEn": "Base Side\n You may only put Lightning cards in your deck.\n If your Leader Level is 5 or higher, flip this card.\n\nAwakened Side\n All your units on the field with [Armed] get Power+1000.",
               "descriptionDe": "Grundseite\n Du darfst nur Blitz-Karten in dein Deck legen.\n Falls dein Anführer-Level 5 oder höher ist, drehe diese Karte um.\n\nErwachte Seite\n Alle deine Einheiten auf dem Feld mit [Bewaffnet] erhalten Stärke+1000.",
-              "descriptionJp": "基本面\n 自分のデッキに雷のカードのみ入れられる。\n 自分のリーダーレベルが5以上なら、このカードを反転する。\n\n覚醒面\n フィールドにいる【アームド】を持つすべての自分のユニットのパワー+1000。"
+              "descriptionJp": "基本面\n 自分のデッキに雷のカードのみ入れられる。\n 自分のリーダーレベルが5以上なら、このカードを反転する。\n\n覚醒面\n フィールドにいる【アームド】を持つすべての自分のユニットのパワー+1000。",
+              "sortIndex": 68
             },
             {
               "id": "c-mtuojk6uj06j",
@@ -27497,7 +27566,8 @@
               "nameJp": "プリヴァーティ : アンカインドメイド",
               "descriptionEn": "Base Side\n You may only put Lightning cards in your deck.\n If your Leader Level is 5 or higher, flip this card.\n\nAwakened Side\n All your units on the field with [Armed] get Power+1000.",
               "descriptionDe": "Grundseite\n Du darfst nur Blitz-Karten in dein Deck legen.\n Falls dein Anführer-Level 5 oder höher ist, drehe diese Karte um.\n\nErwachte Seite\n Alle deine Einheiten auf dem Feld mit [Bewaffnet] erhalten Stärke+1000.",
-              "descriptionJp": "基本面\n 自分のデッキに雷のカードのみ入れられる。\n 自分のリーダーレベルが5以上なら、このカードを反転する。\n\n覚醒面\n フィールドにいる【アームド】を持つすべての自分のユニットのパワー+1000。"
+              "descriptionJp": "基本面\n 自分のデッキに雷のカードのみ入れられる。\n 自分のリーダーレベルが5以上なら、このカードを反転する。\n\n覚醒面\n フィールドにいる【アームド】を持つすべての自分のユニットのパワー+1000。",
+              "sortIndex": 69
             },
             {
               "id": "c-mtuojk6utbph",
@@ -27522,7 +27592,8 @@
               "nameJp": "シュガー",
               "descriptionEn": "Draw 1 card. Then choose 1 card from your hand and trash it.",
               "descriptionDe": "Ziehe 1 Karte. Wähle dann 1 Karte aus deiner Hand und trashe sie.",
-              "descriptionJp": "カードを1枚ドローする。そうすれば自分の手札を1枚選びトラッシュする。"
+              "descriptionJp": "カードを1枚ドローする。そうすれば自分の手札を1枚選びトラッシュする。",
+              "sortIndex": 70
             },
             {
               "id": "c-mtuojk6u970l",
@@ -27547,7 +27618,8 @@
               "nameJp": "クラウン",
               "descriptionEn": "Choose 1 Item card with Cost 2 from your deck and add it to your hand. Shuffle your deck.\n\n\nTrigger / Trash this card. Choose 1 Item card with Cost 1 or less from your deck and add it to your hand. Shuffle your deck.",
               "descriptionDe": "Wähle 1 Item-Karte mit Kosten 2 aus deinem Deck und lege sie auf deine Hand. Mische dein Deck.\n\n\nTrigger / Trashe diese Karte. Wähle 1 Item-Karte mit Kosten 1 oder weniger aus deinem Deck und lege sie auf deine Hand. Mische dein Deck.",
-              "descriptionJp": "自分のデッキからコスト2のアイテムカードを1枚選び手札に加える。デッキをシャッフルする。\n\n\nトリガー/このカードをトラッシュする。自分のデッキからコスト1以下のアイテムカードを1枚選び手札に加える。デッキをシャッフルする。"
+              "descriptionJp": "自分のデッキからコスト2のアイテムカードを1枚選び手札に加える。デッキをシャッフルする。\n\n\nトリガー/このカードをトラッシュする。自分のデッキからコスト1以下のアイテムカードを1枚選び手札に加える。デッキをシャッフルする。",
+              "sortIndex": 71
             },
             {
               "id": "c-mtuojk6uclu5",
@@ -27572,7 +27644,8 @@
               "nameJp": "クラウン",
               "descriptionEn": "Choose 1 Item card with Cost 2 from your deck and add it to your hand. Shuffle your deck.\n\n\nTrigger / Trash this card. Choose 1 Item card with Cost 1 or less from your deck and add it to your hand. Shuffle your deck.",
               "descriptionDe": "Wähle 1 Item-Karte mit Kosten 2 aus deinem Deck und lege sie auf deine Hand. Mische dein Deck.\n\n\nTrigger / Trashe diese Karte. Wähle 1 Item-Karte mit Kosten 1 oder weniger aus deinem Deck und lege sie auf deine Hand. Mische dein Deck.",
-              "descriptionJp": "自分のデッキからコスト2のアイテムカードを1枚選び手札に加える。デッキをシャッフルする。\n\n\nトリガー/このカードをトラッシュする。自分のデッキからコスト1以下のアイテムカードを1枚選び手札に加える。デッキをシャッフルする。"
+              "descriptionJp": "自分のデッキからコスト2のアイテムカードを1枚選び手札に加える。デッキをシャッフルする。\n\n\nトリガー/このカードをトラッシュする。自分のデッキからコスト1以下のアイテムカードを1枚選び手札に加える。デッキをシャッフルする。",
+              "sortIndex": 72
             },
             {
               "id": "c-mtuojk6uhl2h",
@@ -27597,7 +27670,8 @@
               "nameJp": "プリヴァーティ : アンカインドメイド",
               "descriptionEn": "If equipped with an item, the opponent chooses 1 card from their hand and trashes it.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Falls mit einem Item ausgerüstet, wählt der Gegner 1 Karte aus seiner Hand und trasht sie.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "アイテムを装備しているなら、相手は手札を1枚選びトラッシュする。\n\n\nトリガー／このカードを自分の手札に加える。"
+              "descriptionJp": "アイテムを装備しているなら、相手は手札を1枚選びトラッシュする。\n\n\nトリガー／このカードを自分の手札に加える。",
+              "sortIndex": 73
             },
             {
               "id": "c-mtuojk6u74ui",
@@ -27622,7 +27696,8 @@
               "nameJp": "ロイヤルアタイア",
               "descriptionEn": "Choose 1 Item card with Cost 1 or less from your Trash Zone and add it to your hand.",
               "descriptionDe": "Wähle 1 Item-Karte mit Kosten 1 oder weniger aus deiner Trash-Zone und lege sie auf deine Hand.",
-              "descriptionJp": "自分のトラッシュゾーンから1コスト以下のアイテムカードを1枚選び手札に加える。"
+              "descriptionJp": "自分のトラッシュゾーンから1コスト以下のアイテムカードを1枚選び手札に加える。",
+              "sortIndex": 74
             },
             {
               "id": "c-mtuojk6ufgby",
@@ -27647,7 +27722,8 @@
               "nameJp": "ソーダ:トゥインクリングバニー",
               "descriptionEn": "For each item this unit has equipped, trash 3 cards from the top of your deck. Hit+1 until the end of this turn for each Item card trashed by this effect.\n\n\nTrigger / Trash this card. Draw 2 cards. Then choose 2 cards from your hand and trash them.",
               "descriptionDe": "Für jedes von dieser Einheit ausgerüstete Item, trashe 3 Karten von der Oberseite deines Decks. Treffer+1 bis zum Ende dieses Zuges für jede durch diesen Effekt getrashte Item-Karte.\n\n\nTrigger / Trashe diese Karte. Ziehe 2 Karten. Wähle dann 2 Karten aus deiner Hand und trashe sie.",
-              "descriptionJp": "このユニットが装備しているアイテム1枚につき、自分のデッキの一番上からカードを3枚トラッシュする。このターンが終わるまで、この効果でトラッシュされたアイテムカード1枚につきヒット+1。\n\n\nトリガー／このカードをトラッシュする。カードを2枚ドローする。そうしたら、自分の手札を2枚選びトラッシュする。"
+              "descriptionJp": "このユニットが装備しているアイテム1枚につき、自分のデッキの一番上からカードを3枚トラッシュする。このターンが終わるまで、この効果でトラッシュされたアイテムカード1枚につきヒット+1。\n\n\nトリガー／このカードをトラッシュする。カードを2枚ドローする。そうしたら、自分の手札を2枚選びトラッシュする。",
+              "sortIndex": 75
             },
             {
               "id": "c-mtuojk6unl4c",
@@ -27672,7 +27748,8 @@
               "nameJp": "シュエン",
               "descriptionEn": "You may choose up to 3 Item cards from your Trash Zone and put them on the bottom of your deck in any order. If the total Cost of the cards put down is equal to or greater than the Encountering Unit's Cost, trash the Encountering Unit.",
               "descriptionDe": "Du kannst bis zu 3 Item-Karten aus deiner Trash-Zone wählen und in beliebiger Reihenfolge unter dein Deck legen. Falls die Gesamtkosten der gelegten Karten gleich oder größer als die Kosten der begegnenden Einheit sind, trashe die begegnende Einheit.",
-              "descriptionJp": "自分のトラッシュゾーンからアイテムカードを3枚まで選び、デッキの一番下に好きな順番で置くことができる。置いたカードのコストの合計が対面ユニットのコスト以上なら、対面ユニットをトラッシュする。"
+              "descriptionJp": "自分のトラッシュゾーンからアイテムカードを3枚まで選び、デッキの一番下に好きな順番で置くことができる。置いたカードのコストの合計が対面ユニットのコスト以上なら、対面ユニットをトラッシュする。",
+              "sortIndex": 76
             },
             {
               "id": "c-mtuojk6uorf9",
@@ -27697,7 +27774,8 @@
               "nameJp": "イレグ : ブーム・アンド・ショック",
               "descriptionEn": "Choose Item cards from your Trash Zone and hand equal to the number of your units on the field, and equip 1 to each of your units on the field, ignoring Size.\n If you have 3 or more units on the field with an equipped item, Power+2000, Hit+1.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Wähle Item-Karten aus deiner Trash-Zone und Hand in Höhe der Anzahl deiner Einheiten auf dem Feld, und rüste jeweils 1 an jeder deiner Einheiten auf dem Feld ignorierend der Größe aus.\n Falls du 3 oder mehr Einheiten auf dem Feld mit ausgerüstetem Item hast, Stärke+2000, Treffer+1.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "フィールドにいる自分のユニットの数だけ、自分のトラッシュゾーンと手札からアイテムカードを選び、フィールドにいる自分のユニットにサイズを無視して1枚ずつ装着する。\n フィールドにいるアイテムを装着した自分のユニットが3枚以上なら、パワー+2000、ヒット+1。\n\n\nトリガー / このカードを自分の手札に加える。"
+              "descriptionJp": "フィールドにいる自分のユニットの数だけ、自分のトラッシュゾーンと手札からアイテムカードを選び、フィールドにいる自分のユニットにサイズを無視して1枚ずつ装着する。\n フィールドにいるアイテムを装着した自分のユニットが3枚以上なら、パワー+2000、ヒット+1。\n\n\nトリガー / このカードを自分の手札に加える。",
+              "sortIndex": 77
             },
             {
               "id": "c-mtuojk6u166y",
@@ -27722,7 +27800,8 @@
               "nameJp": "イレグ : ブーム・アンド・ショック",
               "descriptionEn": "Choose Item cards from your Trash Zone and hand equal to the number of your units on the field, and equip 1 to each of your units on the field, ignoring Size.\n If you have 3 or more units on the field with an equipped item, Power+2000, Hit+1.\n\n\nTrigger / Add this card to your hand.",
               "descriptionDe": "Wähle Item-Karten aus deiner Trash-Zone und Hand in Höhe der Anzahl deiner Einheiten auf dem Feld, und rüste jeweils 1 an jeder deiner Einheiten auf dem Feld ignorierend der Größe aus.\n Falls du 3 oder mehr Einheiten auf dem Feld mit ausgerüstetem Item hast, Stärke+2000, Treffer+1.\n\n\nTrigger / Lege diese Karte auf deine Hand.",
-              "descriptionJp": "フィールドにいる自分のユニットの数だけ、自分のトラッシュゾーンと手札からアイテムカードを選び、フィールドにいる自分のユニットにサイズを無視して1枚ずつ装着する。\n フィールドにいるアイテムを装着した自分のユニットが3枚以上なら、パワー+2000、ヒット+1。\n\n\nトリガー / このカードを自分の手札に加える。"
+              "descriptionJp": "フィールドにいる自分のユニットの数だけ、自分のトラッシュゾーンと手札からアイテムカードを選び、フィールドにいる自分のユニットにサイズを無視して1枚ずつ装着する。\n フィールドにいるアイテムを装着した自分のユニットが3枚以上なら、パワー+2000、ヒット+1。\n\n\nトリガー / このカードを自分の手札に加える。",
+              "sortIndex": 78
             },
             {
               "id": "c-mtuojk6ub0d9",
@@ -27747,7 +27826,8 @@
               "nameJp": "ミルク:ブルーミングバニー",
               "descriptionEn": "All your units on the field gain \"[Armed] When the Encountering Unit is trashed by battle or your effect, the opponent chooses 1 card from their hand and trashes it.\"",
               "descriptionDe": "Alle deine Einheiten auf dem Feld erhalten „[Bewaffnet] Wenn die begegnende Einheit durch Kampf oder deinen Effekt getrasht wird, wählt der Gegner 1 Karte aus seiner Hand und trasht sie.“",
-              "descriptionJp": "フィールドにいるすべての自分のユニットは「【アームド】対面ユニットが戦闘か自分の効果でトラッシュされたら、相手は手札を1枚選びトラッシュする」を得る。"
+              "descriptionJp": "フィールドにいるすべての自分のユニットは「【アームド】対面ユニットが戦闘か自分の効果でトラッシュされたら、相手は手札を1枚選びトラッシュする」を得る。",
+              "sortIndex": 79
             },
             {
               "id": "c-mtuojk6ult7y",
@@ -27772,7 +27852,8 @@
               "nameJp": "センティ-オーシャンリペア",
               "descriptionEn": "Choose up to 2 cards from your hand and trash them. Then draw that many cards. If 2 or more Item cards were trashed by this effect, additionally draw 1 card.",
               "descriptionDe": "Wähle bis zu 2 Karten aus deiner Hand und trashe sie. Ziehe dann so viele Karten. Falls 2 oder mehr Item-Karten durch diesen Effekt getrasht wurden, ziehe zusätzlich 1 Karte.",
-              "descriptionJp": "自分の手札を2枚まで選びトラッシュする。そうすればトラッシュした数だけカードをドローする。この効果でトラッシュしたアイテムカードが2枚以上なら、追加でカードを1枚ドローする。"
+              "descriptionJp": "自分の手札を2枚まで選びトラッシュする。そうすればトラッシュした数だけカードをドローする。この効果でトラッシュしたアイテムカードが2枚以上なら、追加でカードを1枚ドローする。",
+              "sortIndex": 80
             },
             {
               "id": "c-mtuojk6uxl7k",
@@ -27797,7 +27878,8 @@
               "nameJp": "エイド : エージェントバニー",
               "descriptionEn": "If equipped with an item, choose 1 card from your Trash Zone with Cost equal to or less than the number of items this unit has equipped, and add it to your hand.\n If equipped with an item, Power+3000.",
               "descriptionDe": "Falls mit einem Item ausgerüstet, wähle 1 Karte aus deiner Trash-Zone mit Kosten gleich oder niedriger als die Anzahl der von dieser Einheit ausgerüsteten Items, und lege sie auf deine Hand.\n Falls mit einem Item ausgerüstet, Stärke+3000.",
-              "descriptionJp": "アイテムを装備しているなら、自分のトラッシュゾーンからコストがこのユニットが装備しているアイテムの数以下のカードを1枚選び手札に加える。\n アイテムを装備しているなら、パワー+3000。"
+              "descriptionJp": "アイテムを装備しているなら、自分のトラッシュゾーンからコストがこのユニットが装備しているアイテムの数以下のカードを1枚選び手札に加える。\n アイテムを装備しているなら、パワー+3000。",
+              "sortIndex": 81
             },
             {
               "id": "c-mtuojk6ul0bq",
@@ -27822,7 +27904,8 @@
               "nameJp": "エイド : エージェントバニー",
               "descriptionEn": "If equipped with an item, choose 1 card from your Trash Zone with Cost equal to or less than the number of items this unit has equipped, and add it to your hand.\n If equipped with an item, Power+3000.",
               "descriptionDe": "Falls mit einem Item ausgerüstet, wähle 1 Karte aus deiner Trash-Zone mit Kosten gleich oder niedriger als die Anzahl der von dieser Einheit ausgerüsteten Items, und lege sie auf deine Hand.\n Falls mit einem Item ausgerüstet, Stärke+3000.",
-              "descriptionJp": "アイテムを装備しているなら、自分のトラッシュゾーンからコストがこのユニットが装備しているアイテムの数以下のカードを1枚選び手札に加える。\n アイテムを装備しているなら、パワー+3000。"
+              "descriptionJp": "アイテムを装備しているなら、自分のトラッシュゾーンからコストがこのユニットが装備しているアイテムの数以下のカードを1枚選び手札に加える。\n アイテムを装備しているなら、パワー+3000。",
+              "sortIndex": 82
             },
             {
               "id": "c-mtuojk6uixwu",
@@ -27847,7 +27930,8 @@
               "nameJp": "13ゴースト",
               "descriptionEn": "Choose 1 or more Item cards from your hand and trash them. Then draw that many cards.",
               "descriptionDe": "Wähle 1 oder mehr Item-Karten aus deiner Hand und trashe sie. Ziehe dann so viele Karten.",
-              "descriptionJp": "自分の手札からアイテムカードを1枚以上選びトラッシュする。そうすればトラッシュした数だけカードをドローする。"
+              "descriptionJp": "自分の手札からアイテムカードを1枚以上選びトラッシュする。そうすればトラッシュした数だけカードをドローする。",
+              "sortIndex": 83
             },
             {
               "id": "c-mtuojk6u8ywf",
@@ -27872,7 +27956,8 @@
               "nameJp": "13ゴースト",
               "descriptionEn": "Choose 1 or more Item cards from your hand and trash them. Then draw that many cards.",
               "descriptionDe": "Wähle 1 oder mehr Item-Karten aus deiner Hand und trashe sie. Ziehe dann so viele Karten.",
-              "descriptionJp": "自分の手札からアイテムカードを1枚以上選びトラッシュする。そうすればトラッシュした数だけカードをドローする。"
+              "descriptionJp": "自分の手札からアイテムカードを1枚以上選びトラッシュする。そうすればトラッシュした数だけカードをドローする。",
+              "sortIndex": 84
             }
           ],
           "divider": {
