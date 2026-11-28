@@ -52,6 +52,12 @@
   .rar-name{ flex:1; white-space:nowrap; }
   .rar-count{ color:var(--ink3); font-family:var(--mono); font-size:11px; }
 
+  /* ================= card window: previous / next ================= */
+  .card-step{ width:32px; height:32px; border-radius:7px; border:1px solid var(--line2); background:var(--row); color:var(--ink); font-size:12px; cursor:pointer; }
+  .card-step:hover:not(:disabled){ background:var(--raise); }
+  .card-step:disabled{ opacity:.3; cursor:default; }
+  .card-pos{ min-width:56px; text-align:center; font-family:var(--mono); font-size:11px; color:var(--ink3); white-space:nowrap; }
+
   /* ================= home ================= */
   .home-strip{ display:flex; gap:16px; overflow-x:auto; padding:8px 6px 14px; scroll-snap-type:x proximity; }
   .home-strip > *{ flex:0 0 190px; min-width:0; scroll-snap-align:start; }
@@ -757,9 +763,16 @@
 <sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
 <div class="modal-back" onClick="{{ closeModal }}" style="position:fixed;inset:0;z-index:60;background:rgba(4,4,8,.72);backdrop-filter:blur(6px);display:flex;align-items:flex-start;justify-content:center;padding:60px 20px;overflow-y:auto">
   <div onClick="{{ stop }}" style="background:var(--inset);border:1px solid var(--line2);border-radius:16px;width:100%;max-width:{{ modalWidth }};box-shadow:0 24px 70px rgba(0,0,0,.6);animation:pop .22s ease">
-    <div class="modal-head" style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--line)">
+    <div class="modal-head" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 24px;border-bottom:1px solid var(--line)">
       <div style="font-family:var(--display);font-size:17px;font-weight:600">{{ modalTitle }}</div>
-      <button onClick="{{ closeModal }}" style="background:transparent;border:none;color:var(--ink3);cursor:pointer;font-size:18px;width:30px;height:30px;border-radius:6px" style-hover="color:var(--ink);background:var(--raise)"><i class="fa-solid fa-xmark"></i></button>
+      <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;margin-left:auto">
+        <sc-if value="{{ modalHasNav }}" hint-placeholder-val="{{ false }}">
+          <button class="card-step" onClick="{{ modalPrev }}" disabled="{{ modalNoPrev }}" title="{{ L.prevW }}" aria-label="{{ L.prevW }}"><i class="fa-solid fa-chevron-left"></i></button>
+          <span class="card-pos">{{ modalPos }}</span>
+          <button class="card-step" onClick="{{ modalNext }}" disabled="{{ modalNoNext }}" title="{{ L.nextW }}" aria-label="{{ L.nextW }}"><i class="fa-solid fa-chevron-right"></i></button>
+        </sc-if>
+        <button onClick="{{ closeModal }}" style="background:transparent;border:none;color:var(--ink3);cursor:pointer;font-size:18px;width:30px;height:30px;border-radius:6px;margin-left:6px" style-hover="color:var(--ink);background:var(--raise)"><i class="fa-solid fa-xmark"></i></button>
+      </div>
     </div>
     <div class="modal-body" style="padding:24px">{{ modalBody }}</div>
   </div>
@@ -1468,7 +1481,14 @@ class Component extends DCLogic {
     this.applyTheme(id);
   }
   componentDidMount(){ this.applyTheme(this.state.theme); this.initSync(); this.loadServerState(); this.loadPrices();
-    window.addEventListener('keydown',(e)=>{ if(e.key==='Escape'&&this.state.rarityMenu) this.setState({rarityMenu:false}); }); }
+    window.addEventListener('keydown',(e)=>{ if(e.key==='Escape'&&this.state.rarityMenu) this.setState({rarityMenu:false}); });
+    window.addEventListener('keydown',(e)=>{
+      if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight') return;
+      const m=this.state.modal; if(!m||m.type!=='collector'||!m.seq) return;
+      if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey) return;
+      if(/^(INPUT|SELECT|TEXTAREA)$/.test((e.target&&e.target.tagName)||'')||document.querySelector('.holo-overlay')) return;
+      e.preventDefault(); this.stepCard(e.key==='ArrowLeft'?-1:1);
+    }); }
 
   // ---------- account / collection sync (grimoire-sync.js) ----------
   // localStorage stays the working copy; signing in only mirrors the collection to Supabase.
@@ -1631,10 +1651,11 @@ class Component extends DCLogic {
     const bar=(pct)=>R('div',{style:{height:'5px',background:'var(--raise)',borderRadius:'3px',overflow:'hidden'}},R('div',{style:{height:'100%',width:pct+'%',background:pct>=100?'var(--ok)':'var(--accent)'}}));
     const thumb=(c)=>R('div',{style:{position:'relative',width:'34px',height:'48px',borderRadius:'4px',overflow:'hidden',flexShrink:0,background:this.artStyle(c.type,cs),display:'flex',alignItems:'center',justifyContent:'center'}},this.artNode(c,false,cs));
     const rowStyle={display:'flex',alignItems:'center',gap:'10px',padding:'6px 4px',borderRadius:'8px',cursor:'pointer',borderBottom:'1px solid var(--line)'};
-    const cardRow=(x,main,below,color,link)=>{ const rr=this.rarityById(cs,x.card.rarityId);
+    const seqOf=(items)=>items.map(x=>({card:x.card,expId:x.exp.id}));
+    const cardRow=(x,main,below,color,link,among)=>{ const rr=this.rarityById(cs,x.card.rarityId);
       // one seller's asking price is not much of a price: say so
       const pr=this.priceOf(x.card), thin=pr&&pr.count===1?' · '+this.t('oneListing'):'';
-      return R('div',{key:x.card.id,className:'home-row',onClick:()=>this.openCollectorCard(x.card,x.exp.id),style:rowStyle},
+      return R('div',{key:x.card.id,className:'home-row',onClick:()=>this.openCollectorCard(x.card,x.exp.id,among&&seqOf(among)),style:rowStyle},
         thumb(x.card),
         R('div',{style:{flex:1,minWidth:0}},
           R('div',{style:{...line,fontSize:'12.5px',fontWeight:600}},this.cardName(x.card)),
@@ -1774,7 +1795,7 @@ class Component extends DCLogic {
         arrow(-1,'fa-solid fa-chevron-left',this.t('prevW')),
         arrow(1,'fa-solid fa-chevron-right',this.t('nextW'))),
       R('div',{key:mode,className:'home-strip'},shown.map(x=>{ const c=x.card, rr=this.rarityById(cs,c.rarityId), m=median(c);
-        return R('div',{key:c.id,onClick:()=>this.openCollectorCard(c,x.exp.id),style:{cursor:'pointer'}},
+        return R('div',{key:c.id,onClick:()=>this.openCollectorCard(c,x.exp.id,seqOf(shown)),style:{cursor:'pointer'}},
           holoCard(c),
           R('div',{style:{...line,fontSize:'12px',fontWeight:600,marginTop:'8px'}},this.cardName(c)),
           R('div',{style:{display:'flex',alignItems:'center',gap:'5px',...small,fontSize:'11px'}},
@@ -1787,12 +1808,13 @@ class Component extends DCLogic {
     let prices=null;
     if(hasPrices){
       const moved=base?priced.map(x=>{ const was=this.priceOn(x.card,base); return {x,diff:was==null?0:median(x.card)-was}; }).filter(m=>Math.abs(m.diff)>=0.01):[];
-      const mover=(m)=>cardRow(m.x,signed(m.diff),money(median(m.x.card)),m.diff>0?'var(--ok)':'var(--danger)');
+      const movers=(ms)=>ms.map(m=>cardRow(m.x,signed(m.diff),money(median(m.x.card)),m.diff>0?'var(--ok)':'var(--danger)',null,ms.map(n=>n.x)));
+      const dearest=byPrice.slice(0,5);
       if(priced.length) prices=section(this.t('pricesTitle'),R('div',{style:columns(300)},
-        list('fa-solid fa-crown',this.t('mostValuable'),byPrice.slice(0,5)
-          .map(x=>cardRow(x,money(median(x.card)),own(x.card)>1?'×'+own(x.card):null))),
-        base?list('fa-solid fa-arrow-trend-up',this.fmt(this.t('risers'),this.shortDate(base)),moved.filter(m=>m.diff>0).sort((a,b)=>b.diff-a.diff).slice(0,5).map(mover)):null,
-        base?list('fa-solid fa-arrow-trend-down',this.fmt(this.t('fallers'),this.shortDate(base)),moved.filter(m=>m.diff<0).sort((a,b)=>a.diff-b.diff).slice(0,5).map(mover)):null));
+        list('fa-solid fa-crown',this.t('mostValuable'),dearest
+          .map(x=>cardRow(x,money(median(x.card)),own(x.card)>1?'×'+own(x.card):null,null,null,dearest))),
+        base?list('fa-solid fa-arrow-trend-up',this.fmt(this.t('risers'),this.shortDate(base)),movers(moved.filter(m=>m.diff>0).sort((a,b)=>b.diff-a.diff).slice(0,5))):null,
+        base?list('fa-solid fa-arrow-trend-down',this.fmt(this.t('fallers'),this.shortDate(base)),movers(moved.filter(m=>m.diff<0).sort((a,b)=>a.diff-b.diff).slice(0,5))):null));
     }
 
     // ---- what to get next ----
@@ -1809,8 +1831,8 @@ class Component extends DCLogic {
     const spare=hasPrices?owned.filter(x=>own(x.card)>1&&median(x.card)!=null).map(x=>({x,n:own(x.card)-1,v:(own(x.card)-1)*median(x.card)})).sort((a,b)=>b.v-a.v).slice(0,5):[];
     const next=section(this.t('nextTitle'),R('div',{style:columns(300)},
       list('fa-solid fa-flag-checkered',this.t('closestSets'),setRows),
-      hasPrices?list('fa-solid fa-cart-shopping',this.t('cheapestMissing'),cheapest.map(x=>cardRow(x,money(median(x.card)),null,null,this.priceOf(x.card).searchUrl))):null,
-      hasPrices?list('fa-solid fa-right-left',this.t('spareTitle'),spare.map(s=>cardRow(s.x,money(s.v),'×'+s.n))):null));
+      hasPrices?list('fa-solid fa-cart-shopping',this.t('cheapestMissing'),cheapest.map(x=>cardRow(x,money(median(x.card)),null,null,this.priceOf(x.card).searchUrl,cheapest))):null,
+      hasPrices?list('fa-solid fa-right-left',this.t('spareTitle'),spare.map(s=>cardRow(s.x,money(s.v),'×'+s.n,null,null,spare.map(o=>o.x)))):null));
 
     return R('div',{style:{maxWidth:'1500px',margin:'0 auto'}},
       header,
@@ -2565,13 +2587,32 @@ class Component extends DCLogic {
   // ---------- collector ----------
   collectorEntry(sysId,cardId){ const b=this.state.collector[sysId]; return b?b[cardId]:null; }
   baseKeyOf(c){ const m=(c.number||'').match(/[A-Z]+\d+-\d+/i); return m?m[0]:(c.number||c.id); }
-  openCollectorCard(base, expId){
+  // seq: the list the card was opened from, as shown, for stepping to its neighbours
+  openCollectorCard(base, expId, seq){
     const id=expId||this.state.collectorExpansionId;
     const cs=this.csys(); const cexp=cs?cs.expansions.find(e=>e.id===id):null;
     const key=this.baseKeyOf(base);
     let variants=[base];
     if(cexp){ variants=cexp.cards.filter(c=>this.baseKeyOf(c)===key); }
-    this.setState({ modal:{type:'collector',base,variants}, collectorExpansionId:id });
+    const pos=seq?seq.findIndex(x=>x.card.id===base.id):-1;
+    const walk=pos>=0&&seq.length>1;
+    this.setState({ modal:{type:'collector',base,variants,seq:walk?seq:null,pos:walk?pos:0}, collectorExpansionId:id });
+  }
+  stepCard(dir){
+    const m=this.state.modal;
+    if(!m||m.type!=='collector'||!m.seq) return;
+    const next=m.seq[m.pos+dir];
+    if(next) this.openCollectorCard(next.card,next.expId,m.seq);
+  }
+  // a sideways swipe over the card window; the holo card keeps its own touch for tilting
+  swipeStart(e){
+    const t=e.touches[0];
+    this._swipe=(e.touches.length===1&&!e.target.closest('.holo-stage'))?{x:t.clientX,y:t.clientY,at:Date.now()}:null;
+  }
+  swipeEnd(e){
+    const from=this._swipe; this._swipe=null; if(!from) return;
+    const t=e.changedTouches[0], dx=t.clientX-from.x, dy=t.clientY-from.y;
+    if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5&&Date.now()-from.at<700) this.stepCard(dx<0?1:-1);
   }
   quickToggle(card,ev){ if(ev&&ev.stopPropagation)ev.stopPropagation();
     const sysId=this.state.collectorSystemId; const collector={...this.state.collector}; const b={...(collector[sysId]||{})};
@@ -3019,6 +3060,7 @@ class Component extends DCLogic {
             baseTip:`${this.t('totalCollected')} — ${v.stats.pct}%`,
             extraTip:`${this.t('uniqueDesigns')} — ${uniqueOwned}/${uniqueTotal} (${uniquePct}%)`};
           const tileChipFields=this.layoutOf(cs).filter(f=>f.showOnTile&&(f.type==='type'||f.type==='element'));
+          const listOrder=[];
           const makeTile=(arr,key)=>{
             // prefer the rarest OWNED variant as the default face of the stack (e.g. Special
             // Rare over Super Rare, but only once you actually own that Special Rare copy) -
@@ -3061,7 +3103,7 @@ class Component extends DCLogic {
             const hoverTitle=[this.cardName(base),...ordered.map(x=>{ const rr=this.rarityById(cs,x.card.rarityId); const pr=this.priceOf(x.card);
               return `${rr?rr.name:'—'}: ${(pr&&pr.count)?this.fmt(this.t('ebayMedian'),this.fmtMoney(pr.median,pr.currency))+' ('+this.listingsText(pr.count)+')':'—'}`; })].join('\n');
             const medians=arr.map(x=>this.priceOf(x.card)).filter(p=>p&&p.count).map(p=>p.median);
-            return {key,real:true,empty:false,rarityIds:arr.map(x=>x.card.rarityId),hoverTitle,
+            return {key,real:true,empty:false,card:base,rarityIds:arr.map(x=>x.card.rarityId),hoverTitle,
               sortPrice:medians.length?Math.max(...medians):null,
               number:this.cardNumber(base,baseEntry.idx,len),name:this.cardName(base),
               baseRarityName:brr?brr.name:'—',baseRarityAbbr:brr?(brr.abbr||brr.name):'—',baseRarityColor:brr?brr.color:'var(--ink3)',
@@ -3069,7 +3111,7 @@ class Component extends DCLogic {
               missing:!owned,hasDupes:dupeCopies>0,theoLabel:theo!=null?this.fmt(this.t('expectedL'),theo.toFixed(theo<1?2:1)):'',
               artStyle:this.artStyle(displayCard.type,cs),art:this.tileArt(displayCard,cs,holoTiles),artOpacity:owned?'1':'0.4',
               variants,typeChips,hasTypeChips:typeChips.length>0,
-              onOpen:()=>this.openCollectorCard(base)};
+              onOpen:()=>this.openCollectorCard(base,null,listOrder)};
           };
           const groupedTiles=order.map(k=>makeTile(groups[k],k));
           const flatTiles=sortedCards.map((c,i)=>makeTile([{card:c,idx:i}],c.id));
@@ -3103,6 +3145,7 @@ class Component extends DCLogic {
           v.sortOptions=Object.keys(sorts).map(id=>({id,label:this.t(sorts[id])}));
           v.onSortChange=(e)=>this.setState({collectorSort:e.target.value,collectorSpread:0});
           v.collectorTiles=allTiles;
+          allTiles.forEach(t=>{ const last=listOrder[listOrder.length-1]; if(!last||last.card.id!==t.card.id) listOrder.push({card:t.card,expId:null}); });
           v.showTicks=!isDupesFilter;
           v.showStackToggle=!isDupesFilter&&!picked.length;
           let ownAll=0,ownHave=0,ownNeed=0,ownDupes=0;
@@ -3161,6 +3204,11 @@ class Component extends DCLogic {
     // ---- modal ----
     const m=S.modal;
     v.modalOpen=!!m;
+    const walk=!!(m&&m.type==='collector'&&m.seq);
+    v.modalHasNav=walk;
+    v.modalPos=walk?(m.pos+1)+' / '+m.seq.length:'';
+    v.modalNoPrev=!walk||m.pos<=0; v.modalNoNext=!walk||m.pos>=m.seq.length-1;
+    v.modalPrev=()=>this.stepCard(-1); v.modalNext=()=>this.stepCard(1);
     if(m){
       const f=S.form;
       const inp='width:100%;background:var(--panel);border:1px solid var(--line2);border-radius:8px;padding:11px 13px;color:var(--ink);font-size:14px;margin-top:6px';
@@ -3486,7 +3534,7 @@ class Component extends DCLogic {
           R('div',{style:{fontSize:'12px',color:'var(--ink3)',marginBottom:'10px'}}, m.variants.length>1?this.fmt(this.t('setQtyN'),m.variants.length):this.t('setQty1')),
           R('div',null, rows)
         );
-        v.modalBody=R('div',null,
+        v.modalBody=R('div',{onTouchStart:(e)=>this.swipeStart(e),onTouchEnd:(e)=>this.swipeEnd(e)},
           R('div',{style:{display:'flex',gap:'24px',flexWrap:'wrap'}}, imgPanel, rightCol),
           R('div',{style:{display:'flex',justifyContent:'flex-end',marginTop:'18px'}},
             R('button',{onClick:()=>this.setState({modal:null}),style:this.parseStyle('background:var(--accent);color:var(--on-accent);font-weight:600;padding:11px 24px;border-radius:8px;border:none;cursor:pointer;font-size:14px')},this.t('done'))
